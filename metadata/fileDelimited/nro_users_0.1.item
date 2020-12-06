@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:TalendMetadata="http://www.talend.org/metadata/connection/2010" xmlns:orgomg.cwm.resource.record="http:///orgomg/cwm/resource/record.ecore">
+  <TalendMetadata:DelimitedFileConnection xmi:id="_uE38ATeXEeupC-cl7ZQtWg" name="nro_users" id="_uE38ADeXEeupC-cl7ZQtWg" dataPackage="_uE38AjeXEeupC-cl7ZQtWg" Server="Localhost 127.0.0.1" FilePath="/home/scasanova/Downloads/TOS_BD-20200219_1130-V7.3.1/workspace/ANALYSIS_TWITTER/documentations/mesures/nro_id.csv" Encoding="US-ASCII" FieldSeparatorValue="&quot;;&quot;" RowSeparatorValue="&quot;\n&quot;" UseHeader="true" HeaderValue="1" FirstLineCaption="true"/>
+  <orgomg.cwm.resource.record:RecordFile xmi:id="_uE38AjeXEeupC-cl7ZQtWg" name="default" dataManager="_uE38ATeXEeupC-cl7ZQtWg">
+    <ownedElement xsi:type="TalendMetadata:MetadataTable" xmi:id="_uE38AzeXEeupC-cl7ZQtWg" id="_l9BEEDeXEeupC-cl7ZQtWg" label="metadata">
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_uE38BDeXEeupC-cl7ZQtWg" label="date" length="10" talendType="id_Date" key="true" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_uE38BTeXEeupC-cl7ZQtWg" label="hashtag" length="13" talendType="id_String" key="true" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_uE38BjeXEeupC-cl7ZQtWg" label="no_users" length="2" talendType="id_Integer" pattern="&quot;dd-MM-yyyy&quot;"/>
+    </ownedElement>
+  </orgomg.cwm.resource.record:RecordFile>
+</xmi:XMI>
