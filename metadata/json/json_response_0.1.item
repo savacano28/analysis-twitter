@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:TalendJSON="http://www.talend.org/json" xmlns:TalendMetadata="http://www.talend.org/metadata/connection/2010" xmlns:orgomg.cwm.resource.record="http:///orgomg/cwm/resource/record.ecore">
+  <TalendJSON:JSONFileConnection xmi:id="_KM6qwDdWEeuY4OEv5z_s8A" name="json_response" dataPackage="_KM6qzzdWEeuY4OEv5z_s8A" JSONFilePath="/home/scasanova/Downloads/TOS_BD-20200219_1130-V7.3.1/workspace/ANALYSIS_TWITTER/documentations/apitwitter/al-dic-01.json" Encoding="UTF-8" readbyMode="JSONPATH">
+    <schema xmi:id="_KM6qwTdWEeuY4OEv5z_s8A" LimitBoucle="50" AbsoluteXPathQuery="$.tweets[*]">
+      <schemaTargets xmi:id="_KM6qwjdWEeuY4OEv5z_s8A" RelativeXPathQuery="hashtag_id" TagName="hashtag_id"/>
+      <schemaTargets xmi:id="_KM6qwzdWEeuY4OEv5z_s8A" RelativeXPathQuery="user_name" TagName="user_name"/>
+      <schemaTargets xmi:id="_KM6qxDdWEeuY4OEv5z_s8A" RelativeXPathQuery="user_screen_name" TagName="user_screen_name"/>
+      <schemaTargets xmi:id="_KM6qxTdWEeuY4OEv5z_s8A" RelativeXPathQuery="text_description" TagName="text_description"/>
+      <schemaTargets xmi:id="_KM6qxjdWEeuY4OEv5z_s8A" RelativeXPathQuery="date_id" TagName="date_id"/>
+      <schemaTargets xmi:id="_KM6qxzdWEeuY4OEv5z_s8A" RelativeXPathQuery="geo_id" TagName="geo_id"/>
+      <schemaTargets xmi:id="_KM6qyDdWEeuY4OEv5z_s8A" RelativeXPathQuery="text_id" TagName="text_id"/>
+      <schemaTargets xmi:id="_KM6qyTdWEeuY4OEv5z_s8A" RelativeXPathQuery="geo_description" TagName="geo_description"/>
+      <schemaTargets xmi:id="_KM6qyjdWEeuY4OEv5z_s8A" RelativeXPathQuery="user_id" TagName="user_id"/>
+      <schemaTargets xmi:id="_KM6qyzdWEeuY4OEv5z_s8A" RelativeXPathQuery="hashtag_text" TagName="hashtag_text"/>
+      <schemaTargets xmi:id="_KM6qzDdWEeuY4OEv5z_s8A" RelativeXPathQuery="user_location" TagName="user_location"/>
+      <schemaTargets xmi:id="_KM6qzTdWEeuY4OEv5z_s8A" RelativeXPathQuery="date_description" TagName="date_description"/>
+      <schemaTargets xmi:id="_KM6qzjdWEeuY4OEv5z_s8A" RelativeXPathQuery="user_description" TagName="user_description"/>
+    </schema>
+  </TalendJSON:JSONFileConnection>
+  <orgomg.cwm.resource.record:RecordFile xmi:id="_KM6qzzdWEeuY4OEv5z_s8A" name="default" dataManager="_KM6qwDdWEeuY4OEv5z_s8A">
+    <ownedElement xsi:type="TalendMetadata:MetadataTable" xmi:id="_KM6q0DdWEeuY4OEv5z_s8A" id="_7ezQgDdVEeuY4OEv5z_s8A" label="metadata">
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_KM6q0TdWEeuY4OEv5z_s8A" label="hashtag_id" length="19" talendType="id_Long" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_KM6q0jdWEeuY4OEv5z_s8A" label="user_name" length="48" talendType="id_String" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_KM6q0zdWEeuY4OEv5z_s8A" label="user_screen_name" length="15" talendType="id_String" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_KM6q1DdWEeuY4OEv5z_s8A" label="text_description" length="162" talendType="id_String" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_KM6q1TdWEeuY4OEv5z_s8A" label="date_id" length="19" talendType="id_Long" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_KM6q1jdWEeuY4OEv5z_s8A" label="geo_id" length="19" talendType="id_Long" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_KM6q1zdWEeuY4OEv5z_s8A" label="text_id" length="19" talendType="id_Long" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_KM6q2DdWEeuY4OEv5z_s8A" label="geo_description" length="27" talendType="id_String" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_KM6q2TdWEeuY4OEv5z_s8A" label="user_id" length="19" talendType="id_Long" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_KM6q2jdWEeuY4OEv5z_s8A" label="hashtag_text" length="14" talendType="id_String" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_KM6q2zdWEeuY4OEv5z_s8A" label="user_location" length="27" talendType="id_String" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_KM6q3DdWEeuY4OEv5z_s8A" label="date_description" length="10" talendType="id_Date" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_KM6q3TdWEeuY4OEv5z_s8A" label="user_description" length="183" talendType="id_String" pattern="&quot;dd-MM-yyyy&quot;"/>
+    </ownedElement>
+  </orgomg.cwm.resource.record:RecordFile>
+</xmi:XMI>

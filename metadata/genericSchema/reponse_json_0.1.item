@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:TalendMetadata="http://www.talend.org/metadata/connection/2010">
+  <TalendMetadata:GenericSchemaConnection xmi:id="_dCqeMDdVEeuY4OEv5z_s8A" comment="connectionComment" label="connectionLabel" dataPackage="_dCqeMTdVEeuY4OEv5z_s8A"/>
+  <TalendMetadata:GenericPackage xmi:id="_dCqeMTdVEeuY4OEv5z_s8A" dataManager="_dCqeMDdVEeuY4OEv5z_s8A">
+    <ownedElement xsi:type="TalendMetadata:MetadataTable" xmi:id="_dCqeMjdVEeuY4OEv5z_s8A" label="metadata">
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_dCqeMzdVEeuY4OEv5z_s8A" name="id" id="128" label="id" length="-1" precision="-1" sourceType="id_String" talendType="id_String">
+        <initialValue xmi:id="_dCqeNDdVEeuY4OEv5z_s8A"/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_dCqeNTdVEeuY4OEv5z_s8A" name="date_description" id="129" label="date_description" length="-1" precision="-1" sourceType="id_String" talendType="id_Date" pattern="&quot;dd-MM-yyyy&quot;">
+        <initialValue xmi:id="_dCqeNjdVEeuY4OEv5z_s8A"/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_dCqeNzdVEeuY4OEv5z_s8A" name="user_id" id="130" label="user_id" length="-1" precision="-1" sourceType="id_String" talendType="id_String">
+        <initialValue xmi:id="_dCqeODdVEeuY4OEv5z_s8A"/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_dCqeOTdVEeuY4OEv5z_s8A" name="user_name" id="131" label="user_name" length="-1" precision="-1" sourceType="id_String" talendType="id_String">
+        <initialValue xmi:id="_dCqeOjdVEeuY4OEv5z_s8A"/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_dCqeOzdVEeuY4OEv5z_s8A" name="user_screen_name" id="132" label="user_screen_name" length="-1" precision="-1" sourceType="id_String" talendType="id_String">
+        <initialValue xmi:id="_dCqePDdVEeuY4OEv5z_s8A"/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_dCqePTdVEeuY4OEv5z_s8A" name="user_location" id="133" label="user_location" length="-1" precision="-1" sourceType="id_String" talendType="id_String">
+        <initialValue xmi:id="_dCqePjdVEeuY4OEv5z_s8A"/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_dCqePzdVEeuY4OEv5z_s8A" name="user_description" id="134" label="user_description" length="-1" precision="-1" sourceType="id_String" talendType="id_String">
+        <initialValue xmi:id="_dCqeQDdVEeuY4OEv5z_s8A"/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_dCqeQTdVEeuY4OEv5z_s8A" name="hashtag_text" id="135" label="hashtag_text" length="-1" precision="-1" sourceType="id_String" talendType="id_String">
+        <initialValue xmi:id="_dCqeQjdVEeuY4OEv5z_s8A"/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_dCqeQzdVEeuY4OEv5z_s8A" name="text_description" id="136" label="text_description" length="-1" precision="-1" sourceType="id_String" talendType="id_String">
+        <initialValue xmi:id="_dCqeRDdVEeuY4OEv5z_s8A"/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_dCqeRTdVEeuY4OEv5z_s8A" name="hashtag_id" id="137" label="hashtag_id" length="-1" precision="-1" sourceType="id_String" talendType="id_String">
+        <initialValue xmi:id="_dCqeRjdVEeuY4OEv5z_s8A"/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_dCqeRzdVEeuY4OEv5z_s8A" name="geo_id" id="138" label="geo_id" length="-1" precision="-1" sourceType="id_String" talendType="id_String">
+        <initialValue xmi:id="_dCqeSDdVEeuY4OEv5z_s8A"/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_dCqeSTdVEeuY4OEv5z_s8A" name="geo_description" id="139" label="geo_description" length="-1" precision="-1" sourceType="id_String" talendType="id_String">
+        <initialValue xmi:id="_dCqeSjdVEeuY4OEv5z_s8A"/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_dCqeSzdVEeuY4OEv5z_s8A" name="text_id" id="140" label="text_id" length="-1" precision="-1" sourceType="id_String" talendType="id_String">
+        <initialValue xmi:id="_dCqeTDdVEeuY4OEv5z_s8A"/>
+      </feature>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_dCqeTTdVEeuY4OEv5z_s8A" name="date_id" id="141" label="date_id" length="-1" precision="-1" sourceType="id_String" talendType="id_String">
+        <initialValue xmi:id="_dCqeTjdVEeuY4OEv5z_s8A"/>
+      </feature>
+    </ownedElement>
+  </TalendMetadata:GenericPackage>
+</xmi:XMI>
