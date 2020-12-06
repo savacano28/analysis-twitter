@@ -64,11 +64,6 @@
     </dependency>
     <dependency>
       <groupId>org.talend.libraries</groupId>
-      <artifactId>external_sort</artifactId>
-      <version>6.0.0</version>
-    </dependency>
-    <dependency>
-      <groupId>org.talend.libraries</groupId>
       <artifactId>jakarta-oro-2.0.8</artifactId>
       <version>6.0.0</version>
     </dependency>

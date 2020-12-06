@@ -20,6 +20,7 @@
     <module>jobs/process/s5_in_calculate_sentiments_from_tweets_0.1</module>
     <module>jobs/process/s6_stocking_mesures_into_dw_0.1</module>
     <module>jobs/process/s7_visualisation_0.1</module>
+    <module>jobs/process/workflow_final_0.1</module>
   </modules>
   <properties>
     <talend.project.name>ANALYSIS_TWITTER</talend.project.name>

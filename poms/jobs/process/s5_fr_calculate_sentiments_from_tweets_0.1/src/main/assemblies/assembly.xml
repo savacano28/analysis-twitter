@@ -242,7 +242,6 @@
                 <include>org.talend.libraries:advancedPersistentLookupLib-1.2:jar:6.0.0</include>
                 <include>org.talend.libraries:jakarta-oro-2.0.8:jar:6.0.0</include>
                 <include>org.talend.libraries:talendcsv:jar:6.0.0</include>
-                <include>org.talend.libraries:external_sort:jar:6.0.0</include>
                 <include>org.example.analysis_twitter.code:routines:jar:7.3.1</include>
                 <include>org.talend.libraries:jboss-serialization:jar:6.0.0</include>
                 <include>org.talend.libraries:trove:jar:6.0.0</include>
