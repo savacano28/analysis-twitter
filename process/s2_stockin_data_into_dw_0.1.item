@@ -1,6 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <talendfile:ProcessType xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:talendfile="platform:/resource/org.talend.model/model/TalendFile.xsd" defaultContext="Default" jobType="Standard">
-  <context confirmationNeeded="false" name="Default"/>
+  <context confirmationNeeded="false" name="Default">
+    <contextParameter comment="" name="connection_postgres_Port" prompt="connection_postgres_Port?" promptNeeded="false" repositoryContextId="_Lv3k4DdOEeuqD5xxYcsMWA" type="id_String" value="5432"/>
+    <contextParameter comment="" name="connection_postgres_Schema" prompt="connection_postgres_Schema?" promptNeeded="false" repositoryContextId="_Lv3k4DdOEeuqD5xxYcsMWA" type="id_String" value=""/>
+    <contextParameter comment="" name="connection_postgres_Database" prompt="connection_postgres_Database?" promptNeeded="false" repositoryContextId="_Lv3k4DdOEeuqD5xxYcsMWA" type="id_String" value="talend"/>
+    <contextParameter comment="" name="connection_postgres_Server" prompt="connection_postgres_Server?" promptNeeded="false" repositoryContextId="_Lv3k4DdOEeuqD5xxYcsMWA" type="id_String" value="localhost"/>
+    <contextParameter comment="" name="connection_postgres_Password" prompt="connection_postgres_Password?" promptNeeded="false" repositoryContextId="_Lv3k4DdOEeuqD5xxYcsMWA" type="id_Password" value="enc:system.encryption.key.v1:nD1jcakLjlm8GB13PaMNGHJEKBotGWtHjgIr0q7pE8BC"/>
+    <contextParameter comment="" name="connection_postgres_AdditionalParams" prompt="connection_postgres_AdditionalParams?" promptNeeded="false" repositoryContextId="_Lv3k4DdOEeuqD5xxYcsMWA" type="id_String" value=""/>
+    <contextParameter comment="" name="connection_postgres_Login" prompt="connection_postgres_Login?" promptNeeded="false" repositoryContextId="_Lv3k4DdOEeuqD5xxYcsMWA" type="id_String" value="postgres"/>
+  </context>
+  <context confirmationNeeded="false" name="dev">
+    <contextParameter comment="" name="connection_postgres_Server" prompt="connection_postgres_Server?" promptNeeded="false" repositoryContextId="_Lv3k4DdOEeuqD5xxYcsMWA" type="id_String" value="localhost"/>
+    <contextParameter comment="" name="connection_postgres_Login" prompt="connection_postgres_Login?" promptNeeded="false" repositoryContextId="_Lv3k4DdOEeuqD5xxYcsMWA" type="id_String" value="postgres"/>
+    <contextParameter comment="" name="connection_postgres_Port" prompt="connection_postgres_Port?" promptNeeded="false" repositoryContextId="_Lv3k4DdOEeuqD5xxYcsMWA" type="id_String" value="5432"/>
+    <contextParameter comment="" name="connection_postgres_Password" prompt="connection_postgres_Password?" promptNeeded="false" repositoryContextId="_Lv3k4DdOEeuqD5xxYcsMWA" type="id_Password" value="enc:system.encryption.key.v1:lfQUk7WwdMsujIVxAGrPqKd6RqhezqVL728pG1UNzEXS"/>
+    <contextParameter comment="" name="connection_postgres_Database" prompt="connection_postgres_Database?" promptNeeded="false" repositoryContextId="_Lv3k4DdOEeuqD5xxYcsMWA" type="id_String" value="talend"/>
+    <contextParameter comment="" name="connection_postgres_Schema" prompt="connection_postgres_Schema?" promptNeeded="false" repositoryContextId="_Lv3k4DdOEeuqD5xxYcsMWA" type="id_String" value=""/>
+    <contextParameter comment="" name="connection_postgres_AdditionalParams" prompt="connection_postgres_AdditionalParams?" promptNeeded="false" repositoryContextId="_Lv3k4DdOEeuqD5xxYcsMWA" type="id_String" value=""/>
+  </context>
   <parameters>
     <elementParameter field="TEXT" name="SCREEN_OFFSET_X" value="0" show="false"/>
     <elementParameter field="TEXT" name="SCREEN_OFFSET_Y" value="0" show="false"/>
@@ -42,7 +59,7 @@
     <elementParameter field="TEXT" name="PROPERTIES_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
     <elementParameter field="TEXT" name="SCHEMA_DB_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
     <elementParameter field="TEXT" name="USER_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
-    <elementParameter field="PASSWORD" name="PASS_IMPLICIT_CONTEXT" value="enc:system.encryption.key.v1:alok6XypGfc5lF7smchr6mQjDpiu2d6VSBB39t+H" show="false"/>
+    <elementParameter field="PASSWORD" name="PASS_IMPLICIT_CONTEXT" value="enc:system.encryption.key.v1:RTMv43x1l36dc5OhuFfCV5lLjgOVD+yQZxAmil24" show="false"/>
     <elementParameter field="FILE" name="DBFILE_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
     <elementParameter field="DBTABLE" name="DBTABLE_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
     <elementParameter field="TEXT" name="QUERY_CONDITION_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
@@ -77,7 +94,7 @@
     <elementParameter field="TEXT" name="PROPERTIES" value="&quot;&quot;" show="false"/>
     <elementParameter field="TEXT" name="SCHEMA_DB" value="&quot;&quot;" show="false"/>
     <elementParameter field="TEXT" name="USER" value="&quot;&quot;" show="false"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:eVE0kGOXR0qVtkdPJ6jOr2MsYlqaO9tB7Gq9IqV9" show="false"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:Br5RAo9cvvCxxHVJdiF+azn9ByeJpPjhu4lkFTs6" show="false"/>
     <elementParameter field="FILE" name="DBFILE" value="&quot;&quot;" show="false"/>
     <elementParameter field="DBTABLE" name="TABLE_STATS" value="&quot;&quot;" show="false"/>
     <elementParameter field="DBTABLE" name="TABLE_LOGS" value="&quot;&quot;" show="false"/>
@@ -117,7 +134,7 @@
     <elementParameter field="TEXT" name="DBNAME" value="context.connection_postgres_Database"/>
     <elementParameter field="TEXT" name="SCHEMA_DB" value="context.connection_postgres_Schema"/>
     <elementParameter field="TEXT" name="USER" value="context.connection_postgres_Login"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:0DYWz9ZZGG+eyK7S0PUwNJZyJLVz7ezWReWShkOtWONwQcMSIX8bi9kTnoI7MalHHS8uUvRQXvT4Ve9xZpK9rA=="/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:tShVsG7nx5O5Ws2rvRi65cm5iIroTM1oM1IcE7T0Tm53A/GQQO1VkXds5m2Azvl3Vzz2mdQMazhe1f9H5ysmLw=="/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;&quot;"/>
     <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" value="" show="false"/>
@@ -135,6 +152,9 @@
     <elementParameter field="TEXT" name="CURSOR_SIZE" value="1000" show="false"/>
     <elementParameter field="CHECK" name="TRIM_ALL_COLUMN" value="false"/>
     <elementParameter field="TABLE" name="TRIM_COLUMN"/>
+    <elementParameter field="TEXT" name="LABEL" value="__UNIQUE_NAME__"/>
+    <elementParameter field="TEXT" name="HINT" value="&lt;b>__UNIQUE_NAME__&lt;/b>&lt;br>__COMMENT__"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" name="tDBInput_1"/>
   </node>
   <node componentName="tPostgresqlOutput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="608" posY="64">
@@ -150,7 +170,7 @@
     <elementParameter field="TEXT" name="TYPE" value="POSTGRESQL" show="false"/>
     <elementParameter field="TEXT" name="SCHEMA_DB" value="context.connection_postgres_Schema"/>
     <elementParameter field="TEXT" name="USER" value="context.connection_postgres_Login"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:QqcHpKt+Ez67XLzSprZP1Hz8llvrXnTZbG4rR7eW8gEcOjo5bp5vzROh3ToleS0ejLLMjdQGoEvejL7Y/rlowA=="/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:0Tvs1dLLNPfXwB5NeeHnoobCgye9h5EBBkHcth6IRIlv9aiWEfDqRRxvpudtn3+zWPQO+qCYFVqUo1uyPgb6+g=="/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;&quot;"/>
     <elementParameter field="CLOSED_LIST" name="TABLE_ACTION" value="NONE"/>
     <elementParameter field="CLOSED_LIST" name="DATA_ACTION" value="INSERT"/>

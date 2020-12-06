@@ -42,7 +42,7 @@
     <elementParameter field="TEXT" name="PROPERTIES_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
     <elementParameter field="TEXT" name="SCHEMA_DB_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
     <elementParameter field="TEXT" name="USER_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
-    <elementParameter field="PASSWORD" name="PASS_IMPLICIT_CONTEXT" value="enc:system.encryption.key.v1:2JgarIenf8uXMxf/p5wuL5sXo1WYYbFmFDveTahL" show="false"/>
+    <elementParameter field="PASSWORD" name="PASS_IMPLICIT_CONTEXT" value="enc:system.encryption.key.v1:nfMspRv1mrUcPYyfV4kZGLBi25hGIKtb4K2uSm8R" show="false"/>
     <elementParameter field="FILE" name="DBFILE_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
     <elementParameter field="DBTABLE" name="DBTABLE_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
     <elementParameter field="TEXT" name="QUERY_CONDITION_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
@@ -77,7 +77,7 @@
     <elementParameter field="TEXT" name="PROPERTIES" value="&quot;&quot;" show="false"/>
     <elementParameter field="TEXT" name="SCHEMA_DB" value="&quot;&quot;" show="false"/>
     <elementParameter field="TEXT" name="USER" value="&quot;&quot;" show="false"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:VE0q6qgQ6RyCr3clk9130y3C7KnnVoTotTQ6ErA5" show="false"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:9ORvhmcQJoRpD328HK9FhklpgbMIwrwV80oCmkWm" show="false"/>
     <elementParameter field="FILE" name="DBFILE" value="&quot;&quot;" show="false"/>
     <elementParameter field="DBTABLE" name="TABLE_STATS" value="&quot;&quot;" show="false"/>
     <elementParameter field="DBTABLE" name="TABLE_LOGS" value="&quot;&quot;" show="false"/>
@@ -121,7 +121,7 @@
     <elementParameter field="CHECK" name="NEED_AUTH" value="true"/>
     <elementParameter field="CLOSED_LIST" name="AUTH_TYPE" value="OAUTH2_BEARER"/>
     <elementParameter field="TEXT" name="AUTH_USERNAME" value="&quot;username&quot;" show="false"/>
-    <elementParameter field="PASSWORD" name="AUTH_PASSWORD" value="enc:system.encryption.key.v1:mE63Zt/3PNTMgm0kGbL5Z5xucDCC2hdCRzeTXztAOTPzGjdoQqs=" show="false"/>
+    <elementParameter field="PASSWORD" name="AUTH_PASSWORD" value="enc:system.encryption.key.v1:RsKOmFqiPcB7T7McJrQxYkA8H2uZpAqMzv1/rqOJkQ37CZtTb8I=" show="false"/>
     <elementParameter field="TEXT" name="AUTH_BEARER_TOKEN" value="&quot;AAAAAAAAAAAAAAAAAAAAAFEVJgEAAAAAejtPVAQB544BVATEzZjxhVI22ok%3Dcn9mxnTSBKDqaTkwOLzsYemZ9f58ZW0KVOKXDK4i59WtWqCe2d&quot;"/>
     <elementParameter field="CHECK" name="NEED_AUTHORIZATION" value="false" show="false"/>
     <elementParameter field="TEXT" name="ROLE" value="&quot;&quot;" show="false"/>
@@ -149,7 +149,7 @@
     <elementParameter field="TEXT" name="PROXY_HOST" value="&quot;61.163.92.4&quot;" show="false"/>
     <elementParameter field="TEXT" name="PROXY_PORT" value="8080" show="false"/>
     <elementParameter field="TEXT" name="PROXY_USERNAME" value="&quot;&quot;" show="false"/>
-    <elementParameter field="PASSWORD" name="PROXY_PASSWORD" value="enc:system.encryption.key.v1:ZsKrk3q4qXqLG6BebxUkwu9IYeLXnIizPPHsI7WF" show="false"/>
+    <elementParameter field="PASSWORD" name="PROXY_PASSWORD" value="enc:system.encryption.key.v1:YoN2gffHr2AbZEY8L/1jF7w9dFA9xRVjm+dX8Ezb" show="false"/>
     <elementParameter field="TEXT" name="LABEL" value="__UNIQUE_NAME__"/>
     <elementParameter field="TEXT" name="HINT" value="&lt;b>__UNIQUE_NAME__&lt;/b>&lt;br>__COMMENT__"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
@@ -306,7 +306,7 @@
     <elementParameter field="CHECK" name="NEED_AUTH" value="true"/>
     <elementParameter field="CLOSED_LIST" name="AUTH_TYPE" value="OAUTH2_BEARER"/>
     <elementParameter field="TEXT" name="AUTH_USERNAME" value="&quot;username&quot;" show="false"/>
-    <elementParameter field="PASSWORD" name="AUTH_PASSWORD" value="enc:system.encryption.key.v1:W32R5Bd1o4JK1/BffSYsB35Lm4dm0biQvBP9SL1kOxTr022YNzw=" show="false"/>
+    <elementParameter field="PASSWORD" name="AUTH_PASSWORD" value="enc:system.encryption.key.v1:PwgHisQcXoSMgkvQCijlAdbU1HqTKiSRwcsHzTusa3Fo0saeeWo=" show="false"/>
     <elementParameter field="TEXT" name="AUTH_BEARER_TOKEN" value="&quot;AAAAAAAAAAAAAAAAAAAAAFEVJgEAAAAAejtPVAQB544BVATEzZjxhVI22ok%3Dcn9mxnTSBKDqaTkwOLzsYemZ9f58ZW0KVOKXDK4i59WtWqCe2d&quot;"/>
     <elementParameter field="CHECK" name="NEED_AUTHORIZATION" value="false" show="false"/>
     <elementParameter field="TEXT" name="ROLE" value="&quot;&quot;" show="false"/>
@@ -334,7 +334,7 @@
     <elementParameter field="TEXT" name="PROXY_HOST" value="&quot;61.163.92.4&quot;" show="false"/>
     <elementParameter field="TEXT" name="PROXY_PORT" value="8080" show="false"/>
     <elementParameter field="TEXT" name="PROXY_USERNAME" value="&quot;&quot;" show="false"/>
-    <elementParameter field="PASSWORD" name="PROXY_PASSWORD" value="enc:system.encryption.key.v1:cHMJMOUSsHlobC3zMXJKGWeZ9OP1t0mjERRk86C7" show="false"/>
+    <elementParameter field="PASSWORD" name="PROXY_PASSWORD" value="enc:system.encryption.key.v1:9CyxvN12Sh7iFBgH3JMiYeCreVUSRbNEuxQD1dMJ" show="false"/>
     <elementParameter field="TEXT" name="LABEL" value="__UNIQUE_NAME__"/>
     <elementParameter field="TEXT" name="HINT" value="&lt;b>__UNIQUE_NAME__&lt;/b>&lt;br>__COMMENT__"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
@@ -473,7 +473,7 @@
     <elementParameter field="CHECK" name="NEED_AUTH" value="true"/>
     <elementParameter field="CLOSED_LIST" name="AUTH_TYPE" value="OAUTH2_BEARER"/>
     <elementParameter field="TEXT" name="AUTH_USERNAME" value="&quot;username&quot;" show="false"/>
-    <elementParameter field="PASSWORD" name="AUTH_PASSWORD" value="enc:system.encryption.key.v1:DLU3voF5E/3xcdmYiaJXd69eOpOVQkgLIHxMUAzwdJuQoGwj3sc=" show="false"/>
+    <elementParameter field="PASSWORD" name="AUTH_PASSWORD" value="enc:system.encryption.key.v1:ukB61mRDgkAlTEBi28HYsUQd5arEz56ZWteaOm18lfLmewIdRDU=" show="false"/>
     <elementParameter field="TEXT" name="AUTH_BEARER_TOKEN" value="&quot;AAAAAAAAAAAAAAAAAAAAAFEVJgEAAAAAejtPVAQB544BVATEzZjxhVI22ok%3Dcn9mxnTSBKDqaTkwOLzsYemZ9f58ZW0KVOKXDK4i59WtWqCe2d&quot;"/>
     <elementParameter field="CHECK" name="NEED_AUTHORIZATION" value="false" show="false"/>
     <elementParameter field="TEXT" name="ROLE" value="&quot;&quot;" show="false"/>
@@ -501,7 +501,7 @@
     <elementParameter field="TEXT" name="PROXY_HOST" value="&quot;61.163.92.4&quot;" show="false"/>
     <elementParameter field="TEXT" name="PROXY_PORT" value="8080" show="false"/>
     <elementParameter field="TEXT" name="PROXY_USERNAME" value="&quot;&quot;" show="false"/>
-    <elementParameter field="PASSWORD" name="PROXY_PASSWORD" value="enc:system.encryption.key.v1:9jymjLQT6eIxxriOcQsLBUD4YramuCTBjJ69ACRx" show="false"/>
+    <elementParameter field="PASSWORD" name="PROXY_PASSWORD" value="enc:system.encryption.key.v1:8glqShBQ+lUHn0SvMSaiH7wBFP4S1mXJOVzcYS98" show="false"/>
     <elementParameter field="TEXT" name="LABEL" value="__UNIQUE_NAME__"/>
     <elementParameter field="TEXT" name="HINT" value="&lt;b>__UNIQUE_NAME__&lt;/b>&lt;br>__COMMENT__"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
@@ -627,12 +627,12 @@
   </node>
   <node componentName="tMsgBox" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="1152" posY="352">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tMsgBox_1" show="false"/>
-    <elementParameter field="TEXT" name="TITLE" value="&quot;Étape 0: Appel à l'API twitter et stockage de réponses&quot;"/>
+    <elementParameter field="TEXT" name="TITLE" value="&quot;Step0: Connection to api twitter&quot;"/>
     <elementParameter field="CLOSED_LIST" name="BUTTONS" value="0"/>
     <elementParameter field="CLOSED_LIST" name="ICON" value="INFORMATION_MESSAGE"/>
     <elementParameter field="CHECK" name="ANSWER_MASK" value="false" show="false"/>
     <elementParameter field="MEMO" name="QUESTION_LABEL" value="&quot;Question ?&quot;" show="false"/>
-    <elementParameter field="MEMO" name="MESSAGE" value="&quot;Le réponse a été sauvargé&quot;"/>
+    <elementParameter field="MEMO" name="MESSAGE" value="&quot;The connection was successful and json responses were saved&quot;"/>
     <elementParameter field="TEXT" name="LABEL" value="__UNIQUE_NAME__"/>
     <elementParameter field="TEXT" name="HINT" value="&lt;b>__UNIQUE_NAME__&lt;/b>&lt;br>__COMMENT__"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
