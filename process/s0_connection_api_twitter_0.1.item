@@ -42,7 +42,7 @@
     <elementParameter field="TEXT" name="PROPERTIES_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
     <elementParameter field="TEXT" name="SCHEMA_DB_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
     <elementParameter field="TEXT" name="USER_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
-    <elementParameter field="PASSWORD" name="PASS_IMPLICIT_CONTEXT" value="enc:system.encryption.key.v1:tbWL/PFd7gW4URp+S8UsSq8221Pr14WqYf0xTYpO" show="false"/>
+    <elementParameter field="PASSWORD" name="PASS_IMPLICIT_CONTEXT" value="enc:system.encryption.key.v1:2JgarIenf8uXMxf/p5wuL5sXo1WYYbFmFDveTahL" show="false"/>
     <elementParameter field="FILE" name="DBFILE_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
     <elementParameter field="DBTABLE" name="DBTABLE_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
     <elementParameter field="TEXT" name="QUERY_CONDITION_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
@@ -77,7 +77,7 @@
     <elementParameter field="TEXT" name="PROPERTIES" value="&quot;&quot;" show="false"/>
     <elementParameter field="TEXT" name="SCHEMA_DB" value="&quot;&quot;" show="false"/>
     <elementParameter field="TEXT" name="USER" value="&quot;&quot;" show="false"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:bNUUlOKCvksX9UEoO+WI689PvcrtGuWAo8WIlE6d" show="false"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:VE0q6qgQ6RyCr3clk9130y3C7KnnVoTotTQ6ErA5" show="false"/>
     <elementParameter field="FILE" name="DBFILE" value="&quot;&quot;" show="false"/>
     <elementParameter field="DBTABLE" name="TABLE_STATS" value="&quot;&quot;" show="false"/>
     <elementParameter field="DBTABLE" name="TABLE_LOGS" value="&quot;&quot;" show="false"/>
@@ -121,7 +121,7 @@
     <elementParameter field="CHECK" name="NEED_AUTH" value="true"/>
     <elementParameter field="CLOSED_LIST" name="AUTH_TYPE" value="OAUTH2_BEARER"/>
     <elementParameter field="TEXT" name="AUTH_USERNAME" value="&quot;username&quot;" show="false"/>
-    <elementParameter field="PASSWORD" name="AUTH_PASSWORD" value="enc:system.encryption.key.v1:5YcyBjrn3BZIyiva1XiCuXObUfq45XH9BzYkxQGGhgQQsv8wkwk=" show="false"/>
+    <elementParameter field="PASSWORD" name="AUTH_PASSWORD" value="enc:system.encryption.key.v1:mE63Zt/3PNTMgm0kGbL5Z5xucDCC2hdCRzeTXztAOTPzGjdoQqs=" show="false"/>
     <elementParameter field="TEXT" name="AUTH_BEARER_TOKEN" value="&quot;AAAAAAAAAAAAAAAAAAAAAFEVJgEAAAAAejtPVAQB544BVATEzZjxhVI22ok%3Dcn9mxnTSBKDqaTkwOLzsYemZ9f58ZW0KVOKXDK4i59WtWqCe2d&quot;"/>
     <elementParameter field="CHECK" name="NEED_AUTHORIZATION" value="false" show="false"/>
     <elementParameter field="TEXT" name="ROLE" value="&quot;&quot;" show="false"/>
@@ -149,7 +149,7 @@
     <elementParameter field="TEXT" name="PROXY_HOST" value="&quot;61.163.92.4&quot;" show="false"/>
     <elementParameter field="TEXT" name="PROXY_PORT" value="8080" show="false"/>
     <elementParameter field="TEXT" name="PROXY_USERNAME" value="&quot;&quot;" show="false"/>
-    <elementParameter field="PASSWORD" name="PROXY_PASSWORD" value="enc:system.encryption.key.v1:xdAbdDhNGu31naU51J9XrukycBqtz5/4PoSPaRpV" show="false"/>
+    <elementParameter field="PASSWORD" name="PROXY_PASSWORD" value="enc:system.encryption.key.v1:ZsKrk3q4qXqLG6BebxUkwu9IYeLXnIizPPHsI7WF" show="false"/>
     <elementParameter field="TEXT" name="LABEL" value="__UNIQUE_NAME__"/>
     <elementParameter field="TEXT" name="HINT" value="&lt;b>__UNIQUE_NAME__&lt;/b>&lt;br>__COMMENT__"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
@@ -204,8 +204,8 @@
                 <children name="description" type="id_String" outgoingConnections="//@node.1/@nodeData/@connections.5" xpath="row1.body:/root/statuses/user/description"/>
               </children>
               <children name="entities" expression="" type="id_String" xpath="row1.body:/root/statuses/entities">
-                <children name="hashtag" expression="" type="id_String" xpath="row1.body:/root/statuses/entities/hashtag">
-                  <children name="text" type="id_String" outgoingConnections="//@node.1/@nodeData/@connections.6" xpath="row1.body:/root/statuses/entities/hashtag/text"/>
+                <children name="hashtags" expression="" type="id_String" xpath="row1.body:/root/statuses/entities/hashtags">
+                  <children name="text" type="id_String" outgoingConnections="//@node.1/@nodeData/@connections.6" xpath="row1.body:/root/statuses/entities/hashtags/text"/>
                 </children>
               </children>
               <children name="text" type="id_String" outgoingConnections="//@node.1/@nodeData/@connections.7" xpath="row1.body:/root/statuses/text"/>
@@ -222,7 +222,7 @@
         <nodes name="user_screen_name" expression="[row1.body:/root/statuses/user/screen_name]" type="id_String" incomingConnections="//@node.1/@nodeData/@connections.3" xpath="coronaWarnAPP/user_screen_name"/>
         <nodes name="user_location" expression="[row1.body:/root/statuses/user/location]" type="id_String" incomingConnections="//@node.1/@nodeData/@connections.4" xpath="coronaWarnAPP/user_location"/>
         <nodes name="user_description" expression="[row1.body:/root/statuses/user/description]" type="id_String" incomingConnections="//@node.1/@nodeData/@connections.5" xpath="coronaWarnAPP/user_description"/>
-        <nodes name="hashtag_text" expression="[row1.body:/root/statuses/entities/hashtag/text]" type="id_String" incomingConnections="//@node.1/@nodeData/@connections.6" xpath="coronaWarnAPP/hashtag_text"/>
+        <nodes name="hashtag_text" expression="[row1.body:/root/statuses/entities/hashtags/text]" type="id_String" incomingConnections="//@node.1/@nodeData/@connections.6" xpath="coronaWarnAPP/hashtag_text"/>
         <nodes name="text_description" expression="[row1.body:/root/statuses/text]" type="id_String" incomingConnections="//@node.1/@nodeData/@connections.7" xpath="coronaWarnAPP/text_description"/>
         <nodes name="hashtag_id" expression="[row1.body:/root/statuses/id]" type="id_String" incomingConnections="//@node.1/@nodeData/@connections.8" xpath="coronaWarnAPP/hashtag_id"/>
         <nodes name="geo_id" expression="[row1.body:/root/statuses/id]" type="id_String" incomingConnections="//@node.1/@nodeData/@connections.9" xpath="coronaWarnAPP/geo_id"/>
@@ -306,7 +306,7 @@
     <elementParameter field="CHECK" name="NEED_AUTH" value="true"/>
     <elementParameter field="CLOSED_LIST" name="AUTH_TYPE" value="OAUTH2_BEARER"/>
     <elementParameter field="TEXT" name="AUTH_USERNAME" value="&quot;username&quot;" show="false"/>
-    <elementParameter field="PASSWORD" name="AUTH_PASSWORD" value="enc:system.encryption.key.v1:wD7M+TUmiJJOPNhTw7YqTfo39dxpNPXtutsDDV4r8ksJvx6WXCo=" show="false"/>
+    <elementParameter field="PASSWORD" name="AUTH_PASSWORD" value="enc:system.encryption.key.v1:W32R5Bd1o4JK1/BffSYsB35Lm4dm0biQvBP9SL1kOxTr022YNzw=" show="false"/>
     <elementParameter field="TEXT" name="AUTH_BEARER_TOKEN" value="&quot;AAAAAAAAAAAAAAAAAAAAAFEVJgEAAAAAejtPVAQB544BVATEzZjxhVI22ok%3Dcn9mxnTSBKDqaTkwOLzsYemZ9f58ZW0KVOKXDK4i59WtWqCe2d&quot;"/>
     <elementParameter field="CHECK" name="NEED_AUTHORIZATION" value="false" show="false"/>
     <elementParameter field="TEXT" name="ROLE" value="&quot;&quot;" show="false"/>
@@ -334,7 +334,7 @@
     <elementParameter field="TEXT" name="PROXY_HOST" value="&quot;61.163.92.4&quot;" show="false"/>
     <elementParameter field="TEXT" name="PROXY_PORT" value="8080" show="false"/>
     <elementParameter field="TEXT" name="PROXY_USERNAME" value="&quot;&quot;" show="false"/>
-    <elementParameter field="PASSWORD" name="PROXY_PASSWORD" value="enc:system.encryption.key.v1:HhR1ndQOPakrmbPsE5Jsf/rg1dmP6MGIdwgv5bd4" show="false"/>
+    <elementParameter field="PASSWORD" name="PROXY_PASSWORD" value="enc:system.encryption.key.v1:cHMJMOUSsHlobC3zMXJKGWeZ9OP1t0mjERRk86C7" show="false"/>
     <elementParameter field="TEXT" name="LABEL" value="__UNIQUE_NAME__"/>
     <elementParameter field="TEXT" name="HINT" value="&lt;b>__UNIQUE_NAME__&lt;/b>&lt;br>__COMMENT__"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
@@ -389,8 +389,8 @@
                 <children name="description" type="id_String" outgoingConnections="//@node.6/@nodeData/@connections.5" xpath="row2.body:/root/statuses/user/description"/>
               </children>
               <children name="entities" expression="" type="id_String" xpath="row2.body:/root/statuses/entities">
-                <children name="hashtag" expression="" type="id_String" xpath="row2.body:/root/statuses/entities/hashtag">
-                  <children name="text" type="id_String" outgoingConnections="//@node.6/@nodeData/@connections.6" xpath="row2.body:/root/statuses/entities/hashtag/text"/>
+                <children name="hashtags" expression="" type="id_String" xpath="row2.body:/root/statuses/entities/hashtags">
+                  <children name="text" type="id_String" outgoingConnections="//@node.6/@nodeData/@connections.6" xpath="row2.body:/root/statuses/entities/hashtags/text"/>
                 </children>
               </children>
               <children name="text" type="id_String" outgoingConnections="//@node.6/@nodeData/@connections.7" xpath="row2.body:/root/statuses/text"/>
@@ -407,7 +407,7 @@
         <nodes name="user_screen_name" expression="[row2.body:/root/statuses/user/screen_name]" type="id_String" incomingConnections="//@node.6/@nodeData/@connections.3" xpath="copyOfcoronaWarnAPP/user_screen_name"/>
         <nodes name="user_location" expression="[row2.body:/root/statuses/user/location]" type="id_String" incomingConnections="//@node.6/@nodeData/@connections.4" xpath="copyOfcoronaWarnAPP/user_location"/>
         <nodes name="user_description" expression="[row2.body:/root/statuses/user/description]" type="id_String" incomingConnections="//@node.6/@nodeData/@connections.5" xpath="copyOfcoronaWarnAPP/user_description"/>
-        <nodes name="hashtag_text" expression="[row2.body:/root/statuses/entities/hashtag/text]" type="id_String" incomingConnections="//@node.6/@nodeData/@connections.6" xpath="copyOfcoronaWarnAPP/hashtag_text"/>
+        <nodes name="hashtag_text" expression="[row2.body:/root/statuses/entities/hashtags/text]" type="id_String" incomingConnections="//@node.6/@nodeData/@connections.6" xpath="copyOfcoronaWarnAPP/hashtag_text"/>
         <nodes name="text_description" expression="[row2.body:/root/statuses/text]" type="id_String" incomingConnections="//@node.6/@nodeData/@connections.7" xpath="copyOfcoronaWarnAPP/text_description"/>
         <nodes name="hashtag_id" expression="[row2.body:/root/statuses/id]" type="id_String" incomingConnections="//@node.6/@nodeData/@connections.8" xpath="copyOfcoronaWarnAPP/hashtag_id"/>
         <nodes name="geo_id" expression="[row2.body:/root/statuses/id]" type="id_String" incomingConnections="//@node.6/@nodeData/@connections.9" xpath="copyOfcoronaWarnAPP/geo_id"/>
@@ -473,7 +473,7 @@
     <elementParameter field="CHECK" name="NEED_AUTH" value="true"/>
     <elementParameter field="CLOSED_LIST" name="AUTH_TYPE" value="OAUTH2_BEARER"/>
     <elementParameter field="TEXT" name="AUTH_USERNAME" value="&quot;username&quot;" show="false"/>
-    <elementParameter field="PASSWORD" name="AUTH_PASSWORD" value="enc:system.encryption.key.v1:0RbEvVlWybIg9VTLk0Onc62O/YwOI4LADio5zCmWetU5rugGQpQ=" show="false"/>
+    <elementParameter field="PASSWORD" name="AUTH_PASSWORD" value="enc:system.encryption.key.v1:DLU3voF5E/3xcdmYiaJXd69eOpOVQkgLIHxMUAzwdJuQoGwj3sc=" show="false"/>
     <elementParameter field="TEXT" name="AUTH_BEARER_TOKEN" value="&quot;AAAAAAAAAAAAAAAAAAAAAFEVJgEAAAAAejtPVAQB544BVATEzZjxhVI22ok%3Dcn9mxnTSBKDqaTkwOLzsYemZ9f58ZW0KVOKXDK4i59WtWqCe2d&quot;"/>
     <elementParameter field="CHECK" name="NEED_AUTHORIZATION" value="false" show="false"/>
     <elementParameter field="TEXT" name="ROLE" value="&quot;&quot;" show="false"/>
@@ -501,7 +501,7 @@
     <elementParameter field="TEXT" name="PROXY_HOST" value="&quot;61.163.92.4&quot;" show="false"/>
     <elementParameter field="TEXT" name="PROXY_PORT" value="8080" show="false"/>
     <elementParameter field="TEXT" name="PROXY_USERNAME" value="&quot;&quot;" show="false"/>
-    <elementParameter field="PASSWORD" name="PROXY_PASSWORD" value="enc:system.encryption.key.v1:s6io3Y6Z5ogECfiqyNsEbfbLkUovtH+t2JTrgv0B" show="false"/>
+    <elementParameter field="PASSWORD" name="PROXY_PASSWORD" value="enc:system.encryption.key.v1:9jymjLQT6eIxxriOcQsLBUD4YramuCTBjJ69ACRx" show="false"/>
     <elementParameter field="TEXT" name="LABEL" value="__UNIQUE_NAME__"/>
     <elementParameter field="TEXT" name="HINT" value="&lt;b>__UNIQUE_NAME__&lt;/b>&lt;br>__COMMENT__"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
@@ -556,8 +556,8 @@
                 <children name="description" type="id_String" outgoingConnections="//@node.9/@nodeData/@connections.5" xpath="row3.body:/root/statuses/user/description"/>
               </children>
               <children name="entities" expression="" type="id_String" xpath="row3.body:/root/statuses/entities">
-                <children name="hashtag" expression="" type="id_String" xpath="row3.body:/root/statuses/entities/hashtag">
-                  <children name="text" type="id_String" outgoingConnections="//@node.9/@nodeData/@connections.6" xpath="row3.body:/root/statuses/entities/hashtag/text"/>
+                <children name="hashtags" expression="" type="id_String" xpath="row3.body:/root/statuses/entities/hashtags">
+                  <children name="text" type="id_String" outgoingConnections="//@node.9/@nodeData/@connections.6" xpath="row3.body:/root/statuses/entities/hashtags/text"/>
                 </children>
               </children>
               <children name="text" type="id_String" outgoingConnections="//@node.9/@nodeData/@connections.7" xpath="row3.body:/root/statuses/text"/>
@@ -574,7 +574,7 @@
         <nodes name="user_screen_name" expression="[row3.body:/root/statuses/user/screen_name]" type="id_String" incomingConnections="//@node.9/@nodeData/@connections.3" xpath="copyOfcopyOfcoronaWarnAPP/user_screen_name"/>
         <nodes name="user_location" expression="[row3.body:/root/statuses/user/location]" type="id_String" incomingConnections="//@node.9/@nodeData/@connections.4" xpath="copyOfcopyOfcoronaWarnAPP/user_location"/>
         <nodes name="user_description" expression="[row3.body:/root/statuses/user/description]" type="id_String" incomingConnections="//@node.9/@nodeData/@connections.5" xpath="copyOfcopyOfcoronaWarnAPP/user_description"/>
-        <nodes name="hashtag_text" expression="[row3.body:/root/statuses/entities/hashtag/text]" type="id_String" incomingConnections="//@node.9/@nodeData/@connections.6" xpath="copyOfcopyOfcoronaWarnAPP/hashtag_text"/>
+        <nodes name="hashtag_text" expression="[row3.body:/root/statuses/entities/hashtags/text]" type="id_String" incomingConnections="//@node.9/@nodeData/@connections.6" xpath="copyOfcopyOfcoronaWarnAPP/hashtag_text"/>
         <nodes name="text_description" expression="[row3.body:/root/statuses/text]" type="id_String" incomingConnections="//@node.9/@nodeData/@connections.7" xpath="copyOfcopyOfcoronaWarnAPP/text_description"/>
         <nodes name="hashtag_id" expression="[row3.body:/root/statuses/id]" type="id_String" incomingConnections="//@node.9/@nodeData/@connections.8" xpath="copyOfcopyOfcoronaWarnAPP/hashtag_id"/>
         <nodes name="geo_id" expression="[row3.body:/root/statuses/id]" type="id_String" incomingConnections="//@node.9/@nodeData/@connections.9" xpath="copyOfcopyOfcoronaWarnAPP/geo_id"/>

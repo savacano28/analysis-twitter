@@ -1373,7 +1373,7 @@ public class s0_connection_api_twitter implements TalendJob {
 
 						final String decryptedPassword_tRESTClient_1 = routines.system.PasswordEncryptUtil
 								.decryptPassword(
-										"enc:routine.encryption.key.v1:AVLU48eFu7fv6zcsHw7Wv3J84mILpPHgidIQ/2KLPzKQu4CO");
+										"enc:routine.encryption.key.v1:4SdtLeeOP9OdP3avHgSGR0GLf/A3m6QJZwg1THZ3lk+FKNmh");
 
 						org.apache.cxf.ws.security.trust.STSClient stsClient = org.talend.esb.security.saml.STSClientUtils
 								.createSTSClient(factoryBean_tRESTClient_1.getBus(), "username",
@@ -1406,7 +1406,7 @@ public class s0_connection_api_twitter implements TalendJob {
 
 						final String decryptedPassword_tRESTClient_1 = routines.system.PasswordEncryptUtil
 								.decryptPassword(
-										"enc:routine.encryption.key.v1:txx26fxwv0NbjnRnBFx624mdPdU8Y3Bpr7V+P1IDXKLryqlU");
+										"enc:routine.encryption.key.v1:YJUKqAZl2YpiDaQr2ZvwzwVXkpbmmmtkaqO8NsmcPF5RI83y");
 
 						org.apache.cxf.configuration.security.AuthorizationPolicy authPolicy_tRESTClient_1 = new org.apache.cxf.configuration.security.AuthorizationPolicy();
 						authPolicy_tRESTClient_1.setAuthorizationType("Basic");
@@ -1418,7 +1418,7 @@ public class s0_connection_api_twitter implements TalendJob {
 
 						final String decryptedPassword_tRESTClient_1 = routines.system.PasswordEncryptUtil
 								.decryptPassword(
-										"enc:routine.encryption.key.v1:M5uKIz58PkpKA3too4Y2Duk8p5grP7XtFeJxFpW4EplM0r3W");
+										"enc:routine.encryption.key.v1:fk/J9X8k6/t97h7Lb32DIcqrDlJvwoILOW0lzOCYunmuVnFA");
 
 						org.apache.cxf.configuration.security.AuthorizationPolicy authPolicy_tRESTClient_1 = new org.apache.cxf.configuration.security.AuthorizationPolicy();
 						authPolicy_tRESTClient_1.setAuthorizationType("Digest");
@@ -1449,7 +1449,7 @@ public class s0_connection_api_twitter implements TalendJob {
 
 						final String decryptedPassword_tRESTClient_1 = routines.system.PasswordEncryptUtil
 								.decryptPassword(
-										"enc:routine.encryption.key.v1:a4gG0WJIs56H0SPi3TVnBs30yLegF4bTVJgMnw7ilQSZ1qkQ");
+										"enc:routine.encryption.key.v1:01xIokOVnnNOZZcZVkx1SHoqawou9mNbhj6M+nSQvd0zeOt7");
 
 						String username_tRESTClient_1 = "username";
 						String password_tRESTClient_1 = decryptedPassword_tRESTClient_1;
@@ -1583,26 +1583,26 @@ public class s0_connection_api_twitter implements TalendJob {
 					String[] absolutePathMappings_tXMLMap_1_TXMLMAP_OUT = new String[9];
 					String[] relativePathMappings_tXMLMap_1_TXMLMAP_OUT = new String[9];
 
-					absolutePathMappings_tXMLMap_1_TXMLMAP_OUT[0] = "row1.body:/root/statuses/entities/hashtag/text";
-					relativePathMappings_tXMLMap_1_TXMLMAP_OUT[0] = "entities/hashtag/text";
+					absolutePathMappings_tXMLMap_1_TXMLMAP_OUT[0] = "row1.body:/root/statuses/created_at";
+					relativePathMappings_tXMLMap_1_TXMLMAP_OUT[0] = "created_at";
 
-					absolutePathMappings_tXMLMap_1_TXMLMAP_OUT[1] = "row1.body:/root/statuses/created_at";
-					relativePathMappings_tXMLMap_1_TXMLMAP_OUT[1] = "created_at";
+					absolutePathMappings_tXMLMap_1_TXMLMAP_OUT[1] = "row1.body:/root/statuses/text";
+					relativePathMappings_tXMLMap_1_TXMLMAP_OUT[1] = "text";
 
-					absolutePathMappings_tXMLMap_1_TXMLMAP_OUT[2] = "row1.body:/root/statuses/text";
-					relativePathMappings_tXMLMap_1_TXMLMAP_OUT[2] = "text";
+					absolutePathMappings_tXMLMap_1_TXMLMAP_OUT[2] = "row1.body:/root/statuses/user/name";
+					relativePathMappings_tXMLMap_1_TXMLMAP_OUT[2] = "user/name";
 
-					absolutePathMappings_tXMLMap_1_TXMLMAP_OUT[3] = "row1.body:/root/statuses/user/name";
-					relativePathMappings_tXMLMap_1_TXMLMAP_OUT[3] = "user/name";
+					absolutePathMappings_tXMLMap_1_TXMLMAP_OUT[3] = "row1.body:/root/statuses/user/description";
+					relativePathMappings_tXMLMap_1_TXMLMAP_OUT[3] = "user/description";
 
-					absolutePathMappings_tXMLMap_1_TXMLMAP_OUT[4] = "row1.body:/root/statuses/user/description";
-					relativePathMappings_tXMLMap_1_TXMLMAP_OUT[4] = "user/description";
+					absolutePathMappings_tXMLMap_1_TXMLMAP_OUT[4] = "row1.body:/root/statuses/id";
+					relativePathMappings_tXMLMap_1_TXMLMAP_OUT[4] = "id";
 
-					absolutePathMappings_tXMLMap_1_TXMLMAP_OUT[5] = "row1.body:/root/statuses/id";
-					relativePathMappings_tXMLMap_1_TXMLMAP_OUT[5] = "id";
+					absolutePathMappings_tXMLMap_1_TXMLMAP_OUT[5] = "row1.body:/root/statuses/user/id";
+					relativePathMappings_tXMLMap_1_TXMLMAP_OUT[5] = "user/id";
 
-					absolutePathMappings_tXMLMap_1_TXMLMAP_OUT[6] = "row1.body:/root/statuses/user/id";
-					relativePathMappings_tXMLMap_1_TXMLMAP_OUT[6] = "user/id";
+					absolutePathMappings_tXMLMap_1_TXMLMAP_OUT[6] = "row1.body:/root/statuses/entities/hashtags/text";
+					relativePathMappings_tXMLMap_1_TXMLMAP_OUT[6] = "entities/hashtags/text";
 
 					absolutePathMappings_tXMLMap_1_TXMLMAP_OUT[7] = "row1.body:/root/statuses/user/location";
 					relativePathMappings_tXMLMap_1_TXMLMAP_OUT[7] = "user/location";
@@ -1663,7 +1663,7 @@ public class s0_connection_api_twitter implements TalendJob {
 							coronaWarnAPP_tmp.user_description = treeNodeAPI_tXMLMap_1_TXMLMAP_OUT
 									.get_String("row1.body:/root/statuses/user/description");
 							coronaWarnAPP_tmp.hashtag_text = treeNodeAPI_tXMLMap_1_TXMLMAP_OUT
-									.get_String("row1.body:/root/statuses/entities/hashtag/text");
+									.get_String("row1.body:/root/statuses/entities/hashtags/text");
 							coronaWarnAPP_tmp.text_description = treeNodeAPI_tXMLMap_1_TXMLMAP_OUT
 									.get_String("row1.body:/root/statuses/text");
 							coronaWarnAPP_tmp.hashtag_id = treeNodeAPI_tXMLMap_1_TXMLMAP_OUT
@@ -2819,7 +2819,7 @@ public class s0_connection_api_twitter implements TalendJob {
 
 						final String decryptedPassword_tRESTClient_2 = routines.system.PasswordEncryptUtil
 								.decryptPassword(
-										"enc:routine.encryption.key.v1:QiLMW9eVCOfqCJahmel4OwgkpapVCxzKMBDPQXFyAbMhseSl");
+										"enc:routine.encryption.key.v1:GAKaJdT9d5tMB9yDBbaU29GmMxN4AhQhPXhNHtqhjxuJdfJ0");
 
 						org.apache.cxf.ws.security.trust.STSClient stsClient = org.talend.esb.security.saml.STSClientUtils
 								.createSTSClient(factoryBean_tRESTClient_2.getBus(), "username",
@@ -2852,7 +2852,7 @@ public class s0_connection_api_twitter implements TalendJob {
 
 						final String decryptedPassword_tRESTClient_2 = routines.system.PasswordEncryptUtil
 								.decryptPassword(
-										"enc:routine.encryption.key.v1:YCMsymUupu6Qjnwgk1xpwrx0oEYM/5jbQTBHgGTaL21EIPBd");
+										"enc:routine.encryption.key.v1:ksw9cS6Ayz4/AbG4Kij5ANdyEOsx5FFk/8ExwUZnoJ6fd0p0");
 
 						org.apache.cxf.configuration.security.AuthorizationPolicy authPolicy_tRESTClient_2 = new org.apache.cxf.configuration.security.AuthorizationPolicy();
 						authPolicy_tRESTClient_2.setAuthorizationType("Basic");
@@ -2864,7 +2864,7 @@ public class s0_connection_api_twitter implements TalendJob {
 
 						final String decryptedPassword_tRESTClient_2 = routines.system.PasswordEncryptUtil
 								.decryptPassword(
-										"enc:routine.encryption.key.v1:RuoiEBwU5wmzZvgu8z3CGEYBu+zjSl8fmLowSVMCY4I6RIYD");
+										"enc:routine.encryption.key.v1:9SrihqQNRK67Xw/Fq8OuVrXgx148Wr2jhtatlVRKjgkFlRX3");
 
 						org.apache.cxf.configuration.security.AuthorizationPolicy authPolicy_tRESTClient_2 = new org.apache.cxf.configuration.security.AuthorizationPolicy();
 						authPolicy_tRESTClient_2.setAuthorizationType("Digest");
@@ -2895,7 +2895,7 @@ public class s0_connection_api_twitter implements TalendJob {
 
 						final String decryptedPassword_tRESTClient_2 = routines.system.PasswordEncryptUtil
 								.decryptPassword(
-										"enc:routine.encryption.key.v1:0Ha2EVyxboOh/zlQw8nfc0CnfzEV8ZxcXAO6P9AHR6L7euNP");
+										"enc:routine.encryption.key.v1:mk5UBxi+xfmEIpBXSkVhCkANVJA8ysbFaurijSB2iBUoCA6x");
 
 						String username_tRESTClient_2 = "username";
 						String password_tRESTClient_2 = decryptedPassword_tRESTClient_2;
@@ -3029,29 +3029,29 @@ public class s0_connection_api_twitter implements TalendJob {
 					String[] absolutePathMappings_tXMLMap_2_TXMLMAP_OUT = new String[9];
 					String[] relativePathMappings_tXMLMap_2_TXMLMAP_OUT = new String[9];
 
-					absolutePathMappings_tXMLMap_2_TXMLMAP_OUT[0] = "row2.body:/root/statuses/entities/hashtag/text";
-					relativePathMappings_tXMLMap_2_TXMLMAP_OUT[0] = "entities/hashtag/text";
+					absolutePathMappings_tXMLMap_2_TXMLMAP_OUT[0] = "row2.body:/root/statuses/user/name";
+					relativePathMappings_tXMLMap_2_TXMLMAP_OUT[0] = "user/name";
 
-					absolutePathMappings_tXMLMap_2_TXMLMAP_OUT[1] = "row2.body:/root/statuses/user/name";
-					relativePathMappings_tXMLMap_2_TXMLMAP_OUT[1] = "user/name";
+					absolutePathMappings_tXMLMap_2_TXMLMAP_OUT[1] = "row2.body:/root/statuses/user/screen_name";
+					relativePathMappings_tXMLMap_2_TXMLMAP_OUT[1] = "user/screen_name";
 
-					absolutePathMappings_tXMLMap_2_TXMLMAP_OUT[2] = "row2.body:/root/statuses/user/screen_name";
-					relativePathMappings_tXMLMap_2_TXMLMAP_OUT[2] = "user/screen_name";
+					absolutePathMappings_tXMLMap_2_TXMLMAP_OUT[2] = "row2.body:/root/statuses/created_at";
+					relativePathMappings_tXMLMap_2_TXMLMAP_OUT[2] = "created_at";
 
-					absolutePathMappings_tXMLMap_2_TXMLMAP_OUT[3] = "row2.body:/root/statuses/created_at";
-					relativePathMappings_tXMLMap_2_TXMLMAP_OUT[3] = "created_at";
+					absolutePathMappings_tXMLMap_2_TXMLMAP_OUT[3] = "row2.body:/root/statuses/user/id";
+					relativePathMappings_tXMLMap_2_TXMLMAP_OUT[3] = "user/id";
 
-					absolutePathMappings_tXMLMap_2_TXMLMAP_OUT[4] = "row2.body:/root/statuses/user/id";
-					relativePathMappings_tXMLMap_2_TXMLMAP_OUT[4] = "user/id";
+					absolutePathMappings_tXMLMap_2_TXMLMAP_OUT[4] = "row2.body:/root/statuses/user/description";
+					relativePathMappings_tXMLMap_2_TXMLMAP_OUT[4] = "user/description";
 
-					absolutePathMappings_tXMLMap_2_TXMLMAP_OUT[5] = "row2.body:/root/statuses/user/description";
-					relativePathMappings_tXMLMap_2_TXMLMAP_OUT[5] = "user/description";
+					absolutePathMappings_tXMLMap_2_TXMLMAP_OUT[5] = "row2.body:/root/statuses/id";
+					relativePathMappings_tXMLMap_2_TXMLMAP_OUT[5] = "id";
 
-					absolutePathMappings_tXMLMap_2_TXMLMAP_OUT[6] = "row2.body:/root/statuses/id";
-					relativePathMappings_tXMLMap_2_TXMLMAP_OUT[6] = "id";
+					absolutePathMappings_tXMLMap_2_TXMLMAP_OUT[6] = "row2.body:/root/statuses/user/location";
+					relativePathMappings_tXMLMap_2_TXMLMAP_OUT[6] = "user/location";
 
-					absolutePathMappings_tXMLMap_2_TXMLMAP_OUT[7] = "row2.body:/root/statuses/user/location";
-					relativePathMappings_tXMLMap_2_TXMLMAP_OUT[7] = "user/location";
+					absolutePathMappings_tXMLMap_2_TXMLMAP_OUT[7] = "row2.body:/root/statuses/entities/hashtags/text";
+					relativePathMappings_tXMLMap_2_TXMLMAP_OUT[7] = "entities/hashtags/text";
 
 					absolutePathMappings_tXMLMap_2_TXMLMAP_OUT[8] = "row2.body:/root/statuses/text";
 					relativePathMappings_tXMLMap_2_TXMLMAP_OUT[8] = "text";
@@ -3109,7 +3109,7 @@ public class s0_connection_api_twitter implements TalendJob {
 							copyOfcoronaWarnAPP_tmp.user_description = treeNodeAPI_tXMLMap_2_TXMLMAP_OUT
 									.get_String("row2.body:/root/statuses/user/description");
 							copyOfcoronaWarnAPP_tmp.hashtag_text = treeNodeAPI_tXMLMap_2_TXMLMAP_OUT
-									.get_String("row2.body:/root/statuses/entities/hashtag/text");
+									.get_String("row2.body:/root/statuses/entities/hashtags/text");
 							copyOfcoronaWarnAPP_tmp.text_description = treeNodeAPI_tXMLMap_2_TXMLMAP_OUT
 									.get_String("row2.body:/root/statuses/text");
 							copyOfcoronaWarnAPP_tmp.hashtag_id = treeNodeAPI_tXMLMap_2_TXMLMAP_OUT
@@ -4265,7 +4265,7 @@ public class s0_connection_api_twitter implements TalendJob {
 
 						final String decryptedPassword_tRESTClient_3 = routines.system.PasswordEncryptUtil
 								.decryptPassword(
-										"enc:routine.encryption.key.v1:GFiEftguUywkNQB+ktL9HhRuT6Xf1eKZFx4fuCrhR+pgZMlc");
+										"enc:routine.encryption.key.v1:m8UIUSGILQNBw0kEePMK7YO7rGwWnbHPAjp+ahsQYItfImhc");
 
 						org.apache.cxf.ws.security.trust.STSClient stsClient = org.talend.esb.security.saml.STSClientUtils
 								.createSTSClient(factoryBean_tRESTClient_3.getBus(), "username",
@@ -4298,7 +4298,7 @@ public class s0_connection_api_twitter implements TalendJob {
 
 						final String decryptedPassword_tRESTClient_3 = routines.system.PasswordEncryptUtil
 								.decryptPassword(
-										"enc:routine.encryption.key.v1:jc3m5Pmis346wMB8Rx6AJ4P3BSG/+l2Y59bkhVghxwtxtB3h");
+										"enc:routine.encryption.key.v1:V8hjGY4fIQaehn5p3uQKHFYdOw5xrjHyretZqSqHVGgYLBny");
 
 						org.apache.cxf.configuration.security.AuthorizationPolicy authPolicy_tRESTClient_3 = new org.apache.cxf.configuration.security.AuthorizationPolicy();
 						authPolicy_tRESTClient_3.setAuthorizationType("Basic");
@@ -4310,7 +4310,7 @@ public class s0_connection_api_twitter implements TalendJob {
 
 						final String decryptedPassword_tRESTClient_3 = routines.system.PasswordEncryptUtil
 								.decryptPassword(
-										"enc:routine.encryption.key.v1:tNrElgHlRim0mNYAzkg0EUMpyzyD/k9tYXVg914JiBFJRPYv");
+										"enc:routine.encryption.key.v1:udMiKnIKDz6AJr4mJHi4P8O82wrrNObjpa2gU1LzGtQwHYFW");
 
 						org.apache.cxf.configuration.security.AuthorizationPolicy authPolicy_tRESTClient_3 = new org.apache.cxf.configuration.security.AuthorizationPolicy();
 						authPolicy_tRESTClient_3.setAuthorizationType("Digest");
@@ -4341,7 +4341,7 @@ public class s0_connection_api_twitter implements TalendJob {
 
 						final String decryptedPassword_tRESTClient_3 = routines.system.PasswordEncryptUtil
 								.decryptPassword(
-										"enc:routine.encryption.key.v1:cRCM8ptQy/Pof163up8bH5zyhneUnLuuymoYfO0mztM6Jr+/");
+										"enc:routine.encryption.key.v1:XoJ+Epd8qc95k3rluyI4smArmZB66w5iUVKyW2/wEMnu9Q+A");
 
 						String username_tRESTClient_3 = "username";
 						String password_tRESTClient_3 = decryptedPassword_tRESTClient_3;
@@ -4475,17 +4475,17 @@ public class s0_connection_api_twitter implements TalendJob {
 					String[] absolutePathMappings_tXMLMap_3_TXMLMAP_OUT = new String[9];
 					String[] relativePathMappings_tXMLMap_3_TXMLMAP_OUT = new String[9];
 
-					absolutePathMappings_tXMLMap_3_TXMLMAP_OUT[0] = "row3.body:/root/statuses/entities/hashtag/text";
-					relativePathMappings_tXMLMap_3_TXMLMAP_OUT[0] = "entities/hashtag/text";
+					absolutePathMappings_tXMLMap_3_TXMLMAP_OUT[0] = "row3.body:/root/statuses/user/screen_name";
+					relativePathMappings_tXMLMap_3_TXMLMAP_OUT[0] = "user/screen_name";
 
-					absolutePathMappings_tXMLMap_3_TXMLMAP_OUT[1] = "row3.body:/root/statuses/user/screen_name";
-					relativePathMappings_tXMLMap_3_TXMLMAP_OUT[1] = "user/screen_name";
+					absolutePathMappings_tXMLMap_3_TXMLMAP_OUT[1] = "row3.body:/root/statuses/user/location";
+					relativePathMappings_tXMLMap_3_TXMLMAP_OUT[1] = "user/location";
 
-					absolutePathMappings_tXMLMap_3_TXMLMAP_OUT[2] = "row3.body:/root/statuses/user/location";
-					relativePathMappings_tXMLMap_3_TXMLMAP_OUT[2] = "user/location";
+					absolutePathMappings_tXMLMap_3_TXMLMAP_OUT[2] = "row3.body:/root/statuses/user/description";
+					relativePathMappings_tXMLMap_3_TXMLMAP_OUT[2] = "user/description";
 
-					absolutePathMappings_tXMLMap_3_TXMLMAP_OUT[3] = "row3.body:/root/statuses/user/description";
-					relativePathMappings_tXMLMap_3_TXMLMAP_OUT[3] = "user/description";
+					absolutePathMappings_tXMLMap_3_TXMLMAP_OUT[3] = "row3.body:/root/statuses/entities/hashtags/text";
+					relativePathMappings_tXMLMap_3_TXMLMAP_OUT[3] = "entities/hashtags/text";
 
 					absolutePathMappings_tXMLMap_3_TXMLMAP_OUT[4] = "row3.body:/root/statuses/created_at";
 					relativePathMappings_tXMLMap_3_TXMLMAP_OUT[4] = "created_at";
@@ -4555,7 +4555,7 @@ public class s0_connection_api_twitter implements TalendJob {
 							copyOfcopyOfcoronaWarnAPP_tmp.user_description = treeNodeAPI_tXMLMap_3_TXMLMAP_OUT
 									.get_String("row3.body:/root/statuses/user/description");
 							copyOfcopyOfcoronaWarnAPP_tmp.hashtag_text = treeNodeAPI_tXMLMap_3_TXMLMAP_OUT
-									.get_String("row3.body:/root/statuses/entities/hashtag/text");
+									.get_String("row3.body:/root/statuses/entities/hashtags/text");
 							copyOfcopyOfcoronaWarnAPP_tmp.text_description = treeNodeAPI_tXMLMap_3_TXMLMAP_OUT
 									.get_String("row3.body:/root/statuses/text");
 							copyOfcopyOfcoronaWarnAPP_tmp.hashtag_id = treeNodeAPI_tXMLMap_3_TXMLMAP_OUT
@@ -5516,6 +5516,6 @@ public class s0_connection_api_twitter implements TalendJob {
 	ResumeUtil resumeUtil = null;
 }
 /************************************************************************************************
- * 164955 characters generated by Talend Open Studio for Big Data on the
- * December 6, 2020 12:56:25 AM CET
+ * 164964 characters generated by Talend Open Studio for Big Data on the
+ * December 6, 2020 6:10:36 AM CET
  ************************************************************************************************/

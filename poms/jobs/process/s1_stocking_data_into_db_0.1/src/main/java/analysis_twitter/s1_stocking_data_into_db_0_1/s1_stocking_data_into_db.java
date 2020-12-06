@@ -364,7 +364,7 @@ public class s1_stocking_data_into_db implements TalendJob {
 		tFileList_1_onSubJobError(exception, errorComponent, globalMap);
 	}
 
-	public void tLogRow_1_error(Exception exception, String errorComponent,
+	public void tXMLMap_1_error(Exception exception, String errorComponent,
 			final java.util.Map<String, Object> globalMap) throws TalendException {
 
 		end_Hash.put(errorComponent, System.currentTimeMillis());
@@ -374,11 +374,746 @@ public class s1_stocking_data_into_db implements TalendJob {
 		tFileList_1_onSubJobError(exception, errorComponent, globalMap);
 	}
 
+	public void tUniqRow_1_error(Exception exception, String errorComponent,
+			final java.util.Map<String, Object> globalMap) throws TalendException {
+
+		end_Hash.put(errorComponent, System.currentTimeMillis());
+
+		status = "failure";
+
+		tFileList_1_onSubJobError(exception, errorComponent, globalMap);
+	}
+
+	public void tDBOutput_1_error(Exception exception, String errorComponent,
+			final java.util.Map<String, Object> globalMap) throws TalendException {
+
+		end_Hash.put(errorComponent, System.currentTimeMillis());
+
+		status = "failure";
+
+		tFileList_1_onSubJobError(exception, errorComponent, globalMap);
+	}
+
+	public void tFileList_2_error(Exception exception, String errorComponent,
+			final java.util.Map<String, Object> globalMap) throws TalendException {
+
+		end_Hash.put(errorComponent, System.currentTimeMillis());
+
+		status = "failure";
+
+		tFileList_2_onSubJobError(exception, errorComponent, globalMap);
+	}
+
+	public void tFileInputJSON_2_error(Exception exception, String errorComponent,
+			final java.util.Map<String, Object> globalMap) throws TalendException {
+
+		end_Hash.put(errorComponent, System.currentTimeMillis());
+
+		status = "failure";
+
+		tFileList_2_onSubJobError(exception, errorComponent, globalMap);
+	}
+
+	public void tXMLMap_2_error(Exception exception, String errorComponent,
+			final java.util.Map<String, Object> globalMap) throws TalendException {
+
+		end_Hash.put(errorComponent, System.currentTimeMillis());
+
+		status = "failure";
+
+		tFileList_2_onSubJobError(exception, errorComponent, globalMap);
+	}
+
+	public void tUniqRow_2_error(Exception exception, String errorComponent,
+			final java.util.Map<String, Object> globalMap) throws TalendException {
+
+		end_Hash.put(errorComponent, System.currentTimeMillis());
+
+		status = "failure";
+
+		tFileList_2_onSubJobError(exception, errorComponent, globalMap);
+	}
+
+	public void tDBOutput_2_error(Exception exception, String errorComponent,
+			final java.util.Map<String, Object> globalMap) throws TalendException {
+
+		end_Hash.put(errorComponent, System.currentTimeMillis());
+
+		status = "failure";
+
+		tFileList_2_onSubJobError(exception, errorComponent, globalMap);
+	}
+
+	public void tFileList_3_error(Exception exception, String errorComponent,
+			final java.util.Map<String, Object> globalMap) throws TalendException {
+
+		end_Hash.put(errorComponent, System.currentTimeMillis());
+
+		status = "failure";
+
+		tFileList_3_onSubJobError(exception, errorComponent, globalMap);
+	}
+
+	public void tFileInputJSON_3_error(Exception exception, String errorComponent,
+			final java.util.Map<String, Object> globalMap) throws TalendException {
+
+		end_Hash.put(errorComponent, System.currentTimeMillis());
+
+		status = "failure";
+
+		tFileList_3_onSubJobError(exception, errorComponent, globalMap);
+	}
+
+	public void tXMLMap_3_error(Exception exception, String errorComponent,
+			final java.util.Map<String, Object> globalMap) throws TalendException {
+
+		end_Hash.put(errorComponent, System.currentTimeMillis());
+
+		status = "failure";
+
+		tFileList_3_onSubJobError(exception, errorComponent, globalMap);
+	}
+
+	public void tUniqRow_3_error(Exception exception, String errorComponent,
+			final java.util.Map<String, Object> globalMap) throws TalendException {
+
+		end_Hash.put(errorComponent, System.currentTimeMillis());
+
+		status = "failure";
+
+		tFileList_3_onSubJobError(exception, errorComponent, globalMap);
+	}
+
+	public void tDBOutput_3_error(Exception exception, String errorComponent,
+			final java.util.Map<String, Object> globalMap) throws TalendException {
+
+		end_Hash.put(errorComponent, System.currentTimeMillis());
+
+		status = "failure";
+
+		tFileList_3_onSubJobError(exception, errorComponent, globalMap);
+	}
+
+	public void tPostjob_1_error(Exception exception, String errorComponent,
+			final java.util.Map<String, Object> globalMap) throws TalendException {
+
+		end_Hash.put(errorComponent, System.currentTimeMillis());
+
+		status = "failure";
+
+		tPostjob_1_onSubJobError(exception, errorComponent, globalMap);
+	}
+
+	public void tMsgBox_1_error(Exception exception, String errorComponent,
+			final java.util.Map<String, Object> globalMap) throws TalendException {
+
+		end_Hash.put(errorComponent, System.currentTimeMillis());
+
+		status = "failure";
+
+		tMsgBox_1_onSubJobError(exception, errorComponent, globalMap);
+	}
+
 	public void tFileList_1_onSubJobError(Exception exception, String errorComponent,
 			final java.util.Map<String, Object> globalMap) throws TalendException {
 
 		resumeUtil.addLog("SYSTEM_LOG", "NODE:" + errorComponent, "", Thread.currentThread().getId() + "", "FATAL", "",
 				exception.getMessage(), ResumeUtil.getExceptionStackTrace(exception), "");
+
+	}
+
+	public void tFileList_2_onSubJobError(Exception exception, String errorComponent,
+			final java.util.Map<String, Object> globalMap) throws TalendException {
+
+		resumeUtil.addLog("SYSTEM_LOG", "NODE:" + errorComponent, "", Thread.currentThread().getId() + "", "FATAL", "",
+				exception.getMessage(), ResumeUtil.getExceptionStackTrace(exception), "");
+
+	}
+
+	public void tFileList_3_onSubJobError(Exception exception, String errorComponent,
+			final java.util.Map<String, Object> globalMap) throws TalendException {
+
+		resumeUtil.addLog("SYSTEM_LOG", "NODE:" + errorComponent, "", Thread.currentThread().getId() + "", "FATAL", "",
+				exception.getMessage(), ResumeUtil.getExceptionStackTrace(exception), "");
+
+	}
+
+	public void tPostjob_1_onSubJobError(Exception exception, String errorComponent,
+			final java.util.Map<String, Object> globalMap) throws TalendException {
+
+		resumeUtil.addLog("SYSTEM_LOG", "NODE:" + errorComponent, "", Thread.currentThread().getId() + "", "FATAL", "",
+				exception.getMessage(), ResumeUtil.getExceptionStackTrace(exception), "");
+
+	}
+
+	public void tMsgBox_1_onSubJobError(Exception exception, String errorComponent,
+			final java.util.Map<String, Object> globalMap) throws TalendException {
+
+		resumeUtil.addLog("SYSTEM_LOG", "NODE:" + errorComponent, "", Thread.currentThread().getId() + "", "FATAL", "",
+				exception.getMessage(), ResumeUtil.getExceptionStackTrace(exception), "");
+
+	}
+
+	public static class row2Struct implements routines.system.IPersistableRow<row2Struct> {
+		final static byte[] commonByteArrayLock_ANALYSIS_TWITTER_s1_stocking_data_into_db = new byte[0];
+		static byte[] commonByteArray_ANALYSIS_TWITTER_s1_stocking_data_into_db = new byte[0];
+
+		public String id;
+
+		public String getId() {
+			return this.id;
+		}
+
+		public String user_id;
+
+		public String getUser_id() {
+			return this.user_id;
+		}
+
+		public String user_name;
+
+		public String getUser_name() {
+			return this.user_name;
+		}
+
+		public String user_screen_name;
+
+		public String getUser_screen_name() {
+			return this.user_screen_name;
+		}
+
+		public String user_location;
+
+		public String getUser_location() {
+			return this.user_location;
+		}
+
+		public String user_description;
+
+		public String getUser_description() {
+			return this.user_description;
+		}
+
+		public String hashtag;
+
+		public String getHashtag() {
+			return this.hashtag;
+		}
+
+		public String hashtag_description;
+
+		public String getHashtag_description() {
+			return this.hashtag_description;
+		}
+
+		public String geo;
+
+		public String getGeo() {
+			return this.geo;
+		}
+
+		public String country;
+
+		public String getCountry() {
+			return this.country;
+		}
+
+		public String text;
+
+		public String getText() {
+			return this.text;
+		}
+
+		public java.util.Date date;
+
+		public java.util.Date getDate() {
+			return this.date;
+		}
+
+		private String readString(ObjectInputStream dis) throws IOException {
+			String strReturn = null;
+			int length = 0;
+			length = dis.readInt();
+			if (length == -1) {
+				strReturn = null;
+			} else {
+				if (length > commonByteArray_ANALYSIS_TWITTER_s1_stocking_data_into_db.length) {
+					if (length < 1024 && commonByteArray_ANALYSIS_TWITTER_s1_stocking_data_into_db.length == 0) {
+						commonByteArray_ANALYSIS_TWITTER_s1_stocking_data_into_db = new byte[1024];
+					} else {
+						commonByteArray_ANALYSIS_TWITTER_s1_stocking_data_into_db = new byte[2 * length];
+					}
+				}
+				dis.readFully(commonByteArray_ANALYSIS_TWITTER_s1_stocking_data_into_db, 0, length);
+				strReturn = new String(commonByteArray_ANALYSIS_TWITTER_s1_stocking_data_into_db, 0, length,
+						utf8Charset);
+			}
+			return strReturn;
+		}
+
+		private void writeString(String str, ObjectOutputStream dos) throws IOException {
+			if (str == null) {
+				dos.writeInt(-1);
+			} else {
+				byte[] byteArray = str.getBytes(utf8Charset);
+				dos.writeInt(byteArray.length);
+				dos.write(byteArray);
+			}
+		}
+
+		private java.util.Date readDate(ObjectInputStream dis) throws IOException {
+			java.util.Date dateReturn = null;
+			int length = 0;
+			length = dis.readByte();
+			if (length == -1) {
+				dateReturn = null;
+			} else {
+				dateReturn = new Date(dis.readLong());
+			}
+			return dateReturn;
+		}
+
+		private void writeDate(java.util.Date date1, ObjectOutputStream dos) throws IOException {
+			if (date1 == null) {
+				dos.writeByte(-1);
+			} else {
+				dos.writeByte(0);
+				dos.writeLong(date1.getTime());
+			}
+		}
+
+		public void readData(ObjectInputStream dis) {
+
+			synchronized (commonByteArrayLock_ANALYSIS_TWITTER_s1_stocking_data_into_db) {
+
+				try {
+
+					int length = 0;
+
+					this.id = readString(dis);
+
+					this.user_id = readString(dis);
+
+					this.user_name = readString(dis);
+
+					this.user_screen_name = readString(dis);
+
+					this.user_location = readString(dis);
+
+					this.user_description = readString(dis);
+
+					this.hashtag = readString(dis);
+
+					this.hashtag_description = readString(dis);
+
+					this.geo = readString(dis);
+
+					this.country = readString(dis);
+
+					this.text = readString(dis);
+
+					this.date = readDate(dis);
+
+				} catch (IOException e) {
+					throw new RuntimeException(e);
+
+				}
+
+			}
+
+		}
+
+		public void writeData(ObjectOutputStream dos) {
+			try {
+
+				// String
+
+				writeString(this.id, dos);
+
+				// String
+
+				writeString(this.user_id, dos);
+
+				// String
+
+				writeString(this.user_name, dos);
+
+				// String
+
+				writeString(this.user_screen_name, dos);
+
+				// String
+
+				writeString(this.user_location, dos);
+
+				// String
+
+				writeString(this.user_description, dos);
+
+				// String
+
+				writeString(this.hashtag, dos);
+
+				// String
+
+				writeString(this.hashtag_description, dos);
+
+				// String
+
+				writeString(this.geo, dos);
+
+				// String
+
+				writeString(this.country, dos);
+
+				// String
+
+				writeString(this.text, dos);
+
+				// java.util.Date
+
+				writeDate(this.date, dos);
+
+			} catch (IOException e) {
+				throw new RuntimeException(e);
+			}
+
+		}
+
+		public String toString() {
+
+			StringBuilder sb = new StringBuilder();
+			sb.append(super.toString());
+			sb.append("[");
+			sb.append("id=" + id);
+			sb.append(",user_id=" + user_id);
+			sb.append(",user_name=" + user_name);
+			sb.append(",user_screen_name=" + user_screen_name);
+			sb.append(",user_location=" + user_location);
+			sb.append(",user_description=" + user_description);
+			sb.append(",hashtag=" + hashtag);
+			sb.append(",hashtag_description=" + hashtag_description);
+			sb.append(",geo=" + geo);
+			sb.append(",country=" + country);
+			sb.append(",text=" + text);
+			sb.append(",date=" + String.valueOf(date));
+			sb.append("]");
+
+			return sb.toString();
+		}
+
+		/**
+		 * Compare keys
+		 */
+		public int compareTo(row2Struct other) {
+
+			int returnValue = -1;
+
+			return returnValue;
+		}
+
+		private int checkNullsAndCompare(Object object1, Object object2) {
+			int returnValue = 0;
+			if (object1 instanceof Comparable && object2 instanceof Comparable) {
+				returnValue = ((Comparable) object1).compareTo(object2);
+			} else if (object1 != null && object2 != null) {
+				returnValue = compareStrings(object1.toString(), object2.toString());
+			} else if (object1 == null && object2 != null) {
+				returnValue = 1;
+			} else if (object1 != null && object2 == null) {
+				returnValue = -1;
+			} else {
+				returnValue = 0;
+			}
+
+			return returnValue;
+		}
+
+		private int compareStrings(String string1, String string2) {
+			return string1.compareTo(string2);
+		}
+
+	}
+
+	public static class tweets_fr_tb_all_tweetsStruct
+			implements routines.system.IPersistableRow<tweets_fr_tb_all_tweetsStruct> {
+		final static byte[] commonByteArrayLock_ANALYSIS_TWITTER_s1_stocking_data_into_db = new byte[0];
+		static byte[] commonByteArray_ANALYSIS_TWITTER_s1_stocking_data_into_db = new byte[0];
+
+		public String id;
+
+		public String getId() {
+			return this.id;
+		}
+
+		public String user_id;
+
+		public String getUser_id() {
+			return this.user_id;
+		}
+
+		public String user_name;
+
+		public String getUser_name() {
+			return this.user_name;
+		}
+
+		public String user_screen_name;
+
+		public String getUser_screen_name() {
+			return this.user_screen_name;
+		}
+
+		public String user_location;
+
+		public String getUser_location() {
+			return this.user_location;
+		}
+
+		public String user_description;
+
+		public String getUser_description() {
+			return this.user_description;
+		}
+
+		public String hashtag;
+
+		public String getHashtag() {
+			return this.hashtag;
+		}
+
+		public String hashtag_description;
+
+		public String getHashtag_description() {
+			return this.hashtag_description;
+		}
+
+		public String geo;
+
+		public String getGeo() {
+			return this.geo;
+		}
+
+		public String country;
+
+		public String getCountry() {
+			return this.country;
+		}
+
+		public String text;
+
+		public String getText() {
+			return this.text;
+		}
+
+		public java.util.Date date;
+
+		public java.util.Date getDate() {
+			return this.date;
+		}
+
+		private String readString(ObjectInputStream dis) throws IOException {
+			String strReturn = null;
+			int length = 0;
+			length = dis.readInt();
+			if (length == -1) {
+				strReturn = null;
+			} else {
+				if (length > commonByteArray_ANALYSIS_TWITTER_s1_stocking_data_into_db.length) {
+					if (length < 1024 && commonByteArray_ANALYSIS_TWITTER_s1_stocking_data_into_db.length == 0) {
+						commonByteArray_ANALYSIS_TWITTER_s1_stocking_data_into_db = new byte[1024];
+					} else {
+						commonByteArray_ANALYSIS_TWITTER_s1_stocking_data_into_db = new byte[2 * length];
+					}
+				}
+				dis.readFully(commonByteArray_ANALYSIS_TWITTER_s1_stocking_data_into_db, 0, length);
+				strReturn = new String(commonByteArray_ANALYSIS_TWITTER_s1_stocking_data_into_db, 0, length,
+						utf8Charset);
+			}
+			return strReturn;
+		}
+
+		private void writeString(String str, ObjectOutputStream dos) throws IOException {
+			if (str == null) {
+				dos.writeInt(-1);
+			} else {
+				byte[] byteArray = str.getBytes(utf8Charset);
+				dos.writeInt(byteArray.length);
+				dos.write(byteArray);
+			}
+		}
+
+		private java.util.Date readDate(ObjectInputStream dis) throws IOException {
+			java.util.Date dateReturn = null;
+			int length = 0;
+			length = dis.readByte();
+			if (length == -1) {
+				dateReturn = null;
+			} else {
+				dateReturn = new Date(dis.readLong());
+			}
+			return dateReturn;
+		}
+
+		private void writeDate(java.util.Date date1, ObjectOutputStream dos) throws IOException {
+			if (date1 == null) {
+				dos.writeByte(-1);
+			} else {
+				dos.writeByte(0);
+				dos.writeLong(date1.getTime());
+			}
+		}
+
+		public void readData(ObjectInputStream dis) {
+
+			synchronized (commonByteArrayLock_ANALYSIS_TWITTER_s1_stocking_data_into_db) {
+
+				try {
+
+					int length = 0;
+
+					this.id = readString(dis);
+
+					this.user_id = readString(dis);
+
+					this.user_name = readString(dis);
+
+					this.user_screen_name = readString(dis);
+
+					this.user_location = readString(dis);
+
+					this.user_description = readString(dis);
+
+					this.hashtag = readString(dis);
+
+					this.hashtag_description = readString(dis);
+
+					this.geo = readString(dis);
+
+					this.country = readString(dis);
+
+					this.text = readString(dis);
+
+					this.date = readDate(dis);
+
+				} catch (IOException e) {
+					throw new RuntimeException(e);
+
+				}
+
+			}
+
+		}
+
+		public void writeData(ObjectOutputStream dos) {
+			try {
+
+				// String
+
+				writeString(this.id, dos);
+
+				// String
+
+				writeString(this.user_id, dos);
+
+				// String
+
+				writeString(this.user_name, dos);
+
+				// String
+
+				writeString(this.user_screen_name, dos);
+
+				// String
+
+				writeString(this.user_location, dos);
+
+				// String
+
+				writeString(this.user_description, dos);
+
+				// String
+
+				writeString(this.hashtag, dos);
+
+				// String
+
+				writeString(this.hashtag_description, dos);
+
+				// String
+
+				writeString(this.geo, dos);
+
+				// String
+
+				writeString(this.country, dos);
+
+				// String
+
+				writeString(this.text, dos);
+
+				// java.util.Date
+
+				writeDate(this.date, dos);
+
+			} catch (IOException e) {
+				throw new RuntimeException(e);
+			}
+
+		}
+
+		public String toString() {
+
+			StringBuilder sb = new StringBuilder();
+			sb.append(super.toString());
+			sb.append("[");
+			sb.append("id=" + id);
+			sb.append(",user_id=" + user_id);
+			sb.append(",user_name=" + user_name);
+			sb.append(",user_screen_name=" + user_screen_name);
+			sb.append(",user_location=" + user_location);
+			sb.append(",user_description=" + user_description);
+			sb.append(",hashtag=" + hashtag);
+			sb.append(",hashtag_description=" + hashtag_description);
+			sb.append(",geo=" + geo);
+			sb.append(",country=" + country);
+			sb.append(",text=" + text);
+			sb.append(",date=" + String.valueOf(date));
+			sb.append("]");
+
+			return sb.toString();
+		}
+
+		/**
+		 * Compare keys
+		 */
+		public int compareTo(tweets_fr_tb_all_tweetsStruct other) {
+
+			int returnValue = -1;
+
+			return returnValue;
+		}
+
+		private int checkNullsAndCompare(Object object1, Object object2) {
+			int returnValue = 0;
+			if (object1 instanceof Comparable && object2 instanceof Comparable) {
+				returnValue = ((Comparable) object1).compareTo(object2);
+			} else if (object1 != null && object2 != null) {
+				returnValue = compareStrings(object1.toString(), object2.toString());
+			} else if (object1 == null && object2 != null) {
+				returnValue = 1;
+			} else if (object1 != null && object2 == null) {
+				returnValue = -1;
+			} else {
+				returnValue = 0;
+			}
+
+			return returnValue;
+		}
+
+		private int compareStrings(String string1, String string2) {
+			return string1.compareTo(string2);
+		}
 
 	}
 
@@ -747,6 +1482,8 @@ public class s1_stocking_data_into_db implements TalendJob {
 				globalResumeTicket = true;
 
 				row1Struct row1 = new row1Struct();
+				tweets_fr_tb_all_tweetsStruct tweets_fr_tb_all_tweets = new tweets_fr_tb_all_tweetsStruct();
+				row2Struct row2 = new row2Struct();
 
 				/**
 				 * [tFileList_1 begin ] start
@@ -853,7 +1590,55 @@ public class s1_stocking_data_into_db implements TalendJob {
 					NB_ITERATE_tFileInputJSON_1++;
 
 					if (execStat) {
+						runStat.updateStatOnConnection("tweets_fr_tb_all_tweets", 3, 0);
+					}
+
+					if (execStat) {
+						runStat.updateStatOnConnection("row5", 3, 0);
+					}
+
+					if (execStat) {
+						runStat.updateStatOnConnection("row6", 3, 0);
+					}
+
+					if (execStat) {
+						runStat.updateStatOnConnection("row3", 3, 0);
+					}
+
+					if (execStat) {
+						runStat.updateStatOnConnection("row2", 3, 0);
+					}
+
+					if (execStat) {
+						runStat.updateStatOnConnection("in_tb_all_tweets", 3, 0);
+					}
+
+					if (execStat) {
+						runStat.updateStatOnConnection("OnComponentOk2", 3, 0);
+					}
+
+					if (execStat) {
+						runStat.updateStatOnConnection("OnComponentOk1", 3, 0);
+					}
+
+					if (execStat) {
+						runStat.updateStatOnConnection("row4", 3, 0);
+					}
+
+					if (execStat) {
+						runStat.updateStatOnConnection("al_tb_all_tweets", 3, 0);
+					}
+
+					if (execStat) {
 						runStat.updateStatOnConnection("row1", 3, 0);
+					}
+
+					if (execStat) {
+						runStat.updateStatOnConnection("iterate2", 3, 0);
+					}
+
+					if (execStat) {
+						runStat.updateStatOnConnection("iterate3", 3, 0);
 					}
 
 					if (execStat) {
@@ -862,229 +1647,194 @@ public class s1_stocking_data_into_db implements TalendJob {
 					}
 
 					/**
-					 * [tLogRow_1 begin ] start
+					 * [tDBOutput_1 begin ] start
 					 */
 
-					ok_Hash.put("tLogRow_1", false);
-					start_Hash.put("tLogRow_1", System.currentTimeMillis());
+					ok_Hash.put("tDBOutput_1", false);
+					start_Hash.put("tDBOutput_1", System.currentTimeMillis());
 
-					currentComponent = "tLogRow_1";
+					currentComponent = "tDBOutput_1";
+
+					if (execStat) {
+						runStat.updateStatOnConnection(resourceMap, iterateId, 0, 0, "row2");
+					}
+
+					int tos_count_tDBOutput_1 = 0;
+
+					String dbschema_tDBOutput_1 = null;
+					dbschema_tDBOutput_1 = context.connection_postgres_Schema;
+
+					String tableName_tDBOutput_1 = null;
+					if (dbschema_tDBOutput_1 == null || dbschema_tDBOutput_1.trim().length() == 0) {
+						tableName_tDBOutput_1 = ("all_tweets");
+					} else {
+						tableName_tDBOutput_1 = dbschema_tDBOutput_1 + "\".\"" + ("all_tweets");
+					}
+
+					int updateKeyCount_tDBOutput_1 = 1;
+					if (updateKeyCount_tDBOutput_1 < 1) {
+						throw new RuntimeException("For update, Schema must have a key");
+					}
+					int nb_line_tDBOutput_1 = 0;
+					int nb_line_update_tDBOutput_1 = 0;
+					int nb_line_inserted_tDBOutput_1 = 0;
+					int nb_line_deleted_tDBOutput_1 = 0;
+					int nb_line_rejected_tDBOutput_1 = 0;
+
+					int deletedCount_tDBOutput_1 = 0;
+					int updatedCount_tDBOutput_1 = 0;
+					int insertedCount_tDBOutput_1 = 0;
+					int rejectedCount_tDBOutput_1 = 0;
+
+					boolean whetherReject_tDBOutput_1 = false;
+
+					java.sql.Connection conn_tDBOutput_1 = null;
+					String dbUser_tDBOutput_1 = null;
+
+					java.lang.Class.forName("org.postgresql.Driver");
+
+					String url_tDBOutput_1 = "jdbc:postgresql://" + context.connection_postgres_Server + ":"
+							+ context.connection_postgres_Port + "/" + context.connection_postgres_Database + "?"
+							+ context.connection_postgres_AdditionalParams;
+					dbUser_tDBOutput_1 = context.connection_postgres_Login;
+
+					final String decryptedPassword_tDBOutput_1 = context.connection_postgres_Password;
+
+					String dbPwd_tDBOutput_1 = decryptedPassword_tDBOutput_1;
+
+					conn_tDBOutput_1 = java.sql.DriverManager.getConnection(url_tDBOutput_1, dbUser_tDBOutput_1,
+							dbPwd_tDBOutput_1);
+
+					resourceMap.put("conn_tDBOutput_1", conn_tDBOutput_1);
+					conn_tDBOutput_1.setAutoCommit(false);
+					int commitEvery_tDBOutput_1 = 10000;
+					int commitCounter_tDBOutput_1 = 0;
+
+					int count_tDBOutput_1 = 0;
+					java.sql.DatabaseMetaData dbMetaData_tDBOutput_1 = conn_tDBOutput_1.getMetaData();
+					boolean whetherExist_tDBOutput_1 = false;
+					try (java.sql.ResultSet rsTable_tDBOutput_1 = dbMetaData_tDBOutput_1.getTables(null, null, null,
+							new String[] { "TABLE" })) {
+						String defaultSchema_tDBOutput_1 = "public";
+						if (dbschema_tDBOutput_1 == null || dbschema_tDBOutput_1.trim().length() == 0) {
+							try (java.sql.Statement stmtSchema_tDBOutput_1 = conn_tDBOutput_1.createStatement();
+									java.sql.ResultSet rsSchema_tDBOutput_1 = stmtSchema_tDBOutput_1
+											.executeQuery("select current_schema() ")) {
+								while (rsSchema_tDBOutput_1.next()) {
+									defaultSchema_tDBOutput_1 = rsSchema_tDBOutput_1.getString("current_schema");
+								}
+							}
+						}
+						while (rsTable_tDBOutput_1.next()) {
+							String table_tDBOutput_1 = rsTable_tDBOutput_1.getString("TABLE_NAME");
+							String schema_tDBOutput_1 = rsTable_tDBOutput_1.getString("TABLE_SCHEM");
+							if (table_tDBOutput_1.equals(("all_tweets")) && (schema_tDBOutput_1
+									.equals(dbschema_tDBOutput_1)
+									|| ((dbschema_tDBOutput_1 == null || dbschema_tDBOutput_1.trim().length() == 0)
+											&& defaultSchema_tDBOutput_1.equals(schema_tDBOutput_1)))) {
+								whetherExist_tDBOutput_1 = true;
+								break;
+							}
+						}
+					}
+					if (!whetherExist_tDBOutput_1) {
+						try (java.sql.Statement stmtCreate_tDBOutput_1 = conn_tDBOutput_1.createStatement()) {
+							stmtCreate_tDBOutput_1.execute("CREATE TABLE \"" + tableName_tDBOutput_1
+									+ "\"(\"id\" VARCHAR  not null ,\"user_id\" VARCHAR  not null ,\"user_name\" VARCHAR ,\"user_screen_name\" VARCHAR ,\"user_location\" VARCHAR ,\"user_description\" VARCHAR ,\"hashtag\" VARCHAR ,\"hashtag_description\" VARCHAR ,\"geo\" VARCHAR ,\"country\" VARCHAR ,\"text\" VARCHAR ,\"date\" TIMESTAMP ,primary key(\"id\"))");
+						}
+					}
+					java.sql.PreparedStatement pstmt_tDBOutput_1 = conn_tDBOutput_1.prepareStatement(
+							"SELECT COUNT(1) FROM \"" + tableName_tDBOutput_1 + "\" WHERE \"id\" = ?");
+					resourceMap.put("pstmt_tDBOutput_1", pstmt_tDBOutput_1);
+					String insert_tDBOutput_1 = "INSERT INTO \"" + tableName_tDBOutput_1
+							+ "\" (\"id\",\"user_id\",\"user_name\",\"user_screen_name\",\"user_location\",\"user_description\",\"hashtag\",\"hashtag_description\",\"geo\",\"country\",\"text\",\"date\") VALUES (?,?,?,?,?,?,?,?,?,?,?,?)";
+					java.sql.PreparedStatement pstmtInsert_tDBOutput_1 = conn_tDBOutput_1
+							.prepareStatement(insert_tDBOutput_1);
+					resourceMap.put("pstmtInsert_tDBOutput_1", pstmtInsert_tDBOutput_1);
+					String update_tDBOutput_1 = "UPDATE \"" + tableName_tDBOutput_1
+							+ "\" SET \"user_id\" = ?,\"user_name\" = ?,\"user_screen_name\" = ?,\"user_location\" = ?,\"user_description\" = ?,\"hashtag\" = ?,\"hashtag_description\" = ?,\"geo\" = ?,\"country\" = ?,\"text\" = ?,\"date\" = ? WHERE \"id\" = ?";
+					java.sql.PreparedStatement pstmtUpdate_tDBOutput_1 = conn_tDBOutput_1
+							.prepareStatement(update_tDBOutput_1);
+					resourceMap.put("pstmtUpdate_tDBOutput_1", pstmtUpdate_tDBOutput_1);
+
+					/**
+					 * [tDBOutput_1 begin ] stop
+					 */
+
+					/**
+					 * [tUniqRow_1 begin ] start
+					 */
+
+					ok_Hash.put("tUniqRow_1", false);
+					start_Hash.put("tUniqRow_1", System.currentTimeMillis());
+
+					currentComponent = "tUniqRow_1";
+
+					if (execStat) {
+						runStat.updateStatOnConnection(resourceMap, iterateId, 0, 0, "tweets_fr_tb_all_tweets");
+					}
+
+					int tos_count_tUniqRow_1 = 0;
+
+					int nb_uniques_tUniqRow_1 = 0;
+					int nb_duplicates_tUniqRow_1 = 0;
+
+					/**
+					 * [tUniqRow_1 begin ] stop
+					 */
+
+					/**
+					 * [tXMLMap_1 begin ] start
+					 */
+
+					ok_Hash.put("tXMLMap_1", false);
+					start_Hash.put("tXMLMap_1", System.currentTimeMillis());
+
+					currentComponent = "tXMLMap_1";
 
 					if (execStat) {
 						runStat.updateStatOnConnection(resourceMap, iterateId, 0, 0, "row1");
 					}
 
-					int tos_count_tLogRow_1 = 0;
+					int tos_count_tXMLMap_1 = 0;
 
-					///////////////////////
-
-					class Util_tLogRow_1 {
-
-						String[] des_top = { ".", ".", "-", "+" };
-
-						String[] des_head = { "|=", "=|", "-", "+" };
-
-						String[] des_bottom = { "'", "'", "-", "+" };
-
-						String name = "";
-
-						java.util.List<String[]> list = new java.util.ArrayList<String[]>();
-
-						int[] colLengths = new int[13];
-
-						public void addRow(String[] row) {
-
-							for (int i = 0; i < 13; i++) {
-								if (row[i] != null) {
-									colLengths[i] = Math.max(colLengths[i], row[i].length());
+//===============================input xml init part===============================
+					class XML_API_tXMLMap_1 {
+						public boolean isDefNull(org.dom4j.Node node) throws javax.xml.transform.TransformerException {
+							if (node != null && node instanceof org.dom4j.Element) {
+								org.dom4j.Attribute attri = ((org.dom4j.Element) node).attribute("nil");
+								if (attri != null && ("true").equals(attri.getText())) {
+									return true;
 								}
 							}
-							list.add(row);
+							return false;
 						}
 
-						public void setTableName(String name) {
-
-							this.name = name;
+						public boolean isMissing(org.dom4j.Node node) throws javax.xml.transform.TransformerException {
+							return node == null ? true : false;
 						}
 
-						public StringBuilder format() {
-
-							StringBuilder sb = new StringBuilder();
-
-							sb.append(print(des_top));
-
-							int totals = 0;
-							for (int i = 0; i < colLengths.length; i++) {
-								totals = totals + colLengths[i];
+						public boolean isEmpty(org.dom4j.Node node) throws javax.xml.transform.TransformerException {
+							if (node != null) {
+								return node.getText().length() == 0;
 							}
-
-							// name
-							sb.append("|");
-							int k = 0;
-							for (k = 0; k < (totals + 12 - name.length()) / 2; k++) {
-								sb.append(' ');
-							}
-							sb.append(name);
-							for (int i = 0; i < totals + 12 - name.length() - k; i++) {
-								sb.append(' ');
-							}
-							sb.append("|\n");
-
-							// head and rows
-							sb.append(print(des_head));
-							for (int i = 0; i < list.size(); i++) {
-
-								String[] row = list.get(i);
-
-								java.util.Formatter formatter = new java.util.Formatter(new StringBuilder());
-
-								StringBuilder sbformat = new StringBuilder();
-								sbformat.append("|%1$-");
-								sbformat.append(colLengths[0]);
-								sbformat.append("s");
-
-								sbformat.append("|%2$-");
-								sbformat.append(colLengths[1]);
-								sbformat.append("s");
-
-								sbformat.append("|%3$-");
-								sbformat.append(colLengths[2]);
-								sbformat.append("s");
-
-								sbformat.append("|%4$-");
-								sbformat.append(colLengths[3]);
-								sbformat.append("s");
-
-								sbformat.append("|%5$-");
-								sbformat.append(colLengths[4]);
-								sbformat.append("s");
-
-								sbformat.append("|%6$-");
-								sbformat.append(colLengths[5]);
-								sbformat.append("s");
-
-								sbformat.append("|%7$-");
-								sbformat.append(colLengths[6]);
-								sbformat.append("s");
-
-								sbformat.append("|%8$-");
-								sbformat.append(colLengths[7]);
-								sbformat.append("s");
-
-								sbformat.append("|%9$-");
-								sbformat.append(colLengths[8]);
-								sbformat.append("s");
-
-								sbformat.append("|%10$-");
-								sbformat.append(colLengths[9]);
-								sbformat.append("s");
-
-								sbformat.append("|%11$-");
-								sbformat.append(colLengths[10]);
-								sbformat.append("s");
-
-								sbformat.append("|%12$-");
-								sbformat.append(colLengths[11]);
-								sbformat.append("s");
-
-								sbformat.append("|%13$-");
-								sbformat.append(colLengths[12]);
-								sbformat.append("s");
-
-								sbformat.append("|\n");
-
-								formatter.format(sbformat.toString(), (Object[]) row);
-
-								sb.append(formatter.toString());
-								if (i == 0)
-									sb.append(print(des_head)); // print the head
-							}
-
-							// end
-							sb.append(print(des_bottom));
-							return sb;
-						}
-
-						private StringBuilder print(String[] fillChars) {
-							StringBuilder sb = new StringBuilder();
-							// first column
-							sb.append(fillChars[0]);
-							for (int i = 0; i < colLengths[0] - fillChars[0].length() + 1; i++) {
-								sb.append(fillChars[2]);
-							}
-							sb.append(fillChars[3]);
-
-							for (int i = 0; i < colLengths[1] - fillChars[3].length() + 1; i++) {
-								sb.append(fillChars[2]);
-							}
-							sb.append(fillChars[3]);
-							for (int i = 0; i < colLengths[2] - fillChars[3].length() + 1; i++) {
-								sb.append(fillChars[2]);
-							}
-							sb.append(fillChars[3]);
-							for (int i = 0; i < colLengths[3] - fillChars[3].length() + 1; i++) {
-								sb.append(fillChars[2]);
-							}
-							sb.append(fillChars[3]);
-							for (int i = 0; i < colLengths[4] - fillChars[3].length() + 1; i++) {
-								sb.append(fillChars[2]);
-							}
-							sb.append(fillChars[3]);
-							for (int i = 0; i < colLengths[5] - fillChars[3].length() + 1; i++) {
-								sb.append(fillChars[2]);
-							}
-							sb.append(fillChars[3]);
-							for (int i = 0; i < colLengths[6] - fillChars[3].length() + 1; i++) {
-								sb.append(fillChars[2]);
-							}
-							sb.append(fillChars[3]);
-							for (int i = 0; i < colLengths[7] - fillChars[3].length() + 1; i++) {
-								sb.append(fillChars[2]);
-							}
-							sb.append(fillChars[3]);
-							for (int i = 0; i < colLengths[8] - fillChars[3].length() + 1; i++) {
-								sb.append(fillChars[2]);
-							}
-							sb.append(fillChars[3]);
-							for (int i = 0; i < colLengths[9] - fillChars[3].length() + 1; i++) {
-								sb.append(fillChars[2]);
-							}
-							sb.append(fillChars[3]);
-							for (int i = 0; i < colLengths[10] - fillChars[3].length() + 1; i++) {
-								sb.append(fillChars[2]);
-							}
-							sb.append(fillChars[3]);
-							for (int i = 0; i < colLengths[11] - fillChars[3].length() + 1; i++) {
-								sb.append(fillChars[2]);
-							}
-							sb.append(fillChars[3]);
-
-							// last column
-							for (int i = 0; i < colLengths[12] - fillChars[1].length() + 1; i++) {
-								sb.append(fillChars[2]);
-							}
-							sb.append(fillChars[1]);
-							sb.append("\n");
-							return sb;
-						}
-
-						public boolean isTableEmpty() {
-							if (list.size() > 1)
-								return false;
-							return true;
+							return false;
 						}
 					}
-					Util_tLogRow_1 util_tLogRow_1 = new Util_tLogRow_1();
-					util_tLogRow_1.setTableName("tLogRow_1");
-					util_tLogRow_1.addRow(new String[] { "hashtag_id", "user_name", "user_screen_name",
-							"text_description", "date_id", "geo_id", "text_id", "geo_description", "user_id",
-							"hashtag_text", "user_location", "date_description", "user_description", });
-					StringBuilder strBuffer_tLogRow_1 = null;
-					int nb_line_tLogRow_1 = 0;
-///////////////////////    			
+					class Var__tXMLMap_1__Struct {
+					}
+					Var__tXMLMap_1__Struct Var__tXMLMap_1 = new Var__tXMLMap_1__Struct();
+// ###############################
+// # Outputs initialization
+					tweets_fr_tb_all_tweetsStruct tweets_fr_tb_all_tweets_tmp = new tweets_fr_tb_all_tweetsStruct();
+					tweets_fr_tb_all_tweetsStruct tweets_fr_tb_all_tweets_save = null;
+// ###############################
+					int nb_line_tXMLMap_1 = 0;
+
+					XML_API_tXMLMap_1 xml_api_tXMLMap_1 = new XML_API_tXMLMap_1();
 
 					/**
-					 * [tLogRow_1 begin ] stop
+					 * [tXMLMap_1 begin ] stop
 					 */
 
 					/**
@@ -1125,7 +1875,7 @@ public class s1_stocking_data_into_db implements TalendJob {
 							.using(com.jayway.jsonpath.Configuration.defaultConfiguration());
 					Object filenameOrStream_tFileInputJSON_1 = null;
 					try {
-						filenameOrStream_tFileInputJSON_1 = "/home/scasanova/Downloads/TOS_BD-20200219_1130-V7.3.1/workspace/ANALYSIS_TWITTER/documentations/apitwitter/al-dic-01.json";
+						filenameOrStream_tFileInputJSON_1 = ((String) globalMap.get("tFileList_1_CURRENT_FILEPATH"));
 					} catch (java.lang.Exception e_tFileInputJSON_1) {
 
 						System.err.println(e_tFileInputJSON_1.getMessage());
@@ -1558,116 +2308,371 @@ public class s1_stocking_data_into_db implements TalendJob {
 						if (row1 != null) {
 
 							/**
-							 * [tLogRow_1 main ] start
+							 * [tXMLMap_1 main ] start
 							 */
 
-							currentComponent = "tLogRow_1";
+							currentComponent = "tXMLMap_1";
 
 							if (execStat) {
 								runStat.updateStatOnConnection(iterateId, 1, 1, "row1");
 							}
 
-///////////////////////		
+							boolean rejectedInnerJoin_tXMLMap_1 = false;
+							boolean rejectedDocInnerJoin_tXMLMap_1 = false;
+							boolean mainRowRejected_tXMLMap_1 = false;
+							boolean isMatchDocRowtXMLMap_1 = false;
 
-							String[] row_tLogRow_1 = new String[13];
+							{ // start of Var scope
 
-							if (row1.hashtag_id != null) { //
-								row_tLogRow_1[0] = String.valueOf(row1.hashtag_id);
+								// ###############################
+								// # Vars tables
 
-							} //
+								Var__tXMLMap_1__Struct Var = Var__tXMLMap_1;
+								// ###############################
+								// # Output tables
 
-							if (row1.user_name != null) { //
-								row_tLogRow_1[1] = String.valueOf(row1.user_name);
+								tweets_fr_tb_all_tweets = null;
 
-							} //
+// # Output table : 'tweets_fr_tb_all_tweets'
+// # Filter conditions 
+								if (
 
-							if (row1.user_screen_name != null) { //
-								row_tLogRow_1[2] = String.valueOf(row1.user_screen_name);
+								row1.text_description != "" & row1.user_location != "" & row1.hashtag_text != null
 
-							} //
+								) {
+									tweets_fr_tb_all_tweets_tmp.id = String.valueOf(row1.hashtag_id);
+									tweets_fr_tb_all_tweets_tmp.user_id = String.valueOf(row1.user_id);
+									tweets_fr_tb_all_tweets_tmp.user_name = row1.user_name;
+									tweets_fr_tb_all_tweets_tmp.user_screen_name = row1.user_screen_name;
+									tweets_fr_tb_all_tweets_tmp.user_location = row1.user_location;
+									tweets_fr_tb_all_tweets_tmp.user_description = row1.user_description;
+									tweets_fr_tb_all_tweets_tmp.hashtag = "TousAntiCovid";
+									tweets_fr_tb_all_tweets_tmp.hashtag_description = row1.hashtag_text;
+									tweets_fr_tb_all_tweets_tmp.geo = row1.geo_description;
+									tweets_fr_tb_all_tweets_tmp.country = "France";
+									tweets_fr_tb_all_tweets_tmp.text = row1.text_description;
+									tweets_fr_tb_all_tweets_tmp.date = row1.date_description;
+									tweets_fr_tb_all_tweets = tweets_fr_tb_all_tweets_tmp;
+								} // closing filter/reject
+// ###############################
 
-							if (row1.text_description != null) { //
-								row_tLogRow_1[3] = String.valueOf(row1.text_description);
+							} // end of Var scope
 
-							} //
+							rejectedInnerJoin_tXMLMap_1 = false;
 
-							if (row1.date_id != null) { //
-								row_tLogRow_1[4] = String.valueOf(row1.date_id);
-
-							} //
-
-							if (row1.geo_id != null) { //
-								row_tLogRow_1[5] = String.valueOf(row1.geo_id);
-
-							} //
-
-							if (row1.text_id != null) { //
-								row_tLogRow_1[6] = String.valueOf(row1.text_id);
-
-							} //
-
-							if (row1.geo_description != null) { //
-								row_tLogRow_1[7] = String.valueOf(row1.geo_description);
-
-							} //
-
-							if (row1.user_id != null) { //
-								row_tLogRow_1[8] = String.valueOf(row1.user_id);
-
-							} //
-
-							if (row1.hashtag_text != null) { //
-								row_tLogRow_1[9] = String.valueOf(row1.hashtag_text);
-
-							} //
-
-							if (row1.user_location != null) { //
-								row_tLogRow_1[10] = String.valueOf(row1.user_location);
-
-							} //
-
-							if (row1.date_description != null) { //
-								row_tLogRow_1[11] = FormatterUtils.format_Date(row1.date_description, "dd-MM-yyyy");
-
-							} //
-
-							if (row1.user_description != null) { //
-								row_tLogRow_1[12] = String.valueOf(row1.user_description);
-
-							} //
-
-							util_tLogRow_1.addRow(row_tLogRow_1);
-							nb_line_tLogRow_1++;
-//////
-
-//////                    
-
-///////////////////////    			
-
-							tos_count_tLogRow_1++;
+							tos_count_tXMLMap_1++;
 
 							/**
-							 * [tLogRow_1 main ] stop
+							 * [tXMLMap_1 main ] stop
 							 */
 
 							/**
-							 * [tLogRow_1 process_data_begin ] start
+							 * [tXMLMap_1 process_data_begin ] start
 							 */
 
-							currentComponent = "tLogRow_1";
+							currentComponent = "tXMLMap_1";
 
 							/**
-							 * [tLogRow_1 process_data_begin ] stop
+							 * [tXMLMap_1 process_data_begin ] stop
+							 */
+// Start of branch "tweets_fr_tb_all_tweets"
+							if (tweets_fr_tb_all_tweets != null) {
+
+								/**
+								 * [tUniqRow_1 main ] start
+								 */
+
+								currentComponent = "tUniqRow_1";
+
+								if (execStat) {
+									runStat.updateStatOnConnection(iterateId, 1, 1, "tweets_fr_tb_all_tweets");
+								}
+
+								row2.id = tweets_fr_tb_all_tweets.id;
+								row2.user_id = tweets_fr_tb_all_tweets.user_id;
+								row2.user_name = tweets_fr_tb_all_tweets.user_name;
+								row2.user_screen_name = tweets_fr_tb_all_tweets.user_screen_name;
+								row2.user_location = tweets_fr_tb_all_tweets.user_location;
+								row2.user_description = tweets_fr_tb_all_tweets.user_description;
+								row2.hashtag = tweets_fr_tb_all_tweets.hashtag;
+								row2.hashtag_description = tweets_fr_tb_all_tweets.hashtag_description;
+								row2.geo = tweets_fr_tb_all_tweets.geo;
+								row2.country = tweets_fr_tb_all_tweets.country;
+								row2.text = tweets_fr_tb_all_tweets.text;
+								row2.date = tweets_fr_tb_all_tweets.date;
+
+								tos_count_tUniqRow_1++;
+
+								/**
+								 * [tUniqRow_1 main ] stop
+								 */
+
+								/**
+								 * [tUniqRow_1 process_data_begin ] start
+								 */
+
+								currentComponent = "tUniqRow_1";
+
+								/**
+								 * [tUniqRow_1 process_data_begin ] stop
+								 */
+// Start of branch "row2"
+								if (row2 != null) {
+
+									/**
+									 * [tDBOutput_1 main ] start
+									 */
+
+									currentComponent = "tDBOutput_1";
+
+									if (execStat) {
+										runStat.updateStatOnConnection(iterateId, 1, 1, "row2");
+									}
+
+									whetherReject_tDBOutput_1 = false;
+									if (row2.id == null) {
+										pstmt_tDBOutput_1.setNull(1, java.sql.Types.VARCHAR);
+									} else {
+										pstmt_tDBOutput_1.setString(1, row2.id);
+									}
+
+									int checkCount_tDBOutput_1 = -1;
+									try (java.sql.ResultSet rs_tDBOutput_1 = pstmt_tDBOutput_1.executeQuery()) {
+										while (rs_tDBOutput_1.next()) {
+											checkCount_tDBOutput_1 = rs_tDBOutput_1.getInt(1);
+										}
+									}
+									if (checkCount_tDBOutput_1 > 0) {
+										if (row2.user_id == null) {
+											pstmtUpdate_tDBOutput_1.setNull(1, java.sql.Types.VARCHAR);
+										} else {
+											pstmtUpdate_tDBOutput_1.setString(1, row2.user_id);
+										}
+
+										if (row2.user_name == null) {
+											pstmtUpdate_tDBOutput_1.setNull(2, java.sql.Types.VARCHAR);
+										} else {
+											pstmtUpdate_tDBOutput_1.setString(2, row2.user_name);
+										}
+
+										if (row2.user_screen_name == null) {
+											pstmtUpdate_tDBOutput_1.setNull(3, java.sql.Types.VARCHAR);
+										} else {
+											pstmtUpdate_tDBOutput_1.setString(3, row2.user_screen_name);
+										}
+
+										if (row2.user_location == null) {
+											pstmtUpdate_tDBOutput_1.setNull(4, java.sql.Types.VARCHAR);
+										} else {
+											pstmtUpdate_tDBOutput_1.setString(4, row2.user_location);
+										}
+
+										if (row2.user_description == null) {
+											pstmtUpdate_tDBOutput_1.setNull(5, java.sql.Types.VARCHAR);
+										} else {
+											pstmtUpdate_tDBOutput_1.setString(5, row2.user_description);
+										}
+
+										if (row2.hashtag == null) {
+											pstmtUpdate_tDBOutput_1.setNull(6, java.sql.Types.VARCHAR);
+										} else {
+											pstmtUpdate_tDBOutput_1.setString(6, row2.hashtag);
+										}
+
+										if (row2.hashtag_description == null) {
+											pstmtUpdate_tDBOutput_1.setNull(7, java.sql.Types.VARCHAR);
+										} else {
+											pstmtUpdate_tDBOutput_1.setString(7, row2.hashtag_description);
+										}
+
+										if (row2.geo == null) {
+											pstmtUpdate_tDBOutput_1.setNull(8, java.sql.Types.VARCHAR);
+										} else {
+											pstmtUpdate_tDBOutput_1.setString(8, row2.geo);
+										}
+
+										if (row2.country == null) {
+											pstmtUpdate_tDBOutput_1.setNull(9, java.sql.Types.VARCHAR);
+										} else {
+											pstmtUpdate_tDBOutput_1.setString(9, row2.country);
+										}
+
+										if (row2.text == null) {
+											pstmtUpdate_tDBOutput_1.setNull(10, java.sql.Types.VARCHAR);
+										} else {
+											pstmtUpdate_tDBOutput_1.setString(10, row2.text);
+										}
+
+										if (row2.date != null) {
+											pstmtUpdate_tDBOutput_1.setTimestamp(11,
+													new java.sql.Timestamp(row2.date.getTime()));
+										} else {
+											pstmtUpdate_tDBOutput_1.setNull(11, java.sql.Types.TIMESTAMP);
+										}
+
+										if (row2.id == null) {
+											pstmtUpdate_tDBOutput_1.setNull(12 + count_tDBOutput_1,
+													java.sql.Types.VARCHAR);
+										} else {
+											pstmtUpdate_tDBOutput_1.setString(12 + count_tDBOutput_1, row2.id);
+										}
+
+										try {
+
+											updatedCount_tDBOutput_1 = updatedCount_tDBOutput_1
+													+ pstmtUpdate_tDBOutput_1.executeUpdate();
+											nb_line_tDBOutput_1++;
+
+										} catch (java.lang.Exception e) {
+
+											whetherReject_tDBOutput_1 = true;
+											nb_line_tDBOutput_1++;
+											System.err.print(e.getMessage());
+										}
+									} else {
+										if (row2.id == null) {
+											pstmtInsert_tDBOutput_1.setNull(1, java.sql.Types.VARCHAR);
+										} else {
+											pstmtInsert_tDBOutput_1.setString(1, row2.id);
+										}
+
+										if (row2.user_id == null) {
+											pstmtInsert_tDBOutput_1.setNull(2, java.sql.Types.VARCHAR);
+										} else {
+											pstmtInsert_tDBOutput_1.setString(2, row2.user_id);
+										}
+
+										if (row2.user_name == null) {
+											pstmtInsert_tDBOutput_1.setNull(3, java.sql.Types.VARCHAR);
+										} else {
+											pstmtInsert_tDBOutput_1.setString(3, row2.user_name);
+										}
+
+										if (row2.user_screen_name == null) {
+											pstmtInsert_tDBOutput_1.setNull(4, java.sql.Types.VARCHAR);
+										} else {
+											pstmtInsert_tDBOutput_1.setString(4, row2.user_screen_name);
+										}
+
+										if (row2.user_location == null) {
+											pstmtInsert_tDBOutput_1.setNull(5, java.sql.Types.VARCHAR);
+										} else {
+											pstmtInsert_tDBOutput_1.setString(5, row2.user_location);
+										}
+
+										if (row2.user_description == null) {
+											pstmtInsert_tDBOutput_1.setNull(6, java.sql.Types.VARCHAR);
+										} else {
+											pstmtInsert_tDBOutput_1.setString(6, row2.user_description);
+										}
+
+										if (row2.hashtag == null) {
+											pstmtInsert_tDBOutput_1.setNull(7, java.sql.Types.VARCHAR);
+										} else {
+											pstmtInsert_tDBOutput_1.setString(7, row2.hashtag);
+										}
+
+										if (row2.hashtag_description == null) {
+											pstmtInsert_tDBOutput_1.setNull(8, java.sql.Types.VARCHAR);
+										} else {
+											pstmtInsert_tDBOutput_1.setString(8, row2.hashtag_description);
+										}
+
+										if (row2.geo == null) {
+											pstmtInsert_tDBOutput_1.setNull(9, java.sql.Types.VARCHAR);
+										} else {
+											pstmtInsert_tDBOutput_1.setString(9, row2.geo);
+										}
+
+										if (row2.country == null) {
+											pstmtInsert_tDBOutput_1.setNull(10, java.sql.Types.VARCHAR);
+										} else {
+											pstmtInsert_tDBOutput_1.setString(10, row2.country);
+										}
+
+										if (row2.text == null) {
+											pstmtInsert_tDBOutput_1.setNull(11, java.sql.Types.VARCHAR);
+										} else {
+											pstmtInsert_tDBOutput_1.setString(11, row2.text);
+										}
+
+										if (row2.date != null) {
+											pstmtInsert_tDBOutput_1.setTimestamp(12,
+													new java.sql.Timestamp(row2.date.getTime()));
+										} else {
+											pstmtInsert_tDBOutput_1.setNull(12, java.sql.Types.TIMESTAMP);
+										}
+
+										try {
+
+											insertedCount_tDBOutput_1 = insertedCount_tDBOutput_1
+													+ pstmtInsert_tDBOutput_1.executeUpdate();
+											nb_line_tDBOutput_1++;
+
+										} catch (java.lang.Exception e) {
+
+											whetherReject_tDBOutput_1 = true;
+											nb_line_tDBOutput_1++;
+											System.err.print(e.getMessage());
+										}
+									}
+									if (!whetherReject_tDBOutput_1) {
+									}
+									commitCounter_tDBOutput_1++;
+									if (commitEvery_tDBOutput_1 <= commitCounter_tDBOutput_1) {
+										conn_tDBOutput_1.commit();
+
+										commitCounter_tDBOutput_1 = 0;
+									}
+
+									tos_count_tDBOutput_1++;
+
+									/**
+									 * [tDBOutput_1 main ] stop
+									 */
+
+									/**
+									 * [tDBOutput_1 process_data_begin ] start
+									 */
+
+									currentComponent = "tDBOutput_1";
+
+									/**
+									 * [tDBOutput_1 process_data_begin ] stop
+									 */
+
+									/**
+									 * [tDBOutput_1 process_data_end ] start
+									 */
+
+									currentComponent = "tDBOutput_1";
+
+									/**
+									 * [tDBOutput_1 process_data_end ] stop
+									 */
+
+								} // End of branch "row2"
+
+								/**
+								 * [tUniqRow_1 process_data_end ] start
+								 */
+
+								currentComponent = "tUniqRow_1";
+
+								/**
+								 * [tUniqRow_1 process_data_end ] stop
+								 */
+
+							} // End of branch "tweets_fr_tb_all_tweets"
+
+							/**
+							 * [tXMLMap_1 process_data_end ] start
 							 */
 
-							/**
-							 * [tLogRow_1 process_data_end ] start
-							 */
-
-							currentComponent = "tLogRow_1";
+							currentComponent = "tXMLMap_1";
 
 							/**
-							 * [tLogRow_1 process_data_end ] stop
+							 * [tXMLMap_1 process_data_end ] stop
 							 */
 
 						} // End of branch "row1"
@@ -1699,37 +2704,93 @@ public class s1_stocking_data_into_db implements TalendJob {
 					 */
 
 					/**
-					 * [tLogRow_1 end ] start
+					 * [tXMLMap_1 end ] start
 					 */
 
-					currentComponent = "tLogRow_1";
-
-//////
-
-					java.io.PrintStream consoleOut_tLogRow_1 = null;
-					if (globalMap.get("tLogRow_CONSOLE") != null) {
-						consoleOut_tLogRow_1 = (java.io.PrintStream) globalMap.get("tLogRow_CONSOLE");
-					} else {
-						consoleOut_tLogRow_1 = new java.io.PrintStream(new java.io.BufferedOutputStream(System.out));
-						globalMap.put("tLogRow_CONSOLE", consoleOut_tLogRow_1);
-					}
-
-					consoleOut_tLogRow_1.println(util_tLogRow_1.format().toString());
-					consoleOut_tLogRow_1.flush();
-//////
-					globalMap.put("tLogRow_1_NB_LINE", nb_line_tLogRow_1);
-
-///////////////////////    			
+					currentComponent = "tXMLMap_1";
 
 					if (execStat) {
 						runStat.updateStat(resourceMap, iterateId, 2, 0, "row1");
 					}
 
-					ok_Hash.put("tLogRow_1", true);
-					end_Hash.put("tLogRow_1", System.currentTimeMillis());
+					ok_Hash.put("tXMLMap_1", true);
+					end_Hash.put("tXMLMap_1", System.currentTimeMillis());
 
 					/**
-					 * [tLogRow_1 end ] stop
+					 * [tXMLMap_1 end ] stop
+					 */
+
+					/**
+					 * [tUniqRow_1 end ] start
+					 */
+
+					currentComponent = "tUniqRow_1";
+
+					globalMap.put("tUniqRow_1_NB_UNIQUES", nb_uniques_tUniqRow_1);
+					globalMap.put("tUniqRow_1_NB_DUPLICATES", nb_duplicates_tUniqRow_1);
+
+					if (execStat) {
+						runStat.updateStat(resourceMap, iterateId, 2, 0, "tweets_fr_tb_all_tweets");
+					}
+
+					ok_Hash.put("tUniqRow_1", true);
+					end_Hash.put("tUniqRow_1", System.currentTimeMillis());
+
+					/**
+					 * [tUniqRow_1 end ] stop
+					 */
+
+					/**
+					 * [tDBOutput_1 end ] start
+					 */
+
+					currentComponent = "tDBOutput_1";
+
+					if (pstmtUpdate_tDBOutput_1 != null) {
+						pstmtUpdate_tDBOutput_1.close();
+						resourceMap.remove("pstmtUpdate_tDBOutput_1");
+					}
+					if (pstmtInsert_tDBOutput_1 != null) {
+						pstmtInsert_tDBOutput_1.close();
+						resourceMap.remove("pstmtInsert_tDBOutput_1");
+					}
+					if (pstmt_tDBOutput_1 != null) {
+						pstmt_tDBOutput_1.close();
+						resourceMap.remove("pstmt_tDBOutput_1");
+					}
+					resourceMap.put("statementClosed_tDBOutput_1", true);
+
+					conn_tDBOutput_1.commit();
+
+					conn_tDBOutput_1.close();
+
+					resourceMap.put("finish_tDBOutput_1", true);
+
+					nb_line_deleted_tDBOutput_1 = nb_line_deleted_tDBOutput_1 + deletedCount_tDBOutput_1;
+					nb_line_update_tDBOutput_1 = nb_line_update_tDBOutput_1 + updatedCount_tDBOutput_1;
+					nb_line_inserted_tDBOutput_1 = nb_line_inserted_tDBOutput_1 + insertedCount_tDBOutput_1;
+					nb_line_rejected_tDBOutput_1 = nb_line_rejected_tDBOutput_1 + rejectedCount_tDBOutput_1;
+
+					globalMap.put("tDBOutput_1_NB_LINE", nb_line_tDBOutput_1);
+					globalMap.put("tDBOutput_1_NB_LINE_UPDATED", nb_line_update_tDBOutput_1);
+					globalMap.put("tDBOutput_1_NB_LINE_INSERTED", nb_line_inserted_tDBOutput_1);
+					globalMap.put("tDBOutput_1_NB_LINE_DELETED", nb_line_deleted_tDBOutput_1);
+					globalMap.put("tDBOutput_1_NB_LINE_REJECTED", nb_line_rejected_tDBOutput_1);
+
+					if (execStat) {
+						runStat.updateStat(resourceMap, iterateId, 2, 0, "row2");
+					}
+
+					ok_Hash.put("tDBOutput_1", true);
+					end_Hash.put("tDBOutput_1", System.currentTimeMillis());
+
+					if (execStat) {
+						runStat.updateStatOnConnection("OnComponentOk1", 0, "ok");
+					}
+					tFileList_2Process(globalMap);
+
+					/**
+					 * [tDBOutput_1 end ] stop
 					 */
 
 					if (execStat) {
@@ -1801,13 +2862,66 @@ public class s1_stocking_data_into_db implements TalendJob {
 				 */
 
 				/**
-				 * [tLogRow_1 finally ] start
+				 * [tXMLMap_1 finally ] start
 				 */
 
-				currentComponent = "tLogRow_1";
+				currentComponent = "tXMLMap_1";
 
 				/**
-				 * [tLogRow_1 finally ] stop
+				 * [tXMLMap_1 finally ] stop
+				 */
+
+				/**
+				 * [tUniqRow_1 finally ] start
+				 */
+
+				currentComponent = "tUniqRow_1";
+
+				/**
+				 * [tUniqRow_1 finally ] stop
+				 */
+
+				/**
+				 * [tDBOutput_1 finally ] start
+				 */
+
+				currentComponent = "tDBOutput_1";
+
+				try {
+					if (resourceMap.get("statementClosed_tDBOutput_1") == null) {
+						java.sql.PreparedStatement pstmtUpdateToClose_tDBOutput_1 = null;
+						if ((pstmtUpdateToClose_tDBOutput_1 = (java.sql.PreparedStatement) resourceMap
+								.remove("pstmtUpdate_tDBOutput_1")) != null) {
+							pstmtUpdateToClose_tDBOutput_1.close();
+						}
+						java.sql.PreparedStatement pstmtInsertToClose_tDBOutput_1 = null;
+						if ((pstmtInsertToClose_tDBOutput_1 = (java.sql.PreparedStatement) resourceMap
+								.remove("pstmtInsert_tDBOutput_1")) != null) {
+							pstmtInsertToClose_tDBOutput_1.close();
+						}
+						java.sql.PreparedStatement pstmtToClose_tDBOutput_1 = null;
+						if ((pstmtToClose_tDBOutput_1 = (java.sql.PreparedStatement) resourceMap
+								.remove("pstmt_tDBOutput_1")) != null) {
+							pstmtToClose_tDBOutput_1.close();
+						}
+					}
+				} finally {
+					if (resourceMap.get("finish_tDBOutput_1") == null) {
+						java.sql.Connection ctn_tDBOutput_1 = null;
+						if ((ctn_tDBOutput_1 = (java.sql.Connection) resourceMap.get("conn_tDBOutput_1")) != null) {
+							try {
+								ctn_tDBOutput_1.close();
+							} catch (java.sql.SQLException sqlEx_tDBOutput_1) {
+								String errorMessage_tDBOutput_1 = "failed to close the connection in tDBOutput_1 :"
+										+ sqlEx_tDBOutput_1.getMessage();
+								System.err.println(errorMessage_tDBOutput_1);
+							}
+						}
+					}
+				}
+
+				/**
+				 * [tDBOutput_1 finally ] stop
 				 */
 
 			} catch (java.lang.Exception e) {
@@ -1819,6 +2933,5278 @@ public class s1_stocking_data_into_db implements TalendJob {
 		}
 
 		globalMap.put("tFileList_1_SUBPROCESS_STATE", 1);
+	}
+
+	public static class row4Struct implements routines.system.IPersistableRow<row4Struct> {
+		final static byte[] commonByteArrayLock_ANALYSIS_TWITTER_s1_stocking_data_into_db = new byte[0];
+		static byte[] commonByteArray_ANALYSIS_TWITTER_s1_stocking_data_into_db = new byte[0];
+
+		public String id;
+
+		public String getId() {
+			return this.id;
+		}
+
+		public String user_id;
+
+		public String getUser_id() {
+			return this.user_id;
+		}
+
+		public String user_name;
+
+		public String getUser_name() {
+			return this.user_name;
+		}
+
+		public String user_screen_name;
+
+		public String getUser_screen_name() {
+			return this.user_screen_name;
+		}
+
+		public String user_location;
+
+		public String getUser_location() {
+			return this.user_location;
+		}
+
+		public String user_description;
+
+		public String getUser_description() {
+			return this.user_description;
+		}
+
+		public String hashtag;
+
+		public String getHashtag() {
+			return this.hashtag;
+		}
+
+		public String hashtag_description;
+
+		public String getHashtag_description() {
+			return this.hashtag_description;
+		}
+
+		public String geo;
+
+		public String getGeo() {
+			return this.geo;
+		}
+
+		public String country;
+
+		public String getCountry() {
+			return this.country;
+		}
+
+		public String text;
+
+		public String getText() {
+			return this.text;
+		}
+
+		public java.util.Date date;
+
+		public java.util.Date getDate() {
+			return this.date;
+		}
+
+		private String readString(ObjectInputStream dis) throws IOException {
+			String strReturn = null;
+			int length = 0;
+			length = dis.readInt();
+			if (length == -1) {
+				strReturn = null;
+			} else {
+				if (length > commonByteArray_ANALYSIS_TWITTER_s1_stocking_data_into_db.length) {
+					if (length < 1024 && commonByteArray_ANALYSIS_TWITTER_s1_stocking_data_into_db.length == 0) {
+						commonByteArray_ANALYSIS_TWITTER_s1_stocking_data_into_db = new byte[1024];
+					} else {
+						commonByteArray_ANALYSIS_TWITTER_s1_stocking_data_into_db = new byte[2 * length];
+					}
+				}
+				dis.readFully(commonByteArray_ANALYSIS_TWITTER_s1_stocking_data_into_db, 0, length);
+				strReturn = new String(commonByteArray_ANALYSIS_TWITTER_s1_stocking_data_into_db, 0, length,
+						utf8Charset);
+			}
+			return strReturn;
+		}
+
+		private void writeString(String str, ObjectOutputStream dos) throws IOException {
+			if (str == null) {
+				dos.writeInt(-1);
+			} else {
+				byte[] byteArray = str.getBytes(utf8Charset);
+				dos.writeInt(byteArray.length);
+				dos.write(byteArray);
+			}
+		}
+
+		private java.util.Date readDate(ObjectInputStream dis) throws IOException {
+			java.util.Date dateReturn = null;
+			int length = 0;
+			length = dis.readByte();
+			if (length == -1) {
+				dateReturn = null;
+			} else {
+				dateReturn = new Date(dis.readLong());
+			}
+			return dateReturn;
+		}
+
+		private void writeDate(java.util.Date date1, ObjectOutputStream dos) throws IOException {
+			if (date1 == null) {
+				dos.writeByte(-1);
+			} else {
+				dos.writeByte(0);
+				dos.writeLong(date1.getTime());
+			}
+		}
+
+		public void readData(ObjectInputStream dis) {
+
+			synchronized (commonByteArrayLock_ANALYSIS_TWITTER_s1_stocking_data_into_db) {
+
+				try {
+
+					int length = 0;
+
+					this.id = readString(dis);
+
+					this.user_id = readString(dis);
+
+					this.user_name = readString(dis);
+
+					this.user_screen_name = readString(dis);
+
+					this.user_location = readString(dis);
+
+					this.user_description = readString(dis);
+
+					this.hashtag = readString(dis);
+
+					this.hashtag_description = readString(dis);
+
+					this.geo = readString(dis);
+
+					this.country = readString(dis);
+
+					this.text = readString(dis);
+
+					this.date = readDate(dis);
+
+				} catch (IOException e) {
+					throw new RuntimeException(e);
+
+				}
+
+			}
+
+		}
+
+		public void writeData(ObjectOutputStream dos) {
+			try {
+
+				// String
+
+				writeString(this.id, dos);
+
+				// String
+
+				writeString(this.user_id, dos);
+
+				// String
+
+				writeString(this.user_name, dos);
+
+				// String
+
+				writeString(this.user_screen_name, dos);
+
+				// String
+
+				writeString(this.user_location, dos);
+
+				// String
+
+				writeString(this.user_description, dos);
+
+				// String
+
+				writeString(this.hashtag, dos);
+
+				// String
+
+				writeString(this.hashtag_description, dos);
+
+				// String
+
+				writeString(this.geo, dos);
+
+				// String
+
+				writeString(this.country, dos);
+
+				// String
+
+				writeString(this.text, dos);
+
+				// java.util.Date
+
+				writeDate(this.date, dos);
+
+			} catch (IOException e) {
+				throw new RuntimeException(e);
+			}
+
+		}
+
+		public String toString() {
+
+			StringBuilder sb = new StringBuilder();
+			sb.append(super.toString());
+			sb.append("[");
+			sb.append("id=" + id);
+			sb.append(",user_id=" + user_id);
+			sb.append(",user_name=" + user_name);
+			sb.append(",user_screen_name=" + user_screen_name);
+			sb.append(",user_location=" + user_location);
+			sb.append(",user_description=" + user_description);
+			sb.append(",hashtag=" + hashtag);
+			sb.append(",hashtag_description=" + hashtag_description);
+			sb.append(",geo=" + geo);
+			sb.append(",country=" + country);
+			sb.append(",text=" + text);
+			sb.append(",date=" + String.valueOf(date));
+			sb.append("]");
+
+			return sb.toString();
+		}
+
+		/**
+		 * Compare keys
+		 */
+		public int compareTo(row4Struct other) {
+
+			int returnValue = -1;
+
+			return returnValue;
+		}
+
+		private int checkNullsAndCompare(Object object1, Object object2) {
+			int returnValue = 0;
+			if (object1 instanceof Comparable && object2 instanceof Comparable) {
+				returnValue = ((Comparable) object1).compareTo(object2);
+			} else if (object1 != null && object2 != null) {
+				returnValue = compareStrings(object1.toString(), object2.toString());
+			} else if (object1 == null && object2 != null) {
+				returnValue = 1;
+			} else if (object1 != null && object2 == null) {
+				returnValue = -1;
+			} else {
+				returnValue = 0;
+			}
+
+			return returnValue;
+		}
+
+		private int compareStrings(String string1, String string2) {
+			return string1.compareTo(string2);
+		}
+
+	}
+
+	public static class al_tb_all_tweetsStruct implements routines.system.IPersistableRow<al_tb_all_tweetsStruct> {
+		final static byte[] commonByteArrayLock_ANALYSIS_TWITTER_s1_stocking_data_into_db = new byte[0];
+		static byte[] commonByteArray_ANALYSIS_TWITTER_s1_stocking_data_into_db = new byte[0];
+
+		public String id;
+
+		public String getId() {
+			return this.id;
+		}
+
+		public String user_id;
+
+		public String getUser_id() {
+			return this.user_id;
+		}
+
+		public String user_name;
+
+		public String getUser_name() {
+			return this.user_name;
+		}
+
+		public String user_screen_name;
+
+		public String getUser_screen_name() {
+			return this.user_screen_name;
+		}
+
+		public String user_location;
+
+		public String getUser_location() {
+			return this.user_location;
+		}
+
+		public String user_description;
+
+		public String getUser_description() {
+			return this.user_description;
+		}
+
+		public String hashtag;
+
+		public String getHashtag() {
+			return this.hashtag;
+		}
+
+		public String hashtag_description;
+
+		public String getHashtag_description() {
+			return this.hashtag_description;
+		}
+
+		public String geo;
+
+		public String getGeo() {
+			return this.geo;
+		}
+
+		public String country;
+
+		public String getCountry() {
+			return this.country;
+		}
+
+		public String text;
+
+		public String getText() {
+			return this.text;
+		}
+
+		public java.util.Date date;
+
+		public java.util.Date getDate() {
+			return this.date;
+		}
+
+		private String readString(ObjectInputStream dis) throws IOException {
+			String strReturn = null;
+			int length = 0;
+			length = dis.readInt();
+			if (length == -1) {
+				strReturn = null;
+			} else {
+				if (length > commonByteArray_ANALYSIS_TWITTER_s1_stocking_data_into_db.length) {
+					if (length < 1024 && commonByteArray_ANALYSIS_TWITTER_s1_stocking_data_into_db.length == 0) {
+						commonByteArray_ANALYSIS_TWITTER_s1_stocking_data_into_db = new byte[1024];
+					} else {
+						commonByteArray_ANALYSIS_TWITTER_s1_stocking_data_into_db = new byte[2 * length];
+					}
+				}
+				dis.readFully(commonByteArray_ANALYSIS_TWITTER_s1_stocking_data_into_db, 0, length);
+				strReturn = new String(commonByteArray_ANALYSIS_TWITTER_s1_stocking_data_into_db, 0, length,
+						utf8Charset);
+			}
+			return strReturn;
+		}
+
+		private void writeString(String str, ObjectOutputStream dos) throws IOException {
+			if (str == null) {
+				dos.writeInt(-1);
+			} else {
+				byte[] byteArray = str.getBytes(utf8Charset);
+				dos.writeInt(byteArray.length);
+				dos.write(byteArray);
+			}
+		}
+
+		private java.util.Date readDate(ObjectInputStream dis) throws IOException {
+			java.util.Date dateReturn = null;
+			int length = 0;
+			length = dis.readByte();
+			if (length == -1) {
+				dateReturn = null;
+			} else {
+				dateReturn = new Date(dis.readLong());
+			}
+			return dateReturn;
+		}
+
+		private void writeDate(java.util.Date date1, ObjectOutputStream dos) throws IOException {
+			if (date1 == null) {
+				dos.writeByte(-1);
+			} else {
+				dos.writeByte(0);
+				dos.writeLong(date1.getTime());
+			}
+		}
+
+		public void readData(ObjectInputStream dis) {
+
+			synchronized (commonByteArrayLock_ANALYSIS_TWITTER_s1_stocking_data_into_db) {
+
+				try {
+
+					int length = 0;
+
+					this.id = readString(dis);
+
+					this.user_id = readString(dis);
+
+					this.user_name = readString(dis);
+
+					this.user_screen_name = readString(dis);
+
+					this.user_location = readString(dis);
+
+					this.user_description = readString(dis);
+
+					this.hashtag = readString(dis);
+
+					this.hashtag_description = readString(dis);
+
+					this.geo = readString(dis);
+
+					this.country = readString(dis);
+
+					this.text = readString(dis);
+
+					this.date = readDate(dis);
+
+				} catch (IOException e) {
+					throw new RuntimeException(e);
+
+				}
+
+			}
+
+		}
+
+		public void writeData(ObjectOutputStream dos) {
+			try {
+
+				// String
+
+				writeString(this.id, dos);
+
+				// String
+
+				writeString(this.user_id, dos);
+
+				// String
+
+				writeString(this.user_name, dos);
+
+				// String
+
+				writeString(this.user_screen_name, dos);
+
+				// String
+
+				writeString(this.user_location, dos);
+
+				// String
+
+				writeString(this.user_description, dos);
+
+				// String
+
+				writeString(this.hashtag, dos);
+
+				// String
+
+				writeString(this.hashtag_description, dos);
+
+				// String
+
+				writeString(this.geo, dos);
+
+				// String
+
+				writeString(this.country, dos);
+
+				// String
+
+				writeString(this.text, dos);
+
+				// java.util.Date
+
+				writeDate(this.date, dos);
+
+			} catch (IOException e) {
+				throw new RuntimeException(e);
+			}
+
+		}
+
+		public String toString() {
+
+			StringBuilder sb = new StringBuilder();
+			sb.append(super.toString());
+			sb.append("[");
+			sb.append("id=" + id);
+			sb.append(",user_id=" + user_id);
+			sb.append(",user_name=" + user_name);
+			sb.append(",user_screen_name=" + user_screen_name);
+			sb.append(",user_location=" + user_location);
+			sb.append(",user_description=" + user_description);
+			sb.append(",hashtag=" + hashtag);
+			sb.append(",hashtag_description=" + hashtag_description);
+			sb.append(",geo=" + geo);
+			sb.append(",country=" + country);
+			sb.append(",text=" + text);
+			sb.append(",date=" + String.valueOf(date));
+			sb.append("]");
+
+			return sb.toString();
+		}
+
+		/**
+		 * Compare keys
+		 */
+		public int compareTo(al_tb_all_tweetsStruct other) {
+
+			int returnValue = -1;
+
+			return returnValue;
+		}
+
+		private int checkNullsAndCompare(Object object1, Object object2) {
+			int returnValue = 0;
+			if (object1 instanceof Comparable && object2 instanceof Comparable) {
+				returnValue = ((Comparable) object1).compareTo(object2);
+			} else if (object1 != null && object2 != null) {
+				returnValue = compareStrings(object1.toString(), object2.toString());
+			} else if (object1 == null && object2 != null) {
+				returnValue = 1;
+			} else if (object1 != null && object2 == null) {
+				returnValue = -1;
+			} else {
+				returnValue = 0;
+			}
+
+			return returnValue;
+		}
+
+		private int compareStrings(String string1, String string2) {
+			return string1.compareTo(string2);
+		}
+
+	}
+
+	public static class row3Struct implements routines.system.IPersistableRow<row3Struct> {
+		final static byte[] commonByteArrayLock_ANALYSIS_TWITTER_s1_stocking_data_into_db = new byte[0];
+		static byte[] commonByteArray_ANALYSIS_TWITTER_s1_stocking_data_into_db = new byte[0];
+
+		public Long hashtag_id;
+
+		public Long getHashtag_id() {
+			return this.hashtag_id;
+		}
+
+		public String user_name;
+
+		public String getUser_name() {
+			return this.user_name;
+		}
+
+		public String user_screen_name;
+
+		public String getUser_screen_name() {
+			return this.user_screen_name;
+		}
+
+		public String text_description;
+
+		public String getText_description() {
+			return this.text_description;
+		}
+
+		public Long date_id;
+
+		public Long getDate_id() {
+			return this.date_id;
+		}
+
+		public Long geo_id;
+
+		public Long getGeo_id() {
+			return this.geo_id;
+		}
+
+		public Long text_id;
+
+		public Long getText_id() {
+			return this.text_id;
+		}
+
+		public String geo_description;
+
+		public String getGeo_description() {
+			return this.geo_description;
+		}
+
+		public Long user_id;
+
+		public Long getUser_id() {
+			return this.user_id;
+		}
+
+		public String hashtag_text;
+
+		public String getHashtag_text() {
+			return this.hashtag_text;
+		}
+
+		public String user_location;
+
+		public String getUser_location() {
+			return this.user_location;
+		}
+
+		public java.util.Date date_description;
+
+		public java.util.Date getDate_description() {
+			return this.date_description;
+		}
+
+		public String user_description;
+
+		public String getUser_description() {
+			return this.user_description;
+		}
+
+		private String readString(ObjectInputStream dis) throws IOException {
+			String strReturn = null;
+			int length = 0;
+			length = dis.readInt();
+			if (length == -1) {
+				strReturn = null;
+			} else {
+				if (length > commonByteArray_ANALYSIS_TWITTER_s1_stocking_data_into_db.length) {
+					if (length < 1024 && commonByteArray_ANALYSIS_TWITTER_s1_stocking_data_into_db.length == 0) {
+						commonByteArray_ANALYSIS_TWITTER_s1_stocking_data_into_db = new byte[1024];
+					} else {
+						commonByteArray_ANALYSIS_TWITTER_s1_stocking_data_into_db = new byte[2 * length];
+					}
+				}
+				dis.readFully(commonByteArray_ANALYSIS_TWITTER_s1_stocking_data_into_db, 0, length);
+				strReturn = new String(commonByteArray_ANALYSIS_TWITTER_s1_stocking_data_into_db, 0, length,
+						utf8Charset);
+			}
+			return strReturn;
+		}
+
+		private void writeString(String str, ObjectOutputStream dos) throws IOException {
+			if (str == null) {
+				dos.writeInt(-1);
+			} else {
+				byte[] byteArray = str.getBytes(utf8Charset);
+				dos.writeInt(byteArray.length);
+				dos.write(byteArray);
+			}
+		}
+
+		private java.util.Date readDate(ObjectInputStream dis) throws IOException {
+			java.util.Date dateReturn = null;
+			int length = 0;
+			length = dis.readByte();
+			if (length == -1) {
+				dateReturn = null;
+			} else {
+				dateReturn = new Date(dis.readLong());
+			}
+			return dateReturn;
+		}
+
+		private void writeDate(java.util.Date date1, ObjectOutputStream dos) throws IOException {
+			if (date1 == null) {
+				dos.writeByte(-1);
+			} else {
+				dos.writeByte(0);
+				dos.writeLong(date1.getTime());
+			}
+		}
+
+		public void readData(ObjectInputStream dis) {
+
+			synchronized (commonByteArrayLock_ANALYSIS_TWITTER_s1_stocking_data_into_db) {
+
+				try {
+
+					int length = 0;
+
+					length = dis.readByte();
+					if (length == -1) {
+						this.hashtag_id = null;
+					} else {
+						this.hashtag_id = dis.readLong();
+					}
+
+					this.user_name = readString(dis);
+
+					this.user_screen_name = readString(dis);
+
+					this.text_description = readString(dis);
+
+					length = dis.readByte();
+					if (length == -1) {
+						this.date_id = null;
+					} else {
+						this.date_id = dis.readLong();
+					}
+
+					length = dis.readByte();
+					if (length == -1) {
+						this.geo_id = null;
+					} else {
+						this.geo_id = dis.readLong();
+					}
+
+					length = dis.readByte();
+					if (length == -1) {
+						this.text_id = null;
+					} else {
+						this.text_id = dis.readLong();
+					}
+
+					this.geo_description = readString(dis);
+
+					length = dis.readByte();
+					if (length == -1) {
+						this.user_id = null;
+					} else {
+						this.user_id = dis.readLong();
+					}
+
+					this.hashtag_text = readString(dis);
+
+					this.user_location = readString(dis);
+
+					this.date_description = readDate(dis);
+
+					this.user_description = readString(dis);
+
+				} catch (IOException e) {
+					throw new RuntimeException(e);
+
+				}
+
+			}
+
+		}
+
+		public void writeData(ObjectOutputStream dos) {
+			try {
+
+				// Long
+
+				if (this.hashtag_id == null) {
+					dos.writeByte(-1);
+				} else {
+					dos.writeByte(0);
+					dos.writeLong(this.hashtag_id);
+				}
+
+				// String
+
+				writeString(this.user_name, dos);
+
+				// String
+
+				writeString(this.user_screen_name, dos);
+
+				// String
+
+				writeString(this.text_description, dos);
+
+				// Long
+
+				if (this.date_id == null) {
+					dos.writeByte(-1);
+				} else {
+					dos.writeByte(0);
+					dos.writeLong(this.date_id);
+				}
+
+				// Long
+
+				if (this.geo_id == null) {
+					dos.writeByte(-1);
+				} else {
+					dos.writeByte(0);
+					dos.writeLong(this.geo_id);
+				}
+
+				// Long
+
+				if (this.text_id == null) {
+					dos.writeByte(-1);
+				} else {
+					dos.writeByte(0);
+					dos.writeLong(this.text_id);
+				}
+
+				// String
+
+				writeString(this.geo_description, dos);
+
+				// Long
+
+				if (this.user_id == null) {
+					dos.writeByte(-1);
+				} else {
+					dos.writeByte(0);
+					dos.writeLong(this.user_id);
+				}
+
+				// String
+
+				writeString(this.hashtag_text, dos);
+
+				// String
+
+				writeString(this.user_location, dos);
+
+				// java.util.Date
+
+				writeDate(this.date_description, dos);
+
+				// String
+
+				writeString(this.user_description, dos);
+
+			} catch (IOException e) {
+				throw new RuntimeException(e);
+			}
+
+		}
+
+		public String toString() {
+
+			StringBuilder sb = new StringBuilder();
+			sb.append(super.toString());
+			sb.append("[");
+			sb.append("hashtag_id=" + String.valueOf(hashtag_id));
+			sb.append(",user_name=" + user_name);
+			sb.append(",user_screen_name=" + user_screen_name);
+			sb.append(",text_description=" + text_description);
+			sb.append(",date_id=" + String.valueOf(date_id));
+			sb.append(",geo_id=" + String.valueOf(geo_id));
+			sb.append(",text_id=" + String.valueOf(text_id));
+			sb.append(",geo_description=" + geo_description);
+			sb.append(",user_id=" + String.valueOf(user_id));
+			sb.append(",hashtag_text=" + hashtag_text);
+			sb.append(",user_location=" + user_location);
+			sb.append(",date_description=" + String.valueOf(date_description));
+			sb.append(",user_description=" + user_description);
+			sb.append("]");
+
+			return sb.toString();
+		}
+
+		/**
+		 * Compare keys
+		 */
+		public int compareTo(row3Struct other) {
+
+			int returnValue = -1;
+
+			return returnValue;
+		}
+
+		private int checkNullsAndCompare(Object object1, Object object2) {
+			int returnValue = 0;
+			if (object1 instanceof Comparable && object2 instanceof Comparable) {
+				returnValue = ((Comparable) object1).compareTo(object2);
+			} else if (object1 != null && object2 != null) {
+				returnValue = compareStrings(object1.toString(), object2.toString());
+			} else if (object1 == null && object2 != null) {
+				returnValue = 1;
+			} else if (object1 != null && object2 == null) {
+				returnValue = -1;
+			} else {
+				returnValue = 0;
+			}
+
+			return returnValue;
+		}
+
+		private int compareStrings(String string1, String string2) {
+			return string1.compareTo(string2);
+		}
+
+	}
+
+	public void tFileList_2Process(final java.util.Map<String, Object> globalMap) throws TalendException {
+		globalMap.put("tFileList_2_SUBPROCESS_STATE", 0);
+
+		final boolean execStat = this.execStat;
+
+		String iterateId = "";
+
+		String currentComponent = "";
+		java.util.Map<String, Object> resourceMap = new java.util.HashMap<String, Object>();
+
+		try {
+			// TDI-39566 avoid throwing an useless Exception
+			boolean resumeIt = true;
+			if (globalResumeTicket == false && resumeEntryMethodName != null) {
+				String currentMethodName = new java.lang.Exception().getStackTrace()[0].getMethodName();
+				resumeIt = resumeEntryMethodName.equals(currentMethodName);
+			}
+			if (resumeIt || globalResumeTicket) { // start the resume
+				globalResumeTicket = true;
+
+				row3Struct row3 = new row3Struct();
+				al_tb_all_tweetsStruct al_tb_all_tweets = new al_tb_all_tweetsStruct();
+				row4Struct row4 = new row4Struct();
+
+				/**
+				 * [tFileList_2 begin ] start
+				 */
+
+				int NB_ITERATE_tFileInputJSON_2 = 0; // for statistics
+
+				ok_Hash.put("tFileList_2", false);
+				start_Hash.put("tFileList_2", System.currentTimeMillis());
+
+				currentComponent = "tFileList_2";
+
+				int tos_count_tFileList_2 = 0;
+
+				String directory_tFileList_2 = "/home/scasanova/Downloads/TOS_BD-20200219_1130-V7.3.1/workspace/ANALYSIS_TWITTER/documentations/apitwitter/";
+				final java.util.List<String> maskList_tFileList_2 = new java.util.ArrayList<String>();
+				final java.util.List<java.util.regex.Pattern> patternList_tFileList_2 = new java.util.ArrayList<java.util.regex.Pattern>();
+				maskList_tFileList_2.add("al*");
+				for (final String filemask_tFileList_2 : maskList_tFileList_2) {
+					String filemask_compile_tFileList_2 = filemask_tFileList_2;
+
+					filemask_compile_tFileList_2 = org.apache.oro.text.GlobCompiler.globToPerl5(
+							filemask_tFileList_2.toCharArray(), org.apache.oro.text.GlobCompiler.DEFAULT_MASK);
+
+					java.util.regex.Pattern fileNamePattern_tFileList_2 = java.util.regex.Pattern
+							.compile(filemask_compile_tFileList_2);
+					patternList_tFileList_2.add(fileNamePattern_tFileList_2);
+				}
+				int NB_FILEtFileList_2 = 0;
+
+				final boolean case_sensitive_tFileList_2 = true;
+				final java.util.List<java.io.File> list_tFileList_2 = new java.util.ArrayList<java.io.File>();
+				final java.util.Set<String> filePath_tFileList_2 = new java.util.HashSet<String>();
+				java.io.File file_tFileList_2 = new java.io.File(directory_tFileList_2);
+
+				file_tFileList_2.listFiles(new java.io.FilenameFilter() {
+					public boolean accept(java.io.File dir, String name) {
+						java.io.File file = new java.io.File(dir, name);
+						if (!file.isDirectory()) {
+
+							String fileName_tFileList_2 = file.getName();
+							for (final java.util.regex.Pattern fileNamePattern_tFileList_2 : patternList_tFileList_2) {
+								if (fileNamePattern_tFileList_2.matcher(fileName_tFileList_2).matches()) {
+									if (!filePath_tFileList_2.contains(file.getAbsolutePath())) {
+										list_tFileList_2.add(file);
+										filePath_tFileList_2.add(file.getAbsolutePath());
+									}
+								}
+							}
+						}
+						return true;
+					}
+				});
+				java.util.Collections.sort(list_tFileList_2);
+
+				for (int i_tFileList_2 = 0; i_tFileList_2 < list_tFileList_2.size(); i_tFileList_2++) {
+					java.io.File files_tFileList_2 = list_tFileList_2.get(i_tFileList_2);
+					String fileName_tFileList_2 = files_tFileList_2.getName();
+
+					String currentFileName_tFileList_2 = files_tFileList_2.getName();
+					String currentFilePath_tFileList_2 = files_tFileList_2.getAbsolutePath();
+					String currentFileDirectory_tFileList_2 = files_tFileList_2.getParent();
+					String currentFileExtension_tFileList_2 = null;
+
+					if (files_tFileList_2.getName().contains(".") && files_tFileList_2.isFile()) {
+						currentFileExtension_tFileList_2 = files_tFileList_2.getName()
+								.substring(files_tFileList_2.getName().lastIndexOf(".") + 1);
+					} else {
+						currentFileExtension_tFileList_2 = "";
+					}
+
+					NB_FILEtFileList_2++;
+					globalMap.put("tFileList_2_CURRENT_FILE", currentFileName_tFileList_2);
+					globalMap.put("tFileList_2_CURRENT_FILEPATH", currentFilePath_tFileList_2);
+					globalMap.put("tFileList_2_CURRENT_FILEDIRECTORY", currentFileDirectory_tFileList_2);
+					globalMap.put("tFileList_2_CURRENT_FILEEXTENSION", currentFileExtension_tFileList_2);
+					globalMap.put("tFileList_2_NB_FILE", NB_FILEtFileList_2);
+
+					/**
+					 * [tFileList_2 begin ] stop
+					 */
+
+					/**
+					 * [tFileList_2 main ] start
+					 */
+
+					currentComponent = "tFileList_2";
+
+					tos_count_tFileList_2++;
+
+					/**
+					 * [tFileList_2 main ] stop
+					 */
+
+					/**
+					 * [tFileList_2 process_data_begin ] start
+					 */
+
+					currentComponent = "tFileList_2";
+
+					/**
+					 * [tFileList_2 process_data_begin ] stop
+					 */
+					NB_ITERATE_tFileInputJSON_2++;
+
+					if (execStat) {
+						runStat.updateStatOnConnection("in_tb_all_tweets", 3, 0);
+					}
+
+					if (execStat) {
+						runStat.updateStatOnConnection("row5", 3, 0);
+					}
+
+					if (execStat) {
+						runStat.updateStatOnConnection("OnComponentOk2", 3, 0);
+					}
+
+					if (execStat) {
+						runStat.updateStatOnConnection("row6", 3, 0);
+					}
+
+					if (execStat) {
+						runStat.updateStatOnConnection("row3", 3, 0);
+					}
+
+					if (execStat) {
+						runStat.updateStatOnConnection("row4", 3, 0);
+					}
+
+					if (execStat) {
+						runStat.updateStatOnConnection("al_tb_all_tweets", 3, 0);
+					}
+
+					if (execStat) {
+						runStat.updateStatOnConnection("iterate3", 3, 0);
+					}
+
+					if (execStat) {
+						runStat.updateStatOnConnection("iterate2", 1, "exec" + NB_ITERATE_tFileInputJSON_2);
+						// Thread.sleep(1000);
+					}
+
+					/**
+					 * [tDBOutput_2 begin ] start
+					 */
+
+					ok_Hash.put("tDBOutput_2", false);
+					start_Hash.put("tDBOutput_2", System.currentTimeMillis());
+
+					currentComponent = "tDBOutput_2";
+
+					if (execStat) {
+						runStat.updateStatOnConnection(resourceMap, iterateId, 0, 0, "row4");
+					}
+
+					int tos_count_tDBOutput_2 = 0;
+
+					String dbschema_tDBOutput_2 = null;
+					dbschema_tDBOutput_2 = context.connection_postgres_Schema;
+
+					String tableName_tDBOutput_2 = null;
+					if (dbschema_tDBOutput_2 == null || dbschema_tDBOutput_2.trim().length() == 0) {
+						tableName_tDBOutput_2 = ("all_tweets");
+					} else {
+						tableName_tDBOutput_2 = dbschema_tDBOutput_2 + "\".\"" + ("all_tweets");
+					}
+
+					int updateKeyCount_tDBOutput_2 = 1;
+					if (updateKeyCount_tDBOutput_2 < 1) {
+						throw new RuntimeException("For update, Schema must have a key");
+					}
+					int nb_line_tDBOutput_2 = 0;
+					int nb_line_update_tDBOutput_2 = 0;
+					int nb_line_inserted_tDBOutput_2 = 0;
+					int nb_line_deleted_tDBOutput_2 = 0;
+					int nb_line_rejected_tDBOutput_2 = 0;
+
+					int deletedCount_tDBOutput_2 = 0;
+					int updatedCount_tDBOutput_2 = 0;
+					int insertedCount_tDBOutput_2 = 0;
+					int rejectedCount_tDBOutput_2 = 0;
+
+					boolean whetherReject_tDBOutput_2 = false;
+
+					java.sql.Connection conn_tDBOutput_2 = null;
+					String dbUser_tDBOutput_2 = null;
+
+					java.lang.Class.forName("org.postgresql.Driver");
+
+					String url_tDBOutput_2 = "jdbc:postgresql://" + context.connection_postgres_Server + ":"
+							+ context.connection_postgres_Port + "/" + context.connection_postgres_Database + "?"
+							+ context.connection_postgres_AdditionalParams;
+					dbUser_tDBOutput_2 = context.connection_postgres_Login;
+
+					final String decryptedPassword_tDBOutput_2 = context.connection_postgres_Password;
+
+					String dbPwd_tDBOutput_2 = decryptedPassword_tDBOutput_2;
+
+					conn_tDBOutput_2 = java.sql.DriverManager.getConnection(url_tDBOutput_2, dbUser_tDBOutput_2,
+							dbPwd_tDBOutput_2);
+
+					resourceMap.put("conn_tDBOutput_2", conn_tDBOutput_2);
+					conn_tDBOutput_2.setAutoCommit(false);
+					int commitEvery_tDBOutput_2 = 10000;
+					int commitCounter_tDBOutput_2 = 0;
+
+					int count_tDBOutput_2 = 0;
+					java.sql.DatabaseMetaData dbMetaData_tDBOutput_2 = conn_tDBOutput_2.getMetaData();
+					boolean whetherExist_tDBOutput_2 = false;
+					try (java.sql.ResultSet rsTable_tDBOutput_2 = dbMetaData_tDBOutput_2.getTables(null, null, null,
+							new String[] { "TABLE" })) {
+						String defaultSchema_tDBOutput_2 = "public";
+						if (dbschema_tDBOutput_2 == null || dbschema_tDBOutput_2.trim().length() == 0) {
+							try (java.sql.Statement stmtSchema_tDBOutput_2 = conn_tDBOutput_2.createStatement();
+									java.sql.ResultSet rsSchema_tDBOutput_2 = stmtSchema_tDBOutput_2
+											.executeQuery("select current_schema() ")) {
+								while (rsSchema_tDBOutput_2.next()) {
+									defaultSchema_tDBOutput_2 = rsSchema_tDBOutput_2.getString("current_schema");
+								}
+							}
+						}
+						while (rsTable_tDBOutput_2.next()) {
+							String table_tDBOutput_2 = rsTable_tDBOutput_2.getString("TABLE_NAME");
+							String schema_tDBOutput_2 = rsTable_tDBOutput_2.getString("TABLE_SCHEM");
+							if (table_tDBOutput_2.equals(("all_tweets")) && (schema_tDBOutput_2
+									.equals(dbschema_tDBOutput_2)
+									|| ((dbschema_tDBOutput_2 == null || dbschema_tDBOutput_2.trim().length() == 0)
+											&& defaultSchema_tDBOutput_2.equals(schema_tDBOutput_2)))) {
+								whetherExist_tDBOutput_2 = true;
+								break;
+							}
+						}
+					}
+					if (!whetherExist_tDBOutput_2) {
+						try (java.sql.Statement stmtCreate_tDBOutput_2 = conn_tDBOutput_2.createStatement()) {
+							stmtCreate_tDBOutput_2.execute("CREATE TABLE \"" + tableName_tDBOutput_2
+									+ "\"(\"id\" VARCHAR  not null ,\"user_id\" VARCHAR  not null ,\"user_name\" VARCHAR ,\"user_screen_name\" VARCHAR ,\"user_location\" VARCHAR ,\"user_description\" VARCHAR ,\"hashtag\" VARCHAR ,\"hashtag_description\" VARCHAR ,\"geo\" VARCHAR ,\"country\" VARCHAR ,\"text\" VARCHAR ,\"date\" TIMESTAMP ,primary key(\"id\"))");
+						}
+					}
+					java.sql.PreparedStatement pstmt_tDBOutput_2 = conn_tDBOutput_2.prepareStatement(
+							"SELECT COUNT(1) FROM \"" + tableName_tDBOutput_2 + "\" WHERE \"id\" = ?");
+					resourceMap.put("pstmt_tDBOutput_2", pstmt_tDBOutput_2);
+					String insert_tDBOutput_2 = "INSERT INTO \"" + tableName_tDBOutput_2
+							+ "\" (\"id\",\"user_id\",\"user_name\",\"user_screen_name\",\"user_location\",\"user_description\",\"hashtag\",\"hashtag_description\",\"geo\",\"country\",\"text\",\"date\") VALUES (?,?,?,?,?,?,?,?,?,?,?,?)";
+					java.sql.PreparedStatement pstmtInsert_tDBOutput_2 = conn_tDBOutput_2
+							.prepareStatement(insert_tDBOutput_2);
+					resourceMap.put("pstmtInsert_tDBOutput_2", pstmtInsert_tDBOutput_2);
+					String update_tDBOutput_2 = "UPDATE \"" + tableName_tDBOutput_2
+							+ "\" SET \"user_id\" = ?,\"user_name\" = ?,\"user_screen_name\" = ?,\"user_location\" = ?,\"user_description\" = ?,\"hashtag\" = ?,\"hashtag_description\" = ?,\"geo\" = ?,\"country\" = ?,\"text\" = ?,\"date\" = ? WHERE \"id\" = ?";
+					java.sql.PreparedStatement pstmtUpdate_tDBOutput_2 = conn_tDBOutput_2
+							.prepareStatement(update_tDBOutput_2);
+					resourceMap.put("pstmtUpdate_tDBOutput_2", pstmtUpdate_tDBOutput_2);
+
+					StringBuffer query_tDBOutput_2 = null;
+
+					update_tDBOutput_2 += " ";
+					String[] updateSQLSplits_tDBOutput_2 = update_tDBOutput_2.split("\\?");
+					String[] insertSQLSplits_tDBOutput_2 = insert_tDBOutput_2.split("\\?");
+
+					/**
+					 * [tDBOutput_2 begin ] stop
+					 */
+
+					/**
+					 * [tUniqRow_2 begin ] start
+					 */
+
+					ok_Hash.put("tUniqRow_2", false);
+					start_Hash.put("tUniqRow_2", System.currentTimeMillis());
+
+					currentComponent = "tUniqRow_2";
+
+					if (execStat) {
+						runStat.updateStatOnConnection(resourceMap, iterateId, 0, 0, "al_tb_all_tweets");
+					}
+
+					int tos_count_tUniqRow_2 = 0;
+
+					class KeyStruct_tUniqRow_2 {
+
+						private static final int DEFAULT_HASHCODE = 1;
+						private static final int PRIME = 31;
+						private int hashCode = DEFAULT_HASHCODE;
+						public boolean hashCodeDirty = true;
+
+						String id;
+
+						@Override
+						public int hashCode() {
+							if (this.hashCodeDirty) {
+								final int prime = PRIME;
+								int result = DEFAULT_HASHCODE;
+
+								result = prime * result + ((this.id == null) ? 0 : this.id.hashCode());
+
+								this.hashCode = result;
+								this.hashCodeDirty = false;
+							}
+							return this.hashCode;
+						}
+
+						@Override
+						public boolean equals(Object obj) {
+							if (this == obj)
+								return true;
+							if (obj == null)
+								return false;
+							if (getClass() != obj.getClass())
+								return false;
+							final KeyStruct_tUniqRow_2 other = (KeyStruct_tUniqRow_2) obj;
+
+							if (this.id == null) {
+								if (other.id != null)
+									return false;
+
+							} else if (!this.id.equals(other.id))
+
+								return false;
+
+							return true;
+						}
+
+					}
+
+					int nb_uniques_tUniqRow_2 = 0;
+					int nb_duplicates_tUniqRow_2 = 0;
+					KeyStruct_tUniqRow_2 finder_tUniqRow_2 = new KeyStruct_tUniqRow_2();
+					java.util.Set<KeyStruct_tUniqRow_2> keystUniqRow_2 = new java.util.HashSet<KeyStruct_tUniqRow_2>();
+
+					/**
+					 * [tUniqRow_2 begin ] stop
+					 */
+
+					/**
+					 * [tXMLMap_2 begin ] start
+					 */
+
+					ok_Hash.put("tXMLMap_2", false);
+					start_Hash.put("tXMLMap_2", System.currentTimeMillis());
+
+					currentComponent = "tXMLMap_2";
+
+					if (execStat) {
+						runStat.updateStatOnConnection(resourceMap, iterateId, 0, 0, "row3");
+					}
+
+					int tos_count_tXMLMap_2 = 0;
+
+//===============================input xml init part===============================
+					class XML_API_tXMLMap_2 {
+						public boolean isDefNull(org.dom4j.Node node) throws javax.xml.transform.TransformerException {
+							if (node != null && node instanceof org.dom4j.Element) {
+								org.dom4j.Attribute attri = ((org.dom4j.Element) node).attribute("nil");
+								if (attri != null && ("true").equals(attri.getText())) {
+									return true;
+								}
+							}
+							return false;
+						}
+
+						public boolean isMissing(org.dom4j.Node node) throws javax.xml.transform.TransformerException {
+							return node == null ? true : false;
+						}
+
+						public boolean isEmpty(org.dom4j.Node node) throws javax.xml.transform.TransformerException {
+							if (node != null) {
+								return node.getText().length() == 0;
+							}
+							return false;
+						}
+					}
+					class Var__tXMLMap_2__Struct {
+					}
+					Var__tXMLMap_2__Struct Var__tXMLMap_2 = new Var__tXMLMap_2__Struct();
+// ###############################
+// # Outputs initialization
+					al_tb_all_tweetsStruct al_tb_all_tweets_tmp = new al_tb_all_tweetsStruct();
+					al_tb_all_tweetsStruct al_tb_all_tweets_save = null;
+// ###############################
+					int nb_line_tXMLMap_2 = 0;
+
+					XML_API_tXMLMap_2 xml_api_tXMLMap_2 = new XML_API_tXMLMap_2();
+
+					/**
+					 * [tXMLMap_2 begin ] stop
+					 */
+
+					/**
+					 * [tFileInputJSON_2 begin ] start
+					 */
+
+					ok_Hash.put("tFileInputJSON_2", false);
+					start_Hash.put("tFileInputJSON_2", System.currentTimeMillis());
+
+					currentComponent = "tFileInputJSON_2";
+
+					int tos_count_tFileInputJSON_2 = 0;
+
+					class JsonPathCache_tFileInputJSON_2 {
+						final java.util.Map<String, com.jayway.jsonpath.JsonPath> jsonPathString2compiledJsonPath = new java.util.HashMap<String, com.jayway.jsonpath.JsonPath>();
+
+						public com.jayway.jsonpath.JsonPath getCompiledJsonPath(String jsonPath) {
+							if (jsonPathString2compiledJsonPath.containsKey(jsonPath)) {
+								return jsonPathString2compiledJsonPath.get(jsonPath);
+							} else {
+								com.jayway.jsonpath.JsonPath compiledLoopPath = com.jayway.jsonpath.JsonPath
+										.compile(jsonPath);
+								jsonPathString2compiledJsonPath.put(jsonPath, compiledLoopPath);
+								return compiledLoopPath;
+							}
+						}
+					}
+
+					int nb_line_tFileInputJSON_2 = 0;
+
+					JsonPathCache_tFileInputJSON_2 jsonPathCache_tFileInputJSON_2 = new JsonPathCache_tFileInputJSON_2();
+
+					String loopPath_tFileInputJSON_2 = "$.tweets[*]";
+					java.util.List<Object> resultset_tFileInputJSON_2 = new java.util.ArrayList<Object>();
+
+					java.io.InputStream is_tFileInputJSON_2 = null;
+					com.jayway.jsonpath.ParseContext parseContext_tFileInputJSON_2 = com.jayway.jsonpath.JsonPath
+							.using(com.jayway.jsonpath.Configuration.defaultConfiguration());
+					Object filenameOrStream_tFileInputJSON_2 = null;
+					try {
+						filenameOrStream_tFileInputJSON_2 = ((String) globalMap.get("tFileList_2_CURRENT_FILEPATH"));
+					} catch (java.lang.Exception e_tFileInputJSON_2) {
+
+						System.err.println(e_tFileInputJSON_2.getMessage());
+					}
+
+					com.jayway.jsonpath.ReadContext document_tFileInputJSON_2 = null;
+					try {
+						if (filenameOrStream_tFileInputJSON_2 instanceof java.io.InputStream) {
+							is_tFileInputJSON_2 = (java.io.InputStream) filenameOrStream_tFileInputJSON_2;
+						} else {
+
+							is_tFileInputJSON_2 = new java.io.FileInputStream(
+									(String) filenameOrStream_tFileInputJSON_2);
+
+						}
+
+						document_tFileInputJSON_2 = parseContext_tFileInputJSON_2.parse(is_tFileInputJSON_2, "UTF-8");
+						com.jayway.jsonpath.JsonPath compiledLoopPath_tFileInputJSON_2 = jsonPathCache_tFileInputJSON_2
+								.getCompiledJsonPath(loopPath_tFileInputJSON_2);
+						Object result_tFileInputJSON_2 = document_tFileInputJSON_2
+								.read(compiledLoopPath_tFileInputJSON_2, net.minidev.json.JSONObject.class);
+						if (result_tFileInputJSON_2 instanceof net.minidev.json.JSONArray) {
+							resultset_tFileInputJSON_2 = (net.minidev.json.JSONArray) result_tFileInputJSON_2;
+						} else {
+							resultset_tFileInputJSON_2.add(result_tFileInputJSON_2);
+						}
+					} catch (java.lang.Exception e_tFileInputJSON_2) {
+						System.err.println(e_tFileInputJSON_2.getMessage());
+					} finally {
+						if (is_tFileInputJSON_2 != null) {
+							is_tFileInputJSON_2.close();
+						}
+					}
+
+					String jsonPath_tFileInputJSON_2 = null;
+					com.jayway.jsonpath.JsonPath compiledJsonPath_tFileInputJSON_2 = null;
+
+					Object value_tFileInputJSON_2 = null;
+					Object root_tFileInputJSON_2 = null;
+					for (Object row_tFileInputJSON_2 : resultset_tFileInputJSON_2) {
+						nb_line_tFileInputJSON_2++;
+						row3 = null;
+						boolean whetherReject_tFileInputJSON_2 = false;
+						row3 = new row3Struct();
+
+						try {
+							jsonPath_tFileInputJSON_2 = "hashtag_id";
+							compiledJsonPath_tFileInputJSON_2 = jsonPathCache_tFileInputJSON_2
+									.getCompiledJsonPath(jsonPath_tFileInputJSON_2);
+
+							try {
+
+								if (jsonPath_tFileInputJSON_2.startsWith("$")) {
+									if (root_tFileInputJSON_2 == null) {
+										root_tFileInputJSON_2 = document_tFileInputJSON_2
+												.read(jsonPathCache_tFileInputJSON_2.getCompiledJsonPath("$"));
+									}
+									value_tFileInputJSON_2 = compiledJsonPath_tFileInputJSON_2
+											.read(root_tFileInputJSON_2);
+								} else {
+									value_tFileInputJSON_2 = compiledJsonPath_tFileInputJSON_2
+											.read(row_tFileInputJSON_2);
+								}
+								if (value_tFileInputJSON_2 != null && !value_tFileInputJSON_2.toString().isEmpty()) {
+									row3.hashtag_id = ParserUtils.parseTo_Long(value_tFileInputJSON_2.toString());
+								} else {
+									row3.hashtag_id =
+
+											null;
+								}
+							} catch (com.jayway.jsonpath.PathNotFoundException e_tFileInputJSON_2) {
+								row3.hashtag_id =
+
+										null;
+							}
+							jsonPath_tFileInputJSON_2 = "user_name";
+							compiledJsonPath_tFileInputJSON_2 = jsonPathCache_tFileInputJSON_2
+									.getCompiledJsonPath(jsonPath_tFileInputJSON_2);
+
+							try {
+
+								if (jsonPath_tFileInputJSON_2.startsWith("$")) {
+									if (root_tFileInputJSON_2 == null) {
+										root_tFileInputJSON_2 = document_tFileInputJSON_2
+												.read(jsonPathCache_tFileInputJSON_2.getCompiledJsonPath("$"));
+									}
+									value_tFileInputJSON_2 = compiledJsonPath_tFileInputJSON_2
+											.read(root_tFileInputJSON_2);
+								} else {
+									value_tFileInputJSON_2 = compiledJsonPath_tFileInputJSON_2
+											.read(row_tFileInputJSON_2);
+								}
+								row3.user_name = value_tFileInputJSON_2 == null ?
+
+										null : value_tFileInputJSON_2.toString();
+							} catch (com.jayway.jsonpath.PathNotFoundException e_tFileInputJSON_2) {
+								row3.user_name =
+
+										null;
+							}
+							jsonPath_tFileInputJSON_2 = "user_screen_name";
+							compiledJsonPath_tFileInputJSON_2 = jsonPathCache_tFileInputJSON_2
+									.getCompiledJsonPath(jsonPath_tFileInputJSON_2);
+
+							try {
+
+								if (jsonPath_tFileInputJSON_2.startsWith("$")) {
+									if (root_tFileInputJSON_2 == null) {
+										root_tFileInputJSON_2 = document_tFileInputJSON_2
+												.read(jsonPathCache_tFileInputJSON_2.getCompiledJsonPath("$"));
+									}
+									value_tFileInputJSON_2 = compiledJsonPath_tFileInputJSON_2
+											.read(root_tFileInputJSON_2);
+								} else {
+									value_tFileInputJSON_2 = compiledJsonPath_tFileInputJSON_2
+											.read(row_tFileInputJSON_2);
+								}
+								row3.user_screen_name = value_tFileInputJSON_2 == null ?
+
+										null : value_tFileInputJSON_2.toString();
+							} catch (com.jayway.jsonpath.PathNotFoundException e_tFileInputJSON_2) {
+								row3.user_screen_name =
+
+										null;
+							}
+							jsonPath_tFileInputJSON_2 = "text_description";
+							compiledJsonPath_tFileInputJSON_2 = jsonPathCache_tFileInputJSON_2
+									.getCompiledJsonPath(jsonPath_tFileInputJSON_2);
+
+							try {
+
+								if (jsonPath_tFileInputJSON_2.startsWith("$")) {
+									if (root_tFileInputJSON_2 == null) {
+										root_tFileInputJSON_2 = document_tFileInputJSON_2
+												.read(jsonPathCache_tFileInputJSON_2.getCompiledJsonPath("$"));
+									}
+									value_tFileInputJSON_2 = compiledJsonPath_tFileInputJSON_2
+											.read(root_tFileInputJSON_2);
+								} else {
+									value_tFileInputJSON_2 = compiledJsonPath_tFileInputJSON_2
+											.read(row_tFileInputJSON_2);
+								}
+								row3.text_description = value_tFileInputJSON_2 == null ?
+
+										null : value_tFileInputJSON_2.toString();
+							} catch (com.jayway.jsonpath.PathNotFoundException e_tFileInputJSON_2) {
+								row3.text_description =
+
+										null;
+							}
+							jsonPath_tFileInputJSON_2 = "date_id";
+							compiledJsonPath_tFileInputJSON_2 = jsonPathCache_tFileInputJSON_2
+									.getCompiledJsonPath(jsonPath_tFileInputJSON_2);
+
+							try {
+
+								if (jsonPath_tFileInputJSON_2.startsWith("$")) {
+									if (root_tFileInputJSON_2 == null) {
+										root_tFileInputJSON_2 = document_tFileInputJSON_2
+												.read(jsonPathCache_tFileInputJSON_2.getCompiledJsonPath("$"));
+									}
+									value_tFileInputJSON_2 = compiledJsonPath_tFileInputJSON_2
+											.read(root_tFileInputJSON_2);
+								} else {
+									value_tFileInputJSON_2 = compiledJsonPath_tFileInputJSON_2
+											.read(row_tFileInputJSON_2);
+								}
+								if (value_tFileInputJSON_2 != null && !value_tFileInputJSON_2.toString().isEmpty()) {
+									row3.date_id = ParserUtils.parseTo_Long(value_tFileInputJSON_2.toString());
+								} else {
+									row3.date_id =
+
+											null;
+								}
+							} catch (com.jayway.jsonpath.PathNotFoundException e_tFileInputJSON_2) {
+								row3.date_id =
+
+										null;
+							}
+							jsonPath_tFileInputJSON_2 = "geo_id";
+							compiledJsonPath_tFileInputJSON_2 = jsonPathCache_tFileInputJSON_2
+									.getCompiledJsonPath(jsonPath_tFileInputJSON_2);
+
+							try {
+
+								if (jsonPath_tFileInputJSON_2.startsWith("$")) {
+									if (root_tFileInputJSON_2 == null) {
+										root_tFileInputJSON_2 = document_tFileInputJSON_2
+												.read(jsonPathCache_tFileInputJSON_2.getCompiledJsonPath("$"));
+									}
+									value_tFileInputJSON_2 = compiledJsonPath_tFileInputJSON_2
+											.read(root_tFileInputJSON_2);
+								} else {
+									value_tFileInputJSON_2 = compiledJsonPath_tFileInputJSON_2
+											.read(row_tFileInputJSON_2);
+								}
+								if (value_tFileInputJSON_2 != null && !value_tFileInputJSON_2.toString().isEmpty()) {
+									row3.geo_id = ParserUtils.parseTo_Long(value_tFileInputJSON_2.toString());
+								} else {
+									row3.geo_id =
+
+											null;
+								}
+							} catch (com.jayway.jsonpath.PathNotFoundException e_tFileInputJSON_2) {
+								row3.geo_id =
+
+										null;
+							}
+							jsonPath_tFileInputJSON_2 = "text_id";
+							compiledJsonPath_tFileInputJSON_2 = jsonPathCache_tFileInputJSON_2
+									.getCompiledJsonPath(jsonPath_tFileInputJSON_2);
+
+							try {
+
+								if (jsonPath_tFileInputJSON_2.startsWith("$")) {
+									if (root_tFileInputJSON_2 == null) {
+										root_tFileInputJSON_2 = document_tFileInputJSON_2
+												.read(jsonPathCache_tFileInputJSON_2.getCompiledJsonPath("$"));
+									}
+									value_tFileInputJSON_2 = compiledJsonPath_tFileInputJSON_2
+											.read(root_tFileInputJSON_2);
+								} else {
+									value_tFileInputJSON_2 = compiledJsonPath_tFileInputJSON_2
+											.read(row_tFileInputJSON_2);
+								}
+								if (value_tFileInputJSON_2 != null && !value_tFileInputJSON_2.toString().isEmpty()) {
+									row3.text_id = ParserUtils.parseTo_Long(value_tFileInputJSON_2.toString());
+								} else {
+									row3.text_id =
+
+											null;
+								}
+							} catch (com.jayway.jsonpath.PathNotFoundException e_tFileInputJSON_2) {
+								row3.text_id =
+
+										null;
+							}
+							jsonPath_tFileInputJSON_2 = "geo_description";
+							compiledJsonPath_tFileInputJSON_2 = jsonPathCache_tFileInputJSON_2
+									.getCompiledJsonPath(jsonPath_tFileInputJSON_2);
+
+							try {
+
+								if (jsonPath_tFileInputJSON_2.startsWith("$")) {
+									if (root_tFileInputJSON_2 == null) {
+										root_tFileInputJSON_2 = document_tFileInputJSON_2
+												.read(jsonPathCache_tFileInputJSON_2.getCompiledJsonPath("$"));
+									}
+									value_tFileInputJSON_2 = compiledJsonPath_tFileInputJSON_2
+											.read(root_tFileInputJSON_2);
+								} else {
+									value_tFileInputJSON_2 = compiledJsonPath_tFileInputJSON_2
+											.read(row_tFileInputJSON_2);
+								}
+								row3.geo_description = value_tFileInputJSON_2 == null ?
+
+										null : value_tFileInputJSON_2.toString();
+							} catch (com.jayway.jsonpath.PathNotFoundException e_tFileInputJSON_2) {
+								row3.geo_description =
+
+										null;
+							}
+							jsonPath_tFileInputJSON_2 = "user_id";
+							compiledJsonPath_tFileInputJSON_2 = jsonPathCache_tFileInputJSON_2
+									.getCompiledJsonPath(jsonPath_tFileInputJSON_2);
+
+							try {
+
+								if (jsonPath_tFileInputJSON_2.startsWith("$")) {
+									if (root_tFileInputJSON_2 == null) {
+										root_tFileInputJSON_2 = document_tFileInputJSON_2
+												.read(jsonPathCache_tFileInputJSON_2.getCompiledJsonPath("$"));
+									}
+									value_tFileInputJSON_2 = compiledJsonPath_tFileInputJSON_2
+											.read(root_tFileInputJSON_2);
+								} else {
+									value_tFileInputJSON_2 = compiledJsonPath_tFileInputJSON_2
+											.read(row_tFileInputJSON_2);
+								}
+								if (value_tFileInputJSON_2 != null && !value_tFileInputJSON_2.toString().isEmpty()) {
+									row3.user_id = ParserUtils.parseTo_Long(value_tFileInputJSON_2.toString());
+								} else {
+									row3.user_id =
+
+											null;
+								}
+							} catch (com.jayway.jsonpath.PathNotFoundException e_tFileInputJSON_2) {
+								row3.user_id =
+
+										null;
+							}
+							jsonPath_tFileInputJSON_2 = "hashtag_text";
+							compiledJsonPath_tFileInputJSON_2 = jsonPathCache_tFileInputJSON_2
+									.getCompiledJsonPath(jsonPath_tFileInputJSON_2);
+
+							try {
+
+								if (jsonPath_tFileInputJSON_2.startsWith("$")) {
+									if (root_tFileInputJSON_2 == null) {
+										root_tFileInputJSON_2 = document_tFileInputJSON_2
+												.read(jsonPathCache_tFileInputJSON_2.getCompiledJsonPath("$"));
+									}
+									value_tFileInputJSON_2 = compiledJsonPath_tFileInputJSON_2
+											.read(root_tFileInputJSON_2);
+								} else {
+									value_tFileInputJSON_2 = compiledJsonPath_tFileInputJSON_2
+											.read(row_tFileInputJSON_2);
+								}
+								row3.hashtag_text = value_tFileInputJSON_2 == null ?
+
+										null : value_tFileInputJSON_2.toString();
+							} catch (com.jayway.jsonpath.PathNotFoundException e_tFileInputJSON_2) {
+								row3.hashtag_text =
+
+										null;
+							}
+							jsonPath_tFileInputJSON_2 = "user_location";
+							compiledJsonPath_tFileInputJSON_2 = jsonPathCache_tFileInputJSON_2
+									.getCompiledJsonPath(jsonPath_tFileInputJSON_2);
+
+							try {
+
+								if (jsonPath_tFileInputJSON_2.startsWith("$")) {
+									if (root_tFileInputJSON_2 == null) {
+										root_tFileInputJSON_2 = document_tFileInputJSON_2
+												.read(jsonPathCache_tFileInputJSON_2.getCompiledJsonPath("$"));
+									}
+									value_tFileInputJSON_2 = compiledJsonPath_tFileInputJSON_2
+											.read(root_tFileInputJSON_2);
+								} else {
+									value_tFileInputJSON_2 = compiledJsonPath_tFileInputJSON_2
+											.read(row_tFileInputJSON_2);
+								}
+								row3.user_location = value_tFileInputJSON_2 == null ?
+
+										null : value_tFileInputJSON_2.toString();
+							} catch (com.jayway.jsonpath.PathNotFoundException e_tFileInputJSON_2) {
+								row3.user_location =
+
+										null;
+							}
+							jsonPath_tFileInputJSON_2 = "date_description";
+							compiledJsonPath_tFileInputJSON_2 = jsonPathCache_tFileInputJSON_2
+									.getCompiledJsonPath(jsonPath_tFileInputJSON_2);
+
+							try {
+
+								if (jsonPath_tFileInputJSON_2.startsWith("$")) {
+									if (root_tFileInputJSON_2 == null) {
+										root_tFileInputJSON_2 = document_tFileInputJSON_2
+												.read(jsonPathCache_tFileInputJSON_2.getCompiledJsonPath("$"));
+									}
+									value_tFileInputJSON_2 = compiledJsonPath_tFileInputJSON_2
+											.read(root_tFileInputJSON_2);
+								} else {
+									value_tFileInputJSON_2 = compiledJsonPath_tFileInputJSON_2
+											.read(row_tFileInputJSON_2);
+								}
+								if (value_tFileInputJSON_2 != null && !value_tFileInputJSON_2.toString().isEmpty()) {
+									row3.date_description = ParserUtils.parseTo_Date(value_tFileInputJSON_2.toString(),
+											"dd-MM-yyyy");
+								} else {
+									row3.date_description =
+
+											null;
+								}
+							} catch (com.jayway.jsonpath.PathNotFoundException e_tFileInputJSON_2) {
+								row3.date_description =
+
+										null;
+							}
+							jsonPath_tFileInputJSON_2 = "user_description";
+							compiledJsonPath_tFileInputJSON_2 = jsonPathCache_tFileInputJSON_2
+									.getCompiledJsonPath(jsonPath_tFileInputJSON_2);
+
+							try {
+
+								if (jsonPath_tFileInputJSON_2.startsWith("$")) {
+									if (root_tFileInputJSON_2 == null) {
+										root_tFileInputJSON_2 = document_tFileInputJSON_2
+												.read(jsonPathCache_tFileInputJSON_2.getCompiledJsonPath("$"));
+									}
+									value_tFileInputJSON_2 = compiledJsonPath_tFileInputJSON_2
+											.read(root_tFileInputJSON_2);
+								} else {
+									value_tFileInputJSON_2 = compiledJsonPath_tFileInputJSON_2
+											.read(row_tFileInputJSON_2);
+								}
+								row3.user_description = value_tFileInputJSON_2 == null ?
+
+										null : value_tFileInputJSON_2.toString();
+							} catch (com.jayway.jsonpath.PathNotFoundException e_tFileInputJSON_2) {
+								row3.user_description =
+
+										null;
+							}
+						} catch (java.lang.Exception e_tFileInputJSON_2) {
+							whetherReject_tFileInputJSON_2 = true;
+							System.err.println(e_tFileInputJSON_2.getMessage());
+							row3 = null;
+						}
+//}
+
+						/**
+						 * [tFileInputJSON_2 begin ] stop
+						 */
+
+						/**
+						 * [tFileInputJSON_2 main ] start
+						 */
+
+						currentComponent = "tFileInputJSON_2";
+
+						tos_count_tFileInputJSON_2++;
+
+						/**
+						 * [tFileInputJSON_2 main ] stop
+						 */
+
+						/**
+						 * [tFileInputJSON_2 process_data_begin ] start
+						 */
+
+						currentComponent = "tFileInputJSON_2";
+
+						/**
+						 * [tFileInputJSON_2 process_data_begin ] stop
+						 */
+// Start of branch "row3"
+						if (row3 != null) {
+
+							/**
+							 * [tXMLMap_2 main ] start
+							 */
+
+							currentComponent = "tXMLMap_2";
+
+							if (execStat) {
+								runStat.updateStatOnConnection(iterateId, 1, 1, "row3");
+							}
+
+							boolean rejectedInnerJoin_tXMLMap_2 = false;
+							boolean rejectedDocInnerJoin_tXMLMap_2 = false;
+							boolean mainRowRejected_tXMLMap_2 = false;
+							boolean isMatchDocRowtXMLMap_2 = false;
+
+							{ // start of Var scope
+
+								// ###############################
+								// # Vars tables
+
+								Var__tXMLMap_2__Struct Var = Var__tXMLMap_2;
+								// ###############################
+								// # Output tables
+
+								al_tb_all_tweets = null;
+
+// # Output table : 'al_tb_all_tweets'
+// # Filter conditions 
+								if (
+
+								row3.text_description != "" & row3.user_location != "" & row3.hashtag_text != null
+
+								) {
+									al_tb_all_tweets_tmp.id = String.valueOf(row3.hashtag_id);
+									al_tb_all_tweets_tmp.user_id = String.valueOf(row3.user_id);
+									al_tb_all_tweets_tmp.user_name = row3.user_name;
+									al_tb_all_tweets_tmp.user_screen_name = row3.user_screen_name;
+									al_tb_all_tweets_tmp.user_location = row3.user_location;
+									al_tb_all_tweets_tmp.user_description = row3.user_description;
+									al_tb_all_tweets_tmp.hashtag = "CoronaWarnApp";
+									al_tb_all_tweets_tmp.hashtag_description = row3.hashtag_text;
+									al_tb_all_tweets_tmp.geo = row3.geo_description;
+									al_tb_all_tweets_tmp.country = "Allemagne";
+									al_tb_all_tweets_tmp.text = row3.text_description;
+									al_tb_all_tweets_tmp.date = row3.date_description;
+									al_tb_all_tweets = al_tb_all_tweets_tmp;
+								} // closing filter/reject
+// ###############################
+
+							} // end of Var scope
+
+							rejectedInnerJoin_tXMLMap_2 = false;
+
+							tos_count_tXMLMap_2++;
+
+							/**
+							 * [tXMLMap_2 main ] stop
+							 */
+
+							/**
+							 * [tXMLMap_2 process_data_begin ] start
+							 */
+
+							currentComponent = "tXMLMap_2";
+
+							/**
+							 * [tXMLMap_2 process_data_begin ] stop
+							 */
+// Start of branch "al_tb_all_tweets"
+							if (al_tb_all_tweets != null) {
+
+								/**
+								 * [tUniqRow_2 main ] start
+								 */
+
+								currentComponent = "tUniqRow_2";
+
+								if (execStat) {
+									runStat.updateStatOnConnection(iterateId, 1, 1, "al_tb_all_tweets");
+								}
+
+								row4 = null;
+								if (al_tb_all_tweets.id == null) {
+									finder_tUniqRow_2.id = null;
+								} else {
+									finder_tUniqRow_2.id = al_tb_all_tweets.id.toLowerCase();
+								}
+								finder_tUniqRow_2.hashCodeDirty = true;
+								if (!keystUniqRow_2.contains(finder_tUniqRow_2)) {
+									KeyStruct_tUniqRow_2 new_tUniqRow_2 = new KeyStruct_tUniqRow_2();
+
+									if (al_tb_all_tweets.id == null) {
+										new_tUniqRow_2.id = null;
+									} else {
+										new_tUniqRow_2.id = al_tb_all_tweets.id.toLowerCase();
+									}
+
+									keystUniqRow_2.add(new_tUniqRow_2);
+									if (row4 == null) {
+
+										row4 = new row4Struct();
+									}
+									row4.id = al_tb_all_tweets.id;
+									row4.user_id = al_tb_all_tweets.user_id;
+									row4.user_name = al_tb_all_tweets.user_name;
+									row4.user_screen_name = al_tb_all_tweets.user_screen_name;
+									row4.user_location = al_tb_all_tweets.user_location;
+									row4.user_description = al_tb_all_tweets.user_description;
+									row4.hashtag = al_tb_all_tweets.hashtag;
+									row4.hashtag_description = al_tb_all_tweets.hashtag_description;
+									row4.geo = al_tb_all_tweets.geo;
+									row4.country = al_tb_all_tweets.country;
+									row4.text = al_tb_all_tweets.text;
+									row4.date = al_tb_all_tweets.date;
+									nb_uniques_tUniqRow_2++;
+								} else {
+									nb_duplicates_tUniqRow_2++;
+								}
+
+								tos_count_tUniqRow_2++;
+
+								/**
+								 * [tUniqRow_2 main ] stop
+								 */
+
+								/**
+								 * [tUniqRow_2 process_data_begin ] start
+								 */
+
+								currentComponent = "tUniqRow_2";
+
+								/**
+								 * [tUniqRow_2 process_data_begin ] stop
+								 */
+// Start of branch "row4"
+								if (row4 != null) {
+
+									/**
+									 * [tDBOutput_2 main ] start
+									 */
+
+									currentComponent = "tDBOutput_2";
+
+									if (execStat) {
+										runStat.updateStatOnConnection(iterateId, 1, 1, "row4");
+									}
+
+									query_tDBOutput_2 = new StringBuffer("");
+									whetherReject_tDBOutput_2 = false;
+									if (row4.id == null) {
+										pstmt_tDBOutput_2.setNull(1, java.sql.Types.VARCHAR);
+									} else {
+										pstmt_tDBOutput_2.setString(1, row4.id);
+									}
+
+									int checkCount_tDBOutput_2 = -1;
+									try (java.sql.ResultSet rs_tDBOutput_2 = pstmt_tDBOutput_2.executeQuery()) {
+										while (rs_tDBOutput_2.next()) {
+											checkCount_tDBOutput_2 = rs_tDBOutput_2.getInt(1);
+										}
+									}
+									if (checkCount_tDBOutput_2 > 0) {
+										if (row4.user_id == null) {
+											pstmtUpdate_tDBOutput_2.setNull(1, java.sql.Types.VARCHAR);
+										} else {
+											pstmtUpdate_tDBOutput_2.setString(1, row4.user_id);
+										}
+
+										query_tDBOutput_2 = query_tDBOutput_2.append(updateSQLSplits_tDBOutput_2[0])
+												.append(row4.user_id == null ? "null" : "'" + row4.user_id + "'")
+												.append(updateSQLSplits_tDBOutput_2[1]);
+										if (row4.user_name == null) {
+											pstmtUpdate_tDBOutput_2.setNull(2, java.sql.Types.VARCHAR);
+										} else {
+											pstmtUpdate_tDBOutput_2.setString(2, row4.user_name);
+										}
+
+										query_tDBOutput_2 = query_tDBOutput_2
+												.append(row4.user_name == null ? "null" : "'" + row4.user_name + "'")
+												.append(updateSQLSplits_tDBOutput_2[2]);
+										if (row4.user_screen_name == null) {
+											pstmtUpdate_tDBOutput_2.setNull(3, java.sql.Types.VARCHAR);
+										} else {
+											pstmtUpdate_tDBOutput_2.setString(3, row4.user_screen_name);
+										}
+
+										query_tDBOutput_2 = query_tDBOutput_2
+												.append(row4.user_screen_name == null ? "null"
+														: "'" + row4.user_screen_name + "'")
+												.append(updateSQLSplits_tDBOutput_2[3]);
+										if (row4.user_location == null) {
+											pstmtUpdate_tDBOutput_2.setNull(4, java.sql.Types.VARCHAR);
+										} else {
+											pstmtUpdate_tDBOutput_2.setString(4, row4.user_location);
+										}
+
+										query_tDBOutput_2 = query_tDBOutput_2
+												.append(row4.user_location == null ? "null"
+														: "'" + row4.user_location + "'")
+												.append(updateSQLSplits_tDBOutput_2[4]);
+										if (row4.user_description == null) {
+											pstmtUpdate_tDBOutput_2.setNull(5, java.sql.Types.VARCHAR);
+										} else {
+											pstmtUpdate_tDBOutput_2.setString(5, row4.user_description);
+										}
+
+										query_tDBOutput_2 = query_tDBOutput_2
+												.append(row4.user_description == null ? "null"
+														: "'" + row4.user_description + "'")
+												.append(updateSQLSplits_tDBOutput_2[5]);
+										if (row4.hashtag == null) {
+											pstmtUpdate_tDBOutput_2.setNull(6, java.sql.Types.VARCHAR);
+										} else {
+											pstmtUpdate_tDBOutput_2.setString(6, row4.hashtag);
+										}
+
+										query_tDBOutput_2 = query_tDBOutput_2
+												.append(row4.hashtag == null ? "null" : "'" + row4.hashtag + "'")
+												.append(updateSQLSplits_tDBOutput_2[6]);
+										if (row4.hashtag_description == null) {
+											pstmtUpdate_tDBOutput_2.setNull(7, java.sql.Types.VARCHAR);
+										} else {
+											pstmtUpdate_tDBOutput_2.setString(7, row4.hashtag_description);
+										}
+
+										query_tDBOutput_2 = query_tDBOutput_2
+												.append(row4.hashtag_description == null ? "null"
+														: "'" + row4.hashtag_description + "'")
+												.append(updateSQLSplits_tDBOutput_2[7]);
+										if (row4.geo == null) {
+											pstmtUpdate_tDBOutput_2.setNull(8, java.sql.Types.VARCHAR);
+										} else {
+											pstmtUpdate_tDBOutput_2.setString(8, row4.geo);
+										}
+
+										query_tDBOutput_2 = query_tDBOutput_2
+												.append(row4.geo == null ? "null" : "'" + row4.geo + "'")
+												.append(updateSQLSplits_tDBOutput_2[8]);
+										if (row4.country == null) {
+											pstmtUpdate_tDBOutput_2.setNull(9, java.sql.Types.VARCHAR);
+										} else {
+											pstmtUpdate_tDBOutput_2.setString(9, row4.country);
+										}
+
+										query_tDBOutput_2 = query_tDBOutput_2
+												.append(row4.country == null ? "null" : "'" + row4.country + "'")
+												.append(updateSQLSplits_tDBOutput_2[9]);
+										if (row4.text == null) {
+											pstmtUpdate_tDBOutput_2.setNull(10, java.sql.Types.VARCHAR);
+										} else {
+											pstmtUpdate_tDBOutput_2.setString(10, row4.text);
+										}
+
+										query_tDBOutput_2 = query_tDBOutput_2
+												.append(row4.text == null ? "null" : "'" + row4.text + "'")
+												.append(updateSQLSplits_tDBOutput_2[10]);
+										if (row4.date != null) {
+											pstmtUpdate_tDBOutput_2.setTimestamp(11,
+													new java.sql.Timestamp(row4.date.getTime()));
+										} else {
+											pstmtUpdate_tDBOutput_2.setNull(11, java.sql.Types.TIMESTAMP);
+										}
+
+										query_tDBOutput_2 = query_tDBOutput_2
+												.append(row4.date == null ? "null"
+														: "'" + new java.text.SimpleDateFormat("dd-MM-yyyy")
+																.format(row4.date) + "'")
+												.append(updateSQLSplits_tDBOutput_2[11]);
+										if (row4.id == null) {
+											pstmtUpdate_tDBOutput_2.setNull(12 + count_tDBOutput_2,
+													java.sql.Types.VARCHAR);
+										} else {
+											pstmtUpdate_tDBOutput_2.setString(12 + count_tDBOutput_2, row4.id);
+										}
+
+										query_tDBOutput_2 = query_tDBOutput_2
+												.append(row4.id == null ? "null" : "'" + row4.id + "'")
+												.append(updateSQLSplits_tDBOutput_2[12]);
+
+										globalMap.put("tDBOutput_2_QUERY", query_tDBOutput_2.toString().trim());
+										try {
+
+											updatedCount_tDBOutput_2 = updatedCount_tDBOutput_2
+													+ pstmtUpdate_tDBOutput_2.executeUpdate();
+											nb_line_tDBOutput_2++;
+
+										} catch (java.lang.Exception e) {
+
+											whetherReject_tDBOutput_2 = true;
+											nb_line_tDBOutput_2++;
+											System.err.print(e.getMessage());
+										}
+									} else {
+										if (row4.id == null) {
+											pstmtInsert_tDBOutput_2.setNull(1, java.sql.Types.VARCHAR);
+										} else {
+											pstmtInsert_tDBOutput_2.setString(1, row4.id);
+										}
+
+										query_tDBOutput_2 = query_tDBOutput_2.append(insertSQLSplits_tDBOutput_2[0])
+												.append(row4.id == null ? "null" : "'" + row4.id + "'")
+												.append(insertSQLSplits_tDBOutput_2[1]);
+										if (row4.user_id == null) {
+											pstmtInsert_tDBOutput_2.setNull(2, java.sql.Types.VARCHAR);
+										} else {
+											pstmtInsert_tDBOutput_2.setString(2, row4.user_id);
+										}
+
+										query_tDBOutput_2 = query_tDBOutput_2
+												.append(row4.user_id == null ? "null" : "'" + row4.user_id + "'")
+												.append(insertSQLSplits_tDBOutput_2[2]);
+										if (row4.user_name == null) {
+											pstmtInsert_tDBOutput_2.setNull(3, java.sql.Types.VARCHAR);
+										} else {
+											pstmtInsert_tDBOutput_2.setString(3, row4.user_name);
+										}
+
+										query_tDBOutput_2 = query_tDBOutput_2
+												.append(row4.user_name == null ? "null" : "'" + row4.user_name + "'")
+												.append(insertSQLSplits_tDBOutput_2[3]);
+										if (row4.user_screen_name == null) {
+											pstmtInsert_tDBOutput_2.setNull(4, java.sql.Types.VARCHAR);
+										} else {
+											pstmtInsert_tDBOutput_2.setString(4, row4.user_screen_name);
+										}
+
+										query_tDBOutput_2 = query_tDBOutput_2
+												.append(row4.user_screen_name == null ? "null"
+														: "'" + row4.user_screen_name + "'")
+												.append(insertSQLSplits_tDBOutput_2[4]);
+										if (row4.user_location == null) {
+											pstmtInsert_tDBOutput_2.setNull(5, java.sql.Types.VARCHAR);
+										} else {
+											pstmtInsert_tDBOutput_2.setString(5, row4.user_location);
+										}
+
+										query_tDBOutput_2 = query_tDBOutput_2
+												.append(row4.user_location == null ? "null"
+														: "'" + row4.user_location + "'")
+												.append(insertSQLSplits_tDBOutput_2[5]);
+										if (row4.user_description == null) {
+											pstmtInsert_tDBOutput_2.setNull(6, java.sql.Types.VARCHAR);
+										} else {
+											pstmtInsert_tDBOutput_2.setString(6, row4.user_description);
+										}
+
+										query_tDBOutput_2 = query_tDBOutput_2
+												.append(row4.user_description == null ? "null"
+														: "'" + row4.user_description + "'")
+												.append(insertSQLSplits_tDBOutput_2[6]);
+										if (row4.hashtag == null) {
+											pstmtInsert_tDBOutput_2.setNull(7, java.sql.Types.VARCHAR);
+										} else {
+											pstmtInsert_tDBOutput_2.setString(7, row4.hashtag);
+										}
+
+										query_tDBOutput_2 = query_tDBOutput_2
+												.append(row4.hashtag == null ? "null" : "'" + row4.hashtag + "'")
+												.append(insertSQLSplits_tDBOutput_2[7]);
+										if (row4.hashtag_description == null) {
+											pstmtInsert_tDBOutput_2.setNull(8, java.sql.Types.VARCHAR);
+										} else {
+											pstmtInsert_tDBOutput_2.setString(8, row4.hashtag_description);
+										}
+
+										query_tDBOutput_2 = query_tDBOutput_2
+												.append(row4.hashtag_description == null ? "null"
+														: "'" + row4.hashtag_description + "'")
+												.append(insertSQLSplits_tDBOutput_2[8]);
+										if (row4.geo == null) {
+											pstmtInsert_tDBOutput_2.setNull(9, java.sql.Types.VARCHAR);
+										} else {
+											pstmtInsert_tDBOutput_2.setString(9, row4.geo);
+										}
+
+										query_tDBOutput_2 = query_tDBOutput_2
+												.append(row4.geo == null ? "null" : "'" + row4.geo + "'")
+												.append(insertSQLSplits_tDBOutput_2[9]);
+										if (row4.country == null) {
+											pstmtInsert_tDBOutput_2.setNull(10, java.sql.Types.VARCHAR);
+										} else {
+											pstmtInsert_tDBOutput_2.setString(10, row4.country);
+										}
+
+										query_tDBOutput_2 = query_tDBOutput_2
+												.append(row4.country == null ? "null" : "'" + row4.country + "'")
+												.append(insertSQLSplits_tDBOutput_2[10]);
+										if (row4.text == null) {
+											pstmtInsert_tDBOutput_2.setNull(11, java.sql.Types.VARCHAR);
+										} else {
+											pstmtInsert_tDBOutput_2.setString(11, row4.text);
+										}
+
+										query_tDBOutput_2 = query_tDBOutput_2
+												.append(row4.text == null ? "null" : "'" + row4.text + "'")
+												.append(insertSQLSplits_tDBOutput_2[11]);
+										if (row4.date != null) {
+											pstmtInsert_tDBOutput_2.setTimestamp(12,
+													new java.sql.Timestamp(row4.date.getTime()));
+										} else {
+											pstmtInsert_tDBOutput_2.setNull(12, java.sql.Types.TIMESTAMP);
+										}
+
+										query_tDBOutput_2 = query_tDBOutput_2
+												.append(row4.date == null ? "null"
+														: "'" + new java.text.SimpleDateFormat("dd-MM-yyyy")
+																.format(row4.date) + "'")
+												.append(insertSQLSplits_tDBOutput_2[12]);
+										globalMap.put("tDBOutput_2_QUERY", query_tDBOutput_2.toString().trim());
+										try {
+
+											insertedCount_tDBOutput_2 = insertedCount_tDBOutput_2
+													+ pstmtInsert_tDBOutput_2.executeUpdate();
+											nb_line_tDBOutput_2++;
+
+										} catch (java.lang.Exception e) {
+
+											whetherReject_tDBOutput_2 = true;
+											nb_line_tDBOutput_2++;
+											System.err.print(e.getMessage());
+										}
+									}
+									if (!whetherReject_tDBOutput_2) {
+									}
+									commitCounter_tDBOutput_2++;
+									if (commitEvery_tDBOutput_2 <= commitCounter_tDBOutput_2) {
+										conn_tDBOutput_2.commit();
+
+										commitCounter_tDBOutput_2 = 0;
+									}
+
+									tos_count_tDBOutput_2++;
+
+									/**
+									 * [tDBOutput_2 main ] stop
+									 */
+
+									/**
+									 * [tDBOutput_2 process_data_begin ] start
+									 */
+
+									currentComponent = "tDBOutput_2";
+
+									/**
+									 * [tDBOutput_2 process_data_begin ] stop
+									 */
+
+									/**
+									 * [tDBOutput_2 process_data_end ] start
+									 */
+
+									currentComponent = "tDBOutput_2";
+
+									/**
+									 * [tDBOutput_2 process_data_end ] stop
+									 */
+
+								} // End of branch "row4"
+
+								/**
+								 * [tUniqRow_2 process_data_end ] start
+								 */
+
+								currentComponent = "tUniqRow_2";
+
+								/**
+								 * [tUniqRow_2 process_data_end ] stop
+								 */
+
+							} // End of branch "al_tb_all_tweets"
+
+							/**
+							 * [tXMLMap_2 process_data_end ] start
+							 */
+
+							currentComponent = "tXMLMap_2";
+
+							/**
+							 * [tXMLMap_2 process_data_end ] stop
+							 */
+
+						} // End of branch "row3"
+
+						/**
+						 * [tFileInputJSON_2 process_data_end ] start
+						 */
+
+						currentComponent = "tFileInputJSON_2";
+
+						/**
+						 * [tFileInputJSON_2 process_data_end ] stop
+						 */
+
+						/**
+						 * [tFileInputJSON_2 end ] start
+						 */
+
+						currentComponent = "tFileInputJSON_2";
+
+					}
+					globalMap.put("tFileInputJSON_2_NB_LINE", nb_line_tFileInputJSON_2);
+
+					ok_Hash.put("tFileInputJSON_2", true);
+					end_Hash.put("tFileInputJSON_2", System.currentTimeMillis());
+
+					/**
+					 * [tFileInputJSON_2 end ] stop
+					 */
+
+					/**
+					 * [tXMLMap_2 end ] start
+					 */
+
+					currentComponent = "tXMLMap_2";
+
+					if (execStat) {
+						runStat.updateStat(resourceMap, iterateId, 2, 0, "row3");
+					}
+
+					ok_Hash.put("tXMLMap_2", true);
+					end_Hash.put("tXMLMap_2", System.currentTimeMillis());
+
+					/**
+					 * [tXMLMap_2 end ] stop
+					 */
+
+					/**
+					 * [tUniqRow_2 end ] start
+					 */
+
+					currentComponent = "tUniqRow_2";
+
+					globalMap.put("tUniqRow_2_NB_UNIQUES", nb_uniques_tUniqRow_2);
+					globalMap.put("tUniqRow_2_NB_DUPLICATES", nb_duplicates_tUniqRow_2);
+
+					if (execStat) {
+						runStat.updateStat(resourceMap, iterateId, 2, 0, "al_tb_all_tweets");
+					}
+
+					ok_Hash.put("tUniqRow_2", true);
+					end_Hash.put("tUniqRow_2", System.currentTimeMillis());
+
+					/**
+					 * [tUniqRow_2 end ] stop
+					 */
+
+					/**
+					 * [tDBOutput_2 end ] start
+					 */
+
+					currentComponent = "tDBOutput_2";
+
+					if (pstmtUpdate_tDBOutput_2 != null) {
+						pstmtUpdate_tDBOutput_2.close();
+						resourceMap.remove("pstmtUpdate_tDBOutput_2");
+					}
+					if (pstmtInsert_tDBOutput_2 != null) {
+						pstmtInsert_tDBOutput_2.close();
+						resourceMap.remove("pstmtInsert_tDBOutput_2");
+					}
+					if (pstmt_tDBOutput_2 != null) {
+						pstmt_tDBOutput_2.close();
+						resourceMap.remove("pstmt_tDBOutput_2");
+					}
+					resourceMap.put("statementClosed_tDBOutput_2", true);
+
+					conn_tDBOutput_2.commit();
+
+					conn_tDBOutput_2.close();
+
+					resourceMap.put("finish_tDBOutput_2", true);
+
+					nb_line_deleted_tDBOutput_2 = nb_line_deleted_tDBOutput_2 + deletedCount_tDBOutput_2;
+					nb_line_update_tDBOutput_2 = nb_line_update_tDBOutput_2 + updatedCount_tDBOutput_2;
+					nb_line_inserted_tDBOutput_2 = nb_line_inserted_tDBOutput_2 + insertedCount_tDBOutput_2;
+					nb_line_rejected_tDBOutput_2 = nb_line_rejected_tDBOutput_2 + rejectedCount_tDBOutput_2;
+
+					globalMap.put("tDBOutput_2_NB_LINE", nb_line_tDBOutput_2);
+					globalMap.put("tDBOutput_2_NB_LINE_UPDATED", nb_line_update_tDBOutput_2);
+					globalMap.put("tDBOutput_2_NB_LINE_INSERTED", nb_line_inserted_tDBOutput_2);
+					globalMap.put("tDBOutput_2_NB_LINE_DELETED", nb_line_deleted_tDBOutput_2);
+					globalMap.put("tDBOutput_2_NB_LINE_REJECTED", nb_line_rejected_tDBOutput_2);
+
+					if (execStat) {
+						runStat.updateStat(resourceMap, iterateId, 2, 0, "row4");
+					}
+
+					ok_Hash.put("tDBOutput_2", true);
+					end_Hash.put("tDBOutput_2", System.currentTimeMillis());
+
+					if (execStat) {
+						runStat.updateStatOnConnection("OnComponentOk2", 0, "ok");
+					}
+					tFileList_3Process(globalMap);
+
+					/**
+					 * [tDBOutput_2 end ] stop
+					 */
+
+					if (execStat) {
+						runStat.updateStatOnConnection("iterate2", 2, "exec" + NB_ITERATE_tFileInputJSON_2);
+					}
+
+					/**
+					 * [tFileList_2 process_data_end ] start
+					 */
+
+					currentComponent = "tFileList_2";
+
+					/**
+					 * [tFileList_2 process_data_end ] stop
+					 */
+
+					/**
+					 * [tFileList_2 end ] start
+					 */
+
+					currentComponent = "tFileList_2";
+
+				}
+				globalMap.put("tFileList_2_NB_FILE", NB_FILEtFileList_2);
+
+				if (NB_FILEtFileList_2 == 0)
+					throw new RuntimeException("No file found in directory " + directory_tFileList_2);
+
+				ok_Hash.put("tFileList_2", true);
+				end_Hash.put("tFileList_2", System.currentTimeMillis());
+
+				/**
+				 * [tFileList_2 end ] stop
+				 */
+			} // end the resume
+
+		} catch (java.lang.Exception e) {
+
+			TalendException te = new TalendException(e, currentComponent, globalMap);
+
+			throw te;
+		} catch (java.lang.Error error) {
+
+			runStat.stopThreadStat();
+
+			throw error;
+		} finally {
+
+			try {
+
+				/**
+				 * [tFileList_2 finally ] start
+				 */
+
+				currentComponent = "tFileList_2";
+
+				/**
+				 * [tFileList_2 finally ] stop
+				 */
+
+				/**
+				 * [tFileInputJSON_2 finally ] start
+				 */
+
+				currentComponent = "tFileInputJSON_2";
+
+				/**
+				 * [tFileInputJSON_2 finally ] stop
+				 */
+
+				/**
+				 * [tXMLMap_2 finally ] start
+				 */
+
+				currentComponent = "tXMLMap_2";
+
+				/**
+				 * [tXMLMap_2 finally ] stop
+				 */
+
+				/**
+				 * [tUniqRow_2 finally ] start
+				 */
+
+				currentComponent = "tUniqRow_2";
+
+				/**
+				 * [tUniqRow_2 finally ] stop
+				 */
+
+				/**
+				 * [tDBOutput_2 finally ] start
+				 */
+
+				currentComponent = "tDBOutput_2";
+
+				try {
+					if (resourceMap.get("statementClosed_tDBOutput_2") == null) {
+						java.sql.PreparedStatement pstmtUpdateToClose_tDBOutput_2 = null;
+						if ((pstmtUpdateToClose_tDBOutput_2 = (java.sql.PreparedStatement) resourceMap
+								.remove("pstmtUpdate_tDBOutput_2")) != null) {
+							pstmtUpdateToClose_tDBOutput_2.close();
+						}
+						java.sql.PreparedStatement pstmtInsertToClose_tDBOutput_2 = null;
+						if ((pstmtInsertToClose_tDBOutput_2 = (java.sql.PreparedStatement) resourceMap
+								.remove("pstmtInsert_tDBOutput_2")) != null) {
+							pstmtInsertToClose_tDBOutput_2.close();
+						}
+						java.sql.PreparedStatement pstmtToClose_tDBOutput_2 = null;
+						if ((pstmtToClose_tDBOutput_2 = (java.sql.PreparedStatement) resourceMap
+								.remove("pstmt_tDBOutput_2")) != null) {
+							pstmtToClose_tDBOutput_2.close();
+						}
+					}
+				} finally {
+					if (resourceMap.get("finish_tDBOutput_2") == null) {
+						java.sql.Connection ctn_tDBOutput_2 = null;
+						if ((ctn_tDBOutput_2 = (java.sql.Connection) resourceMap.get("conn_tDBOutput_2")) != null) {
+							try {
+								ctn_tDBOutput_2.close();
+							} catch (java.sql.SQLException sqlEx_tDBOutput_2) {
+								String errorMessage_tDBOutput_2 = "failed to close the connection in tDBOutput_2 :"
+										+ sqlEx_tDBOutput_2.getMessage();
+								System.err.println(errorMessage_tDBOutput_2);
+							}
+						}
+					}
+				}
+
+				/**
+				 * [tDBOutput_2 finally ] stop
+				 */
+
+			} catch (java.lang.Exception e) {
+				// ignore
+			} catch (java.lang.Error error) {
+				// ignore
+			}
+			resourceMap = null;
+		}
+
+		globalMap.put("tFileList_2_SUBPROCESS_STATE", 1);
+	}
+
+	public static class row6Struct implements routines.system.IPersistableRow<row6Struct> {
+		final static byte[] commonByteArrayLock_ANALYSIS_TWITTER_s1_stocking_data_into_db = new byte[0];
+		static byte[] commonByteArray_ANALYSIS_TWITTER_s1_stocking_data_into_db = new byte[0];
+
+		public String id;
+
+		public String getId() {
+			return this.id;
+		}
+
+		public String user_id;
+
+		public String getUser_id() {
+			return this.user_id;
+		}
+
+		public String user_name;
+
+		public String getUser_name() {
+			return this.user_name;
+		}
+
+		public String user_screen_name;
+
+		public String getUser_screen_name() {
+			return this.user_screen_name;
+		}
+
+		public String user_location;
+
+		public String getUser_location() {
+			return this.user_location;
+		}
+
+		public String user_description;
+
+		public String getUser_description() {
+			return this.user_description;
+		}
+
+		public String hashtag;
+
+		public String getHashtag() {
+			return this.hashtag;
+		}
+
+		public String hashtag_description;
+
+		public String getHashtag_description() {
+			return this.hashtag_description;
+		}
+
+		public String geo;
+
+		public String getGeo() {
+			return this.geo;
+		}
+
+		public String country;
+
+		public String getCountry() {
+			return this.country;
+		}
+
+		public String text;
+
+		public String getText() {
+			return this.text;
+		}
+
+		public java.util.Date date;
+
+		public java.util.Date getDate() {
+			return this.date;
+		}
+
+		private String readString(ObjectInputStream dis) throws IOException {
+			String strReturn = null;
+			int length = 0;
+			length = dis.readInt();
+			if (length == -1) {
+				strReturn = null;
+			} else {
+				if (length > commonByteArray_ANALYSIS_TWITTER_s1_stocking_data_into_db.length) {
+					if (length < 1024 && commonByteArray_ANALYSIS_TWITTER_s1_stocking_data_into_db.length == 0) {
+						commonByteArray_ANALYSIS_TWITTER_s1_stocking_data_into_db = new byte[1024];
+					} else {
+						commonByteArray_ANALYSIS_TWITTER_s1_stocking_data_into_db = new byte[2 * length];
+					}
+				}
+				dis.readFully(commonByteArray_ANALYSIS_TWITTER_s1_stocking_data_into_db, 0, length);
+				strReturn = new String(commonByteArray_ANALYSIS_TWITTER_s1_stocking_data_into_db, 0, length,
+						utf8Charset);
+			}
+			return strReturn;
+		}
+
+		private void writeString(String str, ObjectOutputStream dos) throws IOException {
+			if (str == null) {
+				dos.writeInt(-1);
+			} else {
+				byte[] byteArray = str.getBytes(utf8Charset);
+				dos.writeInt(byteArray.length);
+				dos.write(byteArray);
+			}
+		}
+
+		private java.util.Date readDate(ObjectInputStream dis) throws IOException {
+			java.util.Date dateReturn = null;
+			int length = 0;
+			length = dis.readByte();
+			if (length == -1) {
+				dateReturn = null;
+			} else {
+				dateReturn = new Date(dis.readLong());
+			}
+			return dateReturn;
+		}
+
+		private void writeDate(java.util.Date date1, ObjectOutputStream dos) throws IOException {
+			if (date1 == null) {
+				dos.writeByte(-1);
+			} else {
+				dos.writeByte(0);
+				dos.writeLong(date1.getTime());
+			}
+		}
+
+		public void readData(ObjectInputStream dis) {
+
+			synchronized (commonByteArrayLock_ANALYSIS_TWITTER_s1_stocking_data_into_db) {
+
+				try {
+
+					int length = 0;
+
+					this.id = readString(dis);
+
+					this.user_id = readString(dis);
+
+					this.user_name = readString(dis);
+
+					this.user_screen_name = readString(dis);
+
+					this.user_location = readString(dis);
+
+					this.user_description = readString(dis);
+
+					this.hashtag = readString(dis);
+
+					this.hashtag_description = readString(dis);
+
+					this.geo = readString(dis);
+
+					this.country = readString(dis);
+
+					this.text = readString(dis);
+
+					this.date = readDate(dis);
+
+				} catch (IOException e) {
+					throw new RuntimeException(e);
+
+				}
+
+			}
+
+		}
+
+		public void writeData(ObjectOutputStream dos) {
+			try {
+
+				// String
+
+				writeString(this.id, dos);
+
+				// String
+
+				writeString(this.user_id, dos);
+
+				// String
+
+				writeString(this.user_name, dos);
+
+				// String
+
+				writeString(this.user_screen_name, dos);
+
+				// String
+
+				writeString(this.user_location, dos);
+
+				// String
+
+				writeString(this.user_description, dos);
+
+				// String
+
+				writeString(this.hashtag, dos);
+
+				// String
+
+				writeString(this.hashtag_description, dos);
+
+				// String
+
+				writeString(this.geo, dos);
+
+				// String
+
+				writeString(this.country, dos);
+
+				// String
+
+				writeString(this.text, dos);
+
+				// java.util.Date
+
+				writeDate(this.date, dos);
+
+			} catch (IOException e) {
+				throw new RuntimeException(e);
+			}
+
+		}
+
+		public String toString() {
+
+			StringBuilder sb = new StringBuilder();
+			sb.append(super.toString());
+			sb.append("[");
+			sb.append("id=" + id);
+			sb.append(",user_id=" + user_id);
+			sb.append(",user_name=" + user_name);
+			sb.append(",user_screen_name=" + user_screen_name);
+			sb.append(",user_location=" + user_location);
+			sb.append(",user_description=" + user_description);
+			sb.append(",hashtag=" + hashtag);
+			sb.append(",hashtag_description=" + hashtag_description);
+			sb.append(",geo=" + geo);
+			sb.append(",country=" + country);
+			sb.append(",text=" + text);
+			sb.append(",date=" + String.valueOf(date));
+			sb.append("]");
+
+			return sb.toString();
+		}
+
+		/**
+		 * Compare keys
+		 */
+		public int compareTo(row6Struct other) {
+
+			int returnValue = -1;
+
+			return returnValue;
+		}
+
+		private int checkNullsAndCompare(Object object1, Object object2) {
+			int returnValue = 0;
+			if (object1 instanceof Comparable && object2 instanceof Comparable) {
+				returnValue = ((Comparable) object1).compareTo(object2);
+			} else if (object1 != null && object2 != null) {
+				returnValue = compareStrings(object1.toString(), object2.toString());
+			} else if (object1 == null && object2 != null) {
+				returnValue = 1;
+			} else if (object1 != null && object2 == null) {
+				returnValue = -1;
+			} else {
+				returnValue = 0;
+			}
+
+			return returnValue;
+		}
+
+		private int compareStrings(String string1, String string2) {
+			return string1.compareTo(string2);
+		}
+
+	}
+
+	public static class in_tb_all_tweetsStruct implements routines.system.IPersistableRow<in_tb_all_tweetsStruct> {
+		final static byte[] commonByteArrayLock_ANALYSIS_TWITTER_s1_stocking_data_into_db = new byte[0];
+		static byte[] commonByteArray_ANALYSIS_TWITTER_s1_stocking_data_into_db = new byte[0];
+
+		public String id;
+
+		public String getId() {
+			return this.id;
+		}
+
+		public String user_id;
+
+		public String getUser_id() {
+			return this.user_id;
+		}
+
+		public String user_name;
+
+		public String getUser_name() {
+			return this.user_name;
+		}
+
+		public String user_screen_name;
+
+		public String getUser_screen_name() {
+			return this.user_screen_name;
+		}
+
+		public String user_location;
+
+		public String getUser_location() {
+			return this.user_location;
+		}
+
+		public String user_description;
+
+		public String getUser_description() {
+			return this.user_description;
+		}
+
+		public String hashtag;
+
+		public String getHashtag() {
+			return this.hashtag;
+		}
+
+		public String hashtag_description;
+
+		public String getHashtag_description() {
+			return this.hashtag_description;
+		}
+
+		public String geo;
+
+		public String getGeo() {
+			return this.geo;
+		}
+
+		public String country;
+
+		public String getCountry() {
+			return this.country;
+		}
+
+		public String text;
+
+		public String getText() {
+			return this.text;
+		}
+
+		public java.util.Date date;
+
+		public java.util.Date getDate() {
+			return this.date;
+		}
+
+		private String readString(ObjectInputStream dis) throws IOException {
+			String strReturn = null;
+			int length = 0;
+			length = dis.readInt();
+			if (length == -1) {
+				strReturn = null;
+			} else {
+				if (length > commonByteArray_ANALYSIS_TWITTER_s1_stocking_data_into_db.length) {
+					if (length < 1024 && commonByteArray_ANALYSIS_TWITTER_s1_stocking_data_into_db.length == 0) {
+						commonByteArray_ANALYSIS_TWITTER_s1_stocking_data_into_db = new byte[1024];
+					} else {
+						commonByteArray_ANALYSIS_TWITTER_s1_stocking_data_into_db = new byte[2 * length];
+					}
+				}
+				dis.readFully(commonByteArray_ANALYSIS_TWITTER_s1_stocking_data_into_db, 0, length);
+				strReturn = new String(commonByteArray_ANALYSIS_TWITTER_s1_stocking_data_into_db, 0, length,
+						utf8Charset);
+			}
+			return strReturn;
+		}
+
+		private void writeString(String str, ObjectOutputStream dos) throws IOException {
+			if (str == null) {
+				dos.writeInt(-1);
+			} else {
+				byte[] byteArray = str.getBytes(utf8Charset);
+				dos.writeInt(byteArray.length);
+				dos.write(byteArray);
+			}
+		}
+
+		private java.util.Date readDate(ObjectInputStream dis) throws IOException {
+			java.util.Date dateReturn = null;
+			int length = 0;
+			length = dis.readByte();
+			if (length == -1) {
+				dateReturn = null;
+			} else {
+				dateReturn = new Date(dis.readLong());
+			}
+			return dateReturn;
+		}
+
+		private void writeDate(java.util.Date date1, ObjectOutputStream dos) throws IOException {
+			if (date1 == null) {
+				dos.writeByte(-1);
+			} else {
+				dos.writeByte(0);
+				dos.writeLong(date1.getTime());
+			}
+		}
+
+		public void readData(ObjectInputStream dis) {
+
+			synchronized (commonByteArrayLock_ANALYSIS_TWITTER_s1_stocking_data_into_db) {
+
+				try {
+
+					int length = 0;
+
+					this.id = readString(dis);
+
+					this.user_id = readString(dis);
+
+					this.user_name = readString(dis);
+
+					this.user_screen_name = readString(dis);
+
+					this.user_location = readString(dis);
+
+					this.user_description = readString(dis);
+
+					this.hashtag = readString(dis);
+
+					this.hashtag_description = readString(dis);
+
+					this.geo = readString(dis);
+
+					this.country = readString(dis);
+
+					this.text = readString(dis);
+
+					this.date = readDate(dis);
+
+				} catch (IOException e) {
+					throw new RuntimeException(e);
+
+				}
+
+			}
+
+		}
+
+		public void writeData(ObjectOutputStream dos) {
+			try {
+
+				// String
+
+				writeString(this.id, dos);
+
+				// String
+
+				writeString(this.user_id, dos);
+
+				// String
+
+				writeString(this.user_name, dos);
+
+				// String
+
+				writeString(this.user_screen_name, dos);
+
+				// String
+
+				writeString(this.user_location, dos);
+
+				// String
+
+				writeString(this.user_description, dos);
+
+				// String
+
+				writeString(this.hashtag, dos);
+
+				// String
+
+				writeString(this.hashtag_description, dos);
+
+				// String
+
+				writeString(this.geo, dos);
+
+				// String
+
+				writeString(this.country, dos);
+
+				// String
+
+				writeString(this.text, dos);
+
+				// java.util.Date
+
+				writeDate(this.date, dos);
+
+			} catch (IOException e) {
+				throw new RuntimeException(e);
+			}
+
+		}
+
+		public String toString() {
+
+			StringBuilder sb = new StringBuilder();
+			sb.append(super.toString());
+			sb.append("[");
+			sb.append("id=" + id);
+			sb.append(",user_id=" + user_id);
+			sb.append(",user_name=" + user_name);
+			sb.append(",user_screen_name=" + user_screen_name);
+			sb.append(",user_location=" + user_location);
+			sb.append(",user_description=" + user_description);
+			sb.append(",hashtag=" + hashtag);
+			sb.append(",hashtag_description=" + hashtag_description);
+			sb.append(",geo=" + geo);
+			sb.append(",country=" + country);
+			sb.append(",text=" + text);
+			sb.append(",date=" + String.valueOf(date));
+			sb.append("]");
+
+			return sb.toString();
+		}
+
+		/**
+		 * Compare keys
+		 */
+		public int compareTo(in_tb_all_tweetsStruct other) {
+
+			int returnValue = -1;
+
+			return returnValue;
+		}
+
+		private int checkNullsAndCompare(Object object1, Object object2) {
+			int returnValue = 0;
+			if (object1 instanceof Comparable && object2 instanceof Comparable) {
+				returnValue = ((Comparable) object1).compareTo(object2);
+			} else if (object1 != null && object2 != null) {
+				returnValue = compareStrings(object1.toString(), object2.toString());
+			} else if (object1 == null && object2 != null) {
+				returnValue = 1;
+			} else if (object1 != null && object2 == null) {
+				returnValue = -1;
+			} else {
+				returnValue = 0;
+			}
+
+			return returnValue;
+		}
+
+		private int compareStrings(String string1, String string2) {
+			return string1.compareTo(string2);
+		}
+
+	}
+
+	public static class row5Struct implements routines.system.IPersistableRow<row5Struct> {
+		final static byte[] commonByteArrayLock_ANALYSIS_TWITTER_s1_stocking_data_into_db = new byte[0];
+		static byte[] commonByteArray_ANALYSIS_TWITTER_s1_stocking_data_into_db = new byte[0];
+
+		public Long hashtag_id;
+
+		public Long getHashtag_id() {
+			return this.hashtag_id;
+		}
+
+		public String user_name;
+
+		public String getUser_name() {
+			return this.user_name;
+		}
+
+		public String user_screen_name;
+
+		public String getUser_screen_name() {
+			return this.user_screen_name;
+		}
+
+		public String text_description;
+
+		public String getText_description() {
+			return this.text_description;
+		}
+
+		public Long date_id;
+
+		public Long getDate_id() {
+			return this.date_id;
+		}
+
+		public Long geo_id;
+
+		public Long getGeo_id() {
+			return this.geo_id;
+		}
+
+		public Long text_id;
+
+		public Long getText_id() {
+			return this.text_id;
+		}
+
+		public String geo_description;
+
+		public String getGeo_description() {
+			return this.geo_description;
+		}
+
+		public Long user_id;
+
+		public Long getUser_id() {
+			return this.user_id;
+		}
+
+		public String hashtag_text;
+
+		public String getHashtag_text() {
+			return this.hashtag_text;
+		}
+
+		public String user_location;
+
+		public String getUser_location() {
+			return this.user_location;
+		}
+
+		public java.util.Date date_description;
+
+		public java.util.Date getDate_description() {
+			return this.date_description;
+		}
+
+		public String user_description;
+
+		public String getUser_description() {
+			return this.user_description;
+		}
+
+		private String readString(ObjectInputStream dis) throws IOException {
+			String strReturn = null;
+			int length = 0;
+			length = dis.readInt();
+			if (length == -1) {
+				strReturn = null;
+			} else {
+				if (length > commonByteArray_ANALYSIS_TWITTER_s1_stocking_data_into_db.length) {
+					if (length < 1024 && commonByteArray_ANALYSIS_TWITTER_s1_stocking_data_into_db.length == 0) {
+						commonByteArray_ANALYSIS_TWITTER_s1_stocking_data_into_db = new byte[1024];
+					} else {
+						commonByteArray_ANALYSIS_TWITTER_s1_stocking_data_into_db = new byte[2 * length];
+					}
+				}
+				dis.readFully(commonByteArray_ANALYSIS_TWITTER_s1_stocking_data_into_db, 0, length);
+				strReturn = new String(commonByteArray_ANALYSIS_TWITTER_s1_stocking_data_into_db, 0, length,
+						utf8Charset);
+			}
+			return strReturn;
+		}
+
+		private void writeString(String str, ObjectOutputStream dos) throws IOException {
+			if (str == null) {
+				dos.writeInt(-1);
+			} else {
+				byte[] byteArray = str.getBytes(utf8Charset);
+				dos.writeInt(byteArray.length);
+				dos.write(byteArray);
+			}
+		}
+
+		private java.util.Date readDate(ObjectInputStream dis) throws IOException {
+			java.util.Date dateReturn = null;
+			int length = 0;
+			length = dis.readByte();
+			if (length == -1) {
+				dateReturn = null;
+			} else {
+				dateReturn = new Date(dis.readLong());
+			}
+			return dateReturn;
+		}
+
+		private void writeDate(java.util.Date date1, ObjectOutputStream dos) throws IOException {
+			if (date1 == null) {
+				dos.writeByte(-1);
+			} else {
+				dos.writeByte(0);
+				dos.writeLong(date1.getTime());
+			}
+		}
+
+		public void readData(ObjectInputStream dis) {
+
+			synchronized (commonByteArrayLock_ANALYSIS_TWITTER_s1_stocking_data_into_db) {
+
+				try {
+
+					int length = 0;
+
+					length = dis.readByte();
+					if (length == -1) {
+						this.hashtag_id = null;
+					} else {
+						this.hashtag_id = dis.readLong();
+					}
+
+					this.user_name = readString(dis);
+
+					this.user_screen_name = readString(dis);
+
+					this.text_description = readString(dis);
+
+					length = dis.readByte();
+					if (length == -1) {
+						this.date_id = null;
+					} else {
+						this.date_id = dis.readLong();
+					}
+
+					length = dis.readByte();
+					if (length == -1) {
+						this.geo_id = null;
+					} else {
+						this.geo_id = dis.readLong();
+					}
+
+					length = dis.readByte();
+					if (length == -1) {
+						this.text_id = null;
+					} else {
+						this.text_id = dis.readLong();
+					}
+
+					this.geo_description = readString(dis);
+
+					length = dis.readByte();
+					if (length == -1) {
+						this.user_id = null;
+					} else {
+						this.user_id = dis.readLong();
+					}
+
+					this.hashtag_text = readString(dis);
+
+					this.user_location = readString(dis);
+
+					this.date_description = readDate(dis);
+
+					this.user_description = readString(dis);
+
+				} catch (IOException e) {
+					throw new RuntimeException(e);
+
+				}
+
+			}
+
+		}
+
+		public void writeData(ObjectOutputStream dos) {
+			try {
+
+				// Long
+
+				if (this.hashtag_id == null) {
+					dos.writeByte(-1);
+				} else {
+					dos.writeByte(0);
+					dos.writeLong(this.hashtag_id);
+				}
+
+				// String
+
+				writeString(this.user_name, dos);
+
+				// String
+
+				writeString(this.user_screen_name, dos);
+
+				// String
+
+				writeString(this.text_description, dos);
+
+				// Long
+
+				if (this.date_id == null) {
+					dos.writeByte(-1);
+				} else {
+					dos.writeByte(0);
+					dos.writeLong(this.date_id);
+				}
+
+				// Long
+
+				if (this.geo_id == null) {
+					dos.writeByte(-1);
+				} else {
+					dos.writeByte(0);
+					dos.writeLong(this.geo_id);
+				}
+
+				// Long
+
+				if (this.text_id == null) {
+					dos.writeByte(-1);
+				} else {
+					dos.writeByte(0);
+					dos.writeLong(this.text_id);
+				}
+
+				// String
+
+				writeString(this.geo_description, dos);
+
+				// Long
+
+				if (this.user_id == null) {
+					dos.writeByte(-1);
+				} else {
+					dos.writeByte(0);
+					dos.writeLong(this.user_id);
+				}
+
+				// String
+
+				writeString(this.hashtag_text, dos);
+
+				// String
+
+				writeString(this.user_location, dos);
+
+				// java.util.Date
+
+				writeDate(this.date_description, dos);
+
+				// String
+
+				writeString(this.user_description, dos);
+
+			} catch (IOException e) {
+				throw new RuntimeException(e);
+			}
+
+		}
+
+		public String toString() {
+
+			StringBuilder sb = new StringBuilder();
+			sb.append(super.toString());
+			sb.append("[");
+			sb.append("hashtag_id=" + String.valueOf(hashtag_id));
+			sb.append(",user_name=" + user_name);
+			sb.append(",user_screen_name=" + user_screen_name);
+			sb.append(",text_description=" + text_description);
+			sb.append(",date_id=" + String.valueOf(date_id));
+			sb.append(",geo_id=" + String.valueOf(geo_id));
+			sb.append(",text_id=" + String.valueOf(text_id));
+			sb.append(",geo_description=" + geo_description);
+			sb.append(",user_id=" + String.valueOf(user_id));
+			sb.append(",hashtag_text=" + hashtag_text);
+			sb.append(",user_location=" + user_location);
+			sb.append(",date_description=" + String.valueOf(date_description));
+			sb.append(",user_description=" + user_description);
+			sb.append("]");
+
+			return sb.toString();
+		}
+
+		/**
+		 * Compare keys
+		 */
+		public int compareTo(row5Struct other) {
+
+			int returnValue = -1;
+
+			return returnValue;
+		}
+
+		private int checkNullsAndCompare(Object object1, Object object2) {
+			int returnValue = 0;
+			if (object1 instanceof Comparable && object2 instanceof Comparable) {
+				returnValue = ((Comparable) object1).compareTo(object2);
+			} else if (object1 != null && object2 != null) {
+				returnValue = compareStrings(object1.toString(), object2.toString());
+			} else if (object1 == null && object2 != null) {
+				returnValue = 1;
+			} else if (object1 != null && object2 == null) {
+				returnValue = -1;
+			} else {
+				returnValue = 0;
+			}
+
+			return returnValue;
+		}
+
+		private int compareStrings(String string1, String string2) {
+			return string1.compareTo(string2);
+		}
+
+	}
+
+	public void tFileList_3Process(final java.util.Map<String, Object> globalMap) throws TalendException {
+		globalMap.put("tFileList_3_SUBPROCESS_STATE", 0);
+
+		final boolean execStat = this.execStat;
+
+		String iterateId = "";
+
+		String currentComponent = "";
+		java.util.Map<String, Object> resourceMap = new java.util.HashMap<String, Object>();
+
+		try {
+			// TDI-39566 avoid throwing an useless Exception
+			boolean resumeIt = true;
+			if (globalResumeTicket == false && resumeEntryMethodName != null) {
+				String currentMethodName = new java.lang.Exception().getStackTrace()[0].getMethodName();
+				resumeIt = resumeEntryMethodName.equals(currentMethodName);
+			}
+			if (resumeIt || globalResumeTicket) { // start the resume
+				globalResumeTicket = true;
+
+				row5Struct row5 = new row5Struct();
+				in_tb_all_tweetsStruct in_tb_all_tweets = new in_tb_all_tweetsStruct();
+				row6Struct row6 = new row6Struct();
+
+				/**
+				 * [tFileList_3 begin ] start
+				 */
+
+				int NB_ITERATE_tFileInputJSON_3 = 0; // for statistics
+
+				ok_Hash.put("tFileList_3", false);
+				start_Hash.put("tFileList_3", System.currentTimeMillis());
+
+				currentComponent = "tFileList_3";
+
+				int tos_count_tFileList_3 = 0;
+
+				String directory_tFileList_3 = "/home/scasanova/Downloads/TOS_BD-20200219_1130-V7.3.1/workspace/ANALYSIS_TWITTER/documentations/apitwitter/";
+				final java.util.List<String> maskList_tFileList_3 = new java.util.ArrayList<String>();
+				final java.util.List<java.util.regex.Pattern> patternList_tFileList_3 = new java.util.ArrayList<java.util.regex.Pattern>();
+				maskList_tFileList_3.add("in*");
+				for (final String filemask_tFileList_3 : maskList_tFileList_3) {
+					String filemask_compile_tFileList_3 = filemask_tFileList_3;
+
+					filemask_compile_tFileList_3 = org.apache.oro.text.GlobCompiler.globToPerl5(
+							filemask_tFileList_3.toCharArray(), org.apache.oro.text.GlobCompiler.DEFAULT_MASK);
+
+					java.util.regex.Pattern fileNamePattern_tFileList_3 = java.util.regex.Pattern
+							.compile(filemask_compile_tFileList_3);
+					patternList_tFileList_3.add(fileNamePattern_tFileList_3);
+				}
+				int NB_FILEtFileList_3 = 0;
+
+				final boolean case_sensitive_tFileList_3 = true;
+				final java.util.List<java.io.File> list_tFileList_3 = new java.util.ArrayList<java.io.File>();
+				final java.util.Set<String> filePath_tFileList_3 = new java.util.HashSet<String>();
+				java.io.File file_tFileList_3 = new java.io.File(directory_tFileList_3);
+
+				file_tFileList_3.listFiles(new java.io.FilenameFilter() {
+					public boolean accept(java.io.File dir, String name) {
+						java.io.File file = new java.io.File(dir, name);
+						if (!file.isDirectory()) {
+
+							String fileName_tFileList_3 = file.getName();
+							for (final java.util.regex.Pattern fileNamePattern_tFileList_3 : patternList_tFileList_3) {
+								if (fileNamePattern_tFileList_3.matcher(fileName_tFileList_3).matches()) {
+									if (!filePath_tFileList_3.contains(file.getAbsolutePath())) {
+										list_tFileList_3.add(file);
+										filePath_tFileList_3.add(file.getAbsolutePath());
+									}
+								}
+							}
+						}
+						return true;
+					}
+				});
+				java.util.Collections.sort(list_tFileList_3);
+
+				for (int i_tFileList_3 = 0; i_tFileList_3 < list_tFileList_3.size(); i_tFileList_3++) {
+					java.io.File files_tFileList_3 = list_tFileList_3.get(i_tFileList_3);
+					String fileName_tFileList_3 = files_tFileList_3.getName();
+
+					String currentFileName_tFileList_3 = files_tFileList_3.getName();
+					String currentFilePath_tFileList_3 = files_tFileList_3.getAbsolutePath();
+					String currentFileDirectory_tFileList_3 = files_tFileList_3.getParent();
+					String currentFileExtension_tFileList_3 = null;
+
+					if (files_tFileList_3.getName().contains(".") && files_tFileList_3.isFile()) {
+						currentFileExtension_tFileList_3 = files_tFileList_3.getName()
+								.substring(files_tFileList_3.getName().lastIndexOf(".") + 1);
+					} else {
+						currentFileExtension_tFileList_3 = "";
+					}
+
+					NB_FILEtFileList_3++;
+					globalMap.put("tFileList_3_CURRENT_FILE", currentFileName_tFileList_3);
+					globalMap.put("tFileList_3_CURRENT_FILEPATH", currentFilePath_tFileList_3);
+					globalMap.put("tFileList_3_CURRENT_FILEDIRECTORY", currentFileDirectory_tFileList_3);
+					globalMap.put("tFileList_3_CURRENT_FILEEXTENSION", currentFileExtension_tFileList_3);
+					globalMap.put("tFileList_3_NB_FILE", NB_FILEtFileList_3);
+
+					/**
+					 * [tFileList_3 begin ] stop
+					 */
+
+					/**
+					 * [tFileList_3 main ] start
+					 */
+
+					currentComponent = "tFileList_3";
+
+					tos_count_tFileList_3++;
+
+					/**
+					 * [tFileList_3 main ] stop
+					 */
+
+					/**
+					 * [tFileList_3 process_data_begin ] start
+					 */
+
+					currentComponent = "tFileList_3";
+
+					/**
+					 * [tFileList_3 process_data_begin ] stop
+					 */
+					NB_ITERATE_tFileInputJSON_3++;
+
+					if (execStat) {
+						runStat.updateStatOnConnection("in_tb_all_tweets", 3, 0);
+					}
+
+					if (execStat) {
+						runStat.updateStatOnConnection("row5", 3, 0);
+					}
+
+					if (execStat) {
+						runStat.updateStatOnConnection("row6", 3, 0);
+					}
+
+					if (execStat) {
+						runStat.updateStatOnConnection("iterate3", 1, "exec" + NB_ITERATE_tFileInputJSON_3);
+						// Thread.sleep(1000);
+					}
+
+					/**
+					 * [tDBOutput_3 begin ] start
+					 */
+
+					ok_Hash.put("tDBOutput_3", false);
+					start_Hash.put("tDBOutput_3", System.currentTimeMillis());
+
+					currentComponent = "tDBOutput_3";
+
+					if (execStat) {
+						runStat.updateStatOnConnection(resourceMap, iterateId, 0, 0, "row6");
+					}
+
+					int tos_count_tDBOutput_3 = 0;
+
+					String dbschema_tDBOutput_3 = null;
+					dbschema_tDBOutput_3 = context.connection_postgres_Schema;
+
+					String tableName_tDBOutput_3 = null;
+					if (dbschema_tDBOutput_3 == null || dbschema_tDBOutput_3.trim().length() == 0) {
+						tableName_tDBOutput_3 = ("all_tweets");
+					} else {
+						tableName_tDBOutput_3 = dbschema_tDBOutput_3 + "\".\"" + ("all_tweets");
+					}
+
+					int updateKeyCount_tDBOutput_3 = 1;
+					if (updateKeyCount_tDBOutput_3 < 1) {
+						throw new RuntimeException("For update, Schema must have a key");
+					}
+					int nb_line_tDBOutput_3 = 0;
+					int nb_line_update_tDBOutput_3 = 0;
+					int nb_line_inserted_tDBOutput_3 = 0;
+					int nb_line_deleted_tDBOutput_3 = 0;
+					int nb_line_rejected_tDBOutput_3 = 0;
+
+					int deletedCount_tDBOutput_3 = 0;
+					int updatedCount_tDBOutput_3 = 0;
+					int insertedCount_tDBOutput_3 = 0;
+					int rejectedCount_tDBOutput_3 = 0;
+
+					boolean whetherReject_tDBOutput_3 = false;
+
+					java.sql.Connection conn_tDBOutput_3 = null;
+					String dbUser_tDBOutput_3 = null;
+
+					java.lang.Class.forName("org.postgresql.Driver");
+
+					String url_tDBOutput_3 = "jdbc:postgresql://" + context.connection_postgres_Server + ":"
+							+ context.connection_postgres_Port + "/" + context.connection_postgres_Database + "?"
+							+ context.connection_postgres_AdditionalParams;
+					dbUser_tDBOutput_3 = context.connection_postgres_Login;
+
+					final String decryptedPassword_tDBOutput_3 = context.connection_postgres_Password;
+
+					String dbPwd_tDBOutput_3 = decryptedPassword_tDBOutput_3;
+
+					conn_tDBOutput_3 = java.sql.DriverManager.getConnection(url_tDBOutput_3, dbUser_tDBOutput_3,
+							dbPwd_tDBOutput_3);
+
+					resourceMap.put("conn_tDBOutput_3", conn_tDBOutput_3);
+					conn_tDBOutput_3.setAutoCommit(false);
+					int commitEvery_tDBOutput_3 = 10000;
+					int commitCounter_tDBOutput_3 = 0;
+
+					int count_tDBOutput_3 = 0;
+					java.sql.DatabaseMetaData dbMetaData_tDBOutput_3 = conn_tDBOutput_3.getMetaData();
+					boolean whetherExist_tDBOutput_3 = false;
+					try (java.sql.ResultSet rsTable_tDBOutput_3 = dbMetaData_tDBOutput_3.getTables(null, null, null,
+							new String[] { "TABLE" })) {
+						String defaultSchema_tDBOutput_3 = "public";
+						if (dbschema_tDBOutput_3 == null || dbschema_tDBOutput_3.trim().length() == 0) {
+							try (java.sql.Statement stmtSchema_tDBOutput_3 = conn_tDBOutput_3.createStatement();
+									java.sql.ResultSet rsSchema_tDBOutput_3 = stmtSchema_tDBOutput_3
+											.executeQuery("select current_schema() ")) {
+								while (rsSchema_tDBOutput_3.next()) {
+									defaultSchema_tDBOutput_3 = rsSchema_tDBOutput_3.getString("current_schema");
+								}
+							}
+						}
+						while (rsTable_tDBOutput_3.next()) {
+							String table_tDBOutput_3 = rsTable_tDBOutput_3.getString("TABLE_NAME");
+							String schema_tDBOutput_3 = rsTable_tDBOutput_3.getString("TABLE_SCHEM");
+							if (table_tDBOutput_3.equals(("all_tweets")) && (schema_tDBOutput_3
+									.equals(dbschema_tDBOutput_3)
+									|| ((dbschema_tDBOutput_3 == null || dbschema_tDBOutput_3.trim().length() == 0)
+											&& defaultSchema_tDBOutput_3.equals(schema_tDBOutput_3)))) {
+								whetherExist_tDBOutput_3 = true;
+								break;
+							}
+						}
+					}
+					if (!whetherExist_tDBOutput_3) {
+						try (java.sql.Statement stmtCreate_tDBOutput_3 = conn_tDBOutput_3.createStatement()) {
+							stmtCreate_tDBOutput_3.execute("CREATE TABLE \"" + tableName_tDBOutput_3
+									+ "\"(\"id\" VARCHAR  not null ,\"user_id\" VARCHAR  not null ,\"user_name\" VARCHAR ,\"user_screen_name\" VARCHAR ,\"user_location\" VARCHAR ,\"user_description\" VARCHAR ,\"hashtag\" VARCHAR ,\"hashtag_description\" VARCHAR ,\"geo\" VARCHAR ,\"country\" VARCHAR ,\"text\" VARCHAR ,\"date\" TIMESTAMP ,primary key(\"id\"))");
+						}
+					}
+					java.sql.PreparedStatement pstmt_tDBOutput_3 = conn_tDBOutput_3.prepareStatement(
+							"SELECT COUNT(1) FROM \"" + tableName_tDBOutput_3 + "\" WHERE \"id\" = ?");
+					resourceMap.put("pstmt_tDBOutput_3", pstmt_tDBOutput_3);
+					String insert_tDBOutput_3 = "INSERT INTO \"" + tableName_tDBOutput_3
+							+ "\" (\"id\",\"user_id\",\"user_name\",\"user_screen_name\",\"user_location\",\"user_description\",\"hashtag\",\"hashtag_description\",\"geo\",\"country\",\"text\",\"date\") VALUES (?,?,?,?,?,?,?,?,?,?,?,?)";
+					java.sql.PreparedStatement pstmtInsert_tDBOutput_3 = conn_tDBOutput_3
+							.prepareStatement(insert_tDBOutput_3);
+					resourceMap.put("pstmtInsert_tDBOutput_3", pstmtInsert_tDBOutput_3);
+					String update_tDBOutput_3 = "UPDATE \"" + tableName_tDBOutput_3
+							+ "\" SET \"user_id\" = ?,\"user_name\" = ?,\"user_screen_name\" = ?,\"user_location\" = ?,\"user_description\" = ?,\"hashtag\" = ?,\"hashtag_description\" = ?,\"geo\" = ?,\"country\" = ?,\"text\" = ?,\"date\" = ? WHERE \"id\" = ?";
+					java.sql.PreparedStatement pstmtUpdate_tDBOutput_3 = conn_tDBOutput_3
+							.prepareStatement(update_tDBOutput_3);
+					resourceMap.put("pstmtUpdate_tDBOutput_3", pstmtUpdate_tDBOutput_3);
+
+					StringBuffer query_tDBOutput_3 = null;
+
+					update_tDBOutput_3 += " ";
+					String[] updateSQLSplits_tDBOutput_3 = update_tDBOutput_3.split("\\?");
+					String[] insertSQLSplits_tDBOutput_3 = insert_tDBOutput_3.split("\\?");
+
+					/**
+					 * [tDBOutput_3 begin ] stop
+					 */
+
+					/**
+					 * [tUniqRow_3 begin ] start
+					 */
+
+					ok_Hash.put("tUniqRow_3", false);
+					start_Hash.put("tUniqRow_3", System.currentTimeMillis());
+
+					currentComponent = "tUniqRow_3";
+
+					if (execStat) {
+						runStat.updateStatOnConnection(resourceMap, iterateId, 0, 0, "in_tb_all_tweets");
+					}
+
+					int tos_count_tUniqRow_3 = 0;
+
+					class KeyStruct_tUniqRow_3 {
+
+						private static final int DEFAULT_HASHCODE = 1;
+						private static final int PRIME = 31;
+						private int hashCode = DEFAULT_HASHCODE;
+						public boolean hashCodeDirty = true;
+
+						String id;
+
+						@Override
+						public int hashCode() {
+							if (this.hashCodeDirty) {
+								final int prime = PRIME;
+								int result = DEFAULT_HASHCODE;
+
+								result = prime * result + ((this.id == null) ? 0 : this.id.hashCode());
+
+								this.hashCode = result;
+								this.hashCodeDirty = false;
+							}
+							return this.hashCode;
+						}
+
+						@Override
+						public boolean equals(Object obj) {
+							if (this == obj)
+								return true;
+							if (obj == null)
+								return false;
+							if (getClass() != obj.getClass())
+								return false;
+							final KeyStruct_tUniqRow_3 other = (KeyStruct_tUniqRow_3) obj;
+
+							if (this.id == null) {
+								if (other.id != null)
+									return false;
+
+							} else if (!this.id.equals(other.id))
+
+								return false;
+
+							return true;
+						}
+
+					}
+
+					int nb_uniques_tUniqRow_3 = 0;
+					int nb_duplicates_tUniqRow_3 = 0;
+					KeyStruct_tUniqRow_3 finder_tUniqRow_3 = new KeyStruct_tUniqRow_3();
+					java.util.Set<KeyStruct_tUniqRow_3> keystUniqRow_3 = new java.util.HashSet<KeyStruct_tUniqRow_3>();
+
+					/**
+					 * [tUniqRow_3 begin ] stop
+					 */
+
+					/**
+					 * [tXMLMap_3 begin ] start
+					 */
+
+					ok_Hash.put("tXMLMap_3", false);
+					start_Hash.put("tXMLMap_3", System.currentTimeMillis());
+
+					currentComponent = "tXMLMap_3";
+
+					if (execStat) {
+						runStat.updateStatOnConnection(resourceMap, iterateId, 0, 0, "row5");
+					}
+
+					int tos_count_tXMLMap_3 = 0;
+
+//===============================input xml init part===============================
+					class XML_API_tXMLMap_3 {
+						public boolean isDefNull(org.dom4j.Node node) throws javax.xml.transform.TransformerException {
+							if (node != null && node instanceof org.dom4j.Element) {
+								org.dom4j.Attribute attri = ((org.dom4j.Element) node).attribute("nil");
+								if (attri != null && ("true").equals(attri.getText())) {
+									return true;
+								}
+							}
+							return false;
+						}
+
+						public boolean isMissing(org.dom4j.Node node) throws javax.xml.transform.TransformerException {
+							return node == null ? true : false;
+						}
+
+						public boolean isEmpty(org.dom4j.Node node) throws javax.xml.transform.TransformerException {
+							if (node != null) {
+								return node.getText().length() == 0;
+							}
+							return false;
+						}
+					}
+					class Var__tXMLMap_3__Struct {
+					}
+					Var__tXMLMap_3__Struct Var__tXMLMap_3 = new Var__tXMLMap_3__Struct();
+// ###############################
+// # Outputs initialization
+					in_tb_all_tweetsStruct in_tb_all_tweets_tmp = new in_tb_all_tweetsStruct();
+					in_tb_all_tweetsStruct in_tb_all_tweets_save = null;
+// ###############################
+					int nb_line_tXMLMap_3 = 0;
+
+					XML_API_tXMLMap_3 xml_api_tXMLMap_3 = new XML_API_tXMLMap_3();
+
+					/**
+					 * [tXMLMap_3 begin ] stop
+					 */
+
+					/**
+					 * [tFileInputJSON_3 begin ] start
+					 */
+
+					ok_Hash.put("tFileInputJSON_3", false);
+					start_Hash.put("tFileInputJSON_3", System.currentTimeMillis());
+
+					currentComponent = "tFileInputJSON_3";
+
+					int tos_count_tFileInputJSON_3 = 0;
+
+					class JsonPathCache_tFileInputJSON_3 {
+						final java.util.Map<String, com.jayway.jsonpath.JsonPath> jsonPathString2compiledJsonPath = new java.util.HashMap<String, com.jayway.jsonpath.JsonPath>();
+
+						public com.jayway.jsonpath.JsonPath getCompiledJsonPath(String jsonPath) {
+							if (jsonPathString2compiledJsonPath.containsKey(jsonPath)) {
+								return jsonPathString2compiledJsonPath.get(jsonPath);
+							} else {
+								com.jayway.jsonpath.JsonPath compiledLoopPath = com.jayway.jsonpath.JsonPath
+										.compile(jsonPath);
+								jsonPathString2compiledJsonPath.put(jsonPath, compiledLoopPath);
+								return compiledLoopPath;
+							}
+						}
+					}
+
+					int nb_line_tFileInputJSON_3 = 0;
+
+					JsonPathCache_tFileInputJSON_3 jsonPathCache_tFileInputJSON_3 = new JsonPathCache_tFileInputJSON_3();
+
+					String loopPath_tFileInputJSON_3 = "$.tweets[*]";
+					java.util.List<Object> resultset_tFileInputJSON_3 = new java.util.ArrayList<Object>();
+
+					java.io.InputStream is_tFileInputJSON_3 = null;
+					com.jayway.jsonpath.ParseContext parseContext_tFileInputJSON_3 = com.jayway.jsonpath.JsonPath
+							.using(com.jayway.jsonpath.Configuration.defaultConfiguration());
+					Object filenameOrStream_tFileInputJSON_3 = null;
+					try {
+						filenameOrStream_tFileInputJSON_3 = ((String) globalMap.get("tFileList_3_CURRENT_FILEPATH"));
+					} catch (java.lang.Exception e_tFileInputJSON_3) {
+
+						System.err.println(e_tFileInputJSON_3.getMessage());
+					}
+
+					com.jayway.jsonpath.ReadContext document_tFileInputJSON_3 = null;
+					try {
+						if (filenameOrStream_tFileInputJSON_3 instanceof java.io.InputStream) {
+							is_tFileInputJSON_3 = (java.io.InputStream) filenameOrStream_tFileInputJSON_3;
+						} else {
+
+							is_tFileInputJSON_3 = new java.io.FileInputStream(
+									(String) filenameOrStream_tFileInputJSON_3);
+
+						}
+
+						document_tFileInputJSON_3 = parseContext_tFileInputJSON_3.parse(is_tFileInputJSON_3, "UTF-8");
+						com.jayway.jsonpath.JsonPath compiledLoopPath_tFileInputJSON_3 = jsonPathCache_tFileInputJSON_3
+								.getCompiledJsonPath(loopPath_tFileInputJSON_3);
+						Object result_tFileInputJSON_3 = document_tFileInputJSON_3
+								.read(compiledLoopPath_tFileInputJSON_3, net.minidev.json.JSONObject.class);
+						if (result_tFileInputJSON_3 instanceof net.minidev.json.JSONArray) {
+							resultset_tFileInputJSON_3 = (net.minidev.json.JSONArray) result_tFileInputJSON_3;
+						} else {
+							resultset_tFileInputJSON_3.add(result_tFileInputJSON_3);
+						}
+					} catch (java.lang.Exception e_tFileInputJSON_3) {
+						System.err.println(e_tFileInputJSON_3.getMessage());
+					} finally {
+						if (is_tFileInputJSON_3 != null) {
+							is_tFileInputJSON_3.close();
+						}
+					}
+
+					String jsonPath_tFileInputJSON_3 = null;
+					com.jayway.jsonpath.JsonPath compiledJsonPath_tFileInputJSON_3 = null;
+
+					Object value_tFileInputJSON_3 = null;
+					Object root_tFileInputJSON_3 = null;
+					for (Object row_tFileInputJSON_3 : resultset_tFileInputJSON_3) {
+						nb_line_tFileInputJSON_3++;
+						row5 = null;
+						boolean whetherReject_tFileInputJSON_3 = false;
+						row5 = new row5Struct();
+
+						try {
+							jsonPath_tFileInputJSON_3 = "hashtag_id";
+							compiledJsonPath_tFileInputJSON_3 = jsonPathCache_tFileInputJSON_3
+									.getCompiledJsonPath(jsonPath_tFileInputJSON_3);
+
+							try {
+
+								if (jsonPath_tFileInputJSON_3.startsWith("$")) {
+									if (root_tFileInputJSON_3 == null) {
+										root_tFileInputJSON_3 = document_tFileInputJSON_3
+												.read(jsonPathCache_tFileInputJSON_3.getCompiledJsonPath("$"));
+									}
+									value_tFileInputJSON_3 = compiledJsonPath_tFileInputJSON_3
+											.read(root_tFileInputJSON_3);
+								} else {
+									value_tFileInputJSON_3 = compiledJsonPath_tFileInputJSON_3
+											.read(row_tFileInputJSON_3);
+								}
+								if (value_tFileInputJSON_3 != null && !value_tFileInputJSON_3.toString().isEmpty()) {
+									row5.hashtag_id = ParserUtils.parseTo_Long(value_tFileInputJSON_3.toString());
+								} else {
+									row5.hashtag_id =
+
+											null;
+								}
+							} catch (com.jayway.jsonpath.PathNotFoundException e_tFileInputJSON_3) {
+								row5.hashtag_id =
+
+										null;
+							}
+							jsonPath_tFileInputJSON_3 = "user_name";
+							compiledJsonPath_tFileInputJSON_3 = jsonPathCache_tFileInputJSON_3
+									.getCompiledJsonPath(jsonPath_tFileInputJSON_3);
+
+							try {
+
+								if (jsonPath_tFileInputJSON_3.startsWith("$")) {
+									if (root_tFileInputJSON_3 == null) {
+										root_tFileInputJSON_3 = document_tFileInputJSON_3
+												.read(jsonPathCache_tFileInputJSON_3.getCompiledJsonPath("$"));
+									}
+									value_tFileInputJSON_3 = compiledJsonPath_tFileInputJSON_3
+											.read(root_tFileInputJSON_3);
+								} else {
+									value_tFileInputJSON_3 = compiledJsonPath_tFileInputJSON_3
+											.read(row_tFileInputJSON_3);
+								}
+								row5.user_name = value_tFileInputJSON_3 == null ?
+
+										null : value_tFileInputJSON_3.toString();
+							} catch (com.jayway.jsonpath.PathNotFoundException e_tFileInputJSON_3) {
+								row5.user_name =
+
+										null;
+							}
+							jsonPath_tFileInputJSON_3 = "user_screen_name";
+							compiledJsonPath_tFileInputJSON_3 = jsonPathCache_tFileInputJSON_3
+									.getCompiledJsonPath(jsonPath_tFileInputJSON_3);
+
+							try {
+
+								if (jsonPath_tFileInputJSON_3.startsWith("$")) {
+									if (root_tFileInputJSON_3 == null) {
+										root_tFileInputJSON_3 = document_tFileInputJSON_3
+												.read(jsonPathCache_tFileInputJSON_3.getCompiledJsonPath("$"));
+									}
+									value_tFileInputJSON_3 = compiledJsonPath_tFileInputJSON_3
+											.read(root_tFileInputJSON_3);
+								} else {
+									value_tFileInputJSON_3 = compiledJsonPath_tFileInputJSON_3
+											.read(row_tFileInputJSON_3);
+								}
+								row5.user_screen_name = value_tFileInputJSON_3 == null ?
+
+										null : value_tFileInputJSON_3.toString();
+							} catch (com.jayway.jsonpath.PathNotFoundException e_tFileInputJSON_3) {
+								row5.user_screen_name =
+
+										null;
+							}
+							jsonPath_tFileInputJSON_3 = "text_description";
+							compiledJsonPath_tFileInputJSON_3 = jsonPathCache_tFileInputJSON_3
+									.getCompiledJsonPath(jsonPath_tFileInputJSON_3);
+
+							try {
+
+								if (jsonPath_tFileInputJSON_3.startsWith("$")) {
+									if (root_tFileInputJSON_3 == null) {
+										root_tFileInputJSON_3 = document_tFileInputJSON_3
+												.read(jsonPathCache_tFileInputJSON_3.getCompiledJsonPath("$"));
+									}
+									value_tFileInputJSON_3 = compiledJsonPath_tFileInputJSON_3
+											.read(root_tFileInputJSON_3);
+								} else {
+									value_tFileInputJSON_3 = compiledJsonPath_tFileInputJSON_3
+											.read(row_tFileInputJSON_3);
+								}
+								row5.text_description = value_tFileInputJSON_3 == null ?
+
+										null : value_tFileInputJSON_3.toString();
+							} catch (com.jayway.jsonpath.PathNotFoundException e_tFileInputJSON_3) {
+								row5.text_description =
+
+										null;
+							}
+							jsonPath_tFileInputJSON_3 = "date_id";
+							compiledJsonPath_tFileInputJSON_3 = jsonPathCache_tFileInputJSON_3
+									.getCompiledJsonPath(jsonPath_tFileInputJSON_3);
+
+							try {
+
+								if (jsonPath_tFileInputJSON_3.startsWith("$")) {
+									if (root_tFileInputJSON_3 == null) {
+										root_tFileInputJSON_3 = document_tFileInputJSON_3
+												.read(jsonPathCache_tFileInputJSON_3.getCompiledJsonPath("$"));
+									}
+									value_tFileInputJSON_3 = compiledJsonPath_tFileInputJSON_3
+											.read(root_tFileInputJSON_3);
+								} else {
+									value_tFileInputJSON_3 = compiledJsonPath_tFileInputJSON_3
+											.read(row_tFileInputJSON_3);
+								}
+								if (value_tFileInputJSON_3 != null && !value_tFileInputJSON_3.toString().isEmpty()) {
+									row5.date_id = ParserUtils.parseTo_Long(value_tFileInputJSON_3.toString());
+								} else {
+									row5.date_id =
+
+											null;
+								}
+							} catch (com.jayway.jsonpath.PathNotFoundException e_tFileInputJSON_3) {
+								row5.date_id =
+
+										null;
+							}
+							jsonPath_tFileInputJSON_3 = "geo_id";
+							compiledJsonPath_tFileInputJSON_3 = jsonPathCache_tFileInputJSON_3
+									.getCompiledJsonPath(jsonPath_tFileInputJSON_3);
+
+							try {
+
+								if (jsonPath_tFileInputJSON_3.startsWith("$")) {
+									if (root_tFileInputJSON_3 == null) {
+										root_tFileInputJSON_3 = document_tFileInputJSON_3
+												.read(jsonPathCache_tFileInputJSON_3.getCompiledJsonPath("$"));
+									}
+									value_tFileInputJSON_3 = compiledJsonPath_tFileInputJSON_3
+											.read(root_tFileInputJSON_3);
+								} else {
+									value_tFileInputJSON_3 = compiledJsonPath_tFileInputJSON_3
+											.read(row_tFileInputJSON_3);
+								}
+								if (value_tFileInputJSON_3 != null && !value_tFileInputJSON_3.toString().isEmpty()) {
+									row5.geo_id = ParserUtils.parseTo_Long(value_tFileInputJSON_3.toString());
+								} else {
+									row5.geo_id =
+
+											null;
+								}
+							} catch (com.jayway.jsonpath.PathNotFoundException e_tFileInputJSON_3) {
+								row5.geo_id =
+
+										null;
+							}
+							jsonPath_tFileInputJSON_3 = "text_id";
+							compiledJsonPath_tFileInputJSON_3 = jsonPathCache_tFileInputJSON_3
+									.getCompiledJsonPath(jsonPath_tFileInputJSON_3);
+
+							try {
+
+								if (jsonPath_tFileInputJSON_3.startsWith("$")) {
+									if (root_tFileInputJSON_3 == null) {
+										root_tFileInputJSON_3 = document_tFileInputJSON_3
+												.read(jsonPathCache_tFileInputJSON_3.getCompiledJsonPath("$"));
+									}
+									value_tFileInputJSON_3 = compiledJsonPath_tFileInputJSON_3
+											.read(root_tFileInputJSON_3);
+								} else {
+									value_tFileInputJSON_3 = compiledJsonPath_tFileInputJSON_3
+											.read(row_tFileInputJSON_3);
+								}
+								if (value_tFileInputJSON_3 != null && !value_tFileInputJSON_3.toString().isEmpty()) {
+									row5.text_id = ParserUtils.parseTo_Long(value_tFileInputJSON_3.toString());
+								} else {
+									row5.text_id =
+
+											null;
+								}
+							} catch (com.jayway.jsonpath.PathNotFoundException e_tFileInputJSON_3) {
+								row5.text_id =
+
+										null;
+							}
+							jsonPath_tFileInputJSON_3 = "geo_description";
+							compiledJsonPath_tFileInputJSON_3 = jsonPathCache_tFileInputJSON_3
+									.getCompiledJsonPath(jsonPath_tFileInputJSON_3);
+
+							try {
+
+								if (jsonPath_tFileInputJSON_3.startsWith("$")) {
+									if (root_tFileInputJSON_3 == null) {
+										root_tFileInputJSON_3 = document_tFileInputJSON_3
+												.read(jsonPathCache_tFileInputJSON_3.getCompiledJsonPath("$"));
+									}
+									value_tFileInputJSON_3 = compiledJsonPath_tFileInputJSON_3
+											.read(root_tFileInputJSON_3);
+								} else {
+									value_tFileInputJSON_3 = compiledJsonPath_tFileInputJSON_3
+											.read(row_tFileInputJSON_3);
+								}
+								row5.geo_description = value_tFileInputJSON_3 == null ?
+
+										null : value_tFileInputJSON_3.toString();
+							} catch (com.jayway.jsonpath.PathNotFoundException e_tFileInputJSON_3) {
+								row5.geo_description =
+
+										null;
+							}
+							jsonPath_tFileInputJSON_3 = "user_id";
+							compiledJsonPath_tFileInputJSON_3 = jsonPathCache_tFileInputJSON_3
+									.getCompiledJsonPath(jsonPath_tFileInputJSON_3);
+
+							try {
+
+								if (jsonPath_tFileInputJSON_3.startsWith("$")) {
+									if (root_tFileInputJSON_3 == null) {
+										root_tFileInputJSON_3 = document_tFileInputJSON_3
+												.read(jsonPathCache_tFileInputJSON_3.getCompiledJsonPath("$"));
+									}
+									value_tFileInputJSON_3 = compiledJsonPath_tFileInputJSON_3
+											.read(root_tFileInputJSON_3);
+								} else {
+									value_tFileInputJSON_3 = compiledJsonPath_tFileInputJSON_3
+											.read(row_tFileInputJSON_3);
+								}
+								if (value_tFileInputJSON_3 != null && !value_tFileInputJSON_3.toString().isEmpty()) {
+									row5.user_id = ParserUtils.parseTo_Long(value_tFileInputJSON_3.toString());
+								} else {
+									row5.user_id =
+
+											null;
+								}
+							} catch (com.jayway.jsonpath.PathNotFoundException e_tFileInputJSON_3) {
+								row5.user_id =
+
+										null;
+							}
+							jsonPath_tFileInputJSON_3 = "hashtag_text";
+							compiledJsonPath_tFileInputJSON_3 = jsonPathCache_tFileInputJSON_3
+									.getCompiledJsonPath(jsonPath_tFileInputJSON_3);
+
+							try {
+
+								if (jsonPath_tFileInputJSON_3.startsWith("$")) {
+									if (root_tFileInputJSON_3 == null) {
+										root_tFileInputJSON_3 = document_tFileInputJSON_3
+												.read(jsonPathCache_tFileInputJSON_3.getCompiledJsonPath("$"));
+									}
+									value_tFileInputJSON_3 = compiledJsonPath_tFileInputJSON_3
+											.read(root_tFileInputJSON_3);
+								} else {
+									value_tFileInputJSON_3 = compiledJsonPath_tFileInputJSON_3
+											.read(row_tFileInputJSON_3);
+								}
+								row5.hashtag_text = value_tFileInputJSON_3 == null ?
+
+										null : value_tFileInputJSON_3.toString();
+							} catch (com.jayway.jsonpath.PathNotFoundException e_tFileInputJSON_3) {
+								row5.hashtag_text =
+
+										null;
+							}
+							jsonPath_tFileInputJSON_3 = "user_location";
+							compiledJsonPath_tFileInputJSON_3 = jsonPathCache_tFileInputJSON_3
+									.getCompiledJsonPath(jsonPath_tFileInputJSON_3);
+
+							try {
+
+								if (jsonPath_tFileInputJSON_3.startsWith("$")) {
+									if (root_tFileInputJSON_3 == null) {
+										root_tFileInputJSON_3 = document_tFileInputJSON_3
+												.read(jsonPathCache_tFileInputJSON_3.getCompiledJsonPath("$"));
+									}
+									value_tFileInputJSON_3 = compiledJsonPath_tFileInputJSON_3
+											.read(root_tFileInputJSON_3);
+								} else {
+									value_tFileInputJSON_3 = compiledJsonPath_tFileInputJSON_3
+											.read(row_tFileInputJSON_3);
+								}
+								row5.user_location = value_tFileInputJSON_3 == null ?
+
+										null : value_tFileInputJSON_3.toString();
+							} catch (com.jayway.jsonpath.PathNotFoundException e_tFileInputJSON_3) {
+								row5.user_location =
+
+										null;
+							}
+							jsonPath_tFileInputJSON_3 = "date_description";
+							compiledJsonPath_tFileInputJSON_3 = jsonPathCache_tFileInputJSON_3
+									.getCompiledJsonPath(jsonPath_tFileInputJSON_3);
+
+							try {
+
+								if (jsonPath_tFileInputJSON_3.startsWith("$")) {
+									if (root_tFileInputJSON_3 == null) {
+										root_tFileInputJSON_3 = document_tFileInputJSON_3
+												.read(jsonPathCache_tFileInputJSON_3.getCompiledJsonPath("$"));
+									}
+									value_tFileInputJSON_3 = compiledJsonPath_tFileInputJSON_3
+											.read(root_tFileInputJSON_3);
+								} else {
+									value_tFileInputJSON_3 = compiledJsonPath_tFileInputJSON_3
+											.read(row_tFileInputJSON_3);
+								}
+								if (value_tFileInputJSON_3 != null && !value_tFileInputJSON_3.toString().isEmpty()) {
+									row5.date_description = ParserUtils.parseTo_Date(value_tFileInputJSON_3.toString(),
+											"dd-MM-yyyy");
+								} else {
+									row5.date_description =
+
+											null;
+								}
+							} catch (com.jayway.jsonpath.PathNotFoundException e_tFileInputJSON_3) {
+								row5.date_description =
+
+										null;
+							}
+							jsonPath_tFileInputJSON_3 = "user_description";
+							compiledJsonPath_tFileInputJSON_3 = jsonPathCache_tFileInputJSON_3
+									.getCompiledJsonPath(jsonPath_tFileInputJSON_3);
+
+							try {
+
+								if (jsonPath_tFileInputJSON_3.startsWith("$")) {
+									if (root_tFileInputJSON_3 == null) {
+										root_tFileInputJSON_3 = document_tFileInputJSON_3
+												.read(jsonPathCache_tFileInputJSON_3.getCompiledJsonPath("$"));
+									}
+									value_tFileInputJSON_3 = compiledJsonPath_tFileInputJSON_3
+											.read(root_tFileInputJSON_3);
+								} else {
+									value_tFileInputJSON_3 = compiledJsonPath_tFileInputJSON_3
+											.read(row_tFileInputJSON_3);
+								}
+								row5.user_description = value_tFileInputJSON_3 == null ?
+
+										null : value_tFileInputJSON_3.toString();
+							} catch (com.jayway.jsonpath.PathNotFoundException e_tFileInputJSON_3) {
+								row5.user_description =
+
+										null;
+							}
+						} catch (java.lang.Exception e_tFileInputJSON_3) {
+							whetherReject_tFileInputJSON_3 = true;
+							System.err.println(e_tFileInputJSON_3.getMessage());
+							row5 = null;
+						}
+//}
+
+						/**
+						 * [tFileInputJSON_3 begin ] stop
+						 */
+
+						/**
+						 * [tFileInputJSON_3 main ] start
+						 */
+
+						currentComponent = "tFileInputJSON_3";
+
+						tos_count_tFileInputJSON_3++;
+
+						/**
+						 * [tFileInputJSON_3 main ] stop
+						 */
+
+						/**
+						 * [tFileInputJSON_3 process_data_begin ] start
+						 */
+
+						currentComponent = "tFileInputJSON_3";
+
+						/**
+						 * [tFileInputJSON_3 process_data_begin ] stop
+						 */
+// Start of branch "row5"
+						if (row5 != null) {
+
+							/**
+							 * [tXMLMap_3 main ] start
+							 */
+
+							currentComponent = "tXMLMap_3";
+
+							if (execStat) {
+								runStat.updateStatOnConnection(iterateId, 1, 1, "row5");
+							}
+
+							boolean rejectedInnerJoin_tXMLMap_3 = false;
+							boolean rejectedDocInnerJoin_tXMLMap_3 = false;
+							boolean mainRowRejected_tXMLMap_3 = false;
+							boolean isMatchDocRowtXMLMap_3 = false;
+
+							{ // start of Var scope
+
+								// ###############################
+								// # Vars tables
+
+								Var__tXMLMap_3__Struct Var = Var__tXMLMap_3;
+								// ###############################
+								// # Output tables
+
+								in_tb_all_tweets = null;
+
+// # Output table : 'in_tb_all_tweets'
+// # Filter conditions 
+								if (
+
+								row5.text_description != "" & row5.user_location != "" & row5.hashtag_text != null
+
+								) {
+									in_tb_all_tweets_tmp.id = String.valueOf(row5.hashtag_id);
+									in_tb_all_tweets_tmp.user_id = String.valueOf(row5.user_id);
+									in_tb_all_tweets_tmp.user_name = row5.user_name;
+									in_tb_all_tweets_tmp.user_screen_name = row5.user_screen_name;
+									in_tb_all_tweets_tmp.user_location = row5.user_location;
+									in_tb_all_tweets_tmp.user_description = row5.user_description;
+									in_tb_all_tweets_tmp.hashtag = "NHSCOVID19app";
+									in_tb_all_tweets_tmp.hashtag_description = row5.hashtag_text;
+									in_tb_all_tweets_tmp.geo = row5.geo_description;
+									in_tb_all_tweets_tmp.country = "Angleterre";
+									in_tb_all_tweets_tmp.text = row5.text_description;
+									in_tb_all_tweets_tmp.date = row5.date_description;
+									in_tb_all_tweets = in_tb_all_tweets_tmp;
+								} // closing filter/reject
+// ###############################
+
+							} // end of Var scope
+
+							rejectedInnerJoin_tXMLMap_3 = false;
+
+							tos_count_tXMLMap_3++;
+
+							/**
+							 * [tXMLMap_3 main ] stop
+							 */
+
+							/**
+							 * [tXMLMap_3 process_data_begin ] start
+							 */
+
+							currentComponent = "tXMLMap_3";
+
+							/**
+							 * [tXMLMap_3 process_data_begin ] stop
+							 */
+// Start of branch "in_tb_all_tweets"
+							if (in_tb_all_tweets != null) {
+
+								/**
+								 * [tUniqRow_3 main ] start
+								 */
+
+								currentComponent = "tUniqRow_3";
+
+								if (execStat) {
+									runStat.updateStatOnConnection(iterateId, 1, 1, "in_tb_all_tweets");
+								}
+
+								row6 = null;
+								if (in_tb_all_tweets.id == null) {
+									finder_tUniqRow_3.id = null;
+								} else {
+									finder_tUniqRow_3.id = in_tb_all_tweets.id.toLowerCase();
+								}
+								finder_tUniqRow_3.hashCodeDirty = true;
+								if (!keystUniqRow_3.contains(finder_tUniqRow_3)) {
+									KeyStruct_tUniqRow_3 new_tUniqRow_3 = new KeyStruct_tUniqRow_3();
+
+									if (in_tb_all_tweets.id == null) {
+										new_tUniqRow_3.id = null;
+									} else {
+										new_tUniqRow_3.id = in_tb_all_tweets.id.toLowerCase();
+									}
+
+									keystUniqRow_3.add(new_tUniqRow_3);
+									if (row6 == null) {
+
+										row6 = new row6Struct();
+									}
+									row6.id = in_tb_all_tweets.id;
+									row6.user_id = in_tb_all_tweets.user_id;
+									row6.user_name = in_tb_all_tweets.user_name;
+									row6.user_screen_name = in_tb_all_tweets.user_screen_name;
+									row6.user_location = in_tb_all_tweets.user_location;
+									row6.user_description = in_tb_all_tweets.user_description;
+									row6.hashtag = in_tb_all_tweets.hashtag;
+									row6.hashtag_description = in_tb_all_tweets.hashtag_description;
+									row6.geo = in_tb_all_tweets.geo;
+									row6.country = in_tb_all_tweets.country;
+									row6.text = in_tb_all_tweets.text;
+									row6.date = in_tb_all_tweets.date;
+									nb_uniques_tUniqRow_3++;
+								} else {
+									nb_duplicates_tUniqRow_3++;
+								}
+
+								tos_count_tUniqRow_3++;
+
+								/**
+								 * [tUniqRow_3 main ] stop
+								 */
+
+								/**
+								 * [tUniqRow_3 process_data_begin ] start
+								 */
+
+								currentComponent = "tUniqRow_3";
+
+								/**
+								 * [tUniqRow_3 process_data_begin ] stop
+								 */
+// Start of branch "row6"
+								if (row6 != null) {
+
+									/**
+									 * [tDBOutput_3 main ] start
+									 */
+
+									currentComponent = "tDBOutput_3";
+
+									if (execStat) {
+										runStat.updateStatOnConnection(iterateId, 1, 1, "row6");
+									}
+
+									query_tDBOutput_3 = new StringBuffer("");
+									whetherReject_tDBOutput_3 = false;
+									if (row6.id == null) {
+										pstmt_tDBOutput_3.setNull(1, java.sql.Types.VARCHAR);
+									} else {
+										pstmt_tDBOutput_3.setString(1, row6.id);
+									}
+
+									int checkCount_tDBOutput_3 = -1;
+									try (java.sql.ResultSet rs_tDBOutput_3 = pstmt_tDBOutput_3.executeQuery()) {
+										while (rs_tDBOutput_3.next()) {
+											checkCount_tDBOutput_3 = rs_tDBOutput_3.getInt(1);
+										}
+									}
+									if (checkCount_tDBOutput_3 > 0) {
+										if (row6.user_id == null) {
+											pstmtUpdate_tDBOutput_3.setNull(1, java.sql.Types.VARCHAR);
+										} else {
+											pstmtUpdate_tDBOutput_3.setString(1, row6.user_id);
+										}
+
+										query_tDBOutput_3 = query_tDBOutput_3.append(updateSQLSplits_tDBOutput_3[0])
+												.append(row6.user_id == null ? "null" : "'" + row6.user_id + "'")
+												.append(updateSQLSplits_tDBOutput_3[1]);
+										if (row6.user_name == null) {
+											pstmtUpdate_tDBOutput_3.setNull(2, java.sql.Types.VARCHAR);
+										} else {
+											pstmtUpdate_tDBOutput_3.setString(2, row6.user_name);
+										}
+
+										query_tDBOutput_3 = query_tDBOutput_3
+												.append(row6.user_name == null ? "null" : "'" + row6.user_name + "'")
+												.append(updateSQLSplits_tDBOutput_3[2]);
+										if (row6.user_screen_name == null) {
+											pstmtUpdate_tDBOutput_3.setNull(3, java.sql.Types.VARCHAR);
+										} else {
+											pstmtUpdate_tDBOutput_3.setString(3, row6.user_screen_name);
+										}
+
+										query_tDBOutput_3 = query_tDBOutput_3
+												.append(row6.user_screen_name == null ? "null"
+														: "'" + row6.user_screen_name + "'")
+												.append(updateSQLSplits_tDBOutput_3[3]);
+										if (row6.user_location == null) {
+											pstmtUpdate_tDBOutput_3.setNull(4, java.sql.Types.VARCHAR);
+										} else {
+											pstmtUpdate_tDBOutput_3.setString(4, row6.user_location);
+										}
+
+										query_tDBOutput_3 = query_tDBOutput_3
+												.append(row6.user_location == null ? "null"
+														: "'" + row6.user_location + "'")
+												.append(updateSQLSplits_tDBOutput_3[4]);
+										if (row6.user_description == null) {
+											pstmtUpdate_tDBOutput_3.setNull(5, java.sql.Types.VARCHAR);
+										} else {
+											pstmtUpdate_tDBOutput_3.setString(5, row6.user_description);
+										}
+
+										query_tDBOutput_3 = query_tDBOutput_3
+												.append(row6.user_description == null ? "null"
+														: "'" + row6.user_description + "'")
+												.append(updateSQLSplits_tDBOutput_3[5]);
+										if (row6.hashtag == null) {
+											pstmtUpdate_tDBOutput_3.setNull(6, java.sql.Types.VARCHAR);
+										} else {
+											pstmtUpdate_tDBOutput_3.setString(6, row6.hashtag);
+										}
+
+										query_tDBOutput_3 = query_tDBOutput_3
+												.append(row6.hashtag == null ? "null" : "'" + row6.hashtag + "'")
+												.append(updateSQLSplits_tDBOutput_3[6]);
+										if (row6.hashtag_description == null) {
+											pstmtUpdate_tDBOutput_3.setNull(7, java.sql.Types.VARCHAR);
+										} else {
+											pstmtUpdate_tDBOutput_3.setString(7, row6.hashtag_description);
+										}
+
+										query_tDBOutput_3 = query_tDBOutput_3
+												.append(row6.hashtag_description == null ? "null"
+														: "'" + row6.hashtag_description + "'")
+												.append(updateSQLSplits_tDBOutput_3[7]);
+										if (row6.geo == null) {
+											pstmtUpdate_tDBOutput_3.setNull(8, java.sql.Types.VARCHAR);
+										} else {
+											pstmtUpdate_tDBOutput_3.setString(8, row6.geo);
+										}
+
+										query_tDBOutput_3 = query_tDBOutput_3
+												.append(row6.geo == null ? "null" : "'" + row6.geo + "'")
+												.append(updateSQLSplits_tDBOutput_3[8]);
+										if (row6.country == null) {
+											pstmtUpdate_tDBOutput_3.setNull(9, java.sql.Types.VARCHAR);
+										} else {
+											pstmtUpdate_tDBOutput_3.setString(9, row6.country);
+										}
+
+										query_tDBOutput_3 = query_tDBOutput_3
+												.append(row6.country == null ? "null" : "'" + row6.country + "'")
+												.append(updateSQLSplits_tDBOutput_3[9]);
+										if (row6.text == null) {
+											pstmtUpdate_tDBOutput_3.setNull(10, java.sql.Types.VARCHAR);
+										} else {
+											pstmtUpdate_tDBOutput_3.setString(10, row6.text);
+										}
+
+										query_tDBOutput_3 = query_tDBOutput_3
+												.append(row6.text == null ? "null" : "'" + row6.text + "'")
+												.append(updateSQLSplits_tDBOutput_3[10]);
+										if (row6.date != null) {
+											pstmtUpdate_tDBOutput_3.setTimestamp(11,
+													new java.sql.Timestamp(row6.date.getTime()));
+										} else {
+											pstmtUpdate_tDBOutput_3.setNull(11, java.sql.Types.TIMESTAMP);
+										}
+
+										query_tDBOutput_3 = query_tDBOutput_3
+												.append(row6.date == null ? "null"
+														: "'" + new java.text.SimpleDateFormat("dd-MM-yyyy")
+																.format(row6.date) + "'")
+												.append(updateSQLSplits_tDBOutput_3[11]);
+										if (row6.id == null) {
+											pstmtUpdate_tDBOutput_3.setNull(12 + count_tDBOutput_3,
+													java.sql.Types.VARCHAR);
+										} else {
+											pstmtUpdate_tDBOutput_3.setString(12 + count_tDBOutput_3, row6.id);
+										}
+
+										query_tDBOutput_3 = query_tDBOutput_3
+												.append(row6.id == null ? "null" : "'" + row6.id + "'")
+												.append(updateSQLSplits_tDBOutput_3[12]);
+
+										globalMap.put("tDBOutput_3_QUERY", query_tDBOutput_3.toString().trim());
+										try {
+
+											updatedCount_tDBOutput_3 = updatedCount_tDBOutput_3
+													+ pstmtUpdate_tDBOutput_3.executeUpdate();
+											nb_line_tDBOutput_3++;
+
+										} catch (java.lang.Exception e) {
+
+											whetherReject_tDBOutput_3 = true;
+											nb_line_tDBOutput_3++;
+											System.err.print(e.getMessage());
+										}
+									} else {
+										if (row6.id == null) {
+											pstmtInsert_tDBOutput_3.setNull(1, java.sql.Types.VARCHAR);
+										} else {
+											pstmtInsert_tDBOutput_3.setString(1, row6.id);
+										}
+
+										query_tDBOutput_3 = query_tDBOutput_3.append(insertSQLSplits_tDBOutput_3[0])
+												.append(row6.id == null ? "null" : "'" + row6.id + "'")
+												.append(insertSQLSplits_tDBOutput_3[1]);
+										if (row6.user_id == null) {
+											pstmtInsert_tDBOutput_3.setNull(2, java.sql.Types.VARCHAR);
+										} else {
+											pstmtInsert_tDBOutput_3.setString(2, row6.user_id);
+										}
+
+										query_tDBOutput_3 = query_tDBOutput_3
+												.append(row6.user_id == null ? "null" : "'" + row6.user_id + "'")
+												.append(insertSQLSplits_tDBOutput_3[2]);
+										if (row6.user_name == null) {
+											pstmtInsert_tDBOutput_3.setNull(3, java.sql.Types.VARCHAR);
+										} else {
+											pstmtInsert_tDBOutput_3.setString(3, row6.user_name);
+										}
+
+										query_tDBOutput_3 = query_tDBOutput_3
+												.append(row6.user_name == null ? "null" : "'" + row6.user_name + "'")
+												.append(insertSQLSplits_tDBOutput_3[3]);
+										if (row6.user_screen_name == null) {
+											pstmtInsert_tDBOutput_3.setNull(4, java.sql.Types.VARCHAR);
+										} else {
+											pstmtInsert_tDBOutput_3.setString(4, row6.user_screen_name);
+										}
+
+										query_tDBOutput_3 = query_tDBOutput_3
+												.append(row6.user_screen_name == null ? "null"
+														: "'" + row6.user_screen_name + "'")
+												.append(insertSQLSplits_tDBOutput_3[4]);
+										if (row6.user_location == null) {
+											pstmtInsert_tDBOutput_3.setNull(5, java.sql.Types.VARCHAR);
+										} else {
+											pstmtInsert_tDBOutput_3.setString(5, row6.user_location);
+										}
+
+										query_tDBOutput_3 = query_tDBOutput_3
+												.append(row6.user_location == null ? "null"
+														: "'" + row6.user_location + "'")
+												.append(insertSQLSplits_tDBOutput_3[5]);
+										if (row6.user_description == null) {
+											pstmtInsert_tDBOutput_3.setNull(6, java.sql.Types.VARCHAR);
+										} else {
+											pstmtInsert_tDBOutput_3.setString(6, row6.user_description);
+										}
+
+										query_tDBOutput_3 = query_tDBOutput_3
+												.append(row6.user_description == null ? "null"
+														: "'" + row6.user_description + "'")
+												.append(insertSQLSplits_tDBOutput_3[6]);
+										if (row6.hashtag == null) {
+											pstmtInsert_tDBOutput_3.setNull(7, java.sql.Types.VARCHAR);
+										} else {
+											pstmtInsert_tDBOutput_3.setString(7, row6.hashtag);
+										}
+
+										query_tDBOutput_3 = query_tDBOutput_3
+												.append(row6.hashtag == null ? "null" : "'" + row6.hashtag + "'")
+												.append(insertSQLSplits_tDBOutput_3[7]);
+										if (row6.hashtag_description == null) {
+											pstmtInsert_tDBOutput_3.setNull(8, java.sql.Types.VARCHAR);
+										} else {
+											pstmtInsert_tDBOutput_3.setString(8, row6.hashtag_description);
+										}
+
+										query_tDBOutput_3 = query_tDBOutput_3
+												.append(row6.hashtag_description == null ? "null"
+														: "'" + row6.hashtag_description + "'")
+												.append(insertSQLSplits_tDBOutput_3[8]);
+										if (row6.geo == null) {
+											pstmtInsert_tDBOutput_3.setNull(9, java.sql.Types.VARCHAR);
+										} else {
+											pstmtInsert_tDBOutput_3.setString(9, row6.geo);
+										}
+
+										query_tDBOutput_3 = query_tDBOutput_3
+												.append(row6.geo == null ? "null" : "'" + row6.geo + "'")
+												.append(insertSQLSplits_tDBOutput_3[9]);
+										if (row6.country == null) {
+											pstmtInsert_tDBOutput_3.setNull(10, java.sql.Types.VARCHAR);
+										} else {
+											pstmtInsert_tDBOutput_3.setString(10, row6.country);
+										}
+
+										query_tDBOutput_3 = query_tDBOutput_3
+												.append(row6.country == null ? "null" : "'" + row6.country + "'")
+												.append(insertSQLSplits_tDBOutput_3[10]);
+										if (row6.text == null) {
+											pstmtInsert_tDBOutput_3.setNull(11, java.sql.Types.VARCHAR);
+										} else {
+											pstmtInsert_tDBOutput_3.setString(11, row6.text);
+										}
+
+										query_tDBOutput_3 = query_tDBOutput_3
+												.append(row6.text == null ? "null" : "'" + row6.text + "'")
+												.append(insertSQLSplits_tDBOutput_3[11]);
+										if (row6.date != null) {
+											pstmtInsert_tDBOutput_3.setTimestamp(12,
+													new java.sql.Timestamp(row6.date.getTime()));
+										} else {
+											pstmtInsert_tDBOutput_3.setNull(12, java.sql.Types.TIMESTAMP);
+										}
+
+										query_tDBOutput_3 = query_tDBOutput_3
+												.append(row6.date == null ? "null"
+														: "'" + new java.text.SimpleDateFormat("dd-MM-yyyy")
+																.format(row6.date) + "'")
+												.append(insertSQLSplits_tDBOutput_3[12]);
+										globalMap.put("tDBOutput_3_QUERY", query_tDBOutput_3.toString().trim());
+										try {
+
+											insertedCount_tDBOutput_3 = insertedCount_tDBOutput_3
+													+ pstmtInsert_tDBOutput_3.executeUpdate();
+											nb_line_tDBOutput_3++;
+
+										} catch (java.lang.Exception e) {
+
+											whetherReject_tDBOutput_3 = true;
+											nb_line_tDBOutput_3++;
+											System.err.print(e.getMessage());
+										}
+									}
+									commitCounter_tDBOutput_3++;
+									if (commitEvery_tDBOutput_3 <= commitCounter_tDBOutput_3) {
+										conn_tDBOutput_3.commit();
+
+										commitCounter_tDBOutput_3 = 0;
+									}
+
+									tos_count_tDBOutput_3++;
+
+									/**
+									 * [tDBOutput_3 main ] stop
+									 */
+
+									/**
+									 * [tDBOutput_3 process_data_begin ] start
+									 */
+
+									currentComponent = "tDBOutput_3";
+
+									/**
+									 * [tDBOutput_3 process_data_begin ] stop
+									 */
+
+									/**
+									 * [tDBOutput_3 process_data_end ] start
+									 */
+
+									currentComponent = "tDBOutput_3";
+
+									/**
+									 * [tDBOutput_3 process_data_end ] stop
+									 */
+
+								} // End of branch "row6"
+
+								/**
+								 * [tUniqRow_3 process_data_end ] start
+								 */
+
+								currentComponent = "tUniqRow_3";
+
+								/**
+								 * [tUniqRow_3 process_data_end ] stop
+								 */
+
+							} // End of branch "in_tb_all_tweets"
+
+							/**
+							 * [tXMLMap_3 process_data_end ] start
+							 */
+
+							currentComponent = "tXMLMap_3";
+
+							/**
+							 * [tXMLMap_3 process_data_end ] stop
+							 */
+
+						} // End of branch "row5"
+
+						/**
+						 * [tFileInputJSON_3 process_data_end ] start
+						 */
+
+						currentComponent = "tFileInputJSON_3";
+
+						/**
+						 * [tFileInputJSON_3 process_data_end ] stop
+						 */
+
+						/**
+						 * [tFileInputJSON_3 end ] start
+						 */
+
+						currentComponent = "tFileInputJSON_3";
+
+					}
+					globalMap.put("tFileInputJSON_3_NB_LINE", nb_line_tFileInputJSON_3);
+
+					ok_Hash.put("tFileInputJSON_3", true);
+					end_Hash.put("tFileInputJSON_3", System.currentTimeMillis());
+
+					/**
+					 * [tFileInputJSON_3 end ] stop
+					 */
+
+					/**
+					 * [tXMLMap_3 end ] start
+					 */
+
+					currentComponent = "tXMLMap_3";
+
+					if (execStat) {
+						runStat.updateStat(resourceMap, iterateId, 2, 0, "row5");
+					}
+
+					ok_Hash.put("tXMLMap_3", true);
+					end_Hash.put("tXMLMap_3", System.currentTimeMillis());
+
+					/**
+					 * [tXMLMap_3 end ] stop
+					 */
+
+					/**
+					 * [tUniqRow_3 end ] start
+					 */
+
+					currentComponent = "tUniqRow_3";
+
+					globalMap.put("tUniqRow_3_NB_UNIQUES", nb_uniques_tUniqRow_3);
+					globalMap.put("tUniqRow_3_NB_DUPLICATES", nb_duplicates_tUniqRow_3);
+
+					if (execStat) {
+						runStat.updateStat(resourceMap, iterateId, 2, 0, "in_tb_all_tweets");
+					}
+
+					ok_Hash.put("tUniqRow_3", true);
+					end_Hash.put("tUniqRow_3", System.currentTimeMillis());
+
+					/**
+					 * [tUniqRow_3 end ] stop
+					 */
+
+					/**
+					 * [tDBOutput_3 end ] start
+					 */
+
+					currentComponent = "tDBOutput_3";
+
+					if (pstmtUpdate_tDBOutput_3 != null) {
+						pstmtUpdate_tDBOutput_3.close();
+						resourceMap.remove("pstmtUpdate_tDBOutput_3");
+					}
+					if (pstmtInsert_tDBOutput_3 != null) {
+						pstmtInsert_tDBOutput_3.close();
+						resourceMap.remove("pstmtInsert_tDBOutput_3");
+					}
+					if (pstmt_tDBOutput_3 != null) {
+						pstmt_tDBOutput_3.close();
+						resourceMap.remove("pstmt_tDBOutput_3");
+					}
+					resourceMap.put("statementClosed_tDBOutput_3", true);
+
+					conn_tDBOutput_3.commit();
+
+					conn_tDBOutput_3.close();
+
+					resourceMap.put("finish_tDBOutput_3", true);
+
+					nb_line_deleted_tDBOutput_3 = nb_line_deleted_tDBOutput_3 + deletedCount_tDBOutput_3;
+					nb_line_update_tDBOutput_3 = nb_line_update_tDBOutput_3 + updatedCount_tDBOutput_3;
+					nb_line_inserted_tDBOutput_3 = nb_line_inserted_tDBOutput_3 + insertedCount_tDBOutput_3;
+					nb_line_rejected_tDBOutput_3 = nb_line_rejected_tDBOutput_3 + rejectedCount_tDBOutput_3;
+
+					globalMap.put("tDBOutput_3_NB_LINE", nb_line_tDBOutput_3);
+					globalMap.put("tDBOutput_3_NB_LINE_UPDATED", nb_line_update_tDBOutput_3);
+					globalMap.put("tDBOutput_3_NB_LINE_INSERTED", nb_line_inserted_tDBOutput_3);
+					globalMap.put("tDBOutput_3_NB_LINE_DELETED", nb_line_deleted_tDBOutput_3);
+					globalMap.put("tDBOutput_3_NB_LINE_REJECTED", nb_line_rejected_tDBOutput_3);
+
+					if (execStat) {
+						runStat.updateStat(resourceMap, iterateId, 2, 0, "row6");
+					}
+
+					ok_Hash.put("tDBOutput_3", true);
+					end_Hash.put("tDBOutput_3", System.currentTimeMillis());
+
+					/**
+					 * [tDBOutput_3 end ] stop
+					 */
+
+					if (execStat) {
+						runStat.updateStatOnConnection("iterate3", 2, "exec" + NB_ITERATE_tFileInputJSON_3);
+					}
+
+					/**
+					 * [tFileList_3 process_data_end ] start
+					 */
+
+					currentComponent = "tFileList_3";
+
+					/**
+					 * [tFileList_3 process_data_end ] stop
+					 */
+
+					/**
+					 * [tFileList_3 end ] start
+					 */
+
+					currentComponent = "tFileList_3";
+
+				}
+				globalMap.put("tFileList_3_NB_FILE", NB_FILEtFileList_3);
+
+				if (NB_FILEtFileList_3 == 0)
+					throw new RuntimeException("No file found in directory " + directory_tFileList_3);
+
+				ok_Hash.put("tFileList_3", true);
+				end_Hash.put("tFileList_3", System.currentTimeMillis());
+
+				/**
+				 * [tFileList_3 end ] stop
+				 */
+			} // end the resume
+
+		} catch (java.lang.Exception e) {
+
+			TalendException te = new TalendException(e, currentComponent, globalMap);
+
+			throw te;
+		} catch (java.lang.Error error) {
+
+			runStat.stopThreadStat();
+
+			throw error;
+		} finally {
+
+			try {
+
+				/**
+				 * [tFileList_3 finally ] start
+				 */
+
+				currentComponent = "tFileList_3";
+
+				/**
+				 * [tFileList_3 finally ] stop
+				 */
+
+				/**
+				 * [tFileInputJSON_3 finally ] start
+				 */
+
+				currentComponent = "tFileInputJSON_3";
+
+				/**
+				 * [tFileInputJSON_3 finally ] stop
+				 */
+
+				/**
+				 * [tXMLMap_3 finally ] start
+				 */
+
+				currentComponent = "tXMLMap_3";
+
+				/**
+				 * [tXMLMap_3 finally ] stop
+				 */
+
+				/**
+				 * [tUniqRow_3 finally ] start
+				 */
+
+				currentComponent = "tUniqRow_3";
+
+				/**
+				 * [tUniqRow_3 finally ] stop
+				 */
+
+				/**
+				 * [tDBOutput_3 finally ] start
+				 */
+
+				currentComponent = "tDBOutput_3";
+
+				try {
+					if (resourceMap.get("statementClosed_tDBOutput_3") == null) {
+						java.sql.PreparedStatement pstmtUpdateToClose_tDBOutput_3 = null;
+						if ((pstmtUpdateToClose_tDBOutput_3 = (java.sql.PreparedStatement) resourceMap
+								.remove("pstmtUpdate_tDBOutput_3")) != null) {
+							pstmtUpdateToClose_tDBOutput_3.close();
+						}
+						java.sql.PreparedStatement pstmtInsertToClose_tDBOutput_3 = null;
+						if ((pstmtInsertToClose_tDBOutput_3 = (java.sql.PreparedStatement) resourceMap
+								.remove("pstmtInsert_tDBOutput_3")) != null) {
+							pstmtInsertToClose_tDBOutput_3.close();
+						}
+						java.sql.PreparedStatement pstmtToClose_tDBOutput_3 = null;
+						if ((pstmtToClose_tDBOutput_3 = (java.sql.PreparedStatement) resourceMap
+								.remove("pstmt_tDBOutput_3")) != null) {
+							pstmtToClose_tDBOutput_3.close();
+						}
+					}
+				} finally {
+					if (resourceMap.get("finish_tDBOutput_3") == null) {
+						java.sql.Connection ctn_tDBOutput_3 = null;
+						if ((ctn_tDBOutput_3 = (java.sql.Connection) resourceMap.get("conn_tDBOutput_3")) != null) {
+							try {
+								ctn_tDBOutput_3.close();
+							} catch (java.sql.SQLException sqlEx_tDBOutput_3) {
+								String errorMessage_tDBOutput_3 = "failed to close the connection in tDBOutput_3 :"
+										+ sqlEx_tDBOutput_3.getMessage();
+								System.err.println(errorMessage_tDBOutput_3);
+							}
+						}
+					}
+				}
+
+				/**
+				 * [tDBOutput_3 finally ] stop
+				 */
+
+			} catch (java.lang.Exception e) {
+				// ignore
+			} catch (java.lang.Error error) {
+				// ignore
+			}
+			resourceMap = null;
+		}
+
+		globalMap.put("tFileList_3_SUBPROCESS_STATE", 1);
+	}
+
+	public void tPostjob_1Process(final java.util.Map<String, Object> globalMap) throws TalendException {
+		globalMap.put("tPostjob_1_SUBPROCESS_STATE", 0);
+
+		final boolean execStat = this.execStat;
+
+		String iterateId = "";
+
+		String currentComponent = "";
+		java.util.Map<String, Object> resourceMap = new java.util.HashMap<String, Object>();
+
+		try {
+			// TDI-39566 avoid throwing an useless Exception
+			boolean resumeIt = true;
+			if (globalResumeTicket == false && resumeEntryMethodName != null) {
+				String currentMethodName = new java.lang.Exception().getStackTrace()[0].getMethodName();
+				resumeIt = resumeEntryMethodName.equals(currentMethodName);
+			}
+			if (resumeIt || globalResumeTicket) { // start the resume
+				globalResumeTicket = true;
+
+				/**
+				 * [tPostjob_1 begin ] start
+				 */
+
+				ok_Hash.put("tPostjob_1", false);
+				start_Hash.put("tPostjob_1", System.currentTimeMillis());
+
+				currentComponent = "tPostjob_1";
+
+				int tos_count_tPostjob_1 = 0;
+
+				/**
+				 * [tPostjob_1 begin ] stop
+				 */
+
+				/**
+				 * [tPostjob_1 main ] start
+				 */
+
+				currentComponent = "tPostjob_1";
+
+				tos_count_tPostjob_1++;
+
+				/**
+				 * [tPostjob_1 main ] stop
+				 */
+
+				/**
+				 * [tPostjob_1 process_data_begin ] start
+				 */
+
+				currentComponent = "tPostjob_1";
+
+				/**
+				 * [tPostjob_1 process_data_begin ] stop
+				 */
+
+				/**
+				 * [tPostjob_1 process_data_end ] start
+				 */
+
+				currentComponent = "tPostjob_1";
+
+				/**
+				 * [tPostjob_1 process_data_end ] stop
+				 */
+
+				/**
+				 * [tPostjob_1 end ] start
+				 */
+
+				currentComponent = "tPostjob_1";
+
+				ok_Hash.put("tPostjob_1", true);
+				end_Hash.put("tPostjob_1", System.currentTimeMillis());
+
+				if (execStat) {
+					runStat.updateStatOnConnection("OnComponentOk3", 0, "ok");
+				}
+				tMsgBox_1Process(globalMap);
+
+				/**
+				 * [tPostjob_1 end ] stop
+				 */
+			} // end the resume
+
+		} catch (java.lang.Exception e) {
+
+			TalendException te = new TalendException(e, currentComponent, globalMap);
+
+			throw te;
+		} catch (java.lang.Error error) {
+
+			runStat.stopThreadStat();
+
+			throw error;
+		} finally {
+
+			try {
+
+				/**
+				 * [tPostjob_1 finally ] start
+				 */
+
+				currentComponent = "tPostjob_1";
+
+				/**
+				 * [tPostjob_1 finally ] stop
+				 */
+			} catch (java.lang.Exception e) {
+				// ignore
+			} catch (java.lang.Error error) {
+				// ignore
+			}
+			resourceMap = null;
+		}
+
+		globalMap.put("tPostjob_1_SUBPROCESS_STATE", 1);
+	}
+
+	public void tMsgBox_1Process(final java.util.Map<String, Object> globalMap) throws TalendException {
+		globalMap.put("tMsgBox_1_SUBPROCESS_STATE", 0);
+
+		final boolean execStat = this.execStat;
+
+		String iterateId = "";
+
+		String currentComponent = "";
+		java.util.Map<String, Object> resourceMap = new java.util.HashMap<String, Object>();
+
+		try {
+			// TDI-39566 avoid throwing an useless Exception
+			boolean resumeIt = true;
+			if (globalResumeTicket == false && resumeEntryMethodName != null) {
+				String currentMethodName = new java.lang.Exception().getStackTrace()[0].getMethodName();
+				resumeIt = resumeEntryMethodName.equals(currentMethodName);
+			}
+			if (resumeIt || globalResumeTicket) { // start the resume
+				globalResumeTicket = true;
+
+				/**
+				 * [tMsgBox_1 begin ] start
+				 */
+
+				ok_Hash.put("tMsgBox_1", false);
+				start_Hash.put("tMsgBox_1", System.currentTimeMillis());
+
+				currentComponent = "tMsgBox_1";
+
+				int tos_count_tMsgBox_1 = 0;
+
+				/**
+				 * [tMsgBox_1 begin ] stop
+				 */
+
+				/**
+				 * [tMsgBox_1 main ] start
+				 */
+
+				currentComponent = "tMsgBox_1";
+
+				int messageIcontMsgBox_1 = javax.swing.JOptionPane.INFORMATION_MESSAGE;
+				String titletMsgBox_1 = "Étape 1: Load de tweets dans la bd";
+				String messagetMsgBox_1 = "Load tweets dans ttable all_tweets";
+				String resulttMsgBox_1 = null;
+
+				javax.swing.JOptionPane.showMessageDialog(null, messagetMsgBox_1, titletMsgBox_1, messageIcontMsgBox_1);
+				resulttMsgBox_1 = String.valueOf(1);
+
+				globalMap.put("tMsgBox_1_RESULT", resulttMsgBox_1);
+
+				tos_count_tMsgBox_1++;
+
+				/**
+				 * [tMsgBox_1 main ] stop
+				 */
+
+				/**
+				 * [tMsgBox_1 process_data_begin ] start
+				 */
+
+				currentComponent = "tMsgBox_1";
+
+				/**
+				 * [tMsgBox_1 process_data_begin ] stop
+				 */
+
+				/**
+				 * [tMsgBox_1 process_data_end ] start
+				 */
+
+				currentComponent = "tMsgBox_1";
+
+				/**
+				 * [tMsgBox_1 process_data_end ] stop
+				 */
+
+				/**
+				 * [tMsgBox_1 end ] start
+				 */
+
+				currentComponent = "tMsgBox_1";
+
+				ok_Hash.put("tMsgBox_1", true);
+				end_Hash.put("tMsgBox_1", System.currentTimeMillis());
+
+				/**
+				 * [tMsgBox_1 end ] stop
+				 */
+			} // end the resume
+
+		} catch (java.lang.Exception e) {
+
+			TalendException te = new TalendException(e, currentComponent, globalMap);
+
+			throw te;
+		} catch (java.lang.Error error) {
+
+			runStat.stopThreadStat();
+
+			throw error;
+		} finally {
+
+			try {
+
+				/**
+				 * [tMsgBox_1 finally ] start
+				 */
+
+				currentComponent = "tMsgBox_1";
+
+				/**
+				 * [tMsgBox_1 finally ] stop
+				 */
+			} catch (java.lang.Exception e) {
+				// ignore
+			} catch (java.lang.Error error) {
+				// ignore
+			}
+			resourceMap = null;
+		}
+
+		globalMap.put("tMsgBox_1_SUBPROCESS_STATE", 1);
 	}
 
 	public String resuming_logs_dir_path = null;
@@ -2083,6 +8469,19 @@ public class s1_stocking_data_into_db implements TalendJob {
 
 		this.globalResumeTicket = true;// to run tPostJob
 
+		try {
+			errorCode = null;
+			tPostjob_1Process(globalMap);
+			if (!"failure".equals(status)) {
+				status = "end";
+			}
+		} catch (TalendException e_tPostjob_1) {
+			globalMap.put("tPostjob_1_SUBPROCESS_STATE", -1);
+
+			e_tPostjob_1.printStackTrace();
+
+		}
+
 		end = System.currentTimeMillis();
 
 		if (watch) {
@@ -2232,6 +8631,6 @@ public class s1_stocking_data_into_db implements TalendJob {
 	ResumeUtil resumeUtil = null;
 }
 /************************************************************************************************
- * 74266 characters generated by Talend Open Studio for Big Data on the December
- * 6, 2020 1:02:11 AM CET
+ * 260351 characters generated by Talend Open Studio for Big Data on the
+ * December 6, 2020 6:25:54 AM CET
  ************************************************************************************************/

@@ -12,6 +12,7 @@
     <module>code/routines</module>
     <module>jobs/process/s0_connection_api_twitter_0.1</module>
     <module>jobs/process/s1_stocking_data_into_db_0.1</module>
+    <module>jobs/process/s2_stockin_data_into_dw_0.1</module>
   </modules>
   <properties>
     <talend.project.name>ANALYSIS_TWITTER</talend.project.name>

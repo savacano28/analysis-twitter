@@ -250,8 +250,10 @@
             <includes>
                 <include>org.apache.logging.log4j:log4j-slf4j-impl:jar:2.12.1</include>
                 <include>org.slf4j:slf4j-api:jar:1.7.25</include>
+                <include>org.postgresql:postgresql:jar:42.2.9</include>
                 <include>org.dom4j:dom4j:jar:2.1.1</include>
                 <include>net.minidev:json-smart:jar:2.2.1</include>
+                <include>jaxen:jaxen:jar:1.1.6</include>
                 <include>org.apache.logging.log4j:log4j-api:jar:2.12.1</include>
                 <include>net.minidev:accessors-smart:jar:1.1</include>
                 <include>org.apache.logging.log4j:log4j-core:jar:2.12.1</include>
