@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:TalendMetadata="http://www.talend.org/metadata/connection/2010" xmlns:orgomg.cwm.resource.record="http:///orgomg/cwm/resource/record.ecore">
+  <TalendMetadata:DelimitedFileConnection xmi:id="_ivwb4DetEeuhY_pZO8dvtg" name="List_of_word_sentiment" dataPackage="_ivwb4TetEeuhY_pZO8dvtg" Server="Localhost 127.0.0.1" FilePath="/home/scasanova/Downloads/imm6010/AFINN/AFINN-111.txt" Encoding="UTF-8" FieldSeparatorValue="&quot;,&quot;" RowSeparatorValue="&quot;\n&quot;" FieldSeparatorType="Comma"/>
+  <orgomg.cwm.resource.record:RecordFile xmi:id="_ivwb4TetEeuhY_pZO8dvtg" name="default" dataManager="_ivwb4DetEeuhY_pZO8dvtg">
+    <ownedElement xsi:type="TalendMetadata:MetadataTable" xmi:id="_ivwb4jetEeuhY_pZO8dvtg" id="_EiOGQDetEeuhY_pZO8dvtg" label="metadata">
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_ivwb4zetEeuhY_pZO8dvtg" label="word_english" length="12" talendType="id_String" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_ivwb5DetEeuhY_pZO8dvtg" label="word_french" length="16" talendType="id_String" pattern="&quot;dd-MM-yyyy&quot;"/>
+      <feature xsi:type="TalendMetadata:MetadataColumn" xmi:id="_ivwb5TetEeuhY_pZO8dvtg" label="sentiment" length="2" talendType="id_Integer" pattern="&quot;dd-MM-yyyy&quot;"/>
+    </ownedElement>
+  </orgomg.cwm.resource.record:RecordFile>
+</xmi:XMI>
