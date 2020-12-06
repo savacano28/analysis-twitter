@@ -1,0 +1,69 @@
+[INFO] Disabling enhanced local repository: using legacy is strongly discouraged to ensure build reproducibility.
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] -----< org.example.analysis_twitter.job:s0_connexion_api_twitter >------
+[INFO] Building ANALYSIS_TWITTER s0_connexion_api_twitter-0.1.0 (0.1,Job Designs) 0.1.0
+[INFO] --------------------------------[ jar ]---------------------------------
+[WARNING] The POM for aopalliance:aopalliance:jar:1.0 is missing, no dependency information available
+[WARNING] The POM for org.apache.cxf:cxf-core:jar:3.3.4 is missing, no dependency information available
+[WARNING] The POM for org.apache.cxf:cxf-rt-bindings-soap:jar:3.3.4 is missing, no dependency information available
+[WARNING] The POM for org.apache.cxf:cxf-rt-databinding-jaxb:jar:3.3.4 is missing, no dependency information available
+[WARNING] The POM for org.apache.cxf:cxf-rt-frontend-jaxrs:jar:3.3.4 is missing, no dependency information available
+[WARNING] The POM for org.apache.cxf:cxf-rt-rs-client:jar:3.3.4 is missing, no dependency information available
+[WARNING] The POM for org.apache.cxf:cxf-rt-security:jar:3.3.4 is missing, no dependency information available
+[WARNING] The POM for org.apache.cxf:cxf-rt-transports-http:jar:3.3.4 is missing, no dependency information available
+[WARNING] The POM for org.apache.cxf:cxf-rt-wsdl:jar:3.3.4 is missing, no dependency information available
+[WARNING] The POM for org.dom4j:dom4j:jar:2.1.1 is missing, no dependency information available
+[WARNING] The POM for javax.ws.rs:javax.ws.rs-api:jar:2.1 is missing, no dependency information available
+[WARNING] The POM for javax.xml.bind:jaxb-api:jar:2.3.1 is missing, no dependency information available
+[WARNING] The POM for org.apache.logging.log4j:log4j-api:jar:2.12.1 is missing, no dependency information available
+[WARNING] The POM for org.apache.logging.log4j:log4j-core:jar:2.12.1 is missing, no dependency information available
+[WARNING] The POM for org.apache.logging.log4j:log4j-slf4j-impl:jar:2.12.1 is missing, no dependency information available
+[WARNING] The POM for org.apache.neethi:neethi:jar:3.1.1 is missing, no dependency information available
+[INFO] 
+[INFO] --- maven-resources-plugin:3.0.2:resources (default-resources) @ s0_connexion_api_twitter ---
+[WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] Copying 0 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.6.1:compile (default-compile) @ s0_connexion_api_twitter ---
+[WARNING] The POM for org.eclipse.platform:org.eclipse.osgi:jar:3.13.300 is missing, no dependency information available
+[WARNING] The POM for org.apache.commons:commons-exec:jar:1.2 is missing, no dependency information available
+[INFO] Not compiling main sources
+[INFO] 
+[INFO] --- maven-resources-plugin:3.0.2:testResources (default-testResources) @ s0_connexion_api_twitter ---
+[INFO] Not copying test resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.6.1:testCompile (default-testCompile) @ s0_connexion_api_twitter ---
+[INFO] Not compiling test sources
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.20:test (default-test) @ s0_connexion_api_twitter ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-jar-plugin:3.0.2:jar (default-jar) @ s0_connexion_api_twitter ---
+[INFO] Building jar: /home/scasanova/Downloads/TOS_BD-20200219_1130-V7.3.1/workspace/ANALYSIS_TWITTER/poms/jobs/process/analysis_twitter_dw_pj/s0_connexion_api_twitter_0.1/target/s0_connexion_api_twitter_0_1.jar
+[INFO] 
+[INFO] --- maven-assembly-plugin:3.0.0:single (default) @ s0_connexion_api_twitter ---
+[INFO] Reading assembly descriptor: /home/scasanova/Downloads/TOS_BD-20200219_1130-V7.3.1/workspace/ANALYSIS_TWITTER/poms/jobs/process/analysis_twitter_dw_pj/s0_connexion_api_twitter_0.1/src/main/assemblies/assembly.xml
+[WARNING] Missing POM for aopalliance:aopalliance:jar:1.0
+[WARNING] Missing POM for org.apache.cxf:cxf-core:jar:3.3.4
+[WARNING] Missing POM for org.apache.cxf:cxf-rt-bindings-soap:jar:3.3.4
+[WARNING] Missing POM for org.apache.cxf:cxf-rt-databinding-jaxb:jar:3.3.4
+[WARNING] Missing POM for org.apache.cxf:cxf-rt-frontend-jaxrs:jar:3.3.4
+[WARNING] Missing POM for org.apache.cxf:cxf-rt-rs-client:jar:3.3.4
+[WARNING] Missing POM for org.apache.cxf:cxf-rt-security:jar:3.3.4
+[WARNING] Missing POM for org.apache.cxf:cxf-rt-transports-http:jar:3.3.4
+[WARNING] Missing POM for org.apache.cxf:cxf-rt-wsdl:jar:3.3.4
+[WARNING] Missing POM for org.dom4j:dom4j:jar:2.1.1
+[WARNING] Missing POM for javax.ws.rs:javax.ws.rs-api:jar:2.1
+[WARNING] Missing POM for javax.xml.bind:jaxb-api:jar:2.3.1
+[WARNING] Missing POM for org.apache.logging.log4j:log4j-api:jar:2.12.1
+[WARNING] Missing POM for org.apache.logging.log4j:log4j-core:jar:2.12.1
+[WARNING] Missing POM for org.apache.logging.log4j:log4j-slf4j-impl:jar:2.12.1
+[WARNING] Missing POM for org.apache.neethi:neethi:jar:3.1.1
+[INFO] Building zip: /home/scasanova/Downloads/TOS_BD-20200219_1130-V7.3.1/workspace/ANALYSIS_TWITTER/poms/jobs/process/analysis_twitter_dw_pj/s0_connexion_api_twitter_0.1/target/s0_connexion_api_twitter_0_1.zip
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 3.690 s
+[INFO] Finished at: 2020-12-06T21:26:54+01:00
+[INFO] ------------------------------------------------------------------------
