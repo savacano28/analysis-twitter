@@ -77,6 +77,46 @@
       <artifactId>routines</artifactId>
       <version>7.3.1</version>
     </dependency>
+    <dependency>
+      <groupId>org.example.analysis_twitter.job</groupId>
+      <artifactId>s1_stocking_data_into_db</artifactId>
+      <version>0.1.0</version>
+    </dependency>
+    <dependency>
+      <groupId>org.example.analysis_twitter.job</groupId>
+      <artifactId>s3_stocking_hierarchies_data_into_dw</artifactId>
+      <version>0.1.0</version>
+    </dependency>
+    <dependency>
+      <groupId>org.example.analysis_twitter.job</groupId>
+      <artifactId>s4_calculate_mesures</artifactId>
+      <version>0.1.0</version>
+    </dependency>
+    <dependency>
+      <groupId>org.example.analysis_twitter.job</groupId>
+      <artifactId>s2_stocking_data_into_dw</artifactId>
+      <version>0.1.0</version>
+    </dependency>
+    <dependency>
+      <groupId>org.example.analysis_twitter.job</groupId>
+      <artifactId>s0_connection_api_twitter</artifactId>
+      <version>0.1.0</version>
+    </dependency>
+    <dependency>
+      <groupId>org.example.analysis_twitter.job</groupId>
+      <artifactId>s6_stocking_mesures_into_dw</artifactId>
+      <version>0.1.0</version>
+    </dependency>
+    <dependency>
+      <groupId>org.example.analysis_twitter.job</groupId>
+      <artifactId>s5_fr_calculate_sentiments_from_tweets</artifactId>
+      <version>0.1.0</version>
+    </dependency>
+    <dependency>
+      <groupId>org.example.analysis_twitter.job</groupId>
+      <artifactId>s5_in_calculate_sentiments_from_tweets</artifactId>
+      <version>0.1.0</version>
+    </dependency>
   </dependencies>
   <build>
     <finalName>${talend.job.finalName}</finalName>
