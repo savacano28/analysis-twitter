@@ -47,9 +47,6 @@ import java.util.Comparator;
 //the import part of tLibraryLoad_2
 //import java.util.List;
 
-//the import part of tJava_1
-//import java.util.List;
-
 @SuppressWarnings("unused")
 
 /**
@@ -448,36 +445,6 @@ public class s0_connexion_api_twitter_apps_covid implements TalendJob {
 		tRESTClient_3_onSubJobError(exception, errorComponent, globalMap);
 	}
 
-	public void tPrejob_1_error(Exception exception, String errorComponent,
-			final java.util.Map<String, Object> globalMap) throws TalendException {
-
-		end_Hash.put(errorComponent, System.currentTimeMillis());
-
-		status = "failure";
-
-		tPrejob_1_onSubJobError(exception, errorComponent, globalMap);
-	}
-
-	public void tMsgBox_2_error(Exception exception, String errorComponent,
-			final java.util.Map<String, Object> globalMap) throws TalendException {
-
-		end_Hash.put(errorComponent, System.currentTimeMillis());
-
-		status = "failure";
-
-		tMsgBox_2_onSubJobError(exception, errorComponent, globalMap);
-	}
-
-	public void tJava_1_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap)
-			throws TalendException {
-
-		end_Hash.put(errorComponent, System.currentTimeMillis());
-
-		status = "failure";
-
-		tJava_1_onSubJobError(exception, errorComponent, globalMap);
-	}
-
 	public void tXMLMap_1_TXMLMAP_OUT_error(Exception exception, String errorComponent,
 			final java.util.Map<String, Object> globalMap) throws TalendException {
 
@@ -562,30 +529,6 @@ public class s0_connexion_api_twitter_apps_covid implements TalendJob {
 	}
 
 	public void tRESTClient_3_onSubJobError(Exception exception, String errorComponent,
-			final java.util.Map<String, Object> globalMap) throws TalendException {
-
-		resumeUtil.addLog("SYSTEM_LOG", "NODE:" + errorComponent, "", Thread.currentThread().getId() + "", "FATAL", "",
-				exception.getMessage(), ResumeUtil.getExceptionStackTrace(exception), "");
-
-	}
-
-	public void tPrejob_1_onSubJobError(Exception exception, String errorComponent,
-			final java.util.Map<String, Object> globalMap) throws TalendException {
-
-		resumeUtil.addLog("SYSTEM_LOG", "NODE:" + errorComponent, "", Thread.currentThread().getId() + "", "FATAL", "",
-				exception.getMessage(), ResumeUtil.getExceptionStackTrace(exception), "");
-
-	}
-
-	public void tMsgBox_2_onSubJobError(Exception exception, String errorComponent,
-			final java.util.Map<String, Object> globalMap) throws TalendException {
-
-		resumeUtil.addLog("SYSTEM_LOG", "NODE:" + errorComponent, "", Thread.currentThread().getId() + "", "FATAL", "",
-				exception.getMessage(), ResumeUtil.getExceptionStackTrace(exception), "");
-
-	}
-
-	public void tJava_1_onSubJobError(Exception exception, String errorComponent,
 			final java.util.Map<String, Object> globalMap) throws TalendException {
 
 		resumeUtil.addLog("SYSTEM_LOG", "NODE:" + errorComponent, "", Thread.currentThread().getId() + "", "FATAL", "",
@@ -1513,7 +1456,7 @@ public class s0_connexion_api_twitter_apps_covid implements TalendJob {
 
 						final String decryptedPassword_tRESTClient_1 = routines.system.PasswordEncryptUtil
 								.decryptPassword(
-										"enc:routine.encryption.key.v1:bAclEGNDO29SxIVcf2SAwyik4yYxYaXnFx1ow7CvbxwXHGeR");
+										"enc:routine.encryption.key.v1:AeclcKjP+FIqEoq9Xri4AH/lvqavRjGtWZhjV8nk7bhETEIf");
 
 						org.apache.cxf.ws.security.trust.STSClient stsClient = org.talend.esb.security.saml.STSClientUtils
 								.createSTSClient(factoryBean_tRESTClient_1.getBus(), "username",
@@ -1546,7 +1489,7 @@ public class s0_connexion_api_twitter_apps_covid implements TalendJob {
 
 						final String decryptedPassword_tRESTClient_1 = routines.system.PasswordEncryptUtil
 								.decryptPassword(
-										"enc:routine.encryption.key.v1:RpZgEeqyzFJ1qPGy5yI+0PDEdO1fbbAGd+9VpPMivS67pc9D");
+										"enc:routine.encryption.key.v1:eVydl6MWjqIckFKsPE7UPGF2NnCY08xatJEG+4K/kqMPren8");
 
 						org.apache.cxf.configuration.security.AuthorizationPolicy authPolicy_tRESTClient_1 = new org.apache.cxf.configuration.security.AuthorizationPolicy();
 						authPolicy_tRESTClient_1.setAuthorizationType("Basic");
@@ -1558,7 +1501,7 @@ public class s0_connexion_api_twitter_apps_covid implements TalendJob {
 
 						final String decryptedPassword_tRESTClient_1 = routines.system.PasswordEncryptUtil
 								.decryptPassword(
-										"enc:routine.encryption.key.v1:mCSXh+Jv+cj3YfpLE6nF5f9WW0KuDaYTjVox0Ljo3JZDUqJW");
+										"enc:routine.encryption.key.v1:gQGKAfqvT5OFUbbjJj6rHnTu8BvnLy7RNVfNM21a9lrAEHnc");
 
 						org.apache.cxf.configuration.security.AuthorizationPolicy authPolicy_tRESTClient_1 = new org.apache.cxf.configuration.security.AuthorizationPolicy();
 						authPolicy_tRESTClient_1.setAuthorizationType("Digest");
@@ -1589,7 +1532,7 @@ public class s0_connexion_api_twitter_apps_covid implements TalendJob {
 
 						final String decryptedPassword_tRESTClient_1 = routines.system.PasswordEncryptUtil
 								.decryptPassword(
-										"enc:routine.encryption.key.v1:hY6RgtJhL04qG6kRf3cq299CkFuLtevTvCkUN8aB+UJpCDeU");
+										"enc:routine.encryption.key.v1:bRXYdyTfNAfnci/px/EShLKDlAiRVf4Wah6hg/4PJcl58Oci");
 
 						String username_tRESTClient_1 = "username";
 						String password_tRESTClient_1 = decryptedPassword_tRESTClient_1;
@@ -1790,8 +1733,8 @@ public class s0_connexion_api_twitter_apps_covid implements TalendJob {
 							coronaWarnAPP_tmp.id = treeNodeAPI_tXMLMap_1_TXMLMAP_OUT
 									.get_String("row1.body:/root/statuses/id");
 							coronaWarnAPP_tmp.date_description = TalendDate.parseDate("EEE MMM dd HH:mm:ss Z yyyy",
-									treeNodeAPI_tXMLMap_1_TXMLMAP_OUT
-											.get_String("row1.body:/root/statuses/created_at"));
+									StringHandling.CHANGE(treeNodeAPI_tXMLMap_1_TXMLMAP_OUT
+											.get_String("row1.body:/root/statuses/created_at"), "\\+0000", "CET"));
 							coronaWarnAPP_tmp.user_id = treeNodeAPI_tXMLMap_1_TXMLMAP_OUT
 									.get_String("row1.body:/root/statuses/user/id");
 							coronaWarnAPP_tmp.user_name = treeNodeAPI_tXMLMap_1_TXMLMAP_OUT
@@ -1922,15 +1865,17 @@ public class s0_connexion_api_twitter_apps_covid implements TalendJob {
 				int tos_count_tFileOutputJSON_1 = 0;
 
 				int nb_line_tFileOutputJSON_1 = 0;
-				java.io.File file_tFileOutputJSON_1 = new java.io.File(context.path_files_global
-						+ "/documentations/apitwitter/al-" + TalendDate.getCurrentDate() + ".json");
+				java.io.File file_tFileOutputJSON_1 = new java.io.File(
+						"/home/scasanova/Downloads/TOS_BD-20200219_1130-V7.3.1/workspace/ANALYSIS_TWITTER/documentations/apitwitter/al-"
+								+ TalendDate.getCurrentDate() + ".json");
 				java.io.File dir_tFileOutputJSON_1 = file_tFileOutputJSON_1.getParentFile();
 				if (dir_tFileOutputJSON_1 != null && !dir_tFileOutputJSON_1.exists()) {
 					dir_tFileOutputJSON_1.mkdirs();
 				}
 				java.io.PrintWriter outtFileOutputJSON_1 = new java.io.PrintWriter(
-						new java.io.BufferedWriter(new java.io.FileWriter(context.path_files_global
-								+ "/documentations/apitwitter/al-" + TalendDate.getCurrentDate() + ".json")));
+						new java.io.BufferedWriter(new java.io.FileWriter(
+								"/home/scasanova/Downloads/TOS_BD-20200219_1130-V7.3.1/workspace/ANALYSIS_TWITTER/documentations/apitwitter/al-"
+										+ TalendDate.getCurrentDate() + ".json")));
 				outtFileOutputJSON_1.append("{\"" + "tweets" + "\":[");
 				boolean isFirst_tFileOutputJSON_1 = true;
 
@@ -2960,7 +2905,7 @@ public class s0_connexion_api_twitter_apps_covid implements TalendJob {
 
 						final String decryptedPassword_tRESTClient_2 = routines.system.PasswordEncryptUtil
 								.decryptPassword(
-										"enc:routine.encryption.key.v1:sQYCsvYqfZbUP88cDvL+kAko3W1WFQ6q4pN9DM3Azt75Uqg8");
+										"enc:routine.encryption.key.v1:UsIl2W7olwvkJVw5NFyGjAo/oDOuS8CR3tVbG2avtkrd7Jw4");
 
 						org.apache.cxf.ws.security.trust.STSClient stsClient = org.talend.esb.security.saml.STSClientUtils
 								.createSTSClient(factoryBean_tRESTClient_2.getBus(), "username",
@@ -2993,7 +2938,7 @@ public class s0_connexion_api_twitter_apps_covid implements TalendJob {
 
 						final String decryptedPassword_tRESTClient_2 = routines.system.PasswordEncryptUtil
 								.decryptPassword(
-										"enc:routine.encryption.key.v1:DsI9m+LmmZlejkxtvgrOnaIeMR1yvFEo9qhScchCRN8mYQc5");
+										"enc:routine.encryption.key.v1:Vcxjn2ZV9xpHU/HH52495pkKDMD+4wPbAF8Zz5UCZUHqzqDf");
 
 						org.apache.cxf.configuration.security.AuthorizationPolicy authPolicy_tRESTClient_2 = new org.apache.cxf.configuration.security.AuthorizationPolicy();
 						authPolicy_tRESTClient_2.setAuthorizationType("Basic");
@@ -3005,7 +2950,7 @@ public class s0_connexion_api_twitter_apps_covid implements TalendJob {
 
 						final String decryptedPassword_tRESTClient_2 = routines.system.PasswordEncryptUtil
 								.decryptPassword(
-										"enc:routine.encryption.key.v1:jkQjhomHxQcnCb6mJAOxHHdkwJUgaZSmb2ZlUrT2zy5WzyCs");
+										"enc:routine.encryption.key.v1:h0aN2BDPPhjY5uHZFeZygorHqHohFmz3ieOjEl+JyA4PTsrp");
 
 						org.apache.cxf.configuration.security.AuthorizationPolicy authPolicy_tRESTClient_2 = new org.apache.cxf.configuration.security.AuthorizationPolicy();
 						authPolicy_tRESTClient_2.setAuthorizationType("Digest");
@@ -3036,7 +2981,7 @@ public class s0_connexion_api_twitter_apps_covid implements TalendJob {
 
 						final String decryptedPassword_tRESTClient_2 = routines.system.PasswordEncryptUtil
 								.decryptPassword(
-										"enc:routine.encryption.key.v1:w1Yp9zAzdg8LW1dRXtiv2gmMNjX49zlI62a55LJ8TzsPuxZW");
+										"enc:routine.encryption.key.v1:LgSdpzeJlGymy+rS5V9mgW63ZB41k6Jl7z6ZmZdxjUJWff5i");
 
 						String username_tRESTClient_2 = "username";
 						String password_tRESTClient_2 = decryptedPassword_tRESTClient_2;
@@ -3237,8 +3182,8 @@ public class s0_connexion_api_twitter_apps_covid implements TalendJob {
 							tousAntiCovid_tmp.id = treeNodeAPI_tXMLMap_2_TXMLMAP_OUT
 									.get_String("row2.body:/root/statuses/id");
 							tousAntiCovid_tmp.date_description = TalendDate.parseDate("EEE MMM dd HH:mm:ss Z yyyy",
-									treeNodeAPI_tXMLMap_2_TXMLMAP_OUT
-											.get_String("row2.body:/root/statuses/created_at"));
+									StringHandling.CHANGE(treeNodeAPI_tXMLMap_2_TXMLMAP_OUT
+											.get_String("row2.body:/root/statuses/created_at"), "\\+0000", "CET"));
 							tousAntiCovid_tmp.user_id = treeNodeAPI_tXMLMap_2_TXMLMAP_OUT
 									.get_String("row2.body:/root/statuses/user/id");
 							tousAntiCovid_tmp.user_name = treeNodeAPI_tXMLMap_2_TXMLMAP_OUT
@@ -4409,7 +4354,7 @@ public class s0_connexion_api_twitter_apps_covid implements TalendJob {
 
 						final String decryptedPassword_tRESTClient_3 = routines.system.PasswordEncryptUtil
 								.decryptPassword(
-										"enc:routine.encryption.key.v1:cUxRFuETZ9llgi8zfbD9c0VYfNWWb5nxefK4J4Av/6q5mC0G");
+										"enc:routine.encryption.key.v1:2NNA8U1xSrykddu0Iasx1vzSGN9OubhvBWEzvpKUows/2sxt");
 
 						org.apache.cxf.ws.security.trust.STSClient stsClient = org.talend.esb.security.saml.STSClientUtils
 								.createSTSClient(factoryBean_tRESTClient_3.getBus(), "username",
@@ -4442,7 +4387,7 @@ public class s0_connexion_api_twitter_apps_covid implements TalendJob {
 
 						final String decryptedPassword_tRESTClient_3 = routines.system.PasswordEncryptUtil
 								.decryptPassword(
-										"enc:routine.encryption.key.v1:JSRR7+NUAANdPtKHnnx8XgigJzK8XmG+YLyWiM34pwBPWcHI");
+										"enc:routine.encryption.key.v1:M7k2+By4Xg2B3bdiVUo/cmyLYqIGVIdi/70KtMR4JPin+BFi");
 
 						org.apache.cxf.configuration.security.AuthorizationPolicy authPolicy_tRESTClient_3 = new org.apache.cxf.configuration.security.AuthorizationPolicy();
 						authPolicy_tRESTClient_3.setAuthorizationType("Basic");
@@ -4454,7 +4399,7 @@ public class s0_connexion_api_twitter_apps_covid implements TalendJob {
 
 						final String decryptedPassword_tRESTClient_3 = routines.system.PasswordEncryptUtil
 								.decryptPassword(
-										"enc:routine.encryption.key.v1:7AiJpMqoXMIvSub1F5eqgrpqGSusfu4BNfdjw1Ohy5nHt82d");
+										"enc:routine.encryption.key.v1:JZFytaXzuTeEuN4pBycrijmEyLlH6Mf7hzV/ckGHftxcGCLX");
 
 						org.apache.cxf.configuration.security.AuthorizationPolicy authPolicy_tRESTClient_3 = new org.apache.cxf.configuration.security.AuthorizationPolicy();
 						authPolicy_tRESTClient_3.setAuthorizationType("Digest");
@@ -4485,7 +4430,7 @@ public class s0_connexion_api_twitter_apps_covid implements TalendJob {
 
 						final String decryptedPassword_tRESTClient_3 = routines.system.PasswordEncryptUtil
 								.decryptPassword(
-										"enc:routine.encryption.key.v1:GxQ85rFfRc/lg0KBC1zFV73vLMnEaKpBjERbOGDRn/kGKwy7");
+										"enc:routine.encryption.key.v1:vUarzq7x3duhbrAfVllGv8Lu/JEiPo6Vw26Ag53i2i531hTp");
 
 						String username_tRESTClient_3 = "username";
 						String password_tRESTClient_3 = decryptedPassword_tRESTClient_3;
@@ -4685,8 +4630,8 @@ public class s0_connexion_api_twitter_apps_covid implements TalendJob {
 							nhs_tmp = new nhsStruct();
 							nhs_tmp.id = treeNodeAPI_tXMLMap_3_TXMLMAP_OUT.get_String("row3.body:/root/statuses/id");
 							nhs_tmp.date_description = TalendDate.parseDate("EEE MMM dd HH:mm:ss Z yyyy",
-									treeNodeAPI_tXMLMap_3_TXMLMAP_OUT
-											.get_String("row3.body:/root/statuses/created_at"));
+									StringHandling.CHANGE(treeNodeAPI_tXMLMap_3_TXMLMAP_OUT
+											.get_String("row3.body:/root/statuses/created_at"), "\\+0000", "CET"));
 							nhs_tmp.user_id = treeNodeAPI_tXMLMap_3_TXMLMAP_OUT
 									.get_String("row3.body:/root/statuses/user/id");
 							nhs_tmp.user_name = treeNodeAPI_tXMLMap_3_TXMLMAP_OUT
@@ -5171,375 +5116,6 @@ public class s0_connexion_api_twitter_apps_covid implements TalendJob {
 		globalMap.put("tRESTClient_3_SUBPROCESS_STATE", 1);
 	}
 
-	public void tPrejob_1Process(final java.util.Map<String, Object> globalMap) throws TalendException {
-		globalMap.put("tPrejob_1_SUBPROCESS_STATE", 0);
-
-		final boolean execStat = this.execStat;
-
-		String iterateId = "";
-
-		String currentComponent = "";
-		java.util.Map<String, Object> resourceMap = new java.util.HashMap<String, Object>();
-
-		try {
-			// TDI-39566 avoid throwing an useless Exception
-			boolean resumeIt = true;
-			if (globalResumeTicket == false && resumeEntryMethodName != null) {
-				String currentMethodName = new java.lang.Exception().getStackTrace()[0].getMethodName();
-				resumeIt = resumeEntryMethodName.equals(currentMethodName);
-			}
-			if (resumeIt || globalResumeTicket) { // start the resume
-				globalResumeTicket = true;
-
-				/**
-				 * [tPrejob_1 begin ] start
-				 */
-
-				ok_Hash.put("tPrejob_1", false);
-				start_Hash.put("tPrejob_1", System.currentTimeMillis());
-
-				currentComponent = "tPrejob_1";
-
-				int tos_count_tPrejob_1 = 0;
-
-				/**
-				 * [tPrejob_1 begin ] stop
-				 */
-
-				/**
-				 * [tPrejob_1 main ] start
-				 */
-
-				currentComponent = "tPrejob_1";
-
-				tos_count_tPrejob_1++;
-
-				/**
-				 * [tPrejob_1 main ] stop
-				 */
-
-				/**
-				 * [tPrejob_1 process_data_begin ] start
-				 */
-
-				currentComponent = "tPrejob_1";
-
-				/**
-				 * [tPrejob_1 process_data_begin ] stop
-				 */
-
-				/**
-				 * [tPrejob_1 process_data_end ] start
-				 */
-
-				currentComponent = "tPrejob_1";
-
-				/**
-				 * [tPrejob_1 process_data_end ] stop
-				 */
-
-				/**
-				 * [tPrejob_1 end ] start
-				 */
-
-				currentComponent = "tPrejob_1";
-
-				ok_Hash.put("tPrejob_1", true);
-				end_Hash.put("tPrejob_1", System.currentTimeMillis());
-
-				if (execStat) {
-					runStat.updateStatOnConnection("OnComponentOk6", 0, "ok");
-				}
-				tMsgBox_2Process(globalMap);
-
-				/**
-				 * [tPrejob_1 end ] stop
-				 */
-			} // end the resume
-
-		} catch (java.lang.Exception e) {
-
-			TalendException te = new TalendException(e, currentComponent, globalMap);
-
-			throw te;
-		} catch (java.lang.Error error) {
-
-			runStat.stopThreadStat();
-
-			throw error;
-		} finally {
-
-			try {
-
-				/**
-				 * [tPrejob_1 finally ] start
-				 */
-
-				currentComponent = "tPrejob_1";
-
-				/**
-				 * [tPrejob_1 finally ] stop
-				 */
-			} catch (java.lang.Exception e) {
-				// ignore
-			} catch (java.lang.Error error) {
-				// ignore
-			}
-			resourceMap = null;
-		}
-
-		globalMap.put("tPrejob_1_SUBPROCESS_STATE", 1);
-	}
-
-	public void tMsgBox_2Process(final java.util.Map<String, Object> globalMap) throws TalendException {
-		globalMap.put("tMsgBox_2_SUBPROCESS_STATE", 0);
-
-		final boolean execStat = this.execStat;
-
-		String iterateId = "";
-
-		String currentComponent = "";
-		java.util.Map<String, Object> resourceMap = new java.util.HashMap<String, Object>();
-
-		try {
-			// TDI-39566 avoid throwing an useless Exception
-			boolean resumeIt = true;
-			if (globalResumeTicket == false && resumeEntryMethodName != null) {
-				String currentMethodName = new java.lang.Exception().getStackTrace()[0].getMethodName();
-				resumeIt = resumeEntryMethodName.equals(currentMethodName);
-			}
-			if (resumeIt || globalResumeTicket) { // start the resume
-				globalResumeTicket = true;
-
-				/**
-				 * [tMsgBox_2 begin ] start
-				 */
-
-				ok_Hash.put("tMsgBox_2", false);
-				start_Hash.put("tMsgBox_2", System.currentTimeMillis());
-
-				currentComponent = "tMsgBox_2";
-
-				int tos_count_tMsgBox_2 = 0;
-
-				/**
-				 * [tMsgBox_2 begin ] stop
-				 */
-
-				/**
-				 * [tMsgBox_2 main ] start
-				 */
-
-				currentComponent = "tMsgBox_2";
-
-				int messageIcontMsgBox_2 = javax.swing.JOptionPane.WARNING_MESSAGE;
-				String titletMsgBox_2 = "Projet TOS : Analysis de tweets";
-				String messagetMsgBox_2 = "Initialisation de workflow pour l'analysis de tweets liées aux apps surveillance COVID-19";
-				String resulttMsgBox_2 = null;
-
-				resulttMsgBox_2 = javax.swing.JOptionPane.showInputDialog(null,
-						"Initialisation de workflow pour l'analysis de tweets liées aux apps surveillance COVID-19. \nQuel est votre absolute path?",
-						titletMsgBox_2, messageIcontMsgBox_2);
-
-				globalMap.put("tMsgBox_2_RESULT", resulttMsgBox_2);
-
-				tos_count_tMsgBox_2++;
-
-				/**
-				 * [tMsgBox_2 main ] stop
-				 */
-
-				/**
-				 * [tMsgBox_2 process_data_begin ] start
-				 */
-
-				currentComponent = "tMsgBox_2";
-
-				/**
-				 * [tMsgBox_2 process_data_begin ] stop
-				 */
-
-				/**
-				 * [tMsgBox_2 process_data_end ] start
-				 */
-
-				currentComponent = "tMsgBox_2";
-
-				/**
-				 * [tMsgBox_2 process_data_end ] stop
-				 */
-
-				/**
-				 * [tMsgBox_2 end ] start
-				 */
-
-				currentComponent = "tMsgBox_2";
-
-				ok_Hash.put("tMsgBox_2", true);
-				end_Hash.put("tMsgBox_2", System.currentTimeMillis());
-
-				if (execStat) {
-					runStat.updateStatOnConnection("OnComponentOk7", 0, "ok");
-				}
-				tJava_1Process(globalMap);
-
-				/**
-				 * [tMsgBox_2 end ] stop
-				 */
-			} // end the resume
-
-		} catch (java.lang.Exception e) {
-
-			TalendException te = new TalendException(e, currentComponent, globalMap);
-
-			throw te;
-		} catch (java.lang.Error error) {
-
-			runStat.stopThreadStat();
-
-			throw error;
-		} finally {
-
-			try {
-
-				/**
-				 * [tMsgBox_2 finally ] start
-				 */
-
-				currentComponent = "tMsgBox_2";
-
-				/**
-				 * [tMsgBox_2 finally ] stop
-				 */
-			} catch (java.lang.Exception e) {
-				// ignore
-			} catch (java.lang.Error error) {
-				// ignore
-			}
-			resourceMap = null;
-		}
-
-		globalMap.put("tMsgBox_2_SUBPROCESS_STATE", 1);
-	}
-
-	public void tJava_1Process(final java.util.Map<String, Object> globalMap) throws TalendException {
-		globalMap.put("tJava_1_SUBPROCESS_STATE", 0);
-
-		final boolean execStat = this.execStat;
-
-		String iterateId = "";
-
-		String currentComponent = "";
-		java.util.Map<String, Object> resourceMap = new java.util.HashMap<String, Object>();
-
-		try {
-			// TDI-39566 avoid throwing an useless Exception
-			boolean resumeIt = true;
-			if (globalResumeTicket == false && resumeEntryMethodName != null) {
-				String currentMethodName = new java.lang.Exception().getStackTrace()[0].getMethodName();
-				resumeIt = resumeEntryMethodName.equals(currentMethodName);
-			}
-			if (resumeIt || globalResumeTicket) { // start the resume
-				globalResumeTicket = true;
-
-				/**
-				 * [tJava_1 begin ] start
-				 */
-
-				ok_Hash.put("tJava_1", false);
-				start_Hash.put("tJava_1", System.currentTimeMillis());
-
-				currentComponent = "tJava_1";
-
-				int tos_count_tJava_1 = 0;
-
-				String path = (String) globalMap.get("tMsgBox_2_RESULT");
-				context.path_files_global = path;
-
-				/**
-				 * [tJava_1 begin ] stop
-				 */
-
-				/**
-				 * [tJava_1 main ] start
-				 */
-
-				currentComponent = "tJava_1";
-
-				tos_count_tJava_1++;
-
-				/**
-				 * [tJava_1 main ] stop
-				 */
-
-				/**
-				 * [tJava_1 process_data_begin ] start
-				 */
-
-				currentComponent = "tJava_1";
-
-				/**
-				 * [tJava_1 process_data_begin ] stop
-				 */
-
-				/**
-				 * [tJava_1 process_data_end ] start
-				 */
-
-				currentComponent = "tJava_1";
-
-				/**
-				 * [tJava_1 process_data_end ] stop
-				 */
-
-				/**
-				 * [tJava_1 end ] start
-				 */
-
-				currentComponent = "tJava_1";
-
-				ok_Hash.put("tJava_1", true);
-				end_Hash.put("tJava_1", System.currentTimeMillis());
-
-				/**
-				 * [tJava_1 end ] stop
-				 */
-			} // end the resume
-
-		} catch (java.lang.Exception e) {
-
-			TalendException te = new TalendException(e, currentComponent, globalMap);
-
-			throw te;
-		} catch (java.lang.Error error) {
-
-			runStat.stopThreadStat();
-
-			throw error;
-		} finally {
-
-			try {
-
-				/**
-				 * [tJava_1 finally ] start
-				 */
-
-				currentComponent = "tJava_1";
-
-				/**
-				 * [tJava_1 finally ] stop
-				 */
-			} catch (java.lang.Exception e) {
-				// ignore
-			} catch (java.lang.Error error) {
-				// ignore
-			}
-			resourceMap = null;
-		}
-
-		globalMap.put("tJava_1_SUBPROCESS_STATE", 1);
-	}
-
 	public String resuming_logs_dir_path = null;
 	public String resuming_checkpoint_path = null;
 	public String parent_part_launcher = null;
@@ -5791,19 +5367,6 @@ public class s0_connexion_api_twitter_apps_covid implements TalendJob {
 
 		this.globalResumeTicket = true;// to run tPreJob
 
-		try {
-			errorCode = null;
-			tPrejob_1Process(globalMap);
-			if (!"failure".equals(status)) {
-				status = "end";
-			}
-		} catch (TalendException e_tPrejob_1) {
-			globalMap.put("tPrejob_1_SUBPROCESS_STATE", -1);
-
-			e_tPrejob_1.printStackTrace();
-
-		}
-
 		this.globalResumeTicket = false;// to run others jobs
 
 		try {
@@ -5970,6 +5533,6 @@ public class s0_connexion_api_twitter_apps_covid implements TalendJob {
 	ResumeUtil resumeUtil = null;
 }
 /************************************************************************************************
- * 176997 characters generated by Talend Open Studio for Big Data on the
- * December 7, 2020 1:01:47 AM CET
+ * 167214 characters generated by Talend Open Studio for Big Data on the
+ * December 7, 2020 7:57:23 PM CET
  ************************************************************************************************/
