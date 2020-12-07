@@ -494,15 +494,6 @@ private class TalendException extends Exception {
 					tFileInputDelimited_9_onSubJobError(exception, errorComponent, globalMap);
 			}
 			
-			public void tMsgBox_1_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
-				
-				end_Hash.put(errorComponent, System.currentTimeMillis());
-				
-				status = "failure";
-				
-					tMsgBox_1_onSubJobError(exception, errorComponent, globalMap);
-			}
-			
 			public void tFileInputDelimited_1_onSubJobError(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
 
 resumeUtil.addLog("SYSTEM_LOG", "NODE:"+ errorComponent, "", Thread.currentThread().getId()+ "", "FATAL", "", exception.getMessage(), ResumeUtil.getExceptionStackTrace(exception),"");
@@ -544,11 +535,6 @@ resumeUtil.addLog("SYSTEM_LOG", "NODE:"+ errorComponent, "", Thread.currentThrea
 
 			}
 			public void tFileInputDelimited_9_onSubJobError(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
-
-resumeUtil.addLog("SYSTEM_LOG", "NODE:"+ errorComponent, "", Thread.currentThread().getId()+ "", "FATAL", "", exception.getMessage(), ResumeUtil.getExceptionStackTrace(exception),"");
-
-			}
-			public void tMsgBox_1_onSubJobError(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
 
 resumeUtil.addLog("SYSTEM_LOG", "NODE:"+ errorComponent, "", Thread.currentThread().getId()+ "", "FATAL", "", exception.getMessage(), ResumeUtil.getExceptionStackTrace(exception),"");
 
@@ -9759,8 +9745,6 @@ pstmtInsert_tDBOutput_9.setNull(4, java.sql.Types.INTEGER);
                             System.err.print(e.getMessage());
                 }
             }
-            if(!whetherReject_tDBOutput_9) {
-            }
     		    commitCounter_tDBOutput_9++;
                 if(commitEvery_tDBOutput_9 <= commitCounter_tDBOutput_9) {
                 	conn_tDBOutput_9.commit();
@@ -9943,10 +9927,6 @@ end_Hash.put("tFileInputDelimited_9", System.currentTimeMillis());
 ok_Hash.put("tDBOutput_9", true);
 end_Hash.put("tDBOutput_9", System.currentTimeMillis());
 
-				if(execStat){   
-   	 				runStat.updateStatOnConnection("OnComponentOk10", 0, "ok");
-				}
-				tMsgBox_1Process(globalMap);
 
 
 
@@ -10061,206 +10041,6 @@ end_Hash.put("tDBOutput_9", System.currentTimeMillis());
 		
 
 		globalMap.put("tFileInputDelimited_9_SUBPROCESS_STATE", 1);
-	}
-	
-
-public void tMsgBox_1Process(final java.util.Map<String, Object> globalMap) throws TalendException {
-	globalMap.put("tMsgBox_1_SUBPROCESS_STATE", 0);
-
- final boolean execStat = this.execStat;
-	
-		String iterateId = "";
-	
-	
-	String currentComponent = "";
-	java.util.Map<String, Object> resourceMap = new java.util.HashMap<String, Object>();
-
-	try {
-			// TDI-39566 avoid throwing an useless Exception
-			boolean resumeIt = true;
-			if (globalResumeTicket == false && resumeEntryMethodName != null) {
-				String currentMethodName = new java.lang.Exception().getStackTrace()[0].getMethodName();
-				resumeIt = resumeEntryMethodName.equals(currentMethodName);
-			}
-			if (resumeIt || globalResumeTicket) { //start the resume
-				globalResumeTicket = true;
-
-
-
-
-
-	
-	/**
-	 * [tMsgBox_1 begin ] start
-	 */
-
-	
-
-	
-		
-		ok_Hash.put("tMsgBox_1", false);
-		start_Hash.put("tMsgBox_1", System.currentTimeMillis());
-		
-	
-	currentComponent="tMsgBox_1";
-
-	
-		int tos_count_tMsgBox_1 = 0;
-		
-
- 
-
-
-
-/**
- * [tMsgBox_1 begin ] stop
- */
-	
-	/**
-	 * [tMsgBox_1 main ] start
-	 */
-
-	
-
-	
-	
-	currentComponent="tMsgBox_1";
-
-	
-
-	int messageIcontMsgBox_1 = javax.swing.JOptionPane.INFORMATION_MESSAGE;
-	String titletMsgBox_1 = "Et 6 : Telechargement des mesures";
-	String messagetMsgBox_1 = "Les mesures ont été télechargés dedans le DW";   	
-	String resulttMsgBox_1 = null; 
-	
-		javax.swing.JOptionPane.showMessageDialog(null, messagetMsgBox_1, titletMsgBox_1, messageIcontMsgBox_1);
-		resulttMsgBox_1 = String.valueOf(1);
-
-globalMap.put("tMsgBox_1_RESULT", resulttMsgBox_1);
-
- 
-
-
-	tos_count_tMsgBox_1++;
-
-/**
- * [tMsgBox_1 main ] stop
- */
-	
-	/**
-	 * [tMsgBox_1 process_data_begin ] start
-	 */
-
-	
-
-	
-	
-	currentComponent="tMsgBox_1";
-
-	
-
- 
-
-
-
-/**
- * [tMsgBox_1 process_data_begin ] stop
- */
-	
-	/**
-	 * [tMsgBox_1 process_data_end ] start
-	 */
-
-	
-
-	
-	
-	currentComponent="tMsgBox_1";
-
-	
-
- 
-
-
-
-/**
- * [tMsgBox_1 process_data_end ] stop
- */
-	
-	/**
-	 * [tMsgBox_1 end ] start
-	 */
-
-	
-
-	
-	
-	currentComponent="tMsgBox_1";
-
-	
-
- 
-
-ok_Hash.put("tMsgBox_1", true);
-end_Hash.put("tMsgBox_1", System.currentTimeMillis());
-
-
-
-
-/**
- * [tMsgBox_1 end ] stop
- */
-				}//end the resume
-
-				
-
-
-
-	
-			}catch(java.lang.Exception e){	
-				
-				TalendException te = new TalendException(e, currentComponent, globalMap);
-				
-				throw te;
-			}catch(java.lang.Error error){	
-				
-					runStat.stopThreadStat();
-				
-				throw error;
-			}finally{
-				
-				try{
-					
-	
-	/**
-	 * [tMsgBox_1 finally ] start
-	 */
-
-	
-
-	
-	
-	currentComponent="tMsgBox_1";
-
-	
-
- 
-
-
-
-/**
- * [tMsgBox_1 finally ] stop
- */
-				}catch(java.lang.Exception e){	
-					//ignore
-				}catch(java.lang.Error error){
-					//ignore
-				}
-				resourceMap = null;
-			}
-		
-
-		globalMap.put("tMsgBox_1_SUBPROCESS_STATE", 1);
 	}
 	
     public String resuming_logs_dir_path = null;
@@ -10691,6 +10471,6 @@ if (execStat) {
     ResumeUtil resumeUtil = null;
 }
 /************************************************************************************************
- *     290536 characters generated by Talend Open Studio for Big Data 
- *     on the December 6, 2020 10:01:44 PM CET
+ *     286944 characters generated by Talend Open Studio for Big Data 
+ *     on the December 7, 2020 12:18:11 AM CET
  ************************************************************************************************/

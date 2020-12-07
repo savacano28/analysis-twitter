@@ -14,7 +14,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-
 package analysis_twitter.s0_connexion_api_twitter_apps_covid_0_1;
 
 import routines.Numeric;
@@ -41,37 +40,36 @@ import java.io.ObjectOutputStream;
 import java.io.ObjectInputStream;
 import java.io.IOException;
 import java.util.Comparator;
- 
 
+//the import part of tLibraryLoad_1
+//import java.util.List;
 
+//the import part of tLibraryLoad_2
+//import java.util.List;
 
-
-	//the import part of tLibraryLoad_1
-	//import java.util.List;
-
-	//the import part of tLibraryLoad_2
-	//import java.util.List;
-
+//the import part of tJava_1
+//import java.util.List;
 
 @SuppressWarnings("unused")
 
 /**
- * Job: s0_connexion_api_twitter_apps_covid Purpose: s0_connexion_api_twitter_apps_covid<br>
+ * Job: s0_connexion_api_twitter_apps_covid Purpose:
+ * s0_connexion_api_twitter_apps_covid<br>
  * Description: s0_connexion_api_twitter_apps_covid <br>
+ * 
  * @author user@talend.com
  * @version 7.3.1.20200219_1130
  * @status DEV
  */
 public class s0_connexion_api_twitter_apps_covid implements TalendJob {
 
-protected static void logIgnoredError(String message, Throwable cause) {
-       System.err.println(message);
-       if (cause != null) {
-               cause.printStackTrace();
-       }
+	protected static void logIgnoredError(String message, Throwable cause) {
+		System.err.println(message);
+		if (cause != null) {
+			cause.printStackTrace();
+		}
 
-}
-
+	}
 
 	public final Object obj = new Object();
 
@@ -85,6679 +83,5851 @@ protected static void logIgnoredError(String message, Throwable cause) {
 	public void setValueObject(Object valueObject) {
 		this.valueObject = valueObject;
 	}
-	
+
 	private final static String defaultCharset = java.nio.charset.Charset.defaultCharset().name();
 
-	
 	private final static String utf8Charset = "UTF-8";
-	//contains type for every context property
+
+	// contains type for every context property
 	public class PropertiesWithType extends java.util.Properties {
 		private static final long serialVersionUID = 1L;
-		private java.util.Map<String,String> propertyTypes = new java.util.HashMap<>();
-		
-		public PropertiesWithType(java.util.Properties properties){
+		private java.util.Map<String, String> propertyTypes = new java.util.HashMap<>();
+
+		public PropertiesWithType(java.util.Properties properties) {
 			super(properties);
 		}
-		public PropertiesWithType(){
+
+		public PropertiesWithType() {
 			super();
 		}
-		
+
 		public void setContextType(String key, String type) {
-			propertyTypes.put(key,type);
+			propertyTypes.put(key, type);
 		}
-	
+
 		public String getContextType(String key) {
 			return propertyTypes.get(key);
 		}
 	}
-	
+
 	// create and load default properties
 	private java.util.Properties defaultProps = new java.util.Properties();
+
 	// create application properties with default
 	public class ContextProperties extends PropertiesWithType {
 
 		private static final long serialVersionUID = 1L;
 
-		public ContextProperties(java.util.Properties properties){
+		public ContextProperties(java.util.Properties properties) {
 			super(properties);
 		}
-		public ContextProperties(){
+
+		public ContextProperties() {
 			super();
 		}
 
-		public void synchronizeContext(){
-			
+		public void synchronizeContext() {
+
+			if (connection_postgres_Server != null) {
+
+				this.setProperty("connection_postgres_Server", connection_postgres_Server.toString());
+
+			}
+
+			if (connection_postgres_Login != null) {
+
+				this.setProperty("connection_postgres_Login", connection_postgres_Login.toString());
+
+			}
+
+			if (connection_postgres_Port != null) {
+
+				this.setProperty("connection_postgres_Port", connection_postgres_Port.toString());
+
+			}
+
+			if (connection_postgres_Password != null) {
+
+				this.setProperty("connection_postgres_Password", connection_postgres_Password.toString());
+
+			}
+
+			if (connection_postgres_Database != null) {
+
+				this.setProperty("connection_postgres_Database", connection_postgres_Database.toString());
+
+			}
+
+			if (connection_postgres_Schema != null) {
+
+				this.setProperty("connection_postgres_Schema", connection_postgres_Schema.toString());
+
+			}
+
+			if (connection_postgres_AdditionalParams != null) {
+
+				this.setProperty("connection_postgres_AdditionalParams",
+						connection_postgres_AdditionalParams.toString());
+
+			}
+
+			if (path_files_global != null) {
+
+				this.setProperty("path_files_global", path_files_global.toString());
+
+			}
+
+		}
+
+		public String connection_postgres_Server;
+
+		public String getConnection_postgres_Server() {
+			return this.connection_postgres_Server;
+		}
+
+		public String connection_postgres_Login;
+
+		public String getConnection_postgres_Login() {
+			return this.connection_postgres_Login;
+		}
+
+		public String connection_postgres_Port;
+
+		public String getConnection_postgres_Port() {
+			return this.connection_postgres_Port;
+		}
+
+		public java.lang.String connection_postgres_Password;
+
+		public java.lang.String getConnection_postgres_Password() {
+			return this.connection_postgres_Password;
+		}
+
+		public String connection_postgres_Database;
+
+		public String getConnection_postgres_Database() {
+			return this.connection_postgres_Database;
+		}
+
+		public String connection_postgres_Schema;
+
+		public String getConnection_postgres_Schema() {
+			return this.connection_postgres_Schema;
+		}
+
+		public String connection_postgres_AdditionalParams;
+
+		public String getConnection_postgres_AdditionalParams() {
+			return this.connection_postgres_AdditionalParams;
+		}
+
+		public String path_files_global;
+
+		public String getPath_files_global() {
+			return this.path_files_global;
 		}
 
 	}
+
 	protected ContextProperties context = new ContextProperties(); // will be instanciated by MS.
+
 	public ContextProperties getContext() {
 		return this.context;
 	}
+
 	private final String jobVersion = "0.1";
 	private final String jobName = "s0_connexion_api_twitter_apps_covid";
 	private final String projectName = "ANALYSIS_TWITTER";
 	public Integer errorCode = null;
 	private String currentComponent = "";
-	
-		private final java.util.Map<String, Object> globalMap = new java.util.HashMap<String, Object>();
-        private final static java.util.Map<String, Object> junitGlobalMap = new java.util.HashMap<String, Object>();
-	
-		private final java.util.Map<String, Long> start_Hash = new java.util.HashMap<String, Long>();
-		private final java.util.Map<String, Long> end_Hash = new java.util.HashMap<String, Long>();
-		private final java.util.Map<String, Boolean> ok_Hash = new java.util.HashMap<String, Boolean>();
-		public  final java.util.List<String[]> globalBuffer = new java.util.ArrayList<String[]>();
-	
 
-private RunStat runStat = new RunStat();
+	private final java.util.Map<String, Object> globalMap = new java.util.HashMap<String, Object>();
+	private final static java.util.Map<String, Object> junitGlobalMap = new java.util.HashMap<String, Object>();
+
+	private final java.util.Map<String, Long> start_Hash = new java.util.HashMap<String, Long>();
+	private final java.util.Map<String, Long> end_Hash = new java.util.HashMap<String, Long>();
+	private final java.util.Map<String, Boolean> ok_Hash = new java.util.HashMap<String, Boolean>();
+	public final java.util.List<String[]> globalBuffer = new java.util.ArrayList<String[]>();
+
+	private RunStat runStat = new RunStat();
 
 	// OSGi DataSource
 	private final static String KEY_DB_DATASOURCES = "KEY_DB_DATASOURCES";
-	
+
 	private final static String KEY_DB_DATASOURCES_RAW = "KEY_DB_DATASOURCES_RAW";
 
 	public void setDataSources(java.util.Map<String, javax.sql.DataSource> dataSources) {
 		java.util.Map<String, routines.system.TalendDataSource> talendDataSources = new java.util.HashMap<String, routines.system.TalendDataSource>();
 		for (java.util.Map.Entry<String, javax.sql.DataSource> dataSourceEntry : dataSources.entrySet()) {
-			talendDataSources.put(dataSourceEntry.getKey(), new routines.system.TalendDataSource(dataSourceEntry.getValue()));
+			talendDataSources.put(dataSourceEntry.getKey(),
+					new routines.system.TalendDataSource(dataSourceEntry.getValue()));
 		}
 		globalMap.put(KEY_DB_DATASOURCES, talendDataSources);
 		globalMap.put(KEY_DB_DATASOURCES_RAW, new java.util.HashMap<String, javax.sql.DataSource>(dataSources));
 	}
 
+	private final java.io.ByteArrayOutputStream baos = new java.io.ByteArrayOutputStream();
+	private final java.io.PrintStream errorMessagePS = new java.io.PrintStream(new java.io.BufferedOutputStream(baos));
 
-private final java.io.ByteArrayOutputStream baos = new java.io.ByteArrayOutputStream();
-private final java.io.PrintStream errorMessagePS = new java.io.PrintStream(new java.io.BufferedOutputStream(baos));
-
-public String getExceptionStackTrace() {
-	if ("failure".equals(this.getStatus())) {
-		errorMessagePS.flush();
-		return baos.toString();
-	}
-	return null;
-}
-
-private Exception exception;
-
-public Exception getException() {
-	if ("failure".equals(this.getStatus())) {
-		return this.exception;
-	}
-	return null;
-}
-
-private class TalendException extends Exception {
-
-	private static final long serialVersionUID = 1L;
-
-	private java.util.Map<String, Object> globalMap = null;
-	private Exception e = null;
-	private String currentComponent = null;
-	private String virtualComponentName = null;
-	
-	public void setVirtualComponentName (String virtualComponentName){
-		this.virtualComponentName = virtualComponentName;
+	public String getExceptionStackTrace() {
+		if ("failure".equals(this.getStatus())) {
+			errorMessagePS.flush();
+			return baos.toString();
+		}
+		return null;
 	}
 
-	private TalendException(Exception e, String errorComponent, final java.util.Map<String, Object> globalMap) {
-		this.currentComponent= errorComponent;
-		this.globalMap = globalMap;
-		this.e = e;
-	}
+	private Exception exception;
 
 	public Exception getException() {
-		return this.e;
+		if ("failure".equals(this.getStatus())) {
+			return this.exception;
+		}
+		return null;
 	}
 
-	public String getCurrentComponent() {
-		return this.currentComponent;
-	}
+	private class TalendException extends Exception {
 
-	
-    public String getExceptionCauseMessage(Exception e){
-        Throwable cause = e;
-        String message = null;
-        int i = 10;
-        while (null != cause && 0 < i--) {
-            message = cause.getMessage();
-            if (null == message) {
-                cause = cause.getCause();
-            } else {
-                break;          
-            }
-        }
-        if (null == message) {
-            message = e.getClass().getName();
-        }   
-        return message;
-    }
+		private static final long serialVersionUID = 1L;
 
-	@Override
-	public void printStackTrace() {
-		if (!(e instanceof TalendException || e instanceof TDieException)) {
-			if(virtualComponentName!=null && currentComponent.indexOf(virtualComponentName+"_")==0){
-				globalMap.put(virtualComponentName+"_ERROR_MESSAGE",getExceptionCauseMessage(e));
-			}
-			globalMap.put(currentComponent+"_ERROR_MESSAGE",getExceptionCauseMessage(e));
-			System.err.println("Exception in component " + currentComponent + " (" + jobName + ")");
+		private java.util.Map<String, Object> globalMap = null;
+		private Exception e = null;
+		private String currentComponent = null;
+		private String virtualComponentName = null;
+
+		public void setVirtualComponentName(String virtualComponentName) {
+			this.virtualComponentName = virtualComponentName;
 		}
-		if (!(e instanceof TDieException)) {
-			if(e instanceof TalendException){
-				e.printStackTrace();
-			} else {
-				e.printStackTrace();
-				e.printStackTrace(errorMessagePS);
-				s0_connexion_api_twitter_apps_covid.this.exception = e;
-			}
+
+		private TalendException(Exception e, String errorComponent, final java.util.Map<String, Object> globalMap) {
+			this.currentComponent = errorComponent;
+			this.globalMap = globalMap;
+			this.e = e;
 		}
-		if (!(e instanceof TalendException)) {
-		try {
-			for (java.lang.reflect.Method m : this.getClass().getEnclosingClass().getMethods()) {
-				if (m.getName().compareTo(currentComponent + "_error") == 0) {
-					m.invoke(s0_connexion_api_twitter_apps_covid.this, new Object[] { e , currentComponent, globalMap});
+
+		public Exception getException() {
+			return this.e;
+		}
+
+		public String getCurrentComponent() {
+			return this.currentComponent;
+		}
+
+		public String getExceptionCauseMessage(Exception e) {
+			Throwable cause = e;
+			String message = null;
+			int i = 10;
+			while (null != cause && 0 < i--) {
+				message = cause.getMessage();
+				if (null == message) {
+					cause = cause.getCause();
+				} else {
 					break;
 				}
 			}
-
-			if(!(e instanceof TDieException)){
+			if (null == message) {
+				message = e.getClass().getName();
 			}
-		} catch (Exception e) {
-			this.e.printStackTrace();
+			return message;
 		}
+
+		@Override
+		public void printStackTrace() {
+			if (!(e instanceof TalendException || e instanceof TDieException)) {
+				if (virtualComponentName != null && currentComponent.indexOf(virtualComponentName + "_") == 0) {
+					globalMap.put(virtualComponentName + "_ERROR_MESSAGE", getExceptionCauseMessage(e));
+				}
+				globalMap.put(currentComponent + "_ERROR_MESSAGE", getExceptionCauseMessage(e));
+				System.err.println("Exception in component " + currentComponent + " (" + jobName + ")");
+			}
+			if (!(e instanceof TDieException)) {
+				if (e instanceof TalendException) {
+					e.printStackTrace();
+				} else {
+					e.printStackTrace();
+					e.printStackTrace(errorMessagePS);
+					s0_connexion_api_twitter_apps_covid.this.exception = e;
+				}
+			}
+			if (!(e instanceof TalendException)) {
+				try {
+					for (java.lang.reflect.Method m : this.getClass().getEnclosingClass().getMethods()) {
+						if (m.getName().compareTo(currentComponent + "_error") == 0) {
+							m.invoke(s0_connexion_api_twitter_apps_covid.this,
+									new Object[] { e, currentComponent, globalMap });
+							break;
+						}
+					}
+
+					if (!(e instanceof TDieException)) {
+					}
+				} catch (Exception e) {
+					this.e.printStackTrace();
+				}
+			}
 		}
 	}
-}
 
-			public void tLibraryLoad_1_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
-				
-				end_Hash.put(errorComponent, System.currentTimeMillis());
-				
-				status = "failure";
-				
-					tLibraryLoad_1_onSubJobError(exception, errorComponent, globalMap);
-			}
-			
-			public void tLibraryLoad_2_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
-				
-				end_Hash.put(errorComponent, System.currentTimeMillis());
-				
-				status = "failure";
-				
-					tLibraryLoad_2_onSubJobError(exception, errorComponent, globalMap);
-			}
-			
-			public void tRESTClient_1_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
-				
-				end_Hash.put(errorComponent, System.currentTimeMillis());
-				
-				status = "failure";
-				
-					tRESTClient_1_onSubJobError(exception, errorComponent, globalMap);
-			}
-			
-			public void tFileOutputJSON_1_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
-				
-				end_Hash.put(errorComponent, System.currentTimeMillis());
-				
-				status = "failure";
-				
-					tRESTClient_1_onSubJobError(exception, errorComponent, globalMap);
-			}
-			
-			public void tRESTClient_2_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
-				
-				end_Hash.put(errorComponent, System.currentTimeMillis());
-				
-				status = "failure";
-				
-					tRESTClient_2_onSubJobError(exception, errorComponent, globalMap);
-			}
-			
-			public void tFileOutputJSON_2_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
-				
-				end_Hash.put(errorComponent, System.currentTimeMillis());
-				
-				status = "failure";
-				
-					tRESTClient_2_onSubJobError(exception, errorComponent, globalMap);
-			}
-			
-			public void tRESTClient_3_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
-				
-				end_Hash.put(errorComponent, System.currentTimeMillis());
-				
-				status = "failure";
-				
-					tRESTClient_3_onSubJobError(exception, errorComponent, globalMap);
-			}
-			
-			public void tFileOutputJSON_3_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
-				
-				end_Hash.put(errorComponent, System.currentTimeMillis());
-				
-				status = "failure";
-				
-					tRESTClient_3_onSubJobError(exception, errorComponent, globalMap);
-			}
-			
-			public void tMsgBox_1_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
-				
-				end_Hash.put(errorComponent, System.currentTimeMillis());
-				
-				status = "failure";
-				
-					tMsgBox_1_onSubJobError(exception, errorComponent, globalMap);
-			}
-			
-			public void tXMLMap_1_TXMLMAP_OUT_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
-				
-							tXMLMap_1_TXMLMAP_IN_error(exception, errorComponent, globalMap);
-						
-						}
-					
-			public void tXMLMap_1_TXMLMAP_IN_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
-				
-				end_Hash.put(errorComponent, System.currentTimeMillis());
-				
-				status = "failure";
-				
-					tRESTClient_1_onSubJobError(exception, errorComponent, globalMap);
-			}
-			
-			public void tXMLMap_2_TXMLMAP_OUT_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
-				
-							tXMLMap_2_TXMLMAP_IN_error(exception, errorComponent, globalMap);
-						
-						}
-					
-			public void tXMLMap_2_TXMLMAP_IN_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
-				
-				end_Hash.put(errorComponent, System.currentTimeMillis());
-				
-				status = "failure";
-				
-					tRESTClient_2_onSubJobError(exception, errorComponent, globalMap);
-			}
-			
-			public void tXMLMap_3_TXMLMAP_OUT_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
-				
-							tXMLMap_3_TXMLMAP_IN_error(exception, errorComponent, globalMap);
-						
-						}
-					
-			public void tXMLMap_3_TXMLMAP_IN_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
-				
-				end_Hash.put(errorComponent, System.currentTimeMillis());
-				
-				status = "failure";
-				
-					tRESTClient_3_onSubJobError(exception, errorComponent, globalMap);
-			}
-			
-			public void tLibraryLoad_1_onSubJobError(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
+	public void tLibraryLoad_1_error(Exception exception, String errorComponent,
+			final java.util.Map<String, Object> globalMap) throws TalendException {
 
-resumeUtil.addLog("SYSTEM_LOG", "NODE:"+ errorComponent, "", Thread.currentThread().getId()+ "", "FATAL", "", exception.getMessage(), ResumeUtil.getExceptionStackTrace(exception),"");
+		end_Hash.put(errorComponent, System.currentTimeMillis());
 
-			}
-			public void tLibraryLoad_2_onSubJobError(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
+		status = "failure";
 
-resumeUtil.addLog("SYSTEM_LOG", "NODE:"+ errorComponent, "", Thread.currentThread().getId()+ "", "FATAL", "", exception.getMessage(), ResumeUtil.getExceptionStackTrace(exception),"");
+		tLibraryLoad_1_onSubJobError(exception, errorComponent, globalMap);
+	}
 
-			}
-			public void tRESTClient_1_onSubJobError(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
+	public void tLibraryLoad_2_error(Exception exception, String errorComponent,
+			final java.util.Map<String, Object> globalMap) throws TalendException {
 
-resumeUtil.addLog("SYSTEM_LOG", "NODE:"+ errorComponent, "", Thread.currentThread().getId()+ "", "FATAL", "", exception.getMessage(), ResumeUtil.getExceptionStackTrace(exception),"");
+		end_Hash.put(errorComponent, System.currentTimeMillis());
 
-			}
-			public void tRESTClient_2_onSubJobError(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
+		status = "failure";
 
-resumeUtil.addLog("SYSTEM_LOG", "NODE:"+ errorComponent, "", Thread.currentThread().getId()+ "", "FATAL", "", exception.getMessage(), ResumeUtil.getExceptionStackTrace(exception),"");
+		tLibraryLoad_2_onSubJobError(exception, errorComponent, globalMap);
+	}
 
-			}
-			public void tRESTClient_3_onSubJobError(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
+	public void tRESTClient_1_error(Exception exception, String errorComponent,
+			final java.util.Map<String, Object> globalMap) throws TalendException {
 
-resumeUtil.addLog("SYSTEM_LOG", "NODE:"+ errorComponent, "", Thread.currentThread().getId()+ "", "FATAL", "", exception.getMessage(), ResumeUtil.getExceptionStackTrace(exception),"");
+		end_Hash.put(errorComponent, System.currentTimeMillis());
 
-			}
-			public void tMsgBox_1_onSubJobError(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
+		status = "failure";
 
-resumeUtil.addLog("SYSTEM_LOG", "NODE:"+ errorComponent, "", Thread.currentThread().getId()+ "", "FATAL", "", exception.getMessage(), ResumeUtil.getExceptionStackTrace(exception),"");
+		tRESTClient_1_onSubJobError(exception, errorComponent, globalMap);
+	}
 
-			}
-	
+	public void tFileOutputJSON_1_error(Exception exception, String errorComponent,
+			final java.util.Map<String, Object> globalMap) throws TalendException {
 
+		end_Hash.put(errorComponent, System.currentTimeMillis());
 
+		status = "failure";
 
+		tRESTClient_1_onSubJobError(exception, errorComponent, globalMap);
+	}
 
+	public void tRESTClient_2_error(Exception exception, String errorComponent,
+			final java.util.Map<String, Object> globalMap) throws TalendException {
 
-public void tLibraryLoad_1Process(final java.util.Map<String, Object> globalMap) throws TalendException {
-	globalMap.put("tLibraryLoad_1_SUBPROCESS_STATE", 0);
+		end_Hash.put(errorComponent, System.currentTimeMillis());
 
- final boolean execStat = this.execStat;
-	
+		status = "failure";
+
+		tRESTClient_2_onSubJobError(exception, errorComponent, globalMap);
+	}
+
+	public void tFileOutputJSON_2_error(Exception exception, String errorComponent,
+			final java.util.Map<String, Object> globalMap) throws TalendException {
+
+		end_Hash.put(errorComponent, System.currentTimeMillis());
+
+		status = "failure";
+
+		tRESTClient_2_onSubJobError(exception, errorComponent, globalMap);
+	}
+
+	public void tRESTClient_3_error(Exception exception, String errorComponent,
+			final java.util.Map<String, Object> globalMap) throws TalendException {
+
+		end_Hash.put(errorComponent, System.currentTimeMillis());
+
+		status = "failure";
+
+		tRESTClient_3_onSubJobError(exception, errorComponent, globalMap);
+	}
+
+	public void tFileOutputJSON_3_error(Exception exception, String errorComponent,
+			final java.util.Map<String, Object> globalMap) throws TalendException {
+
+		end_Hash.put(errorComponent, System.currentTimeMillis());
+
+		status = "failure";
+
+		tRESTClient_3_onSubJobError(exception, errorComponent, globalMap);
+	}
+
+	public void tPrejob_1_error(Exception exception, String errorComponent,
+			final java.util.Map<String, Object> globalMap) throws TalendException {
+
+		end_Hash.put(errorComponent, System.currentTimeMillis());
+
+		status = "failure";
+
+		tPrejob_1_onSubJobError(exception, errorComponent, globalMap);
+	}
+
+	public void tMsgBox_2_error(Exception exception, String errorComponent,
+			final java.util.Map<String, Object> globalMap) throws TalendException {
+
+		end_Hash.put(errorComponent, System.currentTimeMillis());
+
+		status = "failure";
+
+		tMsgBox_2_onSubJobError(exception, errorComponent, globalMap);
+	}
+
+	public void tJava_1_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap)
+			throws TalendException {
+
+		end_Hash.put(errorComponent, System.currentTimeMillis());
+
+		status = "failure";
+
+		tJava_1_onSubJobError(exception, errorComponent, globalMap);
+	}
+
+	public void tXMLMap_1_TXMLMAP_OUT_error(Exception exception, String errorComponent,
+			final java.util.Map<String, Object> globalMap) throws TalendException {
+
+		tXMLMap_1_TXMLMAP_IN_error(exception, errorComponent, globalMap);
+
+	}
+
+	public void tXMLMap_1_TXMLMAP_IN_error(Exception exception, String errorComponent,
+			final java.util.Map<String, Object> globalMap) throws TalendException {
+
+		end_Hash.put(errorComponent, System.currentTimeMillis());
+
+		status = "failure";
+
+		tRESTClient_1_onSubJobError(exception, errorComponent, globalMap);
+	}
+
+	public void tXMLMap_2_TXMLMAP_OUT_error(Exception exception, String errorComponent,
+			final java.util.Map<String, Object> globalMap) throws TalendException {
+
+		tXMLMap_2_TXMLMAP_IN_error(exception, errorComponent, globalMap);
+
+	}
+
+	public void tXMLMap_2_TXMLMAP_IN_error(Exception exception, String errorComponent,
+			final java.util.Map<String, Object> globalMap) throws TalendException {
+
+		end_Hash.put(errorComponent, System.currentTimeMillis());
+
+		status = "failure";
+
+		tRESTClient_2_onSubJobError(exception, errorComponent, globalMap);
+	}
+
+	public void tXMLMap_3_TXMLMAP_OUT_error(Exception exception, String errorComponent,
+			final java.util.Map<String, Object> globalMap) throws TalendException {
+
+		tXMLMap_3_TXMLMAP_IN_error(exception, errorComponent, globalMap);
+
+	}
+
+	public void tXMLMap_3_TXMLMAP_IN_error(Exception exception, String errorComponent,
+			final java.util.Map<String, Object> globalMap) throws TalendException {
+
+		end_Hash.put(errorComponent, System.currentTimeMillis());
+
+		status = "failure";
+
+		tRESTClient_3_onSubJobError(exception, errorComponent, globalMap);
+	}
+
+	public void tLibraryLoad_1_onSubJobError(Exception exception, String errorComponent,
+			final java.util.Map<String, Object> globalMap) throws TalendException {
+
+		resumeUtil.addLog("SYSTEM_LOG", "NODE:" + errorComponent, "", Thread.currentThread().getId() + "", "FATAL", "",
+				exception.getMessage(), ResumeUtil.getExceptionStackTrace(exception), "");
+
+	}
+
+	public void tLibraryLoad_2_onSubJobError(Exception exception, String errorComponent,
+			final java.util.Map<String, Object> globalMap) throws TalendException {
+
+		resumeUtil.addLog("SYSTEM_LOG", "NODE:" + errorComponent, "", Thread.currentThread().getId() + "", "FATAL", "",
+				exception.getMessage(), ResumeUtil.getExceptionStackTrace(exception), "");
+
+	}
+
+	public void tRESTClient_1_onSubJobError(Exception exception, String errorComponent,
+			final java.util.Map<String, Object> globalMap) throws TalendException {
+
+		resumeUtil.addLog("SYSTEM_LOG", "NODE:" + errorComponent, "", Thread.currentThread().getId() + "", "FATAL", "",
+				exception.getMessage(), ResumeUtil.getExceptionStackTrace(exception), "");
+
+	}
+
+	public void tRESTClient_2_onSubJobError(Exception exception, String errorComponent,
+			final java.util.Map<String, Object> globalMap) throws TalendException {
+
+		resumeUtil.addLog("SYSTEM_LOG", "NODE:" + errorComponent, "", Thread.currentThread().getId() + "", "FATAL", "",
+				exception.getMessage(), ResumeUtil.getExceptionStackTrace(exception), "");
+
+	}
+
+	public void tRESTClient_3_onSubJobError(Exception exception, String errorComponent,
+			final java.util.Map<String, Object> globalMap) throws TalendException {
+
+		resumeUtil.addLog("SYSTEM_LOG", "NODE:" + errorComponent, "", Thread.currentThread().getId() + "", "FATAL", "",
+				exception.getMessage(), ResumeUtil.getExceptionStackTrace(exception), "");
+
+	}
+
+	public void tPrejob_1_onSubJobError(Exception exception, String errorComponent,
+			final java.util.Map<String, Object> globalMap) throws TalendException {
+
+		resumeUtil.addLog("SYSTEM_LOG", "NODE:" + errorComponent, "", Thread.currentThread().getId() + "", "FATAL", "",
+				exception.getMessage(), ResumeUtil.getExceptionStackTrace(exception), "");
+
+	}
+
+	public void tMsgBox_2_onSubJobError(Exception exception, String errorComponent,
+			final java.util.Map<String, Object> globalMap) throws TalendException {
+
+		resumeUtil.addLog("SYSTEM_LOG", "NODE:" + errorComponent, "", Thread.currentThread().getId() + "", "FATAL", "",
+				exception.getMessage(), ResumeUtil.getExceptionStackTrace(exception), "");
+
+	}
+
+	public void tJava_1_onSubJobError(Exception exception, String errorComponent,
+			final java.util.Map<String, Object> globalMap) throws TalendException {
+
+		resumeUtil.addLog("SYSTEM_LOG", "NODE:" + errorComponent, "", Thread.currentThread().getId() + "", "FATAL", "",
+				exception.getMessage(), ResumeUtil.getExceptionStackTrace(exception), "");
+
+	}
+
+	public void tLibraryLoad_1Process(final java.util.Map<String, Object> globalMap) throws TalendException {
+		globalMap.put("tLibraryLoad_1_SUBPROCESS_STATE", 0);
+
+		final boolean execStat = this.execStat;
+
 		String iterateId = "";
-	
-	
-	String currentComponent = "";
-	java.util.Map<String, Object> resourceMap = new java.util.HashMap<String, Object>();
 
-	try {
+		String currentComponent = "";
+		java.util.Map<String, Object> resourceMap = new java.util.HashMap<String, Object>();
+
+		try {
 			// TDI-39566 avoid throwing an useless Exception
 			boolean resumeIt = true;
 			if (globalResumeTicket == false && resumeEntryMethodName != null) {
 				String currentMethodName = new java.lang.Exception().getStackTrace()[0].getMethodName();
 				resumeIt = resumeEntryMethodName.equals(currentMethodName);
 			}
-			if (resumeIt || globalResumeTicket) { //start the resume
+			if (resumeIt || globalResumeTicket) { // start the resume
 				globalResumeTicket = true;
 
+				/**
+				 * [tLibraryLoad_1 begin ] start
+				 */
 
+				ok_Hash.put("tLibraryLoad_1", false);
+				start_Hash.put("tLibraryLoad_1", System.currentTimeMillis());
 
-		
+				currentComponent = "tLibraryLoad_1";
 
+				int tos_count_tLibraryLoad_1 = 0;
 
-	
-	/**
-	 * [tLibraryLoad_1 begin ] start
-	 */
+				/**
+				 * [tLibraryLoad_1 begin ] stop
+				 */
 
-	
+				/**
+				 * [tLibraryLoad_1 main ] start
+				 */
 
-	
-		
-		ok_Hash.put("tLibraryLoad_1", false);
-		start_Hash.put("tLibraryLoad_1", System.currentTimeMillis());
-		
-	
-	currentComponent="tLibraryLoad_1";
+				currentComponent = "tLibraryLoad_1";
 
-	
-		int tos_count_tLibraryLoad_1 = 0;
-		
+				tos_count_tLibraryLoad_1++;
 
+				/**
+				 * [tLibraryLoad_1 main ] stop
+				 */
 
+				/**
+				 * [tLibraryLoad_1 process_data_begin ] start
+				 */
 
+				currentComponent = "tLibraryLoad_1";
 
- 
+				/**
+				 * [tLibraryLoad_1 process_data_begin ] stop
+				 */
 
+				/**
+				 * [tLibraryLoad_1 process_data_end ] start
+				 */
 
+				currentComponent = "tLibraryLoad_1";
 
-/**
- * [tLibraryLoad_1 begin ] stop
- */
-	
-	/**
-	 * [tLibraryLoad_1 main ] start
-	 */
+				/**
+				 * [tLibraryLoad_1 process_data_end ] stop
+				 */
 
-	
+				/**
+				 * [tLibraryLoad_1 end ] start
+				 */
 
-	
-	
-	currentComponent="tLibraryLoad_1";
+				currentComponent = "tLibraryLoad_1";
 
-	
+				ok_Hash.put("tLibraryLoad_1", true);
+				end_Hash.put("tLibraryLoad_1", System.currentTimeMillis());
 
- 
-
-
-	tos_count_tLibraryLoad_1++;
-
-/**
- * [tLibraryLoad_1 main ] stop
- */
-	
-	/**
-	 * [tLibraryLoad_1 process_data_begin ] start
-	 */
-
-	
-
-	
-	
-	currentComponent="tLibraryLoad_1";
-
-	
-
- 
-
-
-
-/**
- * [tLibraryLoad_1 process_data_begin ] stop
- */
-	
-	/**
-	 * [tLibraryLoad_1 process_data_end ] start
-	 */
-
-	
-
-	
-	
-	currentComponent="tLibraryLoad_1";
-
-	
-
- 
-
-
-
-/**
- * [tLibraryLoad_1 process_data_end ] stop
- */
-	
-	/**
-	 * [tLibraryLoad_1 end ] start
-	 */
-
-	
-
-	
-	
-	currentComponent="tLibraryLoad_1";
-
-	
-
- 
-
-ok_Hash.put("tLibraryLoad_1", true);
-end_Hash.put("tLibraryLoad_1", System.currentTimeMillis());
-
-				if(execStat){   
-   	 				runStat.updateStatOnConnection("OnComponentOk1", 0, "ok");
+				if (execStat) {
+					runStat.updateStatOnConnection("OnComponentOk1", 0, "ok");
 				}
 				tLibraryLoad_2Process(globalMap);
 
+				/**
+				 * [tLibraryLoad_1 end ] stop
+				 */
+			} // end the resume
 
+		} catch (java.lang.Exception e) {
 
-/**
- * [tLibraryLoad_1 end ] stop
- */
-				}//end the resume
+			TalendException te = new TalendException(e, currentComponent, globalMap);
 
-				
+			throw te;
+		} catch (java.lang.Error error) {
 
+			runStat.stopThreadStat();
 
+			throw error;
+		} finally {
 
-	
-			}catch(java.lang.Exception e){	
-				
-				TalendException te = new TalendException(e, currentComponent, globalMap);
-				
-				throw te;
-			}catch(java.lang.Error error){	
-				
-					runStat.stopThreadStat();
-				
-				throw error;
-			}finally{
-				
-				try{
-					
-	
-	/**
-	 * [tLibraryLoad_1 finally ] start
-	 */
+			try {
 
-	
+				/**
+				 * [tLibraryLoad_1 finally ] start
+				 */
 
-	
-	
-	currentComponent="tLibraryLoad_1";
+				currentComponent = "tLibraryLoad_1";
 
-	
-
- 
-
-
-
-/**
- * [tLibraryLoad_1 finally ] stop
- */
-				}catch(java.lang.Exception e){	
-					//ignore
-				}catch(java.lang.Error error){
-					//ignore
-				}
-				resourceMap = null;
+				/**
+				 * [tLibraryLoad_1 finally ] stop
+				 */
+			} catch (java.lang.Exception e) {
+				// ignore
+			} catch (java.lang.Error error) {
+				// ignore
 			}
-		
+			resourceMap = null;
+		}
 
 		globalMap.put("tLibraryLoad_1_SUBPROCESS_STATE", 1);
 	}
-	
 
-public void tLibraryLoad_2Process(final java.util.Map<String, Object> globalMap) throws TalendException {
-	globalMap.put("tLibraryLoad_2_SUBPROCESS_STATE", 0);
+	public void tLibraryLoad_2Process(final java.util.Map<String, Object> globalMap) throws TalendException {
+		globalMap.put("tLibraryLoad_2_SUBPROCESS_STATE", 0);
 
- final boolean execStat = this.execStat;
-	
+		final boolean execStat = this.execStat;
+
 		String iterateId = "";
-	
-	
-	String currentComponent = "";
-	java.util.Map<String, Object> resourceMap = new java.util.HashMap<String, Object>();
 
-	try {
+		String currentComponent = "";
+		java.util.Map<String, Object> resourceMap = new java.util.HashMap<String, Object>();
+
+		try {
 			// TDI-39566 avoid throwing an useless Exception
 			boolean resumeIt = true;
 			if (globalResumeTicket == false && resumeEntryMethodName != null) {
 				String currentMethodName = new java.lang.Exception().getStackTrace()[0].getMethodName();
 				resumeIt = resumeEntryMethodName.equals(currentMethodName);
 			}
-			if (resumeIt || globalResumeTicket) { //start the resume
+			if (resumeIt || globalResumeTicket) { // start the resume
 				globalResumeTicket = true;
 
+				/**
+				 * [tLibraryLoad_2 begin ] start
+				 */
 
+				ok_Hash.put("tLibraryLoad_2", false);
+				start_Hash.put("tLibraryLoad_2", System.currentTimeMillis());
 
-		
+				currentComponent = "tLibraryLoad_2";
 
+				int tos_count_tLibraryLoad_2 = 0;
 
-	
-	/**
-	 * [tLibraryLoad_2 begin ] start
-	 */
+				/**
+				 * [tLibraryLoad_2 begin ] stop
+				 */
 
-	
+				/**
+				 * [tLibraryLoad_2 main ] start
+				 */
 
-	
-		
-		ok_Hash.put("tLibraryLoad_2", false);
-		start_Hash.put("tLibraryLoad_2", System.currentTimeMillis());
-		
-	
-	currentComponent="tLibraryLoad_2";
+				currentComponent = "tLibraryLoad_2";
 
-	
-		int tos_count_tLibraryLoad_2 = 0;
-		
+				tos_count_tLibraryLoad_2++;
 
+				/**
+				 * [tLibraryLoad_2 main ] stop
+				 */
 
+				/**
+				 * [tLibraryLoad_2 process_data_begin ] start
+				 */
 
+				currentComponent = "tLibraryLoad_2";
 
- 
+				/**
+				 * [tLibraryLoad_2 process_data_begin ] stop
+				 */
 
+				/**
+				 * [tLibraryLoad_2 process_data_end ] start
+				 */
 
+				currentComponent = "tLibraryLoad_2";
 
-/**
- * [tLibraryLoad_2 begin ] stop
- */
-	
-	/**
-	 * [tLibraryLoad_2 main ] start
-	 */
+				/**
+				 * [tLibraryLoad_2 process_data_end ] stop
+				 */
 
-	
+				/**
+				 * [tLibraryLoad_2 end ] start
+				 */
 
-	
-	
-	currentComponent="tLibraryLoad_2";
+				currentComponent = "tLibraryLoad_2";
 
-	
+				ok_Hash.put("tLibraryLoad_2", true);
+				end_Hash.put("tLibraryLoad_2", System.currentTimeMillis());
 
- 
-
-
-	tos_count_tLibraryLoad_2++;
-
-/**
- * [tLibraryLoad_2 main ] stop
- */
-	
-	/**
-	 * [tLibraryLoad_2 process_data_begin ] start
-	 */
-
-	
-
-	
-	
-	currentComponent="tLibraryLoad_2";
-
-	
-
- 
-
-
-
-/**
- * [tLibraryLoad_2 process_data_begin ] stop
- */
-	
-	/**
-	 * [tLibraryLoad_2 process_data_end ] start
-	 */
-
-	
-
-	
-	
-	currentComponent="tLibraryLoad_2";
-
-	
-
- 
-
-
-
-/**
- * [tLibraryLoad_2 process_data_end ] stop
- */
-	
-	/**
-	 * [tLibraryLoad_2 end ] start
-	 */
-
-	
-
-	
-	
-	currentComponent="tLibraryLoad_2";
-
-	
-
- 
-
-ok_Hash.put("tLibraryLoad_2", true);
-end_Hash.put("tLibraryLoad_2", System.currentTimeMillis());
-
-				if(execStat){   
-   	 				runStat.updateStatOnConnection("OnComponentOk2", 0, "ok");
+				if (execStat) {
+					runStat.updateStatOnConnection("OnComponentOk2", 0, "ok");
 				}
 				tRESTClient_1Process(globalMap);
 
+				/**
+				 * [tLibraryLoad_2 end ] stop
+				 */
+			} // end the resume
 
+		} catch (java.lang.Exception e) {
 
-/**
- * [tLibraryLoad_2 end ] stop
- */
-				}//end the resume
+			TalendException te = new TalendException(e, currentComponent, globalMap);
 
-				
+			throw te;
+		} catch (java.lang.Error error) {
 
+			runStat.stopThreadStat();
 
+			throw error;
+		} finally {
 
-	
-			}catch(java.lang.Exception e){	
-				
-				TalendException te = new TalendException(e, currentComponent, globalMap);
-				
-				throw te;
-			}catch(java.lang.Error error){	
-				
-					runStat.stopThreadStat();
-				
-				throw error;
-			}finally{
-				
-				try{
-					
-	
-	/**
-	 * [tLibraryLoad_2 finally ] start
-	 */
+			try {
 
-	
+				/**
+				 * [tLibraryLoad_2 finally ] start
+				 */
 
-	
-	
-	currentComponent="tLibraryLoad_2";
+				currentComponent = "tLibraryLoad_2";
 
-	
-
- 
-
-
-
-/**
- * [tLibraryLoad_2 finally ] stop
- */
-				}catch(java.lang.Exception e){	
-					//ignore
-				}catch(java.lang.Error error){
-					//ignore
-				}
-				resourceMap = null;
+				/**
+				 * [tLibraryLoad_2 finally ] stop
+				 */
+			} catch (java.lang.Exception e) {
+				// ignore
+			} catch (java.lang.Error error) {
+				// ignore
 			}
-		
+			resourceMap = null;
+		}
 
 		globalMap.put("tLibraryLoad_2_SUBPROCESS_STATE", 1);
 	}
-	
 
+	public static class coronaWarnAPPStruct implements routines.system.IPersistableRow<coronaWarnAPPStruct> {
+		final static byte[] commonByteArrayLock_ANALYSIS_TWITTER_s0_connexion_api_twitter_apps_covid = new byte[0];
+		static byte[] commonByteArray_ANALYSIS_TWITTER_s0_connexion_api_twitter_apps_covid = new byte[0];
 
-public static class coronaWarnAPPStruct implements routines.system.IPersistableRow<coronaWarnAPPStruct> {
-    final static byte[] commonByteArrayLock_ANALYSIS_TWITTER_s0_connexion_api_twitter_apps_covid = new byte[0];
-    static byte[] commonByteArray_ANALYSIS_TWITTER_s0_connexion_api_twitter_apps_covid = new byte[0];
+		public String id;
 
-	
-			    public String id;
+		public String getId() {
+			return this.id;
+		}
 
-				public String getId () {
-					return this.id;
+		public java.util.Date date_description;
+
+		public java.util.Date getDate_description() {
+			return this.date_description;
+		}
+
+		public String user_id;
+
+		public String getUser_id() {
+			return this.user_id;
+		}
+
+		public String user_name;
+
+		public String getUser_name() {
+			return this.user_name;
+		}
+
+		public String user_screen_name;
+
+		public String getUser_screen_name() {
+			return this.user_screen_name;
+		}
+
+		public String user_location;
+
+		public String getUser_location() {
+			return this.user_location;
+		}
+
+		public String user_description;
+
+		public String getUser_description() {
+			return this.user_description;
+		}
+
+		public String hashtag_text;
+
+		public String getHashtag_text() {
+			return this.hashtag_text;
+		}
+
+		public String text_description;
+
+		public String getText_description() {
+			return this.text_description;
+		}
+
+		public String hashtag_id;
+
+		public String getHashtag_id() {
+			return this.hashtag_id;
+		}
+
+		public String geo_id;
+
+		public String getGeo_id() {
+			return this.geo_id;
+		}
+
+		public String geo_description;
+
+		public String getGeo_description() {
+			return this.geo_description;
+		}
+
+		public String text_id;
+
+		public String getText_id() {
+			return this.text_id;
+		}
+
+		public String date_id;
+
+		public String getDate_id() {
+			return this.date_id;
+		}
+
+		private String readString(ObjectInputStream dis) throws IOException {
+			String strReturn = null;
+			int length = 0;
+			length = dis.readInt();
+			if (length == -1) {
+				strReturn = null;
+			} else {
+				if (length > commonByteArray_ANALYSIS_TWITTER_s0_connexion_api_twitter_apps_covid.length) {
+					if (length < 1024
+							&& commonByteArray_ANALYSIS_TWITTER_s0_connexion_api_twitter_apps_covid.length == 0) {
+						commonByteArray_ANALYSIS_TWITTER_s0_connexion_api_twitter_apps_covid = new byte[1024];
+					} else {
+						commonByteArray_ANALYSIS_TWITTER_s0_connexion_api_twitter_apps_covid = new byte[2 * length];
+					}
 				}
-				
-			    public java.util.Date date_description;
-
-				public java.util.Date getDate_description () {
-					return this.date_description;
-				}
-				
-			    public String user_id;
-
-				public String getUser_id () {
-					return this.user_id;
-				}
-				
-			    public String user_name;
-
-				public String getUser_name () {
-					return this.user_name;
-				}
-				
-			    public String user_screen_name;
-
-				public String getUser_screen_name () {
-					return this.user_screen_name;
-				}
-				
-			    public String user_location;
-
-				public String getUser_location () {
-					return this.user_location;
-				}
-				
-			    public String user_description;
-
-				public String getUser_description () {
-					return this.user_description;
-				}
-				
-			    public String hashtag_text;
-
-				public String getHashtag_text () {
-					return this.hashtag_text;
-				}
-				
-			    public String text_description;
-
-				public String getText_description () {
-					return this.text_description;
-				}
-				
-			    public String hashtag_id;
-
-				public String getHashtag_id () {
-					return this.hashtag_id;
-				}
-				
-			    public String geo_id;
-
-				public String getGeo_id () {
-					return this.geo_id;
-				}
-				
-			    public String geo_description;
-
-				public String getGeo_description () {
-					return this.geo_description;
-				}
-				
-			    public String text_id;
-
-				public String getText_id () {
-					return this.text_id;
-				}
-				
-			    public String date_id;
-
-				public String getDate_id () {
-					return this.date_id;
-				}
-				
-
-
-
-	private String readString(ObjectInputStream dis) throws IOException{
-		String strReturn = null;
-		int length = 0;
-        length = dis.readInt();
-		if (length == -1) {
-			strReturn = null;
-		} else {
-			if(length > commonByteArray_ANALYSIS_TWITTER_s0_connexion_api_twitter_apps_covid.length) {
-				if(length < 1024 && commonByteArray_ANALYSIS_TWITTER_s0_connexion_api_twitter_apps_covid.length == 0) {
-   					commonByteArray_ANALYSIS_TWITTER_s0_connexion_api_twitter_apps_covid = new byte[1024];
-				} else {
-   					commonByteArray_ANALYSIS_TWITTER_s0_connexion_api_twitter_apps_covid = new byte[2 * length];
-   				}
+				dis.readFully(commonByteArray_ANALYSIS_TWITTER_s0_connexion_api_twitter_apps_covid, 0, length);
+				strReturn = new String(commonByteArray_ANALYSIS_TWITTER_s0_connexion_api_twitter_apps_covid, 0, length,
+						utf8Charset);
 			}
-			dis.readFully(commonByteArray_ANALYSIS_TWITTER_s0_connexion_api_twitter_apps_covid, 0, length);
-			strReturn = new String(commonByteArray_ANALYSIS_TWITTER_s0_connexion_api_twitter_apps_covid, 0, length, utf8Charset);
+			return strReturn;
 		}
-		return strReturn;
-	}
 
-    private void writeString(String str, ObjectOutputStream dos) throws IOException{
-		if(str == null) {
-            dos.writeInt(-1);
-		} else {
-            byte[] byteArray = str.getBytes(utf8Charset);
-	    	dos.writeInt(byteArray.length);
-			dos.write(byteArray);
-    	}
-    }
-
-	private java.util.Date readDate(ObjectInputStream dis) throws IOException{
-		java.util.Date dateReturn = null;
-        int length = 0;
-        length = dis.readByte();
-		if (length == -1) {
-			dateReturn = null;
-		} else {
-	    	dateReturn = new Date(dis.readLong());
+		private void writeString(String str, ObjectOutputStream dos) throws IOException {
+			if (str == null) {
+				dos.writeInt(-1);
+			} else {
+				byte[] byteArray = str.getBytes(utf8Charset);
+				dos.writeInt(byteArray.length);
+				dos.write(byteArray);
+			}
 		}
-		return dateReturn;
-	}
 
-    private void writeDate(java.util.Date date1, ObjectOutputStream dos) throws IOException{
-		if(date1 == null) {
-            dos.writeByte(-1);
-		} else {
-			dos.writeByte(0);
-	    	dos.writeLong(date1.getTime());
-    	}
-    }
+		private java.util.Date readDate(ObjectInputStream dis) throws IOException {
+			java.util.Date dateReturn = null;
+			int length = 0;
+			length = dis.readByte();
+			if (length == -1) {
+				dateReturn = null;
+			} else {
+				dateReturn = new Date(dis.readLong());
+			}
+			return dateReturn;
+		}
 
-    public void readData(ObjectInputStream dis) {
+		private void writeDate(java.util.Date date1, ObjectOutputStream dos) throws IOException {
+			if (date1 == null) {
+				dos.writeByte(-1);
+			} else {
+				dos.writeByte(0);
+				dos.writeLong(date1.getTime());
+			}
+		}
 
-		synchronized(commonByteArrayLock_ANALYSIS_TWITTER_s0_connexion_api_twitter_apps_covid) {
+		public void readData(ObjectInputStream dis) {
 
-        	try {
+			synchronized (commonByteArrayLock_ANALYSIS_TWITTER_s0_connexion_api_twitter_apps_covid) {
 
-        		int length = 0;
-		
+				try {
+
+					int length = 0;
+
 					this.id = readString(dis);
-					
+
 					this.date_description = readDate(dis);
-					
+
 					this.user_id = readString(dis);
-					
+
 					this.user_name = readString(dis);
-					
+
 					this.user_screen_name = readString(dis);
-					
+
 					this.user_location = readString(dis);
-					
+
 					this.user_description = readString(dis);
-					
+
 					this.hashtag_text = readString(dis);
-					
+
 					this.text_description = readString(dis);
-					
+
 					this.hashtag_id = readString(dis);
-					
+
 					this.geo_id = readString(dis);
-					
+
 					this.geo_description = readString(dis);
-					
+
 					this.text_id = readString(dis);
-					
+
 					this.date_id = readString(dis);
-					
-        	} catch (IOException e) {
-	            throw new RuntimeException(e);
 
-		
+				} catch (IOException e) {
+					throw new RuntimeException(e);
 
-        }
-
-		
-
-      }
-
-
-    }
-
-    public void writeData(ObjectOutputStream dos) {
-        try {
-
-		
-					// String
-				
-						writeString(this.id,dos);
-					
-					// java.util.Date
-				
-						writeDate(this.date_description,dos);
-					
-					// String
-				
-						writeString(this.user_id,dos);
-					
-					// String
-				
-						writeString(this.user_name,dos);
-					
-					// String
-				
-						writeString(this.user_screen_name,dos);
-					
-					// String
-				
-						writeString(this.user_location,dos);
-					
-					// String
-				
-						writeString(this.user_description,dos);
-					
-					// String
-				
-						writeString(this.hashtag_text,dos);
-					
-					// String
-				
-						writeString(this.text_description,dos);
-					
-					// String
-				
-						writeString(this.hashtag_id,dos);
-					
-					// String
-				
-						writeString(this.geo_id,dos);
-					
-					// String
-				
-						writeString(this.geo_description,dos);
-					
-					// String
-				
-						writeString(this.text_id,dos);
-					
-					// String
-				
-						writeString(this.date_id,dos);
-					
-        	} catch (IOException e) {
-	            throw new RuntimeException(e);
-        }
-
-
-    }
-
-
-    public String toString() {
-
-		StringBuilder sb = new StringBuilder();
-		sb.append(super.toString());
-		sb.append("[");
-		sb.append("id="+id);
-		sb.append(",date_description="+String.valueOf(date_description));
-		sb.append(",user_id="+user_id);
-		sb.append(",user_name="+user_name);
-		sb.append(",user_screen_name="+user_screen_name);
-		sb.append(",user_location="+user_location);
-		sb.append(",user_description="+user_description);
-		sb.append(",hashtag_text="+hashtag_text);
-		sb.append(",text_description="+text_description);
-		sb.append(",hashtag_id="+hashtag_id);
-		sb.append(",geo_id="+geo_id);
-		sb.append(",geo_description="+geo_description);
-		sb.append(",text_id="+text_id);
-		sb.append(",date_id="+date_id);
-	    sb.append("]");
-
-	    return sb.toString();
-    }
-
-    /**
-     * Compare keys
-     */
-    public int compareTo(coronaWarnAPPStruct other) {
-
-		int returnValue = -1;
-		
-	    return returnValue;
-    }
-
-
-    private int checkNullsAndCompare(Object object1, Object object2) {
-        int returnValue = 0;
-		if (object1 instanceof Comparable && object2 instanceof Comparable) {
-            returnValue = ((Comparable) object1).compareTo(object2);
-        } else if (object1 != null && object2 != null) {
-            returnValue = compareStrings(object1.toString(), object2.toString());
-        } else if (object1 == null && object2 != null) {
-            returnValue = 1;
-        } else if (object1 != null && object2 == null) {
-            returnValue = -1;
-        } else {
-            returnValue = 0;
-        }
-
-        return returnValue;
-    }
-
-    private int compareStrings(String string1, String string2) {
-        return string1.compareTo(string2);
-    }
-
-
-}
-
-public static class row1Struct implements routines.system.IPersistableRow<row1Struct> {
-    final static byte[] commonByteArrayLock_ANALYSIS_TWITTER_s0_connexion_api_twitter_apps_covid = new byte[0];
-    static byte[] commonByteArray_ANALYSIS_TWITTER_s0_connexion_api_twitter_apps_covid = new byte[0];
-
-	
-			    public Integer statusCode;
-
-				public Integer getStatusCode () {
-					return this.statusCode;
 				}
-				
-			    public routines.system.Document body;
 
-				public routines.system.Document getBody () {
-					return this.body;
-				}
-				
-			    public String string;
-
-				public String getString () {
-					return this.string;
-				}
-				
-
-
-	private Integer readInteger(ObjectInputStream dis) throws IOException{
-		Integer intReturn;
-        int length = 0;
-        length = dis.readByte();
-		if (length == -1) {
-			intReturn = null;
-		} else {
-	    	intReturn = dis.readInt();
-		}
-		return intReturn;
-	}
-
-	private void writeInteger(Integer intNum, ObjectOutputStream dos) throws IOException{
-		if(intNum == null) {
-            dos.writeByte(-1);
-		} else {
-			dos.writeByte(0);
-	    	dos.writeInt(intNum);
-    	}
-	}
-
-	private String readString(ObjectInputStream dis) throws IOException{
-		String strReturn = null;
-		int length = 0;
-        length = dis.readInt();
-		if (length == -1) {
-			strReturn = null;
-		} else {
-			if(length > commonByteArray_ANALYSIS_TWITTER_s0_connexion_api_twitter_apps_covid.length) {
-				if(length < 1024 && commonByteArray_ANALYSIS_TWITTER_s0_connexion_api_twitter_apps_covid.length == 0) {
-   					commonByteArray_ANALYSIS_TWITTER_s0_connexion_api_twitter_apps_covid = new byte[1024];
-				} else {
-   					commonByteArray_ANALYSIS_TWITTER_s0_connexion_api_twitter_apps_covid = new byte[2 * length];
-   				}
 			}
-			dis.readFully(commonByteArray_ANALYSIS_TWITTER_s0_connexion_api_twitter_apps_covid, 0, length);
-			strReturn = new String(commonByteArray_ANALYSIS_TWITTER_s0_connexion_api_twitter_apps_covid, 0, length, utf8Charset);
+
 		}
-		return strReturn;
+
+		public void writeData(ObjectOutputStream dos) {
+			try {
+
+				// String
+
+				writeString(this.id, dos);
+
+				// java.util.Date
+
+				writeDate(this.date_description, dos);
+
+				// String
+
+				writeString(this.user_id, dos);
+
+				// String
+
+				writeString(this.user_name, dos);
+
+				// String
+
+				writeString(this.user_screen_name, dos);
+
+				// String
+
+				writeString(this.user_location, dos);
+
+				// String
+
+				writeString(this.user_description, dos);
+
+				// String
+
+				writeString(this.hashtag_text, dos);
+
+				// String
+
+				writeString(this.text_description, dos);
+
+				// String
+
+				writeString(this.hashtag_id, dos);
+
+				// String
+
+				writeString(this.geo_id, dos);
+
+				// String
+
+				writeString(this.geo_description, dos);
+
+				// String
+
+				writeString(this.text_id, dos);
+
+				// String
+
+				writeString(this.date_id, dos);
+
+			} catch (IOException e) {
+				throw new RuntimeException(e);
+			}
+
+		}
+
+		public String toString() {
+
+			StringBuilder sb = new StringBuilder();
+			sb.append(super.toString());
+			sb.append("[");
+			sb.append("id=" + id);
+			sb.append(",date_description=" + String.valueOf(date_description));
+			sb.append(",user_id=" + user_id);
+			sb.append(",user_name=" + user_name);
+			sb.append(",user_screen_name=" + user_screen_name);
+			sb.append(",user_location=" + user_location);
+			sb.append(",user_description=" + user_description);
+			sb.append(",hashtag_text=" + hashtag_text);
+			sb.append(",text_description=" + text_description);
+			sb.append(",hashtag_id=" + hashtag_id);
+			sb.append(",geo_id=" + geo_id);
+			sb.append(",geo_description=" + geo_description);
+			sb.append(",text_id=" + text_id);
+			sb.append(",date_id=" + date_id);
+			sb.append("]");
+
+			return sb.toString();
+		}
+
+		/**
+		 * Compare keys
+		 */
+		public int compareTo(coronaWarnAPPStruct other) {
+
+			int returnValue = -1;
+
+			return returnValue;
+		}
+
+		private int checkNullsAndCompare(Object object1, Object object2) {
+			int returnValue = 0;
+			if (object1 instanceof Comparable && object2 instanceof Comparable) {
+				returnValue = ((Comparable) object1).compareTo(object2);
+			} else if (object1 != null && object2 != null) {
+				returnValue = compareStrings(object1.toString(), object2.toString());
+			} else if (object1 == null && object2 != null) {
+				returnValue = 1;
+			} else if (object1 != null && object2 == null) {
+				returnValue = -1;
+			} else {
+				returnValue = 0;
+			}
+
+			return returnValue;
+		}
+
+		private int compareStrings(String string1, String string2) {
+			return string1.compareTo(string2);
+		}
+
 	}
 
-    private void writeString(String str, ObjectOutputStream dos) throws IOException{
-		if(str == null) {
-            dos.writeInt(-1);
-		} else {
-            byte[] byteArray = str.getBytes(utf8Charset);
-	    	dos.writeInt(byteArray.length);
-			dos.write(byteArray);
-    	}
-    }
+	public static class row1Struct implements routines.system.IPersistableRow<row1Struct> {
+		final static byte[] commonByteArrayLock_ANALYSIS_TWITTER_s0_connexion_api_twitter_apps_covid = new byte[0];
+		static byte[] commonByteArray_ANALYSIS_TWITTER_s0_connexion_api_twitter_apps_covid = new byte[0];
 
-    public void readData(ObjectInputStream dis) {
+		public Integer statusCode;
 
-		synchronized(commonByteArrayLock_ANALYSIS_TWITTER_s0_connexion_api_twitter_apps_covid) {
+		public Integer getStatusCode() {
+			return this.statusCode;
+		}
 
-        	try {
+		public routines.system.Document body;
 
-        		int length = 0;
-		
-						this.statusCode = readInteger(dis);
-					
-						this.body = (routines.system.Document) dis.readObject();
-					
+		public routines.system.Document getBody() {
+			return this.body;
+		}
+
+		public String string;
+
+		public String getString() {
+			return this.string;
+		}
+
+		private Integer readInteger(ObjectInputStream dis) throws IOException {
+			Integer intReturn;
+			int length = 0;
+			length = dis.readByte();
+			if (length == -1) {
+				intReturn = null;
+			} else {
+				intReturn = dis.readInt();
+			}
+			return intReturn;
+		}
+
+		private void writeInteger(Integer intNum, ObjectOutputStream dos) throws IOException {
+			if (intNum == null) {
+				dos.writeByte(-1);
+			} else {
+				dos.writeByte(0);
+				dos.writeInt(intNum);
+			}
+		}
+
+		private String readString(ObjectInputStream dis) throws IOException {
+			String strReturn = null;
+			int length = 0;
+			length = dis.readInt();
+			if (length == -1) {
+				strReturn = null;
+			} else {
+				if (length > commonByteArray_ANALYSIS_TWITTER_s0_connexion_api_twitter_apps_covid.length) {
+					if (length < 1024
+							&& commonByteArray_ANALYSIS_TWITTER_s0_connexion_api_twitter_apps_covid.length == 0) {
+						commonByteArray_ANALYSIS_TWITTER_s0_connexion_api_twitter_apps_covid = new byte[1024];
+					} else {
+						commonByteArray_ANALYSIS_TWITTER_s0_connexion_api_twitter_apps_covid = new byte[2 * length];
+					}
+				}
+				dis.readFully(commonByteArray_ANALYSIS_TWITTER_s0_connexion_api_twitter_apps_covid, 0, length);
+				strReturn = new String(commonByteArray_ANALYSIS_TWITTER_s0_connexion_api_twitter_apps_covid, 0, length,
+						utf8Charset);
+			}
+			return strReturn;
+		}
+
+		private void writeString(String str, ObjectOutputStream dos) throws IOException {
+			if (str == null) {
+				dos.writeInt(-1);
+			} else {
+				byte[] byteArray = str.getBytes(utf8Charset);
+				dos.writeInt(byteArray.length);
+				dos.write(byteArray);
+			}
+		}
+
+		public void readData(ObjectInputStream dis) {
+
+			synchronized (commonByteArrayLock_ANALYSIS_TWITTER_s0_connexion_api_twitter_apps_covid) {
+
+				try {
+
+					int length = 0;
+
+					this.statusCode = readInteger(dis);
+
+					this.body = (routines.system.Document) dis.readObject();
+
 					this.string = readString(dis);
-					
-        	} catch (IOException e) {
-	            throw new RuntimeException(e);
 
-		
-			} catch(ClassNotFoundException eCNFE) {
-				 throw new RuntimeException(eCNFE);
-		
+				} catch (IOException e) {
+					throw new RuntimeException(e);
 
-        }
+				} catch (ClassNotFoundException eCNFE) {
+					throw new RuntimeException(eCNFE);
 
-		
+				}
 
-      }
+			}
 
+		}
 
-    }
+		public void writeData(ObjectOutputStream dos) {
+			try {
 
-    public void writeData(ObjectOutputStream dos) {
-        try {
+				// Integer
 
-		
-					// Integer
-				
-						writeInteger(this.statusCode,dos);
-					
-					// Document
-				
-       			    	dos.writeObject(this.body);
-					
-					// String
-				
-						writeString(this.string,dos);
-					
-        	} catch (IOException e) {
-	            throw new RuntimeException(e);
-        }
+				writeInteger(this.statusCode, dos);
 
+				// Document
 
-    }
+				dos.writeObject(this.body);
 
+				// String
 
-    public String toString() {
+				writeString(this.string, dos);
 
-		StringBuilder sb = new StringBuilder();
-		sb.append(super.toString());
-		sb.append("[");
-		sb.append("statusCode="+String.valueOf(statusCode));
-		sb.append(",body="+String.valueOf(body));
-		sb.append(",string="+string);
-	    sb.append("]");
+			} catch (IOException e) {
+				throw new RuntimeException(e);
+			}
 
-	    return sb.toString();
-    }
+		}
 
-    /**
-     * Compare keys
-     */
-    public int compareTo(row1Struct other) {
+		public String toString() {
 
-		int returnValue = -1;
-		
-	    return returnValue;
-    }
+			StringBuilder sb = new StringBuilder();
+			sb.append(super.toString());
+			sb.append("[");
+			sb.append("statusCode=" + String.valueOf(statusCode));
+			sb.append(",body=" + String.valueOf(body));
+			sb.append(",string=" + string);
+			sb.append("]");
 
+			return sb.toString();
+		}
 
-    private int checkNullsAndCompare(Object object1, Object object2) {
-        int returnValue = 0;
-		if (object1 instanceof Comparable && object2 instanceof Comparable) {
-            returnValue = ((Comparable) object1).compareTo(object2);
-        } else if (object1 != null && object2 != null) {
-            returnValue = compareStrings(object1.toString(), object2.toString());
-        } else if (object1 == null && object2 != null) {
-            returnValue = 1;
-        } else if (object1 != null && object2 == null) {
-            returnValue = -1;
-        } else {
-            returnValue = 0;
-        }
+		/**
+		 * Compare keys
+		 */
+		public int compareTo(row1Struct other) {
 
-        return returnValue;
-    }
+			int returnValue = -1;
 
-    private int compareStrings(String string1, String string2) {
-        return string1.compareTo(string2);
-    }
+			return returnValue;
+		}
 
+		private int checkNullsAndCompare(Object object1, Object object2) {
+			int returnValue = 0;
+			if (object1 instanceof Comparable && object2 instanceof Comparable) {
+				returnValue = ((Comparable) object1).compareTo(object2);
+			} else if (object1 != null && object2 != null) {
+				returnValue = compareStrings(object1.toString(), object2.toString());
+			} else if (object1 == null && object2 != null) {
+				returnValue = 1;
+			} else if (object1 != null && object2 == null) {
+				returnValue = -1;
+			} else {
+				returnValue = 0;
+			}
 
-}
-public void tRESTClient_1Process(final java.util.Map<String, Object> globalMap) throws TalendException {
-	globalMap.put("tRESTClient_1_SUBPROCESS_STATE", 0);
+			return returnValue;
+		}
 
- final boolean execStat = this.execStat;
+		private int compareStrings(String string1, String string2) {
+			return string1.compareTo(string2);
+		}
+
+	}
+
+	public void tRESTClient_1Process(final java.util.Map<String, Object> globalMap) throws TalendException {
+		globalMap.put("tRESTClient_1_SUBPROCESS_STATE", 0);
+
+		final boolean execStat = this.execStat;
 		String currentVirtualComponent = null;
-	
-		String iterateId = "";
-	
-	
-	String currentComponent = "";
-	java.util.Map<String, Object> resourceMap = new java.util.HashMap<String, Object>();
 
-	try {
+		String iterateId = "";
+
+		String currentComponent = "";
+		java.util.Map<String, Object> resourceMap = new java.util.HashMap<String, Object>();
+
+		try {
 			// TDI-39566 avoid throwing an useless Exception
 			boolean resumeIt = true;
 			if (globalResumeTicket == false && resumeEntryMethodName != null) {
 				String currentMethodName = new java.lang.Exception().getStackTrace()[0].getMethodName();
 				resumeIt = resumeEntryMethodName.equals(currentMethodName);
 			}
-			if (resumeIt || globalResumeTicket) { //start the resume
+			if (resumeIt || globalResumeTicket) { // start the resume
 				globalResumeTicket = true;
 
+				row1Struct row1 = new row1Struct();
+				coronaWarnAPPStruct coronaWarnAPP = new coronaWarnAPPStruct();
 
+				/**
+				 * [tXMLMap_1_TXMLMAP_OUT begin ] start
+				 */
 
-		row1Struct row1 = new row1Struct();
-coronaWarnAPPStruct coronaWarnAPP = new coronaWarnAPPStruct();
+				ok_Hash.put("tXMLMap_1_TXMLMAP_OUT", false);
+				start_Hash.put("tXMLMap_1_TXMLMAP_OUT", System.currentTimeMillis());
 
+				currentVirtualComponent = "tXMLMap_1";
 
+				currentComponent = "tXMLMap_1_TXMLMAP_OUT";
 
+				if (execStat) {
+					runStat.updateStatOnConnection(resourceMap, iterateId, 0, 0, "row1");
+				}
 
-	
-	/**
-	 * [tXMLMap_1_TXMLMAP_OUT begin ] start
-	 */
+				int tos_count_tXMLMap_1_TXMLMAP_OUT = 0;
 
-	
-
-	
-		
-		ok_Hash.put("tXMLMap_1_TXMLMAP_OUT", false);
-		start_Hash.put("tXMLMap_1_TXMLMAP_OUT", System.currentTimeMillis());
-		
-	
-		currentVirtualComponent = "tXMLMap_1";
-	
-	currentComponent="tXMLMap_1_TXMLMAP_OUT";
-
-	
-					if(execStat) {
-						runStat.updateStatOnConnection(resourceMap,iterateId,0,0,"row1");
-					}
-				
-		int tos_count_tXMLMap_1_TXMLMAP_OUT = 0;
-		
-
-	
-	
 //===============================input xml init part===============================
-class XML_API_tXMLMap_1_TXMLMAP_OUT{
-	public boolean isDefNull(org.dom4j.Node node) throws javax.xml.transform.TransformerException {
-        if (node != null && node instanceof org.dom4j.Element) {
-        	org.dom4j.Attribute attri = ((org.dom4j.Element)node).attribute("nil");
-        	if(attri != null && ("true").equals(attri.getText())){
-            	return true;
-            }
-        }
-        return false;
-    }
+				class XML_API_tXMLMap_1_TXMLMAP_OUT {
+					public boolean isDefNull(org.dom4j.Node node) throws javax.xml.transform.TransformerException {
+						if (node != null && node instanceof org.dom4j.Element) {
+							org.dom4j.Attribute attri = ((org.dom4j.Element) node).attribute("nil");
+							if (attri != null && ("true").equals(attri.getText())) {
+								return true;
+							}
+						}
+						return false;
+					}
 
-    public boolean isMissing(org.dom4j.Node node) throws javax.xml.transform.TransformerException {
-        return node == null ? true : false;
-    }
+					public boolean isMissing(org.dom4j.Node node) throws javax.xml.transform.TransformerException {
+						return node == null ? true : false;
+					}
 
-    public boolean isEmpty(org.dom4j.Node node) throws javax.xml.transform.TransformerException {
-        if (node != null) {
-            return node.getText().length() == 0;
-        }
-        return false;
-    }
-}
-	class Var__tXMLMap_1_TXMLMAP_OUT__Struct {
-	}
-	Var__tXMLMap_1_TXMLMAP_OUT__Struct Var__tXMLMap_1_TXMLMAP_OUT = new Var__tXMLMap_1_TXMLMAP_OUT__Struct();
+					public boolean isEmpty(org.dom4j.Node node) throws javax.xml.transform.TransformerException {
+						if (node != null) {
+							return node.getText().length() == 0;
+						}
+						return false;
+					}
+				}
+				class Var__tXMLMap_1_TXMLMAP_OUT__Struct {
+				}
+				Var__tXMLMap_1_TXMLMAP_OUT__Struct Var__tXMLMap_1_TXMLMAP_OUT = new Var__tXMLMap_1_TXMLMAP_OUT__Struct();
 // ###############################
 // # Outputs initialization
-coronaWarnAPPStruct coronaWarnAPP_tmp = new coronaWarnAPPStruct();
-coronaWarnAPPStruct coronaWarnAPP_save = null;
+				coronaWarnAPPStruct coronaWarnAPP_tmp = new coronaWarnAPPStruct();
+				coronaWarnAPPStruct coronaWarnAPP_save = null;
 //the aggregate variable
-coronaWarnAPPStruct coronaWarnAPP_aggregate = null;
+				coronaWarnAPPStruct coronaWarnAPP_aggregate = null;
 //init the resultset for aggregate
-java.util.List<Object> allOutsForAggregate_tXMLMap_1 = new java.util.ArrayList<Object>();
-globalMap.put("allOutsForAggregate_tXMLMap_1",allOutsForAggregate_tXMLMap_1);
+				java.util.List<Object> allOutsForAggregate_tXMLMap_1 = new java.util.ArrayList<Object>();
+				globalMap.put("allOutsForAggregate_tXMLMap_1", allOutsForAggregate_tXMLMap_1);
 // ###############################
-class TreeNode_API_tXMLMap_1_TXMLMAP_OUT {
-	java.util.Map<String, String> xpath_value_map = new java.util.HashMap<String, String>();
-	
-	void clear(){
-		xpath_value_map.clear();
-	}
-	
-	void put(String xpath, String value){
-		xpath_value_map.put(xpath, value);
-	}
-	String get_null(String xpath) {
-		return null;
-	}
-	String get_String(String xpath){
-		return xpath_value_map.get(xpath);
-	}
-}
-			TreeNode_API_tXMLMap_1_TXMLMAP_OUT treeNodeAPI_tXMLMap_1_TXMLMAP_OUT = new TreeNode_API_tXMLMap_1_TXMLMAP_OUT();
-			NameSpaceTool nsTool_tXMLMap_1_TXMLMAP_OUT = new NameSpaceTool();
-		int nb_line_tXMLMap_1_TXMLMAP_OUT = 0; 
-	
-    XML_API_tXMLMap_1_TXMLMAP_OUT xml_api_tXMLMap_1_TXMLMAP_OUT = new XML_API_tXMLMap_1_TXMLMAP_OUT();
+				class TreeNode_API_tXMLMap_1_TXMLMAP_OUT {
+					java.util.Map<String, String> xpath_value_map = new java.util.HashMap<String, String>();
 
-	//the map store the previous value of aggregate columns
-	java.util.Map<String,Object> aggregateCacheMap_tXMLMap_1_TXMLMAP_OUT = new java.util.HashMap<String,Object>();
+					void clear() {
+						xpath_value_map.clear();
+					}
 
-	            
- 
+					void put(String xpath, String value) {
+						xpath_value_map.put(xpath, value);
+					}
 
+					String get_null(String xpath) {
+						return null;
+					}
 
+					String get_String(String xpath) {
+						return xpath_value_map.get(xpath);
+					}
+				}
+				TreeNode_API_tXMLMap_1_TXMLMAP_OUT treeNodeAPI_tXMLMap_1_TXMLMAP_OUT = new TreeNode_API_tXMLMap_1_TXMLMAP_OUT();
+				NameSpaceTool nsTool_tXMLMap_1_TXMLMAP_OUT = new NameSpaceTool();
+				int nb_line_tXMLMap_1_TXMLMAP_OUT = 0;
 
-/**
- * [tXMLMap_1_TXMLMAP_OUT begin ] stop
- */
+				XML_API_tXMLMap_1_TXMLMAP_OUT xml_api_tXMLMap_1_TXMLMAP_OUT = new XML_API_tXMLMap_1_TXMLMAP_OUT();
 
+				// the map store the previous value of aggregate columns
+				java.util.Map<String, Object> aggregateCacheMap_tXMLMap_1_TXMLMAP_OUT = new java.util.HashMap<String, Object>();
 
+				/**
+				 * [tXMLMap_1_TXMLMAP_OUT begin ] stop
+				 */
 
-	
-	/**
-	 * [tRESTClient_1 begin ] start
-	 */
+				/**
+				 * [tRESTClient_1 begin ] start
+				 */
 
-	
+				ok_Hash.put("tRESTClient_1", false);
+				start_Hash.put("tRESTClient_1", System.currentTimeMillis());
 
-	
-		
-		ok_Hash.put("tRESTClient_1", false);
-		start_Hash.put("tRESTClient_1", System.currentTimeMillis());
-		
-	
-	currentComponent="tRESTClient_1";
+				currentComponent = "tRESTClient_1";
 
-	
-		int tos_count_tRESTClient_1 = 0;
-		
+				int tos_count_tRESTClient_1 = 0;
 
- 
+				/**
+				 * [tRESTClient_1 begin ] stop
+				 */
 
+				/**
+				 * [tRESTClient_1 main ] start
+				 */
 
+				currentComponent = "tRESTClient_1";
 
-/**
- * [tRESTClient_1 begin ] stop
- */
-	
-	/**
-	 * [tRESTClient_1 main ] start
-	 */
-
-	
-
-	
-	
-	currentComponent="tRESTClient_1";
-
-	
-	row1 = null;
+				row1 = null;
 
 // expected response body
-Object responseDoc_tRESTClient_1 = null;
+				Object responseDoc_tRESTClient_1 = null;
 
-try {
-	// request body
-	org.dom4j.Document requestDoc_tRESTClient_1 = null;
-	String requestString_tRESTClient_1 = null;
-
-	Object requestBody_tRESTClient_1 = requestDoc_tRESTClient_1 != null ? requestDoc_tRESTClient_1 : requestString_tRESTClient_1;
-
-	
-
-    //resposne class name
-	Class<?> responseClass_tRESTClient_1
-		= org.dom4j.Document.class;
-
-	// create web client instance
-	org.apache.cxf.jaxrs.client.JAXRSClientFactoryBean factoryBean_tRESTClient_1 =
-			new org.apache.cxf.jaxrs.client.JAXRSClientFactoryBean();
-
-	boolean inOSGi = routines.system.BundleUtils.inOSGi();
-
-	final java.util.List<org.apache.cxf.feature.Feature> features_tRESTClient_1 =
-			new java.util.ArrayList<org.apache.cxf.feature.Feature>();
-
-	
-		String url = "https://api.twitter.com/1.1/search/tweets.json?q=%23coronaWarnApp&result_type=recent&count=1000&lang=en";
-		// {baseUri}tRESTClient
-		factoryBean_tRESTClient_1.setServiceName(new javax.xml.namespace.QName(url, "tRESTClient"));
-		factoryBean_tRESTClient_1.setAddress(url);
-	
-
-	
-
-	
-
-	
-
-	factoryBean_tRESTClient_1.setFeatures(features_tRESTClient_1);
-
-
-	java.util.List<Object> providers_tRESTClient_1 = new java.util.ArrayList<Object>();
-	providers_tRESTClient_1.add(new org.apache.cxf.jaxrs.provider.dom4j.DOM4JProvider() {
-		// workaround for https://jira.talendforge.org/browse/TESB-7276
-		public org.dom4j.Document readFrom(Class<org.dom4j.Document> cls,
-											java.lang.reflect.Type type,
-											java.lang.annotation.Annotation[] anns,
-											javax.ws.rs.core.MediaType mt,
-											javax.ws.rs.core.MultivaluedMap<String, String> headers,
-											java.io.InputStream is)
-				throws IOException, javax.ws.rs.WebApplicationException {
-			String contentLength = headers.getFirst("Content-Length");
-			if (!org.apache.cxf.common.util.StringUtils.isEmpty(contentLength)
-					&& Integer.valueOf(contentLength) <= 0) {
 				try {
-					return org.dom4j.DocumentHelper.parseText("<root/>");
-				} catch (org.dom4j.DocumentException e_tRESTClient_1) {
-					e_tRESTClient_1.printStackTrace();
-				}
-				return null;
-			}
-			return super.readFrom(cls, type, anns, mt, headers, is);
-		}
-	});
-	org.apache.cxf.jaxrs.provider.json.JSONProvider jsonProvider_tRESTClient_1 =
-			new org.apache.cxf.jaxrs.provider.json.JSONProvider();
-		jsonProvider_tRESTClient_1.setIgnoreNamespaces(true);
-		jsonProvider_tRESTClient_1.setAttributesToElements(true);
-	
-	
-		jsonProvider_tRESTClient_1.setSupportUnwrapped(true);
-		jsonProvider_tRESTClient_1.setWrapperName("root");
-	
-	
-		jsonProvider_tRESTClient_1.setDropRootElement(false);
-		jsonProvider_tRESTClient_1.setConvertTypesToStrings(false);
-	providers_tRESTClient_1.add(jsonProvider_tRESTClient_1);
-	factoryBean_tRESTClient_1.setProviders(providers_tRESTClient_1);
-	factoryBean_tRESTClient_1.setTransportId("http://cxf.apache.org/transports/http");
+					// request body
+					org.dom4j.Document requestDoc_tRESTClient_1 = null;
+					String requestString_tRESTClient_1 = null;
 
-	boolean use_auth_tRESTClient_1 = true;
-	
-	
-		if (use_auth_tRESTClient_1 && "SAML".equals("OAUTH2_BEARER")) {
-			if (!inOSGi) {
-				throw new IllegalArgumentException("SAML based security scenarios are not supported in Studio (standalone)");
-			}
-			// set SAML Token authentication
-			
-			 
-	final String decryptedPassword_tRESTClient_1 = routines.system.PasswordEncryptUtil.decryptPassword("enc:routine.encryption.key.v1:Hssihxmi1JASM49Umu9+pBrXpBVEi5HjASvZC8WYi07kf700");
-	
-			org.apache.cxf.ws.security.trust.STSClient stsClient =
-				org.talend.esb.security.saml.STSClientUtils.createSTSClient(factoryBean_tRESTClient_1.getBus(),
-					"username", decryptedPassword_tRESTClient_1);
-			
-			org.talend.esb.security.saml.SAMLRESTUtils.configureClient(factoryBean_tRESTClient_1, stsClient);
-		}
+					Object requestBody_tRESTClient_1 = requestDoc_tRESTClient_1 != null ? requestDoc_tRESTClient_1
+							: requestString_tRESTClient_1;
 
-	
+					// resposne class name
+					Class<?> responseClass_tRESTClient_1 = org.dom4j.Document.class;
 
-	org.apache.cxf.jaxrs.client.WebClient webClient_tRESTClient_1 = factoryBean_tRESTClient_1.createWebClient();
+					// create web client instance
+					org.apache.cxf.jaxrs.client.JAXRSClientFactoryBean factoryBean_tRESTClient_1 = new org.apache.cxf.jaxrs.client.JAXRSClientFactoryBean();
 
-	// set request path
-	webClient_tRESTClient_1.path("");
+					boolean inOSGi = routines.system.BundleUtils.inOSGi();
 
-	// set connection properties
-	org.apache.cxf.jaxrs.client.ClientConfiguration clientConfig_tRESTClient_1 = org.apache.cxf.jaxrs.client.WebClient.getConfig(webClient_tRESTClient_1);
-	org.apache.cxf.transport.http.HTTPConduit conduit_tRESTClient_1 = clientConfig_tRESTClient_1.getHttpConduit();
+					final java.util.List<org.apache.cxf.feature.Feature> features_tRESTClient_1 = new java.util.ArrayList<org.apache.cxf.feature.Feature>();
 
-    if (clientConfig_tRESTClient_1.getEndpoint() != null
-            && clientConfig_tRESTClient_1.getEndpoint().getEndpointInfo() != null) {
-        clientConfig_tRESTClient_1.getEndpoint().getEndpointInfo().setProperty("enable.webclient.operation.reporting",
-                                                                          false);
-    }
+					String url = "https://api.twitter.com/1.1/search/tweets.json?q=%23coronaWarnApp&result_type=recent&count=1000&lang=en";
+					// {baseUri}tRESTClient
+					factoryBean_tRESTClient_1.setServiceName(new javax.xml.namespace.QName(url, "tRESTClient"));
+					factoryBean_tRESTClient_1.setAddress(url);
 
-	
+					factoryBean_tRESTClient_1.setFeatures(features_tRESTClient_1);
 
-	
-	
-			if (use_auth_tRESTClient_1 && "BASIC".equals("OAUTH2_BEARER")) {
-			// set BASIC auth
-			
-			 
-	final String decryptedPassword_tRESTClient_1 = routines.system.PasswordEncryptUtil.decryptPassword("enc:routine.encryption.key.v1:ckFJKHpcSuRq3jM/e5cZ3PWdtn4VhusL4T2dobN5qeLc8CqD");
-	
-			org.apache.cxf.configuration.security.AuthorizationPolicy authPolicy_tRESTClient_1 = new org.apache.cxf.configuration.security.AuthorizationPolicy();
-				authPolicy_tRESTClient_1.setAuthorizationType("Basic");
-				authPolicy_tRESTClient_1.setUserName("username");
-				authPolicy_tRESTClient_1.setPassword(decryptedPassword_tRESTClient_1);
-			conduit_tRESTClient_1.setAuthorization(authPolicy_tRESTClient_1);
-		} else if (use_auth_tRESTClient_1 && "HTTP Digest".equals("OAUTH2_BEARER")) {
-			// set Digest auth
-			
-			 
-	final String decryptedPassword_tRESTClient_1 = routines.system.PasswordEncryptUtil.decryptPassword("enc:routine.encryption.key.v1:3WlpIaLEe1G/SI/CNZYa9YoeDGKyAYf4Fh+D3q95rVxr6XNh");
-	
-			org.apache.cxf.configuration.security.AuthorizationPolicy authPolicy_tRESTClient_1 = new org.apache.cxf.configuration.security.AuthorizationPolicy();
-			authPolicy_tRESTClient_1.setAuthorizationType("Digest");
-			authPolicy_tRESTClient_1.setUserName("username");
-			authPolicy_tRESTClient_1.setPassword(decryptedPassword_tRESTClient_1);
-			conduit_tRESTClient_1.setAuthorization(authPolicy_tRESTClient_1);
-		}
-	
-	
-
-	if (!inOSGi) {
-		conduit_tRESTClient_1.getClient().setReceiveTimeout((long)(60 * 1000L));
-		conduit_tRESTClient_1.getClient().setConnectionTimeout((long)(30 * 1000L));
-		boolean use_proxy_tRESTClient_1 = false;
-		
-	}
-	
-	
-
-	
-
-	
-
-	
-		// set Accept-Type
-		webClient_tRESTClient_1.accept("application/json");
-	
-
-	
-		// set optional query and header properties if any
-	
-	if (use_auth_tRESTClient_1 && "OAUTH2_BEARER".equals("OAUTH2_BEARER")) {
-		// set oAuth2 bearer token
-		webClient_tRESTClient_1.header("Authorization", "Bearer " + "AAAAAAAAAAAAAAAAAAAAAFEVJgEAAAAAejtPVAQB544BVATEzZjxhVI22ok%3Dcn9mxnTSBKDqaTkwOLzsYemZ9f58ZW0KVOKXDK4i59WtWqCe2d");
-	}
-	
-	
-	
-		if (use_auth_tRESTClient_1 && "OIDC_PASSWORD_GRANT".equals("OAUTH2_BEARER")) {
-	
-	        
-	         
-	final String decryptedPassword_tRESTClient_1 = routines.system.PasswordEncryptUtil.decryptPassword("enc:routine.encryption.key.v1:MKWFq8eIvEWSQn7QNFJdZ+9j0Rl7NiSLwpHdLqS94Cu7aZMS");
-	
-	        String username_tRESTClient_1 = "username";
-	        String password_tRESTClient_1 = decryptedPassword_tRESTClient_1;
-	
-	        String bearerHeader_tRESTClient_1 = null;
-	
-	        try {
-				if (!inOSGi) {
-					org.springframework.context.support.ClassPathXmlApplicationContext context_tRESTClient_1 =
-						new org.springframework.context.support.ClassPathXmlApplicationContext("META-INF/tesb/oidc-context.xml");
-					org.talend.esb.security.oidc.OidcConfiguration oidcConfiguration_tRESTClient_1 = context_tRESTClient_1.getBean(org.talend.esb.security.oidc.OidcConfiguration.class);
-					bearerHeader_tRESTClient_1 = org.talend.esb.security.oidc.OidcClientUtils.oidcClientBearer(username_tRESTClient_1, password_tRESTClient_1, oidcConfiguration_tRESTClient_1);
-				}else{
-					bearerHeader_tRESTClient_1 = org.talend.esb.security.oidc.OidcClientUtils.oidcClientBearer(username_tRESTClient_1, password_tRESTClient_1);
-				}
-			} catch (Exception ex) {
-	            throw new javax.ws.rs.WebApplicationException("Failed to get OIDC access token: ", ex);
-	        }
-	
-			webClient_tRESTClient_1.header("Authorization", bearerHeader_tRESTClient_1);
-		}
-	
-	
-    
-	// if FORM request then capture query parameters into Form, otherwise set them as queries
-	
-		
-	
-
-
-	try {
-		// start send request
-		
-			responseDoc_tRESTClient_1 = webClient_tRESTClient_1.get(responseClass_tRESTClient_1);
-		
-
-
-		int webClientResponseStatus_tRESTClient_1 = webClient_tRESTClient_1.getResponse().getStatus();
-		if (webClientResponseStatus_tRESTClient_1 >= 300) {
-			throw new javax.ws.rs.WebApplicationException(webClient_tRESTClient_1.getResponse());
-		}
-
-		
-			if (row1 == null) {
-				row1 = new row1Struct();
-			}
-
-			row1.statusCode = webClientResponseStatus_tRESTClient_1;
-			
-				
-				{
-					Object responseObj_tRESTClient_1 = responseDoc_tRESTClient_1;
-				
-				if(responseObj_tRESTClient_1 != null){
-					if (responseClass_tRESTClient_1 == String.class) {
-						row1.string = (String) responseObj_tRESTClient_1;
-					} else {
-						routines.system.Document responseTalendDoc_tRESTClient_1 = null;
-						if (null != responseObj_tRESTClient_1) {
-							responseTalendDoc_tRESTClient_1 = new routines.system.Document();
-							responseTalendDoc_tRESTClient_1.setDocument((org.dom4j.Document) responseObj_tRESTClient_1);
+					java.util.List<Object> providers_tRESTClient_1 = new java.util.ArrayList<Object>();
+					providers_tRESTClient_1.add(new org.apache.cxf.jaxrs.provider.dom4j.DOM4JProvider() {
+						// workaround for https://jira.talendforge.org/browse/TESB-7276
+						public org.dom4j.Document readFrom(Class<org.dom4j.Document> cls, java.lang.reflect.Type type,
+								java.lang.annotation.Annotation[] anns, javax.ws.rs.core.MediaType mt,
+								javax.ws.rs.core.MultivaluedMap<String, String> headers, java.io.InputStream is)
+								throws IOException, javax.ws.rs.WebApplicationException {
+							String contentLength = headers.getFirst("Content-Length");
+							if (!org.apache.cxf.common.util.StringUtils.isEmpty(contentLength)
+									&& Integer.valueOf(contentLength) <= 0) {
+								try {
+									return org.dom4j.DocumentHelper.parseText("<root/>");
+								} catch (org.dom4j.DocumentException e_tRESTClient_1) {
+									e_tRESTClient_1.printStackTrace();
+								}
+								return null;
+							}
+							return super.readFrom(cls, type, anns, mt, headers, is);
 						}
-						row1.body = responseTalendDoc_tRESTClient_1;
+					});
+					org.apache.cxf.jaxrs.provider.json.JSONProvider jsonProvider_tRESTClient_1 = new org.apache.cxf.jaxrs.provider.json.JSONProvider();
+					jsonProvider_tRESTClient_1.setIgnoreNamespaces(true);
+					jsonProvider_tRESTClient_1.setAttributesToElements(true);
+
+					jsonProvider_tRESTClient_1.setSupportUnwrapped(true);
+					jsonProvider_tRESTClient_1.setWrapperName("root");
+
+					jsonProvider_tRESTClient_1.setDropRootElement(false);
+					jsonProvider_tRESTClient_1.setConvertTypesToStrings(false);
+					providers_tRESTClient_1.add(jsonProvider_tRESTClient_1);
+					factoryBean_tRESTClient_1.setProviders(providers_tRESTClient_1);
+					factoryBean_tRESTClient_1.setTransportId("http://cxf.apache.org/transports/http");
+
+					boolean use_auth_tRESTClient_1 = true;
+
+					if (use_auth_tRESTClient_1 && "SAML".equals("OAUTH2_BEARER")) {
+						if (!inOSGi) {
+							throw new IllegalArgumentException(
+									"SAML based security scenarios are not supported in Studio (standalone)");
+						}
+						// set SAML Token authentication
+
+						final String decryptedPassword_tRESTClient_1 = routines.system.PasswordEncryptUtil
+								.decryptPassword(
+										"enc:routine.encryption.key.v1:bAclEGNDO29SxIVcf2SAwyik4yYxYaXnFx1ow7CvbxwXHGeR");
+
+						org.apache.cxf.ws.security.trust.STSClient stsClient = org.talend.esb.security.saml.STSClientUtils
+								.createSTSClient(factoryBean_tRESTClient_1.getBus(), "username",
+										decryptedPassword_tRESTClient_1);
+
+						org.talend.esb.security.saml.SAMLRESTUtils.configureClient(factoryBean_tRESTClient_1,
+								stsClient);
 					}
+
+					org.apache.cxf.jaxrs.client.WebClient webClient_tRESTClient_1 = factoryBean_tRESTClient_1
+							.createWebClient();
+
+					// set request path
+					webClient_tRESTClient_1.path("");
+
+					// set connection properties
+					org.apache.cxf.jaxrs.client.ClientConfiguration clientConfig_tRESTClient_1 = org.apache.cxf.jaxrs.client.WebClient
+							.getConfig(webClient_tRESTClient_1);
+					org.apache.cxf.transport.http.HTTPConduit conduit_tRESTClient_1 = clientConfig_tRESTClient_1
+							.getHttpConduit();
+
+					if (clientConfig_tRESTClient_1.getEndpoint() != null
+							&& clientConfig_tRESTClient_1.getEndpoint().getEndpointInfo() != null) {
+						clientConfig_tRESTClient_1.getEndpoint().getEndpointInfo()
+								.setProperty("enable.webclient.operation.reporting", false);
+					}
+
+					if (use_auth_tRESTClient_1 && "BASIC".equals("OAUTH2_BEARER")) {
+						// set BASIC auth
+
+						final String decryptedPassword_tRESTClient_1 = routines.system.PasswordEncryptUtil
+								.decryptPassword(
+										"enc:routine.encryption.key.v1:RpZgEeqyzFJ1qPGy5yI+0PDEdO1fbbAGd+9VpPMivS67pc9D");
+
+						org.apache.cxf.configuration.security.AuthorizationPolicy authPolicy_tRESTClient_1 = new org.apache.cxf.configuration.security.AuthorizationPolicy();
+						authPolicy_tRESTClient_1.setAuthorizationType("Basic");
+						authPolicy_tRESTClient_1.setUserName("username");
+						authPolicy_tRESTClient_1.setPassword(decryptedPassword_tRESTClient_1);
+						conduit_tRESTClient_1.setAuthorization(authPolicy_tRESTClient_1);
+					} else if (use_auth_tRESTClient_1 && "HTTP Digest".equals("OAUTH2_BEARER")) {
+						// set Digest auth
+
+						final String decryptedPassword_tRESTClient_1 = routines.system.PasswordEncryptUtil
+								.decryptPassword(
+										"enc:routine.encryption.key.v1:mCSXh+Jv+cj3YfpLE6nF5f9WW0KuDaYTjVox0Ljo3JZDUqJW");
+
+						org.apache.cxf.configuration.security.AuthorizationPolicy authPolicy_tRESTClient_1 = new org.apache.cxf.configuration.security.AuthorizationPolicy();
+						authPolicy_tRESTClient_1.setAuthorizationType("Digest");
+						authPolicy_tRESTClient_1.setUserName("username");
+						authPolicy_tRESTClient_1.setPassword(decryptedPassword_tRESTClient_1);
+						conduit_tRESTClient_1.setAuthorization(authPolicy_tRESTClient_1);
+					}
+
+					if (!inOSGi) {
+						conduit_tRESTClient_1.getClient().setReceiveTimeout((long) (60 * 1000L));
+						conduit_tRESTClient_1.getClient().setConnectionTimeout((long) (30 * 1000L));
+						boolean use_proxy_tRESTClient_1 = false;
+
+					}
+
+					// set Accept-Type
+					webClient_tRESTClient_1.accept("application/json");
+
+					// set optional query and header properties if any
+
+					if (use_auth_tRESTClient_1 && "OAUTH2_BEARER".equals("OAUTH2_BEARER")) {
+						// set oAuth2 bearer token
+						webClient_tRESTClient_1.header("Authorization", "Bearer "
+								+ "AAAAAAAAAAAAAAAAAAAAAFEVJgEAAAAAejtPVAQB544BVATEzZjxhVI22ok%3Dcn9mxnTSBKDqaTkwOLzsYemZ9f58ZW0KVOKXDK4i59WtWqCe2d");
+					}
+
+					if (use_auth_tRESTClient_1 && "OIDC_PASSWORD_GRANT".equals("OAUTH2_BEARER")) {
+
+						final String decryptedPassword_tRESTClient_1 = routines.system.PasswordEncryptUtil
+								.decryptPassword(
+										"enc:routine.encryption.key.v1:hY6RgtJhL04qG6kRf3cq299CkFuLtevTvCkUN8aB+UJpCDeU");
+
+						String username_tRESTClient_1 = "username";
+						String password_tRESTClient_1 = decryptedPassword_tRESTClient_1;
+
+						String bearerHeader_tRESTClient_1 = null;
+
+						try {
+							if (!inOSGi) {
+								org.springframework.context.support.ClassPathXmlApplicationContext context_tRESTClient_1 = new org.springframework.context.support.ClassPathXmlApplicationContext(
+										"META-INF/tesb/oidc-context.xml");
+								org.talend.esb.security.oidc.OidcConfiguration oidcConfiguration_tRESTClient_1 = context_tRESTClient_1
+										.getBean(org.talend.esb.security.oidc.OidcConfiguration.class);
+								bearerHeader_tRESTClient_1 = org.talend.esb.security.oidc.OidcClientUtils
+										.oidcClientBearer(username_tRESTClient_1, password_tRESTClient_1,
+												oidcConfiguration_tRESTClient_1);
+							} else {
+								bearerHeader_tRESTClient_1 = org.talend.esb.security.oidc.OidcClientUtils
+										.oidcClientBearer(username_tRESTClient_1, password_tRESTClient_1);
+							}
+						} catch (Exception ex) {
+							throw new javax.ws.rs.WebApplicationException("Failed to get OIDC access token: ", ex);
+						}
+
+						webClient_tRESTClient_1.header("Authorization", bearerHeader_tRESTClient_1);
+					}
+
+					// if FORM request then capture query parameters into Form, otherwise set them
+					// as queries
+
+					try {
+						// start send request
+
+						responseDoc_tRESTClient_1 = webClient_tRESTClient_1.get(responseClass_tRESTClient_1);
+
+						int webClientResponseStatus_tRESTClient_1 = webClient_tRESTClient_1.getResponse().getStatus();
+						if (webClientResponseStatus_tRESTClient_1 >= 300) {
+							throw new javax.ws.rs.WebApplicationException(webClient_tRESTClient_1.getResponse());
+						}
+
+						if (row1 == null) {
+							row1 = new row1Struct();
+						}
+
+						row1.statusCode = webClientResponseStatus_tRESTClient_1;
+
+						{
+							Object responseObj_tRESTClient_1 = responseDoc_tRESTClient_1;
+
+							if (responseObj_tRESTClient_1 != null) {
+								if (responseClass_tRESTClient_1 == String.class) {
+									row1.string = (String) responseObj_tRESTClient_1;
+								} else {
+									routines.system.Document responseTalendDoc_tRESTClient_1 = null;
+									if (null != responseObj_tRESTClient_1) {
+										responseTalendDoc_tRESTClient_1 = new routines.system.Document();
+										responseTalendDoc_tRESTClient_1
+												.setDocument((org.dom4j.Document) responseObj_tRESTClient_1);
+									}
+									row1.body = responseTalendDoc_tRESTClient_1;
+								}
+							}
+						}
+
+						globalMap.put("tRESTClient_1_HEADERS", webClient_tRESTClient_1.getResponse().getHeaders());
+
+					} catch (javax.ws.rs.WebApplicationException ex_tRESTClient_1) {
+
+						throw ex_tRESTClient_1;
+
+					}
+
+				} catch (Exception e_tRESTClient_1) {
+
+					throw new TalendException(e_tRESTClient_1, currentComponent, globalMap);
+
 				}
-			}
-			
 
+				tos_count_tRESTClient_1++;
 
-			globalMap.put("tRESTClient_1_HEADERS", webClient_tRESTClient_1.getResponse().getHeaders());
-			
-			
-			
-		
+				/**
+				 * [tRESTClient_1 main ] stop
+				 */
 
-	} catch (javax.ws.rs.WebApplicationException ex_tRESTClient_1) {
-		
-			throw ex_tRESTClient_1;
-		
-	}
+				/**
+				 * [tRESTClient_1 process_data_begin ] start
+				 */
 
-} catch(Exception e_tRESTClient_1) {
-	
-		throw new TalendException(e_tRESTClient_1, currentComponent, globalMap);
-	
-}
+				currentComponent = "tRESTClient_1";
 
-
- 
-
-
-	tos_count_tRESTClient_1++;
-
-/**
- * [tRESTClient_1 main ] stop
- */
-	
-	/**
-	 * [tRESTClient_1 process_data_begin ] start
-	 */
-
-	
-
-	
-	
-	currentComponent="tRESTClient_1";
-
-	
-
- 
-
-
-
-/**
- * [tRESTClient_1 process_data_begin ] stop
- */
+				/**
+				 * [tRESTClient_1 process_data_begin ] stop
+				 */
 // Start of branch "row1"
-if(row1 != null) { 
+				if (row1 != null) {
 
+					/**
+					 * [tXMLMap_1_TXMLMAP_OUT main ] start
+					 */
 
+					currentVirtualComponent = "tXMLMap_1";
 
-	
-	/**
-	 * [tXMLMap_1_TXMLMAP_OUT main ] start
-	 */
+					currentComponent = "tXMLMap_1_TXMLMAP_OUT";
 
-	
-
-	
-	
-		currentVirtualComponent = "tXMLMap_1";
-	
-	currentComponent="tXMLMap_1_TXMLMAP_OUT";
-
-	
-					if(execStat){
-						runStat.updateStatOnConnection(iterateId,1,1,"row1");
+					if (execStat) {
+						runStat.updateStatOnConnection(iterateId, 1, 1, "row1");
 					}
-					
 
-	boolean rejectedInnerJoin_tXMLMap_1_TXMLMAP_OUT = false;
-	boolean rejectedDocInnerJoin_tXMLMap_1_TXMLMAP_OUT = false;
-	boolean mainRowRejected_tXMLMap_1_TXMLMAP_OUT = false;
-	boolean isMatchDocRowtXMLMap_1_TXMLMAP_OUT = false;
-	  
-	
-			
+					boolean rejectedInnerJoin_tXMLMap_1_TXMLMAP_OUT = false;
+					boolean rejectedDocInnerJoin_tXMLMap_1_TXMLMAP_OUT = false;
+					boolean mainRowRejected_tXMLMap_1_TXMLMAP_OUT = false;
+					boolean isMatchDocRowtXMLMap_1_TXMLMAP_OUT = false;
 
-		
-		
-				//init document to flat tool
-				routines.system.DocumentToFlat docToFlat_tXMLMap_1_TXMLMAP_OUT = new routines.system.DocumentToFlat();
-				docToFlat_tXMLMap_1_TXMLMAP_OUT.setOriginalLoop("/root/statuses");
-				docToFlat_tXMLMap_1_TXMLMAP_OUT.setIsOptional(false);
-				if(row1.body == null || row1.body.getDocument() == null) {
-					throw new RuntimeException("row1.body can't be empty");
-				}
-				org.dom4j.Document doc_tXMLMap_1_TXMLMAP_OUT = row1.body.getDocument();
-				docToFlat_tXMLMap_1_TXMLMAP_OUT.setDoc(doc_tXMLMap_1_TXMLMAP_OUT);
-				docToFlat_tXMLMap_1_TXMLMAP_OUT.setDefineNS(false);
-				docToFlat_tXMLMap_1_TXMLMAP_OUT.setNamespaceTool(nsTool_tXMLMap_1_TXMLMAP_OUT);
-				
-					//old version, find NS from doc
+					// init document to flat tool
+					routines.system.DocumentToFlat docToFlat_tXMLMap_1_TXMLMAP_OUT = new routines.system.DocumentToFlat();
+					docToFlat_tXMLMap_1_TXMLMAP_OUT.setOriginalLoop("/root/statuses");
+					docToFlat_tXMLMap_1_TXMLMAP_OUT.setIsOptional(false);
+					if (row1.body == null || row1.body.getDocument() == null) {
+						throw new RuntimeException("row1.body can't be empty");
+					}
+					org.dom4j.Document doc_tXMLMap_1_TXMLMAP_OUT = row1.body.getDocument();
+					docToFlat_tXMLMap_1_TXMLMAP_OUT.setDoc(doc_tXMLMap_1_TXMLMAP_OUT);
+					docToFlat_tXMLMap_1_TXMLMAP_OUT.setDefineNS(false);
+					docToFlat_tXMLMap_1_TXMLMAP_OUT.setNamespaceTool(nsTool_tXMLMap_1_TXMLMAP_OUT);
+
+					// old version, find NS from doc
 					nsTool_tXMLMap_1_TXMLMAP_OUT.countNSMap(doc_tXMLMap_1_TXMLMAP_OUT.getRootElement());
-					java.util.HashMap<String,String> xmlNameSpaceMap_tXMLMap_1_TXMLMAP_OUT = nsTool_tXMLMap_1_TXMLMAP_OUT.xmlNameSpaceMap;
-				
-				docToFlat_tXMLMap_1_TXMLMAP_OUT.setXmlNameSpaceMap(xmlNameSpaceMap_tXMLMap_1_TXMLMAP_OUT);
-				
-				String[] absolutePathMappings_tXMLMap_1_TXMLMAP_OUT = new String[9];
-				String[] relativePathMappings_tXMLMap_1_TXMLMAP_OUT = new String[9];
-				
-				absolutePathMappings_tXMLMap_1_TXMLMAP_OUT[0] = "row1.body:/root/statuses/created_at";
-				relativePathMappings_tXMLMap_1_TXMLMAP_OUT[0] = "created_at";
-				
-				absolutePathMappings_tXMLMap_1_TXMLMAP_OUT[1] = "row1.body:/root/statuses/text";
-				relativePathMappings_tXMLMap_1_TXMLMAP_OUT[1] = "text";
-				
-				absolutePathMappings_tXMLMap_1_TXMLMAP_OUT[2] = "row1.body:/root/statuses/user/name";
-				relativePathMappings_tXMLMap_1_TXMLMAP_OUT[2] = "user/name";
-				
-				absolutePathMappings_tXMLMap_1_TXMLMAP_OUT[3] = "row1.body:/root/statuses/user/description";
-				relativePathMappings_tXMLMap_1_TXMLMAP_OUT[3] = "user/description";
-				
-				absolutePathMappings_tXMLMap_1_TXMLMAP_OUT[4] = "row1.body:/root/statuses/id";
-				relativePathMappings_tXMLMap_1_TXMLMAP_OUT[4] = "id";
-				
-				absolutePathMappings_tXMLMap_1_TXMLMAP_OUT[5] = "row1.body:/root/statuses/user/id";
-				relativePathMappings_tXMLMap_1_TXMLMAP_OUT[5] = "user/id";
-				
-				absolutePathMappings_tXMLMap_1_TXMLMAP_OUT[6] = "row1.body:/root/statuses/entities/hashtags/text";
-				relativePathMappings_tXMLMap_1_TXMLMAP_OUT[6] = "entities/hashtags/text";
-				
-				absolutePathMappings_tXMLMap_1_TXMLMAP_OUT[7] = "row1.body:/root/statuses/user/location";
-				relativePathMappings_tXMLMap_1_TXMLMAP_OUT[7] = "user/location";
-				
-				absolutePathMappings_tXMLMap_1_TXMLMAP_OUT[8] = "row1.body:/root/statuses/user/screen_name";
-				relativePathMappings_tXMLMap_1_TXMLMAP_OUT[8] = "user/screen_name";
-				
-				docToFlat_tXMLMap_1_TXMLMAP_OUT.setAbsolutePathMappings(absolutePathMappings_tXMLMap_1_TXMLMAP_OUT);
-				docToFlat_tXMLMap_1_TXMLMAP_OUT.setCurrentRelativePathMappings(relativePathMappings_tXMLMap_1_TXMLMAP_OUT);
-				//generate document to flat data
-				docToFlat_tXMLMap_1_TXMLMAP_OUT.flat();
-				//get flat data
-				java.util.List<java.util.Map<String, String>> resultSet_tXMLMap_1_TXMLMAP_OUT = docToFlat_tXMLMap_1_TXMLMAP_OUT.getResultSet();
-				
-				for (java.util.Map<String,String> oneRow_tXMLMap_1_TXMLMAP_OUT: resultSet_tXMLMap_1_TXMLMAP_OUT) { // G_TXM_M_001
-					nb_line_tXMLMap_1_TXMLMAP_OUT++;
-			    	rejectedInnerJoin_tXMLMap_1_TXMLMAP_OUT = false;
-			    	rejectedDocInnerJoin_tXMLMap_1_TXMLMAP_OUT = false;
-					mainRowRejected_tXMLMap_1_TXMLMAP_OUT=false;
-				    isMatchDocRowtXMLMap_1_TXMLMAP_OUT = false;
-					
-			    	treeNodeAPI_tXMLMap_1_TXMLMAP_OUT.clear();
-			    	for(java.util.Map.Entry<String, String> entry_tXMLMap_1_TXMLMAP_OUT : oneRow_tXMLMap_1_TXMLMAP_OUT.entrySet()) {
-						treeNodeAPI_tXMLMap_1_TXMLMAP_OUT.put(entry_tXMLMap_1_TXMLMAP_OUT.getKey(),entry_tXMLMap_1_TXMLMAP_OUT.getValue());
-					}
-					
+					java.util.HashMap<String, String> xmlNameSpaceMap_tXMLMap_1_TXMLMAP_OUT = nsTool_tXMLMap_1_TXMLMAP_OUT.xmlNameSpaceMap;
 
+					docToFlat_tXMLMap_1_TXMLMAP_OUT.setXmlNameSpaceMap(xmlNameSpaceMap_tXMLMap_1_TXMLMAP_OUT);
 
-			
-{ // start of Var scope
+					String[] absolutePathMappings_tXMLMap_1_TXMLMAP_OUT = new String[9];
+					String[] relativePathMappings_tXMLMap_1_TXMLMAP_OUT = new String[9];
 
-	// ###############################
-	// # Vars tables
+					absolutePathMappings_tXMLMap_1_TXMLMAP_OUT[0] = "row1.body:/root/statuses/created_at";
+					relativePathMappings_tXMLMap_1_TXMLMAP_OUT[0] = "created_at";
 
-Var__tXMLMap_1_TXMLMAP_OUT__Struct Var = Var__tXMLMap_1_TXMLMAP_OUT;
-		// ###############################
-		// # Output tables
+					absolutePathMappings_tXMLMap_1_TXMLMAP_OUT[1] = "row1.body:/root/statuses/text";
+					relativePathMappings_tXMLMap_1_TXMLMAP_OUT[1] = "text";
 
-coronaWarnAPP = null;
+					absolutePathMappings_tXMLMap_1_TXMLMAP_OUT[2] = "row1.body:/root/statuses/user/name";
+					relativePathMappings_tXMLMap_1_TXMLMAP_OUT[2] = "user/name";
 
+					absolutePathMappings_tXMLMap_1_TXMLMAP_OUT[3] = "row1.body:/root/statuses/user/description";
+					relativePathMappings_tXMLMap_1_TXMLMAP_OUT[3] = "user/description";
+
+					absolutePathMappings_tXMLMap_1_TXMLMAP_OUT[4] = "row1.body:/root/statuses/id";
+					relativePathMappings_tXMLMap_1_TXMLMAP_OUT[4] = "id";
+
+					absolutePathMappings_tXMLMap_1_TXMLMAP_OUT[5] = "row1.body:/root/statuses/user/id";
+					relativePathMappings_tXMLMap_1_TXMLMAP_OUT[5] = "user/id";
+
+					absolutePathMappings_tXMLMap_1_TXMLMAP_OUT[6] = "row1.body:/root/statuses/entities/hashtags/text";
+					relativePathMappings_tXMLMap_1_TXMLMAP_OUT[6] = "entities/hashtags/text";
+
+					absolutePathMappings_tXMLMap_1_TXMLMAP_OUT[7] = "row1.body:/root/statuses/user/location";
+					relativePathMappings_tXMLMap_1_TXMLMAP_OUT[7] = "user/location";
+
+					absolutePathMappings_tXMLMap_1_TXMLMAP_OUT[8] = "row1.body:/root/statuses/user/screen_name";
+					relativePathMappings_tXMLMap_1_TXMLMAP_OUT[8] = "user/screen_name";
+
+					docToFlat_tXMLMap_1_TXMLMAP_OUT.setAbsolutePathMappings(absolutePathMappings_tXMLMap_1_TXMLMAP_OUT);
+					docToFlat_tXMLMap_1_TXMLMAP_OUT
+							.setCurrentRelativePathMappings(relativePathMappings_tXMLMap_1_TXMLMAP_OUT);
+					// generate document to flat data
+					docToFlat_tXMLMap_1_TXMLMAP_OUT.flat();
+					// get flat data
+					java.util.List<java.util.Map<String, String>> resultSet_tXMLMap_1_TXMLMAP_OUT = docToFlat_tXMLMap_1_TXMLMAP_OUT
+							.getResultSet();
+
+					for (java.util.Map<String, String> oneRow_tXMLMap_1_TXMLMAP_OUT : resultSet_tXMLMap_1_TXMLMAP_OUT) { // G_TXM_M_001
+						nb_line_tXMLMap_1_TXMLMAP_OUT++;
+						rejectedInnerJoin_tXMLMap_1_TXMLMAP_OUT = false;
+						rejectedDocInnerJoin_tXMLMap_1_TXMLMAP_OUT = false;
+						mainRowRejected_tXMLMap_1_TXMLMAP_OUT = false;
+						isMatchDocRowtXMLMap_1_TXMLMAP_OUT = false;
+
+						treeNodeAPI_tXMLMap_1_TXMLMAP_OUT.clear();
+						for (java.util.Map.Entry<String, String> entry_tXMLMap_1_TXMLMAP_OUT : oneRow_tXMLMap_1_TXMLMAP_OUT
+								.entrySet()) {
+							treeNodeAPI_tXMLMap_1_TXMLMAP_OUT.put(entry_tXMLMap_1_TXMLMAP_OUT.getKey(),
+									entry_tXMLMap_1_TXMLMAP_OUT.getValue());
+						}
+
+						{ // start of Var scope
+
+							// ###############################
+							// # Vars tables
+
+							Var__tXMLMap_1_TXMLMAP_OUT__Struct Var = Var__tXMLMap_1_TXMLMAP_OUT;
+							// ###############################
+							// # Output tables
+
+							coronaWarnAPP = null;
 
 // # Output table : 'coronaWarnAPP'
 
-coronaWarnAPP_tmp = new coronaWarnAPPStruct();
-coronaWarnAPP_tmp.id =  treeNodeAPI_tXMLMap_1_TXMLMAP_OUT.get_String("row1.body:/root/statuses/id");
-coronaWarnAPP_tmp.date_description = TalendDate.parseDate("EEE MMM dd HH:mm:ss Z yyyy",treeNodeAPI_tXMLMap_1_TXMLMAP_OUT.get_String("row1.body:/root/statuses/created_at")) ;
-coronaWarnAPP_tmp.user_id = treeNodeAPI_tXMLMap_1_TXMLMAP_OUT.get_String("row1.body:/root/statuses/user/id");
-coronaWarnAPP_tmp.user_name = treeNodeAPI_tXMLMap_1_TXMLMAP_OUT.get_String("row1.body:/root/statuses/user/name");
-coronaWarnAPP_tmp.user_screen_name = treeNodeAPI_tXMLMap_1_TXMLMAP_OUT.get_String("row1.body:/root/statuses/user/screen_name");
-coronaWarnAPP_tmp.user_location = treeNodeAPI_tXMLMap_1_TXMLMAP_OUT.get_String("row1.body:/root/statuses/user/location");
-coronaWarnAPP_tmp.user_description = treeNodeAPI_tXMLMap_1_TXMLMAP_OUT.get_String("row1.body:/root/statuses/user/description");
-coronaWarnAPP_tmp.hashtag_text = treeNodeAPI_tXMLMap_1_TXMLMAP_OUT.get_String("row1.body:/root/statuses/entities/hashtags/text");
-coronaWarnAPP_tmp.text_description = treeNodeAPI_tXMLMap_1_TXMLMAP_OUT.get_String("row1.body:/root/statuses/text");
-coronaWarnAPP_tmp.hashtag_id = treeNodeAPI_tXMLMap_1_TXMLMAP_OUT.get_String("row1.body:/root/statuses/id");
-coronaWarnAPP_tmp.geo_id = treeNodeAPI_tXMLMap_1_TXMLMAP_OUT.get_String("row1.body:/root/statuses/id");
-coronaWarnAPP_tmp.geo_description = treeNodeAPI_tXMLMap_1_TXMLMAP_OUT.get_String("row1.body:/root/statuses/user/location");
-coronaWarnAPP_tmp.text_id = treeNodeAPI_tXMLMap_1_TXMLMAP_OUT.get_String("row1.body:/root/statuses/id");
-coronaWarnAPP_tmp.date_id = treeNodeAPI_tXMLMap_1_TXMLMAP_OUT.get_String("row1.body:/root/statuses/id");allOutsForAggregate_tXMLMap_1.add(coronaWarnAPP_tmp);
+							coronaWarnAPP_tmp = new coronaWarnAPPStruct();
+							coronaWarnAPP_tmp.id = treeNodeAPI_tXMLMap_1_TXMLMAP_OUT
+									.get_String("row1.body:/root/statuses/id");
+							coronaWarnAPP_tmp.date_description = TalendDate.parseDate("EEE MMM dd HH:mm:ss Z yyyy",
+									treeNodeAPI_tXMLMap_1_TXMLMAP_OUT
+											.get_String("row1.body:/root/statuses/created_at"));
+							coronaWarnAPP_tmp.user_id = treeNodeAPI_tXMLMap_1_TXMLMAP_OUT
+									.get_String("row1.body:/root/statuses/user/id");
+							coronaWarnAPP_tmp.user_name = treeNodeAPI_tXMLMap_1_TXMLMAP_OUT
+									.get_String("row1.body:/root/statuses/user/name");
+							coronaWarnAPP_tmp.user_screen_name = treeNodeAPI_tXMLMap_1_TXMLMAP_OUT
+									.get_String("row1.body:/root/statuses/user/screen_name");
+							coronaWarnAPP_tmp.user_location = treeNodeAPI_tXMLMap_1_TXMLMAP_OUT
+									.get_String("row1.body:/root/statuses/user/location");
+							coronaWarnAPP_tmp.user_description = treeNodeAPI_tXMLMap_1_TXMLMAP_OUT
+									.get_String("row1.body:/root/statuses/user/description");
+							coronaWarnAPP_tmp.hashtag_text = treeNodeAPI_tXMLMap_1_TXMLMAP_OUT
+									.get_String("row1.body:/root/statuses/entities/hashtags/text");
+							coronaWarnAPP_tmp.text_description = treeNodeAPI_tXMLMap_1_TXMLMAP_OUT
+									.get_String("row1.body:/root/statuses/text");
+							coronaWarnAPP_tmp.hashtag_id = treeNodeAPI_tXMLMap_1_TXMLMAP_OUT
+									.get_String("row1.body:/root/statuses/id");
+							coronaWarnAPP_tmp.geo_id = treeNodeAPI_tXMLMap_1_TXMLMAP_OUT
+									.get_String("row1.body:/root/statuses/id");
+							coronaWarnAPP_tmp.geo_description = treeNodeAPI_tXMLMap_1_TXMLMAP_OUT
+									.get_String("row1.body:/root/statuses/user/location");
+							coronaWarnAPP_tmp.text_id = treeNodeAPI_tXMLMap_1_TXMLMAP_OUT
+									.get_String("row1.body:/root/statuses/id");
+							coronaWarnAPP_tmp.date_id = treeNodeAPI_tXMLMap_1_TXMLMAP_OUT
+									.get_String("row1.body:/root/statuses/id");
+							allOutsForAggregate_tXMLMap_1.add(coronaWarnAPP_tmp);
 
 // ###############################
 
-} // end of Var scope
+						} // end of Var scope
 
-rejectedInnerJoin_tXMLMap_1_TXMLMAP_OUT = false;
+						rejectedInnerJoin_tXMLMap_1_TXMLMAP_OUT = false;
 
+					} // G_TXM_M_001 close
 
-		}//G_TXM_M_001 close
-	
+					tos_count_tXMLMap_1_TXMLMAP_OUT++;
 
- 
+					/**
+					 * [tXMLMap_1_TXMLMAP_OUT main ] stop
+					 */
 
+					/**
+					 * [tXMLMap_1_TXMLMAP_OUT process_data_begin ] start
+					 */
 
-	tos_count_tXMLMap_1_TXMLMAP_OUT++;
+					currentVirtualComponent = "tXMLMap_1";
 
-/**
- * [tXMLMap_1_TXMLMAP_OUT main ] stop
- */
-	
-	/**
-	 * [tXMLMap_1_TXMLMAP_OUT process_data_begin ] start
-	 */
+					currentComponent = "tXMLMap_1_TXMLMAP_OUT";
 
-	
+					/**
+					 * [tXMLMap_1_TXMLMAP_OUT process_data_begin ] stop
+					 */
 
-	
-	
-		currentVirtualComponent = "tXMLMap_1";
-	
-	currentComponent="tXMLMap_1_TXMLMAP_OUT";
+					/**
+					 * [tXMLMap_1_TXMLMAP_OUT process_data_end ] start
+					 */
 
-	
+					currentVirtualComponent = "tXMLMap_1";
 
- 
+					currentComponent = "tXMLMap_1_TXMLMAP_OUT";
 
+					/**
+					 * [tXMLMap_1_TXMLMAP_OUT process_data_end ] stop
+					 */
 
+				} // End of branch "row1"
 
-/**
- * [tXMLMap_1_TXMLMAP_OUT process_data_begin ] stop
- */
-	
-	/**
-	 * [tXMLMap_1_TXMLMAP_OUT process_data_end ] start
-	 */
+				/**
+				 * [tRESTClient_1 process_data_end ] start
+				 */
 
-	
+				currentComponent = "tRESTClient_1";
 
-	
-	
-		currentVirtualComponent = "tXMLMap_1";
-	
-	currentComponent="tXMLMap_1_TXMLMAP_OUT";
+				/**
+				 * [tRESTClient_1 process_data_end ] stop
+				 */
 
-	
+				/**
+				 * [tRESTClient_1 end ] start
+				 */
 
- 
+				currentComponent = "tRESTClient_1";
 
-
-
-/**
- * [tXMLMap_1_TXMLMAP_OUT process_data_end ] stop
- */
-
-} // End of branch "row1"
-
-
-
-
-	
-	/**
-	 * [tRESTClient_1 process_data_end ] start
-	 */
-
-	
-
-	
-	
-	currentComponent="tRESTClient_1";
-
-	
-
- 
-
-
-
-/**
- * [tRESTClient_1 process_data_end ] stop
- */
-	
-	/**
-	 * [tRESTClient_1 end ] start
-	 */
-
-	
-
-	
-	
-	currentComponent="tRESTClient_1";
-
-	
-
-
-if (globalMap.get("tRESTClient_1_NB_LINE") == null) {
-	globalMap.put("tRESTClient_1_NB_LINE", 1);
-}
+				if (globalMap.get("tRESTClient_1_NB_LINE") == null) {
+					globalMap.put("tRESTClient_1_NB_LINE", 1);
+				}
 
 // [tRESTCliend_end]
- 
 
-ok_Hash.put("tRESTClient_1", true);
-end_Hash.put("tRESTClient_1", System.currentTimeMillis());
+				ok_Hash.put("tRESTClient_1", true);
+				end_Hash.put("tRESTClient_1", System.currentTimeMillis());
 
+				/**
+				 * [tRESTClient_1 end ] stop
+				 */
 
+				/**
+				 * [tXMLMap_1_TXMLMAP_OUT end ] start
+				 */
 
+				currentVirtualComponent = "tXMLMap_1";
 
-/**
- * [tRESTClient_1 end ] stop
- */
+				currentComponent = "tXMLMap_1_TXMLMAP_OUT";
 
-	
-	/**
-	 * [tXMLMap_1_TXMLMAP_OUT end ] start
-	 */
+				if (execStat) {
+					runStat.updateStat(resourceMap, iterateId, 2, 0, "row1");
+				}
 
-	
+				ok_Hash.put("tXMLMap_1_TXMLMAP_OUT", true);
+				end_Hash.put("tXMLMap_1_TXMLMAP_OUT", System.currentTimeMillis());
 
-	
-	
-		currentVirtualComponent = "tXMLMap_1";
-	
-	currentComponent="tXMLMap_1_TXMLMAP_OUT";
+				/**
+				 * [tXMLMap_1_TXMLMAP_OUT end ] stop
+				 */
 
-	
+				/**
+				 * [tFileOutputJSON_1 begin ] start
+				 */
 
+				ok_Hash.put("tFileOutputJSON_1", false);
+				start_Hash.put("tFileOutputJSON_1", System.currentTimeMillis());
 
+				currentComponent = "tFileOutputJSON_1";
 
+				if (execStat) {
+					runStat.updateStatOnConnection(resourceMap, iterateId, 0, 0, "coronaWarnAPP");
+				}
 
-				if(execStat){
-			  		runStat.updateStat(resourceMap,iterateId,2,0,"row1");
-			  	}
-			  	
- 
+				int tos_count_tFileOutputJSON_1 = 0;
 
-ok_Hash.put("tXMLMap_1_TXMLMAP_OUT", true);
-end_Hash.put("tXMLMap_1_TXMLMAP_OUT", System.currentTimeMillis());
+				int nb_line_tFileOutputJSON_1 = 0;
+				java.io.File file_tFileOutputJSON_1 = new java.io.File(context.path_files_global
+						+ "/documentations/apitwitter/al-" + TalendDate.getCurrentDate() + ".json");
+				java.io.File dir_tFileOutputJSON_1 = file_tFileOutputJSON_1.getParentFile();
+				if (dir_tFileOutputJSON_1 != null && !dir_tFileOutputJSON_1.exists()) {
+					dir_tFileOutputJSON_1.mkdirs();
+				}
+				java.io.PrintWriter outtFileOutputJSON_1 = new java.io.PrintWriter(
+						new java.io.BufferedWriter(new java.io.FileWriter(context.path_files_global
+								+ "/documentations/apitwitter/al-" + TalendDate.getCurrentDate() + ".json")));
+				outtFileOutputJSON_1.append("{\"" + "tweets" + "\":[");
+				boolean isFirst_tFileOutputJSON_1 = true;
 
+				/**
+				 * [tFileOutputJSON_1 begin ] stop
+				 */
 
+				/**
+				 * [tXMLMap_1_TXMLMAP_IN begin ] start
+				 */
 
+				ok_Hash.put("tXMLMap_1_TXMLMAP_IN", false);
+				start_Hash.put("tXMLMap_1_TXMLMAP_IN", System.currentTimeMillis());
 
-/**
- * [tXMLMap_1_TXMLMAP_OUT end ] stop
- */
+				currentVirtualComponent = "tXMLMap_1";
 
+				currentComponent = "tXMLMap_1_TXMLMAP_IN";
 
-	
-	/**
-	 * [tFileOutputJSON_1 begin ] start
-	 */
+				int tos_count_tXMLMap_1_TXMLMAP_IN = 0;
 
-	
+				java.util.List<Object> outs_tXMLMap_1 = (java.util.List<Object>) globalMap
+						.get("allOutsForAggregate_tXMLMap_1");
+				for (Object row_out_tXMLMap_1_TXMLMAP_IN : outs_tXMLMap_1) {// TD512
 
-	
-		
-		ok_Hash.put("tFileOutputJSON_1", false);
-		start_Hash.put("tFileOutputJSON_1", System.currentTimeMillis());
-		
-	
-	currentComponent="tFileOutputJSON_1";
+					/**
+					 * [tXMLMap_1_TXMLMAP_IN begin ] stop
+					 */
 
-	
-					if(execStat) {
-						runStat.updateStatOnConnection(resourceMap,iterateId,0,0,"coronaWarnAPP");
+					/**
+					 * [tXMLMap_1_TXMLMAP_IN main ] start
+					 */
+
+					currentVirtualComponent = "tXMLMap_1";
+
+					currentComponent = "tXMLMap_1_TXMLMAP_IN";
+
+					coronaWarnAPP = null;
+					if (row_out_tXMLMap_1_TXMLMAP_IN != null
+							&& row_out_tXMLMap_1_TXMLMAP_IN instanceof coronaWarnAPPStruct) {
+						coronaWarnAPP = (coronaWarnAPPStruct) row_out_tXMLMap_1_TXMLMAP_IN;
 					}
-				
-		int tos_count_tFileOutputJSON_1 = 0;
-		
-int nb_line_tFileOutputJSON_1 = 0;
-java.io.File file_tFileOutputJSON_1 = new java.io.File("/home/scasanova/Downloads/TOS_BD-20200219_1130-V7.3.1/workspace/ANALYSIS_TWITTER/documentations/apitwitter/al-"+TalendDate.getCurrentDate()+".json");
-java.io.File dir_tFileOutputJSON_1 = file_tFileOutputJSON_1.getParentFile();
-	if(dir_tFileOutputJSON_1!=null && !dir_tFileOutputJSON_1.exists()){
-		dir_tFileOutputJSON_1.mkdirs();
-	}
-java.io.PrintWriter outtFileOutputJSON_1 = new java.io.PrintWriter(new java.io.BufferedWriter(new java.io.FileWriter("/home/scasanova/Downloads/TOS_BD-20200219_1130-V7.3.1/workspace/ANALYSIS_TWITTER/documentations/apitwitter/al-"+TalendDate.getCurrentDate()+".json")));
-	outtFileOutputJSON_1.append("{\"" + "tweets" + "\":[");
-boolean isFirst_tFileOutputJSON_1 = true;
- 
 
+					tos_count_tXMLMap_1_TXMLMAP_IN++;
 
+					/**
+					 * [tXMLMap_1_TXMLMAP_IN main ] stop
+					 */
 
-/**
- * [tFileOutputJSON_1 begin ] stop
- */
+					/**
+					 * [tXMLMap_1_TXMLMAP_IN process_data_begin ] start
+					 */
 
+					currentVirtualComponent = "tXMLMap_1";
 
+					currentComponent = "tXMLMap_1_TXMLMAP_IN";
 
-	
-	/**
-	 * [tXMLMap_1_TXMLMAP_IN begin ] start
-	 */
-
-	
-
-	
-		
-		ok_Hash.put("tXMLMap_1_TXMLMAP_IN", false);
-		start_Hash.put("tXMLMap_1_TXMLMAP_IN", System.currentTimeMillis());
-		
-	
-		currentVirtualComponent = "tXMLMap_1";
-	
-	currentComponent="tXMLMap_1_TXMLMAP_IN";
-
-	
-		int tos_count_tXMLMap_1_TXMLMAP_IN = 0;
-		
-java.util.List<Object> outs_tXMLMap_1 = (java.util.List<Object>)globalMap.get("allOutsForAggregate_tXMLMap_1");
-for(Object  row_out_tXMLMap_1_TXMLMAP_IN : outs_tXMLMap_1) {//TD512
- 
-
-
-
-/**
- * [tXMLMap_1_TXMLMAP_IN begin ] stop
- */
-	
-	/**
-	 * [tXMLMap_1_TXMLMAP_IN main ] start
-	 */
-
-	
-
-	
-	
-		currentVirtualComponent = "tXMLMap_1";
-	
-	currentComponent="tXMLMap_1_TXMLMAP_IN";
-
-	
-
-	coronaWarnAPP = null;
-	if(row_out_tXMLMap_1_TXMLMAP_IN!=null && row_out_tXMLMap_1_TXMLMAP_IN instanceof coronaWarnAPPStruct) {
-		coronaWarnAPP = (coronaWarnAPPStruct)row_out_tXMLMap_1_TXMLMAP_IN;		
-	}
- 
-
-
-	tos_count_tXMLMap_1_TXMLMAP_IN++;
-
-/**
- * [tXMLMap_1_TXMLMAP_IN main ] stop
- */
-	
-	/**
-	 * [tXMLMap_1_TXMLMAP_IN process_data_begin ] start
-	 */
-
-	
-
-	
-	
-		currentVirtualComponent = "tXMLMap_1";
-	
-	currentComponent="tXMLMap_1_TXMLMAP_IN";
-
-	
-
- 
-
-
-
-/**
- * [tXMLMap_1_TXMLMAP_IN process_data_begin ] stop
- */
+					/**
+					 * [tXMLMap_1_TXMLMAP_IN process_data_begin ] stop
+					 */
 // Start of branch "coronaWarnAPP"
-if(coronaWarnAPP != null) { 
+					if (coronaWarnAPP != null) {
 
+						/**
+						 * [tFileOutputJSON_1 main ] start
+						 */
 
+						currentComponent = "tFileOutputJSON_1";
 
-	
-	/**
-	 * [tFileOutputJSON_1 main ] start
-	 */
+						if (execStat) {
+							runStat.updateStatOnConnection(iterateId, 1, 1, "coronaWarnAPP");
+						}
 
-	
+						org.json.simple.JSONObject jsonRowtFileOutputJSON_1 = new org.json.simple.JSONObject();
+						if (coronaWarnAPP.id != null) {
 
-	
-	
-	currentComponent="tFileOutputJSON_1";
+							jsonRowtFileOutputJSON_1.put("id", coronaWarnAPP.id);
 
-	
-					if(execStat){
-						runStat.updateStatOnConnection(iterateId,1,1,"coronaWarnAPP");
-					}
-					
+						} else {
+							jsonRowtFileOutputJSON_1.put("id", null);
+						}
 
+						if (coronaWarnAPP.date_description != null) {
 
-org.json.simple.JSONObject jsonRowtFileOutputJSON_1 = new org.json.simple.JSONObject();
-			    	if(coronaWarnAPP.id != null){
-			    
-					jsonRowtFileOutputJSON_1.put("id", coronaWarnAPP.id);
-				
-					}else{
-						jsonRowtFileOutputJSON_1.put("id", null);
-					}
-				
-			    	if(coronaWarnAPP.date_description != null){
-			    
-					jsonRowtFileOutputJSON_1.put("date_description",FormatterUtils.format_Date(coronaWarnAPP.date_description, "dd-MM-yyyy"));
-				
-					}else{
-						jsonRowtFileOutputJSON_1.put("date_description", null);
-					}
-				
-			    	if(coronaWarnAPP.user_id != null){
-			    
-					jsonRowtFileOutputJSON_1.put("user_id", coronaWarnAPP.user_id);
-				
-					}else{
-						jsonRowtFileOutputJSON_1.put("user_id", null);
-					}
-				
-			    	if(coronaWarnAPP.user_name != null){
-			    
-					jsonRowtFileOutputJSON_1.put("user_name", coronaWarnAPP.user_name);
-				
-					}else{
-						jsonRowtFileOutputJSON_1.put("user_name", null);
-					}
-				
-			    	if(coronaWarnAPP.user_screen_name != null){
-			    
-					jsonRowtFileOutputJSON_1.put("user_screen_name", coronaWarnAPP.user_screen_name);
-				
-					}else{
-						jsonRowtFileOutputJSON_1.put("user_screen_name", null);
-					}
-				
-			    	if(coronaWarnAPP.user_location != null){
-			    
-					jsonRowtFileOutputJSON_1.put("user_location", coronaWarnAPP.user_location);
-				
-					}else{
-						jsonRowtFileOutputJSON_1.put("user_location", null);
-					}
-				
-			    	if(coronaWarnAPP.user_description != null){
-			    
-					jsonRowtFileOutputJSON_1.put("user_description", coronaWarnAPP.user_description);
-				
-					}else{
-						jsonRowtFileOutputJSON_1.put("user_description", null);
-					}
-				
-			    	if(coronaWarnAPP.hashtag_text != null){
-			    
-					jsonRowtFileOutputJSON_1.put("hashtag_text", coronaWarnAPP.hashtag_text);
-				
-					}else{
-						jsonRowtFileOutputJSON_1.put("hashtag_text", null);
-					}
-				
-			    	if(coronaWarnAPP.text_description != null){
-			    
-					jsonRowtFileOutputJSON_1.put("text_description", coronaWarnAPP.text_description);
-				
-					}else{
-						jsonRowtFileOutputJSON_1.put("text_description", null);
-					}
-				
-			    	if(coronaWarnAPP.hashtag_id != null){
-			    
-					jsonRowtFileOutputJSON_1.put("hashtag_id", coronaWarnAPP.hashtag_id);
-				
-					}else{
-						jsonRowtFileOutputJSON_1.put("hashtag_id", null);
-					}
-				
-			    	if(coronaWarnAPP.geo_id != null){
-			    
-					jsonRowtFileOutputJSON_1.put("geo_id", coronaWarnAPP.geo_id);
-				
-					}else{
-						jsonRowtFileOutputJSON_1.put("geo_id", null);
-					}
-				
-			    	if(coronaWarnAPP.geo_description != null){
-			    
-					jsonRowtFileOutputJSON_1.put("geo_description", coronaWarnAPP.geo_description);
-				
-					}else{
-						jsonRowtFileOutputJSON_1.put("geo_description", null);
-					}
-				
-			    	if(coronaWarnAPP.text_id != null){
-			    
-					jsonRowtFileOutputJSON_1.put("text_id", coronaWarnAPP.text_id);
-				
-					}else{
-						jsonRowtFileOutputJSON_1.put("text_id", null);
-					}
-				
-			    	if(coronaWarnAPP.date_id != null){
-			    
-					jsonRowtFileOutputJSON_1.put("date_id", coronaWarnAPP.date_id);
-				
-					}else{
-						jsonRowtFileOutputJSON_1.put("date_id", null);
-					}
-				
+							jsonRowtFileOutputJSON_1.put("date_description",
+									FormatterUtils.format_Date(coronaWarnAPP.date_description, "dd-MM-yyyy"));
 
-if(!isFirst_tFileOutputJSON_1){
-	outtFileOutputJSON_1.append(",");
-}
-isFirst_tFileOutputJSON_1 = false;
-outtFileOutputJSON_1.append(jsonRowtFileOutputJSON_1.toJSONString());
-nb_line_tFileOutputJSON_1++;
+						} else {
+							jsonRowtFileOutputJSON_1.put("date_description", null);
+						}
 
- 
+						if (coronaWarnAPP.user_id != null) {
 
+							jsonRowtFileOutputJSON_1.put("user_id", coronaWarnAPP.user_id);
 
-	tos_count_tFileOutputJSON_1++;
+						} else {
+							jsonRowtFileOutputJSON_1.put("user_id", null);
+						}
 
-/**
- * [tFileOutputJSON_1 main ] stop
- */
-	
-	/**
-	 * [tFileOutputJSON_1 process_data_begin ] start
-	 */
+						if (coronaWarnAPP.user_name != null) {
 
-	
+							jsonRowtFileOutputJSON_1.put("user_name", coronaWarnAPP.user_name);
 
-	
-	
-	currentComponent="tFileOutputJSON_1";
+						} else {
+							jsonRowtFileOutputJSON_1.put("user_name", null);
+						}
 
-	
+						if (coronaWarnAPP.user_screen_name != null) {
 
- 
+							jsonRowtFileOutputJSON_1.put("user_screen_name", coronaWarnAPP.user_screen_name);
 
+						} else {
+							jsonRowtFileOutputJSON_1.put("user_screen_name", null);
+						}
 
+						if (coronaWarnAPP.user_location != null) {
 
-/**
- * [tFileOutputJSON_1 process_data_begin ] stop
- */
-	
-	/**
-	 * [tFileOutputJSON_1 process_data_end ] start
-	 */
+							jsonRowtFileOutputJSON_1.put("user_location", coronaWarnAPP.user_location);
 
-	
+						} else {
+							jsonRowtFileOutputJSON_1.put("user_location", null);
+						}
 
-	
-	
-	currentComponent="tFileOutputJSON_1";
+						if (coronaWarnAPP.user_description != null) {
 
-	
+							jsonRowtFileOutputJSON_1.put("user_description", coronaWarnAPP.user_description);
 
- 
+						} else {
+							jsonRowtFileOutputJSON_1.put("user_description", null);
+						}
 
+						if (coronaWarnAPP.hashtag_text != null) {
 
+							jsonRowtFileOutputJSON_1.put("hashtag_text", coronaWarnAPP.hashtag_text);
 
-/**
- * [tFileOutputJSON_1 process_data_end ] stop
- */
+						} else {
+							jsonRowtFileOutputJSON_1.put("hashtag_text", null);
+						}
 
-} // End of branch "coronaWarnAPP"
+						if (coronaWarnAPP.text_description != null) {
 
+							jsonRowtFileOutputJSON_1.put("text_description", coronaWarnAPP.text_description);
 
+						} else {
+							jsonRowtFileOutputJSON_1.put("text_description", null);
+						}
 
+						if (coronaWarnAPP.hashtag_id != null) {
 
-	
-	/**
-	 * [tXMLMap_1_TXMLMAP_IN process_data_end ] start
-	 */
+							jsonRowtFileOutputJSON_1.put("hashtag_id", coronaWarnAPP.hashtag_id);
 
-	
+						} else {
+							jsonRowtFileOutputJSON_1.put("hashtag_id", null);
+						}
 
-	
-	
-		currentVirtualComponent = "tXMLMap_1";
-	
-	currentComponent="tXMLMap_1_TXMLMAP_IN";
+						if (coronaWarnAPP.geo_id != null) {
 
-	
+							jsonRowtFileOutputJSON_1.put("geo_id", coronaWarnAPP.geo_id);
 
- 
+						} else {
+							jsonRowtFileOutputJSON_1.put("geo_id", null);
+						}
 
+						if (coronaWarnAPP.geo_description != null) {
 
+							jsonRowtFileOutputJSON_1.put("geo_description", coronaWarnAPP.geo_description);
 
-/**
- * [tXMLMap_1_TXMLMAP_IN process_data_end ] stop
- */
-	
-	/**
-	 * [tXMLMap_1_TXMLMAP_IN end ] start
-	 */
+						} else {
+							jsonRowtFileOutputJSON_1.put("geo_description", null);
+						}
 
-	
+						if (coronaWarnAPP.text_id != null) {
 
-	
-	
-		currentVirtualComponent = "tXMLMap_1";
-	
-	currentComponent="tXMLMap_1_TXMLMAP_IN";
+							jsonRowtFileOutputJSON_1.put("text_id", coronaWarnAPP.text_id);
 
-	
+						} else {
+							jsonRowtFileOutputJSON_1.put("text_id", null);
+						}
 
-}//TD512
- 
+						if (coronaWarnAPP.date_id != null) {
 
-ok_Hash.put("tXMLMap_1_TXMLMAP_IN", true);
-end_Hash.put("tXMLMap_1_TXMLMAP_IN", System.currentTimeMillis());
+							jsonRowtFileOutputJSON_1.put("date_id", coronaWarnAPP.date_id);
 
+						} else {
+							jsonRowtFileOutputJSON_1.put("date_id", null);
+						}
 
+						if (!isFirst_tFileOutputJSON_1) {
+							outtFileOutputJSON_1.append(",");
+						}
+						isFirst_tFileOutputJSON_1 = false;
+						outtFileOutputJSON_1.append(jsonRowtFileOutputJSON_1.toJSONString());
+						nb_line_tFileOutputJSON_1++;
 
+						tos_count_tFileOutputJSON_1++;
 
-/**
- * [tXMLMap_1_TXMLMAP_IN end ] stop
- */
+						/**
+						 * [tFileOutputJSON_1 main ] stop
+						 */
 
-	
-	/**
-	 * [tFileOutputJSON_1 end ] start
-	 */
+						/**
+						 * [tFileOutputJSON_1 process_data_begin ] start
+						 */
 
-	
+						currentComponent = "tFileOutputJSON_1";
 
-	
-	
-	currentComponent="tFileOutputJSON_1";
+						/**
+						 * [tFileOutputJSON_1 process_data_begin ] stop
+						 */
 
-	
+						/**
+						 * [tFileOutputJSON_1 process_data_end ] start
+						 */
 
-	outtFileOutputJSON_1.print("]}");
-outtFileOutputJSON_1.close();
-globalMap.put("tFileOutputJSON_1_NB_LINE",nb_line_tFileOutputJSON_1);
+						currentComponent = "tFileOutputJSON_1";
 
-				if(execStat){
-			  		runStat.updateStat(resourceMap,iterateId,2,0,"coronaWarnAPP");
-			  	}
-			  	
- 
+						/**
+						 * [tFileOutputJSON_1 process_data_end ] stop
+						 */
 
-ok_Hash.put("tFileOutputJSON_1", true);
-end_Hash.put("tFileOutputJSON_1", System.currentTimeMillis());
+					} // End of branch "coronaWarnAPP"
 
-				if(execStat){   
-   	 				runStat.updateStatOnConnection("OnComponentOk3", 0, "ok");
+					/**
+					 * [tXMLMap_1_TXMLMAP_IN process_data_end ] start
+					 */
+
+					currentVirtualComponent = "tXMLMap_1";
+
+					currentComponent = "tXMLMap_1_TXMLMAP_IN";
+
+					/**
+					 * [tXMLMap_1_TXMLMAP_IN process_data_end ] stop
+					 */
+
+					/**
+					 * [tXMLMap_1_TXMLMAP_IN end ] start
+					 */
+
+					currentVirtualComponent = "tXMLMap_1";
+
+					currentComponent = "tXMLMap_1_TXMLMAP_IN";
+
+				} // TD512
+
+				ok_Hash.put("tXMLMap_1_TXMLMAP_IN", true);
+				end_Hash.put("tXMLMap_1_TXMLMAP_IN", System.currentTimeMillis());
+
+				/**
+				 * [tXMLMap_1_TXMLMAP_IN end ] stop
+				 */
+
+				/**
+				 * [tFileOutputJSON_1 end ] start
+				 */
+
+				currentComponent = "tFileOutputJSON_1";
+
+				outtFileOutputJSON_1.print("]}");
+				outtFileOutputJSON_1.close();
+				globalMap.put("tFileOutputJSON_1_NB_LINE", nb_line_tFileOutputJSON_1);
+
+				if (execStat) {
+					runStat.updateStat(resourceMap, iterateId, 2, 0, "coronaWarnAPP");
+				}
+
+				ok_Hash.put("tFileOutputJSON_1", true);
+				end_Hash.put("tFileOutputJSON_1", System.currentTimeMillis());
+
+				if (execStat) {
+					runStat.updateStatOnConnection("OnComponentOk3", 0, "ok");
 				}
 				tRESTClient_2Process(globalMap);
 
+				/**
+				 * [tFileOutputJSON_1 end ] stop
+				 */
 
+			} // end the resume
 
-/**
- * [tFileOutputJSON_1 end ] stop
- */
+		} catch (java.lang.Exception e) {
 
+			TalendException te = new TalendException(e, currentComponent, globalMap);
 
+			te.setVirtualComponentName(currentVirtualComponent);
 
+			throw te;
+		} catch (java.lang.Error error) {
 
+			runStat.stopThreadStat();
 
+			throw error;
+		} finally {
 
+			try {
 
+				/**
+				 * [tRESTClient_1 finally ] start
+				 */
 
+				currentComponent = "tRESTClient_1";
 
-				}//end the resume
+				/**
+				 * [tRESTClient_1 finally ] stop
+				 */
 
-				
+				/**
+				 * [tXMLMap_1_TXMLMAP_OUT finally ] start
+				 */
 
+				currentVirtualComponent = "tXMLMap_1";
 
+				currentComponent = "tXMLMap_1_TXMLMAP_OUT";
 
-	
-			}catch(java.lang.Exception e){	
-				
-				TalendException te = new TalendException(e, currentComponent, globalMap);
-				
-					te.setVirtualComponentName(currentVirtualComponent);
-				
-				throw te;
-			}catch(java.lang.Error error){	
-				
-					runStat.stopThreadStat();
-				
-				throw error;
-			}finally{
-				
-				try{
-					
-	
-	/**
-	 * [tRESTClient_1 finally ] start
-	 */
+				/**
+				 * [tXMLMap_1_TXMLMAP_OUT finally ] stop
+				 */
 
-	
+				/**
+				 * [tXMLMap_1_TXMLMAP_IN finally ] start
+				 */
 
-	
-	
-	currentComponent="tRESTClient_1";
+				currentVirtualComponent = "tXMLMap_1";
 
-	
+				currentComponent = "tXMLMap_1_TXMLMAP_IN";
 
- 
+				/**
+				 * [tXMLMap_1_TXMLMAP_IN finally ] stop
+				 */
 
+				/**
+				 * [tFileOutputJSON_1 finally ] start
+				 */
 
+				currentComponent = "tFileOutputJSON_1";
 
-/**
- * [tRESTClient_1 finally ] stop
- */
+				/**
+				 * [tFileOutputJSON_1 finally ] stop
+				 */
 
-	
-	/**
-	 * [tXMLMap_1_TXMLMAP_OUT finally ] start
-	 */
-
-	
-
-	
-	
-		currentVirtualComponent = "tXMLMap_1";
-	
-	currentComponent="tXMLMap_1_TXMLMAP_OUT";
-
-	
-
- 
-
-
-
-/**
- * [tXMLMap_1_TXMLMAP_OUT finally ] stop
- */
-
-	
-	/**
-	 * [tXMLMap_1_TXMLMAP_IN finally ] start
-	 */
-
-	
-
-	
-	
-		currentVirtualComponent = "tXMLMap_1";
-	
-	currentComponent="tXMLMap_1_TXMLMAP_IN";
-
-	
-
- 
-
-
-
-/**
- * [tXMLMap_1_TXMLMAP_IN finally ] stop
- */
-
-	
-	/**
-	 * [tFileOutputJSON_1 finally ] start
-	 */
-
-	
-
-	
-	
-	currentComponent="tFileOutputJSON_1";
-
-	
-
- 
-
-
-
-/**
- * [tFileOutputJSON_1 finally ] stop
- */
-
-
-
-
-
-
-
-
-
-				}catch(java.lang.Exception e){	
-					//ignore
-				}catch(java.lang.Error error){
-					//ignore
-				}
-				resourceMap = null;
+			} catch (java.lang.Exception e) {
+				// ignore
+			} catch (java.lang.Error error) {
+				// ignore
 			}
-		
+			resourceMap = null;
+		}
 
 		globalMap.put("tRESTClient_1_SUBPROCESS_STATE", 1);
 	}
-	
 
+	public static class tousAntiCovidStruct implements routines.system.IPersistableRow<tousAntiCovidStruct> {
+		final static byte[] commonByteArrayLock_ANALYSIS_TWITTER_s0_connexion_api_twitter_apps_covid = new byte[0];
+		static byte[] commonByteArray_ANALYSIS_TWITTER_s0_connexion_api_twitter_apps_covid = new byte[0];
 
-public static class tousAntiCovidStruct implements routines.system.IPersistableRow<tousAntiCovidStruct> {
-    final static byte[] commonByteArrayLock_ANALYSIS_TWITTER_s0_connexion_api_twitter_apps_covid = new byte[0];
-    static byte[] commonByteArray_ANALYSIS_TWITTER_s0_connexion_api_twitter_apps_covid = new byte[0];
+		public String id;
 
-	
-			    public String id;
+		public String getId() {
+			return this.id;
+		}
 
-				public String getId () {
-					return this.id;
+		public java.util.Date date_description;
+
+		public java.util.Date getDate_description() {
+			return this.date_description;
+		}
+
+		public String user_id;
+
+		public String getUser_id() {
+			return this.user_id;
+		}
+
+		public String user_name;
+
+		public String getUser_name() {
+			return this.user_name;
+		}
+
+		public String user_screen_name;
+
+		public String getUser_screen_name() {
+			return this.user_screen_name;
+		}
+
+		public String user_location;
+
+		public String getUser_location() {
+			return this.user_location;
+		}
+
+		public String user_description;
+
+		public String getUser_description() {
+			return this.user_description;
+		}
+
+		public String hashtag_text;
+
+		public String getHashtag_text() {
+			return this.hashtag_text;
+		}
+
+		public String text_description;
+
+		public String getText_description() {
+			return this.text_description;
+		}
+
+		public String hashtag_id;
+
+		public String getHashtag_id() {
+			return this.hashtag_id;
+		}
+
+		public String geo_id;
+
+		public String getGeo_id() {
+			return this.geo_id;
+		}
+
+		public String geo_description;
+
+		public String getGeo_description() {
+			return this.geo_description;
+		}
+
+		public String text_id;
+
+		public String getText_id() {
+			return this.text_id;
+		}
+
+		public String date_id;
+
+		public String getDate_id() {
+			return this.date_id;
+		}
+
+		private String readString(ObjectInputStream dis) throws IOException {
+			String strReturn = null;
+			int length = 0;
+			length = dis.readInt();
+			if (length == -1) {
+				strReturn = null;
+			} else {
+				if (length > commonByteArray_ANALYSIS_TWITTER_s0_connexion_api_twitter_apps_covid.length) {
+					if (length < 1024
+							&& commonByteArray_ANALYSIS_TWITTER_s0_connexion_api_twitter_apps_covid.length == 0) {
+						commonByteArray_ANALYSIS_TWITTER_s0_connexion_api_twitter_apps_covid = new byte[1024];
+					} else {
+						commonByteArray_ANALYSIS_TWITTER_s0_connexion_api_twitter_apps_covid = new byte[2 * length];
+					}
 				}
-				
-			    public java.util.Date date_description;
-
-				public java.util.Date getDate_description () {
-					return this.date_description;
-				}
-				
-			    public String user_id;
-
-				public String getUser_id () {
-					return this.user_id;
-				}
-				
-			    public String user_name;
-
-				public String getUser_name () {
-					return this.user_name;
-				}
-				
-			    public String user_screen_name;
-
-				public String getUser_screen_name () {
-					return this.user_screen_name;
-				}
-				
-			    public String user_location;
-
-				public String getUser_location () {
-					return this.user_location;
-				}
-				
-			    public String user_description;
-
-				public String getUser_description () {
-					return this.user_description;
-				}
-				
-			    public String hashtag_text;
-
-				public String getHashtag_text () {
-					return this.hashtag_text;
-				}
-				
-			    public String text_description;
-
-				public String getText_description () {
-					return this.text_description;
-				}
-				
-			    public String hashtag_id;
-
-				public String getHashtag_id () {
-					return this.hashtag_id;
-				}
-				
-			    public String geo_id;
-
-				public String getGeo_id () {
-					return this.geo_id;
-				}
-				
-			    public String geo_description;
-
-				public String getGeo_description () {
-					return this.geo_description;
-				}
-				
-			    public String text_id;
-
-				public String getText_id () {
-					return this.text_id;
-				}
-				
-			    public String date_id;
-
-				public String getDate_id () {
-					return this.date_id;
-				}
-				
-
-
-
-	private String readString(ObjectInputStream dis) throws IOException{
-		String strReturn = null;
-		int length = 0;
-        length = dis.readInt();
-		if (length == -1) {
-			strReturn = null;
-		} else {
-			if(length > commonByteArray_ANALYSIS_TWITTER_s0_connexion_api_twitter_apps_covid.length) {
-				if(length < 1024 && commonByteArray_ANALYSIS_TWITTER_s0_connexion_api_twitter_apps_covid.length == 0) {
-   					commonByteArray_ANALYSIS_TWITTER_s0_connexion_api_twitter_apps_covid = new byte[1024];
-				} else {
-   					commonByteArray_ANALYSIS_TWITTER_s0_connexion_api_twitter_apps_covid = new byte[2 * length];
-   				}
+				dis.readFully(commonByteArray_ANALYSIS_TWITTER_s0_connexion_api_twitter_apps_covid, 0, length);
+				strReturn = new String(commonByteArray_ANALYSIS_TWITTER_s0_connexion_api_twitter_apps_covid, 0, length,
+						utf8Charset);
 			}
-			dis.readFully(commonByteArray_ANALYSIS_TWITTER_s0_connexion_api_twitter_apps_covid, 0, length);
-			strReturn = new String(commonByteArray_ANALYSIS_TWITTER_s0_connexion_api_twitter_apps_covid, 0, length, utf8Charset);
+			return strReturn;
 		}
-		return strReturn;
-	}
 
-    private void writeString(String str, ObjectOutputStream dos) throws IOException{
-		if(str == null) {
-            dos.writeInt(-1);
-		} else {
-            byte[] byteArray = str.getBytes(utf8Charset);
-	    	dos.writeInt(byteArray.length);
-			dos.write(byteArray);
-    	}
-    }
-
-	private java.util.Date readDate(ObjectInputStream dis) throws IOException{
-		java.util.Date dateReturn = null;
-        int length = 0;
-        length = dis.readByte();
-		if (length == -1) {
-			dateReturn = null;
-		} else {
-	    	dateReturn = new Date(dis.readLong());
+		private void writeString(String str, ObjectOutputStream dos) throws IOException {
+			if (str == null) {
+				dos.writeInt(-1);
+			} else {
+				byte[] byteArray = str.getBytes(utf8Charset);
+				dos.writeInt(byteArray.length);
+				dos.write(byteArray);
+			}
 		}
-		return dateReturn;
-	}
 
-    private void writeDate(java.util.Date date1, ObjectOutputStream dos) throws IOException{
-		if(date1 == null) {
-            dos.writeByte(-1);
-		} else {
-			dos.writeByte(0);
-	    	dos.writeLong(date1.getTime());
-    	}
-    }
+		private java.util.Date readDate(ObjectInputStream dis) throws IOException {
+			java.util.Date dateReturn = null;
+			int length = 0;
+			length = dis.readByte();
+			if (length == -1) {
+				dateReturn = null;
+			} else {
+				dateReturn = new Date(dis.readLong());
+			}
+			return dateReturn;
+		}
 
-    public void readData(ObjectInputStream dis) {
+		private void writeDate(java.util.Date date1, ObjectOutputStream dos) throws IOException {
+			if (date1 == null) {
+				dos.writeByte(-1);
+			} else {
+				dos.writeByte(0);
+				dos.writeLong(date1.getTime());
+			}
+		}
 
-		synchronized(commonByteArrayLock_ANALYSIS_TWITTER_s0_connexion_api_twitter_apps_covid) {
+		public void readData(ObjectInputStream dis) {
 
-        	try {
+			synchronized (commonByteArrayLock_ANALYSIS_TWITTER_s0_connexion_api_twitter_apps_covid) {
 
-        		int length = 0;
-		
+				try {
+
+					int length = 0;
+
 					this.id = readString(dis);
-					
+
 					this.date_description = readDate(dis);
-					
+
 					this.user_id = readString(dis);
-					
+
 					this.user_name = readString(dis);
-					
+
 					this.user_screen_name = readString(dis);
-					
+
 					this.user_location = readString(dis);
-					
+
 					this.user_description = readString(dis);
-					
+
 					this.hashtag_text = readString(dis);
-					
+
 					this.text_description = readString(dis);
-					
+
 					this.hashtag_id = readString(dis);
-					
+
 					this.geo_id = readString(dis);
-					
+
 					this.geo_description = readString(dis);
-					
+
 					this.text_id = readString(dis);
-					
+
 					this.date_id = readString(dis);
-					
-        	} catch (IOException e) {
-	            throw new RuntimeException(e);
 
-		
+				} catch (IOException e) {
+					throw new RuntimeException(e);
 
-        }
-
-		
-
-      }
-
-
-    }
-
-    public void writeData(ObjectOutputStream dos) {
-        try {
-
-		
-					// String
-				
-						writeString(this.id,dos);
-					
-					// java.util.Date
-				
-						writeDate(this.date_description,dos);
-					
-					// String
-				
-						writeString(this.user_id,dos);
-					
-					// String
-				
-						writeString(this.user_name,dos);
-					
-					// String
-				
-						writeString(this.user_screen_name,dos);
-					
-					// String
-				
-						writeString(this.user_location,dos);
-					
-					// String
-				
-						writeString(this.user_description,dos);
-					
-					// String
-				
-						writeString(this.hashtag_text,dos);
-					
-					// String
-				
-						writeString(this.text_description,dos);
-					
-					// String
-				
-						writeString(this.hashtag_id,dos);
-					
-					// String
-				
-						writeString(this.geo_id,dos);
-					
-					// String
-				
-						writeString(this.geo_description,dos);
-					
-					// String
-				
-						writeString(this.text_id,dos);
-					
-					// String
-				
-						writeString(this.date_id,dos);
-					
-        	} catch (IOException e) {
-	            throw new RuntimeException(e);
-        }
-
-
-    }
-
-
-    public String toString() {
-
-		StringBuilder sb = new StringBuilder();
-		sb.append(super.toString());
-		sb.append("[");
-		sb.append("id="+id);
-		sb.append(",date_description="+String.valueOf(date_description));
-		sb.append(",user_id="+user_id);
-		sb.append(",user_name="+user_name);
-		sb.append(",user_screen_name="+user_screen_name);
-		sb.append(",user_location="+user_location);
-		sb.append(",user_description="+user_description);
-		sb.append(",hashtag_text="+hashtag_text);
-		sb.append(",text_description="+text_description);
-		sb.append(",hashtag_id="+hashtag_id);
-		sb.append(",geo_id="+geo_id);
-		sb.append(",geo_description="+geo_description);
-		sb.append(",text_id="+text_id);
-		sb.append(",date_id="+date_id);
-	    sb.append("]");
-
-	    return sb.toString();
-    }
-
-    /**
-     * Compare keys
-     */
-    public int compareTo(tousAntiCovidStruct other) {
-
-		int returnValue = -1;
-		
-	    return returnValue;
-    }
-
-
-    private int checkNullsAndCompare(Object object1, Object object2) {
-        int returnValue = 0;
-		if (object1 instanceof Comparable && object2 instanceof Comparable) {
-            returnValue = ((Comparable) object1).compareTo(object2);
-        } else if (object1 != null && object2 != null) {
-            returnValue = compareStrings(object1.toString(), object2.toString());
-        } else if (object1 == null && object2 != null) {
-            returnValue = 1;
-        } else if (object1 != null && object2 == null) {
-            returnValue = -1;
-        } else {
-            returnValue = 0;
-        }
-
-        return returnValue;
-    }
-
-    private int compareStrings(String string1, String string2) {
-        return string1.compareTo(string2);
-    }
-
-
-}
-
-public static class row2Struct implements routines.system.IPersistableRow<row2Struct> {
-    final static byte[] commonByteArrayLock_ANALYSIS_TWITTER_s0_connexion_api_twitter_apps_covid = new byte[0];
-    static byte[] commonByteArray_ANALYSIS_TWITTER_s0_connexion_api_twitter_apps_covid = new byte[0];
-
-	
-			    public Integer statusCode;
-
-				public Integer getStatusCode () {
-					return this.statusCode;
 				}
-				
-			    public routines.system.Document body;
 
-				public routines.system.Document getBody () {
-					return this.body;
-				}
-				
-			    public String string;
-
-				public String getString () {
-					return this.string;
-				}
-				
-
-
-	private Integer readInteger(ObjectInputStream dis) throws IOException{
-		Integer intReturn;
-        int length = 0;
-        length = dis.readByte();
-		if (length == -1) {
-			intReturn = null;
-		} else {
-	    	intReturn = dis.readInt();
-		}
-		return intReturn;
-	}
-
-	private void writeInteger(Integer intNum, ObjectOutputStream dos) throws IOException{
-		if(intNum == null) {
-            dos.writeByte(-1);
-		} else {
-			dos.writeByte(0);
-	    	dos.writeInt(intNum);
-    	}
-	}
-
-	private String readString(ObjectInputStream dis) throws IOException{
-		String strReturn = null;
-		int length = 0;
-        length = dis.readInt();
-		if (length == -1) {
-			strReturn = null;
-		} else {
-			if(length > commonByteArray_ANALYSIS_TWITTER_s0_connexion_api_twitter_apps_covid.length) {
-				if(length < 1024 && commonByteArray_ANALYSIS_TWITTER_s0_connexion_api_twitter_apps_covid.length == 0) {
-   					commonByteArray_ANALYSIS_TWITTER_s0_connexion_api_twitter_apps_covid = new byte[1024];
-				} else {
-   					commonByteArray_ANALYSIS_TWITTER_s0_connexion_api_twitter_apps_covid = new byte[2 * length];
-   				}
 			}
-			dis.readFully(commonByteArray_ANALYSIS_TWITTER_s0_connexion_api_twitter_apps_covid, 0, length);
-			strReturn = new String(commonByteArray_ANALYSIS_TWITTER_s0_connexion_api_twitter_apps_covid, 0, length, utf8Charset);
+
 		}
-		return strReturn;
+
+		public void writeData(ObjectOutputStream dos) {
+			try {
+
+				// String
+
+				writeString(this.id, dos);
+
+				// java.util.Date
+
+				writeDate(this.date_description, dos);
+
+				// String
+
+				writeString(this.user_id, dos);
+
+				// String
+
+				writeString(this.user_name, dos);
+
+				// String
+
+				writeString(this.user_screen_name, dos);
+
+				// String
+
+				writeString(this.user_location, dos);
+
+				// String
+
+				writeString(this.user_description, dos);
+
+				// String
+
+				writeString(this.hashtag_text, dos);
+
+				// String
+
+				writeString(this.text_description, dos);
+
+				// String
+
+				writeString(this.hashtag_id, dos);
+
+				// String
+
+				writeString(this.geo_id, dos);
+
+				// String
+
+				writeString(this.geo_description, dos);
+
+				// String
+
+				writeString(this.text_id, dos);
+
+				// String
+
+				writeString(this.date_id, dos);
+
+			} catch (IOException e) {
+				throw new RuntimeException(e);
+			}
+
+		}
+
+		public String toString() {
+
+			StringBuilder sb = new StringBuilder();
+			sb.append(super.toString());
+			sb.append("[");
+			sb.append("id=" + id);
+			sb.append(",date_description=" + String.valueOf(date_description));
+			sb.append(",user_id=" + user_id);
+			sb.append(",user_name=" + user_name);
+			sb.append(",user_screen_name=" + user_screen_name);
+			sb.append(",user_location=" + user_location);
+			sb.append(",user_description=" + user_description);
+			sb.append(",hashtag_text=" + hashtag_text);
+			sb.append(",text_description=" + text_description);
+			sb.append(",hashtag_id=" + hashtag_id);
+			sb.append(",geo_id=" + geo_id);
+			sb.append(",geo_description=" + geo_description);
+			sb.append(",text_id=" + text_id);
+			sb.append(",date_id=" + date_id);
+			sb.append("]");
+
+			return sb.toString();
+		}
+
+		/**
+		 * Compare keys
+		 */
+		public int compareTo(tousAntiCovidStruct other) {
+
+			int returnValue = -1;
+
+			return returnValue;
+		}
+
+		private int checkNullsAndCompare(Object object1, Object object2) {
+			int returnValue = 0;
+			if (object1 instanceof Comparable && object2 instanceof Comparable) {
+				returnValue = ((Comparable) object1).compareTo(object2);
+			} else if (object1 != null && object2 != null) {
+				returnValue = compareStrings(object1.toString(), object2.toString());
+			} else if (object1 == null && object2 != null) {
+				returnValue = 1;
+			} else if (object1 != null && object2 == null) {
+				returnValue = -1;
+			} else {
+				returnValue = 0;
+			}
+
+			return returnValue;
+		}
+
+		private int compareStrings(String string1, String string2) {
+			return string1.compareTo(string2);
+		}
+
 	}
 
-    private void writeString(String str, ObjectOutputStream dos) throws IOException{
-		if(str == null) {
-            dos.writeInt(-1);
-		} else {
-            byte[] byteArray = str.getBytes(utf8Charset);
-	    	dos.writeInt(byteArray.length);
-			dos.write(byteArray);
-    	}
-    }
+	public static class row2Struct implements routines.system.IPersistableRow<row2Struct> {
+		final static byte[] commonByteArrayLock_ANALYSIS_TWITTER_s0_connexion_api_twitter_apps_covid = new byte[0];
+		static byte[] commonByteArray_ANALYSIS_TWITTER_s0_connexion_api_twitter_apps_covid = new byte[0];
 
-    public void readData(ObjectInputStream dis) {
+		public Integer statusCode;
 
-		synchronized(commonByteArrayLock_ANALYSIS_TWITTER_s0_connexion_api_twitter_apps_covid) {
+		public Integer getStatusCode() {
+			return this.statusCode;
+		}
 
-        	try {
+		public routines.system.Document body;
 
-        		int length = 0;
-		
-						this.statusCode = readInteger(dis);
-					
-						this.body = (routines.system.Document) dis.readObject();
-					
+		public routines.system.Document getBody() {
+			return this.body;
+		}
+
+		public String string;
+
+		public String getString() {
+			return this.string;
+		}
+
+		private Integer readInteger(ObjectInputStream dis) throws IOException {
+			Integer intReturn;
+			int length = 0;
+			length = dis.readByte();
+			if (length == -1) {
+				intReturn = null;
+			} else {
+				intReturn = dis.readInt();
+			}
+			return intReturn;
+		}
+
+		private void writeInteger(Integer intNum, ObjectOutputStream dos) throws IOException {
+			if (intNum == null) {
+				dos.writeByte(-1);
+			} else {
+				dos.writeByte(0);
+				dos.writeInt(intNum);
+			}
+		}
+
+		private String readString(ObjectInputStream dis) throws IOException {
+			String strReturn = null;
+			int length = 0;
+			length = dis.readInt();
+			if (length == -1) {
+				strReturn = null;
+			} else {
+				if (length > commonByteArray_ANALYSIS_TWITTER_s0_connexion_api_twitter_apps_covid.length) {
+					if (length < 1024
+							&& commonByteArray_ANALYSIS_TWITTER_s0_connexion_api_twitter_apps_covid.length == 0) {
+						commonByteArray_ANALYSIS_TWITTER_s0_connexion_api_twitter_apps_covid = new byte[1024];
+					} else {
+						commonByteArray_ANALYSIS_TWITTER_s0_connexion_api_twitter_apps_covid = new byte[2 * length];
+					}
+				}
+				dis.readFully(commonByteArray_ANALYSIS_TWITTER_s0_connexion_api_twitter_apps_covid, 0, length);
+				strReturn = new String(commonByteArray_ANALYSIS_TWITTER_s0_connexion_api_twitter_apps_covid, 0, length,
+						utf8Charset);
+			}
+			return strReturn;
+		}
+
+		private void writeString(String str, ObjectOutputStream dos) throws IOException {
+			if (str == null) {
+				dos.writeInt(-1);
+			} else {
+				byte[] byteArray = str.getBytes(utf8Charset);
+				dos.writeInt(byteArray.length);
+				dos.write(byteArray);
+			}
+		}
+
+		public void readData(ObjectInputStream dis) {
+
+			synchronized (commonByteArrayLock_ANALYSIS_TWITTER_s0_connexion_api_twitter_apps_covid) {
+
+				try {
+
+					int length = 0;
+
+					this.statusCode = readInteger(dis);
+
+					this.body = (routines.system.Document) dis.readObject();
+
 					this.string = readString(dis);
-					
-        	} catch (IOException e) {
-	            throw new RuntimeException(e);
 
-		
-			} catch(ClassNotFoundException eCNFE) {
-				 throw new RuntimeException(eCNFE);
-		
+				} catch (IOException e) {
+					throw new RuntimeException(e);
 
-        }
+				} catch (ClassNotFoundException eCNFE) {
+					throw new RuntimeException(eCNFE);
 
-		
+				}
 
-      }
+			}
 
+		}
 
-    }
+		public void writeData(ObjectOutputStream dos) {
+			try {
 
-    public void writeData(ObjectOutputStream dos) {
-        try {
+				// Integer
 
-		
-					// Integer
-				
-						writeInteger(this.statusCode,dos);
-					
-					// Document
-				
-       			    	dos.writeObject(this.body);
-					
-					// String
-				
-						writeString(this.string,dos);
-					
-        	} catch (IOException e) {
-	            throw new RuntimeException(e);
-        }
+				writeInteger(this.statusCode, dos);
 
+				// Document
 
-    }
+				dos.writeObject(this.body);
 
+				// String
 
-    public String toString() {
+				writeString(this.string, dos);
 
-		StringBuilder sb = new StringBuilder();
-		sb.append(super.toString());
-		sb.append("[");
-		sb.append("statusCode="+String.valueOf(statusCode));
-		sb.append(",body="+String.valueOf(body));
-		sb.append(",string="+string);
-	    sb.append("]");
+			} catch (IOException e) {
+				throw new RuntimeException(e);
+			}
 
-	    return sb.toString();
-    }
+		}
 
-    /**
-     * Compare keys
-     */
-    public int compareTo(row2Struct other) {
+		public String toString() {
 
-		int returnValue = -1;
-		
-	    return returnValue;
-    }
+			StringBuilder sb = new StringBuilder();
+			sb.append(super.toString());
+			sb.append("[");
+			sb.append("statusCode=" + String.valueOf(statusCode));
+			sb.append(",body=" + String.valueOf(body));
+			sb.append(",string=" + string);
+			sb.append("]");
 
+			return sb.toString();
+		}
 
-    private int checkNullsAndCompare(Object object1, Object object2) {
-        int returnValue = 0;
-		if (object1 instanceof Comparable && object2 instanceof Comparable) {
-            returnValue = ((Comparable) object1).compareTo(object2);
-        } else if (object1 != null && object2 != null) {
-            returnValue = compareStrings(object1.toString(), object2.toString());
-        } else if (object1 == null && object2 != null) {
-            returnValue = 1;
-        } else if (object1 != null && object2 == null) {
-            returnValue = -1;
-        } else {
-            returnValue = 0;
-        }
+		/**
+		 * Compare keys
+		 */
+		public int compareTo(row2Struct other) {
 
-        return returnValue;
-    }
+			int returnValue = -1;
 
-    private int compareStrings(String string1, String string2) {
-        return string1.compareTo(string2);
-    }
+			return returnValue;
+		}
 
+		private int checkNullsAndCompare(Object object1, Object object2) {
+			int returnValue = 0;
+			if (object1 instanceof Comparable && object2 instanceof Comparable) {
+				returnValue = ((Comparable) object1).compareTo(object2);
+			} else if (object1 != null && object2 != null) {
+				returnValue = compareStrings(object1.toString(), object2.toString());
+			} else if (object1 == null && object2 != null) {
+				returnValue = 1;
+			} else if (object1 != null && object2 == null) {
+				returnValue = -1;
+			} else {
+				returnValue = 0;
+			}
 
-}
-public void tRESTClient_2Process(final java.util.Map<String, Object> globalMap) throws TalendException {
-	globalMap.put("tRESTClient_2_SUBPROCESS_STATE", 0);
+			return returnValue;
+		}
 
- final boolean execStat = this.execStat;
+		private int compareStrings(String string1, String string2) {
+			return string1.compareTo(string2);
+		}
+
+	}
+
+	public void tRESTClient_2Process(final java.util.Map<String, Object> globalMap) throws TalendException {
+		globalMap.put("tRESTClient_2_SUBPROCESS_STATE", 0);
+
+		final boolean execStat = this.execStat;
 		String currentVirtualComponent = null;
-	
-		String iterateId = "";
-	
-	
-	String currentComponent = "";
-	java.util.Map<String, Object> resourceMap = new java.util.HashMap<String, Object>();
 
-	try {
+		String iterateId = "";
+
+		String currentComponent = "";
+		java.util.Map<String, Object> resourceMap = new java.util.HashMap<String, Object>();
+
+		try {
 			// TDI-39566 avoid throwing an useless Exception
 			boolean resumeIt = true;
 			if (globalResumeTicket == false && resumeEntryMethodName != null) {
 				String currentMethodName = new java.lang.Exception().getStackTrace()[0].getMethodName();
 				resumeIt = resumeEntryMethodName.equals(currentMethodName);
 			}
-			if (resumeIt || globalResumeTicket) { //start the resume
+			if (resumeIt || globalResumeTicket) { // start the resume
 				globalResumeTicket = true;
 
+				row2Struct row2 = new row2Struct();
+				tousAntiCovidStruct tousAntiCovid = new tousAntiCovidStruct();
 
+				/**
+				 * [tXMLMap_2_TXMLMAP_OUT begin ] start
+				 */
 
-		row2Struct row2 = new row2Struct();
-tousAntiCovidStruct tousAntiCovid = new tousAntiCovidStruct();
+				ok_Hash.put("tXMLMap_2_TXMLMAP_OUT", false);
+				start_Hash.put("tXMLMap_2_TXMLMAP_OUT", System.currentTimeMillis());
 
+				currentVirtualComponent = "tXMLMap_2";
 
+				currentComponent = "tXMLMap_2_TXMLMAP_OUT";
 
+				if (execStat) {
+					runStat.updateStatOnConnection(resourceMap, iterateId, 0, 0, "row2");
+				}
 
-	
-	/**
-	 * [tXMLMap_2_TXMLMAP_OUT begin ] start
-	 */
+				int tos_count_tXMLMap_2_TXMLMAP_OUT = 0;
 
-	
-
-	
-		
-		ok_Hash.put("tXMLMap_2_TXMLMAP_OUT", false);
-		start_Hash.put("tXMLMap_2_TXMLMAP_OUT", System.currentTimeMillis());
-		
-	
-		currentVirtualComponent = "tXMLMap_2";
-	
-	currentComponent="tXMLMap_2_TXMLMAP_OUT";
-
-	
-					if(execStat) {
-						runStat.updateStatOnConnection(resourceMap,iterateId,0,0,"row2");
-					}
-				
-		int tos_count_tXMLMap_2_TXMLMAP_OUT = 0;
-		
-
-	
-	
 //===============================input xml init part===============================
-class XML_API_tXMLMap_2_TXMLMAP_OUT{
-	public boolean isDefNull(org.dom4j.Node node) throws javax.xml.transform.TransformerException {
-        if (node != null && node instanceof org.dom4j.Element) {
-        	org.dom4j.Attribute attri = ((org.dom4j.Element)node).attribute("nil");
-        	if(attri != null && ("true").equals(attri.getText())){
-            	return true;
-            }
-        }
-        return false;
-    }
+				class XML_API_tXMLMap_2_TXMLMAP_OUT {
+					public boolean isDefNull(org.dom4j.Node node) throws javax.xml.transform.TransformerException {
+						if (node != null && node instanceof org.dom4j.Element) {
+							org.dom4j.Attribute attri = ((org.dom4j.Element) node).attribute("nil");
+							if (attri != null && ("true").equals(attri.getText())) {
+								return true;
+							}
+						}
+						return false;
+					}
 
-    public boolean isMissing(org.dom4j.Node node) throws javax.xml.transform.TransformerException {
-        return node == null ? true : false;
-    }
+					public boolean isMissing(org.dom4j.Node node) throws javax.xml.transform.TransformerException {
+						return node == null ? true : false;
+					}
 
-    public boolean isEmpty(org.dom4j.Node node) throws javax.xml.transform.TransformerException {
-        if (node != null) {
-            return node.getText().length() == 0;
-        }
-        return false;
-    }
-}
-	class Var__tXMLMap_2_TXMLMAP_OUT__Struct {
-	}
-	Var__tXMLMap_2_TXMLMAP_OUT__Struct Var__tXMLMap_2_TXMLMAP_OUT = new Var__tXMLMap_2_TXMLMAP_OUT__Struct();
+					public boolean isEmpty(org.dom4j.Node node) throws javax.xml.transform.TransformerException {
+						if (node != null) {
+							return node.getText().length() == 0;
+						}
+						return false;
+					}
+				}
+				class Var__tXMLMap_2_TXMLMAP_OUT__Struct {
+				}
+				Var__tXMLMap_2_TXMLMAP_OUT__Struct Var__tXMLMap_2_TXMLMAP_OUT = new Var__tXMLMap_2_TXMLMAP_OUT__Struct();
 // ###############################
 // # Outputs initialization
-tousAntiCovidStruct tousAntiCovid_tmp = new tousAntiCovidStruct();
-tousAntiCovidStruct tousAntiCovid_save = null;
+				tousAntiCovidStruct tousAntiCovid_tmp = new tousAntiCovidStruct();
+				tousAntiCovidStruct tousAntiCovid_save = null;
 //the aggregate variable
-tousAntiCovidStruct tousAntiCovid_aggregate = null;
+				tousAntiCovidStruct tousAntiCovid_aggregate = null;
 //init the resultset for aggregate
-java.util.List<Object> allOutsForAggregate_tXMLMap_2 = new java.util.ArrayList<Object>();
-globalMap.put("allOutsForAggregate_tXMLMap_2",allOutsForAggregate_tXMLMap_2);
+				java.util.List<Object> allOutsForAggregate_tXMLMap_2 = new java.util.ArrayList<Object>();
+				globalMap.put("allOutsForAggregate_tXMLMap_2", allOutsForAggregate_tXMLMap_2);
 // ###############################
-class TreeNode_API_tXMLMap_2_TXMLMAP_OUT {
-	java.util.Map<String, String> xpath_value_map = new java.util.HashMap<String, String>();
-	
-	void clear(){
-		xpath_value_map.clear();
-	}
-	
-	void put(String xpath, String value){
-		xpath_value_map.put(xpath, value);
-	}
-	String get_null(String xpath) {
-		return null;
-	}
-	String get_String(String xpath){
-		return xpath_value_map.get(xpath);
-	}
-}
-			TreeNode_API_tXMLMap_2_TXMLMAP_OUT treeNodeAPI_tXMLMap_2_TXMLMAP_OUT = new TreeNode_API_tXMLMap_2_TXMLMAP_OUT();
-			NameSpaceTool nsTool_tXMLMap_2_TXMLMAP_OUT = new NameSpaceTool();
-		int nb_line_tXMLMap_2_TXMLMAP_OUT = 0; 
-	
-    XML_API_tXMLMap_2_TXMLMAP_OUT xml_api_tXMLMap_2_TXMLMAP_OUT = new XML_API_tXMLMap_2_TXMLMAP_OUT();
+				class TreeNode_API_tXMLMap_2_TXMLMAP_OUT {
+					java.util.Map<String, String> xpath_value_map = new java.util.HashMap<String, String>();
 
-	//the map store the previous value of aggregate columns
-	java.util.Map<String,Object> aggregateCacheMap_tXMLMap_2_TXMLMAP_OUT = new java.util.HashMap<String,Object>();
+					void clear() {
+						xpath_value_map.clear();
+					}
 
-	            
- 
+					void put(String xpath, String value) {
+						xpath_value_map.put(xpath, value);
+					}
 
+					String get_null(String xpath) {
+						return null;
+					}
 
+					String get_String(String xpath) {
+						return xpath_value_map.get(xpath);
+					}
+				}
+				TreeNode_API_tXMLMap_2_TXMLMAP_OUT treeNodeAPI_tXMLMap_2_TXMLMAP_OUT = new TreeNode_API_tXMLMap_2_TXMLMAP_OUT();
+				NameSpaceTool nsTool_tXMLMap_2_TXMLMAP_OUT = new NameSpaceTool();
+				int nb_line_tXMLMap_2_TXMLMAP_OUT = 0;
 
-/**
- * [tXMLMap_2_TXMLMAP_OUT begin ] stop
- */
+				XML_API_tXMLMap_2_TXMLMAP_OUT xml_api_tXMLMap_2_TXMLMAP_OUT = new XML_API_tXMLMap_2_TXMLMAP_OUT();
 
+				// the map store the previous value of aggregate columns
+				java.util.Map<String, Object> aggregateCacheMap_tXMLMap_2_TXMLMAP_OUT = new java.util.HashMap<String, Object>();
 
+				/**
+				 * [tXMLMap_2_TXMLMAP_OUT begin ] stop
+				 */
 
-	
-	/**
-	 * [tRESTClient_2 begin ] start
-	 */
+				/**
+				 * [tRESTClient_2 begin ] start
+				 */
 
-	
+				ok_Hash.put("tRESTClient_2", false);
+				start_Hash.put("tRESTClient_2", System.currentTimeMillis());
 
-	
-		
-		ok_Hash.put("tRESTClient_2", false);
-		start_Hash.put("tRESTClient_2", System.currentTimeMillis());
-		
-	
-	currentComponent="tRESTClient_2";
+				currentComponent = "tRESTClient_2";
 
-	
-		int tos_count_tRESTClient_2 = 0;
-		
+				int tos_count_tRESTClient_2 = 0;
 
- 
+				/**
+				 * [tRESTClient_2 begin ] stop
+				 */
 
+				/**
+				 * [tRESTClient_2 main ] start
+				 */
 
+				currentComponent = "tRESTClient_2";
 
-/**
- * [tRESTClient_2 begin ] stop
- */
-	
-	/**
-	 * [tRESTClient_2 main ] start
-	 */
-
-	
-
-	
-	
-	currentComponent="tRESTClient_2";
-
-	
-	row2 = null;
+				row2 = null;
 
 // expected response body
-Object responseDoc_tRESTClient_2 = null;
+				Object responseDoc_tRESTClient_2 = null;
 
-try {
-	// request body
-	org.dom4j.Document requestDoc_tRESTClient_2 = null;
-	String requestString_tRESTClient_2 = null;
-
-	Object requestBody_tRESTClient_2 = requestDoc_tRESTClient_2 != null ? requestDoc_tRESTClient_2 : requestString_tRESTClient_2;
-
-	
-
-    //resposne class name
-	Class<?> responseClass_tRESTClient_2
-		= org.dom4j.Document.class;
-
-	// create web client instance
-	org.apache.cxf.jaxrs.client.JAXRSClientFactoryBean factoryBean_tRESTClient_2 =
-			new org.apache.cxf.jaxrs.client.JAXRSClientFactoryBean();
-
-	boolean inOSGi = routines.system.BundleUtils.inOSGi();
-
-	final java.util.List<org.apache.cxf.feature.Feature> features_tRESTClient_2 =
-			new java.util.ArrayList<org.apache.cxf.feature.Feature>();
-
-	
-		String url = "https://api.twitter.com/1.1/search/tweets.json?q=%23TousAntiCovid&result_type=recent&count=1000&lang=fr";
-		// {baseUri}tRESTClient
-		factoryBean_tRESTClient_2.setServiceName(new javax.xml.namespace.QName(url, "tRESTClient"));
-		factoryBean_tRESTClient_2.setAddress(url);
-	
-
-	
-
-	
-
-	
-
-	factoryBean_tRESTClient_2.setFeatures(features_tRESTClient_2);
-
-
-	java.util.List<Object> providers_tRESTClient_2 = new java.util.ArrayList<Object>();
-	providers_tRESTClient_2.add(new org.apache.cxf.jaxrs.provider.dom4j.DOM4JProvider() {
-		// workaround for https://jira.talendforge.org/browse/TESB-7276
-		public org.dom4j.Document readFrom(Class<org.dom4j.Document> cls,
-											java.lang.reflect.Type type,
-											java.lang.annotation.Annotation[] anns,
-											javax.ws.rs.core.MediaType mt,
-											javax.ws.rs.core.MultivaluedMap<String, String> headers,
-											java.io.InputStream is)
-				throws IOException, javax.ws.rs.WebApplicationException {
-			String contentLength = headers.getFirst("Content-Length");
-			if (!org.apache.cxf.common.util.StringUtils.isEmpty(contentLength)
-					&& Integer.valueOf(contentLength) <= 0) {
 				try {
-					return org.dom4j.DocumentHelper.parseText("<root/>");
-				} catch (org.dom4j.DocumentException e_tRESTClient_2) {
-					e_tRESTClient_2.printStackTrace();
-				}
-				return null;
-			}
-			return super.readFrom(cls, type, anns, mt, headers, is);
-		}
-	});
-	org.apache.cxf.jaxrs.provider.json.JSONProvider jsonProvider_tRESTClient_2 =
-			new org.apache.cxf.jaxrs.provider.json.JSONProvider();
-		jsonProvider_tRESTClient_2.setIgnoreNamespaces(true);
-		jsonProvider_tRESTClient_2.setAttributesToElements(true);
-	
-	
-		jsonProvider_tRESTClient_2.setSupportUnwrapped(true);
-		jsonProvider_tRESTClient_2.setWrapperName("root");
-	
-	
-		jsonProvider_tRESTClient_2.setDropRootElement(false);
-		jsonProvider_tRESTClient_2.setConvertTypesToStrings(false);
-	providers_tRESTClient_2.add(jsonProvider_tRESTClient_2);
-	factoryBean_tRESTClient_2.setProviders(providers_tRESTClient_2);
-	factoryBean_tRESTClient_2.setTransportId("http://cxf.apache.org/transports/http");
+					// request body
+					org.dom4j.Document requestDoc_tRESTClient_2 = null;
+					String requestString_tRESTClient_2 = null;
 
-	boolean use_auth_tRESTClient_2 = true;
-	
-	
-		if (use_auth_tRESTClient_2 && "SAML".equals("OAUTH2_BEARER")) {
-			if (!inOSGi) {
-				throw new IllegalArgumentException("SAML based security scenarios are not supported in Studio (standalone)");
-			}
-			// set SAML Token authentication
-			
-			 
-	final String decryptedPassword_tRESTClient_2 = routines.system.PasswordEncryptUtil.decryptPassword("enc:routine.encryption.key.v1:xBWPuTo1mLD5txLVj2byLx5icnKOMLjyqHYzFGIQy0wZhRxN");
-	
-			org.apache.cxf.ws.security.trust.STSClient stsClient =
-				org.talend.esb.security.saml.STSClientUtils.createSTSClient(factoryBean_tRESTClient_2.getBus(),
-					"username", decryptedPassword_tRESTClient_2);
-			
-			org.talend.esb.security.saml.SAMLRESTUtils.configureClient(factoryBean_tRESTClient_2, stsClient);
-		}
+					Object requestBody_tRESTClient_2 = requestDoc_tRESTClient_2 != null ? requestDoc_tRESTClient_2
+							: requestString_tRESTClient_2;
 
-	
+					// resposne class name
+					Class<?> responseClass_tRESTClient_2 = org.dom4j.Document.class;
 
-	org.apache.cxf.jaxrs.client.WebClient webClient_tRESTClient_2 = factoryBean_tRESTClient_2.createWebClient();
+					// create web client instance
+					org.apache.cxf.jaxrs.client.JAXRSClientFactoryBean factoryBean_tRESTClient_2 = new org.apache.cxf.jaxrs.client.JAXRSClientFactoryBean();
 
-	// set request path
-	webClient_tRESTClient_2.path("");
+					boolean inOSGi = routines.system.BundleUtils.inOSGi();
 
-	// set connection properties
-	org.apache.cxf.jaxrs.client.ClientConfiguration clientConfig_tRESTClient_2 = org.apache.cxf.jaxrs.client.WebClient.getConfig(webClient_tRESTClient_2);
-	org.apache.cxf.transport.http.HTTPConduit conduit_tRESTClient_2 = clientConfig_tRESTClient_2.getHttpConduit();
+					final java.util.List<org.apache.cxf.feature.Feature> features_tRESTClient_2 = new java.util.ArrayList<org.apache.cxf.feature.Feature>();
 
-    if (clientConfig_tRESTClient_2.getEndpoint() != null
-            && clientConfig_tRESTClient_2.getEndpoint().getEndpointInfo() != null) {
-        clientConfig_tRESTClient_2.getEndpoint().getEndpointInfo().setProperty("enable.webclient.operation.reporting",
-                                                                          false);
-    }
+					String url = "https://api.twitter.com/1.1/search/tweets.json?q=%23TousAntiCovid&result_type=recent&count=1000&lang=fr";
+					// {baseUri}tRESTClient
+					factoryBean_tRESTClient_2.setServiceName(new javax.xml.namespace.QName(url, "tRESTClient"));
+					factoryBean_tRESTClient_2.setAddress(url);
 
-	
+					factoryBean_tRESTClient_2.setFeatures(features_tRESTClient_2);
 
-	
-	
-			if (use_auth_tRESTClient_2 && "BASIC".equals("OAUTH2_BEARER")) {
-			// set BASIC auth
-			
-			 
-	final String decryptedPassword_tRESTClient_2 = routines.system.PasswordEncryptUtil.decryptPassword("enc:routine.encryption.key.v1:EwXzWnYXl8f+NKrwZ7ZMeGvCZ6geNvg7lmfmpS6oWgChu8WW");
-	
-			org.apache.cxf.configuration.security.AuthorizationPolicy authPolicy_tRESTClient_2 = new org.apache.cxf.configuration.security.AuthorizationPolicy();
-				authPolicy_tRESTClient_2.setAuthorizationType("Basic");
-				authPolicy_tRESTClient_2.setUserName("username");
-				authPolicy_tRESTClient_2.setPassword(decryptedPassword_tRESTClient_2);
-			conduit_tRESTClient_2.setAuthorization(authPolicy_tRESTClient_2);
-		} else if (use_auth_tRESTClient_2 && "HTTP Digest".equals("OAUTH2_BEARER")) {
-			// set Digest auth
-			
-			 
-	final String decryptedPassword_tRESTClient_2 = routines.system.PasswordEncryptUtil.decryptPassword("enc:routine.encryption.key.v1:sZKr10YWKUlTEnUgAYy3h7DYxfwjPUPTkcXFJ7ZBen8ku8yM");
-	
-			org.apache.cxf.configuration.security.AuthorizationPolicy authPolicy_tRESTClient_2 = new org.apache.cxf.configuration.security.AuthorizationPolicy();
-			authPolicy_tRESTClient_2.setAuthorizationType("Digest");
-			authPolicy_tRESTClient_2.setUserName("username");
-			authPolicy_tRESTClient_2.setPassword(decryptedPassword_tRESTClient_2);
-			conduit_tRESTClient_2.setAuthorization(authPolicy_tRESTClient_2);
-		}
-	
-	
-
-	if (!inOSGi) {
-		conduit_tRESTClient_2.getClient().setReceiveTimeout((long)(60 * 1000L));
-		conduit_tRESTClient_2.getClient().setConnectionTimeout((long)(30 * 1000L));
-		boolean use_proxy_tRESTClient_2 = false;
-		
-	}
-	
-	
-
-	
-
-	
-
-	
-		// set Accept-Type
-		webClient_tRESTClient_2.accept("application/json");
-	
-
-	
-		// set optional query and header properties if any
-	
-	if (use_auth_tRESTClient_2 && "OAUTH2_BEARER".equals("OAUTH2_BEARER")) {
-		// set oAuth2 bearer token
-		webClient_tRESTClient_2.header("Authorization", "Bearer " + "AAAAAAAAAAAAAAAAAAAAAFEVJgEAAAAAejtPVAQB544BVATEzZjxhVI22ok%3Dcn9mxnTSBKDqaTkwOLzsYemZ9f58ZW0KVOKXDK4i59WtWqCe2d");
-	}
-	
-	
-	
-		if (use_auth_tRESTClient_2 && "OIDC_PASSWORD_GRANT".equals("OAUTH2_BEARER")) {
-	
-	        
-	         
-	final String decryptedPassword_tRESTClient_2 = routines.system.PasswordEncryptUtil.decryptPassword("enc:routine.encryption.key.v1:ECUEEyqnQ2qSvKmC90uLJoN/KHvHEEQIXxgkxz/jNAgEGswK");
-	
-	        String username_tRESTClient_2 = "username";
-	        String password_tRESTClient_2 = decryptedPassword_tRESTClient_2;
-	
-	        String bearerHeader_tRESTClient_2 = null;
-	
-	        try {
-				if (!inOSGi) {
-					org.springframework.context.support.ClassPathXmlApplicationContext context_tRESTClient_2 =
-						new org.springframework.context.support.ClassPathXmlApplicationContext("META-INF/tesb/oidc-context.xml");
-					org.talend.esb.security.oidc.OidcConfiguration oidcConfiguration_tRESTClient_2 = context_tRESTClient_2.getBean(org.talend.esb.security.oidc.OidcConfiguration.class);
-					bearerHeader_tRESTClient_2 = org.talend.esb.security.oidc.OidcClientUtils.oidcClientBearer(username_tRESTClient_2, password_tRESTClient_2, oidcConfiguration_tRESTClient_2);
-				}else{
-					bearerHeader_tRESTClient_2 = org.talend.esb.security.oidc.OidcClientUtils.oidcClientBearer(username_tRESTClient_2, password_tRESTClient_2);
-				}
-			} catch (Exception ex) {
-	            throw new javax.ws.rs.WebApplicationException("Failed to get OIDC access token: ", ex);
-	        }
-	
-			webClient_tRESTClient_2.header("Authorization", bearerHeader_tRESTClient_2);
-		}
-	
-	
-    
-	// if FORM request then capture query parameters into Form, otherwise set them as queries
-	
-		
-	
-
-
-	try {
-		// start send request
-		
-			responseDoc_tRESTClient_2 = webClient_tRESTClient_2.get(responseClass_tRESTClient_2);
-		
-
-
-		int webClientResponseStatus_tRESTClient_2 = webClient_tRESTClient_2.getResponse().getStatus();
-		if (webClientResponseStatus_tRESTClient_2 >= 300) {
-			throw new javax.ws.rs.WebApplicationException(webClient_tRESTClient_2.getResponse());
-		}
-
-		
-			if (row2 == null) {
-				row2 = new row2Struct();
-			}
-
-			row2.statusCode = webClientResponseStatus_tRESTClient_2;
-			
-				
-				{
-					Object responseObj_tRESTClient_2 = responseDoc_tRESTClient_2;
-				
-				if(responseObj_tRESTClient_2 != null){
-					if (responseClass_tRESTClient_2 == String.class) {
-						row2.string = (String) responseObj_tRESTClient_2;
-					} else {
-						routines.system.Document responseTalendDoc_tRESTClient_2 = null;
-						if (null != responseObj_tRESTClient_2) {
-							responseTalendDoc_tRESTClient_2 = new routines.system.Document();
-							responseTalendDoc_tRESTClient_2.setDocument((org.dom4j.Document) responseObj_tRESTClient_2);
+					java.util.List<Object> providers_tRESTClient_2 = new java.util.ArrayList<Object>();
+					providers_tRESTClient_2.add(new org.apache.cxf.jaxrs.provider.dom4j.DOM4JProvider() {
+						// workaround for https://jira.talendforge.org/browse/TESB-7276
+						public org.dom4j.Document readFrom(Class<org.dom4j.Document> cls, java.lang.reflect.Type type,
+								java.lang.annotation.Annotation[] anns, javax.ws.rs.core.MediaType mt,
+								javax.ws.rs.core.MultivaluedMap<String, String> headers, java.io.InputStream is)
+								throws IOException, javax.ws.rs.WebApplicationException {
+							String contentLength = headers.getFirst("Content-Length");
+							if (!org.apache.cxf.common.util.StringUtils.isEmpty(contentLength)
+									&& Integer.valueOf(contentLength) <= 0) {
+								try {
+									return org.dom4j.DocumentHelper.parseText("<root/>");
+								} catch (org.dom4j.DocumentException e_tRESTClient_2) {
+									e_tRESTClient_2.printStackTrace();
+								}
+								return null;
+							}
+							return super.readFrom(cls, type, anns, mt, headers, is);
 						}
-						row2.body = responseTalendDoc_tRESTClient_2;
+					});
+					org.apache.cxf.jaxrs.provider.json.JSONProvider jsonProvider_tRESTClient_2 = new org.apache.cxf.jaxrs.provider.json.JSONProvider();
+					jsonProvider_tRESTClient_2.setIgnoreNamespaces(true);
+					jsonProvider_tRESTClient_2.setAttributesToElements(true);
+
+					jsonProvider_tRESTClient_2.setSupportUnwrapped(true);
+					jsonProvider_tRESTClient_2.setWrapperName("root");
+
+					jsonProvider_tRESTClient_2.setDropRootElement(false);
+					jsonProvider_tRESTClient_2.setConvertTypesToStrings(false);
+					providers_tRESTClient_2.add(jsonProvider_tRESTClient_2);
+					factoryBean_tRESTClient_2.setProviders(providers_tRESTClient_2);
+					factoryBean_tRESTClient_2.setTransportId("http://cxf.apache.org/transports/http");
+
+					boolean use_auth_tRESTClient_2 = true;
+
+					if (use_auth_tRESTClient_2 && "SAML".equals("OAUTH2_BEARER")) {
+						if (!inOSGi) {
+							throw new IllegalArgumentException(
+									"SAML based security scenarios are not supported in Studio (standalone)");
+						}
+						// set SAML Token authentication
+
+						final String decryptedPassword_tRESTClient_2 = routines.system.PasswordEncryptUtil
+								.decryptPassword(
+										"enc:routine.encryption.key.v1:sQYCsvYqfZbUP88cDvL+kAko3W1WFQ6q4pN9DM3Azt75Uqg8");
+
+						org.apache.cxf.ws.security.trust.STSClient stsClient = org.talend.esb.security.saml.STSClientUtils
+								.createSTSClient(factoryBean_tRESTClient_2.getBus(), "username",
+										decryptedPassword_tRESTClient_2);
+
+						org.talend.esb.security.saml.SAMLRESTUtils.configureClient(factoryBean_tRESTClient_2,
+								stsClient);
 					}
+
+					org.apache.cxf.jaxrs.client.WebClient webClient_tRESTClient_2 = factoryBean_tRESTClient_2
+							.createWebClient();
+
+					// set request path
+					webClient_tRESTClient_2.path("");
+
+					// set connection properties
+					org.apache.cxf.jaxrs.client.ClientConfiguration clientConfig_tRESTClient_2 = org.apache.cxf.jaxrs.client.WebClient
+							.getConfig(webClient_tRESTClient_2);
+					org.apache.cxf.transport.http.HTTPConduit conduit_tRESTClient_2 = clientConfig_tRESTClient_2
+							.getHttpConduit();
+
+					if (clientConfig_tRESTClient_2.getEndpoint() != null
+							&& clientConfig_tRESTClient_2.getEndpoint().getEndpointInfo() != null) {
+						clientConfig_tRESTClient_2.getEndpoint().getEndpointInfo()
+								.setProperty("enable.webclient.operation.reporting", false);
+					}
+
+					if (use_auth_tRESTClient_2 && "BASIC".equals("OAUTH2_BEARER")) {
+						// set BASIC auth
+
+						final String decryptedPassword_tRESTClient_2 = routines.system.PasswordEncryptUtil
+								.decryptPassword(
+										"enc:routine.encryption.key.v1:DsI9m+LmmZlejkxtvgrOnaIeMR1yvFEo9qhScchCRN8mYQc5");
+
+						org.apache.cxf.configuration.security.AuthorizationPolicy authPolicy_tRESTClient_2 = new org.apache.cxf.configuration.security.AuthorizationPolicy();
+						authPolicy_tRESTClient_2.setAuthorizationType("Basic");
+						authPolicy_tRESTClient_2.setUserName("username");
+						authPolicy_tRESTClient_2.setPassword(decryptedPassword_tRESTClient_2);
+						conduit_tRESTClient_2.setAuthorization(authPolicy_tRESTClient_2);
+					} else if (use_auth_tRESTClient_2 && "HTTP Digest".equals("OAUTH2_BEARER")) {
+						// set Digest auth
+
+						final String decryptedPassword_tRESTClient_2 = routines.system.PasswordEncryptUtil
+								.decryptPassword(
+										"enc:routine.encryption.key.v1:jkQjhomHxQcnCb6mJAOxHHdkwJUgaZSmb2ZlUrT2zy5WzyCs");
+
+						org.apache.cxf.configuration.security.AuthorizationPolicy authPolicy_tRESTClient_2 = new org.apache.cxf.configuration.security.AuthorizationPolicy();
+						authPolicy_tRESTClient_2.setAuthorizationType("Digest");
+						authPolicy_tRESTClient_2.setUserName("username");
+						authPolicy_tRESTClient_2.setPassword(decryptedPassword_tRESTClient_2);
+						conduit_tRESTClient_2.setAuthorization(authPolicy_tRESTClient_2);
+					}
+
+					if (!inOSGi) {
+						conduit_tRESTClient_2.getClient().setReceiveTimeout((long) (60 * 1000L));
+						conduit_tRESTClient_2.getClient().setConnectionTimeout((long) (30 * 1000L));
+						boolean use_proxy_tRESTClient_2 = false;
+
+					}
+
+					// set Accept-Type
+					webClient_tRESTClient_2.accept("application/json");
+
+					// set optional query and header properties if any
+
+					if (use_auth_tRESTClient_2 && "OAUTH2_BEARER".equals("OAUTH2_BEARER")) {
+						// set oAuth2 bearer token
+						webClient_tRESTClient_2.header("Authorization", "Bearer "
+								+ "AAAAAAAAAAAAAAAAAAAAAFEVJgEAAAAAejtPVAQB544BVATEzZjxhVI22ok%3Dcn9mxnTSBKDqaTkwOLzsYemZ9f58ZW0KVOKXDK4i59WtWqCe2d");
+					}
+
+					if (use_auth_tRESTClient_2 && "OIDC_PASSWORD_GRANT".equals("OAUTH2_BEARER")) {
+
+						final String decryptedPassword_tRESTClient_2 = routines.system.PasswordEncryptUtil
+								.decryptPassword(
+										"enc:routine.encryption.key.v1:w1Yp9zAzdg8LW1dRXtiv2gmMNjX49zlI62a55LJ8TzsPuxZW");
+
+						String username_tRESTClient_2 = "username";
+						String password_tRESTClient_2 = decryptedPassword_tRESTClient_2;
+
+						String bearerHeader_tRESTClient_2 = null;
+
+						try {
+							if (!inOSGi) {
+								org.springframework.context.support.ClassPathXmlApplicationContext context_tRESTClient_2 = new org.springframework.context.support.ClassPathXmlApplicationContext(
+										"META-INF/tesb/oidc-context.xml");
+								org.talend.esb.security.oidc.OidcConfiguration oidcConfiguration_tRESTClient_2 = context_tRESTClient_2
+										.getBean(org.talend.esb.security.oidc.OidcConfiguration.class);
+								bearerHeader_tRESTClient_2 = org.talend.esb.security.oidc.OidcClientUtils
+										.oidcClientBearer(username_tRESTClient_2, password_tRESTClient_2,
+												oidcConfiguration_tRESTClient_2);
+							} else {
+								bearerHeader_tRESTClient_2 = org.talend.esb.security.oidc.OidcClientUtils
+										.oidcClientBearer(username_tRESTClient_2, password_tRESTClient_2);
+							}
+						} catch (Exception ex) {
+							throw new javax.ws.rs.WebApplicationException("Failed to get OIDC access token: ", ex);
+						}
+
+						webClient_tRESTClient_2.header("Authorization", bearerHeader_tRESTClient_2);
+					}
+
+					// if FORM request then capture query parameters into Form, otherwise set them
+					// as queries
+
+					try {
+						// start send request
+
+						responseDoc_tRESTClient_2 = webClient_tRESTClient_2.get(responseClass_tRESTClient_2);
+
+						int webClientResponseStatus_tRESTClient_2 = webClient_tRESTClient_2.getResponse().getStatus();
+						if (webClientResponseStatus_tRESTClient_2 >= 300) {
+							throw new javax.ws.rs.WebApplicationException(webClient_tRESTClient_2.getResponse());
+						}
+
+						if (row2 == null) {
+							row2 = new row2Struct();
+						}
+
+						row2.statusCode = webClientResponseStatus_tRESTClient_2;
+
+						{
+							Object responseObj_tRESTClient_2 = responseDoc_tRESTClient_2;
+
+							if (responseObj_tRESTClient_2 != null) {
+								if (responseClass_tRESTClient_2 == String.class) {
+									row2.string = (String) responseObj_tRESTClient_2;
+								} else {
+									routines.system.Document responseTalendDoc_tRESTClient_2 = null;
+									if (null != responseObj_tRESTClient_2) {
+										responseTalendDoc_tRESTClient_2 = new routines.system.Document();
+										responseTalendDoc_tRESTClient_2
+												.setDocument((org.dom4j.Document) responseObj_tRESTClient_2);
+									}
+									row2.body = responseTalendDoc_tRESTClient_2;
+								}
+							}
+						}
+
+						globalMap.put("tRESTClient_2_HEADERS", webClient_tRESTClient_2.getResponse().getHeaders());
+
+					} catch (javax.ws.rs.WebApplicationException ex_tRESTClient_2) {
+
+						throw ex_tRESTClient_2;
+
+					}
+
+				} catch (Exception e_tRESTClient_2) {
+
+					throw new TalendException(e_tRESTClient_2, currentComponent, globalMap);
+
 				}
-			}
-			
 
+				tos_count_tRESTClient_2++;
 
-			globalMap.put("tRESTClient_2_HEADERS", webClient_tRESTClient_2.getResponse().getHeaders());
-			
-			
-			
-		
+				/**
+				 * [tRESTClient_2 main ] stop
+				 */
 
-	} catch (javax.ws.rs.WebApplicationException ex_tRESTClient_2) {
-		
-			throw ex_tRESTClient_2;
-		
-	}
+				/**
+				 * [tRESTClient_2 process_data_begin ] start
+				 */
 
-} catch(Exception e_tRESTClient_2) {
-	
-		throw new TalendException(e_tRESTClient_2, currentComponent, globalMap);
-	
-}
+				currentComponent = "tRESTClient_2";
 
-
- 
-
-
-	tos_count_tRESTClient_2++;
-
-/**
- * [tRESTClient_2 main ] stop
- */
-	
-	/**
-	 * [tRESTClient_2 process_data_begin ] start
-	 */
-
-	
-
-	
-	
-	currentComponent="tRESTClient_2";
-
-	
-
- 
-
-
-
-/**
- * [tRESTClient_2 process_data_begin ] stop
- */
+				/**
+				 * [tRESTClient_2 process_data_begin ] stop
+				 */
 // Start of branch "row2"
-if(row2 != null) { 
+				if (row2 != null) {
 
+					/**
+					 * [tXMLMap_2_TXMLMAP_OUT main ] start
+					 */
 
+					currentVirtualComponent = "tXMLMap_2";
 
-	
-	/**
-	 * [tXMLMap_2_TXMLMAP_OUT main ] start
-	 */
+					currentComponent = "tXMLMap_2_TXMLMAP_OUT";
 
-	
-
-	
-	
-		currentVirtualComponent = "tXMLMap_2";
-	
-	currentComponent="tXMLMap_2_TXMLMAP_OUT";
-
-	
-					if(execStat){
-						runStat.updateStatOnConnection(iterateId,1,1,"row2");
+					if (execStat) {
+						runStat.updateStatOnConnection(iterateId, 1, 1, "row2");
 					}
-					
 
-	boolean rejectedInnerJoin_tXMLMap_2_TXMLMAP_OUT = false;
-	boolean rejectedDocInnerJoin_tXMLMap_2_TXMLMAP_OUT = false;
-	boolean mainRowRejected_tXMLMap_2_TXMLMAP_OUT = false;
-	boolean isMatchDocRowtXMLMap_2_TXMLMAP_OUT = false;
-	  
-	
-			
+					boolean rejectedInnerJoin_tXMLMap_2_TXMLMAP_OUT = false;
+					boolean rejectedDocInnerJoin_tXMLMap_2_TXMLMAP_OUT = false;
+					boolean mainRowRejected_tXMLMap_2_TXMLMAP_OUT = false;
+					boolean isMatchDocRowtXMLMap_2_TXMLMAP_OUT = false;
 
-		
-		
-				//init document to flat tool
-				routines.system.DocumentToFlat docToFlat_tXMLMap_2_TXMLMAP_OUT = new routines.system.DocumentToFlat();
-				docToFlat_tXMLMap_2_TXMLMAP_OUT.setOriginalLoop("/root/statuses");
-				docToFlat_tXMLMap_2_TXMLMAP_OUT.setIsOptional(false);
-				if(row2.body == null || row2.body.getDocument() == null) {
-					throw new RuntimeException("row2.body can't be empty");
-				}
-				org.dom4j.Document doc_tXMLMap_2_TXMLMAP_OUT = row2.body.getDocument();
-				docToFlat_tXMLMap_2_TXMLMAP_OUT.setDoc(doc_tXMLMap_2_TXMLMAP_OUT);
-				docToFlat_tXMLMap_2_TXMLMAP_OUT.setDefineNS(false);
-				docToFlat_tXMLMap_2_TXMLMAP_OUT.setNamespaceTool(nsTool_tXMLMap_2_TXMLMAP_OUT);
-				
-					//old version, find NS from doc
+					// init document to flat tool
+					routines.system.DocumentToFlat docToFlat_tXMLMap_2_TXMLMAP_OUT = new routines.system.DocumentToFlat();
+					docToFlat_tXMLMap_2_TXMLMAP_OUT.setOriginalLoop("/root/statuses");
+					docToFlat_tXMLMap_2_TXMLMAP_OUT.setIsOptional(false);
+					if (row2.body == null || row2.body.getDocument() == null) {
+						throw new RuntimeException("row2.body can't be empty");
+					}
+					org.dom4j.Document doc_tXMLMap_2_TXMLMAP_OUT = row2.body.getDocument();
+					docToFlat_tXMLMap_2_TXMLMAP_OUT.setDoc(doc_tXMLMap_2_TXMLMAP_OUT);
+					docToFlat_tXMLMap_2_TXMLMAP_OUT.setDefineNS(false);
+					docToFlat_tXMLMap_2_TXMLMAP_OUT.setNamespaceTool(nsTool_tXMLMap_2_TXMLMAP_OUT);
+
+					// old version, find NS from doc
 					nsTool_tXMLMap_2_TXMLMAP_OUT.countNSMap(doc_tXMLMap_2_TXMLMAP_OUT.getRootElement());
-					java.util.HashMap<String,String> xmlNameSpaceMap_tXMLMap_2_TXMLMAP_OUT = nsTool_tXMLMap_2_TXMLMAP_OUT.xmlNameSpaceMap;
-				
-				docToFlat_tXMLMap_2_TXMLMAP_OUT.setXmlNameSpaceMap(xmlNameSpaceMap_tXMLMap_2_TXMLMAP_OUT);
-				
-				String[] absolutePathMappings_tXMLMap_2_TXMLMAP_OUT = new String[9];
-				String[] relativePathMappings_tXMLMap_2_TXMLMAP_OUT = new String[9];
-				
-				absolutePathMappings_tXMLMap_2_TXMLMAP_OUT[0] = "row2.body:/root/statuses/user/name";
-				relativePathMappings_tXMLMap_2_TXMLMAP_OUT[0] = "user/name";
-				
-				absolutePathMappings_tXMLMap_2_TXMLMAP_OUT[1] = "row2.body:/root/statuses/user/screen_name";
-				relativePathMappings_tXMLMap_2_TXMLMAP_OUT[1] = "user/screen_name";
-				
-				absolutePathMappings_tXMLMap_2_TXMLMAP_OUT[2] = "row2.body:/root/statuses/created_at";
-				relativePathMappings_tXMLMap_2_TXMLMAP_OUT[2] = "created_at";
-				
-				absolutePathMappings_tXMLMap_2_TXMLMAP_OUT[3] = "row2.body:/root/statuses/user/id";
-				relativePathMappings_tXMLMap_2_TXMLMAP_OUT[3] = "user/id";
-				
-				absolutePathMappings_tXMLMap_2_TXMLMAP_OUT[4] = "row2.body:/root/statuses/user/description";
-				relativePathMappings_tXMLMap_2_TXMLMAP_OUT[4] = "user/description";
-				
-				absolutePathMappings_tXMLMap_2_TXMLMAP_OUT[5] = "row2.body:/root/statuses/id";
-				relativePathMappings_tXMLMap_2_TXMLMAP_OUT[5] = "id";
-				
-				absolutePathMappings_tXMLMap_2_TXMLMAP_OUT[6] = "row2.body:/root/statuses/user/location";
-				relativePathMappings_tXMLMap_2_TXMLMAP_OUT[6] = "user/location";
-				
-				absolutePathMappings_tXMLMap_2_TXMLMAP_OUT[7] = "row2.body:/root/statuses/entities/hashtags/text";
-				relativePathMappings_tXMLMap_2_TXMLMAP_OUT[7] = "entities/hashtags/text";
-				
-				absolutePathMappings_tXMLMap_2_TXMLMAP_OUT[8] = "row2.body:/root/statuses/text";
-				relativePathMappings_tXMLMap_2_TXMLMAP_OUT[8] = "text";
-				
-				docToFlat_tXMLMap_2_TXMLMAP_OUT.setAbsolutePathMappings(absolutePathMappings_tXMLMap_2_TXMLMAP_OUT);
-				docToFlat_tXMLMap_2_TXMLMAP_OUT.setCurrentRelativePathMappings(relativePathMappings_tXMLMap_2_TXMLMAP_OUT);
-				//generate document to flat data
-				docToFlat_tXMLMap_2_TXMLMAP_OUT.flat();
-				//get flat data
-				java.util.List<java.util.Map<String, String>> resultSet_tXMLMap_2_TXMLMAP_OUT = docToFlat_tXMLMap_2_TXMLMAP_OUT.getResultSet();
-				
-				for (java.util.Map<String,String> oneRow_tXMLMap_2_TXMLMAP_OUT: resultSet_tXMLMap_2_TXMLMAP_OUT) { // G_TXM_M_001
-					nb_line_tXMLMap_2_TXMLMAP_OUT++;
-			    	rejectedInnerJoin_tXMLMap_2_TXMLMAP_OUT = false;
-			    	rejectedDocInnerJoin_tXMLMap_2_TXMLMAP_OUT = false;
-					mainRowRejected_tXMLMap_2_TXMLMAP_OUT=false;
-				    isMatchDocRowtXMLMap_2_TXMLMAP_OUT = false;
-					
-			    	treeNodeAPI_tXMLMap_2_TXMLMAP_OUT.clear();
-			    	for(java.util.Map.Entry<String, String> entry_tXMLMap_2_TXMLMAP_OUT : oneRow_tXMLMap_2_TXMLMAP_OUT.entrySet()) {
-						treeNodeAPI_tXMLMap_2_TXMLMAP_OUT.put(entry_tXMLMap_2_TXMLMAP_OUT.getKey(),entry_tXMLMap_2_TXMLMAP_OUT.getValue());
-					}
-					
+					java.util.HashMap<String, String> xmlNameSpaceMap_tXMLMap_2_TXMLMAP_OUT = nsTool_tXMLMap_2_TXMLMAP_OUT.xmlNameSpaceMap;
 
+					docToFlat_tXMLMap_2_TXMLMAP_OUT.setXmlNameSpaceMap(xmlNameSpaceMap_tXMLMap_2_TXMLMAP_OUT);
 
-			
-{ // start of Var scope
+					String[] absolutePathMappings_tXMLMap_2_TXMLMAP_OUT = new String[9];
+					String[] relativePathMappings_tXMLMap_2_TXMLMAP_OUT = new String[9];
 
-	// ###############################
-	// # Vars tables
+					absolutePathMappings_tXMLMap_2_TXMLMAP_OUT[0] = "row2.body:/root/statuses/user/name";
+					relativePathMappings_tXMLMap_2_TXMLMAP_OUT[0] = "user/name";
 
-Var__tXMLMap_2_TXMLMAP_OUT__Struct Var = Var__tXMLMap_2_TXMLMAP_OUT;
-		// ###############################
-		// # Output tables
+					absolutePathMappings_tXMLMap_2_TXMLMAP_OUT[1] = "row2.body:/root/statuses/user/screen_name";
+					relativePathMappings_tXMLMap_2_TXMLMAP_OUT[1] = "user/screen_name";
 
-tousAntiCovid = null;
+					absolutePathMappings_tXMLMap_2_TXMLMAP_OUT[2] = "row2.body:/root/statuses/created_at";
+					relativePathMappings_tXMLMap_2_TXMLMAP_OUT[2] = "created_at";
 
+					absolutePathMappings_tXMLMap_2_TXMLMAP_OUT[3] = "row2.body:/root/statuses/user/id";
+					relativePathMappings_tXMLMap_2_TXMLMAP_OUT[3] = "user/id";
+
+					absolutePathMappings_tXMLMap_2_TXMLMAP_OUT[4] = "row2.body:/root/statuses/user/description";
+					relativePathMappings_tXMLMap_2_TXMLMAP_OUT[4] = "user/description";
+
+					absolutePathMappings_tXMLMap_2_TXMLMAP_OUT[5] = "row2.body:/root/statuses/id";
+					relativePathMappings_tXMLMap_2_TXMLMAP_OUT[5] = "id";
+
+					absolutePathMappings_tXMLMap_2_TXMLMAP_OUT[6] = "row2.body:/root/statuses/user/location";
+					relativePathMappings_tXMLMap_2_TXMLMAP_OUT[6] = "user/location";
+
+					absolutePathMappings_tXMLMap_2_TXMLMAP_OUT[7] = "row2.body:/root/statuses/entities/hashtags/text";
+					relativePathMappings_tXMLMap_2_TXMLMAP_OUT[7] = "entities/hashtags/text";
+
+					absolutePathMappings_tXMLMap_2_TXMLMAP_OUT[8] = "row2.body:/root/statuses/text";
+					relativePathMappings_tXMLMap_2_TXMLMAP_OUT[8] = "text";
+
+					docToFlat_tXMLMap_2_TXMLMAP_OUT.setAbsolutePathMappings(absolutePathMappings_tXMLMap_2_TXMLMAP_OUT);
+					docToFlat_tXMLMap_2_TXMLMAP_OUT
+							.setCurrentRelativePathMappings(relativePathMappings_tXMLMap_2_TXMLMAP_OUT);
+					// generate document to flat data
+					docToFlat_tXMLMap_2_TXMLMAP_OUT.flat();
+					// get flat data
+					java.util.List<java.util.Map<String, String>> resultSet_tXMLMap_2_TXMLMAP_OUT = docToFlat_tXMLMap_2_TXMLMAP_OUT
+							.getResultSet();
+
+					for (java.util.Map<String, String> oneRow_tXMLMap_2_TXMLMAP_OUT : resultSet_tXMLMap_2_TXMLMAP_OUT) { // G_TXM_M_001
+						nb_line_tXMLMap_2_TXMLMAP_OUT++;
+						rejectedInnerJoin_tXMLMap_2_TXMLMAP_OUT = false;
+						rejectedDocInnerJoin_tXMLMap_2_TXMLMAP_OUT = false;
+						mainRowRejected_tXMLMap_2_TXMLMAP_OUT = false;
+						isMatchDocRowtXMLMap_2_TXMLMAP_OUT = false;
+
+						treeNodeAPI_tXMLMap_2_TXMLMAP_OUT.clear();
+						for (java.util.Map.Entry<String, String> entry_tXMLMap_2_TXMLMAP_OUT : oneRow_tXMLMap_2_TXMLMAP_OUT
+								.entrySet()) {
+							treeNodeAPI_tXMLMap_2_TXMLMAP_OUT.put(entry_tXMLMap_2_TXMLMAP_OUT.getKey(),
+									entry_tXMLMap_2_TXMLMAP_OUT.getValue());
+						}
+
+						{ // start of Var scope
+
+							// ###############################
+							// # Vars tables
+
+							Var__tXMLMap_2_TXMLMAP_OUT__Struct Var = Var__tXMLMap_2_TXMLMAP_OUT;
+							// ###############################
+							// # Output tables
+
+							tousAntiCovid = null;
 
 // # Output table : 'tousAntiCovid'
 
-tousAntiCovid_tmp = new tousAntiCovidStruct();
-tousAntiCovid_tmp.id =  treeNodeAPI_tXMLMap_2_TXMLMAP_OUT.get_String("row2.body:/root/statuses/id");
-tousAntiCovid_tmp.date_description = TalendDate.parseDate("EEE MMM dd HH:mm:ss Z yyyy",treeNodeAPI_tXMLMap_2_TXMLMAP_OUT.get_String("row2.body:/root/statuses/created_at")) ;
-tousAntiCovid_tmp.user_id = treeNodeAPI_tXMLMap_2_TXMLMAP_OUT.get_String("row2.body:/root/statuses/user/id");
-tousAntiCovid_tmp.user_name = treeNodeAPI_tXMLMap_2_TXMLMAP_OUT.get_String("row2.body:/root/statuses/user/name");
-tousAntiCovid_tmp.user_screen_name = treeNodeAPI_tXMLMap_2_TXMLMAP_OUT.get_String("row2.body:/root/statuses/user/screen_name");
-tousAntiCovid_tmp.user_location = treeNodeAPI_tXMLMap_2_TXMLMAP_OUT.get_String("row2.body:/root/statuses/user/location");
-tousAntiCovid_tmp.user_description = treeNodeAPI_tXMLMap_2_TXMLMAP_OUT.get_String("row2.body:/root/statuses/user/description");
-tousAntiCovid_tmp.hashtag_text = treeNodeAPI_tXMLMap_2_TXMLMAP_OUT.get_String("row2.body:/root/statuses/entities/hashtags/text");
-tousAntiCovid_tmp.text_description = treeNodeAPI_tXMLMap_2_TXMLMAP_OUT.get_String("row2.body:/root/statuses/text");
-tousAntiCovid_tmp.hashtag_id = treeNodeAPI_tXMLMap_2_TXMLMAP_OUT.get_String("row2.body:/root/statuses/id");
-tousAntiCovid_tmp.geo_id = treeNodeAPI_tXMLMap_2_TXMLMAP_OUT.get_String("row2.body:/root/statuses/id");
-tousAntiCovid_tmp.geo_description = treeNodeAPI_tXMLMap_2_TXMLMAP_OUT.get_String("row2.body:/root/statuses/user/location");
-tousAntiCovid_tmp.text_id = treeNodeAPI_tXMLMap_2_TXMLMAP_OUT.get_String("row2.body:/root/statuses/id");
-tousAntiCovid_tmp.date_id = treeNodeAPI_tXMLMap_2_TXMLMAP_OUT.get_String("row2.body:/root/statuses/id");allOutsForAggregate_tXMLMap_2.add(tousAntiCovid_tmp);
+							tousAntiCovid_tmp = new tousAntiCovidStruct();
+							tousAntiCovid_tmp.id = treeNodeAPI_tXMLMap_2_TXMLMAP_OUT
+									.get_String("row2.body:/root/statuses/id");
+							tousAntiCovid_tmp.date_description = TalendDate.parseDate("EEE MMM dd HH:mm:ss Z yyyy",
+									treeNodeAPI_tXMLMap_2_TXMLMAP_OUT
+											.get_String("row2.body:/root/statuses/created_at"));
+							tousAntiCovid_tmp.user_id = treeNodeAPI_tXMLMap_2_TXMLMAP_OUT
+									.get_String("row2.body:/root/statuses/user/id");
+							tousAntiCovid_tmp.user_name = treeNodeAPI_tXMLMap_2_TXMLMAP_OUT
+									.get_String("row2.body:/root/statuses/user/name");
+							tousAntiCovid_tmp.user_screen_name = treeNodeAPI_tXMLMap_2_TXMLMAP_OUT
+									.get_String("row2.body:/root/statuses/user/screen_name");
+							tousAntiCovid_tmp.user_location = treeNodeAPI_tXMLMap_2_TXMLMAP_OUT
+									.get_String("row2.body:/root/statuses/user/location");
+							tousAntiCovid_tmp.user_description = treeNodeAPI_tXMLMap_2_TXMLMAP_OUT
+									.get_String("row2.body:/root/statuses/user/description");
+							tousAntiCovid_tmp.hashtag_text = treeNodeAPI_tXMLMap_2_TXMLMAP_OUT
+									.get_String("row2.body:/root/statuses/entities/hashtags/text");
+							tousAntiCovid_tmp.text_description = treeNodeAPI_tXMLMap_2_TXMLMAP_OUT
+									.get_String("row2.body:/root/statuses/text");
+							tousAntiCovid_tmp.hashtag_id = treeNodeAPI_tXMLMap_2_TXMLMAP_OUT
+									.get_String("row2.body:/root/statuses/id");
+							tousAntiCovid_tmp.geo_id = treeNodeAPI_tXMLMap_2_TXMLMAP_OUT
+									.get_String("row2.body:/root/statuses/id");
+							tousAntiCovid_tmp.geo_description = treeNodeAPI_tXMLMap_2_TXMLMAP_OUT
+									.get_String("row2.body:/root/statuses/user/location");
+							tousAntiCovid_tmp.text_id = treeNodeAPI_tXMLMap_2_TXMLMAP_OUT
+									.get_String("row2.body:/root/statuses/id");
+							tousAntiCovid_tmp.date_id = treeNodeAPI_tXMLMap_2_TXMLMAP_OUT
+									.get_String("row2.body:/root/statuses/id");
+							allOutsForAggregate_tXMLMap_2.add(tousAntiCovid_tmp);
 
 // ###############################
 
-} // end of Var scope
+						} // end of Var scope
 
-rejectedInnerJoin_tXMLMap_2_TXMLMAP_OUT = false;
+						rejectedInnerJoin_tXMLMap_2_TXMLMAP_OUT = false;
 
+					} // G_TXM_M_001 close
 
-		}//G_TXM_M_001 close
-	
+					tos_count_tXMLMap_2_TXMLMAP_OUT++;
 
- 
+					/**
+					 * [tXMLMap_2_TXMLMAP_OUT main ] stop
+					 */
 
+					/**
+					 * [tXMLMap_2_TXMLMAP_OUT process_data_begin ] start
+					 */
 
-	tos_count_tXMLMap_2_TXMLMAP_OUT++;
+					currentVirtualComponent = "tXMLMap_2";
 
-/**
- * [tXMLMap_2_TXMLMAP_OUT main ] stop
- */
-	
-	/**
-	 * [tXMLMap_2_TXMLMAP_OUT process_data_begin ] start
-	 */
+					currentComponent = "tXMLMap_2_TXMLMAP_OUT";
 
-	
+					/**
+					 * [tXMLMap_2_TXMLMAP_OUT process_data_begin ] stop
+					 */
 
-	
-	
-		currentVirtualComponent = "tXMLMap_2";
-	
-	currentComponent="tXMLMap_2_TXMLMAP_OUT";
+					/**
+					 * [tXMLMap_2_TXMLMAP_OUT process_data_end ] start
+					 */
 
-	
+					currentVirtualComponent = "tXMLMap_2";
 
- 
+					currentComponent = "tXMLMap_2_TXMLMAP_OUT";
 
+					/**
+					 * [tXMLMap_2_TXMLMAP_OUT process_data_end ] stop
+					 */
 
+				} // End of branch "row2"
 
-/**
- * [tXMLMap_2_TXMLMAP_OUT process_data_begin ] stop
- */
-	
-	/**
-	 * [tXMLMap_2_TXMLMAP_OUT process_data_end ] start
-	 */
+				/**
+				 * [tRESTClient_2 process_data_end ] start
+				 */
 
-	
+				currentComponent = "tRESTClient_2";
 
-	
-	
-		currentVirtualComponent = "tXMLMap_2";
-	
-	currentComponent="tXMLMap_2_TXMLMAP_OUT";
+				/**
+				 * [tRESTClient_2 process_data_end ] stop
+				 */
 
-	
+				/**
+				 * [tRESTClient_2 end ] start
+				 */
 
- 
+				currentComponent = "tRESTClient_2";
 
-
-
-/**
- * [tXMLMap_2_TXMLMAP_OUT process_data_end ] stop
- */
-
-} // End of branch "row2"
-
-
-
-
-	
-	/**
-	 * [tRESTClient_2 process_data_end ] start
-	 */
-
-	
-
-	
-	
-	currentComponent="tRESTClient_2";
-
-	
-
- 
-
-
-
-/**
- * [tRESTClient_2 process_data_end ] stop
- */
-	
-	/**
-	 * [tRESTClient_2 end ] start
-	 */
-
-	
-
-	
-	
-	currentComponent="tRESTClient_2";
-
-	
-
-
-if (globalMap.get("tRESTClient_2_NB_LINE") == null) {
-	globalMap.put("tRESTClient_2_NB_LINE", 1);
-}
+				if (globalMap.get("tRESTClient_2_NB_LINE") == null) {
+					globalMap.put("tRESTClient_2_NB_LINE", 1);
+				}
 
 // [tRESTCliend_end]
- 
 
-ok_Hash.put("tRESTClient_2", true);
-end_Hash.put("tRESTClient_2", System.currentTimeMillis());
+				ok_Hash.put("tRESTClient_2", true);
+				end_Hash.put("tRESTClient_2", System.currentTimeMillis());
 
+				/**
+				 * [tRESTClient_2 end ] stop
+				 */
 
+				/**
+				 * [tXMLMap_2_TXMLMAP_OUT end ] start
+				 */
 
+				currentVirtualComponent = "tXMLMap_2";
 
-/**
- * [tRESTClient_2 end ] stop
- */
+				currentComponent = "tXMLMap_2_TXMLMAP_OUT";
 
-	
-	/**
-	 * [tXMLMap_2_TXMLMAP_OUT end ] start
-	 */
+				if (execStat) {
+					runStat.updateStat(resourceMap, iterateId, 2, 0, "row2");
+				}
 
-	
+				ok_Hash.put("tXMLMap_2_TXMLMAP_OUT", true);
+				end_Hash.put("tXMLMap_2_TXMLMAP_OUT", System.currentTimeMillis());
 
-	
-	
-		currentVirtualComponent = "tXMLMap_2";
-	
-	currentComponent="tXMLMap_2_TXMLMAP_OUT";
+				/**
+				 * [tXMLMap_2_TXMLMAP_OUT end ] stop
+				 */
 
-	
+				/**
+				 * [tFileOutputJSON_2 begin ] start
+				 */
 
+				ok_Hash.put("tFileOutputJSON_2", false);
+				start_Hash.put("tFileOutputJSON_2", System.currentTimeMillis());
 
+				currentComponent = "tFileOutputJSON_2";
 
+				if (execStat) {
+					runStat.updateStatOnConnection(resourceMap, iterateId, 0, 0, "tousAntiCovid");
+				}
 
-				if(execStat){
-			  		runStat.updateStat(resourceMap,iterateId,2,0,"row2");
-			  	}
-			  	
- 
+				int tos_count_tFileOutputJSON_2 = 0;
 
-ok_Hash.put("tXMLMap_2_TXMLMAP_OUT", true);
-end_Hash.put("tXMLMap_2_TXMLMAP_OUT", System.currentTimeMillis());
+				int nb_line_tFileOutputJSON_2 = 0;
+				java.io.File file_tFileOutputJSON_2 = new java.io.File(
+						"/home/scasanova/Downloads/TOS_BD-20200219_1130-V7.3.1/workspace/ANALYSIS_TWITTER/documentations/apitwitter/fr-"
+								+ TalendDate.getCurrentDate() + ".json");
+				java.io.File dir_tFileOutputJSON_2 = file_tFileOutputJSON_2.getParentFile();
+				if (dir_tFileOutputJSON_2 != null && !dir_tFileOutputJSON_2.exists()) {
+					dir_tFileOutputJSON_2.mkdirs();
+				}
+				java.io.PrintWriter outtFileOutputJSON_2 = new java.io.PrintWriter(
+						new java.io.BufferedWriter(new java.io.FileWriter(
+								"/home/scasanova/Downloads/TOS_BD-20200219_1130-V7.3.1/workspace/ANALYSIS_TWITTER/documentations/apitwitter/fr-"
+										+ TalendDate.getCurrentDate() + ".json")));
+				outtFileOutputJSON_2.append("{\"" + "tweets" + "\":[");
+				boolean isFirst_tFileOutputJSON_2 = true;
 
+				/**
+				 * [tFileOutputJSON_2 begin ] stop
+				 */
 
+				/**
+				 * [tXMLMap_2_TXMLMAP_IN begin ] start
+				 */
 
+				ok_Hash.put("tXMLMap_2_TXMLMAP_IN", false);
+				start_Hash.put("tXMLMap_2_TXMLMAP_IN", System.currentTimeMillis());
 
-/**
- * [tXMLMap_2_TXMLMAP_OUT end ] stop
- */
+				currentVirtualComponent = "tXMLMap_2";
 
+				currentComponent = "tXMLMap_2_TXMLMAP_IN";
 
-	
-	/**
-	 * [tFileOutputJSON_2 begin ] start
-	 */
+				int tos_count_tXMLMap_2_TXMLMAP_IN = 0;
 
-	
+				java.util.List<Object> outs_tXMLMap_2 = (java.util.List<Object>) globalMap
+						.get("allOutsForAggregate_tXMLMap_2");
+				for (Object row_out_tXMLMap_2_TXMLMAP_IN : outs_tXMLMap_2) {// TD512
 
-	
-		
-		ok_Hash.put("tFileOutputJSON_2", false);
-		start_Hash.put("tFileOutputJSON_2", System.currentTimeMillis());
-		
-	
-	currentComponent="tFileOutputJSON_2";
+					/**
+					 * [tXMLMap_2_TXMLMAP_IN begin ] stop
+					 */
 
-	
-					if(execStat) {
-						runStat.updateStatOnConnection(resourceMap,iterateId,0,0,"tousAntiCovid");
+					/**
+					 * [tXMLMap_2_TXMLMAP_IN main ] start
+					 */
+
+					currentVirtualComponent = "tXMLMap_2";
+
+					currentComponent = "tXMLMap_2_TXMLMAP_IN";
+
+					tousAntiCovid = null;
+					if (row_out_tXMLMap_2_TXMLMAP_IN != null
+							&& row_out_tXMLMap_2_TXMLMAP_IN instanceof tousAntiCovidStruct) {
+						tousAntiCovid = (tousAntiCovidStruct) row_out_tXMLMap_2_TXMLMAP_IN;
 					}
-				
-		int tos_count_tFileOutputJSON_2 = 0;
-		
-int nb_line_tFileOutputJSON_2 = 0;
-java.io.File file_tFileOutputJSON_2 = new java.io.File("/home/scasanova/Downloads/TOS_BD-20200219_1130-V7.3.1/workspace/ANALYSIS_TWITTER/documentations/apitwitter/fr-"+TalendDate.getCurrentDate()+".json");
-java.io.File dir_tFileOutputJSON_2 = file_tFileOutputJSON_2.getParentFile();
-	if(dir_tFileOutputJSON_2!=null && !dir_tFileOutputJSON_2.exists()){
-		dir_tFileOutputJSON_2.mkdirs();
-	}
-java.io.PrintWriter outtFileOutputJSON_2 = new java.io.PrintWriter(new java.io.BufferedWriter(new java.io.FileWriter("/home/scasanova/Downloads/TOS_BD-20200219_1130-V7.3.1/workspace/ANALYSIS_TWITTER/documentations/apitwitter/fr-"+TalendDate.getCurrentDate()+".json")));
-	outtFileOutputJSON_2.append("{\"" + "tweets" + "\":[");
-boolean isFirst_tFileOutputJSON_2 = true;
- 
 
+					tos_count_tXMLMap_2_TXMLMAP_IN++;
 
+					/**
+					 * [tXMLMap_2_TXMLMAP_IN main ] stop
+					 */
 
-/**
- * [tFileOutputJSON_2 begin ] stop
- */
+					/**
+					 * [tXMLMap_2_TXMLMAP_IN process_data_begin ] start
+					 */
 
+					currentVirtualComponent = "tXMLMap_2";
 
+					currentComponent = "tXMLMap_2_TXMLMAP_IN";
 
-	
-	/**
-	 * [tXMLMap_2_TXMLMAP_IN begin ] start
-	 */
-
-	
-
-	
-		
-		ok_Hash.put("tXMLMap_2_TXMLMAP_IN", false);
-		start_Hash.put("tXMLMap_2_TXMLMAP_IN", System.currentTimeMillis());
-		
-	
-		currentVirtualComponent = "tXMLMap_2";
-	
-	currentComponent="tXMLMap_2_TXMLMAP_IN";
-
-	
-		int tos_count_tXMLMap_2_TXMLMAP_IN = 0;
-		
-java.util.List<Object> outs_tXMLMap_2 = (java.util.List<Object>)globalMap.get("allOutsForAggregate_tXMLMap_2");
-for(Object  row_out_tXMLMap_2_TXMLMAP_IN : outs_tXMLMap_2) {//TD512
- 
-
-
-
-/**
- * [tXMLMap_2_TXMLMAP_IN begin ] stop
- */
-	
-	/**
-	 * [tXMLMap_2_TXMLMAP_IN main ] start
-	 */
-
-	
-
-	
-	
-		currentVirtualComponent = "tXMLMap_2";
-	
-	currentComponent="tXMLMap_2_TXMLMAP_IN";
-
-	
-
-	tousAntiCovid = null;
-	if(row_out_tXMLMap_2_TXMLMAP_IN!=null && row_out_tXMLMap_2_TXMLMAP_IN instanceof tousAntiCovidStruct) {
-		tousAntiCovid = (tousAntiCovidStruct)row_out_tXMLMap_2_TXMLMAP_IN;		
-	}
- 
-
-
-	tos_count_tXMLMap_2_TXMLMAP_IN++;
-
-/**
- * [tXMLMap_2_TXMLMAP_IN main ] stop
- */
-	
-	/**
-	 * [tXMLMap_2_TXMLMAP_IN process_data_begin ] start
-	 */
-
-	
-
-	
-	
-		currentVirtualComponent = "tXMLMap_2";
-	
-	currentComponent="tXMLMap_2_TXMLMAP_IN";
-
-	
-
- 
-
-
-
-/**
- * [tXMLMap_2_TXMLMAP_IN process_data_begin ] stop
- */
+					/**
+					 * [tXMLMap_2_TXMLMAP_IN process_data_begin ] stop
+					 */
 // Start of branch "tousAntiCovid"
-if(tousAntiCovid != null) { 
+					if (tousAntiCovid != null) {
 
+						/**
+						 * [tFileOutputJSON_2 main ] start
+						 */
 
+						currentComponent = "tFileOutputJSON_2";
 
-	
-	/**
-	 * [tFileOutputJSON_2 main ] start
-	 */
+						if (execStat) {
+							runStat.updateStatOnConnection(iterateId, 1, 1, "tousAntiCovid");
+						}
 
-	
+						org.json.simple.JSONObject jsonRowtFileOutputJSON_2 = new org.json.simple.JSONObject();
+						if (tousAntiCovid.id != null) {
 
-	
-	
-	currentComponent="tFileOutputJSON_2";
+							jsonRowtFileOutputJSON_2.put("id", tousAntiCovid.id);
 
-	
-					if(execStat){
-						runStat.updateStatOnConnection(iterateId,1,1,"tousAntiCovid");
-					}
-					
+						} else {
+							jsonRowtFileOutputJSON_2.put("id", null);
+						}
 
+						if (tousAntiCovid.date_description != null) {
 
-org.json.simple.JSONObject jsonRowtFileOutputJSON_2 = new org.json.simple.JSONObject();
-			    	if(tousAntiCovid.id != null){
-			    
-					jsonRowtFileOutputJSON_2.put("id", tousAntiCovid.id);
-				
-					}else{
-						jsonRowtFileOutputJSON_2.put("id", null);
-					}
-				
-			    	if(tousAntiCovid.date_description != null){
-			    
-					jsonRowtFileOutputJSON_2.put("date_description",FormatterUtils.format_Date(tousAntiCovid.date_description, "dd-MM-yyyy"));
-				
-					}else{
-						jsonRowtFileOutputJSON_2.put("date_description", null);
-					}
-				
-			    	if(tousAntiCovid.user_id != null){
-			    
-					jsonRowtFileOutputJSON_2.put("user_id", tousAntiCovid.user_id);
-				
-					}else{
-						jsonRowtFileOutputJSON_2.put("user_id", null);
-					}
-				
-			    	if(tousAntiCovid.user_name != null){
-			    
-					jsonRowtFileOutputJSON_2.put("user_name", tousAntiCovid.user_name);
-				
-					}else{
-						jsonRowtFileOutputJSON_2.put("user_name", null);
-					}
-				
-			    	if(tousAntiCovid.user_screen_name != null){
-			    
-					jsonRowtFileOutputJSON_2.put("user_screen_name", tousAntiCovid.user_screen_name);
-				
-					}else{
-						jsonRowtFileOutputJSON_2.put("user_screen_name", null);
-					}
-				
-			    	if(tousAntiCovid.user_location != null){
-			    
-					jsonRowtFileOutputJSON_2.put("user_location", tousAntiCovid.user_location);
-				
-					}else{
-						jsonRowtFileOutputJSON_2.put("user_location", null);
-					}
-				
-			    	if(tousAntiCovid.user_description != null){
-			    
-					jsonRowtFileOutputJSON_2.put("user_description", tousAntiCovid.user_description);
-				
-					}else{
-						jsonRowtFileOutputJSON_2.put("user_description", null);
-					}
-				
-			    	if(tousAntiCovid.hashtag_text != null){
-			    
-					jsonRowtFileOutputJSON_2.put("hashtag_text", tousAntiCovid.hashtag_text);
-				
-					}else{
-						jsonRowtFileOutputJSON_2.put("hashtag_text", null);
-					}
-				
-			    	if(tousAntiCovid.text_description != null){
-			    
-					jsonRowtFileOutputJSON_2.put("text_description", tousAntiCovid.text_description);
-				
-					}else{
-						jsonRowtFileOutputJSON_2.put("text_description", null);
-					}
-				
-			    	if(tousAntiCovid.hashtag_id != null){
-			    
-					jsonRowtFileOutputJSON_2.put("hashtag_id", tousAntiCovid.hashtag_id);
-				
-					}else{
-						jsonRowtFileOutputJSON_2.put("hashtag_id", null);
-					}
-				
-			    	if(tousAntiCovid.geo_id != null){
-			    
-					jsonRowtFileOutputJSON_2.put("geo_id", tousAntiCovid.geo_id);
-				
-					}else{
-						jsonRowtFileOutputJSON_2.put("geo_id", null);
-					}
-				
-			    	if(tousAntiCovid.geo_description != null){
-			    
-					jsonRowtFileOutputJSON_2.put("geo_description", tousAntiCovid.geo_description);
-				
-					}else{
-						jsonRowtFileOutputJSON_2.put("geo_description", null);
-					}
-				
-			    	if(tousAntiCovid.text_id != null){
-			    
-					jsonRowtFileOutputJSON_2.put("text_id", tousAntiCovid.text_id);
-				
-					}else{
-						jsonRowtFileOutputJSON_2.put("text_id", null);
-					}
-				
-			    	if(tousAntiCovid.date_id != null){
-			    
-					jsonRowtFileOutputJSON_2.put("date_id", tousAntiCovid.date_id);
-				
-					}else{
-						jsonRowtFileOutputJSON_2.put("date_id", null);
-					}
-				
+							jsonRowtFileOutputJSON_2.put("date_description",
+									FormatterUtils.format_Date(tousAntiCovid.date_description, "dd-MM-yyyy"));
 
-if(!isFirst_tFileOutputJSON_2){
-	outtFileOutputJSON_2.append(",");
-}
-isFirst_tFileOutputJSON_2 = false;
-outtFileOutputJSON_2.append(jsonRowtFileOutputJSON_2.toJSONString());
-nb_line_tFileOutputJSON_2++;
+						} else {
+							jsonRowtFileOutputJSON_2.put("date_description", null);
+						}
 
- 
+						if (tousAntiCovid.user_id != null) {
 
+							jsonRowtFileOutputJSON_2.put("user_id", tousAntiCovid.user_id);
 
-	tos_count_tFileOutputJSON_2++;
+						} else {
+							jsonRowtFileOutputJSON_2.put("user_id", null);
+						}
 
-/**
- * [tFileOutputJSON_2 main ] stop
- */
-	
-	/**
-	 * [tFileOutputJSON_2 process_data_begin ] start
-	 */
+						if (tousAntiCovid.user_name != null) {
 
-	
+							jsonRowtFileOutputJSON_2.put("user_name", tousAntiCovid.user_name);
 
-	
-	
-	currentComponent="tFileOutputJSON_2";
+						} else {
+							jsonRowtFileOutputJSON_2.put("user_name", null);
+						}
 
-	
+						if (tousAntiCovid.user_screen_name != null) {
 
- 
+							jsonRowtFileOutputJSON_2.put("user_screen_name", tousAntiCovid.user_screen_name);
 
+						} else {
+							jsonRowtFileOutputJSON_2.put("user_screen_name", null);
+						}
 
+						if (tousAntiCovid.user_location != null) {
 
-/**
- * [tFileOutputJSON_2 process_data_begin ] stop
- */
-	
-	/**
-	 * [tFileOutputJSON_2 process_data_end ] start
-	 */
+							jsonRowtFileOutputJSON_2.put("user_location", tousAntiCovid.user_location);
 
-	
+						} else {
+							jsonRowtFileOutputJSON_2.put("user_location", null);
+						}
 
-	
-	
-	currentComponent="tFileOutputJSON_2";
+						if (tousAntiCovid.user_description != null) {
 
-	
+							jsonRowtFileOutputJSON_2.put("user_description", tousAntiCovid.user_description);
 
- 
+						} else {
+							jsonRowtFileOutputJSON_2.put("user_description", null);
+						}
 
+						if (tousAntiCovid.hashtag_text != null) {
 
+							jsonRowtFileOutputJSON_2.put("hashtag_text", tousAntiCovid.hashtag_text);
 
-/**
- * [tFileOutputJSON_2 process_data_end ] stop
- */
+						} else {
+							jsonRowtFileOutputJSON_2.put("hashtag_text", null);
+						}
 
-} // End of branch "tousAntiCovid"
+						if (tousAntiCovid.text_description != null) {
 
+							jsonRowtFileOutputJSON_2.put("text_description", tousAntiCovid.text_description);
 
+						} else {
+							jsonRowtFileOutputJSON_2.put("text_description", null);
+						}
 
+						if (tousAntiCovid.hashtag_id != null) {
 
-	
-	/**
-	 * [tXMLMap_2_TXMLMAP_IN process_data_end ] start
-	 */
+							jsonRowtFileOutputJSON_2.put("hashtag_id", tousAntiCovid.hashtag_id);
 
-	
+						} else {
+							jsonRowtFileOutputJSON_2.put("hashtag_id", null);
+						}
 
-	
-	
-		currentVirtualComponent = "tXMLMap_2";
-	
-	currentComponent="tXMLMap_2_TXMLMAP_IN";
+						if (tousAntiCovid.geo_id != null) {
 
-	
+							jsonRowtFileOutputJSON_2.put("geo_id", tousAntiCovid.geo_id);
 
- 
+						} else {
+							jsonRowtFileOutputJSON_2.put("geo_id", null);
+						}
 
+						if (tousAntiCovid.geo_description != null) {
 
+							jsonRowtFileOutputJSON_2.put("geo_description", tousAntiCovid.geo_description);
 
-/**
- * [tXMLMap_2_TXMLMAP_IN process_data_end ] stop
- */
-	
-	/**
-	 * [tXMLMap_2_TXMLMAP_IN end ] start
-	 */
+						} else {
+							jsonRowtFileOutputJSON_2.put("geo_description", null);
+						}
 
-	
+						if (tousAntiCovid.text_id != null) {
 
-	
-	
-		currentVirtualComponent = "tXMLMap_2";
-	
-	currentComponent="tXMLMap_2_TXMLMAP_IN";
+							jsonRowtFileOutputJSON_2.put("text_id", tousAntiCovid.text_id);
 
-	
+						} else {
+							jsonRowtFileOutputJSON_2.put("text_id", null);
+						}
 
-}//TD512
- 
+						if (tousAntiCovid.date_id != null) {
 
-ok_Hash.put("tXMLMap_2_TXMLMAP_IN", true);
-end_Hash.put("tXMLMap_2_TXMLMAP_IN", System.currentTimeMillis());
+							jsonRowtFileOutputJSON_2.put("date_id", tousAntiCovid.date_id);
 
+						} else {
+							jsonRowtFileOutputJSON_2.put("date_id", null);
+						}
 
+						if (!isFirst_tFileOutputJSON_2) {
+							outtFileOutputJSON_2.append(",");
+						}
+						isFirst_tFileOutputJSON_2 = false;
+						outtFileOutputJSON_2.append(jsonRowtFileOutputJSON_2.toJSONString());
+						nb_line_tFileOutputJSON_2++;
 
+						tos_count_tFileOutputJSON_2++;
 
-/**
- * [tXMLMap_2_TXMLMAP_IN end ] stop
- */
+						/**
+						 * [tFileOutputJSON_2 main ] stop
+						 */
 
-	
-	/**
-	 * [tFileOutputJSON_2 end ] start
-	 */
+						/**
+						 * [tFileOutputJSON_2 process_data_begin ] start
+						 */
 
-	
+						currentComponent = "tFileOutputJSON_2";
 
-	
-	
-	currentComponent="tFileOutputJSON_2";
+						/**
+						 * [tFileOutputJSON_2 process_data_begin ] stop
+						 */
 
-	
+						/**
+						 * [tFileOutputJSON_2 process_data_end ] start
+						 */
 
-	outtFileOutputJSON_2.print("]}");
-outtFileOutputJSON_2.close();
-globalMap.put("tFileOutputJSON_2_NB_LINE",nb_line_tFileOutputJSON_2);
+						currentComponent = "tFileOutputJSON_2";
 
-				if(execStat){
-			  		runStat.updateStat(resourceMap,iterateId,2,0,"tousAntiCovid");
-			  	}
-			  	
- 
+						/**
+						 * [tFileOutputJSON_2 process_data_end ] stop
+						 */
 
-ok_Hash.put("tFileOutputJSON_2", true);
-end_Hash.put("tFileOutputJSON_2", System.currentTimeMillis());
+					} // End of branch "tousAntiCovid"
 
-				if(execStat){   
-   	 				runStat.updateStatOnConnection("OnComponentOk4", 0, "ok");
+					/**
+					 * [tXMLMap_2_TXMLMAP_IN process_data_end ] start
+					 */
+
+					currentVirtualComponent = "tXMLMap_2";
+
+					currentComponent = "tXMLMap_2_TXMLMAP_IN";
+
+					/**
+					 * [tXMLMap_2_TXMLMAP_IN process_data_end ] stop
+					 */
+
+					/**
+					 * [tXMLMap_2_TXMLMAP_IN end ] start
+					 */
+
+					currentVirtualComponent = "tXMLMap_2";
+
+					currentComponent = "tXMLMap_2_TXMLMAP_IN";
+
+				} // TD512
+
+				ok_Hash.put("tXMLMap_2_TXMLMAP_IN", true);
+				end_Hash.put("tXMLMap_2_TXMLMAP_IN", System.currentTimeMillis());
+
+				/**
+				 * [tXMLMap_2_TXMLMAP_IN end ] stop
+				 */
+
+				/**
+				 * [tFileOutputJSON_2 end ] start
+				 */
+
+				currentComponent = "tFileOutputJSON_2";
+
+				outtFileOutputJSON_2.print("]}");
+				outtFileOutputJSON_2.close();
+				globalMap.put("tFileOutputJSON_2_NB_LINE", nb_line_tFileOutputJSON_2);
+
+				if (execStat) {
+					runStat.updateStat(resourceMap, iterateId, 2, 0, "tousAntiCovid");
+				}
+
+				ok_Hash.put("tFileOutputJSON_2", true);
+				end_Hash.put("tFileOutputJSON_2", System.currentTimeMillis());
+
+				if (execStat) {
+					runStat.updateStatOnConnection("OnComponentOk4", 0, "ok");
 				}
 				tRESTClient_3Process(globalMap);
 
+				/**
+				 * [tFileOutputJSON_2 end ] stop
+				 */
 
+			} // end the resume
 
-/**
- * [tFileOutputJSON_2 end ] stop
- */
+		} catch (java.lang.Exception e) {
 
+			TalendException te = new TalendException(e, currentComponent, globalMap);
 
+			te.setVirtualComponentName(currentVirtualComponent);
 
+			throw te;
+		} catch (java.lang.Error error) {
 
+			runStat.stopThreadStat();
 
+			throw error;
+		} finally {
 
+			try {
 
+				/**
+				 * [tRESTClient_2 finally ] start
+				 */
 
+				currentComponent = "tRESTClient_2";
 
-				}//end the resume
+				/**
+				 * [tRESTClient_2 finally ] stop
+				 */
 
-				
+				/**
+				 * [tXMLMap_2_TXMLMAP_OUT finally ] start
+				 */
 
+				currentVirtualComponent = "tXMLMap_2";
 
+				currentComponent = "tXMLMap_2_TXMLMAP_OUT";
 
-	
-			}catch(java.lang.Exception e){	
-				
-				TalendException te = new TalendException(e, currentComponent, globalMap);
-				
-					te.setVirtualComponentName(currentVirtualComponent);
-				
-				throw te;
-			}catch(java.lang.Error error){	
-				
-					runStat.stopThreadStat();
-				
-				throw error;
-			}finally{
-				
-				try{
-					
-	
-	/**
-	 * [tRESTClient_2 finally ] start
-	 */
+				/**
+				 * [tXMLMap_2_TXMLMAP_OUT finally ] stop
+				 */
 
-	
+				/**
+				 * [tXMLMap_2_TXMLMAP_IN finally ] start
+				 */
 
-	
-	
-	currentComponent="tRESTClient_2";
+				currentVirtualComponent = "tXMLMap_2";
 
-	
+				currentComponent = "tXMLMap_2_TXMLMAP_IN";
 
- 
+				/**
+				 * [tXMLMap_2_TXMLMAP_IN finally ] stop
+				 */
 
+				/**
+				 * [tFileOutputJSON_2 finally ] start
+				 */
 
+				currentComponent = "tFileOutputJSON_2";
 
-/**
- * [tRESTClient_2 finally ] stop
- */
+				/**
+				 * [tFileOutputJSON_2 finally ] stop
+				 */
 
-	
-	/**
-	 * [tXMLMap_2_TXMLMAP_OUT finally ] start
-	 */
-
-	
-
-	
-	
-		currentVirtualComponent = "tXMLMap_2";
-	
-	currentComponent="tXMLMap_2_TXMLMAP_OUT";
-
-	
-
- 
-
-
-
-/**
- * [tXMLMap_2_TXMLMAP_OUT finally ] stop
- */
-
-	
-	/**
-	 * [tXMLMap_2_TXMLMAP_IN finally ] start
-	 */
-
-	
-
-	
-	
-		currentVirtualComponent = "tXMLMap_2";
-	
-	currentComponent="tXMLMap_2_TXMLMAP_IN";
-
-	
-
- 
-
-
-
-/**
- * [tXMLMap_2_TXMLMAP_IN finally ] stop
- */
-
-	
-	/**
-	 * [tFileOutputJSON_2 finally ] start
-	 */
-
-	
-
-	
-	
-	currentComponent="tFileOutputJSON_2";
-
-	
-
- 
-
-
-
-/**
- * [tFileOutputJSON_2 finally ] stop
- */
-
-
-
-
-
-
-
-
-
-				}catch(java.lang.Exception e){	
-					//ignore
-				}catch(java.lang.Error error){
-					//ignore
-				}
-				resourceMap = null;
+			} catch (java.lang.Exception e) {
+				// ignore
+			} catch (java.lang.Error error) {
+				// ignore
 			}
-		
+			resourceMap = null;
+		}
 
 		globalMap.put("tRESTClient_2_SUBPROCESS_STATE", 1);
 	}
-	
 
+	public static class nhsStruct implements routines.system.IPersistableRow<nhsStruct> {
+		final static byte[] commonByteArrayLock_ANALYSIS_TWITTER_s0_connexion_api_twitter_apps_covid = new byte[0];
+		static byte[] commonByteArray_ANALYSIS_TWITTER_s0_connexion_api_twitter_apps_covid = new byte[0];
 
-public static class nhsStruct implements routines.system.IPersistableRow<nhsStruct> {
-    final static byte[] commonByteArrayLock_ANALYSIS_TWITTER_s0_connexion_api_twitter_apps_covid = new byte[0];
-    static byte[] commonByteArray_ANALYSIS_TWITTER_s0_connexion_api_twitter_apps_covid = new byte[0];
+		public String id;
 
-	
-			    public String id;
+		public String getId() {
+			return this.id;
+		}
 
-				public String getId () {
-					return this.id;
+		public java.util.Date date_description;
+
+		public java.util.Date getDate_description() {
+			return this.date_description;
+		}
+
+		public String user_id;
+
+		public String getUser_id() {
+			return this.user_id;
+		}
+
+		public String user_name;
+
+		public String getUser_name() {
+			return this.user_name;
+		}
+
+		public String user_screen_name;
+
+		public String getUser_screen_name() {
+			return this.user_screen_name;
+		}
+
+		public String user_location;
+
+		public String getUser_location() {
+			return this.user_location;
+		}
+
+		public String user_description;
+
+		public String getUser_description() {
+			return this.user_description;
+		}
+
+		public String hashtag_text;
+
+		public String getHashtag_text() {
+			return this.hashtag_text;
+		}
+
+		public String text_description;
+
+		public String getText_description() {
+			return this.text_description;
+		}
+
+		public String hashtag_id;
+
+		public String getHashtag_id() {
+			return this.hashtag_id;
+		}
+
+		public String geo_id;
+
+		public String getGeo_id() {
+			return this.geo_id;
+		}
+
+		public String geo_description;
+
+		public String getGeo_description() {
+			return this.geo_description;
+		}
+
+		public String text_id;
+
+		public String getText_id() {
+			return this.text_id;
+		}
+
+		public String date_id;
+
+		public String getDate_id() {
+			return this.date_id;
+		}
+
+		private String readString(ObjectInputStream dis) throws IOException {
+			String strReturn = null;
+			int length = 0;
+			length = dis.readInt();
+			if (length == -1) {
+				strReturn = null;
+			} else {
+				if (length > commonByteArray_ANALYSIS_TWITTER_s0_connexion_api_twitter_apps_covid.length) {
+					if (length < 1024
+							&& commonByteArray_ANALYSIS_TWITTER_s0_connexion_api_twitter_apps_covid.length == 0) {
+						commonByteArray_ANALYSIS_TWITTER_s0_connexion_api_twitter_apps_covid = new byte[1024];
+					} else {
+						commonByteArray_ANALYSIS_TWITTER_s0_connexion_api_twitter_apps_covid = new byte[2 * length];
+					}
 				}
-				
-			    public java.util.Date date_description;
-
-				public java.util.Date getDate_description () {
-					return this.date_description;
-				}
-				
-			    public String user_id;
-
-				public String getUser_id () {
-					return this.user_id;
-				}
-				
-			    public String user_name;
-
-				public String getUser_name () {
-					return this.user_name;
-				}
-				
-			    public String user_screen_name;
-
-				public String getUser_screen_name () {
-					return this.user_screen_name;
-				}
-				
-			    public String user_location;
-
-				public String getUser_location () {
-					return this.user_location;
-				}
-				
-			    public String user_description;
-
-				public String getUser_description () {
-					return this.user_description;
-				}
-				
-			    public String hashtag_text;
-
-				public String getHashtag_text () {
-					return this.hashtag_text;
-				}
-				
-			    public String text_description;
-
-				public String getText_description () {
-					return this.text_description;
-				}
-				
-			    public String hashtag_id;
-
-				public String getHashtag_id () {
-					return this.hashtag_id;
-				}
-				
-			    public String geo_id;
-
-				public String getGeo_id () {
-					return this.geo_id;
-				}
-				
-			    public String geo_description;
-
-				public String getGeo_description () {
-					return this.geo_description;
-				}
-				
-			    public String text_id;
-
-				public String getText_id () {
-					return this.text_id;
-				}
-				
-			    public String date_id;
-
-				public String getDate_id () {
-					return this.date_id;
-				}
-				
-
-
-
-	private String readString(ObjectInputStream dis) throws IOException{
-		String strReturn = null;
-		int length = 0;
-        length = dis.readInt();
-		if (length == -1) {
-			strReturn = null;
-		} else {
-			if(length > commonByteArray_ANALYSIS_TWITTER_s0_connexion_api_twitter_apps_covid.length) {
-				if(length < 1024 && commonByteArray_ANALYSIS_TWITTER_s0_connexion_api_twitter_apps_covid.length == 0) {
-   					commonByteArray_ANALYSIS_TWITTER_s0_connexion_api_twitter_apps_covid = new byte[1024];
-				} else {
-   					commonByteArray_ANALYSIS_TWITTER_s0_connexion_api_twitter_apps_covid = new byte[2 * length];
-   				}
+				dis.readFully(commonByteArray_ANALYSIS_TWITTER_s0_connexion_api_twitter_apps_covid, 0, length);
+				strReturn = new String(commonByteArray_ANALYSIS_TWITTER_s0_connexion_api_twitter_apps_covid, 0, length,
+						utf8Charset);
 			}
-			dis.readFully(commonByteArray_ANALYSIS_TWITTER_s0_connexion_api_twitter_apps_covid, 0, length);
-			strReturn = new String(commonByteArray_ANALYSIS_TWITTER_s0_connexion_api_twitter_apps_covid, 0, length, utf8Charset);
+			return strReturn;
 		}
-		return strReturn;
-	}
 
-    private void writeString(String str, ObjectOutputStream dos) throws IOException{
-		if(str == null) {
-            dos.writeInt(-1);
-		} else {
-            byte[] byteArray = str.getBytes(utf8Charset);
-	    	dos.writeInt(byteArray.length);
-			dos.write(byteArray);
-    	}
-    }
-
-	private java.util.Date readDate(ObjectInputStream dis) throws IOException{
-		java.util.Date dateReturn = null;
-        int length = 0;
-        length = dis.readByte();
-		if (length == -1) {
-			dateReturn = null;
-		} else {
-	    	dateReturn = new Date(dis.readLong());
+		private void writeString(String str, ObjectOutputStream dos) throws IOException {
+			if (str == null) {
+				dos.writeInt(-1);
+			} else {
+				byte[] byteArray = str.getBytes(utf8Charset);
+				dos.writeInt(byteArray.length);
+				dos.write(byteArray);
+			}
 		}
-		return dateReturn;
-	}
 
-    private void writeDate(java.util.Date date1, ObjectOutputStream dos) throws IOException{
-		if(date1 == null) {
-            dos.writeByte(-1);
-		} else {
-			dos.writeByte(0);
-	    	dos.writeLong(date1.getTime());
-    	}
-    }
+		private java.util.Date readDate(ObjectInputStream dis) throws IOException {
+			java.util.Date dateReturn = null;
+			int length = 0;
+			length = dis.readByte();
+			if (length == -1) {
+				dateReturn = null;
+			} else {
+				dateReturn = new Date(dis.readLong());
+			}
+			return dateReturn;
+		}
 
-    public void readData(ObjectInputStream dis) {
+		private void writeDate(java.util.Date date1, ObjectOutputStream dos) throws IOException {
+			if (date1 == null) {
+				dos.writeByte(-1);
+			} else {
+				dos.writeByte(0);
+				dos.writeLong(date1.getTime());
+			}
+		}
 
-		synchronized(commonByteArrayLock_ANALYSIS_TWITTER_s0_connexion_api_twitter_apps_covid) {
+		public void readData(ObjectInputStream dis) {
 
-        	try {
+			synchronized (commonByteArrayLock_ANALYSIS_TWITTER_s0_connexion_api_twitter_apps_covid) {
 
-        		int length = 0;
-		
+				try {
+
+					int length = 0;
+
 					this.id = readString(dis);
-					
+
 					this.date_description = readDate(dis);
-					
+
 					this.user_id = readString(dis);
-					
+
 					this.user_name = readString(dis);
-					
+
 					this.user_screen_name = readString(dis);
-					
+
 					this.user_location = readString(dis);
-					
+
 					this.user_description = readString(dis);
-					
+
 					this.hashtag_text = readString(dis);
-					
+
 					this.text_description = readString(dis);
-					
+
 					this.hashtag_id = readString(dis);
-					
+
 					this.geo_id = readString(dis);
-					
+
 					this.geo_description = readString(dis);
-					
+
 					this.text_id = readString(dis);
-					
+
 					this.date_id = readString(dis);
-					
-        	} catch (IOException e) {
-	            throw new RuntimeException(e);
 
-		
+				} catch (IOException e) {
+					throw new RuntimeException(e);
 
-        }
-
-		
-
-      }
-
-
-    }
-
-    public void writeData(ObjectOutputStream dos) {
-        try {
-
-		
-					// String
-				
-						writeString(this.id,dos);
-					
-					// java.util.Date
-				
-						writeDate(this.date_description,dos);
-					
-					// String
-				
-						writeString(this.user_id,dos);
-					
-					// String
-				
-						writeString(this.user_name,dos);
-					
-					// String
-				
-						writeString(this.user_screen_name,dos);
-					
-					// String
-				
-						writeString(this.user_location,dos);
-					
-					// String
-				
-						writeString(this.user_description,dos);
-					
-					// String
-				
-						writeString(this.hashtag_text,dos);
-					
-					// String
-				
-						writeString(this.text_description,dos);
-					
-					// String
-				
-						writeString(this.hashtag_id,dos);
-					
-					// String
-				
-						writeString(this.geo_id,dos);
-					
-					// String
-				
-						writeString(this.geo_description,dos);
-					
-					// String
-				
-						writeString(this.text_id,dos);
-					
-					// String
-				
-						writeString(this.date_id,dos);
-					
-        	} catch (IOException e) {
-	            throw new RuntimeException(e);
-        }
-
-
-    }
-
-
-    public String toString() {
-
-		StringBuilder sb = new StringBuilder();
-		sb.append(super.toString());
-		sb.append("[");
-		sb.append("id="+id);
-		sb.append(",date_description="+String.valueOf(date_description));
-		sb.append(",user_id="+user_id);
-		sb.append(",user_name="+user_name);
-		sb.append(",user_screen_name="+user_screen_name);
-		sb.append(",user_location="+user_location);
-		sb.append(",user_description="+user_description);
-		sb.append(",hashtag_text="+hashtag_text);
-		sb.append(",text_description="+text_description);
-		sb.append(",hashtag_id="+hashtag_id);
-		sb.append(",geo_id="+geo_id);
-		sb.append(",geo_description="+geo_description);
-		sb.append(",text_id="+text_id);
-		sb.append(",date_id="+date_id);
-	    sb.append("]");
-
-	    return sb.toString();
-    }
-
-    /**
-     * Compare keys
-     */
-    public int compareTo(nhsStruct other) {
-
-		int returnValue = -1;
-		
-	    return returnValue;
-    }
-
-
-    private int checkNullsAndCompare(Object object1, Object object2) {
-        int returnValue = 0;
-		if (object1 instanceof Comparable && object2 instanceof Comparable) {
-            returnValue = ((Comparable) object1).compareTo(object2);
-        } else if (object1 != null && object2 != null) {
-            returnValue = compareStrings(object1.toString(), object2.toString());
-        } else if (object1 == null && object2 != null) {
-            returnValue = 1;
-        } else if (object1 != null && object2 == null) {
-            returnValue = -1;
-        } else {
-            returnValue = 0;
-        }
-
-        return returnValue;
-    }
-
-    private int compareStrings(String string1, String string2) {
-        return string1.compareTo(string2);
-    }
-
-
-}
-
-public static class row3Struct implements routines.system.IPersistableRow<row3Struct> {
-    final static byte[] commonByteArrayLock_ANALYSIS_TWITTER_s0_connexion_api_twitter_apps_covid = new byte[0];
-    static byte[] commonByteArray_ANALYSIS_TWITTER_s0_connexion_api_twitter_apps_covid = new byte[0];
-
-	
-			    public Integer statusCode;
-
-				public Integer getStatusCode () {
-					return this.statusCode;
 				}
-				
-			    public routines.system.Document body;
 
-				public routines.system.Document getBody () {
-					return this.body;
-				}
-				
-			    public String string;
-
-				public String getString () {
-					return this.string;
-				}
-				
-
-
-	private Integer readInteger(ObjectInputStream dis) throws IOException{
-		Integer intReturn;
-        int length = 0;
-        length = dis.readByte();
-		if (length == -1) {
-			intReturn = null;
-		} else {
-	    	intReturn = dis.readInt();
-		}
-		return intReturn;
-	}
-
-	private void writeInteger(Integer intNum, ObjectOutputStream dos) throws IOException{
-		if(intNum == null) {
-            dos.writeByte(-1);
-		} else {
-			dos.writeByte(0);
-	    	dos.writeInt(intNum);
-    	}
-	}
-
-	private String readString(ObjectInputStream dis) throws IOException{
-		String strReturn = null;
-		int length = 0;
-        length = dis.readInt();
-		if (length == -1) {
-			strReturn = null;
-		} else {
-			if(length > commonByteArray_ANALYSIS_TWITTER_s0_connexion_api_twitter_apps_covid.length) {
-				if(length < 1024 && commonByteArray_ANALYSIS_TWITTER_s0_connexion_api_twitter_apps_covid.length == 0) {
-   					commonByteArray_ANALYSIS_TWITTER_s0_connexion_api_twitter_apps_covid = new byte[1024];
-				} else {
-   					commonByteArray_ANALYSIS_TWITTER_s0_connexion_api_twitter_apps_covid = new byte[2 * length];
-   				}
 			}
-			dis.readFully(commonByteArray_ANALYSIS_TWITTER_s0_connexion_api_twitter_apps_covid, 0, length);
-			strReturn = new String(commonByteArray_ANALYSIS_TWITTER_s0_connexion_api_twitter_apps_covid, 0, length, utf8Charset);
+
 		}
-		return strReturn;
+
+		public void writeData(ObjectOutputStream dos) {
+			try {
+
+				// String
+
+				writeString(this.id, dos);
+
+				// java.util.Date
+
+				writeDate(this.date_description, dos);
+
+				// String
+
+				writeString(this.user_id, dos);
+
+				// String
+
+				writeString(this.user_name, dos);
+
+				// String
+
+				writeString(this.user_screen_name, dos);
+
+				// String
+
+				writeString(this.user_location, dos);
+
+				// String
+
+				writeString(this.user_description, dos);
+
+				// String
+
+				writeString(this.hashtag_text, dos);
+
+				// String
+
+				writeString(this.text_description, dos);
+
+				// String
+
+				writeString(this.hashtag_id, dos);
+
+				// String
+
+				writeString(this.geo_id, dos);
+
+				// String
+
+				writeString(this.geo_description, dos);
+
+				// String
+
+				writeString(this.text_id, dos);
+
+				// String
+
+				writeString(this.date_id, dos);
+
+			} catch (IOException e) {
+				throw new RuntimeException(e);
+			}
+
+		}
+
+		public String toString() {
+
+			StringBuilder sb = new StringBuilder();
+			sb.append(super.toString());
+			sb.append("[");
+			sb.append("id=" + id);
+			sb.append(",date_description=" + String.valueOf(date_description));
+			sb.append(",user_id=" + user_id);
+			sb.append(",user_name=" + user_name);
+			sb.append(",user_screen_name=" + user_screen_name);
+			sb.append(",user_location=" + user_location);
+			sb.append(",user_description=" + user_description);
+			sb.append(",hashtag_text=" + hashtag_text);
+			sb.append(",text_description=" + text_description);
+			sb.append(",hashtag_id=" + hashtag_id);
+			sb.append(",geo_id=" + geo_id);
+			sb.append(",geo_description=" + geo_description);
+			sb.append(",text_id=" + text_id);
+			sb.append(",date_id=" + date_id);
+			sb.append("]");
+
+			return sb.toString();
+		}
+
+		/**
+		 * Compare keys
+		 */
+		public int compareTo(nhsStruct other) {
+
+			int returnValue = -1;
+
+			return returnValue;
+		}
+
+		private int checkNullsAndCompare(Object object1, Object object2) {
+			int returnValue = 0;
+			if (object1 instanceof Comparable && object2 instanceof Comparable) {
+				returnValue = ((Comparable) object1).compareTo(object2);
+			} else if (object1 != null && object2 != null) {
+				returnValue = compareStrings(object1.toString(), object2.toString());
+			} else if (object1 == null && object2 != null) {
+				returnValue = 1;
+			} else if (object1 != null && object2 == null) {
+				returnValue = -1;
+			} else {
+				returnValue = 0;
+			}
+
+			return returnValue;
+		}
+
+		private int compareStrings(String string1, String string2) {
+			return string1.compareTo(string2);
+		}
+
 	}
 
-    private void writeString(String str, ObjectOutputStream dos) throws IOException{
-		if(str == null) {
-            dos.writeInt(-1);
-		} else {
-            byte[] byteArray = str.getBytes(utf8Charset);
-	    	dos.writeInt(byteArray.length);
-			dos.write(byteArray);
-    	}
-    }
+	public static class row3Struct implements routines.system.IPersistableRow<row3Struct> {
+		final static byte[] commonByteArrayLock_ANALYSIS_TWITTER_s0_connexion_api_twitter_apps_covid = new byte[0];
+		static byte[] commonByteArray_ANALYSIS_TWITTER_s0_connexion_api_twitter_apps_covid = new byte[0];
 
-    public void readData(ObjectInputStream dis) {
+		public Integer statusCode;
 
-		synchronized(commonByteArrayLock_ANALYSIS_TWITTER_s0_connexion_api_twitter_apps_covid) {
+		public Integer getStatusCode() {
+			return this.statusCode;
+		}
 
-        	try {
+		public routines.system.Document body;
 
-        		int length = 0;
-		
-						this.statusCode = readInteger(dis);
-					
-						this.body = (routines.system.Document) dis.readObject();
-					
+		public routines.system.Document getBody() {
+			return this.body;
+		}
+
+		public String string;
+
+		public String getString() {
+			return this.string;
+		}
+
+		private Integer readInteger(ObjectInputStream dis) throws IOException {
+			Integer intReturn;
+			int length = 0;
+			length = dis.readByte();
+			if (length == -1) {
+				intReturn = null;
+			} else {
+				intReturn = dis.readInt();
+			}
+			return intReturn;
+		}
+
+		private void writeInteger(Integer intNum, ObjectOutputStream dos) throws IOException {
+			if (intNum == null) {
+				dos.writeByte(-1);
+			} else {
+				dos.writeByte(0);
+				dos.writeInt(intNum);
+			}
+		}
+
+		private String readString(ObjectInputStream dis) throws IOException {
+			String strReturn = null;
+			int length = 0;
+			length = dis.readInt();
+			if (length == -1) {
+				strReturn = null;
+			} else {
+				if (length > commonByteArray_ANALYSIS_TWITTER_s0_connexion_api_twitter_apps_covid.length) {
+					if (length < 1024
+							&& commonByteArray_ANALYSIS_TWITTER_s0_connexion_api_twitter_apps_covid.length == 0) {
+						commonByteArray_ANALYSIS_TWITTER_s0_connexion_api_twitter_apps_covid = new byte[1024];
+					} else {
+						commonByteArray_ANALYSIS_TWITTER_s0_connexion_api_twitter_apps_covid = new byte[2 * length];
+					}
+				}
+				dis.readFully(commonByteArray_ANALYSIS_TWITTER_s0_connexion_api_twitter_apps_covid, 0, length);
+				strReturn = new String(commonByteArray_ANALYSIS_TWITTER_s0_connexion_api_twitter_apps_covid, 0, length,
+						utf8Charset);
+			}
+			return strReturn;
+		}
+
+		private void writeString(String str, ObjectOutputStream dos) throws IOException {
+			if (str == null) {
+				dos.writeInt(-1);
+			} else {
+				byte[] byteArray = str.getBytes(utf8Charset);
+				dos.writeInt(byteArray.length);
+				dos.write(byteArray);
+			}
+		}
+
+		public void readData(ObjectInputStream dis) {
+
+			synchronized (commonByteArrayLock_ANALYSIS_TWITTER_s0_connexion_api_twitter_apps_covid) {
+
+				try {
+
+					int length = 0;
+
+					this.statusCode = readInteger(dis);
+
+					this.body = (routines.system.Document) dis.readObject();
+
 					this.string = readString(dis);
-					
-        	} catch (IOException e) {
-	            throw new RuntimeException(e);
 
-		
-			} catch(ClassNotFoundException eCNFE) {
-				 throw new RuntimeException(eCNFE);
-		
+				} catch (IOException e) {
+					throw new RuntimeException(e);
 
-        }
+				} catch (ClassNotFoundException eCNFE) {
+					throw new RuntimeException(eCNFE);
 
-		
+				}
 
-      }
+			}
 
+		}
 
-    }
+		public void writeData(ObjectOutputStream dos) {
+			try {
 
-    public void writeData(ObjectOutputStream dos) {
-        try {
+				// Integer
 
-		
-					// Integer
-				
-						writeInteger(this.statusCode,dos);
-					
-					// Document
-				
-       			    	dos.writeObject(this.body);
-					
-					// String
-				
-						writeString(this.string,dos);
-					
-        	} catch (IOException e) {
-	            throw new RuntimeException(e);
-        }
+				writeInteger(this.statusCode, dos);
 
+				// Document
 
-    }
+				dos.writeObject(this.body);
 
+				// String
 
-    public String toString() {
+				writeString(this.string, dos);
 
-		StringBuilder sb = new StringBuilder();
-		sb.append(super.toString());
-		sb.append("[");
-		sb.append("statusCode="+String.valueOf(statusCode));
-		sb.append(",body="+String.valueOf(body));
-		sb.append(",string="+string);
-	    sb.append("]");
+			} catch (IOException e) {
+				throw new RuntimeException(e);
+			}
 
-	    return sb.toString();
-    }
+		}
 
-    /**
-     * Compare keys
-     */
-    public int compareTo(row3Struct other) {
+		public String toString() {
 
-		int returnValue = -1;
-		
-	    return returnValue;
-    }
+			StringBuilder sb = new StringBuilder();
+			sb.append(super.toString());
+			sb.append("[");
+			sb.append("statusCode=" + String.valueOf(statusCode));
+			sb.append(",body=" + String.valueOf(body));
+			sb.append(",string=" + string);
+			sb.append("]");
 
+			return sb.toString();
+		}
 
-    private int checkNullsAndCompare(Object object1, Object object2) {
-        int returnValue = 0;
-		if (object1 instanceof Comparable && object2 instanceof Comparable) {
-            returnValue = ((Comparable) object1).compareTo(object2);
-        } else if (object1 != null && object2 != null) {
-            returnValue = compareStrings(object1.toString(), object2.toString());
-        } else if (object1 == null && object2 != null) {
-            returnValue = 1;
-        } else if (object1 != null && object2 == null) {
-            returnValue = -1;
-        } else {
-            returnValue = 0;
-        }
+		/**
+		 * Compare keys
+		 */
+		public int compareTo(row3Struct other) {
 
-        return returnValue;
-    }
+			int returnValue = -1;
 
-    private int compareStrings(String string1, String string2) {
-        return string1.compareTo(string2);
-    }
+			return returnValue;
+		}
 
+		private int checkNullsAndCompare(Object object1, Object object2) {
+			int returnValue = 0;
+			if (object1 instanceof Comparable && object2 instanceof Comparable) {
+				returnValue = ((Comparable) object1).compareTo(object2);
+			} else if (object1 != null && object2 != null) {
+				returnValue = compareStrings(object1.toString(), object2.toString());
+			} else if (object1 == null && object2 != null) {
+				returnValue = 1;
+			} else if (object1 != null && object2 == null) {
+				returnValue = -1;
+			} else {
+				returnValue = 0;
+			}
 
-}
-public void tRESTClient_3Process(final java.util.Map<String, Object> globalMap) throws TalendException {
-	globalMap.put("tRESTClient_3_SUBPROCESS_STATE", 0);
+			return returnValue;
+		}
 
- final boolean execStat = this.execStat;
+		private int compareStrings(String string1, String string2) {
+			return string1.compareTo(string2);
+		}
+
+	}
+
+	public void tRESTClient_3Process(final java.util.Map<String, Object> globalMap) throws TalendException {
+		globalMap.put("tRESTClient_3_SUBPROCESS_STATE", 0);
+
+		final boolean execStat = this.execStat;
 		String currentVirtualComponent = null;
-	
-		String iterateId = "";
-	
-	
-	String currentComponent = "";
-	java.util.Map<String, Object> resourceMap = new java.util.HashMap<String, Object>();
 
-	try {
+		String iterateId = "";
+
+		String currentComponent = "";
+		java.util.Map<String, Object> resourceMap = new java.util.HashMap<String, Object>();
+
+		try {
 			// TDI-39566 avoid throwing an useless Exception
 			boolean resumeIt = true;
 			if (globalResumeTicket == false && resumeEntryMethodName != null) {
 				String currentMethodName = new java.lang.Exception().getStackTrace()[0].getMethodName();
 				resumeIt = resumeEntryMethodName.equals(currentMethodName);
 			}
-			if (resumeIt || globalResumeTicket) { //start the resume
+			if (resumeIt || globalResumeTicket) { // start the resume
 				globalResumeTicket = true;
 
+				row3Struct row3 = new row3Struct();
+				nhsStruct nhs = new nhsStruct();
 
+				/**
+				 * [tXMLMap_3_TXMLMAP_OUT begin ] start
+				 */
 
-		row3Struct row3 = new row3Struct();
-nhsStruct nhs = new nhsStruct();
+				ok_Hash.put("tXMLMap_3_TXMLMAP_OUT", false);
+				start_Hash.put("tXMLMap_3_TXMLMAP_OUT", System.currentTimeMillis());
 
+				currentVirtualComponent = "tXMLMap_3";
 
+				currentComponent = "tXMLMap_3_TXMLMAP_OUT";
 
+				if (execStat) {
+					runStat.updateStatOnConnection(resourceMap, iterateId, 0, 0, "row3");
+				}
 
-	
-	/**
-	 * [tXMLMap_3_TXMLMAP_OUT begin ] start
-	 */
+				int tos_count_tXMLMap_3_TXMLMAP_OUT = 0;
 
-	
-
-	
-		
-		ok_Hash.put("tXMLMap_3_TXMLMAP_OUT", false);
-		start_Hash.put("tXMLMap_3_TXMLMAP_OUT", System.currentTimeMillis());
-		
-	
-		currentVirtualComponent = "tXMLMap_3";
-	
-	currentComponent="tXMLMap_3_TXMLMAP_OUT";
-
-	
-					if(execStat) {
-						runStat.updateStatOnConnection(resourceMap,iterateId,0,0,"row3");
-					}
-				
-		int tos_count_tXMLMap_3_TXMLMAP_OUT = 0;
-		
-
-	
-	
 //===============================input xml init part===============================
-class XML_API_tXMLMap_3_TXMLMAP_OUT{
-	public boolean isDefNull(org.dom4j.Node node) throws javax.xml.transform.TransformerException {
-        if (node != null && node instanceof org.dom4j.Element) {
-        	org.dom4j.Attribute attri = ((org.dom4j.Element)node).attribute("nil");
-        	if(attri != null && ("true").equals(attri.getText())){
-            	return true;
-            }
-        }
-        return false;
-    }
+				class XML_API_tXMLMap_3_TXMLMAP_OUT {
+					public boolean isDefNull(org.dom4j.Node node) throws javax.xml.transform.TransformerException {
+						if (node != null && node instanceof org.dom4j.Element) {
+							org.dom4j.Attribute attri = ((org.dom4j.Element) node).attribute("nil");
+							if (attri != null && ("true").equals(attri.getText())) {
+								return true;
+							}
+						}
+						return false;
+					}
 
-    public boolean isMissing(org.dom4j.Node node) throws javax.xml.transform.TransformerException {
-        return node == null ? true : false;
-    }
+					public boolean isMissing(org.dom4j.Node node) throws javax.xml.transform.TransformerException {
+						return node == null ? true : false;
+					}
 
-    public boolean isEmpty(org.dom4j.Node node) throws javax.xml.transform.TransformerException {
-        if (node != null) {
-            return node.getText().length() == 0;
-        }
-        return false;
-    }
-}
-	class Var__tXMLMap_3_TXMLMAP_OUT__Struct {
-	}
-	Var__tXMLMap_3_TXMLMAP_OUT__Struct Var__tXMLMap_3_TXMLMAP_OUT = new Var__tXMLMap_3_TXMLMAP_OUT__Struct();
+					public boolean isEmpty(org.dom4j.Node node) throws javax.xml.transform.TransformerException {
+						if (node != null) {
+							return node.getText().length() == 0;
+						}
+						return false;
+					}
+				}
+				class Var__tXMLMap_3_TXMLMAP_OUT__Struct {
+				}
+				Var__tXMLMap_3_TXMLMAP_OUT__Struct Var__tXMLMap_3_TXMLMAP_OUT = new Var__tXMLMap_3_TXMLMAP_OUT__Struct();
 // ###############################
 // # Outputs initialization
-nhsStruct nhs_tmp = new nhsStruct();
-nhsStruct nhs_save = null;
+				nhsStruct nhs_tmp = new nhsStruct();
+				nhsStruct nhs_save = null;
 //the aggregate variable
-nhsStruct nhs_aggregate = null;
+				nhsStruct nhs_aggregate = null;
 //init the resultset for aggregate
-java.util.List<Object> allOutsForAggregate_tXMLMap_3 = new java.util.ArrayList<Object>();
-globalMap.put("allOutsForAggregate_tXMLMap_3",allOutsForAggregate_tXMLMap_3);
+				java.util.List<Object> allOutsForAggregate_tXMLMap_3 = new java.util.ArrayList<Object>();
+				globalMap.put("allOutsForAggregate_tXMLMap_3", allOutsForAggregate_tXMLMap_3);
 // ###############################
-class TreeNode_API_tXMLMap_3_TXMLMAP_OUT {
-	java.util.Map<String, String> xpath_value_map = new java.util.HashMap<String, String>();
-	
-	void clear(){
-		xpath_value_map.clear();
-	}
-	
-	void put(String xpath, String value){
-		xpath_value_map.put(xpath, value);
-	}
-	String get_null(String xpath) {
-		return null;
-	}
-	String get_String(String xpath){
-		return xpath_value_map.get(xpath);
-	}
-}
-			TreeNode_API_tXMLMap_3_TXMLMAP_OUT treeNodeAPI_tXMLMap_3_TXMLMAP_OUT = new TreeNode_API_tXMLMap_3_TXMLMAP_OUT();
-			NameSpaceTool nsTool_tXMLMap_3_TXMLMAP_OUT = new NameSpaceTool();
-		int nb_line_tXMLMap_3_TXMLMAP_OUT = 0; 
-	
-    XML_API_tXMLMap_3_TXMLMAP_OUT xml_api_tXMLMap_3_TXMLMAP_OUT = new XML_API_tXMLMap_3_TXMLMAP_OUT();
+				class TreeNode_API_tXMLMap_3_TXMLMAP_OUT {
+					java.util.Map<String, String> xpath_value_map = new java.util.HashMap<String, String>();
 
-	//the map store the previous value of aggregate columns
-	java.util.Map<String,Object> aggregateCacheMap_tXMLMap_3_TXMLMAP_OUT = new java.util.HashMap<String,Object>();
+					void clear() {
+						xpath_value_map.clear();
+					}
 
-	            
- 
+					void put(String xpath, String value) {
+						xpath_value_map.put(xpath, value);
+					}
 
+					String get_null(String xpath) {
+						return null;
+					}
 
+					String get_String(String xpath) {
+						return xpath_value_map.get(xpath);
+					}
+				}
+				TreeNode_API_tXMLMap_3_TXMLMAP_OUT treeNodeAPI_tXMLMap_3_TXMLMAP_OUT = new TreeNode_API_tXMLMap_3_TXMLMAP_OUT();
+				NameSpaceTool nsTool_tXMLMap_3_TXMLMAP_OUT = new NameSpaceTool();
+				int nb_line_tXMLMap_3_TXMLMAP_OUT = 0;
 
-/**
- * [tXMLMap_3_TXMLMAP_OUT begin ] stop
- */
+				XML_API_tXMLMap_3_TXMLMAP_OUT xml_api_tXMLMap_3_TXMLMAP_OUT = new XML_API_tXMLMap_3_TXMLMAP_OUT();
 
+				// the map store the previous value of aggregate columns
+				java.util.Map<String, Object> aggregateCacheMap_tXMLMap_3_TXMLMAP_OUT = new java.util.HashMap<String, Object>();
 
+				/**
+				 * [tXMLMap_3_TXMLMAP_OUT begin ] stop
+				 */
 
-	
-	/**
-	 * [tRESTClient_3 begin ] start
-	 */
+				/**
+				 * [tRESTClient_3 begin ] start
+				 */
 
-	
+				ok_Hash.put("tRESTClient_3", false);
+				start_Hash.put("tRESTClient_3", System.currentTimeMillis());
 
-	
-		
-		ok_Hash.put("tRESTClient_3", false);
-		start_Hash.put("tRESTClient_3", System.currentTimeMillis());
-		
-	
-	currentComponent="tRESTClient_3";
+				currentComponent = "tRESTClient_3";
 
-	
-		int tos_count_tRESTClient_3 = 0;
-		
+				int tos_count_tRESTClient_3 = 0;
 
- 
+				/**
+				 * [tRESTClient_3 begin ] stop
+				 */
 
+				/**
+				 * [tRESTClient_3 main ] start
+				 */
 
+				currentComponent = "tRESTClient_3";
 
-/**
- * [tRESTClient_3 begin ] stop
- */
-	
-	/**
-	 * [tRESTClient_3 main ] start
-	 */
-
-	
-
-	
-	
-	currentComponent="tRESTClient_3";
-
-	
-	row3 = null;
+				row3 = null;
 
 // expected response body
-Object responseDoc_tRESTClient_3 = null;
+				Object responseDoc_tRESTClient_3 = null;
 
-try {
-	// request body
-	org.dom4j.Document requestDoc_tRESTClient_3 = null;
-	String requestString_tRESTClient_3 = null;
-
-	Object requestBody_tRESTClient_3 = requestDoc_tRESTClient_3 != null ? requestDoc_tRESTClient_3 : requestString_tRESTClient_3;
-
-	
-
-    //resposne class name
-	Class<?> responseClass_tRESTClient_3
-		= org.dom4j.Document.class;
-
-	// create web client instance
-	org.apache.cxf.jaxrs.client.JAXRSClientFactoryBean factoryBean_tRESTClient_3 =
-			new org.apache.cxf.jaxrs.client.JAXRSClientFactoryBean();
-
-	boolean inOSGi = routines.system.BundleUtils.inOSGi();
-
-	final java.util.List<org.apache.cxf.feature.Feature> features_tRESTClient_3 =
-			new java.util.ArrayList<org.apache.cxf.feature.Feature>();
-
-	
-		String url = "https://api.twitter.com/1.1/search/tweets.json?q=%23NHSCOVID19app&result_type=recent&count=1000&lang=en";
-		// {baseUri}tRESTClient
-		factoryBean_tRESTClient_3.setServiceName(new javax.xml.namespace.QName(url, "tRESTClient"));
-		factoryBean_tRESTClient_3.setAddress(url);
-	
-
-	
-
-	
-
-	
-
-	factoryBean_tRESTClient_3.setFeatures(features_tRESTClient_3);
-
-
-	java.util.List<Object> providers_tRESTClient_3 = new java.util.ArrayList<Object>();
-	providers_tRESTClient_3.add(new org.apache.cxf.jaxrs.provider.dom4j.DOM4JProvider() {
-		// workaround for https://jira.talendforge.org/browse/TESB-7276
-		public org.dom4j.Document readFrom(Class<org.dom4j.Document> cls,
-											java.lang.reflect.Type type,
-											java.lang.annotation.Annotation[] anns,
-											javax.ws.rs.core.MediaType mt,
-											javax.ws.rs.core.MultivaluedMap<String, String> headers,
-											java.io.InputStream is)
-				throws IOException, javax.ws.rs.WebApplicationException {
-			String contentLength = headers.getFirst("Content-Length");
-			if (!org.apache.cxf.common.util.StringUtils.isEmpty(contentLength)
-					&& Integer.valueOf(contentLength) <= 0) {
 				try {
-					return org.dom4j.DocumentHelper.parseText("<root/>");
-				} catch (org.dom4j.DocumentException e_tRESTClient_3) {
-					e_tRESTClient_3.printStackTrace();
-				}
-				return null;
-			}
-			return super.readFrom(cls, type, anns, mt, headers, is);
-		}
-	});
-	org.apache.cxf.jaxrs.provider.json.JSONProvider jsonProvider_tRESTClient_3 =
-			new org.apache.cxf.jaxrs.provider.json.JSONProvider();
-		jsonProvider_tRESTClient_3.setIgnoreNamespaces(true);
-		jsonProvider_tRESTClient_3.setAttributesToElements(true);
-	
-	
-		jsonProvider_tRESTClient_3.setSupportUnwrapped(true);
-		jsonProvider_tRESTClient_3.setWrapperName("root");
-	
-	
-		jsonProvider_tRESTClient_3.setDropRootElement(false);
-		jsonProvider_tRESTClient_3.setConvertTypesToStrings(false);
-	providers_tRESTClient_3.add(jsonProvider_tRESTClient_3);
-	factoryBean_tRESTClient_3.setProviders(providers_tRESTClient_3);
-	factoryBean_tRESTClient_3.setTransportId("http://cxf.apache.org/transports/http");
+					// request body
+					org.dom4j.Document requestDoc_tRESTClient_3 = null;
+					String requestString_tRESTClient_3 = null;
 
-	boolean use_auth_tRESTClient_3 = true;
-	
-	
-		if (use_auth_tRESTClient_3 && "SAML".equals("OAUTH2_BEARER")) {
-			if (!inOSGi) {
-				throw new IllegalArgumentException("SAML based security scenarios are not supported in Studio (standalone)");
-			}
-			// set SAML Token authentication
-			
-			 
-	final String decryptedPassword_tRESTClient_3 = routines.system.PasswordEncryptUtil.decryptPassword("enc:routine.encryption.key.v1:OzkN7v0kNP3sX590ecoFAKr6VrCLgR/wh9uGrLR4MdYJ0TJy");
-	
-			org.apache.cxf.ws.security.trust.STSClient stsClient =
-				org.talend.esb.security.saml.STSClientUtils.createSTSClient(factoryBean_tRESTClient_3.getBus(),
-					"username", decryptedPassword_tRESTClient_3);
-			
-			org.talend.esb.security.saml.SAMLRESTUtils.configureClient(factoryBean_tRESTClient_3, stsClient);
-		}
+					Object requestBody_tRESTClient_3 = requestDoc_tRESTClient_3 != null ? requestDoc_tRESTClient_3
+							: requestString_tRESTClient_3;
 
-	
+					// resposne class name
+					Class<?> responseClass_tRESTClient_3 = org.dom4j.Document.class;
 
-	org.apache.cxf.jaxrs.client.WebClient webClient_tRESTClient_3 = factoryBean_tRESTClient_3.createWebClient();
+					// create web client instance
+					org.apache.cxf.jaxrs.client.JAXRSClientFactoryBean factoryBean_tRESTClient_3 = new org.apache.cxf.jaxrs.client.JAXRSClientFactoryBean();
 
-	// set request path
-	webClient_tRESTClient_3.path("");
+					boolean inOSGi = routines.system.BundleUtils.inOSGi();
 
-	// set connection properties
-	org.apache.cxf.jaxrs.client.ClientConfiguration clientConfig_tRESTClient_3 = org.apache.cxf.jaxrs.client.WebClient.getConfig(webClient_tRESTClient_3);
-	org.apache.cxf.transport.http.HTTPConduit conduit_tRESTClient_3 = clientConfig_tRESTClient_3.getHttpConduit();
+					final java.util.List<org.apache.cxf.feature.Feature> features_tRESTClient_3 = new java.util.ArrayList<org.apache.cxf.feature.Feature>();
 
-    if (clientConfig_tRESTClient_3.getEndpoint() != null
-            && clientConfig_tRESTClient_3.getEndpoint().getEndpointInfo() != null) {
-        clientConfig_tRESTClient_3.getEndpoint().getEndpointInfo().setProperty("enable.webclient.operation.reporting",
-                                                                          false);
-    }
+					String url = "https://api.twitter.com/1.1/search/tweets.json?q=%23NHSCOVID19app&result_type=recent&count=1000&lang=en";
+					// {baseUri}tRESTClient
+					factoryBean_tRESTClient_3.setServiceName(new javax.xml.namespace.QName(url, "tRESTClient"));
+					factoryBean_tRESTClient_3.setAddress(url);
 
-	
+					factoryBean_tRESTClient_3.setFeatures(features_tRESTClient_3);
 
-	
-	
-			if (use_auth_tRESTClient_3 && "BASIC".equals("OAUTH2_BEARER")) {
-			// set BASIC auth
-			
-			 
-	final String decryptedPassword_tRESTClient_3 = routines.system.PasswordEncryptUtil.decryptPassword("enc:routine.encryption.key.v1:J2WaMgM8GjCQ8Bkq69shQCAExH7txwIUhlxOf72DIGxdcUkC");
-	
-			org.apache.cxf.configuration.security.AuthorizationPolicy authPolicy_tRESTClient_3 = new org.apache.cxf.configuration.security.AuthorizationPolicy();
-				authPolicy_tRESTClient_3.setAuthorizationType("Basic");
-				authPolicy_tRESTClient_3.setUserName("username");
-				authPolicy_tRESTClient_3.setPassword(decryptedPassword_tRESTClient_3);
-			conduit_tRESTClient_3.setAuthorization(authPolicy_tRESTClient_3);
-		} else if (use_auth_tRESTClient_3 && "HTTP Digest".equals("OAUTH2_BEARER")) {
-			// set Digest auth
-			
-			 
-	final String decryptedPassword_tRESTClient_3 = routines.system.PasswordEncryptUtil.decryptPassword("enc:routine.encryption.key.v1:jykFUDeFt6nHmhpJ4c5Hlu56ZLRJwS9PPsQk2iU7Jsrtw+qv");
-	
-			org.apache.cxf.configuration.security.AuthorizationPolicy authPolicy_tRESTClient_3 = new org.apache.cxf.configuration.security.AuthorizationPolicy();
-			authPolicy_tRESTClient_3.setAuthorizationType("Digest");
-			authPolicy_tRESTClient_3.setUserName("username");
-			authPolicy_tRESTClient_3.setPassword(decryptedPassword_tRESTClient_3);
-			conduit_tRESTClient_3.setAuthorization(authPolicy_tRESTClient_3);
-		}
-	
-	
-
-	if (!inOSGi) {
-		conduit_tRESTClient_3.getClient().setReceiveTimeout((long)(60 * 1000L));
-		conduit_tRESTClient_3.getClient().setConnectionTimeout((long)(30 * 1000L));
-		boolean use_proxy_tRESTClient_3 = false;
-		
-	}
-	
-	
-
-	
-
-	
-
-	
-		// set Accept-Type
-		webClient_tRESTClient_3.accept("application/json");
-	
-
-	
-		// set optional query and header properties if any
-	
-	if (use_auth_tRESTClient_3 && "OAUTH2_BEARER".equals("OAUTH2_BEARER")) {
-		// set oAuth2 bearer token
-		webClient_tRESTClient_3.header("Authorization", "Bearer " + "AAAAAAAAAAAAAAAAAAAAAFEVJgEAAAAAejtPVAQB544BVATEzZjxhVI22ok%3Dcn9mxnTSBKDqaTkwOLzsYemZ9f58ZW0KVOKXDK4i59WtWqCe2d");
-	}
-	
-	
-	
-		if (use_auth_tRESTClient_3 && "OIDC_PASSWORD_GRANT".equals("OAUTH2_BEARER")) {
-	
-	        
-	         
-	final String decryptedPassword_tRESTClient_3 = routines.system.PasswordEncryptUtil.decryptPassword("enc:routine.encryption.key.v1:TnGapft3/3pfvPnN/TgWjncb1DFKYecaZicGJ/wAsf1+QkGQ");
-	
-	        String username_tRESTClient_3 = "username";
-	        String password_tRESTClient_3 = decryptedPassword_tRESTClient_3;
-	
-	        String bearerHeader_tRESTClient_3 = null;
-	
-	        try {
-				if (!inOSGi) {
-					org.springframework.context.support.ClassPathXmlApplicationContext context_tRESTClient_3 =
-						new org.springframework.context.support.ClassPathXmlApplicationContext("META-INF/tesb/oidc-context.xml");
-					org.talend.esb.security.oidc.OidcConfiguration oidcConfiguration_tRESTClient_3 = context_tRESTClient_3.getBean(org.talend.esb.security.oidc.OidcConfiguration.class);
-					bearerHeader_tRESTClient_3 = org.talend.esb.security.oidc.OidcClientUtils.oidcClientBearer(username_tRESTClient_3, password_tRESTClient_3, oidcConfiguration_tRESTClient_3);
-				}else{
-					bearerHeader_tRESTClient_3 = org.talend.esb.security.oidc.OidcClientUtils.oidcClientBearer(username_tRESTClient_3, password_tRESTClient_3);
-				}
-			} catch (Exception ex) {
-	            throw new javax.ws.rs.WebApplicationException("Failed to get OIDC access token: ", ex);
-	        }
-	
-			webClient_tRESTClient_3.header("Authorization", bearerHeader_tRESTClient_3);
-		}
-	
-	
-    
-	// if FORM request then capture query parameters into Form, otherwise set them as queries
-	
-		
-	
-
-
-	try {
-		// start send request
-		
-			responseDoc_tRESTClient_3 = webClient_tRESTClient_3.get(responseClass_tRESTClient_3);
-		
-
-
-		int webClientResponseStatus_tRESTClient_3 = webClient_tRESTClient_3.getResponse().getStatus();
-		if (webClientResponseStatus_tRESTClient_3 >= 300) {
-			throw new javax.ws.rs.WebApplicationException(webClient_tRESTClient_3.getResponse());
-		}
-
-		
-			if (row3 == null) {
-				row3 = new row3Struct();
-			}
-
-			row3.statusCode = webClientResponseStatus_tRESTClient_3;
-			
-				
-				{
-					Object responseObj_tRESTClient_3 = responseDoc_tRESTClient_3;
-				
-				if(responseObj_tRESTClient_3 != null){
-					if (responseClass_tRESTClient_3 == String.class) {
-						row3.string = (String) responseObj_tRESTClient_3;
-					} else {
-						routines.system.Document responseTalendDoc_tRESTClient_3 = null;
-						if (null != responseObj_tRESTClient_3) {
-							responseTalendDoc_tRESTClient_3 = new routines.system.Document();
-							responseTalendDoc_tRESTClient_3.setDocument((org.dom4j.Document) responseObj_tRESTClient_3);
+					java.util.List<Object> providers_tRESTClient_3 = new java.util.ArrayList<Object>();
+					providers_tRESTClient_3.add(new org.apache.cxf.jaxrs.provider.dom4j.DOM4JProvider() {
+						// workaround for https://jira.talendforge.org/browse/TESB-7276
+						public org.dom4j.Document readFrom(Class<org.dom4j.Document> cls, java.lang.reflect.Type type,
+								java.lang.annotation.Annotation[] anns, javax.ws.rs.core.MediaType mt,
+								javax.ws.rs.core.MultivaluedMap<String, String> headers, java.io.InputStream is)
+								throws IOException, javax.ws.rs.WebApplicationException {
+							String contentLength = headers.getFirst("Content-Length");
+							if (!org.apache.cxf.common.util.StringUtils.isEmpty(contentLength)
+									&& Integer.valueOf(contentLength) <= 0) {
+								try {
+									return org.dom4j.DocumentHelper.parseText("<root/>");
+								} catch (org.dom4j.DocumentException e_tRESTClient_3) {
+									e_tRESTClient_3.printStackTrace();
+								}
+								return null;
+							}
+							return super.readFrom(cls, type, anns, mt, headers, is);
 						}
-						row3.body = responseTalendDoc_tRESTClient_3;
+					});
+					org.apache.cxf.jaxrs.provider.json.JSONProvider jsonProvider_tRESTClient_3 = new org.apache.cxf.jaxrs.provider.json.JSONProvider();
+					jsonProvider_tRESTClient_3.setIgnoreNamespaces(true);
+					jsonProvider_tRESTClient_3.setAttributesToElements(true);
+
+					jsonProvider_tRESTClient_3.setSupportUnwrapped(true);
+					jsonProvider_tRESTClient_3.setWrapperName("root");
+
+					jsonProvider_tRESTClient_3.setDropRootElement(false);
+					jsonProvider_tRESTClient_3.setConvertTypesToStrings(false);
+					providers_tRESTClient_3.add(jsonProvider_tRESTClient_3);
+					factoryBean_tRESTClient_3.setProviders(providers_tRESTClient_3);
+					factoryBean_tRESTClient_3.setTransportId("http://cxf.apache.org/transports/http");
+
+					boolean use_auth_tRESTClient_3 = true;
+
+					if (use_auth_tRESTClient_3 && "SAML".equals("OAUTH2_BEARER")) {
+						if (!inOSGi) {
+							throw new IllegalArgumentException(
+									"SAML based security scenarios are not supported in Studio (standalone)");
+						}
+						// set SAML Token authentication
+
+						final String decryptedPassword_tRESTClient_3 = routines.system.PasswordEncryptUtil
+								.decryptPassword(
+										"enc:routine.encryption.key.v1:cUxRFuETZ9llgi8zfbD9c0VYfNWWb5nxefK4J4Av/6q5mC0G");
+
+						org.apache.cxf.ws.security.trust.STSClient stsClient = org.talend.esb.security.saml.STSClientUtils
+								.createSTSClient(factoryBean_tRESTClient_3.getBus(), "username",
+										decryptedPassword_tRESTClient_3);
+
+						org.talend.esb.security.saml.SAMLRESTUtils.configureClient(factoryBean_tRESTClient_3,
+								stsClient);
 					}
+
+					org.apache.cxf.jaxrs.client.WebClient webClient_tRESTClient_3 = factoryBean_tRESTClient_3
+							.createWebClient();
+
+					// set request path
+					webClient_tRESTClient_3.path("");
+
+					// set connection properties
+					org.apache.cxf.jaxrs.client.ClientConfiguration clientConfig_tRESTClient_3 = org.apache.cxf.jaxrs.client.WebClient
+							.getConfig(webClient_tRESTClient_3);
+					org.apache.cxf.transport.http.HTTPConduit conduit_tRESTClient_3 = clientConfig_tRESTClient_3
+							.getHttpConduit();
+
+					if (clientConfig_tRESTClient_3.getEndpoint() != null
+							&& clientConfig_tRESTClient_3.getEndpoint().getEndpointInfo() != null) {
+						clientConfig_tRESTClient_3.getEndpoint().getEndpointInfo()
+								.setProperty("enable.webclient.operation.reporting", false);
+					}
+
+					if (use_auth_tRESTClient_3 && "BASIC".equals("OAUTH2_BEARER")) {
+						// set BASIC auth
+
+						final String decryptedPassword_tRESTClient_3 = routines.system.PasswordEncryptUtil
+								.decryptPassword(
+										"enc:routine.encryption.key.v1:JSRR7+NUAANdPtKHnnx8XgigJzK8XmG+YLyWiM34pwBPWcHI");
+
+						org.apache.cxf.configuration.security.AuthorizationPolicy authPolicy_tRESTClient_3 = new org.apache.cxf.configuration.security.AuthorizationPolicy();
+						authPolicy_tRESTClient_3.setAuthorizationType("Basic");
+						authPolicy_tRESTClient_3.setUserName("username");
+						authPolicy_tRESTClient_3.setPassword(decryptedPassword_tRESTClient_3);
+						conduit_tRESTClient_3.setAuthorization(authPolicy_tRESTClient_3);
+					} else if (use_auth_tRESTClient_3 && "HTTP Digest".equals("OAUTH2_BEARER")) {
+						// set Digest auth
+
+						final String decryptedPassword_tRESTClient_3 = routines.system.PasswordEncryptUtil
+								.decryptPassword(
+										"enc:routine.encryption.key.v1:7AiJpMqoXMIvSub1F5eqgrpqGSusfu4BNfdjw1Ohy5nHt82d");
+
+						org.apache.cxf.configuration.security.AuthorizationPolicy authPolicy_tRESTClient_3 = new org.apache.cxf.configuration.security.AuthorizationPolicy();
+						authPolicy_tRESTClient_3.setAuthorizationType("Digest");
+						authPolicy_tRESTClient_3.setUserName("username");
+						authPolicy_tRESTClient_3.setPassword(decryptedPassword_tRESTClient_3);
+						conduit_tRESTClient_3.setAuthorization(authPolicy_tRESTClient_3);
+					}
+
+					if (!inOSGi) {
+						conduit_tRESTClient_3.getClient().setReceiveTimeout((long) (60 * 1000L));
+						conduit_tRESTClient_3.getClient().setConnectionTimeout((long) (30 * 1000L));
+						boolean use_proxy_tRESTClient_3 = false;
+
+					}
+
+					// set Accept-Type
+					webClient_tRESTClient_3.accept("application/json");
+
+					// set optional query and header properties if any
+
+					if (use_auth_tRESTClient_3 && "OAUTH2_BEARER".equals("OAUTH2_BEARER")) {
+						// set oAuth2 bearer token
+						webClient_tRESTClient_3.header("Authorization", "Bearer "
+								+ "AAAAAAAAAAAAAAAAAAAAAFEVJgEAAAAAejtPVAQB544BVATEzZjxhVI22ok%3Dcn9mxnTSBKDqaTkwOLzsYemZ9f58ZW0KVOKXDK4i59WtWqCe2d");
+					}
+
+					if (use_auth_tRESTClient_3 && "OIDC_PASSWORD_GRANT".equals("OAUTH2_BEARER")) {
+
+						final String decryptedPassword_tRESTClient_3 = routines.system.PasswordEncryptUtil
+								.decryptPassword(
+										"enc:routine.encryption.key.v1:GxQ85rFfRc/lg0KBC1zFV73vLMnEaKpBjERbOGDRn/kGKwy7");
+
+						String username_tRESTClient_3 = "username";
+						String password_tRESTClient_3 = decryptedPassword_tRESTClient_3;
+
+						String bearerHeader_tRESTClient_3 = null;
+
+						try {
+							if (!inOSGi) {
+								org.springframework.context.support.ClassPathXmlApplicationContext context_tRESTClient_3 = new org.springframework.context.support.ClassPathXmlApplicationContext(
+										"META-INF/tesb/oidc-context.xml");
+								org.talend.esb.security.oidc.OidcConfiguration oidcConfiguration_tRESTClient_3 = context_tRESTClient_3
+										.getBean(org.talend.esb.security.oidc.OidcConfiguration.class);
+								bearerHeader_tRESTClient_3 = org.talend.esb.security.oidc.OidcClientUtils
+										.oidcClientBearer(username_tRESTClient_3, password_tRESTClient_3,
+												oidcConfiguration_tRESTClient_3);
+							} else {
+								bearerHeader_tRESTClient_3 = org.talend.esb.security.oidc.OidcClientUtils
+										.oidcClientBearer(username_tRESTClient_3, password_tRESTClient_3);
+							}
+						} catch (Exception ex) {
+							throw new javax.ws.rs.WebApplicationException("Failed to get OIDC access token: ", ex);
+						}
+
+						webClient_tRESTClient_3.header("Authorization", bearerHeader_tRESTClient_3);
+					}
+
+					// if FORM request then capture query parameters into Form, otherwise set them
+					// as queries
+
+					try {
+						// start send request
+
+						responseDoc_tRESTClient_3 = webClient_tRESTClient_3.get(responseClass_tRESTClient_3);
+
+						int webClientResponseStatus_tRESTClient_3 = webClient_tRESTClient_3.getResponse().getStatus();
+						if (webClientResponseStatus_tRESTClient_3 >= 300) {
+							throw new javax.ws.rs.WebApplicationException(webClient_tRESTClient_3.getResponse());
+						}
+
+						if (row3 == null) {
+							row3 = new row3Struct();
+						}
+
+						row3.statusCode = webClientResponseStatus_tRESTClient_3;
+
+						{
+							Object responseObj_tRESTClient_3 = responseDoc_tRESTClient_3;
+
+							if (responseObj_tRESTClient_3 != null) {
+								if (responseClass_tRESTClient_3 == String.class) {
+									row3.string = (String) responseObj_tRESTClient_3;
+								} else {
+									routines.system.Document responseTalendDoc_tRESTClient_3 = null;
+									if (null != responseObj_tRESTClient_3) {
+										responseTalendDoc_tRESTClient_3 = new routines.system.Document();
+										responseTalendDoc_tRESTClient_3
+												.setDocument((org.dom4j.Document) responseObj_tRESTClient_3);
+									}
+									row3.body = responseTalendDoc_tRESTClient_3;
+								}
+							}
+						}
+
+						globalMap.put("tRESTClient_3_HEADERS", webClient_tRESTClient_3.getResponse().getHeaders());
+
+					} catch (javax.ws.rs.WebApplicationException ex_tRESTClient_3) {
+
+						throw ex_tRESTClient_3;
+
+					}
+
+				} catch (Exception e_tRESTClient_3) {
+
+					throw new TalendException(e_tRESTClient_3, currentComponent, globalMap);
+
 				}
-			}
-			
 
+				tos_count_tRESTClient_3++;
 
-			globalMap.put("tRESTClient_3_HEADERS", webClient_tRESTClient_3.getResponse().getHeaders());
-			
-			
-			
-		
+				/**
+				 * [tRESTClient_3 main ] stop
+				 */
 
-	} catch (javax.ws.rs.WebApplicationException ex_tRESTClient_3) {
-		
-			throw ex_tRESTClient_3;
-		
-	}
+				/**
+				 * [tRESTClient_3 process_data_begin ] start
+				 */
 
-} catch(Exception e_tRESTClient_3) {
-	
-		throw new TalendException(e_tRESTClient_3, currentComponent, globalMap);
-	
-}
+				currentComponent = "tRESTClient_3";
 
-
- 
-
-
-	tos_count_tRESTClient_3++;
-
-/**
- * [tRESTClient_3 main ] stop
- */
-	
-	/**
-	 * [tRESTClient_3 process_data_begin ] start
-	 */
-
-	
-
-	
-	
-	currentComponent="tRESTClient_3";
-
-	
-
- 
-
-
-
-/**
- * [tRESTClient_3 process_data_begin ] stop
- */
+				/**
+				 * [tRESTClient_3 process_data_begin ] stop
+				 */
 // Start of branch "row3"
-if(row3 != null) { 
+				if (row3 != null) {
 
+					/**
+					 * [tXMLMap_3_TXMLMAP_OUT main ] start
+					 */
 
+					currentVirtualComponent = "tXMLMap_3";
 
-	
-	/**
-	 * [tXMLMap_3_TXMLMAP_OUT main ] start
-	 */
+					currentComponent = "tXMLMap_3_TXMLMAP_OUT";
 
-	
-
-	
-	
-		currentVirtualComponent = "tXMLMap_3";
-	
-	currentComponent="tXMLMap_3_TXMLMAP_OUT";
-
-	
-					if(execStat){
-						runStat.updateStatOnConnection(iterateId,1,1,"row3");
+					if (execStat) {
+						runStat.updateStatOnConnection(iterateId, 1, 1, "row3");
 					}
-					
 
-	boolean rejectedInnerJoin_tXMLMap_3_TXMLMAP_OUT = false;
-	boolean rejectedDocInnerJoin_tXMLMap_3_TXMLMAP_OUT = false;
-	boolean mainRowRejected_tXMLMap_3_TXMLMAP_OUT = false;
-	boolean isMatchDocRowtXMLMap_3_TXMLMAP_OUT = false;
-	  
-	
-			
+					boolean rejectedInnerJoin_tXMLMap_3_TXMLMAP_OUT = false;
+					boolean rejectedDocInnerJoin_tXMLMap_3_TXMLMAP_OUT = false;
+					boolean mainRowRejected_tXMLMap_3_TXMLMAP_OUT = false;
+					boolean isMatchDocRowtXMLMap_3_TXMLMAP_OUT = false;
 
-		
-		
-				//init document to flat tool
-				routines.system.DocumentToFlat docToFlat_tXMLMap_3_TXMLMAP_OUT = new routines.system.DocumentToFlat();
-				docToFlat_tXMLMap_3_TXMLMAP_OUT.setOriginalLoop("/root/statuses");
-				docToFlat_tXMLMap_3_TXMLMAP_OUT.setIsOptional(false);
-				if(row3.body == null || row3.body.getDocument() == null) {
-					throw new RuntimeException("row3.body can't be empty");
-				}
-				org.dom4j.Document doc_tXMLMap_3_TXMLMAP_OUT = row3.body.getDocument();
-				docToFlat_tXMLMap_3_TXMLMAP_OUT.setDoc(doc_tXMLMap_3_TXMLMAP_OUT);
-				docToFlat_tXMLMap_3_TXMLMAP_OUT.setDefineNS(false);
-				docToFlat_tXMLMap_3_TXMLMAP_OUT.setNamespaceTool(nsTool_tXMLMap_3_TXMLMAP_OUT);
-				
-					//old version, find NS from doc
+					// init document to flat tool
+					routines.system.DocumentToFlat docToFlat_tXMLMap_3_TXMLMAP_OUT = new routines.system.DocumentToFlat();
+					docToFlat_tXMLMap_3_TXMLMAP_OUT.setOriginalLoop("/root/statuses");
+					docToFlat_tXMLMap_3_TXMLMAP_OUT.setIsOptional(false);
+					if (row3.body == null || row3.body.getDocument() == null) {
+						throw new RuntimeException("row3.body can't be empty");
+					}
+					org.dom4j.Document doc_tXMLMap_3_TXMLMAP_OUT = row3.body.getDocument();
+					docToFlat_tXMLMap_3_TXMLMAP_OUT.setDoc(doc_tXMLMap_3_TXMLMAP_OUT);
+					docToFlat_tXMLMap_3_TXMLMAP_OUT.setDefineNS(false);
+					docToFlat_tXMLMap_3_TXMLMAP_OUT.setNamespaceTool(nsTool_tXMLMap_3_TXMLMAP_OUT);
+
+					// old version, find NS from doc
 					nsTool_tXMLMap_3_TXMLMAP_OUT.countNSMap(doc_tXMLMap_3_TXMLMAP_OUT.getRootElement());
-					java.util.HashMap<String,String> xmlNameSpaceMap_tXMLMap_3_TXMLMAP_OUT = nsTool_tXMLMap_3_TXMLMAP_OUT.xmlNameSpaceMap;
-				
-				docToFlat_tXMLMap_3_TXMLMAP_OUT.setXmlNameSpaceMap(xmlNameSpaceMap_tXMLMap_3_TXMLMAP_OUT);
-				
-				String[] absolutePathMappings_tXMLMap_3_TXMLMAP_OUT = new String[9];
-				String[] relativePathMappings_tXMLMap_3_TXMLMAP_OUT = new String[9];
-				
-				absolutePathMappings_tXMLMap_3_TXMLMAP_OUT[0] = "row3.body:/root/statuses/user/screen_name";
-				relativePathMappings_tXMLMap_3_TXMLMAP_OUT[0] = "user/screen_name";
-				
-				absolutePathMappings_tXMLMap_3_TXMLMAP_OUT[1] = "row3.body:/root/statuses/user/location";
-				relativePathMappings_tXMLMap_3_TXMLMAP_OUT[1] = "user/location";
-				
-				absolutePathMappings_tXMLMap_3_TXMLMAP_OUT[2] = "row3.body:/root/statuses/user/description";
-				relativePathMappings_tXMLMap_3_TXMLMAP_OUT[2] = "user/description";
-				
-				absolutePathMappings_tXMLMap_3_TXMLMAP_OUT[3] = "row3.body:/root/statuses/entities/hashtags/text";
-				relativePathMappings_tXMLMap_3_TXMLMAP_OUT[3] = "entities/hashtags/text";
-				
-				absolutePathMappings_tXMLMap_3_TXMLMAP_OUT[4] = "row3.body:/root/statuses/created_at";
-				relativePathMappings_tXMLMap_3_TXMLMAP_OUT[4] = "created_at";
-				
-				absolutePathMappings_tXMLMap_3_TXMLMAP_OUT[5] = "row3.body:/root/statuses/user/id";
-				relativePathMappings_tXMLMap_3_TXMLMAP_OUT[5] = "user/id";
-				
-				absolutePathMappings_tXMLMap_3_TXMLMAP_OUT[6] = "row3.body:/root/statuses/text";
-				relativePathMappings_tXMLMap_3_TXMLMAP_OUT[6] = "text";
-				
-				absolutePathMappings_tXMLMap_3_TXMLMAP_OUT[7] = "row3.body:/root/statuses/user/name";
-				relativePathMappings_tXMLMap_3_TXMLMAP_OUT[7] = "user/name";
-				
-				absolutePathMappings_tXMLMap_3_TXMLMAP_OUT[8] = "row3.body:/root/statuses/id";
-				relativePathMappings_tXMLMap_3_TXMLMAP_OUT[8] = "id";
-				
-				docToFlat_tXMLMap_3_TXMLMAP_OUT.setAbsolutePathMappings(absolutePathMappings_tXMLMap_3_TXMLMAP_OUT);
-				docToFlat_tXMLMap_3_TXMLMAP_OUT.setCurrentRelativePathMappings(relativePathMappings_tXMLMap_3_TXMLMAP_OUT);
-				//generate document to flat data
-				docToFlat_tXMLMap_3_TXMLMAP_OUT.flat();
-				//get flat data
-				java.util.List<java.util.Map<String, String>> resultSet_tXMLMap_3_TXMLMAP_OUT = docToFlat_tXMLMap_3_TXMLMAP_OUT.getResultSet();
-				
-				for (java.util.Map<String,String> oneRow_tXMLMap_3_TXMLMAP_OUT: resultSet_tXMLMap_3_TXMLMAP_OUT) { // G_TXM_M_001
-					nb_line_tXMLMap_3_TXMLMAP_OUT++;
-			    	rejectedInnerJoin_tXMLMap_3_TXMLMAP_OUT = false;
-			    	rejectedDocInnerJoin_tXMLMap_3_TXMLMAP_OUT = false;
-					mainRowRejected_tXMLMap_3_TXMLMAP_OUT=false;
-				    isMatchDocRowtXMLMap_3_TXMLMAP_OUT = false;
-					
-			    	treeNodeAPI_tXMLMap_3_TXMLMAP_OUT.clear();
-			    	for(java.util.Map.Entry<String, String> entry_tXMLMap_3_TXMLMAP_OUT : oneRow_tXMLMap_3_TXMLMAP_OUT.entrySet()) {
-						treeNodeAPI_tXMLMap_3_TXMLMAP_OUT.put(entry_tXMLMap_3_TXMLMAP_OUT.getKey(),entry_tXMLMap_3_TXMLMAP_OUT.getValue());
-					}
-					
+					java.util.HashMap<String, String> xmlNameSpaceMap_tXMLMap_3_TXMLMAP_OUT = nsTool_tXMLMap_3_TXMLMAP_OUT.xmlNameSpaceMap;
 
+					docToFlat_tXMLMap_3_TXMLMAP_OUT.setXmlNameSpaceMap(xmlNameSpaceMap_tXMLMap_3_TXMLMAP_OUT);
 
-			
-{ // start of Var scope
+					String[] absolutePathMappings_tXMLMap_3_TXMLMAP_OUT = new String[9];
+					String[] relativePathMappings_tXMLMap_3_TXMLMAP_OUT = new String[9];
 
-	// ###############################
-	// # Vars tables
+					absolutePathMappings_tXMLMap_3_TXMLMAP_OUT[0] = "row3.body:/root/statuses/user/screen_name";
+					relativePathMappings_tXMLMap_3_TXMLMAP_OUT[0] = "user/screen_name";
 
-Var__tXMLMap_3_TXMLMAP_OUT__Struct Var = Var__tXMLMap_3_TXMLMAP_OUT;
-		// ###############################
-		// # Output tables
+					absolutePathMappings_tXMLMap_3_TXMLMAP_OUT[1] = "row3.body:/root/statuses/user/location";
+					relativePathMappings_tXMLMap_3_TXMLMAP_OUT[1] = "user/location";
 
-nhs = null;
+					absolutePathMappings_tXMLMap_3_TXMLMAP_OUT[2] = "row3.body:/root/statuses/user/description";
+					relativePathMappings_tXMLMap_3_TXMLMAP_OUT[2] = "user/description";
 
+					absolutePathMappings_tXMLMap_3_TXMLMAP_OUT[3] = "row3.body:/root/statuses/entities/hashtags/text";
+					relativePathMappings_tXMLMap_3_TXMLMAP_OUT[3] = "entities/hashtags/text";
+
+					absolutePathMappings_tXMLMap_3_TXMLMAP_OUT[4] = "row3.body:/root/statuses/created_at";
+					relativePathMappings_tXMLMap_3_TXMLMAP_OUT[4] = "created_at";
+
+					absolutePathMappings_tXMLMap_3_TXMLMAP_OUT[5] = "row3.body:/root/statuses/user/id";
+					relativePathMappings_tXMLMap_3_TXMLMAP_OUT[5] = "user/id";
+
+					absolutePathMappings_tXMLMap_3_TXMLMAP_OUT[6] = "row3.body:/root/statuses/text";
+					relativePathMappings_tXMLMap_3_TXMLMAP_OUT[6] = "text";
+
+					absolutePathMappings_tXMLMap_3_TXMLMAP_OUT[7] = "row3.body:/root/statuses/user/name";
+					relativePathMappings_tXMLMap_3_TXMLMAP_OUT[7] = "user/name";
+
+					absolutePathMappings_tXMLMap_3_TXMLMAP_OUT[8] = "row3.body:/root/statuses/id";
+					relativePathMappings_tXMLMap_3_TXMLMAP_OUT[8] = "id";
+
+					docToFlat_tXMLMap_3_TXMLMAP_OUT.setAbsolutePathMappings(absolutePathMappings_tXMLMap_3_TXMLMAP_OUT);
+					docToFlat_tXMLMap_3_TXMLMAP_OUT
+							.setCurrentRelativePathMappings(relativePathMappings_tXMLMap_3_TXMLMAP_OUT);
+					// generate document to flat data
+					docToFlat_tXMLMap_3_TXMLMAP_OUT.flat();
+					// get flat data
+					java.util.List<java.util.Map<String, String>> resultSet_tXMLMap_3_TXMLMAP_OUT = docToFlat_tXMLMap_3_TXMLMAP_OUT
+							.getResultSet();
+
+					for (java.util.Map<String, String> oneRow_tXMLMap_3_TXMLMAP_OUT : resultSet_tXMLMap_3_TXMLMAP_OUT) { // G_TXM_M_001
+						nb_line_tXMLMap_3_TXMLMAP_OUT++;
+						rejectedInnerJoin_tXMLMap_3_TXMLMAP_OUT = false;
+						rejectedDocInnerJoin_tXMLMap_3_TXMLMAP_OUT = false;
+						mainRowRejected_tXMLMap_3_TXMLMAP_OUT = false;
+						isMatchDocRowtXMLMap_3_TXMLMAP_OUT = false;
+
+						treeNodeAPI_tXMLMap_3_TXMLMAP_OUT.clear();
+						for (java.util.Map.Entry<String, String> entry_tXMLMap_3_TXMLMAP_OUT : oneRow_tXMLMap_3_TXMLMAP_OUT
+								.entrySet()) {
+							treeNodeAPI_tXMLMap_3_TXMLMAP_OUT.put(entry_tXMLMap_3_TXMLMAP_OUT.getKey(),
+									entry_tXMLMap_3_TXMLMAP_OUT.getValue());
+						}
+
+						{ // start of Var scope
+
+							// ###############################
+							// # Vars tables
+
+							Var__tXMLMap_3_TXMLMAP_OUT__Struct Var = Var__tXMLMap_3_TXMLMAP_OUT;
+							// ###############################
+							// # Output tables
+
+							nhs = null;
 
 // # Output table : 'nhs'
 
-nhs_tmp = new nhsStruct();
-nhs_tmp.id =  treeNodeAPI_tXMLMap_3_TXMLMAP_OUT.get_String("row3.body:/root/statuses/id");
-nhs_tmp.date_description = TalendDate.parseDate("EEE MMM dd HH:mm:ss Z yyyy",treeNodeAPI_tXMLMap_3_TXMLMAP_OUT.get_String("row3.body:/root/statuses/created_at")) ;
-nhs_tmp.user_id = treeNodeAPI_tXMLMap_3_TXMLMAP_OUT.get_String("row3.body:/root/statuses/user/id");
-nhs_tmp.user_name = treeNodeAPI_tXMLMap_3_TXMLMAP_OUT.get_String("row3.body:/root/statuses/user/name");
-nhs_tmp.user_screen_name = treeNodeAPI_tXMLMap_3_TXMLMAP_OUT.get_String("row3.body:/root/statuses/user/screen_name");
-nhs_tmp.user_location = treeNodeAPI_tXMLMap_3_TXMLMAP_OUT.get_String("row3.body:/root/statuses/user/location");
-nhs_tmp.user_description = treeNodeAPI_tXMLMap_3_TXMLMAP_OUT.get_String("row3.body:/root/statuses/user/description");
-nhs_tmp.hashtag_text = treeNodeAPI_tXMLMap_3_TXMLMAP_OUT.get_String("row3.body:/root/statuses/entities/hashtags/text");
-nhs_tmp.text_description = treeNodeAPI_tXMLMap_3_TXMLMAP_OUT.get_String("row3.body:/root/statuses/text");
-nhs_tmp.hashtag_id = treeNodeAPI_tXMLMap_3_TXMLMAP_OUT.get_String("row3.body:/root/statuses/id");
-nhs_tmp.geo_id = treeNodeAPI_tXMLMap_3_TXMLMAP_OUT.get_String("row3.body:/root/statuses/id");
-nhs_tmp.geo_description = treeNodeAPI_tXMLMap_3_TXMLMAP_OUT.get_String("row3.body:/root/statuses/user/location");
-nhs_tmp.text_id = treeNodeAPI_tXMLMap_3_TXMLMAP_OUT.get_String("row3.body:/root/statuses/id");
-nhs_tmp.date_id = treeNodeAPI_tXMLMap_3_TXMLMAP_OUT.get_String("row3.body:/root/statuses/id");allOutsForAggregate_tXMLMap_3.add(nhs_tmp);
+							nhs_tmp = new nhsStruct();
+							nhs_tmp.id = treeNodeAPI_tXMLMap_3_TXMLMAP_OUT.get_String("row3.body:/root/statuses/id");
+							nhs_tmp.date_description = TalendDate.parseDate("EEE MMM dd HH:mm:ss Z yyyy",
+									treeNodeAPI_tXMLMap_3_TXMLMAP_OUT
+											.get_String("row3.body:/root/statuses/created_at"));
+							nhs_tmp.user_id = treeNodeAPI_tXMLMap_3_TXMLMAP_OUT
+									.get_String("row3.body:/root/statuses/user/id");
+							nhs_tmp.user_name = treeNodeAPI_tXMLMap_3_TXMLMAP_OUT
+									.get_String("row3.body:/root/statuses/user/name");
+							nhs_tmp.user_screen_name = treeNodeAPI_tXMLMap_3_TXMLMAP_OUT
+									.get_String("row3.body:/root/statuses/user/screen_name");
+							nhs_tmp.user_location = treeNodeAPI_tXMLMap_3_TXMLMAP_OUT
+									.get_String("row3.body:/root/statuses/user/location");
+							nhs_tmp.user_description = treeNodeAPI_tXMLMap_3_TXMLMAP_OUT
+									.get_String("row3.body:/root/statuses/user/description");
+							nhs_tmp.hashtag_text = treeNodeAPI_tXMLMap_3_TXMLMAP_OUT
+									.get_String("row3.body:/root/statuses/entities/hashtags/text");
+							nhs_tmp.text_description = treeNodeAPI_tXMLMap_3_TXMLMAP_OUT
+									.get_String("row3.body:/root/statuses/text");
+							nhs_tmp.hashtag_id = treeNodeAPI_tXMLMap_3_TXMLMAP_OUT
+									.get_String("row3.body:/root/statuses/id");
+							nhs_tmp.geo_id = treeNodeAPI_tXMLMap_3_TXMLMAP_OUT
+									.get_String("row3.body:/root/statuses/id");
+							nhs_tmp.geo_description = treeNodeAPI_tXMLMap_3_TXMLMAP_OUT
+									.get_String("row3.body:/root/statuses/user/location");
+							nhs_tmp.text_id = treeNodeAPI_tXMLMap_3_TXMLMAP_OUT
+									.get_String("row3.body:/root/statuses/id");
+							nhs_tmp.date_id = treeNodeAPI_tXMLMap_3_TXMLMAP_OUT
+									.get_String("row3.body:/root/statuses/id");
+							allOutsForAggregate_tXMLMap_3.add(nhs_tmp);
 
 // ###############################
 
-} // end of Var scope
+						} // end of Var scope
 
-rejectedInnerJoin_tXMLMap_3_TXMLMAP_OUT = false;
+						rejectedInnerJoin_tXMLMap_3_TXMLMAP_OUT = false;
 
+					} // G_TXM_M_001 close
 
-		}//G_TXM_M_001 close
-	
+					tos_count_tXMLMap_3_TXMLMAP_OUT++;
 
- 
+					/**
+					 * [tXMLMap_3_TXMLMAP_OUT main ] stop
+					 */
 
+					/**
+					 * [tXMLMap_3_TXMLMAP_OUT process_data_begin ] start
+					 */
 
-	tos_count_tXMLMap_3_TXMLMAP_OUT++;
+					currentVirtualComponent = "tXMLMap_3";
 
-/**
- * [tXMLMap_3_TXMLMAP_OUT main ] stop
- */
-	
-	/**
-	 * [tXMLMap_3_TXMLMAP_OUT process_data_begin ] start
-	 */
+					currentComponent = "tXMLMap_3_TXMLMAP_OUT";
 
-	
+					/**
+					 * [tXMLMap_3_TXMLMAP_OUT process_data_begin ] stop
+					 */
 
-	
-	
-		currentVirtualComponent = "tXMLMap_3";
-	
-	currentComponent="tXMLMap_3_TXMLMAP_OUT";
+					/**
+					 * [tXMLMap_3_TXMLMAP_OUT process_data_end ] start
+					 */
 
-	
+					currentVirtualComponent = "tXMLMap_3";
 
- 
+					currentComponent = "tXMLMap_3_TXMLMAP_OUT";
 
+					/**
+					 * [tXMLMap_3_TXMLMAP_OUT process_data_end ] stop
+					 */
 
+				} // End of branch "row3"
 
-/**
- * [tXMLMap_3_TXMLMAP_OUT process_data_begin ] stop
- */
-	
-	/**
-	 * [tXMLMap_3_TXMLMAP_OUT process_data_end ] start
-	 */
+				/**
+				 * [tRESTClient_3 process_data_end ] start
+				 */
 
-	
+				currentComponent = "tRESTClient_3";
 
-	
-	
-		currentVirtualComponent = "tXMLMap_3";
-	
-	currentComponent="tXMLMap_3_TXMLMAP_OUT";
+				/**
+				 * [tRESTClient_3 process_data_end ] stop
+				 */
 
-	
+				/**
+				 * [tRESTClient_3 end ] start
+				 */
 
- 
+				currentComponent = "tRESTClient_3";
 
-
-
-/**
- * [tXMLMap_3_TXMLMAP_OUT process_data_end ] stop
- */
-
-} // End of branch "row3"
-
-
-
-
-	
-	/**
-	 * [tRESTClient_3 process_data_end ] start
-	 */
-
-	
-
-	
-	
-	currentComponent="tRESTClient_3";
-
-	
-
- 
-
-
-
-/**
- * [tRESTClient_3 process_data_end ] stop
- */
-	
-	/**
-	 * [tRESTClient_3 end ] start
-	 */
-
-	
-
-	
-	
-	currentComponent="tRESTClient_3";
-
-	
-
-
-if (globalMap.get("tRESTClient_3_NB_LINE") == null) {
-	globalMap.put("tRESTClient_3_NB_LINE", 1);
-}
+				if (globalMap.get("tRESTClient_3_NB_LINE") == null) {
+					globalMap.put("tRESTClient_3_NB_LINE", 1);
+				}
 
 // [tRESTCliend_end]
- 
 
-ok_Hash.put("tRESTClient_3", true);
-end_Hash.put("tRESTClient_3", System.currentTimeMillis());
+				ok_Hash.put("tRESTClient_3", true);
+				end_Hash.put("tRESTClient_3", System.currentTimeMillis());
 
+				/**
+				 * [tRESTClient_3 end ] stop
+				 */
 
+				/**
+				 * [tXMLMap_3_TXMLMAP_OUT end ] start
+				 */
 
+				currentVirtualComponent = "tXMLMap_3";
 
-/**
- * [tRESTClient_3 end ] stop
- */
+				currentComponent = "tXMLMap_3_TXMLMAP_OUT";
 
-	
-	/**
-	 * [tXMLMap_3_TXMLMAP_OUT end ] start
-	 */
+				if (execStat) {
+					runStat.updateStat(resourceMap, iterateId, 2, 0, "row3");
+				}
 
-	
+				ok_Hash.put("tXMLMap_3_TXMLMAP_OUT", true);
+				end_Hash.put("tXMLMap_3_TXMLMAP_OUT", System.currentTimeMillis());
 
-	
-	
-		currentVirtualComponent = "tXMLMap_3";
-	
-	currentComponent="tXMLMap_3_TXMLMAP_OUT";
+				/**
+				 * [tXMLMap_3_TXMLMAP_OUT end ] stop
+				 */
 
-	
+				/**
+				 * [tFileOutputJSON_3 begin ] start
+				 */
 
+				ok_Hash.put("tFileOutputJSON_3", false);
+				start_Hash.put("tFileOutputJSON_3", System.currentTimeMillis());
 
+				currentComponent = "tFileOutputJSON_3";
 
+				if (execStat) {
+					runStat.updateStatOnConnection(resourceMap, iterateId, 0, 0, "nhs");
+				}
 
-				if(execStat){
-			  		runStat.updateStat(resourceMap,iterateId,2,0,"row3");
-			  	}
-			  	
- 
+				int tos_count_tFileOutputJSON_3 = 0;
 
-ok_Hash.put("tXMLMap_3_TXMLMAP_OUT", true);
-end_Hash.put("tXMLMap_3_TXMLMAP_OUT", System.currentTimeMillis());
+				int nb_line_tFileOutputJSON_3 = 0;
+				java.io.File file_tFileOutputJSON_3 = new java.io.File(
+						"/home/scasanova/Downloads/TOS_BD-20200219_1130-V7.3.1/workspace/ANALYSIS_TWITTER/documentations/apitwitter/in-"
+								+ TalendDate.getCurrentDate() + ".json");
+				java.io.File dir_tFileOutputJSON_3 = file_tFileOutputJSON_3.getParentFile();
+				if (dir_tFileOutputJSON_3 != null && !dir_tFileOutputJSON_3.exists()) {
+					dir_tFileOutputJSON_3.mkdirs();
+				}
+				java.io.PrintWriter outtFileOutputJSON_3 = new java.io.PrintWriter(
+						new java.io.BufferedWriter(new java.io.FileWriter(
+								"/home/scasanova/Downloads/TOS_BD-20200219_1130-V7.3.1/workspace/ANALYSIS_TWITTER/documentations/apitwitter/in-"
+										+ TalendDate.getCurrentDate() + ".json")));
+				outtFileOutputJSON_3.append("{\"" + "tweets" + "\":[");
+				boolean isFirst_tFileOutputJSON_3 = true;
 
+				/**
+				 * [tFileOutputJSON_3 begin ] stop
+				 */
 
+				/**
+				 * [tXMLMap_3_TXMLMAP_IN begin ] start
+				 */
 
+				ok_Hash.put("tXMLMap_3_TXMLMAP_IN", false);
+				start_Hash.put("tXMLMap_3_TXMLMAP_IN", System.currentTimeMillis());
 
-/**
- * [tXMLMap_3_TXMLMAP_OUT end ] stop
- */
+				currentVirtualComponent = "tXMLMap_3";
 
+				currentComponent = "tXMLMap_3_TXMLMAP_IN";
 
-	
-	/**
-	 * [tFileOutputJSON_3 begin ] start
-	 */
+				int tos_count_tXMLMap_3_TXMLMAP_IN = 0;
 
-	
+				java.util.List<Object> outs_tXMLMap_3 = (java.util.List<Object>) globalMap
+						.get("allOutsForAggregate_tXMLMap_3");
+				for (Object row_out_tXMLMap_3_TXMLMAP_IN : outs_tXMLMap_3) {// TD512
 
-	
-		
-		ok_Hash.put("tFileOutputJSON_3", false);
-		start_Hash.put("tFileOutputJSON_3", System.currentTimeMillis());
-		
-	
-	currentComponent="tFileOutputJSON_3";
+					/**
+					 * [tXMLMap_3_TXMLMAP_IN begin ] stop
+					 */
 
-	
-					if(execStat) {
-						runStat.updateStatOnConnection(resourceMap,iterateId,0,0,"nhs");
+					/**
+					 * [tXMLMap_3_TXMLMAP_IN main ] start
+					 */
+
+					currentVirtualComponent = "tXMLMap_3";
+
+					currentComponent = "tXMLMap_3_TXMLMAP_IN";
+
+					nhs = null;
+					if (row_out_tXMLMap_3_TXMLMAP_IN != null && row_out_tXMLMap_3_TXMLMAP_IN instanceof nhsStruct) {
+						nhs = (nhsStruct) row_out_tXMLMap_3_TXMLMAP_IN;
 					}
-				
-		int tos_count_tFileOutputJSON_3 = 0;
-		
-int nb_line_tFileOutputJSON_3 = 0;
-java.io.File file_tFileOutputJSON_3 = new java.io.File("/home/scasanova/Downloads/TOS_BD-20200219_1130-V7.3.1/workspace/ANALYSIS_TWITTER/documentations/apitwitter/in-"+TalendDate.getCurrentDate()+".json");
-java.io.File dir_tFileOutputJSON_3 = file_tFileOutputJSON_3.getParentFile();
-	if(dir_tFileOutputJSON_3!=null && !dir_tFileOutputJSON_3.exists()){
-		dir_tFileOutputJSON_3.mkdirs();
-	}
-java.io.PrintWriter outtFileOutputJSON_3 = new java.io.PrintWriter(new java.io.BufferedWriter(new java.io.FileWriter("/home/scasanova/Downloads/TOS_BD-20200219_1130-V7.3.1/workspace/ANALYSIS_TWITTER/documentations/apitwitter/in-"+TalendDate.getCurrentDate()+".json")));
-	outtFileOutputJSON_3.append("{\"" + "tweets" + "\":[");
-boolean isFirst_tFileOutputJSON_3 = true;
- 
 
+					tos_count_tXMLMap_3_TXMLMAP_IN++;
 
+					/**
+					 * [tXMLMap_3_TXMLMAP_IN main ] stop
+					 */
 
-/**
- * [tFileOutputJSON_3 begin ] stop
- */
+					/**
+					 * [tXMLMap_3_TXMLMAP_IN process_data_begin ] start
+					 */
 
+					currentVirtualComponent = "tXMLMap_3";
 
+					currentComponent = "tXMLMap_3_TXMLMAP_IN";
 
-	
-	/**
-	 * [tXMLMap_3_TXMLMAP_IN begin ] start
-	 */
-
-	
-
-	
-		
-		ok_Hash.put("tXMLMap_3_TXMLMAP_IN", false);
-		start_Hash.put("tXMLMap_3_TXMLMAP_IN", System.currentTimeMillis());
-		
-	
-		currentVirtualComponent = "tXMLMap_3";
-	
-	currentComponent="tXMLMap_3_TXMLMAP_IN";
-
-	
-		int tos_count_tXMLMap_3_TXMLMAP_IN = 0;
-		
-java.util.List<Object> outs_tXMLMap_3 = (java.util.List<Object>)globalMap.get("allOutsForAggregate_tXMLMap_3");
-for(Object  row_out_tXMLMap_3_TXMLMAP_IN : outs_tXMLMap_3) {//TD512
- 
-
-
-
-/**
- * [tXMLMap_3_TXMLMAP_IN begin ] stop
- */
-	
-	/**
-	 * [tXMLMap_3_TXMLMAP_IN main ] start
-	 */
-
-	
-
-	
-	
-		currentVirtualComponent = "tXMLMap_3";
-	
-	currentComponent="tXMLMap_3_TXMLMAP_IN";
-
-	
-
-	nhs = null;
-	if(row_out_tXMLMap_3_TXMLMAP_IN!=null && row_out_tXMLMap_3_TXMLMAP_IN instanceof nhsStruct) {
-		nhs = (nhsStruct)row_out_tXMLMap_3_TXMLMAP_IN;		
-	}
- 
-
-
-	tos_count_tXMLMap_3_TXMLMAP_IN++;
-
-/**
- * [tXMLMap_3_TXMLMAP_IN main ] stop
- */
-	
-	/**
-	 * [tXMLMap_3_TXMLMAP_IN process_data_begin ] start
-	 */
-
-	
-
-	
-	
-		currentVirtualComponent = "tXMLMap_3";
-	
-	currentComponent="tXMLMap_3_TXMLMAP_IN";
-
-	
-
- 
-
-
-
-/**
- * [tXMLMap_3_TXMLMAP_IN process_data_begin ] stop
- */
+					/**
+					 * [tXMLMap_3_TXMLMAP_IN process_data_begin ] stop
+					 */
 // Start of branch "nhs"
-if(nhs != null) { 
+					if (nhs != null) {
 
+						/**
+						 * [tFileOutputJSON_3 main ] start
+						 */
 
+						currentComponent = "tFileOutputJSON_3";
 
-	
-	/**
-	 * [tFileOutputJSON_3 main ] start
-	 */
+						if (execStat) {
+							runStat.updateStatOnConnection(iterateId, 1, 1, "nhs");
+						}
 
-	
+						org.json.simple.JSONObject jsonRowtFileOutputJSON_3 = new org.json.simple.JSONObject();
+						if (nhs.id != null) {
 
-	
-	
-	currentComponent="tFileOutputJSON_3";
+							jsonRowtFileOutputJSON_3.put("id", nhs.id);
 
-	
-					if(execStat){
-						runStat.updateStatOnConnection(iterateId,1,1,"nhs");
-					}
-					
+						} else {
+							jsonRowtFileOutputJSON_3.put("id", null);
+						}
 
+						if (nhs.date_description != null) {
 
-org.json.simple.JSONObject jsonRowtFileOutputJSON_3 = new org.json.simple.JSONObject();
-			    	if(nhs.id != null){
-			    
-					jsonRowtFileOutputJSON_3.put("id", nhs.id);
-				
-					}else{
-						jsonRowtFileOutputJSON_3.put("id", null);
-					}
-				
-			    	if(nhs.date_description != null){
-			    
-					jsonRowtFileOutputJSON_3.put("date_description",FormatterUtils.format_Date(nhs.date_description, "dd-MM-yyyy"));
-				
-					}else{
-						jsonRowtFileOutputJSON_3.put("date_description", null);
-					}
-				
-			    	if(nhs.user_id != null){
-			    
-					jsonRowtFileOutputJSON_3.put("user_id", nhs.user_id);
-				
-					}else{
-						jsonRowtFileOutputJSON_3.put("user_id", null);
-					}
-				
-			    	if(nhs.user_name != null){
-			    
-					jsonRowtFileOutputJSON_3.put("user_name", nhs.user_name);
-				
-					}else{
-						jsonRowtFileOutputJSON_3.put("user_name", null);
-					}
-				
-			    	if(nhs.user_screen_name != null){
-			    
-					jsonRowtFileOutputJSON_3.put("user_screen_name", nhs.user_screen_name);
-				
-					}else{
-						jsonRowtFileOutputJSON_3.put("user_screen_name", null);
-					}
-				
-			    	if(nhs.user_location != null){
-			    
-					jsonRowtFileOutputJSON_3.put("user_location", nhs.user_location);
-				
-					}else{
-						jsonRowtFileOutputJSON_3.put("user_location", null);
-					}
-				
-			    	if(nhs.user_description != null){
-			    
-					jsonRowtFileOutputJSON_3.put("user_description", nhs.user_description);
-				
-					}else{
-						jsonRowtFileOutputJSON_3.put("user_description", null);
-					}
-				
-			    	if(nhs.hashtag_text != null){
-			    
-					jsonRowtFileOutputJSON_3.put("hashtag_text", nhs.hashtag_text);
-				
-					}else{
-						jsonRowtFileOutputJSON_3.put("hashtag_text", null);
-					}
-				
-			    	if(nhs.text_description != null){
-			    
-					jsonRowtFileOutputJSON_3.put("text_description", nhs.text_description);
-				
-					}else{
-						jsonRowtFileOutputJSON_3.put("text_description", null);
-					}
-				
-			    	if(nhs.hashtag_id != null){
-			    
-					jsonRowtFileOutputJSON_3.put("hashtag_id", nhs.hashtag_id);
-				
-					}else{
-						jsonRowtFileOutputJSON_3.put("hashtag_id", null);
-					}
-				
-			    	if(nhs.geo_id != null){
-			    
-					jsonRowtFileOutputJSON_3.put("geo_id", nhs.geo_id);
-				
-					}else{
-						jsonRowtFileOutputJSON_3.put("geo_id", null);
-					}
-				
-			    	if(nhs.geo_description != null){
-			    
-					jsonRowtFileOutputJSON_3.put("geo_description", nhs.geo_description);
-				
-					}else{
-						jsonRowtFileOutputJSON_3.put("geo_description", null);
-					}
-				
-			    	if(nhs.text_id != null){
-			    
-					jsonRowtFileOutputJSON_3.put("text_id", nhs.text_id);
-				
-					}else{
-						jsonRowtFileOutputJSON_3.put("text_id", null);
-					}
-				
-			    	if(nhs.date_id != null){
-			    
-					jsonRowtFileOutputJSON_3.put("date_id", nhs.date_id);
-				
-					}else{
-						jsonRowtFileOutputJSON_3.put("date_id", null);
-					}
-				
+							jsonRowtFileOutputJSON_3.put("date_description",
+									FormatterUtils.format_Date(nhs.date_description, "dd-MM-yyyy"));
 
-if(!isFirst_tFileOutputJSON_3){
-	outtFileOutputJSON_3.append(",");
-}
-isFirst_tFileOutputJSON_3 = false;
-outtFileOutputJSON_3.append(jsonRowtFileOutputJSON_3.toJSONString());
-nb_line_tFileOutputJSON_3++;
+						} else {
+							jsonRowtFileOutputJSON_3.put("date_description", null);
+						}
 
- 
+						if (nhs.user_id != null) {
 
+							jsonRowtFileOutputJSON_3.put("user_id", nhs.user_id);
 
-	tos_count_tFileOutputJSON_3++;
+						} else {
+							jsonRowtFileOutputJSON_3.put("user_id", null);
+						}
 
-/**
- * [tFileOutputJSON_3 main ] stop
- */
-	
-	/**
-	 * [tFileOutputJSON_3 process_data_begin ] start
-	 */
+						if (nhs.user_name != null) {
 
-	
+							jsonRowtFileOutputJSON_3.put("user_name", nhs.user_name);
 
-	
-	
-	currentComponent="tFileOutputJSON_3";
+						} else {
+							jsonRowtFileOutputJSON_3.put("user_name", null);
+						}
 
-	
+						if (nhs.user_screen_name != null) {
 
- 
+							jsonRowtFileOutputJSON_3.put("user_screen_name", nhs.user_screen_name);
 
+						} else {
+							jsonRowtFileOutputJSON_3.put("user_screen_name", null);
+						}
 
+						if (nhs.user_location != null) {
 
-/**
- * [tFileOutputJSON_3 process_data_begin ] stop
- */
-	
-	/**
-	 * [tFileOutputJSON_3 process_data_end ] start
-	 */
+							jsonRowtFileOutputJSON_3.put("user_location", nhs.user_location);
 
-	
+						} else {
+							jsonRowtFileOutputJSON_3.put("user_location", null);
+						}
 
-	
-	
-	currentComponent="tFileOutputJSON_3";
+						if (nhs.user_description != null) {
 
-	
+							jsonRowtFileOutputJSON_3.put("user_description", nhs.user_description);
 
- 
+						} else {
+							jsonRowtFileOutputJSON_3.put("user_description", null);
+						}
 
+						if (nhs.hashtag_text != null) {
 
+							jsonRowtFileOutputJSON_3.put("hashtag_text", nhs.hashtag_text);
 
-/**
- * [tFileOutputJSON_3 process_data_end ] stop
- */
+						} else {
+							jsonRowtFileOutputJSON_3.put("hashtag_text", null);
+						}
 
-} // End of branch "nhs"
+						if (nhs.text_description != null) {
 
+							jsonRowtFileOutputJSON_3.put("text_description", nhs.text_description);
 
+						} else {
+							jsonRowtFileOutputJSON_3.put("text_description", null);
+						}
 
+						if (nhs.hashtag_id != null) {
 
-	
-	/**
-	 * [tXMLMap_3_TXMLMAP_IN process_data_end ] start
-	 */
+							jsonRowtFileOutputJSON_3.put("hashtag_id", nhs.hashtag_id);
 
-	
+						} else {
+							jsonRowtFileOutputJSON_3.put("hashtag_id", null);
+						}
 
-	
-	
-		currentVirtualComponent = "tXMLMap_3";
-	
-	currentComponent="tXMLMap_3_TXMLMAP_IN";
+						if (nhs.geo_id != null) {
 
-	
+							jsonRowtFileOutputJSON_3.put("geo_id", nhs.geo_id);
 
- 
+						} else {
+							jsonRowtFileOutputJSON_3.put("geo_id", null);
+						}
 
+						if (nhs.geo_description != null) {
 
+							jsonRowtFileOutputJSON_3.put("geo_description", nhs.geo_description);
 
-/**
- * [tXMLMap_3_TXMLMAP_IN process_data_end ] stop
- */
-	
-	/**
-	 * [tXMLMap_3_TXMLMAP_IN end ] start
-	 */
+						} else {
+							jsonRowtFileOutputJSON_3.put("geo_description", null);
+						}
 
-	
+						if (nhs.text_id != null) {
 
-	
-	
-		currentVirtualComponent = "tXMLMap_3";
-	
-	currentComponent="tXMLMap_3_TXMLMAP_IN";
+							jsonRowtFileOutputJSON_3.put("text_id", nhs.text_id);
 
-	
+						} else {
+							jsonRowtFileOutputJSON_3.put("text_id", null);
+						}
 
-}//TD512
- 
+						if (nhs.date_id != null) {
 
-ok_Hash.put("tXMLMap_3_TXMLMAP_IN", true);
-end_Hash.put("tXMLMap_3_TXMLMAP_IN", System.currentTimeMillis());
+							jsonRowtFileOutputJSON_3.put("date_id", nhs.date_id);
 
+						} else {
+							jsonRowtFileOutputJSON_3.put("date_id", null);
+						}
 
+						if (!isFirst_tFileOutputJSON_3) {
+							outtFileOutputJSON_3.append(",");
+						}
+						isFirst_tFileOutputJSON_3 = false;
+						outtFileOutputJSON_3.append(jsonRowtFileOutputJSON_3.toJSONString());
+						nb_line_tFileOutputJSON_3++;
 
+						tos_count_tFileOutputJSON_3++;
 
-/**
- * [tXMLMap_3_TXMLMAP_IN end ] stop
- */
+						/**
+						 * [tFileOutputJSON_3 main ] stop
+						 */
 
-	
-	/**
-	 * [tFileOutputJSON_3 end ] start
-	 */
+						/**
+						 * [tFileOutputJSON_3 process_data_begin ] start
+						 */
 
-	
+						currentComponent = "tFileOutputJSON_3";
 
-	
-	
-	currentComponent="tFileOutputJSON_3";
+						/**
+						 * [tFileOutputJSON_3 process_data_begin ] stop
+						 */
 
-	
+						/**
+						 * [tFileOutputJSON_3 process_data_end ] start
+						 */
 
-	outtFileOutputJSON_3.print("]}");
-outtFileOutputJSON_3.close();
-globalMap.put("tFileOutputJSON_3_NB_LINE",nb_line_tFileOutputJSON_3);
+						currentComponent = "tFileOutputJSON_3";
 
-				if(execStat){
-			  		runStat.updateStat(resourceMap,iterateId,2,0,"nhs");
-			  	}
-			  	
- 
+						/**
+						 * [tFileOutputJSON_3 process_data_end ] stop
+						 */
 
-ok_Hash.put("tFileOutputJSON_3", true);
-end_Hash.put("tFileOutputJSON_3", System.currentTimeMillis());
+					} // End of branch "nhs"
 
-				if(execStat){   
-   	 				runStat.updateStatOnConnection("OnComponentOk5", 0, "ok");
+					/**
+					 * [tXMLMap_3_TXMLMAP_IN process_data_end ] start
+					 */
+
+					currentVirtualComponent = "tXMLMap_3";
+
+					currentComponent = "tXMLMap_3_TXMLMAP_IN";
+
+					/**
+					 * [tXMLMap_3_TXMLMAP_IN process_data_end ] stop
+					 */
+
+					/**
+					 * [tXMLMap_3_TXMLMAP_IN end ] start
+					 */
+
+					currentVirtualComponent = "tXMLMap_3";
+
+					currentComponent = "tXMLMap_3_TXMLMAP_IN";
+
+				} // TD512
+
+				ok_Hash.put("tXMLMap_3_TXMLMAP_IN", true);
+				end_Hash.put("tXMLMap_3_TXMLMAP_IN", System.currentTimeMillis());
+
+				/**
+				 * [tXMLMap_3_TXMLMAP_IN end ] stop
+				 */
+
+				/**
+				 * [tFileOutputJSON_3 end ] start
+				 */
+
+				currentComponent = "tFileOutputJSON_3";
+
+				outtFileOutputJSON_3.print("]}");
+				outtFileOutputJSON_3.close();
+				globalMap.put("tFileOutputJSON_3_NB_LINE", nb_line_tFileOutputJSON_3);
+
+				if (execStat) {
+					runStat.updateStat(resourceMap, iterateId, 2, 0, "nhs");
 				}
-				tMsgBox_1Process(globalMap);
 
+				ok_Hash.put("tFileOutputJSON_3", true);
+				end_Hash.put("tFileOutputJSON_3", System.currentTimeMillis());
 
+				/**
+				 * [tFileOutputJSON_3 end ] stop
+				 */
 
-/**
- * [tFileOutputJSON_3 end ] stop
- */
+			} // end the resume
 
+		} catch (java.lang.Exception e) {
 
+			TalendException te = new TalendException(e, currentComponent, globalMap);
 
+			te.setVirtualComponentName(currentVirtualComponent);
 
+			throw te;
+		} catch (java.lang.Error error) {
 
+			runStat.stopThreadStat();
 
+			throw error;
+		} finally {
 
+			try {
 
+				/**
+				 * [tRESTClient_3 finally ] start
+				 */
 
-				}//end the resume
+				currentComponent = "tRESTClient_3";
 
-				
+				/**
+				 * [tRESTClient_3 finally ] stop
+				 */
 
+				/**
+				 * [tXMLMap_3_TXMLMAP_OUT finally ] start
+				 */
 
+				currentVirtualComponent = "tXMLMap_3";
 
-	
-			}catch(java.lang.Exception e){	
-				
-				TalendException te = new TalendException(e, currentComponent, globalMap);
-				
-					te.setVirtualComponentName(currentVirtualComponent);
-				
-				throw te;
-			}catch(java.lang.Error error){	
-				
-					runStat.stopThreadStat();
-				
-				throw error;
-			}finally{
-				
-				try{
-					
-	
-	/**
-	 * [tRESTClient_3 finally ] start
-	 */
+				currentComponent = "tXMLMap_3_TXMLMAP_OUT";
 
-	
+				/**
+				 * [tXMLMap_3_TXMLMAP_OUT finally ] stop
+				 */
 
-	
-	
-	currentComponent="tRESTClient_3";
+				/**
+				 * [tXMLMap_3_TXMLMAP_IN finally ] start
+				 */
 
-	
+				currentVirtualComponent = "tXMLMap_3";
 
- 
+				currentComponent = "tXMLMap_3_TXMLMAP_IN";
 
+				/**
+				 * [tXMLMap_3_TXMLMAP_IN finally ] stop
+				 */
 
+				/**
+				 * [tFileOutputJSON_3 finally ] start
+				 */
 
-/**
- * [tRESTClient_3 finally ] stop
- */
+				currentComponent = "tFileOutputJSON_3";
 
-	
-	/**
-	 * [tXMLMap_3_TXMLMAP_OUT finally ] start
-	 */
+				/**
+				 * [tFileOutputJSON_3 finally ] stop
+				 */
 
-	
-
-	
-	
-		currentVirtualComponent = "tXMLMap_3";
-	
-	currentComponent="tXMLMap_3_TXMLMAP_OUT";
-
-	
-
- 
-
-
-
-/**
- * [tXMLMap_3_TXMLMAP_OUT finally ] stop
- */
-
-	
-	/**
-	 * [tXMLMap_3_TXMLMAP_IN finally ] start
-	 */
-
-	
-
-	
-	
-		currentVirtualComponent = "tXMLMap_3";
-	
-	currentComponent="tXMLMap_3_TXMLMAP_IN";
-
-	
-
- 
-
-
-
-/**
- * [tXMLMap_3_TXMLMAP_IN finally ] stop
- */
-
-	
-	/**
-	 * [tFileOutputJSON_3 finally ] start
-	 */
-
-	
-
-	
-	
-	currentComponent="tFileOutputJSON_3";
-
-	
-
- 
-
-
-
-/**
- * [tFileOutputJSON_3 finally ] stop
- */
-
-
-
-
-
-
-
-
-
-				}catch(java.lang.Exception e){	
-					//ignore
-				}catch(java.lang.Error error){
-					//ignore
-				}
-				resourceMap = null;
+			} catch (java.lang.Exception e) {
+				// ignore
+			} catch (java.lang.Error error) {
+				// ignore
 			}
-		
+			resourceMap = null;
+		}
 
 		globalMap.put("tRESTClient_3_SUBPROCESS_STATE", 1);
 	}
-	
 
-public void tMsgBox_1Process(final java.util.Map<String, Object> globalMap) throws TalendException {
-	globalMap.put("tMsgBox_1_SUBPROCESS_STATE", 0);
+	public void tPrejob_1Process(final java.util.Map<String, Object> globalMap) throws TalendException {
+		globalMap.put("tPrejob_1_SUBPROCESS_STATE", 0);
 
- final boolean execStat = this.execStat;
-	
+		final boolean execStat = this.execStat;
+
 		String iterateId = "";
-	
-	
-	String currentComponent = "";
-	java.util.Map<String, Object> resourceMap = new java.util.HashMap<String, Object>();
 
-	try {
+		String currentComponent = "";
+		java.util.Map<String, Object> resourceMap = new java.util.HashMap<String, Object>();
+
+		try {
 			// TDI-39566 avoid throwing an useless Exception
 			boolean resumeIt = true;
 			if (globalResumeTicket == false && resumeEntryMethodName != null) {
 				String currentMethodName = new java.lang.Exception().getStackTrace()[0].getMethodName();
 				resumeIt = resumeEntryMethodName.equals(currentMethodName);
 			}
-			if (resumeIt || globalResumeTicket) { //start the resume
+			if (resumeIt || globalResumeTicket) { // start the resume
 				globalResumeTicket = true;
 
+				/**
+				 * [tPrejob_1 begin ] start
+				 */
 
+				ok_Hash.put("tPrejob_1", false);
+				start_Hash.put("tPrejob_1", System.currentTimeMillis());
 
+				currentComponent = "tPrejob_1";
 
+				int tos_count_tPrejob_1 = 0;
 
-	
-	/**
-	 * [tMsgBox_1 begin ] start
-	 */
+				/**
+				 * [tPrejob_1 begin ] stop
+				 */
 
-	
+				/**
+				 * [tPrejob_1 main ] start
+				 */
 
-	
-		
-		ok_Hash.put("tMsgBox_1", false);
-		start_Hash.put("tMsgBox_1", System.currentTimeMillis());
-		
-	
-	currentComponent="tMsgBox_1";
+				currentComponent = "tPrejob_1";
 
-	
-		int tos_count_tMsgBox_1 = 0;
-		
+				tos_count_tPrejob_1++;
 
- 
+				/**
+				 * [tPrejob_1 main ] stop
+				 */
 
+				/**
+				 * [tPrejob_1 process_data_begin ] start
+				 */
 
+				currentComponent = "tPrejob_1";
 
-/**
- * [tMsgBox_1 begin ] stop
- */
-	
-	/**
-	 * [tMsgBox_1 main ] start
-	 */
+				/**
+				 * [tPrejob_1 process_data_begin ] stop
+				 */
 
-	
+				/**
+				 * [tPrejob_1 process_data_end ] start
+				 */
 
-	
-	
-	currentComponent="tMsgBox_1";
+				currentComponent = "tPrejob_1";
 
-	
+				/**
+				 * [tPrejob_1 process_data_end ] stop
+				 */
 
-	int messageIcontMsgBox_1 = javax.swing.JOptionPane.INFORMATION_MESSAGE;
-	String titletMsgBox_1 = "Et 0 : Connexion api twitter";
-	String messagetMsgBox_1 = "La connexion a été réussi et les réponses json ont été enregistrées";   	
-	String resulttMsgBox_1 = null; 
-	
-		javax.swing.JOptionPane.showMessageDialog(null, messagetMsgBox_1, titletMsgBox_1, messageIcontMsgBox_1);
-		resulttMsgBox_1 = String.valueOf(1);
+				/**
+				 * [tPrejob_1 end ] start
+				 */
 
-globalMap.put("tMsgBox_1_RESULT", resulttMsgBox_1);
+				currentComponent = "tPrejob_1";
 
- 
+				ok_Hash.put("tPrejob_1", true);
+				end_Hash.put("tPrejob_1", System.currentTimeMillis());
 
-
-	tos_count_tMsgBox_1++;
-
-/**
- * [tMsgBox_1 main ] stop
- */
-	
-	/**
-	 * [tMsgBox_1 process_data_begin ] start
-	 */
-
-	
-
-	
-	
-	currentComponent="tMsgBox_1";
-
-	
-
- 
-
-
-
-/**
- * [tMsgBox_1 process_data_begin ] stop
- */
-	
-	/**
-	 * [tMsgBox_1 process_data_end ] start
-	 */
-
-	
-
-	
-	
-	currentComponent="tMsgBox_1";
-
-	
-
- 
-
-
-
-/**
- * [tMsgBox_1 process_data_end ] stop
- */
-	
-	/**
-	 * [tMsgBox_1 end ] start
-	 */
-
-	
-
-	
-	
-	currentComponent="tMsgBox_1";
-
-	
-
- 
-
-ok_Hash.put("tMsgBox_1", true);
-end_Hash.put("tMsgBox_1", System.currentTimeMillis());
-
-
-
-
-/**
- * [tMsgBox_1 end ] stop
- */
-				}//end the resume
-
-				
-
-
-
-	
-			}catch(java.lang.Exception e){	
-				
-				TalendException te = new TalendException(e, currentComponent, globalMap);
-				
-				throw te;
-			}catch(java.lang.Error error){	
-				
-					runStat.stopThreadStat();
-				
-				throw error;
-			}finally{
-				
-				try{
-					
-	
-	/**
-	 * [tMsgBox_1 finally ] start
-	 */
-
-	
-
-	
-	
-	currentComponent="tMsgBox_1";
-
-	
-
- 
-
-
-
-/**
- * [tMsgBox_1 finally ] stop
- */
-				}catch(java.lang.Exception e){	
-					//ignore
-				}catch(java.lang.Error error){
-					//ignore
+				if (execStat) {
+					runStat.updateStatOnConnection("OnComponentOk6", 0, "ok");
 				}
-				resourceMap = null;
+				tMsgBox_2Process(globalMap);
+
+				/**
+				 * [tPrejob_1 end ] stop
+				 */
+			} // end the resume
+
+		} catch (java.lang.Exception e) {
+
+			TalendException te = new TalendException(e, currentComponent, globalMap);
+
+			throw te;
+		} catch (java.lang.Error error) {
+
+			runStat.stopThreadStat();
+
+			throw error;
+		} finally {
+
+			try {
+
+				/**
+				 * [tPrejob_1 finally ] start
+				 */
+
+				currentComponent = "tPrejob_1";
+
+				/**
+				 * [tPrejob_1 finally ] stop
+				 */
+			} catch (java.lang.Exception e) {
+				// ignore
+			} catch (java.lang.Error error) {
+				// ignore
 			}
-		
+			resourceMap = null;
+		}
 
-		globalMap.put("tMsgBox_1_SUBPROCESS_STATE", 1);
+		globalMap.put("tPrejob_1_SUBPROCESS_STATE", 1);
 	}
-	
-    public String resuming_logs_dir_path = null;
-    public String resuming_checkpoint_path = null;
-    public String parent_part_launcher = null;
-    private String resumeEntryMethodName = null;
-    private boolean globalResumeTicket = false;
 
-    public boolean watch = false;
-    // portStats is null, it means don't execute the statistics
-    public Integer portStats = null;
-    public int portTraces = 4334;
-    public String clientHost;
-    public String defaultClientHost = "localhost";
-    public String contextStr = "Default";
-    public boolean isDefaultContext = true;
-    public String pid = "0";
-    public String rootPid = null;
-    public String fatherPid = null;
-    public String fatherNode = null;
-    public long startTime = 0;
-    public boolean isChildJob = false;
-    public String log4jLevel = "";
-    
-    private boolean enableLogStash;
+	public void tMsgBox_2Process(final java.util.Map<String, Object> globalMap) throws TalendException {
+		globalMap.put("tMsgBox_2_SUBPROCESS_STATE", 0);
 
-    private boolean execStat = true;
+		final boolean execStat = this.execStat;
 
-    private ThreadLocal<java.util.Map<String, String>> threadLocal = new ThreadLocal<java.util.Map<String, String>>() {
-        protected java.util.Map<String, String> initialValue() {
-            java.util.Map<String,String> threadRunResultMap = new java.util.HashMap<String, String>();
-            threadRunResultMap.put("errorCode", null);
-            threadRunResultMap.put("status", "");
-            return threadRunResultMap;
-        };
-    };
+		String iterateId = "";
 
+		String currentComponent = "";
+		java.util.Map<String, Object> resourceMap = new java.util.HashMap<String, Object>();
 
-    private PropertiesWithType context_param = new PropertiesWithType();
-    public java.util.Map<String, Object> parentContextMap = new java.util.HashMap<String, Object>();
+		try {
+			// TDI-39566 avoid throwing an useless Exception
+			boolean resumeIt = true;
+			if (globalResumeTicket == false && resumeEntryMethodName != null) {
+				String currentMethodName = new java.lang.Exception().getStackTrace()[0].getMethodName();
+				resumeIt = resumeEntryMethodName.equals(currentMethodName);
+			}
+			if (resumeIt || globalResumeTicket) { // start the resume
+				globalResumeTicket = true;
 
-    public String status= "";
-    
+				/**
+				 * [tMsgBox_2 begin ] start
+				 */
 
-    public static void main(String[] args){
-        final s0_connexion_api_twitter_apps_covid s0_connexion_api_twitter_apps_covidClass = new s0_connexion_api_twitter_apps_covid();
+				ok_Hash.put("tMsgBox_2", false);
+				start_Hash.put("tMsgBox_2", System.currentTimeMillis());
 
-        int exitCode = s0_connexion_api_twitter_apps_covidClass.runJobInTOS(args);
+				currentComponent = "tMsgBox_2";
 
-        System.exit(exitCode);
-    }
+				int tos_count_tMsgBox_2 = 0;
 
+				/**
+				 * [tMsgBox_2 begin ] stop
+				 */
 
-    public String[][] runJob(String[] args) {
+				/**
+				 * [tMsgBox_2 main ] start
+				 */
 
-        int exitCode = runJobInTOS(args);
-        String[][] bufferValue = new String[][] { { Integer.toString(exitCode) } };
+				currentComponent = "tMsgBox_2";
 
-        return bufferValue;
-    }
+				int messageIcontMsgBox_2 = javax.swing.JOptionPane.WARNING_MESSAGE;
+				String titletMsgBox_2 = "Projet TOS : Analysis de tweets";
+				String messagetMsgBox_2 = "Initialisation de workflow pour l'analysis de tweets liées aux apps surveillance COVID-19";
+				String resulttMsgBox_2 = null;
 
-    public boolean hastBufferOutputComponent() {
+				resulttMsgBox_2 = javax.swing.JOptionPane.showInputDialog(null,
+						"Initialisation de workflow pour l'analysis de tweets liées aux apps surveillance COVID-19. \nQuel est votre absolute path?",
+						titletMsgBox_2, messageIcontMsgBox_2);
+
+				globalMap.put("tMsgBox_2_RESULT", resulttMsgBox_2);
+
+				tos_count_tMsgBox_2++;
+
+				/**
+				 * [tMsgBox_2 main ] stop
+				 */
+
+				/**
+				 * [tMsgBox_2 process_data_begin ] start
+				 */
+
+				currentComponent = "tMsgBox_2";
+
+				/**
+				 * [tMsgBox_2 process_data_begin ] stop
+				 */
+
+				/**
+				 * [tMsgBox_2 process_data_end ] start
+				 */
+
+				currentComponent = "tMsgBox_2";
+
+				/**
+				 * [tMsgBox_2 process_data_end ] stop
+				 */
+
+				/**
+				 * [tMsgBox_2 end ] start
+				 */
+
+				currentComponent = "tMsgBox_2";
+
+				ok_Hash.put("tMsgBox_2", true);
+				end_Hash.put("tMsgBox_2", System.currentTimeMillis());
+
+				if (execStat) {
+					runStat.updateStatOnConnection("OnComponentOk7", 0, "ok");
+				}
+				tJava_1Process(globalMap);
+
+				/**
+				 * [tMsgBox_2 end ] stop
+				 */
+			} // end the resume
+
+		} catch (java.lang.Exception e) {
+
+			TalendException te = new TalendException(e, currentComponent, globalMap);
+
+			throw te;
+		} catch (java.lang.Error error) {
+
+			runStat.stopThreadStat();
+
+			throw error;
+		} finally {
+
+			try {
+
+				/**
+				 * [tMsgBox_2 finally ] start
+				 */
+
+				currentComponent = "tMsgBox_2";
+
+				/**
+				 * [tMsgBox_2 finally ] stop
+				 */
+			} catch (java.lang.Exception e) {
+				// ignore
+			} catch (java.lang.Error error) {
+				// ignore
+			}
+			resourceMap = null;
+		}
+
+		globalMap.put("tMsgBox_2_SUBPROCESS_STATE", 1);
+	}
+
+	public void tJava_1Process(final java.util.Map<String, Object> globalMap) throws TalendException {
+		globalMap.put("tJava_1_SUBPROCESS_STATE", 0);
+
+		final boolean execStat = this.execStat;
+
+		String iterateId = "";
+
+		String currentComponent = "";
+		java.util.Map<String, Object> resourceMap = new java.util.HashMap<String, Object>();
+
+		try {
+			// TDI-39566 avoid throwing an useless Exception
+			boolean resumeIt = true;
+			if (globalResumeTicket == false && resumeEntryMethodName != null) {
+				String currentMethodName = new java.lang.Exception().getStackTrace()[0].getMethodName();
+				resumeIt = resumeEntryMethodName.equals(currentMethodName);
+			}
+			if (resumeIt || globalResumeTicket) { // start the resume
+				globalResumeTicket = true;
+
+				/**
+				 * [tJava_1 begin ] start
+				 */
+
+				ok_Hash.put("tJava_1", false);
+				start_Hash.put("tJava_1", System.currentTimeMillis());
+
+				currentComponent = "tJava_1";
+
+				int tos_count_tJava_1 = 0;
+
+				String path = (String) globalMap.get("tMsgBox_2_RESULT");
+				context.path_files_global = path;
+
+				/**
+				 * [tJava_1 begin ] stop
+				 */
+
+				/**
+				 * [tJava_1 main ] start
+				 */
+
+				currentComponent = "tJava_1";
+
+				tos_count_tJava_1++;
+
+				/**
+				 * [tJava_1 main ] stop
+				 */
+
+				/**
+				 * [tJava_1 process_data_begin ] start
+				 */
+
+				currentComponent = "tJava_1";
+
+				/**
+				 * [tJava_1 process_data_begin ] stop
+				 */
+
+				/**
+				 * [tJava_1 process_data_end ] start
+				 */
+
+				currentComponent = "tJava_1";
+
+				/**
+				 * [tJava_1 process_data_end ] stop
+				 */
+
+				/**
+				 * [tJava_1 end ] start
+				 */
+
+				currentComponent = "tJava_1";
+
+				ok_Hash.put("tJava_1", true);
+				end_Hash.put("tJava_1", System.currentTimeMillis());
+
+				/**
+				 * [tJava_1 end ] stop
+				 */
+			} // end the resume
+
+		} catch (java.lang.Exception e) {
+
+			TalendException te = new TalendException(e, currentComponent, globalMap);
+
+			throw te;
+		} catch (java.lang.Error error) {
+
+			runStat.stopThreadStat();
+
+			throw error;
+		} finally {
+
+			try {
+
+				/**
+				 * [tJava_1 finally ] start
+				 */
+
+				currentComponent = "tJava_1";
+
+				/**
+				 * [tJava_1 finally ] stop
+				 */
+			} catch (java.lang.Exception e) {
+				// ignore
+			} catch (java.lang.Error error) {
+				// ignore
+			}
+			resourceMap = null;
+		}
+
+		globalMap.put("tJava_1_SUBPROCESS_STATE", 1);
+	}
+
+	public String resuming_logs_dir_path = null;
+	public String resuming_checkpoint_path = null;
+	public String parent_part_launcher = null;
+	private String resumeEntryMethodName = null;
+	private boolean globalResumeTicket = false;
+
+	public boolean watch = false;
+	// portStats is null, it means don't execute the statistics
+	public Integer portStats = null;
+	public int portTraces = 4334;
+	public String clientHost;
+	public String defaultClientHost = "localhost";
+	public String contextStr = "dev";
+	public boolean isDefaultContext = true;
+	public String pid = "0";
+	public String rootPid = null;
+	public String fatherPid = null;
+	public String fatherNode = null;
+	public long startTime = 0;
+	public boolean isChildJob = false;
+	public String log4jLevel = "";
+
+	private boolean enableLogStash;
+
+	private boolean execStat = true;
+
+	private ThreadLocal<java.util.Map<String, String>> threadLocal = new ThreadLocal<java.util.Map<String, String>>() {
+		protected java.util.Map<String, String> initialValue() {
+			java.util.Map<String, String> threadRunResultMap = new java.util.HashMap<String, String>();
+			threadRunResultMap.put("errorCode", null);
+			threadRunResultMap.put("status", "");
+			return threadRunResultMap;
+		};
+	};
+
+	private PropertiesWithType context_param = new PropertiesWithType();
+	public java.util.Map<String, Object> parentContextMap = new java.util.HashMap<String, Object>();
+
+	public String status = "";
+
+	public static void main(String[] args) {
+		final s0_connexion_api_twitter_apps_covid s0_connexion_api_twitter_apps_covidClass = new s0_connexion_api_twitter_apps_covid();
+
+		int exitCode = s0_connexion_api_twitter_apps_covidClass.runJobInTOS(args);
+
+		System.exit(exitCode);
+	}
+
+	public String[][] runJob(String[] args) {
+
+		int exitCode = runJobInTOS(args);
+		String[][] bufferValue = new String[][] { { Integer.toString(exitCode) } };
+
+		return bufferValue;
+	}
+
+	public boolean hastBufferOutputComponent() {
 		boolean hastBufferOutput = false;
-    	
-        return hastBufferOutput;
-    }
 
-    public int runJobInTOS(String[] args) {
-	   	// reset status
-	   	status = "";
-	   	
-        String lastStr = "";
-        for (String arg : args) {
-            if (arg.equalsIgnoreCase("--context_param")) {
-                lastStr = arg;
-            } else if (lastStr.equals("")) {
-                evalParam(arg);
-            } else {
-                evalParam(lastStr + " " + arg);
-                lastStr = "";
-            }
-        }
-        enableLogStash = "true".equalsIgnoreCase(System.getProperty("monitoring"));
+		return hastBufferOutput;
+	}
 
-    	
-    	
+	public int runJobInTOS(String[] args) {
+		// reset status
+		status = "";
 
-        if(clientHost == null) {
-            clientHost = defaultClientHost;
-        }
+		String lastStr = "";
+		for (String arg : args) {
+			if (arg.equalsIgnoreCase("--context_param")) {
+				lastStr = arg;
+			} else if (lastStr.equals("")) {
+				evalParam(arg);
+			} else {
+				evalParam(lastStr + " " + arg);
+				lastStr = "";
+			}
+		}
+		enableLogStash = "true".equalsIgnoreCase(System.getProperty("monitoring"));
 
-        if(pid == null || "0".equals(pid)) {
-            pid = TalendString.getAsciiRandomString(6);
-        }
+		if (clientHost == null) {
+			clientHost = defaultClientHost;
+		}
 
-        if (rootPid==null) {
-            rootPid = pid;
-        }
-        if (fatherPid==null) {
-            fatherPid = pid;
-        }else{
-            isChildJob = true;
-        }
+		if (pid == null || "0".equals(pid)) {
+			pid = TalendString.getAsciiRandomString(6);
+		}
 
-        if (portStats != null) {
-            // portStats = -1; //for testing
-            if (portStats < 0 || portStats > 65535) {
-                // issue:10869, the portStats is invalid, so this client socket can't open
-                System.err.println("The statistics socket port " + portStats + " is invalid.");
-                execStat = false;
-            }
-        } else {
-            execStat = false;
-        }
+		if (rootPid == null) {
+			rootPid = pid;
+		}
+		if (fatherPid == null) {
+			fatherPid = pid;
+		} else {
+			isChildJob = true;
+		}
 
-        try {
-            //call job/subjob with an existing context, like: --context=production. if without this parameter, there will use the default context instead.
-            java.io.InputStream inContext = s0_connexion_api_twitter_apps_covid.class.getClassLoader().getResourceAsStream("analysis_twitter/s0_connexion_api_twitter_apps_covid_0_1/contexts/" + contextStr + ".properties");
-            if (inContext == null) {
-                inContext = s0_connexion_api_twitter_apps_covid.class.getClassLoader().getResourceAsStream("config/contexts/" + contextStr + ".properties");
-            }
-            if (inContext != null) {
-                //defaultProps is in order to keep the original context value
-                if(context != null && context.isEmpty()) {
-	                defaultProps.load(inContext);
-	                context = new ContextProperties(defaultProps);
-                }
-                
-                inContext.close();
-            } else if (!isDefaultContext) {
-                //print info and job continue to run, for case: context_param is not empty.
-                System.err.println("Could not find the context " + contextStr);
-            }
+		if (portStats != null) {
+			// portStats = -1; //for testing
+			if (portStats < 0 || portStats > 65535) {
+				// issue:10869, the portStats is invalid, so this client socket can't open
+				System.err.println("The statistics socket port " + portStats + " is invalid.");
+				execStat = false;
+			}
+		} else {
+			execStat = false;
+		}
 
-            if(!context_param.isEmpty()) {
-                context.putAll(context_param);
-				//set types for params from parentJobs
-				for (Object key: context_param.keySet()){
+		try {
+			// call job/subjob with an existing context, like: --context=production. if
+			// without this parameter, there will use the default context instead.
+			java.io.InputStream inContext = s0_connexion_api_twitter_apps_covid.class.getClassLoader()
+					.getResourceAsStream("analysis_twitter/s0_connexion_api_twitter_apps_covid_0_1/contexts/"
+							+ contextStr + ".properties");
+			if (inContext == null) {
+				inContext = s0_connexion_api_twitter_apps_covid.class.getClassLoader()
+						.getResourceAsStream("config/contexts/" + contextStr + ".properties");
+			}
+			if (inContext != null) {
+				// defaultProps is in order to keep the original context value
+				if (context != null && context.isEmpty()) {
+					defaultProps.load(inContext);
+					context = new ContextProperties(defaultProps);
+				}
+
+				inContext.close();
+			} else if (!isDefaultContext) {
+				// print info and job continue to run, for case: context_param is not empty.
+				System.err.println("Could not find the context " + contextStr);
+			}
+
+			if (!context_param.isEmpty()) {
+				context.putAll(context_param);
+				// set types for params from parentJobs
+				for (Object key : context_param.keySet()) {
 					String context_key = key.toString();
 					String context_type = context_param.getContextType(context_key);
 					context.setContextType(context_key, context_type);
 
 				}
-            }
-            class ContextProcessing {
-                private void processContext_0() {
-                } 
-                public void processAllContext() {
-                        processContext_0();
-                }
-            }
+			}
+			class ContextProcessing {
+				private void processContext_0() {
+					context.setContextType("connection_postgres_Server", "id_String");
+					context.connection_postgres_Server = (String) context.getProperty("connection_postgres_Server");
+					context.setContextType("connection_postgres_Login", "id_String");
+					context.connection_postgres_Login = (String) context.getProperty("connection_postgres_Login");
+					context.setContextType("connection_postgres_Port", "id_String");
+					context.connection_postgres_Port = (String) context.getProperty("connection_postgres_Port");
+					context.setContextType("connection_postgres_Password", "id_Password");
+					String pwd_connection_postgres_Password_value = context.getProperty("connection_postgres_Password");
+					context.connection_postgres_Password = null;
+					if (pwd_connection_postgres_Password_value != null) {
+						if (context_param.containsKey("connection_postgres_Password")) {// no need to decrypt if it come
+																						// from program argument or
+																						// parent job runtime
+							context.connection_postgres_Password = pwd_connection_postgres_Password_value;
+						} else if (!pwd_connection_postgres_Password_value.isEmpty()) {
+							try {
+								context.connection_postgres_Password = routines.system.PasswordEncryptUtil
+										.decryptPassword(pwd_connection_postgres_Password_value);
+								context.put("connection_postgres_Password", context.connection_postgres_Password);
+							} catch (java.lang.RuntimeException e) {
+								// do nothing
+							}
+						}
+					}
+					context.setContextType("connection_postgres_Database", "id_String");
+					context.connection_postgres_Database = (String) context.getProperty("connection_postgres_Database");
+					context.setContextType("connection_postgres_Schema", "id_String");
+					context.connection_postgres_Schema = (String) context.getProperty("connection_postgres_Schema");
+					context.setContextType("connection_postgres_AdditionalParams", "id_String");
+					context.connection_postgres_AdditionalParams = (String) context
+							.getProperty("connection_postgres_AdditionalParams");
+					context.setContextType("path_files_global", "id_Directory");
+					context.path_files_global = (String) context.getProperty("path_files_global");
+				}
 
-            new ContextProcessing().processAllContext();
-        } catch (java.io.IOException ie) {
-            System.err.println("Could not load context "+contextStr);
-            ie.printStackTrace();
-        }
+				public void processAllContext() {
+					processContext_0();
+				}
+			}
 
-        // get context value from parent directly
-        if (parentContextMap != null && !parentContextMap.isEmpty()) {
-        }
+			new ContextProcessing().processAllContext();
+		} catch (java.io.IOException ie) {
+			System.err.println("Could not load context " + contextStr);
+			ie.printStackTrace();
+		}
 
-        //Resume: init the resumeUtil
-        resumeEntryMethodName = ResumeUtil.getResumeEntryMethodName(resuming_checkpoint_path);
-        resumeUtil = new ResumeUtil(resuming_logs_dir_path, isChildJob, rootPid);
-        resumeUtil.initCommonInfo(pid, rootPid, fatherPid, projectName, jobName, contextStr, jobVersion);
+		// get context value from parent directly
+		if (parentContextMap != null && !parentContextMap.isEmpty()) {
+			if (parentContextMap.containsKey("connection_postgres_Server")) {
+				context.connection_postgres_Server = (String) parentContextMap.get("connection_postgres_Server");
+			}
+			if (parentContextMap.containsKey("connection_postgres_Login")) {
+				context.connection_postgres_Login = (String) parentContextMap.get("connection_postgres_Login");
+			}
+			if (parentContextMap.containsKey("connection_postgres_Port")) {
+				context.connection_postgres_Port = (String) parentContextMap.get("connection_postgres_Port");
+			}
+			if (parentContextMap.containsKey("connection_postgres_Password")) {
+				context.connection_postgres_Password = (java.lang.String) parentContextMap
+						.get("connection_postgres_Password");
+			}
+			if (parentContextMap.containsKey("connection_postgres_Database")) {
+				context.connection_postgres_Database = (String) parentContextMap.get("connection_postgres_Database");
+			}
+			if (parentContextMap.containsKey("connection_postgres_Schema")) {
+				context.connection_postgres_Schema = (String) parentContextMap.get("connection_postgres_Schema");
+			}
+			if (parentContextMap.containsKey("connection_postgres_AdditionalParams")) {
+				context.connection_postgres_AdditionalParams = (String) parentContextMap
+						.get("connection_postgres_AdditionalParams");
+			}
+			if (parentContextMap.containsKey("path_files_global")) {
+				context.path_files_global = (String) parentContextMap.get("path_files_global");
+			}
+		}
+
+		// Resume: init the resumeUtil
+		resumeEntryMethodName = ResumeUtil.getResumeEntryMethodName(resuming_checkpoint_path);
+		resumeUtil = new ResumeUtil(resuming_logs_dir_path, isChildJob, rootPid);
+		resumeUtil.initCommonInfo(pid, rootPid, fatherPid, projectName, jobName, contextStr, jobVersion);
 
 		List<String> parametersToEncrypt = new java.util.ArrayList<String>();
-        //Resume: jobStart
-        resumeUtil.addLog("JOB_STARTED", "JOB:" + jobName, parent_part_launcher, Thread.currentThread().getId() + "", "","","","",resumeUtil.convertToJsonText(context,parametersToEncrypt));
+		parametersToEncrypt.add("connection_postgres_Password");
+		// Resume: jobStart
+		resumeUtil.addLog("JOB_STARTED", "JOB:" + jobName, parent_part_launcher, Thread.currentThread().getId() + "",
+				"", "", "", "", resumeUtil.convertToJsonText(context, parametersToEncrypt));
 
-if(execStat) {
-    try {
-        runStat.openSocket(!isChildJob);
-        runStat.setAllPID(rootPid, fatherPid, pid, jobName);
-        runStat.startThreadStat(clientHost, portStats);
-        runStat.updateStatOnJob(RunStat.JOBSTART, fatherNode);
-    } catch (java.io.IOException ioException) {
-        ioException.printStackTrace();
-    }
-}
+		if (execStat) {
+			try {
+				runStat.openSocket(!isChildJob);
+				runStat.setAllPID(rootPid, fatherPid, pid, jobName);
+				runStat.startThreadStat(clientHost, portStats);
+				runStat.updateStatOnJob(RunStat.JOBSTART, fatherNode);
+			} catch (java.io.IOException ioException) {
+				ioException.printStackTrace();
+			}
+		}
 
+		java.util.concurrent.ConcurrentHashMap<Object, Object> concurrentHashMap = new java.util.concurrent.ConcurrentHashMap<Object, Object>();
+		globalMap.put("concurrentHashMap", concurrentHashMap);
 
+		long startUsedMemory = Runtime.getRuntime().totalMemory() - Runtime.getRuntime().freeMemory();
+		long endUsedMemory = 0;
+		long end = 0;
 
-	
-	    java.util.concurrent.ConcurrentHashMap<Object, Object> concurrentHashMap = new java.util.concurrent.ConcurrentHashMap<Object, Object>();
-	    globalMap.put("concurrentHashMap", concurrentHashMap);
-	
+		startTime = System.currentTimeMillis();
 
-    long startUsedMemory = Runtime.getRuntime().totalMemory() - Runtime.getRuntime().freeMemory();
-    long endUsedMemory = 0;
-    long end = 0;
+		this.globalResumeTicket = true;// to run tPreJob
 
-    startTime = System.currentTimeMillis();
+		try {
+			errorCode = null;
+			tPrejob_1Process(globalMap);
+			if (!"failure".equals(status)) {
+				status = "end";
+			}
+		} catch (TalendException e_tPrejob_1) {
+			globalMap.put("tPrejob_1_SUBPROCESS_STATE", -1);
 
+			e_tPrejob_1.printStackTrace();
 
+		}
 
+		this.globalResumeTicket = false;// to run others jobs
 
-this.globalResumeTicket = true;//to run tPreJob
+		try {
+			errorCode = null;
+			tLibraryLoad_1Process(globalMap);
+			if (!"failure".equals(status)) {
+				status = "end";
+			}
+		} catch (TalendException e_tLibraryLoad_1) {
+			globalMap.put("tLibraryLoad_1_SUBPROCESS_STATE", -1);
 
+			e_tLibraryLoad_1.printStackTrace();
 
+		}
 
+		this.globalResumeTicket = true;// to run tPostJob
 
-this.globalResumeTicket = false;//to run others jobs
+		end = System.currentTimeMillis();
 
-try {
-errorCode = null;tLibraryLoad_1Process(globalMap);
-if(!"failure".equals(status)) { status = "end"; }
-}catch (TalendException e_tLibraryLoad_1) {
-globalMap.put("tLibraryLoad_1_SUBPROCESS_STATE", -1);
+		if (watch) {
+			System.out.println((end - startTime) + " milliseconds");
+		}
 
-e_tLibraryLoad_1.printStackTrace();
+		endUsedMemory = Runtime.getRuntime().totalMemory() - Runtime.getRuntime().freeMemory();
+		if (false) {
+			System.out.println((endUsedMemory - startUsedMemory)
+					+ " bytes memory increase when running : s0_connexion_api_twitter_apps_covid");
+		}
 
-}
+		if (execStat) {
+			runStat.updateStatOnJob(RunStat.JOBEND, fatherNode);
+			runStat.stopThreadStat();
+		}
+		int returnCode = 0;
+		if (errorCode == null) {
+			returnCode = status != null && status.equals("failure") ? 1 : 0;
+		} else {
+			returnCode = errorCode.intValue();
+		}
+		resumeUtil.addLog("JOB_ENDED", "JOB:" + jobName, parent_part_launcher, Thread.currentThread().getId() + "", "",
+				"" + returnCode, "", "", "");
 
-this.globalResumeTicket = true;//to run tPostJob
+		return returnCode;
 
+	}
 
+	// only for OSGi env
+	public void destroy() {
 
+	}
 
-        end = System.currentTimeMillis();
+	private java.util.Map<String, Object> getSharedConnections4REST() {
+		java.util.Map<String, Object> connections = new java.util.HashMap<String, Object>();
 
-        if (watch) {
-            System.out.println((end-startTime)+" milliseconds");
-        }
+		return connections;
+	}
 
-        endUsedMemory = Runtime.getRuntime().totalMemory() - Runtime.getRuntime().freeMemory();
-        if (false) {
-            System.out.println((endUsedMemory - startUsedMemory) + " bytes memory increase when running : s0_connexion_api_twitter_apps_covid");
-        }
-
-
-
-if (execStat) {
-    runStat.updateStatOnJob(RunStat.JOBEND, fatherNode);
-    runStat.stopThreadStat();
-}
-    int returnCode = 0;
-    if(errorCode == null) {
-         returnCode = status != null && status.equals("failure") ? 1 : 0;
-    } else {
-         returnCode = errorCode.intValue();
-    }
-    resumeUtil.addLog("JOB_ENDED", "JOB:" + jobName, parent_part_launcher, Thread.currentThread().getId() + "", "","" + returnCode,"","","");
-
-    return returnCode;
-
-  }
-
-    // only for OSGi env
-    public void destroy() {
-
-
-    }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    private java.util.Map<String, Object> getSharedConnections4REST() {
-        java.util.Map<String, Object> connections = new java.util.HashMap<String, Object>();
-
-
-
-
-
-
-
-        return connections;
-    }
-
-    private void evalParam(String arg) {
-        if (arg.startsWith("--resuming_logs_dir_path")) {
-            resuming_logs_dir_path = arg.substring(25);
-        } else if (arg.startsWith("--resuming_checkpoint_path")) {
-            resuming_checkpoint_path = arg.substring(27);
-        } else if (arg.startsWith("--parent_part_launcher")) {
-            parent_part_launcher = arg.substring(23);
-        } else if (arg.startsWith("--watch")) {
-            watch = true;
-        } else if (arg.startsWith("--stat_port=")) {
-            String portStatsStr = arg.substring(12);
-            if (portStatsStr != null && !portStatsStr.equals("null")) {
-                portStats = Integer.parseInt(portStatsStr);
-            }
-        } else if (arg.startsWith("--trace_port=")) {
-            portTraces = Integer.parseInt(arg.substring(13));
-        } else if (arg.startsWith("--client_host=")) {
-            clientHost = arg.substring(14);
-        } else if (arg.startsWith("--context=")) {
-            contextStr = arg.substring(10);
-            isDefaultContext = false;
-        } else if (arg.startsWith("--father_pid=")) {
-            fatherPid = arg.substring(13);
-        } else if (arg.startsWith("--root_pid=")) {
-            rootPid = arg.substring(11);
-        } else if (arg.startsWith("--father_node=")) {
-            fatherNode = arg.substring(14);
-        } else if (arg.startsWith("--pid=")) {
-            pid = arg.substring(6);
-        } else if (arg.startsWith("--context_type")) {
-            String keyValue = arg.substring(15);
+	private void evalParam(String arg) {
+		if (arg.startsWith("--resuming_logs_dir_path")) {
+			resuming_logs_dir_path = arg.substring(25);
+		} else if (arg.startsWith("--resuming_checkpoint_path")) {
+			resuming_checkpoint_path = arg.substring(27);
+		} else if (arg.startsWith("--parent_part_launcher")) {
+			parent_part_launcher = arg.substring(23);
+		} else if (arg.startsWith("--watch")) {
+			watch = true;
+		} else if (arg.startsWith("--stat_port=")) {
+			String portStatsStr = arg.substring(12);
+			if (portStatsStr != null && !portStatsStr.equals("null")) {
+				portStats = Integer.parseInt(portStatsStr);
+			}
+		} else if (arg.startsWith("--trace_port=")) {
+			portTraces = Integer.parseInt(arg.substring(13));
+		} else if (arg.startsWith("--client_host=")) {
+			clientHost = arg.substring(14);
+		} else if (arg.startsWith("--context=")) {
+			contextStr = arg.substring(10);
+			isDefaultContext = false;
+		} else if (arg.startsWith("--father_pid=")) {
+			fatherPid = arg.substring(13);
+		} else if (arg.startsWith("--root_pid=")) {
+			rootPid = arg.substring(11);
+		} else if (arg.startsWith("--father_node=")) {
+			fatherNode = arg.substring(14);
+		} else if (arg.startsWith("--pid=")) {
+			pid = arg.substring(6);
+		} else if (arg.startsWith("--context_type")) {
+			String keyValue = arg.substring(15);
 			int index = -1;
-            if (keyValue != null && (index = keyValue.indexOf('=')) > -1) {
-                if (fatherPid==null) {
-                    context_param.setContextType(keyValue.substring(0, index), replaceEscapeChars(keyValue.substring(index + 1)));
-                } else { // the subjob won't escape the especial chars
-                    context_param.setContextType(keyValue.substring(0, index), keyValue.substring(index + 1) );
-                }
+			if (keyValue != null && (index = keyValue.indexOf('=')) > -1) {
+				if (fatherPid == null) {
+					context_param.setContextType(keyValue.substring(0, index),
+							replaceEscapeChars(keyValue.substring(index + 1)));
+				} else { // the subjob won't escape the especial chars
+					context_param.setContextType(keyValue.substring(0, index), keyValue.substring(index + 1));
+				}
 
-            }
+			}
 
 		} else if (arg.startsWith("--context_param")) {
-            String keyValue = arg.substring(16);
-            int index = -1;
-            if (keyValue != null && (index = keyValue.indexOf('=')) > -1) {
-                if (fatherPid==null) {
-                    context_param.put(keyValue.substring(0, index), replaceEscapeChars(keyValue.substring(index + 1)));
-                } else { // the subjob won't escape the especial chars
-                    context_param.put(keyValue.substring(0, index), keyValue.substring(index + 1) );
-                }
-            }
-        } else if (arg.startsWith("--log4jLevel=")) {
-            log4jLevel = arg.substring(13);
-		} else if (arg.startsWith("--monitoring") && arg.contains("=")) {//for trunjob call
-		    final int equal = arg.indexOf('=');
+			String keyValue = arg.substring(16);
+			int index = -1;
+			if (keyValue != null && (index = keyValue.indexOf('=')) > -1) {
+				if (fatherPid == null) {
+					context_param.put(keyValue.substring(0, index), replaceEscapeChars(keyValue.substring(index + 1)));
+				} else { // the subjob won't escape the especial chars
+					context_param.put(keyValue.substring(0, index), keyValue.substring(index + 1));
+				}
+			}
+		} else if (arg.startsWith("--log4jLevel=")) {
+			log4jLevel = arg.substring(13);
+		} else if (arg.startsWith("--monitoring") && arg.contains("=")) {// for trunjob call
+			final int equal = arg.indexOf('=');
 			final String key = arg.substring("--".length(), equal);
 			System.setProperty(key, arg.substring(equal + 1));
 		}
-    }
-    
-    private static final String NULL_VALUE_EXPRESSION_IN_COMMAND_STRING_FOR_CHILD_JOB_ONLY = "<TALEND_NULL>";
+	}
 
-    private final String[][] escapeChars = {
-        {"\\\\","\\"},{"\\n","\n"},{"\\'","\'"},{"\\r","\r"},
-        {"\\f","\f"},{"\\b","\b"},{"\\t","\t"}
-        };
-    private String replaceEscapeChars (String keyValue) {
+	private static final String NULL_VALUE_EXPRESSION_IN_COMMAND_STRING_FOR_CHILD_JOB_ONLY = "<TALEND_NULL>";
+
+	private final String[][] escapeChars = { { "\\\\", "\\" }, { "\\n", "\n" }, { "\\'", "\'" }, { "\\r", "\r" },
+			{ "\\f", "\f" }, { "\\b", "\b" }, { "\\t", "\t" } };
+
+	private String replaceEscapeChars(String keyValue) {
 
 		if (keyValue == null || ("").equals(keyValue.trim())) {
 			return keyValue;
@@ -6769,15 +5939,17 @@ if (execStat) {
 			int index = -1;
 			// judege if the left string includes escape chars
 			for (String[] strArray : escapeChars) {
-				index = keyValue.indexOf(strArray[0],currIndex);
-				if (index>=0) {
+				index = keyValue.indexOf(strArray[0], currIndex);
+				if (index >= 0) {
 
-					result.append(keyValue.substring(currIndex, index + strArray[0].length()).replace(strArray[0], strArray[1]));
+					result.append(keyValue.substring(currIndex, index + strArray[0].length()).replace(strArray[0],
+							strArray[1]));
 					currIndex = index + strArray[0].length();
 					break;
 				}
 			}
-			// if the left string doesn't include escape chars, append the left into the result
+			// if the left string doesn't include escape chars, append the left into the
+			// result
 			if (index < 0) {
 				result.append(keyValue.substring(currIndex));
 				currIndex = currIndex + keyValue.length();
@@ -6785,20 +5957,19 @@ if (execStat) {
 		}
 
 		return result.toString();
-    }
+	}
 
-    public Integer getErrorCode() {
-        return errorCode;
-    }
+	public Integer getErrorCode() {
+		return errorCode;
+	}
 
+	public String getStatus() {
+		return status;
+	}
 
-    public String getStatus() {
-        return status;
-    }
-
-    ResumeUtil resumeUtil = null;
+	ResumeUtil resumeUtil = null;
 }
 /************************************************************************************************
- *     163870 characters generated by Talend Open Studio for Big Data 
- *     on the December 6, 2020 10:01:42 PM CET
+ * 176997 characters generated by Talend Open Studio for Big Data on the
+ * December 7, 2020 1:01:47 AM CET
  ************************************************************************************************/

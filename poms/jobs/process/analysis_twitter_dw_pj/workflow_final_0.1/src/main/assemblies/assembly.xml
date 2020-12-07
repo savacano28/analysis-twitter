@@ -264,22 +264,22 @@
                 <include>org.talend.libraries:opensaml-xacml-impl-3.3.0:jar:6.0.0</include>
                 <include>org.talend.libraries:opensaml-xmlsec-impl-3.3.0:jar:6.0.0</include>
                 <include>org.talend.libraries:opensaml-core-3.3.0:jar:6.0.0</include>
-                <include>org.talend.libraries:joda-time-2.9:jar:6.0.0</include>
                 <include>org.talend.libraries:opensaml-saml-api-3.3.0:jar:6.0.0</include>
+                <include>org.talend.libraries:joda-time-2.9:jar:6.0.0</include>
                 <include>org.talend.libraries:cxf-rt-features-logging-3.3.4:jar:6.0.0</include>
                 <include>org.talend.libraries:opensaml-profile-api-3.3.0:jar:6.0.0</include>
                 <include>org.talend.libraries:stax-api-1.0-2:jar:6.0.0</include>
                 <include>org.talend.libraries:opensaml-saml-impl-3.3.0:jar:6.0.0</include>
-                <include>org.talend.libraries:spring-aop-5.1.4.RELEASE:jar:6.0.0</include>
                 <include>org.talend.libraries:spring-core-5.1.4.RELEASE:jar:6.0.0</include>
+                <include>org.talend.libraries:spring-aop-5.1.4.RELEASE:jar:6.0.0</include>
                 <include>org.talend.libraries:javax.wsdl_1.6.2.v201012040545:jar:6.0.0</include>
                 <include>org.talend.libraries:wss4j-ws-security-common-2.2.4:jar:6.0.0</include>
                 <include>org.talend.libraries:jettison-1.4.0:jar:6.0.0</include>
                 <include>org.talend.libraries:spring-webmvc-5.1.4.RELEASE:jar:6.0.0</include>
                 <include>org.talend.libraries:wss4j-ws-security-dom-2.2.4:jar:6.0.0</include>
                 <include>org.talend.libraries:trove:jar:6.0.0</include>
-                <include>org.talend.libraries:security-common-7.3.1:jar:6.0.0</include>
                 <include>org.talend.libraries:opensaml-security-impl-3.3.0:jar:6.0.0</include>
+                <include>org.talend.libraries:security-common-7.3.1:jar:6.0.0</include>
                 <include>org.talend.libraries:spring-expression-5.1.4.RELEASE:jar:6.0.0</include>
                 <include>org.talend.libraries:opensaml-xmlsec-api-3.3.0:jar:6.0.0</include>
                 <include>org.talend.libraries:woodstox-core-asl-4.4.1:jar:6.0.0</include>
@@ -335,9 +335,9 @@
                 <include>org.example.analysis_twitter.job:s6_telechargement_mesures_dedans_dw:jar:0.1.0</include>
                 <include>org.example.analysis_twitter.job:s0_connexion_api_twitter_apps_covid:jar:0.1.0</include>
                 <include>org.example.analysis_twitter.job:s2_telechargement_donnees_dedans_dw:jar:0.1.0</include>
-                <include>org.example.analysis_twitter.job:s5_fr_calcul_sentiments_deouis_description_hashtag:jar:0.1.0</include>
                 <include>org.example.analysis_twitter.job:s1_telechargement_tweets_dedans_db:jar:0.1.0</include>
                 <include>org.example.analysis_twitter.job:s4_calcul_mesures:jar:0.1.0</include>
+                <include>org.example.analysis_twitter.job:s5_fr_calcul_sentiments_depuis_donnees_tweets:jar:0.1.0</include>
                 <include>org.example.analysis_twitter.job:s3_telechargement_donnees_region_info_hashtag:jar:0.1.0</include>
                 <include>org.example.analysis_twitter.job:workflow_final:jar:0.1.0</include>
                 <include>org.example.analysis_twitter.job:s5_in_calcul_sentiments_depuis_donnees_tweets:jar:0.1.0</include>

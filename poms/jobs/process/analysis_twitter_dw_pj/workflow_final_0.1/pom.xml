@@ -94,17 +94,17 @@
     </dependency>
     <dependency>
       <groupId>org.example.analysis_twitter.job</groupId>
-      <artifactId>s5_fr_calcul_sentiments_deouis_description_hashtag</artifactId>
-      <version>0.1.0</version>
-    </dependency>
-    <dependency>
-      <groupId>org.example.analysis_twitter.job</groupId>
       <artifactId>s2_telechargement_donnees_dedans_dw</artifactId>
       <version>0.1.0</version>
     </dependency>
     <dependency>
       <groupId>org.example.analysis_twitter.job</groupId>
       <artifactId>s6_telechargement_mesures_dedans_dw</artifactId>
+      <version>0.1.0</version>
+    </dependency>
+    <dependency>
+      <groupId>org.example.analysis_twitter.job</groupId>
+      <artifactId>s5_fr_calcul_sentiments_depuis_donnees_tweets</artifactId>
       <version>0.1.0</version>
     </dependency>
     <dependency>

@@ -290,6 +290,16 @@ public class workflow_final implements TalendJob {
 		tRunJob_1_onSubJobError(exception, errorComponent, globalMap);
 	}
 
+	public void tLogRow_2_error(Exception exception, String errorComponent,
+			final java.util.Map<String, Object> globalMap) throws TalendException {
+
+		end_Hash.put(errorComponent, System.currentTimeMillis());
+
+		status = "failure";
+
+		tRunJob_1_onSubJobError(exception, errorComponent, globalMap);
+	}
+
 	public void tRunJob_10_error(Exception exception, String errorComponent,
 			final java.util.Map<String, Object> globalMap) throws TalendException {
 
@@ -330,7 +340,27 @@ public class workflow_final implements TalendJob {
 		tRunJob_13_onSubJobError(exception, errorComponent, globalMap);
 	}
 
+	public void tLogRow_1_error(Exception exception, String errorComponent,
+			final java.util.Map<String, Object> globalMap) throws TalendException {
+
+		end_Hash.put(errorComponent, System.currentTimeMillis());
+
+		status = "failure";
+
+		tRunJob_13_onSubJobError(exception, errorComponent, globalMap);
+	}
+
 	public void tRunJob_14_error(Exception exception, String errorComponent,
+			final java.util.Map<String, Object> globalMap) throws TalendException {
+
+		end_Hash.put(errorComponent, System.currentTimeMillis());
+
+		status = "failure";
+
+		tRunJob_14_onSubJobError(exception, errorComponent, globalMap);
+	}
+
+	public void tLogRow_3_error(Exception exception, String errorComponent,
 			final java.util.Map<String, Object> globalMap) throws TalendException {
 
 		end_Hash.put(errorComponent, System.currentTimeMillis());
@@ -619,13 +649,14 @@ public class workflow_final implements TalendJob {
 
 				currentComponent = "tMsgBox_2";
 
-				int messageIcontMsgBox_2 = javax.swing.JOptionPane.INFORMATION_MESSAGE;
+				int messageIcontMsgBox_2 = javax.swing.JOptionPane.WARNING_MESSAGE;
 				String titletMsgBox_2 = "Projet TOS : Analysis de tweets";
 				String messagetMsgBox_2 = "Initialisation de workflow pour l'analysis de tweets liées aux apps surveillance COVID-19";
 				String resulttMsgBox_2 = null;
 
-				javax.swing.JOptionPane.showMessageDialog(null, messagetMsgBox_2, titletMsgBox_2, messageIcontMsgBox_2);
-				resulttMsgBox_2 = String.valueOf(1);
+				resulttMsgBox_2 = javax.swing.JOptionPane.showInputDialog(null,
+						"Initialisation de workflow pour l'analysis de tweets liées aux apps surveillance COVID-19. \nQuel est votre absolute path?",
+						titletMsgBox_2, messageIcontMsgBox_2);
 
 				globalMap.put("tMsgBox_2_RESULT", resulttMsgBox_2);
 
@@ -703,6 +734,80 @@ public class workflow_final implements TalendJob {
 		globalMap.put("tMsgBox_2_SUBPROCESS_STATE", 1);
 	}
 
+	public static class row2Struct implements routines.system.IPersistableRow<row2Struct> {
+		final static byte[] commonByteArrayLock_ANALYSIS_TWITTER_workflow_final = new byte[0];
+		static byte[] commonByteArray_ANALYSIS_TWITTER_workflow_final = new byte[0];
+
+		public void readData(ObjectInputStream dis) {
+
+			synchronized (commonByteArrayLock_ANALYSIS_TWITTER_workflow_final) {
+
+				try {
+
+					int length = 0;
+
+				}
+
+				finally {
+				}
+
+			}
+
+		}
+
+		public void writeData(ObjectOutputStream dos) {
+			try {
+
+			}
+
+			finally {
+			}
+
+		}
+
+		public String toString() {
+
+			StringBuilder sb = new StringBuilder();
+			sb.append(super.toString());
+			sb.append("[");
+			sb.append("]");
+
+			return sb.toString();
+		}
+
+		/**
+		 * Compare keys
+		 */
+		public int compareTo(row2Struct other) {
+
+			int returnValue = -1;
+
+			return returnValue;
+		}
+
+		private int checkNullsAndCompare(Object object1, Object object2) {
+			int returnValue = 0;
+			if (object1 instanceof Comparable && object2 instanceof Comparable) {
+				returnValue = ((Comparable) object1).compareTo(object2);
+			} else if (object1 != null && object2 != null) {
+				returnValue = compareStrings(object1.toString(), object2.toString());
+			} else if (object1 == null && object2 != null) {
+				returnValue = 1;
+			} else if (object1 != null && object2 == null) {
+				returnValue = -1;
+			} else {
+				returnValue = 0;
+			}
+
+			return returnValue;
+		}
+
+		private int compareStrings(String string1, String string2) {
+			return string1.compareTo(string2);
+		}
+
+	}
+
 	public void tRunJob_1Process(final java.util.Map<String, Object> globalMap) throws TalendException {
 		globalMap.put("tRunJob_1_SUBPROCESS_STATE", 0);
 
@@ -722,6 +827,36 @@ public class workflow_final implements TalendJob {
 			}
 			if (resumeIt || globalResumeTicket) { // start the resume
 				globalResumeTicket = true;
+
+				row2Struct row2 = new row2Struct();
+
+				/**
+				 * [tLogRow_2 begin ] start
+				 */
+
+				ok_Hash.put("tLogRow_2", false);
+				start_Hash.put("tLogRow_2", System.currentTimeMillis());
+
+				currentComponent = "tLogRow_2";
+
+				if (execStat) {
+					runStat.updateStatOnConnection(resourceMap, iterateId, 0, 0, "row2");
+				}
+
+				int tos_count_tLogRow_2 = 0;
+
+				///////////////////////
+
+				final String OUTPUT_FIELD_SEPARATOR_tLogRow_2 = "|";
+				java.io.PrintStream consoleOut_tLogRow_2 = null;
+
+				StringBuilder strBuffer_tLogRow_2 = null;
+				int nb_line_tLogRow_2 = 0;
+///////////////////////    			
+
+				/**
+				 * [tLogRow_2 begin ] stop
+				 */
 
 				/**
 				 * [tRunJob_1 begin ] start
@@ -775,6 +910,20 @@ public class workflow_final implements TalendJob {
 
 				java.util.Map<String, Object> parentContextMap_tRunJob_1 = new java.util.HashMap<String, Object>();
 
+				context.synchronizeContext();
+				java.util.Enumeration<?> propertyNames_tRunJob_1 = context.propertyNames();
+				while (propertyNames_tRunJob_1.hasMoreElements()) {
+					String key_tRunJob_1 = (String) propertyNames_tRunJob_1.nextElement();
+					Object value_tRunJob_1 = (Object) context.get(key_tRunJob_1);
+					if (value_tRunJob_1 != null) {
+						paraList_tRunJob_1.add("--context_param " + key_tRunJob_1 + "=" + value_tRunJob_1);
+					} else {
+						paraList_tRunJob_1.add("--context_param " + key_tRunJob_1 + "="
+								+ NULL_VALUE_EXPRESSION_IN_COMMAND_STRING_FOR_CHILD_JOB_ONLY);
+					}
+
+				}
+
 				Object obj_tRunJob_1 = null;
 
 				analysis_twitter.s0_connexion_api_twitter_apps_covid_0_1.s0_connexion_api_twitter_apps_covid childJob_tRunJob_1 = new analysis_twitter.s0_connexion_api_twitter_apps_covid_0_1.s0_connexion_api_twitter_apps_covid();
@@ -814,22 +963,83 @@ public class workflow_final implements TalendJob {
 							? (ce_tRunJob_1.getClass().getName() + ": " + ce_tRunJob_1.getMessage())
 							: ""));
 				}
+				for (String[] item_tRunJob_1 : childReturn_tRunJob_1) {
+					if (childJob_tRunJob_1.hastBufferOutputComponent() || true) {
 
-				tos_count_tRunJob_1++;
+					}
 
-				/**
-				 * [tRunJob_1 main ] stop
-				 */
+					tos_count_tRunJob_1++;
 
-				/**
-				 * [tRunJob_1 process_data_begin ] start
-				 */
+					/**
+					 * [tRunJob_1 main ] stop
+					 */
 
-				currentComponent = "tRunJob_1";
+					/**
+					 * [tRunJob_1 process_data_begin ] start
+					 */
 
-				/**
-				 * [tRunJob_1 process_data_begin ] stop
-				 */
+					currentComponent = "tRunJob_1";
+
+					/**
+					 * [tRunJob_1 process_data_begin ] stop
+					 */
+
+					/**
+					 * [tLogRow_2 main ] start
+					 */
+
+					currentComponent = "tLogRow_2";
+
+					if (execStat) {
+						runStat.updateStatOnConnection(iterateId, 1, 1, "row2");
+					}
+
+///////////////////////		
+
+					strBuffer_tLogRow_2 = new StringBuilder();
+
+					if (globalMap.get("tLogRow_CONSOLE") != null) {
+						consoleOut_tLogRow_2 = (java.io.PrintStream) globalMap.get("tLogRow_CONSOLE");
+					} else {
+						consoleOut_tLogRow_2 = new java.io.PrintStream(new java.io.BufferedOutputStream(System.out));
+						globalMap.put("tLogRow_CONSOLE", consoleOut_tLogRow_2);
+					}
+					consoleOut_tLogRow_2.println(strBuffer_tLogRow_2.toString());
+					consoleOut_tLogRow_2.flush();
+					nb_line_tLogRow_2++;
+//////
+
+//////                    
+
+///////////////////////    			
+
+					tos_count_tLogRow_2++;
+
+					/**
+					 * [tLogRow_2 main ] stop
+					 */
+
+					/**
+					 * [tLogRow_2 process_data_begin ] start
+					 */
+
+					currentComponent = "tLogRow_2";
+
+					/**
+					 * [tLogRow_2 process_data_begin ] stop
+					 */
+
+					/**
+					 * [tLogRow_2 process_data_end ] start
+					 */
+
+					currentComponent = "tLogRow_2";
+
+					/**
+					 * [tLogRow_2 process_data_end ] stop
+					 */
+
+				} // C_01
 
 				/**
 				 * [tRunJob_1 process_data_end ] start
@@ -858,6 +1068,30 @@ public class workflow_final implements TalendJob {
 				/**
 				 * [tRunJob_1 end ] stop
 				 */
+
+				/**
+				 * [tLogRow_2 end ] start
+				 */
+
+				currentComponent = "tLogRow_2";
+
+//////
+//////
+				globalMap.put("tLogRow_2_NB_LINE", nb_line_tLogRow_2);
+
+///////////////////////    			
+
+				if (execStat) {
+					runStat.updateStat(resourceMap, iterateId, 2, 0, "row2");
+				}
+
+				ok_Hash.put("tLogRow_2", true);
+				end_Hash.put("tLogRow_2", System.currentTimeMillis());
+
+				/**
+				 * [tLogRow_2 end ] stop
+				 */
+
 			} // end the resume
 
 		} catch (java.lang.Exception e) {
@@ -883,6 +1117,17 @@ public class workflow_final implements TalendJob {
 				/**
 				 * [tRunJob_1 finally ] stop
 				 */
+
+				/**
+				 * [tLogRow_2 finally ] start
+				 */
+
+				currentComponent = "tLogRow_2";
+
+				/**
+				 * [tLogRow_2 finally ] stop
+				 */
+
 			} catch (java.lang.Exception e) {
 				// ignore
 			} catch (java.lang.Error error) {
@@ -1464,6 +1709,80 @@ public class workflow_final implements TalendJob {
 		globalMap.put("tRunJob_12_SUBPROCESS_STATE", 1);
 	}
 
+	public static class row1Struct implements routines.system.IPersistableRow<row1Struct> {
+		final static byte[] commonByteArrayLock_ANALYSIS_TWITTER_workflow_final = new byte[0];
+		static byte[] commonByteArray_ANALYSIS_TWITTER_workflow_final = new byte[0];
+
+		public void readData(ObjectInputStream dis) {
+
+			synchronized (commonByteArrayLock_ANALYSIS_TWITTER_workflow_final) {
+
+				try {
+
+					int length = 0;
+
+				}
+
+				finally {
+				}
+
+			}
+
+		}
+
+		public void writeData(ObjectOutputStream dos) {
+			try {
+
+			}
+
+			finally {
+			}
+
+		}
+
+		public String toString() {
+
+			StringBuilder sb = new StringBuilder();
+			sb.append(super.toString());
+			sb.append("[");
+			sb.append("]");
+
+			return sb.toString();
+		}
+
+		/**
+		 * Compare keys
+		 */
+		public int compareTo(row1Struct other) {
+
+			int returnValue = -1;
+
+			return returnValue;
+		}
+
+		private int checkNullsAndCompare(Object object1, Object object2) {
+			int returnValue = 0;
+			if (object1 instanceof Comparable && object2 instanceof Comparable) {
+				returnValue = ((Comparable) object1).compareTo(object2);
+			} else if (object1 != null && object2 != null) {
+				returnValue = compareStrings(object1.toString(), object2.toString());
+			} else if (object1 == null && object2 != null) {
+				returnValue = 1;
+			} else if (object1 != null && object2 == null) {
+				returnValue = -1;
+			} else {
+				returnValue = 0;
+			}
+
+			return returnValue;
+		}
+
+		private int compareStrings(String string1, String string2) {
+			return string1.compareTo(string2);
+		}
+
+	}
+
 	public void tRunJob_13Process(final java.util.Map<String, Object> globalMap) throws TalendException {
 		globalMap.put("tRunJob_13_SUBPROCESS_STATE", 0);
 
@@ -1483,6 +1802,78 @@ public class workflow_final implements TalendJob {
 			}
 			if (resumeIt || globalResumeTicket) { // start the resume
 				globalResumeTicket = true;
+
+				row1Struct row1 = new row1Struct();
+
+				/**
+				 * [tLogRow_1 begin ] start
+				 */
+
+				ok_Hash.put("tLogRow_1", false);
+				start_Hash.put("tLogRow_1", System.currentTimeMillis());
+
+				currentComponent = "tLogRow_1";
+
+				if (execStat) {
+					runStat.updateStatOnConnection(resourceMap, iterateId, 0, 0, "row1");
+				}
+
+				int tos_count_tLogRow_1 = 0;
+
+				///////////////////////
+
+				class Util_tLogRow_1 {
+
+					String[] des_top = { ".", ".", "-", "+" };
+
+					String[] des_head = { "|=", "=|", "-", "+" };
+
+					String[] des_bottom = { "'", "'", "-", "+" };
+
+					String name = "";
+
+					java.util.List<String[]> list = new java.util.ArrayList<String[]>();
+
+					int[] colLengths = new int[0];
+
+					public void addRow(String[] row) {
+
+						for (int i = 0; i < 0; i++) {
+							if (row[i] != null) {
+								colLengths[i] = Math.max(colLengths[i], row[i].length());
+							}
+						}
+						list.add(row);
+					}
+
+					public void setTableName(String name) {
+
+						this.name = name;
+					}
+
+					public StringBuilder format() {
+
+						StringBuilder sb = new StringBuilder();
+
+						return sb;
+					}
+
+					public boolean isTableEmpty() {
+						if (list.size() > 1)
+							return false;
+						return true;
+					}
+				}
+				Util_tLogRow_1 util_tLogRow_1 = new Util_tLogRow_1();
+				util_tLogRow_1.setTableName("tLogRow_1");
+				util_tLogRow_1.addRow(new String[] {});
+				StringBuilder strBuffer_tLogRow_1 = null;
+				int nb_line_tLogRow_1 = 0;
+///////////////////////    			
+
+				/**
+				 * [tLogRow_1 begin ] stop
+				 */
 
 				/**
 				 * [tRunJob_13 begin ] start
@@ -1574,22 +1965,76 @@ public class workflow_final implements TalendJob {
 							? (ce_tRunJob_13.getClass().getName() + ": " + ce_tRunJob_13.getMessage())
 							: ""));
 				}
+				for (String[] item_tRunJob_13 : childReturn_tRunJob_13) {
+					if (childJob_tRunJob_13.hastBufferOutputComponent() || true) {
 
-				tos_count_tRunJob_13++;
+					}
 
-				/**
-				 * [tRunJob_13 main ] stop
-				 */
+					tos_count_tRunJob_13++;
 
-				/**
-				 * [tRunJob_13 process_data_begin ] start
-				 */
+					/**
+					 * [tRunJob_13 main ] stop
+					 */
 
-				currentComponent = "tRunJob_13";
+					/**
+					 * [tRunJob_13 process_data_begin ] start
+					 */
 
-				/**
-				 * [tRunJob_13 process_data_begin ] stop
-				 */
+					currentComponent = "tRunJob_13";
+
+					/**
+					 * [tRunJob_13 process_data_begin ] stop
+					 */
+
+					/**
+					 * [tLogRow_1 main ] start
+					 */
+
+					currentComponent = "tLogRow_1";
+
+					if (execStat) {
+						runStat.updateStatOnConnection(iterateId, 1, 1, "row1");
+					}
+
+///////////////////////		
+
+					String[] row_tLogRow_1 = new String[0];
+
+					util_tLogRow_1.addRow(row_tLogRow_1);
+					nb_line_tLogRow_1++;
+//////
+
+//////                    
+
+///////////////////////    			
+
+					tos_count_tLogRow_1++;
+
+					/**
+					 * [tLogRow_1 main ] stop
+					 */
+
+					/**
+					 * [tLogRow_1 process_data_begin ] start
+					 */
+
+					currentComponent = "tLogRow_1";
+
+					/**
+					 * [tLogRow_1 process_data_begin ] stop
+					 */
+
+					/**
+					 * [tLogRow_1 process_data_end ] start
+					 */
+
+					currentComponent = "tLogRow_1";
+
+					/**
+					 * [tLogRow_1 process_data_end ] stop
+					 */
+
+				} // C_01
 
 				/**
 				 * [tRunJob_13 process_data_end ] start
@@ -1618,6 +2063,41 @@ public class workflow_final implements TalendJob {
 				/**
 				 * [tRunJob_13 end ] stop
 				 */
+
+				/**
+				 * [tLogRow_1 end ] start
+				 */
+
+				currentComponent = "tLogRow_1";
+
+//////
+
+				java.io.PrintStream consoleOut_tLogRow_1 = null;
+				if (globalMap.get("tLogRow_CONSOLE") != null) {
+					consoleOut_tLogRow_1 = (java.io.PrintStream) globalMap.get("tLogRow_CONSOLE");
+				} else {
+					consoleOut_tLogRow_1 = new java.io.PrintStream(new java.io.BufferedOutputStream(System.out));
+					globalMap.put("tLogRow_CONSOLE", consoleOut_tLogRow_1);
+				}
+
+				consoleOut_tLogRow_1.println(util_tLogRow_1.format().toString());
+				consoleOut_tLogRow_1.flush();
+//////
+				globalMap.put("tLogRow_1_NB_LINE", nb_line_tLogRow_1);
+
+///////////////////////    			
+
+				if (execStat) {
+					runStat.updateStat(resourceMap, iterateId, 2, 0, "row1");
+				}
+
+				ok_Hash.put("tLogRow_1", true);
+				end_Hash.put("tLogRow_1", System.currentTimeMillis());
+
+				/**
+				 * [tLogRow_1 end ] stop
+				 */
+
 			} // end the resume
 
 		} catch (java.lang.Exception e) {
@@ -1643,6 +2123,17 @@ public class workflow_final implements TalendJob {
 				/**
 				 * [tRunJob_13 finally ] stop
 				 */
+
+				/**
+				 * [tLogRow_1 finally ] start
+				 */
+
+				currentComponent = "tLogRow_1";
+
+				/**
+				 * [tLogRow_1 finally ] stop
+				 */
+
 			} catch (java.lang.Exception e) {
 				// ignore
 			} catch (java.lang.Error error) {
@@ -1652,6 +2143,80 @@ public class workflow_final implements TalendJob {
 		}
 
 		globalMap.put("tRunJob_13_SUBPROCESS_STATE", 1);
+	}
+
+	public static class row3Struct implements routines.system.IPersistableRow<row3Struct> {
+		final static byte[] commonByteArrayLock_ANALYSIS_TWITTER_workflow_final = new byte[0];
+		static byte[] commonByteArray_ANALYSIS_TWITTER_workflow_final = new byte[0];
+
+		public void readData(ObjectInputStream dis) {
+
+			synchronized (commonByteArrayLock_ANALYSIS_TWITTER_workflow_final) {
+
+				try {
+
+					int length = 0;
+
+				}
+
+				finally {
+				}
+
+			}
+
+		}
+
+		public void writeData(ObjectOutputStream dos) {
+			try {
+
+			}
+
+			finally {
+			}
+
+		}
+
+		public String toString() {
+
+			StringBuilder sb = new StringBuilder();
+			sb.append(super.toString());
+			sb.append("[");
+			sb.append("]");
+
+			return sb.toString();
+		}
+
+		/**
+		 * Compare keys
+		 */
+		public int compareTo(row3Struct other) {
+
+			int returnValue = -1;
+
+			return returnValue;
+		}
+
+		private int checkNullsAndCompare(Object object1, Object object2) {
+			int returnValue = 0;
+			if (object1 instanceof Comparable && object2 instanceof Comparable) {
+				returnValue = ((Comparable) object1).compareTo(object2);
+			} else if (object1 != null && object2 != null) {
+				returnValue = compareStrings(object1.toString(), object2.toString());
+			} else if (object1 == null && object2 != null) {
+				returnValue = 1;
+			} else if (object1 != null && object2 == null) {
+				returnValue = -1;
+			} else {
+				returnValue = 0;
+			}
+
+			return returnValue;
+		}
+
+		private int compareStrings(String string1, String string2) {
+			return string1.compareTo(string2);
+		}
+
 	}
 
 	public void tRunJob_14Process(final java.util.Map<String, Object> globalMap) throws TalendException {
@@ -1673,6 +2238,36 @@ public class workflow_final implements TalendJob {
 			}
 			if (resumeIt || globalResumeTicket) { // start the resume
 				globalResumeTicket = true;
+
+				row3Struct row3 = new row3Struct();
+
+				/**
+				 * [tLogRow_3 begin ] start
+				 */
+
+				ok_Hash.put("tLogRow_3", false);
+				start_Hash.put("tLogRow_3", System.currentTimeMillis());
+
+				currentComponent = "tLogRow_3";
+
+				if (execStat) {
+					runStat.updateStatOnConnection(resourceMap, iterateId, 0, 0, "row3");
+				}
+
+				int tos_count_tLogRow_3 = 0;
+
+				///////////////////////
+
+				final String OUTPUT_FIELD_SEPARATOR_tLogRow_3 = "|";
+				java.io.PrintStream consoleOut_tLogRow_3 = null;
+
+				StringBuilder strBuffer_tLogRow_3 = null;
+				int nb_line_tLogRow_3 = 0;
+///////////////////////    			
+
+				/**
+				 * [tLogRow_3 begin ] stop
+				 */
 
 				/**
 				 * [tRunJob_14 begin ] start
@@ -1728,7 +2323,7 @@ public class workflow_final implements TalendJob {
 
 				Object obj_tRunJob_14 = null;
 
-				analysis_twitter.s5_fr_calcul_sentiments_deouis_description_hashtag_0_1.s5_fr_calcul_sentiments_deouis_description_hashtag childJob_tRunJob_14 = new analysis_twitter.s5_fr_calcul_sentiments_deouis_description_hashtag_0_1.s5_fr_calcul_sentiments_deouis_description_hashtag();
+				analysis_twitter.s5_fr_calcul_sentiments_depuis_donnees_tweets_0_1.s5_fr_calcul_sentiments_depuis_donnees_tweets childJob_tRunJob_14 = new analysis_twitter.s5_fr_calcul_sentiments_depuis_donnees_tweets_0_1.s5_fr_calcul_sentiments_depuis_donnees_tweets();
 				// pass DataSources
 				java.util.Map<String, routines.system.TalendDataSource> talendDataSources_tRunJob_14 = (java.util.Map<String, routines.system.TalendDataSource>) globalMap
 						.get(KEY_DB_DATASOURCES);
@@ -1764,22 +2359,83 @@ public class workflow_final implements TalendJob {
 							? (ce_tRunJob_14.getClass().getName() + ": " + ce_tRunJob_14.getMessage())
 							: ""));
 				}
+				for (String[] item_tRunJob_14 : childReturn_tRunJob_14) {
+					if (childJob_tRunJob_14.hastBufferOutputComponent() || true) {
 
-				tos_count_tRunJob_14++;
+					}
 
-				/**
-				 * [tRunJob_14 main ] stop
-				 */
+					tos_count_tRunJob_14++;
 
-				/**
-				 * [tRunJob_14 process_data_begin ] start
-				 */
+					/**
+					 * [tRunJob_14 main ] stop
+					 */
 
-				currentComponent = "tRunJob_14";
+					/**
+					 * [tRunJob_14 process_data_begin ] start
+					 */
 
-				/**
-				 * [tRunJob_14 process_data_begin ] stop
-				 */
+					currentComponent = "tRunJob_14";
+
+					/**
+					 * [tRunJob_14 process_data_begin ] stop
+					 */
+
+					/**
+					 * [tLogRow_3 main ] start
+					 */
+
+					currentComponent = "tLogRow_3";
+
+					if (execStat) {
+						runStat.updateStatOnConnection(iterateId, 1, 1, "row3");
+					}
+
+///////////////////////		
+
+					strBuffer_tLogRow_3 = new StringBuilder();
+
+					if (globalMap.get("tLogRow_CONSOLE") != null) {
+						consoleOut_tLogRow_3 = (java.io.PrintStream) globalMap.get("tLogRow_CONSOLE");
+					} else {
+						consoleOut_tLogRow_3 = new java.io.PrintStream(new java.io.BufferedOutputStream(System.out));
+						globalMap.put("tLogRow_CONSOLE", consoleOut_tLogRow_3);
+					}
+					consoleOut_tLogRow_3.println(strBuffer_tLogRow_3.toString());
+					consoleOut_tLogRow_3.flush();
+					nb_line_tLogRow_3++;
+//////
+
+//////                    
+
+///////////////////////    			
+
+					tos_count_tLogRow_3++;
+
+					/**
+					 * [tLogRow_3 main ] stop
+					 */
+
+					/**
+					 * [tLogRow_3 process_data_begin ] start
+					 */
+
+					currentComponent = "tLogRow_3";
+
+					/**
+					 * [tLogRow_3 process_data_begin ] stop
+					 */
+
+					/**
+					 * [tLogRow_3 process_data_end ] start
+					 */
+
+					currentComponent = "tLogRow_3";
+
+					/**
+					 * [tLogRow_3 process_data_end ] stop
+					 */
+
+				} // C_01
 
 				/**
 				 * [tRunJob_14 process_data_end ] start
@@ -1808,6 +2464,30 @@ public class workflow_final implements TalendJob {
 				/**
 				 * [tRunJob_14 end ] stop
 				 */
+
+				/**
+				 * [tLogRow_3 end ] start
+				 */
+
+				currentComponent = "tLogRow_3";
+
+//////
+//////
+				globalMap.put("tLogRow_3_NB_LINE", nb_line_tLogRow_3);
+
+///////////////////////    			
+
+				if (execStat) {
+					runStat.updateStat(resourceMap, iterateId, 2, 0, "row3");
+				}
+
+				ok_Hash.put("tLogRow_3", true);
+				end_Hash.put("tLogRow_3", System.currentTimeMillis());
+
+				/**
+				 * [tLogRow_3 end ] stop
+				 */
+
 			} // end the resume
 
 		} catch (java.lang.Exception e) {
@@ -1833,6 +2513,17 @@ public class workflow_final implements TalendJob {
 				/**
 				 * [tRunJob_14 finally ] stop
 				 */
+
+				/**
+				 * [tLogRow_3 finally ] start
+				 */
+
+				currentComponent = "tLogRow_3";
+
+				/**
+				 * [tLogRow_3 finally ] stop
+				 */
+
 			} catch (java.lang.Exception e) {
 				// ignore
 			} catch (java.lang.Error error) {
@@ -2267,7 +2958,10 @@ public class workflow_final implements TalendJob {
 
 				int messageIcontMsgBox_1 = javax.swing.JOptionPane.INFORMATION_MESSAGE;
 				String titletMsgBox_1 = "Workflow";
-				String messagetMsgBox_1 = "Fin de traitements et analysis de données twitter";
+				String messagetMsgBox_1 = "Les actions faites :\nEt 0 : Connexion api twitter\nEt 1 : Téléchargement des tweets dedans de la base de données\nEt 2 : "
+						+ "Téléchargement des dimension dedans de dw\nEt 3 : Téléchargement des données de region et description de hashtag\nEt 4 : C"
+						+ "alcul des mesures\nEt 5 : Calcul de sentiments\nEt 6 : Téléchargement des mesures\nFin de traitements et analysis de donnée"
+						+ "s twitter";
 				String resulttMsgBox_1 = null;
 
 				javax.swing.JOptionPane.showMessageDialog(null, messagetMsgBox_1, titletMsgBox_1, messageIcontMsgBox_1);
@@ -2718,6 +3412,6 @@ public class workflow_final implements TalendJob {
 	ResumeUtil resumeUtil = null;
 }
 /************************************************************************************************
- * 84860 characters generated by Talend Open Studio for Big Data on the December
- * 6, 2020 10:01:44 PM CET
+ * 101191 characters generated by Talend Open Studio for Big Data on the
+ * December 7, 2020 12:18:11 AM CET
  ************************************************************************************************/

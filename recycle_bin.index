@@ -1,13 +1,2 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<recyclebin:RecycleBin xmlns:recyclebin="http://www.talend.org/recyclebin" lastUpdate="2020-12-06T22:02:27.162+0100">
-  <deletedFolders>process/analysis_twitter</deletedFolders>
-  <deletedFolders>process/analys_twitter_pj</deletedFolders>
-  <deletedItems id="_76di4DeDEeuAj_3Iupa0rQ" path="" type="PROCESS"/>
-  <deletedItems id="_ymfhsDfGEeux4cbhlXpz9A" path="" type="METADATA_FILE_DELIMITED"/>
-  <deletedItems id="_lYrn8DeXEeupC-cl7ZQtWg" path="" type="METADATA_FILE_DELIMITED"/>
-  <deletedItems id="_2ECyADeXEeupC-cl7ZQtWg" path="" type="METADATA_FILE_DELIMITED"/>
-  <deletedItems id="_uE38ADeXEeupC-cl7ZQtWg" path="" type="METADATA_FILE_DELIMITED"/>
-  <deletedItems id="_R5_boDeMEeuPNu0sBVFG0w" path="" type="PROCESS"/>
-  <deletedItems id="_U7GoUDfxEeu3vsTFfuHedA" path="analysis_twitter" type="PROCESS"/>
-  <deletedItems id="_pLUecDcbEeu1-suodWwnVw" path="analysis_twitter_dw_pj" type="PROCESS"/>
-</recyclebin:RecycleBin>
+<recyclebin:RecycleBin xmlns:recyclebin="http://www.talend.org/recyclebin" lastUpdate="2020-12-07T00:08:12.365+0100"/>

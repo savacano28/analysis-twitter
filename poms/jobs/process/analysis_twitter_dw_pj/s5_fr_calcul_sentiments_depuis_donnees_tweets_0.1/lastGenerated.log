@@ -1,0 +1,47 @@
+[INFO] Disabling enhanced local repository: using legacy is strongly discouraged to ensure build reproducibility.
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] --< org.example.analysis_twitter.job:s5_fr_calcul_sentiments_depuis_donnees_tweets >--
+[INFO] Building ANALYSIS_TWITTER s5_fr_calcul_sentiments_depuis_donnees_tweets-0.1.0 (0.1,Job Designs) 0.1.0
+[INFO] --------------------------------[ jar ]---------------------------------
+[WARNING] The POM for commons-collections:commons-collections:jar:3.2.2 is missing, no dependency information available
+[WARNING] The POM for org.dom4j:dom4j:jar:2.1.1 is missing, no dependency information available
+[WARNING] The POM for org.apache.logging.log4j:log4j-api:jar:2.12.1 is missing, no dependency information available
+[WARNING] The POM for org.apache.logging.log4j:log4j-core:jar:2.12.1 is missing, no dependency information available
+[WARNING] The POM for org.apache.logging.log4j:log4j-slf4j-impl:jar:2.12.1 is missing, no dependency information available
+[INFO] 
+[INFO] --- maven-resources-plugin:3.0.2:resources (default-resources) @ s5_fr_calcul_sentiments_depuis_donnees_tweets ---
+[WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] Copying 2 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.6.1:compile (default-compile) @ s5_fr_calcul_sentiments_depuis_donnees_tweets ---
+[WARNING] The POM for org.eclipse.platform:org.eclipse.osgi:jar:3.13.300 is missing, no dependency information available
+[WARNING] The POM for org.apache.commons:commons-exec:jar:1.2 is missing, no dependency information available
+[INFO] Not compiling main sources
+[INFO] 
+[INFO] --- maven-resources-plugin:3.0.2:testResources (default-testResources) @ s5_fr_calcul_sentiments_depuis_donnees_tweets ---
+[INFO] Not copying test resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.6.1:testCompile (default-testCompile) @ s5_fr_calcul_sentiments_depuis_donnees_tweets ---
+[INFO] Not compiling test sources
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.20:test (default-test) @ s5_fr_calcul_sentiments_depuis_donnees_tweets ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-jar-plugin:3.0.2:jar (default-jar) @ s5_fr_calcul_sentiments_depuis_donnees_tweets ---
+[INFO] Building jar: /home/scasanova/Downloads/TOS_BD-20200219_1130-V7.3.1/workspace/ANALYSIS_TWITTER/poms/jobs/process/analysis_twitter_dw_pj/s5_fr_calcul_sentiments_depuis_donnees_tweets_0.1/target/s5_fr_calcul_sentiments_depuis_donnees_tweets_0_1.jar
+[INFO] 
+[INFO] --- maven-assembly-plugin:3.0.0:single (default) @ s5_fr_calcul_sentiments_depuis_donnees_tweets ---
+[INFO] Reading assembly descriptor: /home/scasanova/Downloads/TOS_BD-20200219_1130-V7.3.1/workspace/ANALYSIS_TWITTER/poms/jobs/process/analysis_twitter_dw_pj/s5_fr_calcul_sentiments_depuis_donnees_tweets_0.1/src/main/assemblies/assembly.xml
+[WARNING] Missing POM for commons-collections:commons-collections:jar:3.2.2
+[WARNING] Missing POM for org.dom4j:dom4j:jar:2.1.1
+[WARNING] Missing POM for org.apache.logging.log4j:log4j-api:jar:2.12.1
+[WARNING] Missing POM for org.apache.logging.log4j:log4j-core:jar:2.12.1
+[WARNING] Missing POM for org.apache.logging.log4j:log4j-slf4j-impl:jar:2.12.1
+[INFO] Building zip: /home/scasanova/Downloads/TOS_BD-20200219_1130-V7.3.1/workspace/ANALYSIS_TWITTER/poms/jobs/process/analysis_twitter_dw_pj/s5_fr_calcul_sentiments_depuis_donnees_tweets_0.1/target/s5_fr_calcul_sentiments_depuis_donnees_tweets_0_1.zip
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 2.999 s
+[INFO] Finished at: 2020-12-07T00:10:47+01:00
+[INFO] ------------------------------------------------------------------------
