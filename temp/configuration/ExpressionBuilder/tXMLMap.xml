@@ -1,2 +1,0 @@
-<?xml version="1.1" encoding="UTF-8"?>
-<expression:EMFExpression xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:expression="http:///expression.ecore" id="TalendDate.parseDate(&quot;EEE MMM dd HH:mm:ss Z yyyy&quot;,StringHandling.CHANGE([row1.body:/root/statuses/created_at],&quot;+0000&quot;, &quot;CET&quot;)) " expression="TalendDate.parseDate(&quot;EEE MMM dd HH:mm:ss Z yyyy&quot;,StringHandling.CHANGE([row1.body:/root/statuses/created_at],&quot;\\+0000&quot;, &quot;CET&quot;))"/>
