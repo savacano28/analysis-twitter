@@ -432,6 +432,42 @@ private class TalendException extends Exception {
 					tDBInput_1_onSubJobError(exception, errorComponent, globalMap);
 			}
 			
+			public void tMap_3_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
+				
+				end_Hash.put(errorComponent, System.currentTimeMillis());
+				
+				status = "failure";
+				
+					tDBInput_1_onSubJobError(exception, errorComponent, globalMap);
+			}
+			
+			public void tFileOutputDelimited_4_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
+				
+				end_Hash.put(errorComponent, System.currentTimeMillis());
+				
+				status = "failure";
+				
+					tDBInput_1_onSubJobError(exception, errorComponent, globalMap);
+			}
+			
+			public void tFileOutputDelimited_5_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
+				
+				end_Hash.put(errorComponent, System.currentTimeMillis());
+				
+				status = "failure";
+				
+					tDBInput_1_onSubJobError(exception, errorComponent, globalMap);
+			}
+			
+			public void tFileOutputDelimited_6_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
+				
+				end_Hash.put(errorComponent, System.currentTimeMillis());
+				
+				status = "failure";
+				
+					tDBInput_1_onSubJobError(exception, errorComponent, globalMap);
+			}
+			
 			public void tFileInputDelimited_1_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
 				
 				end_Hash.put(errorComponent, System.currentTimeMillis());
@@ -495,6 +531,66 @@ private class TalendException extends Exception {
 					tDBInput_1_onSubJobError(exception, errorComponent, globalMap);
 			}
 			
+			public void tAggregateRow_4_AGGOUT_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
+				
+							tAggregateRow_4_AGGIN_error(exception, errorComponent, globalMap);
+						
+						}
+					
+			public void tAggregateRow_4_AGGIN_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
+				
+				end_Hash.put(errorComponent, System.currentTimeMillis());
+				
+				status = "failure";
+				
+					tDBInput_1_onSubJobError(exception, errorComponent, globalMap);
+			}
+			
+			public void tAggregateRow_5_AGGOUT_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
+				
+							tAggregateRow_5_AGGIN_error(exception, errorComponent, globalMap);
+						
+						}
+					
+			public void tAggregateRow_5_AGGIN_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
+				
+				end_Hash.put(errorComponent, System.currentTimeMillis());
+				
+				status = "failure";
+				
+					tDBInput_1_onSubJobError(exception, errorComponent, globalMap);
+			}
+			
+			public void tAggregateRow_6_AGGOUT_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
+				
+							tAggregateRow_6_AGGIN_error(exception, errorComponent, globalMap);
+						
+						}
+					
+			public void tAggregateRow_6_AGGIN_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
+				
+				end_Hash.put(errorComponent, System.currentTimeMillis());
+				
+				status = "failure";
+				
+					tDBInput_1_onSubJobError(exception, errorComponent, globalMap);
+			}
+			
+			public void tAggregateRow_7_AGGOUT_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
+				
+							tAggregateRow_7_AGGIN_error(exception, errorComponent, globalMap);
+						
+						}
+					
+			public void tAggregateRow_7_AGGIN_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
+				
+				end_Hash.put(errorComponent, System.currentTimeMillis());
+				
+				status = "failure";
+				
+					tDBInput_1_onSubJobError(exception, errorComponent, globalMap);
+			}
+			
 			public void tDBInput_1_onSubJobError(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
 
 resumeUtil.addLog("SYSTEM_LOG", "NODE:"+ errorComponent, "", Thread.currentThread().getId()+ "", "FATAL", "", exception.getMessage(), ResumeUtil.getExceptionStackTrace(exception),"");
@@ -506,6 +602,2342 @@ resumeUtil.addLog("SYSTEM_LOG", "NODE:"+ errorComponent, "", Thread.currentThrea
 
 
 
+
+public static class row13Struct implements routines.system.IPersistableRow<row13Struct> {
+    final static byte[] commonByteArrayLock_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[0];
+    static byte[] commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[0];
+
+	
+			    public java.util.Date date;
+
+				public java.util.Date getDate () {
+					return this.date;
+				}
+				
+			    public String hashtag;
+
+				public String getHashtag () {
+					return this.hashtag;
+				}
+				
+			    public String country;
+
+				public String getCountry () {
+					return this.country;
+				}
+				
+			    public Integer c_tweet;
+
+				public Integer getC_tweet () {
+					return this.c_tweet;
+				}
+				
+
+
+
+	private java.util.Date readDate(ObjectInputStream dis) throws IOException{
+		java.util.Date dateReturn = null;
+        int length = 0;
+        length = dis.readByte();
+		if (length == -1) {
+			dateReturn = null;
+		} else {
+	    	dateReturn = new Date(dis.readLong());
+		}
+		return dateReturn;
+	}
+
+    private void writeDate(java.util.Date date1, ObjectOutputStream dos) throws IOException{
+		if(date1 == null) {
+            dos.writeByte(-1);
+		} else {
+			dos.writeByte(0);
+	    	dos.writeLong(date1.getTime());
+    	}
+    }
+
+	private String readString(ObjectInputStream dis) throws IOException{
+		String strReturn = null;
+		int length = 0;
+        length = dis.readInt();
+		if (length == -1) {
+			strReturn = null;
+		} else {
+			if(length > commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets.length) {
+				if(length < 1024 && commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets.length == 0) {
+   					commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[1024];
+				} else {
+   					commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[2 * length];
+   				}
+			}
+			dis.readFully(commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets, 0, length);
+			strReturn = new String(commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets, 0, length, utf8Charset);
+		}
+		return strReturn;
+	}
+
+    private void writeString(String str, ObjectOutputStream dos) throws IOException{
+		if(str == null) {
+            dos.writeInt(-1);
+		} else {
+            byte[] byteArray = str.getBytes(utf8Charset);
+	    	dos.writeInt(byteArray.length);
+			dos.write(byteArray);
+    	}
+    }
+	private Integer readInteger(ObjectInputStream dis) throws IOException{
+		Integer intReturn;
+        int length = 0;
+        length = dis.readByte();
+		if (length == -1) {
+			intReturn = null;
+		} else {
+	    	intReturn = dis.readInt();
+		}
+		return intReturn;
+	}
+
+	private void writeInteger(Integer intNum, ObjectOutputStream dos) throws IOException{
+		if(intNum == null) {
+            dos.writeByte(-1);
+		} else {
+			dos.writeByte(0);
+	    	dos.writeInt(intNum);
+    	}
+	}
+
+    public void readData(ObjectInputStream dis) {
+
+		synchronized(commonByteArrayLock_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets) {
+
+        	try {
+
+        		int length = 0;
+		
+					this.date = readDate(dis);
+					
+					this.hashtag = readString(dis);
+					
+					this.country = readString(dis);
+					
+						this.c_tweet = readInteger(dis);
+					
+        	} catch (IOException e) {
+	            throw new RuntimeException(e);
+
+		
+
+        }
+
+		
+
+      }
+
+
+    }
+
+    public void writeData(ObjectOutputStream dos) {
+        try {
+
+		
+					// java.util.Date
+				
+						writeDate(this.date,dos);
+					
+					// String
+				
+						writeString(this.hashtag,dos);
+					
+					// String
+				
+						writeString(this.country,dos);
+					
+					// Integer
+				
+						writeInteger(this.c_tweet,dos);
+					
+        	} catch (IOException e) {
+	            throw new RuntimeException(e);
+        }
+
+
+    }
+
+
+    public String toString() {
+
+		StringBuilder sb = new StringBuilder();
+		sb.append(super.toString());
+		sb.append("[");
+		sb.append("date="+String.valueOf(date));
+		sb.append(",hashtag="+hashtag);
+		sb.append(",country="+country);
+		sb.append(",c_tweet="+String.valueOf(c_tweet));
+	    sb.append("]");
+
+	    return sb.toString();
+    }
+
+    /**
+     * Compare keys
+     */
+    public int compareTo(row13Struct other) {
+
+		int returnValue = -1;
+		
+	    return returnValue;
+    }
+
+
+    private int checkNullsAndCompare(Object object1, Object object2) {
+        int returnValue = 0;
+		if (object1 instanceof Comparable && object2 instanceof Comparable) {
+            returnValue = ((Comparable) object1).compareTo(object2);
+        } else if (object1 != null && object2 != null) {
+            returnValue = compareStrings(object1.toString(), object2.toString());
+        } else if (object1 == null && object2 != null) {
+            returnValue = 1;
+        } else if (object1 != null && object2 == null) {
+            returnValue = -1;
+        } else {
+            returnValue = 0;
+        }
+
+        return returnValue;
+    }
+
+    private int compareStrings(String string1, String string2) {
+        return string1.compareTo(string2);
+    }
+
+
+}
+
+public static class OnRowsEndStructtAggregateRow_7 implements routines.system.IPersistableRow<OnRowsEndStructtAggregateRow_7> {
+    final static byte[] commonByteArrayLock_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[0];
+    static byte[] commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[0];
+
+	
+			    public java.util.Date date;
+
+				public java.util.Date getDate () {
+					return this.date;
+				}
+				
+			    public String hashtag;
+
+				public String getHashtag () {
+					return this.hashtag;
+				}
+				
+			    public String country;
+
+				public String getCountry () {
+					return this.country;
+				}
+				
+			    public Integer c_tweet;
+
+				public Integer getC_tweet () {
+					return this.c_tweet;
+				}
+				
+
+
+
+	private java.util.Date readDate(ObjectInputStream dis) throws IOException{
+		java.util.Date dateReturn = null;
+        int length = 0;
+        length = dis.readByte();
+		if (length == -1) {
+			dateReturn = null;
+		} else {
+	    	dateReturn = new Date(dis.readLong());
+		}
+		return dateReturn;
+	}
+
+    private void writeDate(java.util.Date date1, ObjectOutputStream dos) throws IOException{
+		if(date1 == null) {
+            dos.writeByte(-1);
+		} else {
+			dos.writeByte(0);
+	    	dos.writeLong(date1.getTime());
+    	}
+    }
+
+	private String readString(ObjectInputStream dis) throws IOException{
+		String strReturn = null;
+		int length = 0;
+        length = dis.readInt();
+		if (length == -1) {
+			strReturn = null;
+		} else {
+			if(length > commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets.length) {
+				if(length < 1024 && commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets.length == 0) {
+   					commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[1024];
+				} else {
+   					commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[2 * length];
+   				}
+			}
+			dis.readFully(commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets, 0, length);
+			strReturn = new String(commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets, 0, length, utf8Charset);
+		}
+		return strReturn;
+	}
+
+    private void writeString(String str, ObjectOutputStream dos) throws IOException{
+		if(str == null) {
+            dos.writeInt(-1);
+		} else {
+            byte[] byteArray = str.getBytes(utf8Charset);
+	    	dos.writeInt(byteArray.length);
+			dos.write(byteArray);
+    	}
+    }
+	private Integer readInteger(ObjectInputStream dis) throws IOException{
+		Integer intReturn;
+        int length = 0;
+        length = dis.readByte();
+		if (length == -1) {
+			intReturn = null;
+		} else {
+	    	intReturn = dis.readInt();
+		}
+		return intReturn;
+	}
+
+	private void writeInteger(Integer intNum, ObjectOutputStream dos) throws IOException{
+		if(intNum == null) {
+            dos.writeByte(-1);
+		} else {
+			dos.writeByte(0);
+	    	dos.writeInt(intNum);
+    	}
+	}
+
+    public void readData(ObjectInputStream dis) {
+
+		synchronized(commonByteArrayLock_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets) {
+
+        	try {
+
+        		int length = 0;
+		
+					this.date = readDate(dis);
+					
+					this.hashtag = readString(dis);
+					
+					this.country = readString(dis);
+					
+						this.c_tweet = readInteger(dis);
+					
+        	} catch (IOException e) {
+	            throw new RuntimeException(e);
+
+		
+
+        }
+
+		
+
+      }
+
+
+    }
+
+    public void writeData(ObjectOutputStream dos) {
+        try {
+
+		
+					// java.util.Date
+				
+						writeDate(this.date,dos);
+					
+					// String
+				
+						writeString(this.hashtag,dos);
+					
+					// String
+				
+						writeString(this.country,dos);
+					
+					// Integer
+				
+						writeInteger(this.c_tweet,dos);
+					
+        	} catch (IOException e) {
+	            throw new RuntimeException(e);
+        }
+
+
+    }
+
+
+    public String toString() {
+
+		StringBuilder sb = new StringBuilder();
+		sb.append(super.toString());
+		sb.append("[");
+		sb.append("date="+String.valueOf(date));
+		sb.append(",hashtag="+hashtag);
+		sb.append(",country="+country);
+		sb.append(",c_tweet="+String.valueOf(c_tweet));
+	    sb.append("]");
+
+	    return sb.toString();
+    }
+
+    /**
+     * Compare keys
+     */
+    public int compareTo(OnRowsEndStructtAggregateRow_7 other) {
+
+		int returnValue = -1;
+		
+	    return returnValue;
+    }
+
+
+    private int checkNullsAndCompare(Object object1, Object object2) {
+        int returnValue = 0;
+		if (object1 instanceof Comparable && object2 instanceof Comparable) {
+            returnValue = ((Comparable) object1).compareTo(object2);
+        } else if (object1 != null && object2 != null) {
+            returnValue = compareStrings(object1.toString(), object2.toString());
+        } else if (object1 == null && object2 != null) {
+            returnValue = 1;
+        } else if (object1 != null && object2 == null) {
+            returnValue = -1;
+        } else {
+            returnValue = 0;
+        }
+
+        return returnValue;
+    }
+
+    private int compareStrings(String string1, String string2) {
+        return string1.compareTo(string2);
+    }
+
+
+}
+
+public static class row11Struct implements routines.system.IPersistableRow<row11Struct> {
+    final static byte[] commonByteArrayLock_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[0];
+    static byte[] commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[0];
+
+	
+			    public java.util.Date date;
+
+				public java.util.Date getDate () {
+					return this.date;
+				}
+				
+			    public String hashtag;
+
+				public String getHashtag () {
+					return this.hashtag;
+				}
+				
+			    public String country;
+
+				public String getCountry () {
+					return this.country;
+				}
+				
+			    public Integer c_negatives;
+
+				public Integer getC_negatives () {
+					return this.c_negatives;
+				}
+				
+
+
+
+	private java.util.Date readDate(ObjectInputStream dis) throws IOException{
+		java.util.Date dateReturn = null;
+        int length = 0;
+        length = dis.readByte();
+		if (length == -1) {
+			dateReturn = null;
+		} else {
+	    	dateReturn = new Date(dis.readLong());
+		}
+		return dateReturn;
+	}
+
+    private void writeDate(java.util.Date date1, ObjectOutputStream dos) throws IOException{
+		if(date1 == null) {
+            dos.writeByte(-1);
+		} else {
+			dos.writeByte(0);
+	    	dos.writeLong(date1.getTime());
+    	}
+    }
+
+	private String readString(ObjectInputStream dis) throws IOException{
+		String strReturn = null;
+		int length = 0;
+        length = dis.readInt();
+		if (length == -1) {
+			strReturn = null;
+		} else {
+			if(length > commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets.length) {
+				if(length < 1024 && commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets.length == 0) {
+   					commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[1024];
+				} else {
+   					commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[2 * length];
+   				}
+			}
+			dis.readFully(commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets, 0, length);
+			strReturn = new String(commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets, 0, length, utf8Charset);
+		}
+		return strReturn;
+	}
+
+    private void writeString(String str, ObjectOutputStream dos) throws IOException{
+		if(str == null) {
+            dos.writeInt(-1);
+		} else {
+            byte[] byteArray = str.getBytes(utf8Charset);
+	    	dos.writeInt(byteArray.length);
+			dos.write(byteArray);
+    	}
+    }
+	private Integer readInteger(ObjectInputStream dis) throws IOException{
+		Integer intReturn;
+        int length = 0;
+        length = dis.readByte();
+		if (length == -1) {
+			intReturn = null;
+		} else {
+	    	intReturn = dis.readInt();
+		}
+		return intReturn;
+	}
+
+	private void writeInteger(Integer intNum, ObjectOutputStream dos) throws IOException{
+		if(intNum == null) {
+            dos.writeByte(-1);
+		} else {
+			dos.writeByte(0);
+	    	dos.writeInt(intNum);
+    	}
+	}
+
+    public void readData(ObjectInputStream dis) {
+
+		synchronized(commonByteArrayLock_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets) {
+
+        	try {
+
+        		int length = 0;
+		
+					this.date = readDate(dis);
+					
+					this.hashtag = readString(dis);
+					
+					this.country = readString(dis);
+					
+						this.c_negatives = readInteger(dis);
+					
+        	} catch (IOException e) {
+	            throw new RuntimeException(e);
+
+		
+
+        }
+
+		
+
+      }
+
+
+    }
+
+    public void writeData(ObjectOutputStream dos) {
+        try {
+
+		
+					// java.util.Date
+				
+						writeDate(this.date,dos);
+					
+					// String
+				
+						writeString(this.hashtag,dos);
+					
+					// String
+				
+						writeString(this.country,dos);
+					
+					// Integer
+				
+						writeInteger(this.c_negatives,dos);
+					
+        	} catch (IOException e) {
+	            throw new RuntimeException(e);
+        }
+
+
+    }
+
+
+    public String toString() {
+
+		StringBuilder sb = new StringBuilder();
+		sb.append(super.toString());
+		sb.append("[");
+		sb.append("date="+String.valueOf(date));
+		sb.append(",hashtag="+hashtag);
+		sb.append(",country="+country);
+		sb.append(",c_negatives="+String.valueOf(c_negatives));
+	    sb.append("]");
+
+	    return sb.toString();
+    }
+
+    /**
+     * Compare keys
+     */
+    public int compareTo(row11Struct other) {
+
+		int returnValue = -1;
+		
+	    return returnValue;
+    }
+
+
+    private int checkNullsAndCompare(Object object1, Object object2) {
+        int returnValue = 0;
+		if (object1 instanceof Comparable && object2 instanceof Comparable) {
+            returnValue = ((Comparable) object1).compareTo(object2);
+        } else if (object1 != null && object2 != null) {
+            returnValue = compareStrings(object1.toString(), object2.toString());
+        } else if (object1 == null && object2 != null) {
+            returnValue = 1;
+        } else if (object1 != null && object2 == null) {
+            returnValue = -1;
+        } else {
+            returnValue = 0;
+        }
+
+        return returnValue;
+    }
+
+    private int compareStrings(String string1, String string2) {
+        return string1.compareTo(string2);
+    }
+
+
+}
+
+public static class OnRowsEndStructtAggregateRow_6 implements routines.system.IPersistableRow<OnRowsEndStructtAggregateRow_6> {
+    final static byte[] commonByteArrayLock_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[0];
+    static byte[] commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[0];
+
+	
+			    public java.util.Date date;
+
+				public java.util.Date getDate () {
+					return this.date;
+				}
+				
+			    public String hashtag;
+
+				public String getHashtag () {
+					return this.hashtag;
+				}
+				
+			    public String country;
+
+				public String getCountry () {
+					return this.country;
+				}
+				
+			    public Integer c_negatives;
+
+				public Integer getC_negatives () {
+					return this.c_negatives;
+				}
+				
+
+
+
+	private java.util.Date readDate(ObjectInputStream dis) throws IOException{
+		java.util.Date dateReturn = null;
+        int length = 0;
+        length = dis.readByte();
+		if (length == -1) {
+			dateReturn = null;
+		} else {
+	    	dateReturn = new Date(dis.readLong());
+		}
+		return dateReturn;
+	}
+
+    private void writeDate(java.util.Date date1, ObjectOutputStream dos) throws IOException{
+		if(date1 == null) {
+            dos.writeByte(-1);
+		} else {
+			dos.writeByte(0);
+	    	dos.writeLong(date1.getTime());
+    	}
+    }
+
+	private String readString(ObjectInputStream dis) throws IOException{
+		String strReturn = null;
+		int length = 0;
+        length = dis.readInt();
+		if (length == -1) {
+			strReturn = null;
+		} else {
+			if(length > commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets.length) {
+				if(length < 1024 && commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets.length == 0) {
+   					commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[1024];
+				} else {
+   					commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[2 * length];
+   				}
+			}
+			dis.readFully(commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets, 0, length);
+			strReturn = new String(commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets, 0, length, utf8Charset);
+		}
+		return strReturn;
+	}
+
+    private void writeString(String str, ObjectOutputStream dos) throws IOException{
+		if(str == null) {
+            dos.writeInt(-1);
+		} else {
+            byte[] byteArray = str.getBytes(utf8Charset);
+	    	dos.writeInt(byteArray.length);
+			dos.write(byteArray);
+    	}
+    }
+	private Integer readInteger(ObjectInputStream dis) throws IOException{
+		Integer intReturn;
+        int length = 0;
+        length = dis.readByte();
+		if (length == -1) {
+			intReturn = null;
+		} else {
+	    	intReturn = dis.readInt();
+		}
+		return intReturn;
+	}
+
+	private void writeInteger(Integer intNum, ObjectOutputStream dos) throws IOException{
+		if(intNum == null) {
+            dos.writeByte(-1);
+		} else {
+			dos.writeByte(0);
+	    	dos.writeInt(intNum);
+    	}
+	}
+
+    public void readData(ObjectInputStream dis) {
+
+		synchronized(commonByteArrayLock_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets) {
+
+        	try {
+
+        		int length = 0;
+		
+					this.date = readDate(dis);
+					
+					this.hashtag = readString(dis);
+					
+					this.country = readString(dis);
+					
+						this.c_negatives = readInteger(dis);
+					
+        	} catch (IOException e) {
+	            throw new RuntimeException(e);
+
+		
+
+        }
+
+		
+
+      }
+
+
+    }
+
+    public void writeData(ObjectOutputStream dos) {
+        try {
+
+		
+					// java.util.Date
+				
+						writeDate(this.date,dos);
+					
+					// String
+				
+						writeString(this.hashtag,dos);
+					
+					// String
+				
+						writeString(this.country,dos);
+					
+					// Integer
+				
+						writeInteger(this.c_negatives,dos);
+					
+        	} catch (IOException e) {
+	            throw new RuntimeException(e);
+        }
+
+
+    }
+
+
+    public String toString() {
+
+		StringBuilder sb = new StringBuilder();
+		sb.append(super.toString());
+		sb.append("[");
+		sb.append("date="+String.valueOf(date));
+		sb.append(",hashtag="+hashtag);
+		sb.append(",country="+country);
+		sb.append(",c_negatives="+String.valueOf(c_negatives));
+	    sb.append("]");
+
+	    return sb.toString();
+    }
+
+    /**
+     * Compare keys
+     */
+    public int compareTo(OnRowsEndStructtAggregateRow_6 other) {
+
+		int returnValue = -1;
+		
+	    return returnValue;
+    }
+
+
+    private int checkNullsAndCompare(Object object1, Object object2) {
+        int returnValue = 0;
+		if (object1 instanceof Comparable && object2 instanceof Comparable) {
+            returnValue = ((Comparable) object1).compareTo(object2);
+        } else if (object1 != null && object2 != null) {
+            returnValue = compareStrings(object1.toString(), object2.toString());
+        } else if (object1 == null && object2 != null) {
+            returnValue = 1;
+        } else if (object1 != null && object2 == null) {
+            returnValue = -1;
+        } else {
+            returnValue = 0;
+        }
+
+        return returnValue;
+    }
+
+    private int compareStrings(String string1, String string2) {
+        return string1.compareTo(string2);
+    }
+
+
+}
+
+public static class row12Struct implements routines.system.IPersistableRow<row12Struct> {
+    final static byte[] commonByteArrayLock_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[0];
+    static byte[] commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[0];
+
+	
+			    public java.util.Date date;
+
+				public java.util.Date getDate () {
+					return this.date;
+				}
+				
+			    public String hashtag;
+
+				public String getHashtag () {
+					return this.hashtag;
+				}
+				
+			    public String country;
+
+				public String getCountry () {
+					return this.country;
+				}
+				
+			    public Integer c_positives;
+
+				public Integer getC_positives () {
+					return this.c_positives;
+				}
+				
+
+
+
+	private java.util.Date readDate(ObjectInputStream dis) throws IOException{
+		java.util.Date dateReturn = null;
+        int length = 0;
+        length = dis.readByte();
+		if (length == -1) {
+			dateReturn = null;
+		} else {
+	    	dateReturn = new Date(dis.readLong());
+		}
+		return dateReturn;
+	}
+
+    private void writeDate(java.util.Date date1, ObjectOutputStream dos) throws IOException{
+		if(date1 == null) {
+            dos.writeByte(-1);
+		} else {
+			dos.writeByte(0);
+	    	dos.writeLong(date1.getTime());
+    	}
+    }
+
+	private String readString(ObjectInputStream dis) throws IOException{
+		String strReturn = null;
+		int length = 0;
+        length = dis.readInt();
+		if (length == -1) {
+			strReturn = null;
+		} else {
+			if(length > commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets.length) {
+				if(length < 1024 && commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets.length == 0) {
+   					commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[1024];
+				} else {
+   					commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[2 * length];
+   				}
+			}
+			dis.readFully(commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets, 0, length);
+			strReturn = new String(commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets, 0, length, utf8Charset);
+		}
+		return strReturn;
+	}
+
+    private void writeString(String str, ObjectOutputStream dos) throws IOException{
+		if(str == null) {
+            dos.writeInt(-1);
+		} else {
+            byte[] byteArray = str.getBytes(utf8Charset);
+	    	dos.writeInt(byteArray.length);
+			dos.write(byteArray);
+    	}
+    }
+	private Integer readInteger(ObjectInputStream dis) throws IOException{
+		Integer intReturn;
+        int length = 0;
+        length = dis.readByte();
+		if (length == -1) {
+			intReturn = null;
+		} else {
+	    	intReturn = dis.readInt();
+		}
+		return intReturn;
+	}
+
+	private void writeInteger(Integer intNum, ObjectOutputStream dos) throws IOException{
+		if(intNum == null) {
+            dos.writeByte(-1);
+		} else {
+			dos.writeByte(0);
+	    	dos.writeInt(intNum);
+    	}
+	}
+
+    public void readData(ObjectInputStream dis) {
+
+		synchronized(commonByteArrayLock_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets) {
+
+        	try {
+
+        		int length = 0;
+		
+					this.date = readDate(dis);
+					
+					this.hashtag = readString(dis);
+					
+					this.country = readString(dis);
+					
+						this.c_positives = readInteger(dis);
+					
+        	} catch (IOException e) {
+	            throw new RuntimeException(e);
+
+		
+
+        }
+
+		
+
+      }
+
+
+    }
+
+    public void writeData(ObjectOutputStream dos) {
+        try {
+
+		
+					// java.util.Date
+				
+						writeDate(this.date,dos);
+					
+					// String
+				
+						writeString(this.hashtag,dos);
+					
+					// String
+				
+						writeString(this.country,dos);
+					
+					// Integer
+				
+						writeInteger(this.c_positives,dos);
+					
+        	} catch (IOException e) {
+	            throw new RuntimeException(e);
+        }
+
+
+    }
+
+
+    public String toString() {
+
+		StringBuilder sb = new StringBuilder();
+		sb.append(super.toString());
+		sb.append("[");
+		sb.append("date="+String.valueOf(date));
+		sb.append(",hashtag="+hashtag);
+		sb.append(",country="+country);
+		sb.append(",c_positives="+String.valueOf(c_positives));
+	    sb.append("]");
+
+	    return sb.toString();
+    }
+
+    /**
+     * Compare keys
+     */
+    public int compareTo(row12Struct other) {
+
+		int returnValue = -1;
+		
+	    return returnValue;
+    }
+
+
+    private int checkNullsAndCompare(Object object1, Object object2) {
+        int returnValue = 0;
+		if (object1 instanceof Comparable && object2 instanceof Comparable) {
+            returnValue = ((Comparable) object1).compareTo(object2);
+        } else if (object1 != null && object2 != null) {
+            returnValue = compareStrings(object1.toString(), object2.toString());
+        } else if (object1 == null && object2 != null) {
+            returnValue = 1;
+        } else if (object1 != null && object2 == null) {
+            returnValue = -1;
+        } else {
+            returnValue = 0;
+        }
+
+        return returnValue;
+    }
+
+    private int compareStrings(String string1, String string2) {
+        return string1.compareTo(string2);
+    }
+
+
+}
+
+public static class OnRowsEndStructtAggregateRow_5 implements routines.system.IPersistableRow<OnRowsEndStructtAggregateRow_5> {
+    final static byte[] commonByteArrayLock_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[0];
+    static byte[] commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[0];
+
+	
+			    public java.util.Date date;
+
+				public java.util.Date getDate () {
+					return this.date;
+				}
+				
+			    public String hashtag;
+
+				public String getHashtag () {
+					return this.hashtag;
+				}
+				
+			    public String country;
+
+				public String getCountry () {
+					return this.country;
+				}
+				
+			    public Integer c_positives;
+
+				public Integer getC_positives () {
+					return this.c_positives;
+				}
+				
+
+
+
+	private java.util.Date readDate(ObjectInputStream dis) throws IOException{
+		java.util.Date dateReturn = null;
+        int length = 0;
+        length = dis.readByte();
+		if (length == -1) {
+			dateReturn = null;
+		} else {
+	    	dateReturn = new Date(dis.readLong());
+		}
+		return dateReturn;
+	}
+
+    private void writeDate(java.util.Date date1, ObjectOutputStream dos) throws IOException{
+		if(date1 == null) {
+            dos.writeByte(-1);
+		} else {
+			dos.writeByte(0);
+	    	dos.writeLong(date1.getTime());
+    	}
+    }
+
+	private String readString(ObjectInputStream dis) throws IOException{
+		String strReturn = null;
+		int length = 0;
+        length = dis.readInt();
+		if (length == -1) {
+			strReturn = null;
+		} else {
+			if(length > commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets.length) {
+				if(length < 1024 && commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets.length == 0) {
+   					commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[1024];
+				} else {
+   					commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[2 * length];
+   				}
+			}
+			dis.readFully(commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets, 0, length);
+			strReturn = new String(commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets, 0, length, utf8Charset);
+		}
+		return strReturn;
+	}
+
+    private void writeString(String str, ObjectOutputStream dos) throws IOException{
+		if(str == null) {
+            dos.writeInt(-1);
+		} else {
+            byte[] byteArray = str.getBytes(utf8Charset);
+	    	dos.writeInt(byteArray.length);
+			dos.write(byteArray);
+    	}
+    }
+	private Integer readInteger(ObjectInputStream dis) throws IOException{
+		Integer intReturn;
+        int length = 0;
+        length = dis.readByte();
+		if (length == -1) {
+			intReturn = null;
+		} else {
+	    	intReturn = dis.readInt();
+		}
+		return intReturn;
+	}
+
+	private void writeInteger(Integer intNum, ObjectOutputStream dos) throws IOException{
+		if(intNum == null) {
+            dos.writeByte(-1);
+		} else {
+			dos.writeByte(0);
+	    	dos.writeInt(intNum);
+    	}
+	}
+
+    public void readData(ObjectInputStream dis) {
+
+		synchronized(commonByteArrayLock_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets) {
+
+        	try {
+
+        		int length = 0;
+		
+					this.date = readDate(dis);
+					
+					this.hashtag = readString(dis);
+					
+					this.country = readString(dis);
+					
+						this.c_positives = readInteger(dis);
+					
+        	} catch (IOException e) {
+	            throw new RuntimeException(e);
+
+		
+
+        }
+
+		
+
+      }
+
+
+    }
+
+    public void writeData(ObjectOutputStream dos) {
+        try {
+
+		
+					// java.util.Date
+				
+						writeDate(this.date,dos);
+					
+					// String
+				
+						writeString(this.hashtag,dos);
+					
+					// String
+				
+						writeString(this.country,dos);
+					
+					// Integer
+				
+						writeInteger(this.c_positives,dos);
+					
+        	} catch (IOException e) {
+	            throw new RuntimeException(e);
+        }
+
+
+    }
+
+
+    public String toString() {
+
+		StringBuilder sb = new StringBuilder();
+		sb.append(super.toString());
+		sb.append("[");
+		sb.append("date="+String.valueOf(date));
+		sb.append(",hashtag="+hashtag);
+		sb.append(",country="+country);
+		sb.append(",c_positives="+String.valueOf(c_positives));
+	    sb.append("]");
+
+	    return sb.toString();
+    }
+
+    /**
+     * Compare keys
+     */
+    public int compareTo(OnRowsEndStructtAggregateRow_5 other) {
+
+		int returnValue = -1;
+		
+	    return returnValue;
+    }
+
+
+    private int checkNullsAndCompare(Object object1, Object object2) {
+        int returnValue = 0;
+		if (object1 instanceof Comparable && object2 instanceof Comparable) {
+            returnValue = ((Comparable) object1).compareTo(object2);
+        } else if (object1 != null && object2 != null) {
+            returnValue = compareStrings(object1.toString(), object2.toString());
+        } else if (object1 == null && object2 != null) {
+            returnValue = 1;
+        } else if (object1 != null && object2 == null) {
+            returnValue = -1;
+        } else {
+            returnValue = 0;
+        }
+
+        return returnValue;
+    }
+
+    private int compareStrings(String string1, String string2) {
+        return string1.compareTo(string2);
+    }
+
+
+}
+
+public static class c_postStruct implements routines.system.IPersistableRow<c_postStruct> {
+    final static byte[] commonByteArrayLock_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[0];
+    static byte[] commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[0];
+
+	
+			    public java.util.Date date;
+
+				public java.util.Date getDate () {
+					return this.date;
+				}
+				
+			    public String hashtag;
+
+				public String getHashtag () {
+					return this.hashtag;
+				}
+				
+			    public String country;
+
+				public String getCountry () {
+					return this.country;
+				}
+				
+			    public Integer c_positives;
+
+				public Integer getC_positives () {
+					return this.c_positives;
+				}
+				
+
+
+
+	private java.util.Date readDate(ObjectInputStream dis) throws IOException{
+		java.util.Date dateReturn = null;
+        int length = 0;
+        length = dis.readByte();
+		if (length == -1) {
+			dateReturn = null;
+		} else {
+	    	dateReturn = new Date(dis.readLong());
+		}
+		return dateReturn;
+	}
+
+    private void writeDate(java.util.Date date1, ObjectOutputStream dos) throws IOException{
+		if(date1 == null) {
+            dos.writeByte(-1);
+		} else {
+			dos.writeByte(0);
+	    	dos.writeLong(date1.getTime());
+    	}
+    }
+
+	private String readString(ObjectInputStream dis) throws IOException{
+		String strReturn = null;
+		int length = 0;
+        length = dis.readInt();
+		if (length == -1) {
+			strReturn = null;
+		} else {
+			if(length > commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets.length) {
+				if(length < 1024 && commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets.length == 0) {
+   					commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[1024];
+				} else {
+   					commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[2 * length];
+   				}
+			}
+			dis.readFully(commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets, 0, length);
+			strReturn = new String(commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets, 0, length, utf8Charset);
+		}
+		return strReturn;
+	}
+
+    private void writeString(String str, ObjectOutputStream dos) throws IOException{
+		if(str == null) {
+            dos.writeInt(-1);
+		} else {
+            byte[] byteArray = str.getBytes(utf8Charset);
+	    	dos.writeInt(byteArray.length);
+			dos.write(byteArray);
+    	}
+    }
+	private Integer readInteger(ObjectInputStream dis) throws IOException{
+		Integer intReturn;
+        int length = 0;
+        length = dis.readByte();
+		if (length == -1) {
+			intReturn = null;
+		} else {
+	    	intReturn = dis.readInt();
+		}
+		return intReturn;
+	}
+
+	private void writeInteger(Integer intNum, ObjectOutputStream dos) throws IOException{
+		if(intNum == null) {
+            dos.writeByte(-1);
+		} else {
+			dos.writeByte(0);
+	    	dos.writeInt(intNum);
+    	}
+	}
+
+    public void readData(ObjectInputStream dis) {
+
+		synchronized(commonByteArrayLock_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets) {
+
+        	try {
+
+        		int length = 0;
+		
+					this.date = readDate(dis);
+					
+					this.hashtag = readString(dis);
+					
+					this.country = readString(dis);
+					
+						this.c_positives = readInteger(dis);
+					
+        	} catch (IOException e) {
+	            throw new RuntimeException(e);
+
+		
+
+        }
+
+		
+
+      }
+
+
+    }
+
+    public void writeData(ObjectOutputStream dos) {
+        try {
+
+		
+					// java.util.Date
+				
+						writeDate(this.date,dos);
+					
+					// String
+				
+						writeString(this.hashtag,dos);
+					
+					// String
+				
+						writeString(this.country,dos);
+					
+					// Integer
+				
+						writeInteger(this.c_positives,dos);
+					
+        	} catch (IOException e) {
+	            throw new RuntimeException(e);
+        }
+
+
+    }
+
+
+    public String toString() {
+
+		StringBuilder sb = new StringBuilder();
+		sb.append(super.toString());
+		sb.append("[");
+		sb.append("date="+String.valueOf(date));
+		sb.append(",hashtag="+hashtag);
+		sb.append(",country="+country);
+		sb.append(",c_positives="+String.valueOf(c_positives));
+	    sb.append("]");
+
+	    return sb.toString();
+    }
+
+    /**
+     * Compare keys
+     */
+    public int compareTo(c_postStruct other) {
+
+		int returnValue = -1;
+		
+	    return returnValue;
+    }
+
+
+    private int checkNullsAndCompare(Object object1, Object object2) {
+        int returnValue = 0;
+		if (object1 instanceof Comparable && object2 instanceof Comparable) {
+            returnValue = ((Comparable) object1).compareTo(object2);
+        } else if (object1 != null && object2 != null) {
+            returnValue = compareStrings(object1.toString(), object2.toString());
+        } else if (object1 == null && object2 != null) {
+            returnValue = 1;
+        } else if (object1 != null && object2 == null) {
+            returnValue = -1;
+        } else {
+            returnValue = 0;
+        }
+
+        return returnValue;
+    }
+
+    private int compareStrings(String string1, String string2) {
+        return string1.compareTo(string2);
+    }
+
+
+}
+
+public static class c_negtStruct implements routines.system.IPersistableRow<c_negtStruct> {
+    final static byte[] commonByteArrayLock_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[0];
+    static byte[] commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[0];
+
+	
+			    public java.util.Date date;
+
+				public java.util.Date getDate () {
+					return this.date;
+				}
+				
+			    public String hashtag;
+
+				public String getHashtag () {
+					return this.hashtag;
+				}
+				
+			    public String country;
+
+				public String getCountry () {
+					return this.country;
+				}
+				
+			    public Integer c_negatives;
+
+				public Integer getC_negatives () {
+					return this.c_negatives;
+				}
+				
+
+
+
+	private java.util.Date readDate(ObjectInputStream dis) throws IOException{
+		java.util.Date dateReturn = null;
+        int length = 0;
+        length = dis.readByte();
+		if (length == -1) {
+			dateReturn = null;
+		} else {
+	    	dateReturn = new Date(dis.readLong());
+		}
+		return dateReturn;
+	}
+
+    private void writeDate(java.util.Date date1, ObjectOutputStream dos) throws IOException{
+		if(date1 == null) {
+            dos.writeByte(-1);
+		} else {
+			dos.writeByte(0);
+	    	dos.writeLong(date1.getTime());
+    	}
+    }
+
+	private String readString(ObjectInputStream dis) throws IOException{
+		String strReturn = null;
+		int length = 0;
+        length = dis.readInt();
+		if (length == -1) {
+			strReturn = null;
+		} else {
+			if(length > commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets.length) {
+				if(length < 1024 && commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets.length == 0) {
+   					commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[1024];
+				} else {
+   					commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[2 * length];
+   				}
+			}
+			dis.readFully(commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets, 0, length);
+			strReturn = new String(commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets, 0, length, utf8Charset);
+		}
+		return strReturn;
+	}
+
+    private void writeString(String str, ObjectOutputStream dos) throws IOException{
+		if(str == null) {
+            dos.writeInt(-1);
+		} else {
+            byte[] byteArray = str.getBytes(utf8Charset);
+	    	dos.writeInt(byteArray.length);
+			dos.write(byteArray);
+    	}
+    }
+	private Integer readInteger(ObjectInputStream dis) throws IOException{
+		Integer intReturn;
+        int length = 0;
+        length = dis.readByte();
+		if (length == -1) {
+			intReturn = null;
+		} else {
+	    	intReturn = dis.readInt();
+		}
+		return intReturn;
+	}
+
+	private void writeInteger(Integer intNum, ObjectOutputStream dos) throws IOException{
+		if(intNum == null) {
+            dos.writeByte(-1);
+		} else {
+			dos.writeByte(0);
+	    	dos.writeInt(intNum);
+    	}
+	}
+
+    public void readData(ObjectInputStream dis) {
+
+		synchronized(commonByteArrayLock_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets) {
+
+        	try {
+
+        		int length = 0;
+		
+					this.date = readDate(dis);
+					
+					this.hashtag = readString(dis);
+					
+					this.country = readString(dis);
+					
+						this.c_negatives = readInteger(dis);
+					
+        	} catch (IOException e) {
+	            throw new RuntimeException(e);
+
+		
+
+        }
+
+		
+
+      }
+
+
+    }
+
+    public void writeData(ObjectOutputStream dos) {
+        try {
+
+		
+					// java.util.Date
+				
+						writeDate(this.date,dos);
+					
+					// String
+				
+						writeString(this.hashtag,dos);
+					
+					// String
+				
+						writeString(this.country,dos);
+					
+					// Integer
+				
+						writeInteger(this.c_negatives,dos);
+					
+        	} catch (IOException e) {
+	            throw new RuntimeException(e);
+        }
+
+
+    }
+
+
+    public String toString() {
+
+		StringBuilder sb = new StringBuilder();
+		sb.append(super.toString());
+		sb.append("[");
+		sb.append("date="+String.valueOf(date));
+		sb.append(",hashtag="+hashtag);
+		sb.append(",country="+country);
+		sb.append(",c_negatives="+String.valueOf(c_negatives));
+	    sb.append("]");
+
+	    return sb.toString();
+    }
+
+    /**
+     * Compare keys
+     */
+    public int compareTo(c_negtStruct other) {
+
+		int returnValue = -1;
+		
+	    return returnValue;
+    }
+
+
+    private int checkNullsAndCompare(Object object1, Object object2) {
+        int returnValue = 0;
+		if (object1 instanceof Comparable && object2 instanceof Comparable) {
+            returnValue = ((Comparable) object1).compareTo(object2);
+        } else if (object1 != null && object2 != null) {
+            returnValue = compareStrings(object1.toString(), object2.toString());
+        } else if (object1 == null && object2 != null) {
+            returnValue = 1;
+        } else if (object1 != null && object2 == null) {
+            returnValue = -1;
+        } else {
+            returnValue = 0;
+        }
+
+        return returnValue;
+    }
+
+    private int compareStrings(String string1, String string2) {
+        return string1.compareTo(string2);
+    }
+
+
+}
+
+public static class count_inStruct implements routines.system.IPersistableRow<count_inStruct> {
+    final static byte[] commonByteArrayLock_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[0];
+    static byte[] commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[0];
+
+	
+			    public java.util.Date date;
+
+				public java.util.Date getDate () {
+					return this.date;
+				}
+				
+			    public String hashtag;
+
+				public String getHashtag () {
+					return this.hashtag;
+				}
+				
+			    public String country;
+
+				public String getCountry () {
+					return this.country;
+				}
+				
+			    public Integer c_tweet;
+
+				public Integer getC_tweet () {
+					return this.c_tweet;
+				}
+				
+
+
+
+	private java.util.Date readDate(ObjectInputStream dis) throws IOException{
+		java.util.Date dateReturn = null;
+        int length = 0;
+        length = dis.readByte();
+		if (length == -1) {
+			dateReturn = null;
+		} else {
+	    	dateReturn = new Date(dis.readLong());
+		}
+		return dateReturn;
+	}
+
+    private void writeDate(java.util.Date date1, ObjectOutputStream dos) throws IOException{
+		if(date1 == null) {
+            dos.writeByte(-1);
+		} else {
+			dos.writeByte(0);
+	    	dos.writeLong(date1.getTime());
+    	}
+    }
+
+	private String readString(ObjectInputStream dis) throws IOException{
+		String strReturn = null;
+		int length = 0;
+        length = dis.readInt();
+		if (length == -1) {
+			strReturn = null;
+		} else {
+			if(length > commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets.length) {
+				if(length < 1024 && commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets.length == 0) {
+   					commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[1024];
+				} else {
+   					commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[2 * length];
+   				}
+			}
+			dis.readFully(commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets, 0, length);
+			strReturn = new String(commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets, 0, length, utf8Charset);
+		}
+		return strReturn;
+	}
+
+    private void writeString(String str, ObjectOutputStream dos) throws IOException{
+		if(str == null) {
+            dos.writeInt(-1);
+		} else {
+            byte[] byteArray = str.getBytes(utf8Charset);
+	    	dos.writeInt(byteArray.length);
+			dos.write(byteArray);
+    	}
+    }
+	private Integer readInteger(ObjectInputStream dis) throws IOException{
+		Integer intReturn;
+        int length = 0;
+        length = dis.readByte();
+		if (length == -1) {
+			intReturn = null;
+		} else {
+	    	intReturn = dis.readInt();
+		}
+		return intReturn;
+	}
+
+	private void writeInteger(Integer intNum, ObjectOutputStream dos) throws IOException{
+		if(intNum == null) {
+            dos.writeByte(-1);
+		} else {
+			dos.writeByte(0);
+	    	dos.writeInt(intNum);
+    	}
+	}
+
+    public void readData(ObjectInputStream dis) {
+
+		synchronized(commonByteArrayLock_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets) {
+
+        	try {
+
+        		int length = 0;
+		
+					this.date = readDate(dis);
+					
+					this.hashtag = readString(dis);
+					
+					this.country = readString(dis);
+					
+						this.c_tweet = readInteger(dis);
+					
+        	} catch (IOException e) {
+	            throw new RuntimeException(e);
+
+		
+
+        }
+
+		
+
+      }
+
+
+    }
+
+    public void writeData(ObjectOutputStream dos) {
+        try {
+
+		
+					// java.util.Date
+				
+						writeDate(this.date,dos);
+					
+					// String
+				
+						writeString(this.hashtag,dos);
+					
+					// String
+				
+						writeString(this.country,dos);
+					
+					// Integer
+				
+						writeInteger(this.c_tweet,dos);
+					
+        	} catch (IOException e) {
+	            throw new RuntimeException(e);
+        }
+
+
+    }
+
+
+    public String toString() {
+
+		StringBuilder sb = new StringBuilder();
+		sb.append(super.toString());
+		sb.append("[");
+		sb.append("date="+String.valueOf(date));
+		sb.append(",hashtag="+hashtag);
+		sb.append(",country="+country);
+		sb.append(",c_tweet="+String.valueOf(c_tweet));
+	    sb.append("]");
+
+	    return sb.toString();
+    }
+
+    /**
+     * Compare keys
+     */
+    public int compareTo(count_inStruct other) {
+
+		int returnValue = -1;
+		
+	    return returnValue;
+    }
+
+
+    private int checkNullsAndCompare(Object object1, Object object2) {
+        int returnValue = 0;
+		if (object1 instanceof Comparable && object2 instanceof Comparable) {
+            returnValue = ((Comparable) object1).compareTo(object2);
+        } else if (object1 != null && object2 != null) {
+            returnValue = compareStrings(object1.toString(), object2.toString());
+        } else if (object1 == null && object2 != null) {
+            returnValue = 1;
+        } else if (object1 != null && object2 == null) {
+            returnValue = -1;
+        } else {
+            returnValue = 0;
+        }
+
+        return returnValue;
+    }
+
+    private int compareStrings(String string1, String string2) {
+        return string1.compareTo(string2);
+    }
+
+
+}
+
+public static class row10Struct implements routines.system.IPersistableRow<row10Struct> {
+    final static byte[] commonByteArrayLock_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[0];
+    static byte[] commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[0];
+
+	
+			    public java.util.Date date;
+
+				public java.util.Date getDate () {
+					return this.date;
+				}
+				
+			    public String id;
+
+				public String getId () {
+					return this.id;
+				}
+				
+			    public String hashtag;
+
+				public String getHashtag () {
+					return this.hashtag;
+				}
+				
+			    public String country;
+
+				public String getCountry () {
+					return this.country;
+				}
+				
+			    public Integer sentiment;
+
+				public Integer getSentiment () {
+					return this.sentiment;
+				}
+				
+
+
+
+	private java.util.Date readDate(ObjectInputStream dis) throws IOException{
+		java.util.Date dateReturn = null;
+        int length = 0;
+        length = dis.readByte();
+		if (length == -1) {
+			dateReturn = null;
+		} else {
+	    	dateReturn = new Date(dis.readLong());
+		}
+		return dateReturn;
+	}
+
+    private void writeDate(java.util.Date date1, ObjectOutputStream dos) throws IOException{
+		if(date1 == null) {
+            dos.writeByte(-1);
+		} else {
+			dos.writeByte(0);
+	    	dos.writeLong(date1.getTime());
+    	}
+    }
+
+	private String readString(ObjectInputStream dis) throws IOException{
+		String strReturn = null;
+		int length = 0;
+        length = dis.readInt();
+		if (length == -1) {
+			strReturn = null;
+		} else {
+			if(length > commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets.length) {
+				if(length < 1024 && commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets.length == 0) {
+   					commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[1024];
+				} else {
+   					commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[2 * length];
+   				}
+			}
+			dis.readFully(commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets, 0, length);
+			strReturn = new String(commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets, 0, length, utf8Charset);
+		}
+		return strReturn;
+	}
+
+    private void writeString(String str, ObjectOutputStream dos) throws IOException{
+		if(str == null) {
+            dos.writeInt(-1);
+		} else {
+            byte[] byteArray = str.getBytes(utf8Charset);
+	    	dos.writeInt(byteArray.length);
+			dos.write(byteArray);
+    	}
+    }
+	private Integer readInteger(ObjectInputStream dis) throws IOException{
+		Integer intReturn;
+        int length = 0;
+        length = dis.readByte();
+		if (length == -1) {
+			intReturn = null;
+		} else {
+	    	intReturn = dis.readInt();
+		}
+		return intReturn;
+	}
+
+	private void writeInteger(Integer intNum, ObjectOutputStream dos) throws IOException{
+		if(intNum == null) {
+            dos.writeByte(-1);
+		} else {
+			dos.writeByte(0);
+	    	dos.writeInt(intNum);
+    	}
+	}
+
+    public void readData(ObjectInputStream dis) {
+
+		synchronized(commonByteArrayLock_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets) {
+
+        	try {
+
+        		int length = 0;
+		
+					this.date = readDate(dis);
+					
+					this.id = readString(dis);
+					
+					this.hashtag = readString(dis);
+					
+					this.country = readString(dis);
+					
+						this.sentiment = readInteger(dis);
+					
+        	} catch (IOException e) {
+	            throw new RuntimeException(e);
+
+		
+
+        }
+
+		
+
+      }
+
+
+    }
+
+    public void writeData(ObjectOutputStream dos) {
+        try {
+
+		
+					// java.util.Date
+				
+						writeDate(this.date,dos);
+					
+					// String
+				
+						writeString(this.id,dos);
+					
+					// String
+				
+						writeString(this.hashtag,dos);
+					
+					// String
+				
+						writeString(this.country,dos);
+					
+					// Integer
+				
+						writeInteger(this.sentiment,dos);
+					
+        	} catch (IOException e) {
+	            throw new RuntimeException(e);
+        }
+
+
+    }
+
+
+    public String toString() {
+
+		StringBuilder sb = new StringBuilder();
+		sb.append(super.toString());
+		sb.append("[");
+		sb.append("date="+String.valueOf(date));
+		sb.append(",id="+id);
+		sb.append(",hashtag="+hashtag);
+		sb.append(",country="+country);
+		sb.append(",sentiment="+String.valueOf(sentiment));
+	    sb.append("]");
+
+	    return sb.toString();
+    }
+
+    /**
+     * Compare keys
+     */
+    public int compareTo(row10Struct other) {
+
+		int returnValue = -1;
+		
+	    return returnValue;
+    }
+
+
+    private int checkNullsAndCompare(Object object1, Object object2) {
+        int returnValue = 0;
+		if (object1 instanceof Comparable && object2 instanceof Comparable) {
+            returnValue = ((Comparable) object1).compareTo(object2);
+        } else if (object1 != null && object2 != null) {
+            returnValue = compareStrings(object1.toString(), object2.toString());
+        } else if (object1 == null && object2 != null) {
+            returnValue = 1;
+        } else if (object1 != null && object2 == null) {
+            returnValue = -1;
+        } else {
+            returnValue = 0;
+        }
+
+        return returnValue;
+    }
+
+    private int compareStrings(String string1, String string2) {
+        return string1.compareTo(string2);
+    }
+
+
+}
+
+public static class OnRowsEndStructtAggregateRow_4 implements routines.system.IPersistableRow<OnRowsEndStructtAggregateRow_4> {
+    final static byte[] commonByteArrayLock_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[0];
+    static byte[] commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[0];
+
+	
+			    public java.util.Date date;
+
+				public java.util.Date getDate () {
+					return this.date;
+				}
+				
+			    public String id;
+
+				public String getId () {
+					return this.id;
+				}
+				
+			    public String hashtag;
+
+				public String getHashtag () {
+					return this.hashtag;
+				}
+				
+			    public String country;
+
+				public String getCountry () {
+					return this.country;
+				}
+				
+			    public Integer sentiment;
+
+				public Integer getSentiment () {
+					return this.sentiment;
+				}
+				
+
+
+
+	private java.util.Date readDate(ObjectInputStream dis) throws IOException{
+		java.util.Date dateReturn = null;
+        int length = 0;
+        length = dis.readByte();
+		if (length == -1) {
+			dateReturn = null;
+		} else {
+	    	dateReturn = new Date(dis.readLong());
+		}
+		return dateReturn;
+	}
+
+    private void writeDate(java.util.Date date1, ObjectOutputStream dos) throws IOException{
+		if(date1 == null) {
+            dos.writeByte(-1);
+		} else {
+			dos.writeByte(0);
+	    	dos.writeLong(date1.getTime());
+    	}
+    }
+
+	private String readString(ObjectInputStream dis) throws IOException{
+		String strReturn = null;
+		int length = 0;
+        length = dis.readInt();
+		if (length == -1) {
+			strReturn = null;
+		} else {
+			if(length > commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets.length) {
+				if(length < 1024 && commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets.length == 0) {
+   					commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[1024];
+				} else {
+   					commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[2 * length];
+   				}
+			}
+			dis.readFully(commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets, 0, length);
+			strReturn = new String(commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets, 0, length, utf8Charset);
+		}
+		return strReturn;
+	}
+
+    private void writeString(String str, ObjectOutputStream dos) throws IOException{
+		if(str == null) {
+            dos.writeInt(-1);
+		} else {
+            byte[] byteArray = str.getBytes(utf8Charset);
+	    	dos.writeInt(byteArray.length);
+			dos.write(byteArray);
+    	}
+    }
+	private Integer readInteger(ObjectInputStream dis) throws IOException{
+		Integer intReturn;
+        int length = 0;
+        length = dis.readByte();
+		if (length == -1) {
+			intReturn = null;
+		} else {
+	    	intReturn = dis.readInt();
+		}
+		return intReturn;
+	}
+
+	private void writeInteger(Integer intNum, ObjectOutputStream dos) throws IOException{
+		if(intNum == null) {
+            dos.writeByte(-1);
+		} else {
+			dos.writeByte(0);
+	    	dos.writeInt(intNum);
+    	}
+	}
+
+    public void readData(ObjectInputStream dis) {
+
+		synchronized(commonByteArrayLock_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets) {
+
+        	try {
+
+        		int length = 0;
+		
+					this.date = readDate(dis);
+					
+					this.id = readString(dis);
+					
+					this.hashtag = readString(dis);
+					
+					this.country = readString(dis);
+					
+						this.sentiment = readInteger(dis);
+					
+        	} catch (IOException e) {
+	            throw new RuntimeException(e);
+
+		
+
+        }
+
+		
+
+      }
+
+
+    }
+
+    public void writeData(ObjectOutputStream dos) {
+        try {
+
+		
+					// java.util.Date
+				
+						writeDate(this.date,dos);
+					
+					// String
+				
+						writeString(this.id,dos);
+					
+					// String
+				
+						writeString(this.hashtag,dos);
+					
+					// String
+				
+						writeString(this.country,dos);
+					
+					// Integer
+				
+						writeInteger(this.sentiment,dos);
+					
+        	} catch (IOException e) {
+	            throw new RuntimeException(e);
+        }
+
+
+    }
+
+
+    public String toString() {
+
+		StringBuilder sb = new StringBuilder();
+		sb.append(super.toString());
+		sb.append("[");
+		sb.append("date="+String.valueOf(date));
+		sb.append(",id="+id);
+		sb.append(",hashtag="+hashtag);
+		sb.append(",country="+country);
+		sb.append(",sentiment="+String.valueOf(sentiment));
+	    sb.append("]");
+
+	    return sb.toString();
+    }
+
+    /**
+     * Compare keys
+     */
+    public int compareTo(OnRowsEndStructtAggregateRow_4 other) {
+
+		int returnValue = -1;
+		
+	    return returnValue;
+    }
+
+
+    private int checkNullsAndCompare(Object object1, Object object2) {
+        int returnValue = 0;
+		if (object1 instanceof Comparable && object2 instanceof Comparable) {
+            returnValue = ((Comparable) object1).compareTo(object2);
+        } else if (object1 != null && object2 != null) {
+            returnValue = compareStrings(object1.toString(), object2.toString());
+        } else if (object1 == null && object2 != null) {
+            returnValue = 1;
+        } else if (object1 != null && object2 == null) {
+            returnValue = -1;
+        } else {
+            returnValue = 0;
+        }
+
+        return returnValue;
+    }
+
+    private int compareStrings(String string1, String string2) {
+        return string1.compareTo(string2);
+    }
+
+
+}
 
 public static class row8Struct implements routines.system.IPersistableRow<row8Struct> {
     final static byte[] commonByteArrayLock_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[0];
@@ -3090,6 +5522,229 @@ public static class negStruct implements routines.system.IPersistableRow<negStru
 
 }
 
+public static class cntStruct implements routines.system.IPersistableRow<cntStruct> {
+    final static byte[] commonByteArrayLock_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[0];
+    static byte[] commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[0];
+
+	
+			    public java.util.Date date;
+
+				public java.util.Date getDate () {
+					return this.date;
+				}
+				
+			    public String id;
+
+				public String getId () {
+					return this.id;
+				}
+				
+			    public String hashtag;
+
+				public String getHashtag () {
+					return this.hashtag;
+				}
+				
+			    public String country;
+
+				public String getCountry () {
+					return this.country;
+				}
+				
+			    public Integer sentiment;
+
+				public Integer getSentiment () {
+					return this.sentiment;
+				}
+				
+
+
+
+	private java.util.Date readDate(ObjectInputStream dis) throws IOException{
+		java.util.Date dateReturn = null;
+        int length = 0;
+        length = dis.readByte();
+		if (length == -1) {
+			dateReturn = null;
+		} else {
+	    	dateReturn = new Date(dis.readLong());
+		}
+		return dateReturn;
+	}
+
+    private void writeDate(java.util.Date date1, ObjectOutputStream dos) throws IOException{
+		if(date1 == null) {
+            dos.writeByte(-1);
+		} else {
+			dos.writeByte(0);
+	    	dos.writeLong(date1.getTime());
+    	}
+    }
+
+	private String readString(ObjectInputStream dis) throws IOException{
+		String strReturn = null;
+		int length = 0;
+        length = dis.readInt();
+		if (length == -1) {
+			strReturn = null;
+		} else {
+			if(length > commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets.length) {
+				if(length < 1024 && commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets.length == 0) {
+   					commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[1024];
+				} else {
+   					commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[2 * length];
+   				}
+			}
+			dis.readFully(commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets, 0, length);
+			strReturn = new String(commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets, 0, length, utf8Charset);
+		}
+		return strReturn;
+	}
+
+    private void writeString(String str, ObjectOutputStream dos) throws IOException{
+		if(str == null) {
+            dos.writeInt(-1);
+		} else {
+            byte[] byteArray = str.getBytes(utf8Charset);
+	    	dos.writeInt(byteArray.length);
+			dos.write(byteArray);
+    	}
+    }
+	private Integer readInteger(ObjectInputStream dis) throws IOException{
+		Integer intReturn;
+        int length = 0;
+        length = dis.readByte();
+		if (length == -1) {
+			intReturn = null;
+		} else {
+	    	intReturn = dis.readInt();
+		}
+		return intReturn;
+	}
+
+	private void writeInteger(Integer intNum, ObjectOutputStream dos) throws IOException{
+		if(intNum == null) {
+            dos.writeByte(-1);
+		} else {
+			dos.writeByte(0);
+	    	dos.writeInt(intNum);
+    	}
+	}
+
+    public void readData(ObjectInputStream dis) {
+
+		synchronized(commonByteArrayLock_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets) {
+
+        	try {
+
+        		int length = 0;
+		
+					this.date = readDate(dis);
+					
+					this.id = readString(dis);
+					
+					this.hashtag = readString(dis);
+					
+					this.country = readString(dis);
+					
+						this.sentiment = readInteger(dis);
+					
+        	} catch (IOException e) {
+	            throw new RuntimeException(e);
+
+		
+
+        }
+
+		
+
+      }
+
+
+    }
+
+    public void writeData(ObjectOutputStream dos) {
+        try {
+
+		
+					// java.util.Date
+				
+						writeDate(this.date,dos);
+					
+					// String
+				
+						writeString(this.id,dos);
+					
+					// String
+				
+						writeString(this.hashtag,dos);
+					
+					// String
+				
+						writeString(this.country,dos);
+					
+					// Integer
+				
+						writeInteger(this.sentiment,dos);
+					
+        	} catch (IOException e) {
+	            throw new RuntimeException(e);
+        }
+
+
+    }
+
+
+    public String toString() {
+
+		StringBuilder sb = new StringBuilder();
+		sb.append(super.toString());
+		sb.append("[");
+		sb.append("date="+String.valueOf(date));
+		sb.append(",id="+id);
+		sb.append(",hashtag="+hashtag);
+		sb.append(",country="+country);
+		sb.append(",sentiment="+String.valueOf(sentiment));
+	    sb.append("]");
+
+	    return sb.toString();
+    }
+
+    /**
+     * Compare keys
+     */
+    public int compareTo(cntStruct other) {
+
+		int returnValue = -1;
+		
+	    return returnValue;
+    }
+
+
+    private int checkNullsAndCompare(Object object1, Object object2) {
+        int returnValue = 0;
+		if (object1 instanceof Comparable && object2 instanceof Comparable) {
+            returnValue = ((Comparable) object1).compareTo(object2);
+        } else if (object1 != null && object2 != null) {
+            returnValue = compareStrings(object1.toString(), object2.toString());
+        } else if (object1 == null && object2 != null) {
+            returnValue = 1;
+        } else if (object1 != null && object2 == null) {
+            returnValue = -1;
+        } else {
+            returnValue = 0;
+        }
+
+        return returnValue;
+    }
+
+    private int compareStrings(String string1, String string2) {
+        return string1.compareTo(string2);
+    }
+
+
+}
+
 public static class row5Struct implements routines.system.IPersistableRow<row5Struct> {
     final static byte[] commonByteArrayLock_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[0];
     static byte[] commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[0];
@@ -4536,6 +7191,14 @@ posStruct pos = new posStruct();
 row7Struct row7 = new row7Struct();
 negStruct neg = new negStruct();
 row8Struct row8 = new row8Struct();
+cntStruct cnt = new cntStruct();
+row10Struct row10 = new row10Struct();
+c_postStruct c_post = new c_postStruct();
+row12Struct row12 = new row12Struct();
+c_negtStruct c_negt = new c_negtStruct();
+row11Struct row11 = new row11Struct();
+count_inStruct count_in = new count_inStruct();
+row13Struct row13 = new row13Struct();
 
 
 
@@ -5247,6 +7910,249 @@ java.util.Map hashAggreg_tAggregateRow_2 = new java.util.HashMap();
 
 
 
+
+	
+	/**
+	 * [tAggregateRow_4_AGGOUT begin ] start
+	 */
+
+	
+
+	
+		
+		ok_Hash.put("tAggregateRow_4_AGGOUT", false);
+		start_Hash.put("tAggregateRow_4_AGGOUT", System.currentTimeMillis());
+		
+	
+		currentVirtualComponent = "tAggregateRow_4";
+	
+	currentComponent="tAggregateRow_4_AGGOUT";
+
+	
+					if(execStat) {
+						runStat.updateStatOnConnection(resourceMap,iterateId,0,0,"cnt");
+					}
+				
+		int tos_count_tAggregateRow_4_AGGOUT = 0;
+		
+
+// ------------ Seems it is not used
+
+java.util.Map hashAggreg_tAggregateRow_4 = new java.util.HashMap(); 
+
+// ------------
+
+	class UtilClass_tAggregateRow_4 { // G_OutBegin_AggR_144
+
+		public double sd(Double[] data) {
+	        final int n = data.length;
+        	if (n < 2) {
+	            return Double.NaN;
+        	}
+        	double d1 = 0d;
+        	double d2 =0d;
+	        
+	        for (int i = 0; i < data.length; i++) {
+            	d1 += (data[i]*data[i]);
+            	d2 += data[i];
+        	}
+        
+	        return Math.sqrt((n*d1 - d2*d2)/n/(n-1));
+	    }
+	    
+		public void checkedIADD(byte a, byte b, boolean checkTypeOverFlow, boolean checkUlp) {
+		    byte r = (byte) (a + b);
+		    if (checkTypeOverFlow && ((a ^ r) & (b ^ r)) < 0) {
+		        throw new RuntimeException(buildOverflowMessage(String.valueOf(a), String.valueOf(b), "'short/Short'", "'byte/Byte'"));
+		    }
+		}
+		
+		public void checkedIADD(short a, short b, boolean checkTypeOverFlow, boolean checkUlp) {
+		    short r = (short) (a + b);
+		    if (checkTypeOverFlow && ((a ^ r) & (b ^ r)) < 0) {
+		        throw new RuntimeException(buildOverflowMessage(String.valueOf(a), String.valueOf(b), "'int/Integer'", "'short/Short'"));
+		    }
+		}
+		
+		public void checkedIADD(int a, int b, boolean checkTypeOverFlow, boolean checkUlp) {
+		    int r = a + b;
+		    if (checkTypeOverFlow && ((a ^ r) & (b ^ r)) < 0) {
+		        throw new RuntimeException(buildOverflowMessage(String.valueOf(a), String.valueOf(b), "'long/Long'", "'int/Integer'"));
+		    }
+		}
+		
+		public void checkedIADD(long a, long b, boolean checkTypeOverFlow, boolean checkUlp) {
+		    long r = a + b;
+		    if (checkTypeOverFlow && ((a ^ r) & (b ^ r)) < 0) {
+		        throw new RuntimeException(buildOverflowMessage(String.valueOf(a), String.valueOf(b), "'BigDecimal'", "'long/Long'"));
+		    }
+		}
+		
+		public void checkedIADD(float a, float b, boolean checkTypeOverFlow, boolean checkUlp) {
+		
+			if(checkUlp) {
+			    float minAddedValue = Math.ulp(a);
+			    if (minAddedValue > Math.abs(b)) {
+			        throw new RuntimeException(buildPrecisionMessage(String.valueOf(a), String.valueOf(b), "'double' or 'BigDecimal'", "'float/Float'"));
+			    }
+			}
+			
+		    if (checkTypeOverFlow && ((double) a + (double) b > (double) Float.MAX_VALUE) || ((double) a + (double) b < (double) -Float.MAX_VALUE)) {
+		        throw new RuntimeException(buildOverflowMessage(String.valueOf(a), String.valueOf(b), "'double' or 'BigDecimal'", "'float/Float'"));
+		    }
+		}
+		
+		public void checkedIADD(double a, double b, boolean checkTypeOverFlow, boolean checkUlp) {
+		
+			if(checkUlp) {
+			    double minAddedValue = Math.ulp(a);
+			    if (minAddedValue > Math.abs(b)) {
+			        throw new RuntimeException(buildPrecisionMessage(String.valueOf(a), String.valueOf(a), "'BigDecimal'", "'double/Double'"));
+			    }
+			}
+		
+		    if (checkTypeOverFlow && (a + b > (double) Double.MAX_VALUE) || (a + b < -Double.MAX_VALUE )) {
+		        throw new RuntimeException(buildOverflowMessage(String.valueOf(a), String.valueOf(b), "'BigDecimal'", "'double/Double'"));
+		    }
+		}
+		
+		public void checkedIADD(double a, byte b, boolean checkTypeOverFlow, boolean checkUlp) {
+		
+		    if (checkTypeOverFlow && (a + b > (double) Double.MAX_VALUE) || (a + b < -Double.MAX_VALUE )) {
+		        throw new RuntimeException(buildOverflowMessage(String.valueOf(a), String.valueOf(b), "'BigDecimal'", "'double/Double'"));
+		    }
+		}
+		
+		public void checkedIADD(double a, short b, boolean checkTypeOverFlow, boolean checkUlp) {
+		
+		    if (checkTypeOverFlow && (a + b > (double) Double.MAX_VALUE) || (a + b < -Double.MAX_VALUE )) {
+		        throw new RuntimeException(buildOverflowMessage(String.valueOf(a), String.valueOf(b), "'BigDecimal'", "'double/Double'"));
+		    }
+		}
+		
+		public void checkedIADD(double a, int b, boolean checkTypeOverFlow, boolean checkUlp) {
+		
+		    if (checkTypeOverFlow && (a + b > (double) Double.MAX_VALUE) || (a + b < -Double.MAX_VALUE )) {
+		        throw new RuntimeException(buildOverflowMessage(String.valueOf(a), String.valueOf(b), "'BigDecimal'", "'double/Double'"));
+		    }
+		}
+		
+		public void checkedIADD(double a, float b, boolean checkTypeOverFlow, boolean checkUlp) {
+		
+			if(checkUlp) {
+			    double minAddedValue = Math.ulp(a);
+			    if (minAddedValue > Math.abs(b)) {
+			        throw new RuntimeException(buildPrecisionMessage(String.valueOf(a), String.valueOf(a), "'BigDecimal'", "'double/Double'"));
+			    }
+			}
+		
+		    if (checkTypeOverFlow && (a + b > (double) Double.MAX_VALUE) || (a + b < -Double.MAX_VALUE )) {
+		        throw new RuntimeException(buildOverflowMessage(String.valueOf(a), String.valueOf(b), "'BigDecimal'", "'double/Double'"));
+		    }
+		}
+		
+		private String buildOverflowMessage(String a, String b, String advicedTypes, String originalType) {
+		    return "Type overflow when adding " + b + " to " + a
+		    + ", to resolve this problem, increase the precision by using "+ advicedTypes +" type in place of "+ originalType +".";
+		}
+		
+		private String buildPrecisionMessage(String a, String b, String advicedTypes, String originalType) {
+		    return "The double precision is unsufficient to add the value " + b + " to " + a
+		    + ", to resolve this problem, increase the precision by using "+ advicedTypes +" type in place of "+ originalType +".";
+		}
+
+	} // G_OutBegin_AggR_144
+
+	UtilClass_tAggregateRow_4 utilClass_tAggregateRow_4 = new UtilClass_tAggregateRow_4();
+
+	
+
+	class AggOperationStruct_tAggregateRow_4 { // G_OutBegin_AggR_100
+
+		private static final int DEFAULT_HASHCODE = 1;
+	    private static final int PRIME = 31;
+	    private int hashCode = DEFAULT_HASHCODE;
+	    public boolean hashCodeDirty = true;
+
+    				java.util.Date date;
+    				String id;
+    				String hashtag;
+    				String country;
+         			Integer sentiment_sum;
+        
+	    @Override
+		public int hashCode() {
+			if (this.hashCodeDirty) {
+				final int prime = PRIME;
+				int result = DEFAULT_HASHCODE;
+		
+							result = prime * result + ((this.date == null) ? 0 : this.date.hashCode());
+							
+							result = prime * result + ((this.id == null) ? 0 : this.id.hashCode());
+							
+							result = prime * result + ((this.hashtag == null) ? 0 : this.hashtag.hashCode());
+							
+							result = prime * result + ((this.country == null) ? 0 : this.country.hashCode());
+							
+	    		this.hashCode = result;
+	    		this.hashCodeDirty = false;		
+			}
+			return this.hashCode;
+		}
+		
+		@Override
+		public boolean equals(Object obj) {
+			if (this == obj) return true;
+			if (obj == null) return false;
+			if (getClass() != obj.getClass()) return false;
+			final AggOperationStruct_tAggregateRow_4 other = (AggOperationStruct_tAggregateRow_4) obj;
+			
+							if (this.date == null) {
+								if (other.date != null) 
+									return false;
+							} else if (!this.date.equals(other.date)) 
+								return false;
+						
+							if (this.id == null) {
+								if (other.id != null) 
+									return false;
+							} else if (!this.id.equals(other.id)) 
+								return false;
+						
+							if (this.hashtag == null) {
+								if (other.hashtag != null) 
+									return false;
+							} else if (!this.hashtag.equals(other.hashtag)) 
+								return false;
+						
+							if (this.country == null) {
+								if (other.country != null) 
+									return false;
+							} else if (!this.country.equals(other.country)) 
+								return false;
+						
+			
+			return true;
+		}
+  
+        
+	} // G_OutBegin_AggR_100
+
+	AggOperationStruct_tAggregateRow_4 operation_result_tAggregateRow_4 = null;
+	AggOperationStruct_tAggregateRow_4 operation_finder_tAggregateRow_4 = new AggOperationStruct_tAggregateRow_4();
+	java.util.Map<AggOperationStruct_tAggregateRow_4,AggOperationStruct_tAggregateRow_4> hash_tAggregateRow_4 = new java.util.HashMap<AggOperationStruct_tAggregateRow_4,AggOperationStruct_tAggregateRow_4>();
+	
+
+ 
+
+
+
+/**
+ * [tAggregateRow_4_AGGOUT begin ] stop
+ */
+
+
+
 	
 	/**
 	 * [tMap_2 begin ] start
@@ -5299,6 +8205,7 @@ Var__tMap_2__Struct Var__tMap_2 = new Var__tMap_2__Struct();
 out2Struct out2_tmp = new out2Struct();
 posStruct pos_tmp = new posStruct();
 negStruct neg_tmp = new negStruct();
+cntStruct cnt_tmp = new cntStruct();
 // ###############################
 
         
@@ -6244,6 +9151,7 @@ Var__tMap_2__Struct Var = Var__tMap_2;// ###############################
 out2 = null;
 pos = null;
 neg = null;
+cnt = null;
 
 
 // # Output table : 'out2'
@@ -6280,6 +9188,14 @@ neg_tmp.country = row5.country ;
 neg_tmp.s_negativos = row6.sentiment ;
 neg = neg_tmp;
 } // closing filter/reject
+
+// # Output table : 'cnt'
+cnt_tmp.date = row5.date ;
+cnt_tmp.id = row5.id ;
+cnt_tmp.hashtag = row5.hashtag ;
+cnt_tmp.country = row5.country ;
+cnt_tmp.sentiment = row6.sentiment ;
+cnt = cnt_tmp;
 // ###############################
 
 } // end of Var scope
@@ -6677,6 +9593,126 @@ operation_finder_tAggregateRow_2.date = neg.date;
  */
 
 } // End of branch "neg"
+
+
+
+
+// Start of branch "cnt"
+if(cnt != null) { 
+
+
+
+	
+	/**
+	 * [tAggregateRow_4_AGGOUT main ] start
+	 */
+
+	
+
+	
+	
+		currentVirtualComponent = "tAggregateRow_4";
+	
+	currentComponent="tAggregateRow_4_AGGOUT";
+
+	
+					if(execStat){
+						runStat.updateStatOnConnection(iterateId,1,1,"cnt");
+					}
+					
+	
+operation_finder_tAggregateRow_4.date = cnt.date;
+			operation_finder_tAggregateRow_4.id = cnt.id;
+			operation_finder_tAggregateRow_4.hashtag = cnt.hashtag;
+			operation_finder_tAggregateRow_4.country = cnt.country;
+			
+
+	operation_finder_tAggregateRow_4.hashCodeDirty = true;
+	
+	operation_result_tAggregateRow_4 = hash_tAggregateRow_4.get(operation_finder_tAggregateRow_4);
+
+	
+
+	if(operation_result_tAggregateRow_4 == null) { // G_OutMain_AggR_001
+
+		operation_result_tAggregateRow_4 = new AggOperationStruct_tAggregateRow_4();
+
+		operation_result_tAggregateRow_4.date = operation_finder_tAggregateRow_4.date;
+				operation_result_tAggregateRow_4.id = operation_finder_tAggregateRow_4.id;
+				operation_result_tAggregateRow_4.hashtag = operation_finder_tAggregateRow_4.hashtag;
+				operation_result_tAggregateRow_4.country = operation_finder_tAggregateRow_4.country;
+				
+		
+		
+
+		hash_tAggregateRow_4.put(operation_result_tAggregateRow_4, operation_result_tAggregateRow_4);
+	
+	} // G_OutMain_AggR_001
+
+
+	
+					if(operation_result_tAggregateRow_4.sentiment_sum == null) {
+						operation_result_tAggregateRow_4.sentiment_sum = (int) 0;
+					}
+					
+					if( cnt.sentiment != null)
+						operation_result_tAggregateRow_4.sentiment_sum += cnt.sentiment;
+
+
+ 
+
+
+	tos_count_tAggregateRow_4_AGGOUT++;
+
+/**
+ * [tAggregateRow_4_AGGOUT main ] stop
+ */
+	
+	/**
+	 * [tAggregateRow_4_AGGOUT process_data_begin ] start
+	 */
+
+	
+
+	
+	
+		currentVirtualComponent = "tAggregateRow_4";
+	
+	currentComponent="tAggregateRow_4_AGGOUT";
+
+	
+
+ 
+
+
+
+/**
+ * [tAggregateRow_4_AGGOUT process_data_begin ] stop
+ */
+	
+	/**
+	 * [tAggregateRow_4_AGGOUT process_data_end ] start
+	 */
+
+	
+
+	
+	
+		currentVirtualComponent = "tAggregateRow_4";
+	
+	currentComponent="tAggregateRow_4_AGGOUT";
+
+	
+
+ 
+
+
+
+/**
+ * [tAggregateRow_4_AGGOUT process_data_end ] stop
+ */
+
+} // End of branch "cnt"
 
 
 
@@ -8421,6 +11457,2827 @@ end_Hash.put("tFileOutputDelimited_2", System.currentTimeMillis());
 
 
 
+	
+	/**
+	 * [tAggregateRow_4_AGGOUT end ] start
+	 */
+
+	
+
+	
+	
+		currentVirtualComponent = "tAggregateRow_4";
+	
+	currentComponent="tAggregateRow_4_AGGOUT";
+
+	
+
+				if(execStat){
+			  		runStat.updateStat(resourceMap,iterateId,2,0,"cnt");
+			  	}
+			  	
+ 
+
+ok_Hash.put("tAggregateRow_4_AGGOUT", true);
+end_Hash.put("tAggregateRow_4_AGGOUT", System.currentTimeMillis());
+
+
+
+
+/**
+ * [tAggregateRow_4_AGGOUT end ] stop
+ */
+
+
+
+	
+	/**
+	 * [tAggregateRow_5_AGGOUT begin ] start
+	 */
+
+	
+
+	
+		
+		ok_Hash.put("tAggregateRow_5_AGGOUT", false);
+		start_Hash.put("tAggregateRow_5_AGGOUT", System.currentTimeMillis());
+		
+	
+		currentVirtualComponent = "tAggregateRow_5";
+	
+	currentComponent="tAggregateRow_5_AGGOUT";
+
+	
+					if(execStat) {
+						runStat.updateStatOnConnection(resourceMap,iterateId,0,0,"c_post");
+					}
+				
+		int tos_count_tAggregateRow_5_AGGOUT = 0;
+		
+
+// ------------ Seems it is not used
+
+java.util.Map hashAggreg_tAggregateRow_5 = new java.util.HashMap(); 
+
+// ------------
+
+	class UtilClass_tAggregateRow_5 { // G_OutBegin_AggR_144
+
+		public double sd(Double[] data) {
+	        final int n = data.length;
+        	if (n < 2) {
+	            return Double.NaN;
+        	}
+        	double d1 = 0d;
+        	double d2 =0d;
+	        
+	        for (int i = 0; i < data.length; i++) {
+            	d1 += (data[i]*data[i]);
+            	d2 += data[i];
+        	}
+        
+	        return Math.sqrt((n*d1 - d2*d2)/n/(n-1));
+	    }
+	    
+		public void checkedIADD(byte a, byte b, boolean checkTypeOverFlow, boolean checkUlp) {
+		    byte r = (byte) (a + b);
+		    if (checkTypeOverFlow && ((a ^ r) & (b ^ r)) < 0) {
+		        throw new RuntimeException(buildOverflowMessage(String.valueOf(a), String.valueOf(b), "'short/Short'", "'byte/Byte'"));
+		    }
+		}
+		
+		public void checkedIADD(short a, short b, boolean checkTypeOverFlow, boolean checkUlp) {
+		    short r = (short) (a + b);
+		    if (checkTypeOverFlow && ((a ^ r) & (b ^ r)) < 0) {
+		        throw new RuntimeException(buildOverflowMessage(String.valueOf(a), String.valueOf(b), "'int/Integer'", "'short/Short'"));
+		    }
+		}
+		
+		public void checkedIADD(int a, int b, boolean checkTypeOverFlow, boolean checkUlp) {
+		    int r = a + b;
+		    if (checkTypeOverFlow && ((a ^ r) & (b ^ r)) < 0) {
+		        throw new RuntimeException(buildOverflowMessage(String.valueOf(a), String.valueOf(b), "'long/Long'", "'int/Integer'"));
+		    }
+		}
+		
+		public void checkedIADD(long a, long b, boolean checkTypeOverFlow, boolean checkUlp) {
+		    long r = a + b;
+		    if (checkTypeOverFlow && ((a ^ r) & (b ^ r)) < 0) {
+		        throw new RuntimeException(buildOverflowMessage(String.valueOf(a), String.valueOf(b), "'BigDecimal'", "'long/Long'"));
+		    }
+		}
+		
+		public void checkedIADD(float a, float b, boolean checkTypeOverFlow, boolean checkUlp) {
+		
+			if(checkUlp) {
+			    float minAddedValue = Math.ulp(a);
+			    if (minAddedValue > Math.abs(b)) {
+			        throw new RuntimeException(buildPrecisionMessage(String.valueOf(a), String.valueOf(b), "'double' or 'BigDecimal'", "'float/Float'"));
+			    }
+			}
+			
+		    if (checkTypeOverFlow && ((double) a + (double) b > (double) Float.MAX_VALUE) || ((double) a + (double) b < (double) -Float.MAX_VALUE)) {
+		        throw new RuntimeException(buildOverflowMessage(String.valueOf(a), String.valueOf(b), "'double' or 'BigDecimal'", "'float/Float'"));
+		    }
+		}
+		
+		public void checkedIADD(double a, double b, boolean checkTypeOverFlow, boolean checkUlp) {
+		
+			if(checkUlp) {
+			    double minAddedValue = Math.ulp(a);
+			    if (minAddedValue > Math.abs(b)) {
+			        throw new RuntimeException(buildPrecisionMessage(String.valueOf(a), String.valueOf(a), "'BigDecimal'", "'double/Double'"));
+			    }
+			}
+		
+		    if (checkTypeOverFlow && (a + b > (double) Double.MAX_VALUE) || (a + b < -Double.MAX_VALUE )) {
+		        throw new RuntimeException(buildOverflowMessage(String.valueOf(a), String.valueOf(b), "'BigDecimal'", "'double/Double'"));
+		    }
+		}
+		
+		public void checkedIADD(double a, byte b, boolean checkTypeOverFlow, boolean checkUlp) {
+		
+		    if (checkTypeOverFlow && (a + b > (double) Double.MAX_VALUE) || (a + b < -Double.MAX_VALUE )) {
+		        throw new RuntimeException(buildOverflowMessage(String.valueOf(a), String.valueOf(b), "'BigDecimal'", "'double/Double'"));
+		    }
+		}
+		
+		public void checkedIADD(double a, short b, boolean checkTypeOverFlow, boolean checkUlp) {
+		
+		    if (checkTypeOverFlow && (a + b > (double) Double.MAX_VALUE) || (a + b < -Double.MAX_VALUE )) {
+		        throw new RuntimeException(buildOverflowMessage(String.valueOf(a), String.valueOf(b), "'BigDecimal'", "'double/Double'"));
+		    }
+		}
+		
+		public void checkedIADD(double a, int b, boolean checkTypeOverFlow, boolean checkUlp) {
+		
+		    if (checkTypeOverFlow && (a + b > (double) Double.MAX_VALUE) || (a + b < -Double.MAX_VALUE )) {
+		        throw new RuntimeException(buildOverflowMessage(String.valueOf(a), String.valueOf(b), "'BigDecimal'", "'double/Double'"));
+		    }
+		}
+		
+		public void checkedIADD(double a, float b, boolean checkTypeOverFlow, boolean checkUlp) {
+		
+			if(checkUlp) {
+			    double minAddedValue = Math.ulp(a);
+			    if (minAddedValue > Math.abs(b)) {
+			        throw new RuntimeException(buildPrecisionMessage(String.valueOf(a), String.valueOf(a), "'BigDecimal'", "'double/Double'"));
+			    }
+			}
+		
+		    if (checkTypeOverFlow && (a + b > (double) Double.MAX_VALUE) || (a + b < -Double.MAX_VALUE )) {
+		        throw new RuntimeException(buildOverflowMessage(String.valueOf(a), String.valueOf(b), "'BigDecimal'", "'double/Double'"));
+		    }
+		}
+		
+		private String buildOverflowMessage(String a, String b, String advicedTypes, String originalType) {
+		    return "Type overflow when adding " + b + " to " + a
+		    + ", to resolve this problem, increase the precision by using "+ advicedTypes +" type in place of "+ originalType +".";
+		}
+		
+		private String buildPrecisionMessage(String a, String b, String advicedTypes, String originalType) {
+		    return "The double precision is unsufficient to add the value " + b + " to " + a
+		    + ", to resolve this problem, increase the precision by using "+ advicedTypes +" type in place of "+ originalType +".";
+		}
+
+	} // G_OutBegin_AggR_144
+
+	UtilClass_tAggregateRow_5 utilClass_tAggregateRow_5 = new UtilClass_tAggregateRow_5();
+
+	
+
+	class AggOperationStruct_tAggregateRow_5 { // G_OutBegin_AggR_100
+
+		private static final int DEFAULT_HASHCODE = 1;
+	    private static final int PRIME = 31;
+	    private int hashCode = DEFAULT_HASHCODE;
+	    public boolean hashCodeDirty = true;
+
+    				java.util.Date date;
+    				String hashtag;
+    				String country;
+         			Integer c_positives_sum;
+        
+	    @Override
+		public int hashCode() {
+			if (this.hashCodeDirty) {
+				final int prime = PRIME;
+				int result = DEFAULT_HASHCODE;
+		
+							result = prime * result + ((this.date == null) ? 0 : this.date.hashCode());
+							
+							result = prime * result + ((this.hashtag == null) ? 0 : this.hashtag.hashCode());
+							
+							result = prime * result + ((this.country == null) ? 0 : this.country.hashCode());
+							
+	    		this.hashCode = result;
+	    		this.hashCodeDirty = false;		
+			}
+			return this.hashCode;
+		}
+		
+		@Override
+		public boolean equals(Object obj) {
+			if (this == obj) return true;
+			if (obj == null) return false;
+			if (getClass() != obj.getClass()) return false;
+			final AggOperationStruct_tAggregateRow_5 other = (AggOperationStruct_tAggregateRow_5) obj;
+			
+							if (this.date == null) {
+								if (other.date != null) 
+									return false;
+							} else if (!this.date.equals(other.date)) 
+								return false;
+						
+							if (this.hashtag == null) {
+								if (other.hashtag != null) 
+									return false;
+							} else if (!this.hashtag.equals(other.hashtag)) 
+								return false;
+						
+							if (this.country == null) {
+								if (other.country != null) 
+									return false;
+							} else if (!this.country.equals(other.country)) 
+								return false;
+						
+			
+			return true;
+		}
+  
+        
+	} // G_OutBegin_AggR_100
+
+	AggOperationStruct_tAggregateRow_5 operation_result_tAggregateRow_5 = null;
+	AggOperationStruct_tAggregateRow_5 operation_finder_tAggregateRow_5 = new AggOperationStruct_tAggregateRow_5();
+	java.util.Map<AggOperationStruct_tAggregateRow_5,AggOperationStruct_tAggregateRow_5> hash_tAggregateRow_5 = new java.util.HashMap<AggOperationStruct_tAggregateRow_5,AggOperationStruct_tAggregateRow_5>();
+	
+
+ 
+
+
+
+/**
+ * [tAggregateRow_5_AGGOUT begin ] stop
+ */
+
+
+
+
+	
+	/**
+	 * [tAggregateRow_6_AGGOUT begin ] start
+	 */
+
+	
+
+	
+		
+		ok_Hash.put("tAggregateRow_6_AGGOUT", false);
+		start_Hash.put("tAggregateRow_6_AGGOUT", System.currentTimeMillis());
+		
+	
+		currentVirtualComponent = "tAggregateRow_6";
+	
+	currentComponent="tAggregateRow_6_AGGOUT";
+
+	
+					if(execStat) {
+						runStat.updateStatOnConnection(resourceMap,iterateId,0,0,"c_negt");
+					}
+				
+		int tos_count_tAggregateRow_6_AGGOUT = 0;
+		
+
+// ------------ Seems it is not used
+
+java.util.Map hashAggreg_tAggregateRow_6 = new java.util.HashMap(); 
+
+// ------------
+
+	class UtilClass_tAggregateRow_6 { // G_OutBegin_AggR_144
+
+		public double sd(Double[] data) {
+	        final int n = data.length;
+        	if (n < 2) {
+	            return Double.NaN;
+        	}
+        	double d1 = 0d;
+        	double d2 =0d;
+	        
+	        for (int i = 0; i < data.length; i++) {
+            	d1 += (data[i]*data[i]);
+            	d2 += data[i];
+        	}
+        
+	        return Math.sqrt((n*d1 - d2*d2)/n/(n-1));
+	    }
+	    
+		public void checkedIADD(byte a, byte b, boolean checkTypeOverFlow, boolean checkUlp) {
+		    byte r = (byte) (a + b);
+		    if (checkTypeOverFlow && ((a ^ r) & (b ^ r)) < 0) {
+		        throw new RuntimeException(buildOverflowMessage(String.valueOf(a), String.valueOf(b), "'short/Short'", "'byte/Byte'"));
+		    }
+		}
+		
+		public void checkedIADD(short a, short b, boolean checkTypeOverFlow, boolean checkUlp) {
+		    short r = (short) (a + b);
+		    if (checkTypeOverFlow && ((a ^ r) & (b ^ r)) < 0) {
+		        throw new RuntimeException(buildOverflowMessage(String.valueOf(a), String.valueOf(b), "'int/Integer'", "'short/Short'"));
+		    }
+		}
+		
+		public void checkedIADD(int a, int b, boolean checkTypeOverFlow, boolean checkUlp) {
+		    int r = a + b;
+		    if (checkTypeOverFlow && ((a ^ r) & (b ^ r)) < 0) {
+		        throw new RuntimeException(buildOverflowMessage(String.valueOf(a), String.valueOf(b), "'long/Long'", "'int/Integer'"));
+		    }
+		}
+		
+		public void checkedIADD(long a, long b, boolean checkTypeOverFlow, boolean checkUlp) {
+		    long r = a + b;
+		    if (checkTypeOverFlow && ((a ^ r) & (b ^ r)) < 0) {
+		        throw new RuntimeException(buildOverflowMessage(String.valueOf(a), String.valueOf(b), "'BigDecimal'", "'long/Long'"));
+		    }
+		}
+		
+		public void checkedIADD(float a, float b, boolean checkTypeOverFlow, boolean checkUlp) {
+		
+			if(checkUlp) {
+			    float minAddedValue = Math.ulp(a);
+			    if (minAddedValue > Math.abs(b)) {
+			        throw new RuntimeException(buildPrecisionMessage(String.valueOf(a), String.valueOf(b), "'double' or 'BigDecimal'", "'float/Float'"));
+			    }
+			}
+			
+		    if (checkTypeOverFlow && ((double) a + (double) b > (double) Float.MAX_VALUE) || ((double) a + (double) b < (double) -Float.MAX_VALUE)) {
+		        throw new RuntimeException(buildOverflowMessage(String.valueOf(a), String.valueOf(b), "'double' or 'BigDecimal'", "'float/Float'"));
+		    }
+		}
+		
+		public void checkedIADD(double a, double b, boolean checkTypeOverFlow, boolean checkUlp) {
+		
+			if(checkUlp) {
+			    double minAddedValue = Math.ulp(a);
+			    if (minAddedValue > Math.abs(b)) {
+			        throw new RuntimeException(buildPrecisionMessage(String.valueOf(a), String.valueOf(a), "'BigDecimal'", "'double/Double'"));
+			    }
+			}
+		
+		    if (checkTypeOverFlow && (a + b > (double) Double.MAX_VALUE) || (a + b < -Double.MAX_VALUE )) {
+		        throw new RuntimeException(buildOverflowMessage(String.valueOf(a), String.valueOf(b), "'BigDecimal'", "'double/Double'"));
+		    }
+		}
+		
+		public void checkedIADD(double a, byte b, boolean checkTypeOverFlow, boolean checkUlp) {
+		
+		    if (checkTypeOverFlow && (a + b > (double) Double.MAX_VALUE) || (a + b < -Double.MAX_VALUE )) {
+		        throw new RuntimeException(buildOverflowMessage(String.valueOf(a), String.valueOf(b), "'BigDecimal'", "'double/Double'"));
+		    }
+		}
+		
+		public void checkedIADD(double a, short b, boolean checkTypeOverFlow, boolean checkUlp) {
+		
+		    if (checkTypeOverFlow && (a + b > (double) Double.MAX_VALUE) || (a + b < -Double.MAX_VALUE )) {
+		        throw new RuntimeException(buildOverflowMessage(String.valueOf(a), String.valueOf(b), "'BigDecimal'", "'double/Double'"));
+		    }
+		}
+		
+		public void checkedIADD(double a, int b, boolean checkTypeOverFlow, boolean checkUlp) {
+		
+		    if (checkTypeOverFlow && (a + b > (double) Double.MAX_VALUE) || (a + b < -Double.MAX_VALUE )) {
+		        throw new RuntimeException(buildOverflowMessage(String.valueOf(a), String.valueOf(b), "'BigDecimal'", "'double/Double'"));
+		    }
+		}
+		
+		public void checkedIADD(double a, float b, boolean checkTypeOverFlow, boolean checkUlp) {
+		
+			if(checkUlp) {
+			    double minAddedValue = Math.ulp(a);
+			    if (minAddedValue > Math.abs(b)) {
+			        throw new RuntimeException(buildPrecisionMessage(String.valueOf(a), String.valueOf(a), "'BigDecimal'", "'double/Double'"));
+			    }
+			}
+		
+		    if (checkTypeOverFlow && (a + b > (double) Double.MAX_VALUE) || (a + b < -Double.MAX_VALUE )) {
+		        throw new RuntimeException(buildOverflowMessage(String.valueOf(a), String.valueOf(b), "'BigDecimal'", "'double/Double'"));
+		    }
+		}
+		
+		private String buildOverflowMessage(String a, String b, String advicedTypes, String originalType) {
+		    return "Type overflow when adding " + b + " to " + a
+		    + ", to resolve this problem, increase the precision by using "+ advicedTypes +" type in place of "+ originalType +".";
+		}
+		
+		private String buildPrecisionMessage(String a, String b, String advicedTypes, String originalType) {
+		    return "The double precision is unsufficient to add the value " + b + " to " + a
+		    + ", to resolve this problem, increase the precision by using "+ advicedTypes +" type in place of "+ originalType +".";
+		}
+
+	} // G_OutBegin_AggR_144
+
+	UtilClass_tAggregateRow_6 utilClass_tAggregateRow_6 = new UtilClass_tAggregateRow_6();
+
+	
+
+	class AggOperationStruct_tAggregateRow_6 { // G_OutBegin_AggR_100
+
+		private static final int DEFAULT_HASHCODE = 1;
+	    private static final int PRIME = 31;
+	    private int hashCode = DEFAULT_HASHCODE;
+	    public boolean hashCodeDirty = true;
+
+    				java.util.Date date;
+    				String hashtag;
+    				String country;
+         			Integer c_negatives_sum;
+        
+	    @Override
+		public int hashCode() {
+			if (this.hashCodeDirty) {
+				final int prime = PRIME;
+				int result = DEFAULT_HASHCODE;
+		
+							result = prime * result + ((this.date == null) ? 0 : this.date.hashCode());
+							
+							result = prime * result + ((this.hashtag == null) ? 0 : this.hashtag.hashCode());
+							
+							result = prime * result + ((this.country == null) ? 0 : this.country.hashCode());
+							
+	    		this.hashCode = result;
+	    		this.hashCodeDirty = false;		
+			}
+			return this.hashCode;
+		}
+		
+		@Override
+		public boolean equals(Object obj) {
+			if (this == obj) return true;
+			if (obj == null) return false;
+			if (getClass() != obj.getClass()) return false;
+			final AggOperationStruct_tAggregateRow_6 other = (AggOperationStruct_tAggregateRow_6) obj;
+			
+							if (this.date == null) {
+								if (other.date != null) 
+									return false;
+							} else if (!this.date.equals(other.date)) 
+								return false;
+						
+							if (this.hashtag == null) {
+								if (other.hashtag != null) 
+									return false;
+							} else if (!this.hashtag.equals(other.hashtag)) 
+								return false;
+						
+							if (this.country == null) {
+								if (other.country != null) 
+									return false;
+							} else if (!this.country.equals(other.country)) 
+								return false;
+						
+			
+			return true;
+		}
+  
+        
+	} // G_OutBegin_AggR_100
+
+	AggOperationStruct_tAggregateRow_6 operation_result_tAggregateRow_6 = null;
+	AggOperationStruct_tAggregateRow_6 operation_finder_tAggregateRow_6 = new AggOperationStruct_tAggregateRow_6();
+	java.util.Map<AggOperationStruct_tAggregateRow_6,AggOperationStruct_tAggregateRow_6> hash_tAggregateRow_6 = new java.util.HashMap<AggOperationStruct_tAggregateRow_6,AggOperationStruct_tAggregateRow_6>();
+	
+
+ 
+
+
+
+/**
+ * [tAggregateRow_6_AGGOUT begin ] stop
+ */
+
+
+
+
+	
+	/**
+	 * [tAggregateRow_7_AGGOUT begin ] start
+	 */
+
+	
+
+	
+		
+		ok_Hash.put("tAggregateRow_7_AGGOUT", false);
+		start_Hash.put("tAggregateRow_7_AGGOUT", System.currentTimeMillis());
+		
+	
+		currentVirtualComponent = "tAggregateRow_7";
+	
+	currentComponent="tAggregateRow_7_AGGOUT";
+
+	
+					if(execStat) {
+						runStat.updateStatOnConnection(resourceMap,iterateId,0,0,"count_in");
+					}
+				
+		int tos_count_tAggregateRow_7_AGGOUT = 0;
+		
+
+// ------------ Seems it is not used
+
+java.util.Map hashAggreg_tAggregateRow_7 = new java.util.HashMap(); 
+
+// ------------
+
+	class UtilClass_tAggregateRow_7 { // G_OutBegin_AggR_144
+
+		public double sd(Double[] data) {
+	        final int n = data.length;
+        	if (n < 2) {
+	            return Double.NaN;
+        	}
+        	double d1 = 0d;
+        	double d2 =0d;
+	        
+	        for (int i = 0; i < data.length; i++) {
+            	d1 += (data[i]*data[i]);
+            	d2 += data[i];
+        	}
+        
+	        return Math.sqrt((n*d1 - d2*d2)/n/(n-1));
+	    }
+	    
+		public void checkedIADD(byte a, byte b, boolean checkTypeOverFlow, boolean checkUlp) {
+		    byte r = (byte) (a + b);
+		    if (checkTypeOverFlow && ((a ^ r) & (b ^ r)) < 0) {
+		        throw new RuntimeException(buildOverflowMessage(String.valueOf(a), String.valueOf(b), "'short/Short'", "'byte/Byte'"));
+		    }
+		}
+		
+		public void checkedIADD(short a, short b, boolean checkTypeOverFlow, boolean checkUlp) {
+		    short r = (short) (a + b);
+		    if (checkTypeOverFlow && ((a ^ r) & (b ^ r)) < 0) {
+		        throw new RuntimeException(buildOverflowMessage(String.valueOf(a), String.valueOf(b), "'int/Integer'", "'short/Short'"));
+		    }
+		}
+		
+		public void checkedIADD(int a, int b, boolean checkTypeOverFlow, boolean checkUlp) {
+		    int r = a + b;
+		    if (checkTypeOverFlow && ((a ^ r) & (b ^ r)) < 0) {
+		        throw new RuntimeException(buildOverflowMessage(String.valueOf(a), String.valueOf(b), "'long/Long'", "'int/Integer'"));
+		    }
+		}
+		
+		public void checkedIADD(long a, long b, boolean checkTypeOverFlow, boolean checkUlp) {
+		    long r = a + b;
+		    if (checkTypeOverFlow && ((a ^ r) & (b ^ r)) < 0) {
+		        throw new RuntimeException(buildOverflowMessage(String.valueOf(a), String.valueOf(b), "'BigDecimal'", "'long/Long'"));
+		    }
+		}
+		
+		public void checkedIADD(float a, float b, boolean checkTypeOverFlow, boolean checkUlp) {
+		
+			if(checkUlp) {
+			    float minAddedValue = Math.ulp(a);
+			    if (minAddedValue > Math.abs(b)) {
+			        throw new RuntimeException(buildPrecisionMessage(String.valueOf(a), String.valueOf(b), "'double' or 'BigDecimal'", "'float/Float'"));
+			    }
+			}
+			
+		    if (checkTypeOverFlow && ((double) a + (double) b > (double) Float.MAX_VALUE) || ((double) a + (double) b < (double) -Float.MAX_VALUE)) {
+		        throw new RuntimeException(buildOverflowMessage(String.valueOf(a), String.valueOf(b), "'double' or 'BigDecimal'", "'float/Float'"));
+		    }
+		}
+		
+		public void checkedIADD(double a, double b, boolean checkTypeOverFlow, boolean checkUlp) {
+		
+			if(checkUlp) {
+			    double minAddedValue = Math.ulp(a);
+			    if (minAddedValue > Math.abs(b)) {
+			        throw new RuntimeException(buildPrecisionMessage(String.valueOf(a), String.valueOf(a), "'BigDecimal'", "'double/Double'"));
+			    }
+			}
+		
+		    if (checkTypeOverFlow && (a + b > (double) Double.MAX_VALUE) || (a + b < -Double.MAX_VALUE )) {
+		        throw new RuntimeException(buildOverflowMessage(String.valueOf(a), String.valueOf(b), "'BigDecimal'", "'double/Double'"));
+		    }
+		}
+		
+		public void checkedIADD(double a, byte b, boolean checkTypeOverFlow, boolean checkUlp) {
+		
+		    if (checkTypeOverFlow && (a + b > (double) Double.MAX_VALUE) || (a + b < -Double.MAX_VALUE )) {
+		        throw new RuntimeException(buildOverflowMessage(String.valueOf(a), String.valueOf(b), "'BigDecimal'", "'double/Double'"));
+		    }
+		}
+		
+		public void checkedIADD(double a, short b, boolean checkTypeOverFlow, boolean checkUlp) {
+		
+		    if (checkTypeOverFlow && (a + b > (double) Double.MAX_VALUE) || (a + b < -Double.MAX_VALUE )) {
+		        throw new RuntimeException(buildOverflowMessage(String.valueOf(a), String.valueOf(b), "'BigDecimal'", "'double/Double'"));
+		    }
+		}
+		
+		public void checkedIADD(double a, int b, boolean checkTypeOverFlow, boolean checkUlp) {
+		
+		    if (checkTypeOverFlow && (a + b > (double) Double.MAX_VALUE) || (a + b < -Double.MAX_VALUE )) {
+		        throw new RuntimeException(buildOverflowMessage(String.valueOf(a), String.valueOf(b), "'BigDecimal'", "'double/Double'"));
+		    }
+		}
+		
+		public void checkedIADD(double a, float b, boolean checkTypeOverFlow, boolean checkUlp) {
+		
+			if(checkUlp) {
+			    double minAddedValue = Math.ulp(a);
+			    if (minAddedValue > Math.abs(b)) {
+			        throw new RuntimeException(buildPrecisionMessage(String.valueOf(a), String.valueOf(a), "'BigDecimal'", "'double/Double'"));
+			    }
+			}
+		
+		    if (checkTypeOverFlow && (a + b > (double) Double.MAX_VALUE) || (a + b < -Double.MAX_VALUE )) {
+		        throw new RuntimeException(buildOverflowMessage(String.valueOf(a), String.valueOf(b), "'BigDecimal'", "'double/Double'"));
+		    }
+		}
+		
+		private String buildOverflowMessage(String a, String b, String advicedTypes, String originalType) {
+		    return "Type overflow when adding " + b + " to " + a
+		    + ", to resolve this problem, increase the precision by using "+ advicedTypes +" type in place of "+ originalType +".";
+		}
+		
+		private String buildPrecisionMessage(String a, String b, String advicedTypes, String originalType) {
+		    return "The double precision is unsufficient to add the value " + b + " to " + a
+		    + ", to resolve this problem, increase the precision by using "+ advicedTypes +" type in place of "+ originalType +".";
+		}
+
+	} // G_OutBegin_AggR_144
+
+	UtilClass_tAggregateRow_7 utilClass_tAggregateRow_7 = new UtilClass_tAggregateRow_7();
+
+	
+
+	class AggOperationStruct_tAggregateRow_7 { // G_OutBegin_AggR_100
+
+		private static final int DEFAULT_HASHCODE = 1;
+	    private static final int PRIME = 31;
+	    private int hashCode = DEFAULT_HASHCODE;
+	    public boolean hashCodeDirty = true;
+
+    				java.util.Date date;
+    				String hashtag;
+    				String country;
+         			Integer c_tweet_sum;
+        
+	    @Override
+		public int hashCode() {
+			if (this.hashCodeDirty) {
+				final int prime = PRIME;
+				int result = DEFAULT_HASHCODE;
+		
+							result = prime * result + ((this.date == null) ? 0 : this.date.hashCode());
+							
+							result = prime * result + ((this.hashtag == null) ? 0 : this.hashtag.hashCode());
+							
+							result = prime * result + ((this.country == null) ? 0 : this.country.hashCode());
+							
+	    		this.hashCode = result;
+	    		this.hashCodeDirty = false;		
+			}
+			return this.hashCode;
+		}
+		
+		@Override
+		public boolean equals(Object obj) {
+			if (this == obj) return true;
+			if (obj == null) return false;
+			if (getClass() != obj.getClass()) return false;
+			final AggOperationStruct_tAggregateRow_7 other = (AggOperationStruct_tAggregateRow_7) obj;
+			
+							if (this.date == null) {
+								if (other.date != null) 
+									return false;
+							} else if (!this.date.equals(other.date)) 
+								return false;
+						
+							if (this.hashtag == null) {
+								if (other.hashtag != null) 
+									return false;
+							} else if (!this.hashtag.equals(other.hashtag)) 
+								return false;
+						
+							if (this.country == null) {
+								if (other.country != null) 
+									return false;
+							} else if (!this.country.equals(other.country)) 
+								return false;
+						
+			
+			return true;
+		}
+  
+        
+	} // G_OutBegin_AggR_100
+
+	AggOperationStruct_tAggregateRow_7 operation_result_tAggregateRow_7 = null;
+	AggOperationStruct_tAggregateRow_7 operation_finder_tAggregateRow_7 = new AggOperationStruct_tAggregateRow_7();
+	java.util.Map<AggOperationStruct_tAggregateRow_7,AggOperationStruct_tAggregateRow_7> hash_tAggregateRow_7 = new java.util.HashMap<AggOperationStruct_tAggregateRow_7,AggOperationStruct_tAggregateRow_7>();
+	
+
+ 
+
+
+
+/**
+ * [tAggregateRow_7_AGGOUT begin ] stop
+ */
+
+
+
+	
+	/**
+	 * [tMap_3 begin ] start
+	 */
+
+	
+
+	
+		
+		ok_Hash.put("tMap_3", false);
+		start_Hash.put("tMap_3", System.currentTimeMillis());
+		
+	
+	currentComponent="tMap_3";
+
+	
+					if(execStat) {
+						runStat.updateStatOnConnection(resourceMap,iterateId,0,0,"row10");
+					}
+				
+		int tos_count_tMap_3 = 0;
+		
+
+
+
+
+// ###############################
+// # Lookup's keys initialization
+// ###############################        
+
+// ###############################
+// # Vars initialization
+class  Var__tMap_3__Struct  {
+}
+Var__tMap_3__Struct Var__tMap_3 = new Var__tMap_3__Struct();
+// ###############################
+
+// ###############################
+// # Outputs initialization
+c_postStruct c_post_tmp = new c_postStruct();
+c_negtStruct c_negt_tmp = new c_negtStruct();
+count_inStruct count_in_tmp = new count_inStruct();
+// ###############################
+
+        
+        
+
+
+
+        
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+/**
+ * [tMap_3 begin ] stop
+ */
+
+
+
+	
+	/**
+	 * [tAggregateRow_4_AGGIN begin ] start
+	 */
+
+	
+
+	
+		
+		ok_Hash.put("tAggregateRow_4_AGGIN", false);
+		start_Hash.put("tAggregateRow_4_AGGIN", System.currentTimeMillis());
+		
+	
+		currentVirtualComponent = "tAggregateRow_4";
+	
+	currentComponent="tAggregateRow_4_AGGIN";
+
+	
+		int tos_count_tAggregateRow_4_AGGIN = 0;
+		
+
+java.util.Collection<AggOperationStruct_tAggregateRow_4> values_tAggregateRow_4 = hash_tAggregateRow_4.values();
+
+globalMap.put("tAggregateRow_4_NB_LINE", values_tAggregateRow_4.size());
+
+for(AggOperationStruct_tAggregateRow_4 aggregated_row_tAggregateRow_4 : values_tAggregateRow_4) { // G_AggR_600
+
+
+
+ 
+
+
+
+/**
+ * [tAggregateRow_4_AGGIN begin ] stop
+ */
+	
+	/**
+	 * [tAggregateRow_4_AGGIN main ] start
+	 */
+
+	
+
+	
+	
+		currentVirtualComponent = "tAggregateRow_4";
+	
+	currentComponent="tAggregateRow_4_AGGIN";
+
+	
+
+            				    row10.date = aggregated_row_tAggregateRow_4.date;
+            				    
+            				    row10.id = aggregated_row_tAggregateRow_4.id;
+            				    
+            				    row10.hashtag = aggregated_row_tAggregateRow_4.hashtag;
+            				    
+            				    row10.country = aggregated_row_tAggregateRow_4.country;
+            				    row10.sentiment = aggregated_row_tAggregateRow_4.sentiment_sum;
+                                	
+
+ 
+
+
+	tos_count_tAggregateRow_4_AGGIN++;
+
+/**
+ * [tAggregateRow_4_AGGIN main ] stop
+ */
+	
+	/**
+	 * [tAggregateRow_4_AGGIN process_data_begin ] start
+	 */
+
+	
+
+	
+	
+		currentVirtualComponent = "tAggregateRow_4";
+	
+	currentComponent="tAggregateRow_4_AGGIN";
+
+	
+
+ 
+
+
+
+/**
+ * [tAggregateRow_4_AGGIN process_data_begin ] stop
+ */
+
+	
+	/**
+	 * [tMap_3 main ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tMap_3";
+
+	
+					if(execStat){
+						runStat.updateStatOnConnection(iterateId,1,1,"row10");
+					}
+					
+
+		
+		
+		boolean hasCasePrimitiveKeyWithNull_tMap_3 = false;
+		
+        // ###############################
+        // # Input tables (lookups)
+		  boolean rejectedInnerJoin_tMap_3 = false;
+		  boolean mainRowRejected_tMap_3 = false;
+            				    								  
+		// ###############################
+        { // start of Var scope
+        
+	        // ###############################
+        	// # Vars tables
+        
+Var__tMap_3__Struct Var = Var__tMap_3;// ###############################
+        // ###############################
+        // # Output tables
+
+c_post = null;
+c_negt = null;
+count_in = null;
+
+
+// # Output table : 'c_post'
+// # Filter conditions 
+if( 
+
+row10.sentiment >0
+
+ ) {
+c_post_tmp.date = row10.date ;
+c_post_tmp.hashtag = row10.hashtag ;
+c_post_tmp.country = row10.country;
+c_post_tmp.c_positives = (row10.sentiment>0?1:0) ;
+c_post = c_post_tmp;
+} // closing filter/reject
+
+// # Output table : 'c_negt'
+// # Filter conditions 
+if( 
+
+row10.sentiment <0
+
+ ) {
+c_negt_tmp.date = row10.date ;
+c_negt_tmp.hashtag = row10.hashtag ;
+c_negt_tmp.country = row10.country ;
+c_negt_tmp.c_negatives = (row10.sentiment<0?1:0) ;
+c_negt = c_negt_tmp;
+} // closing filter/reject
+
+// # Output table : 'count_in'
+// # Filter conditions 
+if( 
+
+row10.sentiment != 0
+
+ ) {
+count_in_tmp.date = row10.date ;
+count_in_tmp.hashtag = row10.hashtag ;
+count_in_tmp.country = row10.country ;
+count_in_tmp.c_tweet = (row10.sentiment != 0?1:0);
+count_in = count_in_tmp;
+} // closing filter/reject
+// ###############################
+
+} // end of Var scope
+
+rejectedInnerJoin_tMap_3 = false;
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+	tos_count_tMap_3++;
+
+/**
+ * [tMap_3 main ] stop
+ */
+	
+	/**
+	 * [tMap_3 process_data_begin ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tMap_3";
+
+	
+
+ 
+
+
+
+/**
+ * [tMap_3 process_data_begin ] stop
+ */
+// Start of branch "c_post"
+if(c_post != null) { 
+
+
+
+	
+	/**
+	 * [tAggregateRow_5_AGGOUT main ] start
+	 */
+
+	
+
+	
+	
+		currentVirtualComponent = "tAggregateRow_5";
+	
+	currentComponent="tAggregateRow_5_AGGOUT";
+
+	
+					if(execStat){
+						runStat.updateStatOnConnection(iterateId,1,1,"c_post");
+					}
+					
+	
+operation_finder_tAggregateRow_5.date = c_post.date;
+			operation_finder_tAggregateRow_5.hashtag = c_post.hashtag;
+			operation_finder_tAggregateRow_5.country = c_post.country;
+			
+
+	operation_finder_tAggregateRow_5.hashCodeDirty = true;
+	
+	operation_result_tAggregateRow_5 = hash_tAggregateRow_5.get(operation_finder_tAggregateRow_5);
+
+	
+
+	if(operation_result_tAggregateRow_5 == null) { // G_OutMain_AggR_001
+
+		operation_result_tAggregateRow_5 = new AggOperationStruct_tAggregateRow_5();
+
+		operation_result_tAggregateRow_5.date = operation_finder_tAggregateRow_5.date;
+				operation_result_tAggregateRow_5.hashtag = operation_finder_tAggregateRow_5.hashtag;
+				operation_result_tAggregateRow_5.country = operation_finder_tAggregateRow_5.country;
+				
+		
+		
+
+		hash_tAggregateRow_5.put(operation_result_tAggregateRow_5, operation_result_tAggregateRow_5);
+	
+	} // G_OutMain_AggR_001
+
+
+	
+				if(c_post.c_positives != null) { // G_OutMain_AggR_546
+				
+					if(operation_result_tAggregateRow_5.c_positives_sum == null) {
+						operation_result_tAggregateRow_5.c_positives_sum = (int) 0;
+					}
+					
+					if( c_post.c_positives != null)
+						operation_result_tAggregateRow_5.c_positives_sum += c_post.c_positives;
+				} // G_OutMain_AggR_546
+				
+
+
+ 
+
+
+	tos_count_tAggregateRow_5_AGGOUT++;
+
+/**
+ * [tAggregateRow_5_AGGOUT main ] stop
+ */
+	
+	/**
+	 * [tAggregateRow_5_AGGOUT process_data_begin ] start
+	 */
+
+	
+
+	
+	
+		currentVirtualComponent = "tAggregateRow_5";
+	
+	currentComponent="tAggregateRow_5_AGGOUT";
+
+	
+
+ 
+
+
+
+/**
+ * [tAggregateRow_5_AGGOUT process_data_begin ] stop
+ */
+	
+	/**
+	 * [tAggregateRow_5_AGGOUT process_data_end ] start
+	 */
+
+	
+
+	
+	
+		currentVirtualComponent = "tAggregateRow_5";
+	
+	currentComponent="tAggregateRow_5_AGGOUT";
+
+	
+
+ 
+
+
+
+/**
+ * [tAggregateRow_5_AGGOUT process_data_end ] stop
+ */
+
+} // End of branch "c_post"
+
+
+
+
+// Start of branch "c_negt"
+if(c_negt != null) { 
+
+
+
+	
+	/**
+	 * [tAggregateRow_6_AGGOUT main ] start
+	 */
+
+	
+
+	
+	
+		currentVirtualComponent = "tAggregateRow_6";
+	
+	currentComponent="tAggregateRow_6_AGGOUT";
+
+	
+					if(execStat){
+						runStat.updateStatOnConnection(iterateId,1,1,"c_negt");
+					}
+					
+	
+operation_finder_tAggregateRow_6.date = c_negt.date;
+			operation_finder_tAggregateRow_6.hashtag = c_negt.hashtag;
+			operation_finder_tAggregateRow_6.country = c_negt.country;
+			
+
+	operation_finder_tAggregateRow_6.hashCodeDirty = true;
+	
+	operation_result_tAggregateRow_6 = hash_tAggregateRow_6.get(operation_finder_tAggregateRow_6);
+
+	
+
+	if(operation_result_tAggregateRow_6 == null) { // G_OutMain_AggR_001
+
+		operation_result_tAggregateRow_6 = new AggOperationStruct_tAggregateRow_6();
+
+		operation_result_tAggregateRow_6.date = operation_finder_tAggregateRow_6.date;
+				operation_result_tAggregateRow_6.hashtag = operation_finder_tAggregateRow_6.hashtag;
+				operation_result_tAggregateRow_6.country = operation_finder_tAggregateRow_6.country;
+				
+		
+		
+
+		hash_tAggregateRow_6.put(operation_result_tAggregateRow_6, operation_result_tAggregateRow_6);
+	
+	} // G_OutMain_AggR_001
+
+
+	
+				if(c_negt.c_negatives != null) { // G_OutMain_AggR_546
+				
+					if(operation_result_tAggregateRow_6.c_negatives_sum == null) {
+						operation_result_tAggregateRow_6.c_negatives_sum = (int) 0;
+					}
+					
+					if( c_negt.c_negatives != null)
+						operation_result_tAggregateRow_6.c_negatives_sum += c_negt.c_negatives;
+				} // G_OutMain_AggR_546
+				
+
+
+ 
+
+
+	tos_count_tAggregateRow_6_AGGOUT++;
+
+/**
+ * [tAggregateRow_6_AGGOUT main ] stop
+ */
+	
+	/**
+	 * [tAggregateRow_6_AGGOUT process_data_begin ] start
+	 */
+
+	
+
+	
+	
+		currentVirtualComponent = "tAggregateRow_6";
+	
+	currentComponent="tAggregateRow_6_AGGOUT";
+
+	
+
+ 
+
+
+
+/**
+ * [tAggregateRow_6_AGGOUT process_data_begin ] stop
+ */
+	
+	/**
+	 * [tAggregateRow_6_AGGOUT process_data_end ] start
+	 */
+
+	
+
+	
+	
+		currentVirtualComponent = "tAggregateRow_6";
+	
+	currentComponent="tAggregateRow_6_AGGOUT";
+
+	
+
+ 
+
+
+
+/**
+ * [tAggregateRow_6_AGGOUT process_data_end ] stop
+ */
+
+} // End of branch "c_negt"
+
+
+
+
+// Start of branch "count_in"
+if(count_in != null) { 
+
+
+
+	
+	/**
+	 * [tAggregateRow_7_AGGOUT main ] start
+	 */
+
+	
+
+	
+	
+		currentVirtualComponent = "tAggregateRow_7";
+	
+	currentComponent="tAggregateRow_7_AGGOUT";
+
+	
+					if(execStat){
+						runStat.updateStatOnConnection(iterateId,1,1,"count_in");
+					}
+					
+	
+operation_finder_tAggregateRow_7.date = count_in.date;
+			operation_finder_tAggregateRow_7.hashtag = count_in.hashtag;
+			operation_finder_tAggregateRow_7.country = count_in.country;
+			
+
+	operation_finder_tAggregateRow_7.hashCodeDirty = true;
+	
+	operation_result_tAggregateRow_7 = hash_tAggregateRow_7.get(operation_finder_tAggregateRow_7);
+
+	
+
+	if(operation_result_tAggregateRow_7 == null) { // G_OutMain_AggR_001
+
+		operation_result_tAggregateRow_7 = new AggOperationStruct_tAggregateRow_7();
+
+		operation_result_tAggregateRow_7.date = operation_finder_tAggregateRow_7.date;
+				operation_result_tAggregateRow_7.hashtag = operation_finder_tAggregateRow_7.hashtag;
+				operation_result_tAggregateRow_7.country = operation_finder_tAggregateRow_7.country;
+				
+		
+		
+
+		hash_tAggregateRow_7.put(operation_result_tAggregateRow_7, operation_result_tAggregateRow_7);
+	
+	} // G_OutMain_AggR_001
+
+
+	
+				if(count_in.c_tweet != null) { // G_OutMain_AggR_546
+				
+					if(operation_result_tAggregateRow_7.c_tweet_sum == null) {
+						operation_result_tAggregateRow_7.c_tweet_sum = (int) 0;
+					}
+					
+					if( count_in.c_tweet != null)
+						operation_result_tAggregateRow_7.c_tweet_sum += count_in.c_tweet;
+				} // G_OutMain_AggR_546
+				
+
+
+ 
+
+
+	tos_count_tAggregateRow_7_AGGOUT++;
+
+/**
+ * [tAggregateRow_7_AGGOUT main ] stop
+ */
+	
+	/**
+	 * [tAggregateRow_7_AGGOUT process_data_begin ] start
+	 */
+
+	
+
+	
+	
+		currentVirtualComponent = "tAggregateRow_7";
+	
+	currentComponent="tAggregateRow_7_AGGOUT";
+
+	
+
+ 
+
+
+
+/**
+ * [tAggregateRow_7_AGGOUT process_data_begin ] stop
+ */
+	
+	/**
+	 * [tAggregateRow_7_AGGOUT process_data_end ] start
+	 */
+
+	
+
+	
+	
+		currentVirtualComponent = "tAggregateRow_7";
+	
+	currentComponent="tAggregateRow_7_AGGOUT";
+
+	
+
+ 
+
+
+
+/**
+ * [tAggregateRow_7_AGGOUT process_data_end ] stop
+ */
+
+} // End of branch "count_in"
+
+
+
+
+	
+	/**
+	 * [tMap_3 process_data_end ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tMap_3";
+
+	
+
+ 
+
+
+
+/**
+ * [tMap_3 process_data_end ] stop
+ */
+
+
+
+	
+	/**
+	 * [tAggregateRow_4_AGGIN process_data_end ] start
+	 */
+
+	
+
+	
+	
+		currentVirtualComponent = "tAggregateRow_4";
+	
+	currentComponent="tAggregateRow_4_AGGIN";
+
+	
+
+ 
+
+
+
+/**
+ * [tAggregateRow_4_AGGIN process_data_end ] stop
+ */
+	
+	/**
+	 * [tAggregateRow_4_AGGIN end ] start
+	 */
+
+	
+
+	
+	
+		currentVirtualComponent = "tAggregateRow_4";
+	
+	currentComponent="tAggregateRow_4_AGGIN";
+
+	
+
+} // G_AggR_600
+
+ 
+
+ok_Hash.put("tAggregateRow_4_AGGIN", true);
+end_Hash.put("tAggregateRow_4_AGGIN", System.currentTimeMillis());
+
+
+
+
+/**
+ * [tAggregateRow_4_AGGIN end ] stop
+ */
+
+	
+	/**
+	 * [tMap_3 end ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tMap_3";
+
+	
+
+
+// ###############################
+// # Lookup hashes releasing
+// ###############################      
+
+
+
+
+
+				if(execStat){
+			  		runStat.updateStat(resourceMap,iterateId,2,0,"row10");
+			  	}
+			  	
+ 
+
+ok_Hash.put("tMap_3", true);
+end_Hash.put("tMap_3", System.currentTimeMillis());
+
+
+
+
+/**
+ * [tMap_3 end ] stop
+ */
+
+	
+	/**
+	 * [tAggregateRow_5_AGGOUT end ] start
+	 */
+
+	
+
+	
+	
+		currentVirtualComponent = "tAggregateRow_5";
+	
+	currentComponent="tAggregateRow_5_AGGOUT";
+
+	
+
+				if(execStat){
+			  		runStat.updateStat(resourceMap,iterateId,2,0,"c_post");
+			  	}
+			  	
+ 
+
+ok_Hash.put("tAggregateRow_5_AGGOUT", true);
+end_Hash.put("tAggregateRow_5_AGGOUT", System.currentTimeMillis());
+
+
+
+
+/**
+ * [tAggregateRow_5_AGGOUT end ] stop
+ */
+
+
+	
+	/**
+	 * [tFileOutputDelimited_4 begin ] start
+	 */
+
+	
+
+	
+		
+		ok_Hash.put("tFileOutputDelimited_4", false);
+		start_Hash.put("tFileOutputDelimited_4", System.currentTimeMillis());
+		
+	
+	currentComponent="tFileOutputDelimited_4";
+
+	
+					if(execStat) {
+						runStat.updateStatOnConnection(resourceMap,iterateId,0,0,"row12");
+					}
+				
+		int tos_count_tFileOutputDelimited_4 = 0;
+		
+
+String fileName_tFileOutputDelimited_4 = "";
+    fileName_tFileOutputDelimited_4 = (new java.io.File(context.path_files_global+"documentations/mesures/c_pos_in.csv")).getAbsolutePath().replace("\\","/");
+    String fullName_tFileOutputDelimited_4 = null;
+    String extension_tFileOutputDelimited_4 = null;
+    String directory_tFileOutputDelimited_4 = null;
+    if((fileName_tFileOutputDelimited_4.indexOf("/") != -1)) {
+        if(fileName_tFileOutputDelimited_4.lastIndexOf(".") < fileName_tFileOutputDelimited_4.lastIndexOf("/")) {
+            fullName_tFileOutputDelimited_4 = fileName_tFileOutputDelimited_4;
+            extension_tFileOutputDelimited_4 = "";
+        } else {
+            fullName_tFileOutputDelimited_4 = fileName_tFileOutputDelimited_4.substring(0, fileName_tFileOutputDelimited_4.lastIndexOf("."));
+            extension_tFileOutputDelimited_4 = fileName_tFileOutputDelimited_4.substring(fileName_tFileOutputDelimited_4.lastIndexOf("."));
+        }
+        directory_tFileOutputDelimited_4 = fileName_tFileOutputDelimited_4.substring(0, fileName_tFileOutputDelimited_4.lastIndexOf("/"));
+    } else {
+        if(fileName_tFileOutputDelimited_4.lastIndexOf(".") != -1) {
+            fullName_tFileOutputDelimited_4 = fileName_tFileOutputDelimited_4.substring(0, fileName_tFileOutputDelimited_4.lastIndexOf("."));
+            extension_tFileOutputDelimited_4 = fileName_tFileOutputDelimited_4.substring(fileName_tFileOutputDelimited_4.lastIndexOf("."));
+        } else {
+            fullName_tFileOutputDelimited_4 = fileName_tFileOutputDelimited_4;
+            extension_tFileOutputDelimited_4 = "";
+        }
+        directory_tFileOutputDelimited_4 = "";
+    }
+    boolean isFileGenerated_tFileOutputDelimited_4 = true;
+    java.io.File filetFileOutputDelimited_4 = new java.io.File(fileName_tFileOutputDelimited_4);
+    globalMap.put("tFileOutputDelimited_4_FILE_NAME",fileName_tFileOutputDelimited_4);
+    if(filetFileOutputDelimited_4.exists()){
+            throw new RuntimeException("The particular file \""+filetFileOutputDelimited_4.getAbsoluteFile() +
+            "\" already exist. If you want to overwrite the file, please uncheck the" + 
+            " \"Throw an error if the file already exist\" option in Advanced settings.");
+        }
+            int nb_line_tFileOutputDelimited_4 = 0;
+            int splitedFileNo_tFileOutputDelimited_4 = 0;
+            int currentRow_tFileOutputDelimited_4 = 0;
+
+            final String OUT_DELIM_tFileOutputDelimited_4 = /** Start field tFileOutputDelimited_4:FIELDSEPARATOR */";"/** End field tFileOutputDelimited_4:FIELDSEPARATOR */;
+
+            final String OUT_DELIM_ROWSEP_tFileOutputDelimited_4 = /** Start field tFileOutputDelimited_4:ROWSEPARATOR */"\n"/** End field tFileOutputDelimited_4:ROWSEPARATOR */;
+
+                    //create directory only if not exists
+                    if(directory_tFileOutputDelimited_4 != null && directory_tFileOutputDelimited_4.trim().length() != 0) {
+                        java.io.File dir_tFileOutputDelimited_4 = new java.io.File(directory_tFileOutputDelimited_4);
+                        if(!dir_tFileOutputDelimited_4.exists()) {
+                            dir_tFileOutputDelimited_4.mkdirs();
+                        }
+                    }
+
+                        //routines.system.Row
+                        java.io.Writer outtFileOutputDelimited_4 = null;
+
+                        java.io.File fileToDelete_tFileOutputDelimited_4 = new java.io.File(fileName_tFileOutputDelimited_4);
+                        if(fileToDelete_tFileOutputDelimited_4.exists()) {
+                            fileToDelete_tFileOutputDelimited_4.delete();
+                        }
+                        outtFileOutputDelimited_4 = new java.io.BufferedWriter(new java.io.OutputStreamWriter(
+                        new java.io.FileOutputStream(fileName_tFileOutputDelimited_4, false),"ISO-8859-15"));
+                                    if(filetFileOutputDelimited_4.length()==0){
+                                        outtFileOutputDelimited_4.write("date");
+                                            outtFileOutputDelimited_4.write(OUT_DELIM_tFileOutputDelimited_4);
+                                        outtFileOutputDelimited_4.write("hashtag");
+                                            outtFileOutputDelimited_4.write(OUT_DELIM_tFileOutputDelimited_4);
+                                        outtFileOutputDelimited_4.write("country");
+                                            outtFileOutputDelimited_4.write(OUT_DELIM_tFileOutputDelimited_4);
+                                        outtFileOutputDelimited_4.write("c_positives");
+                                        outtFileOutputDelimited_4.write(OUT_DELIM_ROWSEP_tFileOutputDelimited_4);
+                                        outtFileOutputDelimited_4.flush();
+                                    }
+
+
+        resourceMap.put("out_tFileOutputDelimited_4", outtFileOutputDelimited_4);
+resourceMap.put("nb_line_tFileOutputDelimited_4", nb_line_tFileOutputDelimited_4);
+
+ 
+
+
+
+/**
+ * [tFileOutputDelimited_4 begin ] stop
+ */
+
+
+
+	
+	/**
+	 * [tAggregateRow_5_AGGIN begin ] start
+	 */
+
+	
+
+	
+		
+		ok_Hash.put("tAggregateRow_5_AGGIN", false);
+		start_Hash.put("tAggregateRow_5_AGGIN", System.currentTimeMillis());
+		
+	
+		currentVirtualComponent = "tAggregateRow_5";
+	
+	currentComponent="tAggregateRow_5_AGGIN";
+
+	
+		int tos_count_tAggregateRow_5_AGGIN = 0;
+		
+
+java.util.Collection<AggOperationStruct_tAggregateRow_5> values_tAggregateRow_5 = hash_tAggregateRow_5.values();
+
+globalMap.put("tAggregateRow_5_NB_LINE", values_tAggregateRow_5.size());
+
+for(AggOperationStruct_tAggregateRow_5 aggregated_row_tAggregateRow_5 : values_tAggregateRow_5) { // G_AggR_600
+
+
+
+ 
+
+
+
+/**
+ * [tAggregateRow_5_AGGIN begin ] stop
+ */
+	
+	/**
+	 * [tAggregateRow_5_AGGIN main ] start
+	 */
+
+	
+
+	
+	
+		currentVirtualComponent = "tAggregateRow_5";
+	
+	currentComponent="tAggregateRow_5_AGGIN";
+
+	
+
+            				    row12.date = aggregated_row_tAggregateRow_5.date;
+            				    
+            				    row12.hashtag = aggregated_row_tAggregateRow_5.hashtag;
+            				    
+            				    row12.country = aggregated_row_tAggregateRow_5.country;
+            				    row12.c_positives = aggregated_row_tAggregateRow_5.c_positives_sum;
+                                	
+
+ 
+
+
+	tos_count_tAggregateRow_5_AGGIN++;
+
+/**
+ * [tAggregateRow_5_AGGIN main ] stop
+ */
+	
+	/**
+	 * [tAggregateRow_5_AGGIN process_data_begin ] start
+	 */
+
+	
+
+	
+	
+		currentVirtualComponent = "tAggregateRow_5";
+	
+	currentComponent="tAggregateRow_5_AGGIN";
+
+	
+
+ 
+
+
+
+/**
+ * [tAggregateRow_5_AGGIN process_data_begin ] stop
+ */
+
+	
+	/**
+	 * [tFileOutputDelimited_4 main ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tFileOutputDelimited_4";
+
+	
+					if(execStat){
+						runStat.updateStatOnConnection(iterateId,1,1,"row12");
+					}
+					
+
+
+                    StringBuilder sb_tFileOutputDelimited_4 = new StringBuilder();
+                            if(row12.date != null) {
+                        sb_tFileOutputDelimited_4.append(
+                            FormatterUtils.format_Date(row12.date, "dd-MM-yyyy")
+                        );
+                            }
+                            sb_tFileOutputDelimited_4.append(OUT_DELIM_tFileOutputDelimited_4);
+                            if(row12.hashtag != null) {
+                        sb_tFileOutputDelimited_4.append(
+                            row12.hashtag
+                        );
+                            }
+                            sb_tFileOutputDelimited_4.append(OUT_DELIM_tFileOutputDelimited_4);
+                            if(row12.country != null) {
+                        sb_tFileOutputDelimited_4.append(
+                            row12.country
+                        );
+                            }
+                            sb_tFileOutputDelimited_4.append(OUT_DELIM_tFileOutputDelimited_4);
+                            if(row12.c_positives != null) {
+                        sb_tFileOutputDelimited_4.append(
+                            row12.c_positives
+                        );
+                            }
+                    sb_tFileOutputDelimited_4.append(OUT_DELIM_ROWSEP_tFileOutputDelimited_4);
+
+
+                    nb_line_tFileOutputDelimited_4++;
+                    resourceMap.put("nb_line_tFileOutputDelimited_4", nb_line_tFileOutputDelimited_4);
+
+                        outtFileOutputDelimited_4.write(sb_tFileOutputDelimited_4.toString());
+
+
+
+
+ 
+
+
+	tos_count_tFileOutputDelimited_4++;
+
+/**
+ * [tFileOutputDelimited_4 main ] stop
+ */
+	
+	/**
+	 * [tFileOutputDelimited_4 process_data_begin ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tFileOutputDelimited_4";
+
+	
+
+ 
+
+
+
+/**
+ * [tFileOutputDelimited_4 process_data_begin ] stop
+ */
+	
+	/**
+	 * [tFileOutputDelimited_4 process_data_end ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tFileOutputDelimited_4";
+
+	
+
+ 
+
+
+
+/**
+ * [tFileOutputDelimited_4 process_data_end ] stop
+ */
+
+
+
+	
+	/**
+	 * [tAggregateRow_5_AGGIN process_data_end ] start
+	 */
+
+	
+
+	
+	
+		currentVirtualComponent = "tAggregateRow_5";
+	
+	currentComponent="tAggregateRow_5_AGGIN";
+
+	
+
+ 
+
+
+
+/**
+ * [tAggregateRow_5_AGGIN process_data_end ] stop
+ */
+	
+	/**
+	 * [tAggregateRow_5_AGGIN end ] start
+	 */
+
+	
+
+	
+	
+		currentVirtualComponent = "tAggregateRow_5";
+	
+	currentComponent="tAggregateRow_5_AGGIN";
+
+	
+
+} // G_AggR_600
+
+ 
+
+ok_Hash.put("tAggregateRow_5_AGGIN", true);
+end_Hash.put("tAggregateRow_5_AGGIN", System.currentTimeMillis());
+
+
+
+
+/**
+ * [tAggregateRow_5_AGGIN end ] stop
+ */
+
+	
+	/**
+	 * [tFileOutputDelimited_4 end ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tFileOutputDelimited_4";
+
+	
+
+
+
+		
+			
+					if(outtFileOutputDelimited_4!=null) {
+						outtFileOutputDelimited_4.flush();
+						outtFileOutputDelimited_4.close();
+					}
+				
+				globalMap.put("tFileOutputDelimited_4_NB_LINE",nb_line_tFileOutputDelimited_4);
+				globalMap.put("tFileOutputDelimited_4_FILE_NAME",fileName_tFileOutputDelimited_4);
+			
+		
+		
+		resourceMap.put("finish_tFileOutputDelimited_4", true);
+	
+
+				if(execStat){
+			  		runStat.updateStat(resourceMap,iterateId,2,0,"row12");
+			  	}
+			  	
+ 
+
+ok_Hash.put("tFileOutputDelimited_4", true);
+end_Hash.put("tFileOutputDelimited_4", System.currentTimeMillis());
+
+
+
+
+/**
+ * [tFileOutputDelimited_4 end ] stop
+ */
+
+
+
+
+
+
+
+
+
+
+	
+	/**
+	 * [tAggregateRow_6_AGGOUT end ] start
+	 */
+
+	
+
+	
+	
+		currentVirtualComponent = "tAggregateRow_6";
+	
+	currentComponent="tAggregateRow_6_AGGOUT";
+
+	
+
+				if(execStat){
+			  		runStat.updateStat(resourceMap,iterateId,2,0,"c_negt");
+			  	}
+			  	
+ 
+
+ok_Hash.put("tAggregateRow_6_AGGOUT", true);
+end_Hash.put("tAggregateRow_6_AGGOUT", System.currentTimeMillis());
+
+
+
+
+/**
+ * [tAggregateRow_6_AGGOUT end ] stop
+ */
+
+
+	
+	/**
+	 * [tFileOutputDelimited_5 begin ] start
+	 */
+
+	
+
+	
+		
+		ok_Hash.put("tFileOutputDelimited_5", false);
+		start_Hash.put("tFileOutputDelimited_5", System.currentTimeMillis());
+		
+	
+	currentComponent="tFileOutputDelimited_5";
+
+	
+					if(execStat) {
+						runStat.updateStatOnConnection(resourceMap,iterateId,0,0,"row11");
+					}
+				
+		int tos_count_tFileOutputDelimited_5 = 0;
+		
+
+String fileName_tFileOutputDelimited_5 = "";
+    fileName_tFileOutputDelimited_5 = (new java.io.File(context.path_files_global+"documentations/mesures/c_neg_in.csv")).getAbsolutePath().replace("\\","/");
+    String fullName_tFileOutputDelimited_5 = null;
+    String extension_tFileOutputDelimited_5 = null;
+    String directory_tFileOutputDelimited_5 = null;
+    if((fileName_tFileOutputDelimited_5.indexOf("/") != -1)) {
+        if(fileName_tFileOutputDelimited_5.lastIndexOf(".") < fileName_tFileOutputDelimited_5.lastIndexOf("/")) {
+            fullName_tFileOutputDelimited_5 = fileName_tFileOutputDelimited_5;
+            extension_tFileOutputDelimited_5 = "";
+        } else {
+            fullName_tFileOutputDelimited_5 = fileName_tFileOutputDelimited_5.substring(0, fileName_tFileOutputDelimited_5.lastIndexOf("."));
+            extension_tFileOutputDelimited_5 = fileName_tFileOutputDelimited_5.substring(fileName_tFileOutputDelimited_5.lastIndexOf("."));
+        }
+        directory_tFileOutputDelimited_5 = fileName_tFileOutputDelimited_5.substring(0, fileName_tFileOutputDelimited_5.lastIndexOf("/"));
+    } else {
+        if(fileName_tFileOutputDelimited_5.lastIndexOf(".") != -1) {
+            fullName_tFileOutputDelimited_5 = fileName_tFileOutputDelimited_5.substring(0, fileName_tFileOutputDelimited_5.lastIndexOf("."));
+            extension_tFileOutputDelimited_5 = fileName_tFileOutputDelimited_5.substring(fileName_tFileOutputDelimited_5.lastIndexOf("."));
+        } else {
+            fullName_tFileOutputDelimited_5 = fileName_tFileOutputDelimited_5;
+            extension_tFileOutputDelimited_5 = "";
+        }
+        directory_tFileOutputDelimited_5 = "";
+    }
+    boolean isFileGenerated_tFileOutputDelimited_5 = true;
+    java.io.File filetFileOutputDelimited_5 = new java.io.File(fileName_tFileOutputDelimited_5);
+    globalMap.put("tFileOutputDelimited_5_FILE_NAME",fileName_tFileOutputDelimited_5);
+    if(filetFileOutputDelimited_5.exists()){
+            throw new RuntimeException("The particular file \""+filetFileOutputDelimited_5.getAbsoluteFile() +
+            "\" already exist. If you want to overwrite the file, please uncheck the" + 
+            " \"Throw an error if the file already exist\" option in Advanced settings.");
+        }
+            int nb_line_tFileOutputDelimited_5 = 0;
+            int splitedFileNo_tFileOutputDelimited_5 = 0;
+            int currentRow_tFileOutputDelimited_5 = 0;
+
+            final String OUT_DELIM_tFileOutputDelimited_5 = /** Start field tFileOutputDelimited_5:FIELDSEPARATOR */";"/** End field tFileOutputDelimited_5:FIELDSEPARATOR */;
+
+            final String OUT_DELIM_ROWSEP_tFileOutputDelimited_5 = /** Start field tFileOutputDelimited_5:ROWSEPARATOR */"\n"/** End field tFileOutputDelimited_5:ROWSEPARATOR */;
+
+                    //create directory only if not exists
+                    if(directory_tFileOutputDelimited_5 != null && directory_tFileOutputDelimited_5.trim().length() != 0) {
+                        java.io.File dir_tFileOutputDelimited_5 = new java.io.File(directory_tFileOutputDelimited_5);
+                        if(!dir_tFileOutputDelimited_5.exists()) {
+                            dir_tFileOutputDelimited_5.mkdirs();
+                        }
+                    }
+
+                        //routines.system.Row
+                        java.io.Writer outtFileOutputDelimited_5 = null;
+
+                        java.io.File fileToDelete_tFileOutputDelimited_5 = new java.io.File(fileName_tFileOutputDelimited_5);
+                        if(fileToDelete_tFileOutputDelimited_5.exists()) {
+                            fileToDelete_tFileOutputDelimited_5.delete();
+                        }
+                        outtFileOutputDelimited_5 = new java.io.BufferedWriter(new java.io.OutputStreamWriter(
+                        new java.io.FileOutputStream(fileName_tFileOutputDelimited_5, false),"ISO-8859-15"));
+                                    if(filetFileOutputDelimited_5.length()==0){
+                                        outtFileOutputDelimited_5.write("date");
+                                            outtFileOutputDelimited_5.write(OUT_DELIM_tFileOutputDelimited_5);
+                                        outtFileOutputDelimited_5.write("hashtag");
+                                            outtFileOutputDelimited_5.write(OUT_DELIM_tFileOutputDelimited_5);
+                                        outtFileOutputDelimited_5.write("country");
+                                            outtFileOutputDelimited_5.write(OUT_DELIM_tFileOutputDelimited_5);
+                                        outtFileOutputDelimited_5.write("c_negatives");
+                                        outtFileOutputDelimited_5.write(OUT_DELIM_ROWSEP_tFileOutputDelimited_5);
+                                        outtFileOutputDelimited_5.flush();
+                                    }
+
+
+        resourceMap.put("out_tFileOutputDelimited_5", outtFileOutputDelimited_5);
+resourceMap.put("nb_line_tFileOutputDelimited_5", nb_line_tFileOutputDelimited_5);
+
+ 
+
+
+
+/**
+ * [tFileOutputDelimited_5 begin ] stop
+ */
+
+
+
+	
+	/**
+	 * [tAggregateRow_6_AGGIN begin ] start
+	 */
+
+	
+
+	
+		
+		ok_Hash.put("tAggregateRow_6_AGGIN", false);
+		start_Hash.put("tAggregateRow_6_AGGIN", System.currentTimeMillis());
+		
+	
+		currentVirtualComponent = "tAggregateRow_6";
+	
+	currentComponent="tAggregateRow_6_AGGIN";
+
+	
+		int tos_count_tAggregateRow_6_AGGIN = 0;
+		
+
+java.util.Collection<AggOperationStruct_tAggregateRow_6> values_tAggregateRow_6 = hash_tAggregateRow_6.values();
+
+globalMap.put("tAggregateRow_6_NB_LINE", values_tAggregateRow_6.size());
+
+for(AggOperationStruct_tAggregateRow_6 aggregated_row_tAggregateRow_6 : values_tAggregateRow_6) { // G_AggR_600
+
+
+
+ 
+
+
+
+/**
+ * [tAggregateRow_6_AGGIN begin ] stop
+ */
+	
+	/**
+	 * [tAggregateRow_6_AGGIN main ] start
+	 */
+
+	
+
+	
+	
+		currentVirtualComponent = "tAggregateRow_6";
+	
+	currentComponent="tAggregateRow_6_AGGIN";
+
+	
+
+            				    row11.date = aggregated_row_tAggregateRow_6.date;
+            				    
+            				    row11.hashtag = aggregated_row_tAggregateRow_6.hashtag;
+            				    
+            				    row11.country = aggregated_row_tAggregateRow_6.country;
+            				    row11.c_negatives = aggregated_row_tAggregateRow_6.c_negatives_sum;
+                                	
+
+ 
+
+
+	tos_count_tAggregateRow_6_AGGIN++;
+
+/**
+ * [tAggregateRow_6_AGGIN main ] stop
+ */
+	
+	/**
+	 * [tAggregateRow_6_AGGIN process_data_begin ] start
+	 */
+
+	
+
+	
+	
+		currentVirtualComponent = "tAggregateRow_6";
+	
+	currentComponent="tAggregateRow_6_AGGIN";
+
+	
+
+ 
+
+
+
+/**
+ * [tAggregateRow_6_AGGIN process_data_begin ] stop
+ */
+
+	
+	/**
+	 * [tFileOutputDelimited_5 main ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tFileOutputDelimited_5";
+
+	
+					if(execStat){
+						runStat.updateStatOnConnection(iterateId,1,1,"row11");
+					}
+					
+
+
+                    StringBuilder sb_tFileOutputDelimited_5 = new StringBuilder();
+                            if(row11.date != null) {
+                        sb_tFileOutputDelimited_5.append(
+                            FormatterUtils.format_Date(row11.date, "dd-MM-yyyy")
+                        );
+                            }
+                            sb_tFileOutputDelimited_5.append(OUT_DELIM_tFileOutputDelimited_5);
+                            if(row11.hashtag != null) {
+                        sb_tFileOutputDelimited_5.append(
+                            row11.hashtag
+                        );
+                            }
+                            sb_tFileOutputDelimited_5.append(OUT_DELIM_tFileOutputDelimited_5);
+                            if(row11.country != null) {
+                        sb_tFileOutputDelimited_5.append(
+                            row11.country
+                        );
+                            }
+                            sb_tFileOutputDelimited_5.append(OUT_DELIM_tFileOutputDelimited_5);
+                            if(row11.c_negatives != null) {
+                        sb_tFileOutputDelimited_5.append(
+                            row11.c_negatives
+                        );
+                            }
+                    sb_tFileOutputDelimited_5.append(OUT_DELIM_ROWSEP_tFileOutputDelimited_5);
+
+
+                    nb_line_tFileOutputDelimited_5++;
+                    resourceMap.put("nb_line_tFileOutputDelimited_5", nb_line_tFileOutputDelimited_5);
+
+                        outtFileOutputDelimited_5.write(sb_tFileOutputDelimited_5.toString());
+
+
+
+
+ 
+
+
+	tos_count_tFileOutputDelimited_5++;
+
+/**
+ * [tFileOutputDelimited_5 main ] stop
+ */
+	
+	/**
+	 * [tFileOutputDelimited_5 process_data_begin ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tFileOutputDelimited_5";
+
+	
+
+ 
+
+
+
+/**
+ * [tFileOutputDelimited_5 process_data_begin ] stop
+ */
+	
+	/**
+	 * [tFileOutputDelimited_5 process_data_end ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tFileOutputDelimited_5";
+
+	
+
+ 
+
+
+
+/**
+ * [tFileOutputDelimited_5 process_data_end ] stop
+ */
+
+
+
+	
+	/**
+	 * [tAggregateRow_6_AGGIN process_data_end ] start
+	 */
+
+	
+
+	
+	
+		currentVirtualComponent = "tAggregateRow_6";
+	
+	currentComponent="tAggregateRow_6_AGGIN";
+
+	
+
+ 
+
+
+
+/**
+ * [tAggregateRow_6_AGGIN process_data_end ] stop
+ */
+	
+	/**
+	 * [tAggregateRow_6_AGGIN end ] start
+	 */
+
+	
+
+	
+	
+		currentVirtualComponent = "tAggregateRow_6";
+	
+	currentComponent="tAggregateRow_6_AGGIN";
+
+	
+
+} // G_AggR_600
+
+ 
+
+ok_Hash.put("tAggregateRow_6_AGGIN", true);
+end_Hash.put("tAggregateRow_6_AGGIN", System.currentTimeMillis());
+
+
+
+
+/**
+ * [tAggregateRow_6_AGGIN end ] stop
+ */
+
+	
+	/**
+	 * [tFileOutputDelimited_5 end ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tFileOutputDelimited_5";
+
+	
+
+
+
+		
+			
+					if(outtFileOutputDelimited_5!=null) {
+						outtFileOutputDelimited_5.flush();
+						outtFileOutputDelimited_5.close();
+					}
+				
+				globalMap.put("tFileOutputDelimited_5_NB_LINE",nb_line_tFileOutputDelimited_5);
+				globalMap.put("tFileOutputDelimited_5_FILE_NAME",fileName_tFileOutputDelimited_5);
+			
+		
+		
+		resourceMap.put("finish_tFileOutputDelimited_5", true);
+	
+
+				if(execStat){
+			  		runStat.updateStat(resourceMap,iterateId,2,0,"row11");
+			  	}
+			  	
+ 
+
+ok_Hash.put("tFileOutputDelimited_5", true);
+end_Hash.put("tFileOutputDelimited_5", System.currentTimeMillis());
+
+
+
+
+/**
+ * [tFileOutputDelimited_5 end ] stop
+ */
+
+
+
+
+
+
+
+
+
+
+	
+	/**
+	 * [tAggregateRow_7_AGGOUT end ] start
+	 */
+
+	
+
+	
+	
+		currentVirtualComponent = "tAggregateRow_7";
+	
+	currentComponent="tAggregateRow_7_AGGOUT";
+
+	
+
+				if(execStat){
+			  		runStat.updateStat(resourceMap,iterateId,2,0,"count_in");
+			  	}
+			  	
+ 
+
+ok_Hash.put("tAggregateRow_7_AGGOUT", true);
+end_Hash.put("tAggregateRow_7_AGGOUT", System.currentTimeMillis());
+
+
+
+
+/**
+ * [tAggregateRow_7_AGGOUT end ] stop
+ */
+
+
+	
+	/**
+	 * [tFileOutputDelimited_6 begin ] start
+	 */
+
+	
+
+	
+		
+		ok_Hash.put("tFileOutputDelimited_6", false);
+		start_Hash.put("tFileOutputDelimited_6", System.currentTimeMillis());
+		
+	
+	currentComponent="tFileOutputDelimited_6";
+
+	
+					if(execStat) {
+						runStat.updateStatOnConnection(resourceMap,iterateId,0,0,"row13");
+					}
+				
+		int tos_count_tFileOutputDelimited_6 = 0;
+		
+
+String fileName_tFileOutputDelimited_6 = "";
+    fileName_tFileOutputDelimited_6 = (new java.io.File(context.path_files_global+"documentations/mesures/c_in.csv")).getAbsolutePath().replace("\\","/");
+    String fullName_tFileOutputDelimited_6 = null;
+    String extension_tFileOutputDelimited_6 = null;
+    String directory_tFileOutputDelimited_6 = null;
+    if((fileName_tFileOutputDelimited_6.indexOf("/") != -1)) {
+        if(fileName_tFileOutputDelimited_6.lastIndexOf(".") < fileName_tFileOutputDelimited_6.lastIndexOf("/")) {
+            fullName_tFileOutputDelimited_6 = fileName_tFileOutputDelimited_6;
+            extension_tFileOutputDelimited_6 = "";
+        } else {
+            fullName_tFileOutputDelimited_6 = fileName_tFileOutputDelimited_6.substring(0, fileName_tFileOutputDelimited_6.lastIndexOf("."));
+            extension_tFileOutputDelimited_6 = fileName_tFileOutputDelimited_6.substring(fileName_tFileOutputDelimited_6.lastIndexOf("."));
+        }
+        directory_tFileOutputDelimited_6 = fileName_tFileOutputDelimited_6.substring(0, fileName_tFileOutputDelimited_6.lastIndexOf("/"));
+    } else {
+        if(fileName_tFileOutputDelimited_6.lastIndexOf(".") != -1) {
+            fullName_tFileOutputDelimited_6 = fileName_tFileOutputDelimited_6.substring(0, fileName_tFileOutputDelimited_6.lastIndexOf("."));
+            extension_tFileOutputDelimited_6 = fileName_tFileOutputDelimited_6.substring(fileName_tFileOutputDelimited_6.lastIndexOf("."));
+        } else {
+            fullName_tFileOutputDelimited_6 = fileName_tFileOutputDelimited_6;
+            extension_tFileOutputDelimited_6 = "";
+        }
+        directory_tFileOutputDelimited_6 = "";
+    }
+    boolean isFileGenerated_tFileOutputDelimited_6 = true;
+    java.io.File filetFileOutputDelimited_6 = new java.io.File(fileName_tFileOutputDelimited_6);
+    globalMap.put("tFileOutputDelimited_6_FILE_NAME",fileName_tFileOutputDelimited_6);
+    if(filetFileOutputDelimited_6.exists()){
+            throw new RuntimeException("The particular file \""+filetFileOutputDelimited_6.getAbsoluteFile() +
+            "\" already exist. If you want to overwrite the file, please uncheck the" + 
+            " \"Throw an error if the file already exist\" option in Advanced settings.");
+        }
+            int nb_line_tFileOutputDelimited_6 = 0;
+            int splitedFileNo_tFileOutputDelimited_6 = 0;
+            int currentRow_tFileOutputDelimited_6 = 0;
+
+            final String OUT_DELIM_tFileOutputDelimited_6 = /** Start field tFileOutputDelimited_6:FIELDSEPARATOR */";"/** End field tFileOutputDelimited_6:FIELDSEPARATOR */;
+
+            final String OUT_DELIM_ROWSEP_tFileOutputDelimited_6 = /** Start field tFileOutputDelimited_6:ROWSEPARATOR */"\n"/** End field tFileOutputDelimited_6:ROWSEPARATOR */;
+
+                    //create directory only if not exists
+                    if(directory_tFileOutputDelimited_6 != null && directory_tFileOutputDelimited_6.trim().length() != 0) {
+                        java.io.File dir_tFileOutputDelimited_6 = new java.io.File(directory_tFileOutputDelimited_6);
+                        if(!dir_tFileOutputDelimited_6.exists()) {
+                            dir_tFileOutputDelimited_6.mkdirs();
+                        }
+                    }
+
+                        //routines.system.Row
+                        java.io.Writer outtFileOutputDelimited_6 = null;
+
+                        java.io.File fileToDelete_tFileOutputDelimited_6 = new java.io.File(fileName_tFileOutputDelimited_6);
+                        if(fileToDelete_tFileOutputDelimited_6.exists()) {
+                            fileToDelete_tFileOutputDelimited_6.delete();
+                        }
+                        outtFileOutputDelimited_6 = new java.io.BufferedWriter(new java.io.OutputStreamWriter(
+                        new java.io.FileOutputStream(fileName_tFileOutputDelimited_6, false),"ISO-8859-15"));
+                                    if(filetFileOutputDelimited_6.length()==0){
+                                        outtFileOutputDelimited_6.write("date");
+                                            outtFileOutputDelimited_6.write(OUT_DELIM_tFileOutputDelimited_6);
+                                        outtFileOutputDelimited_6.write("hashtag");
+                                            outtFileOutputDelimited_6.write(OUT_DELIM_tFileOutputDelimited_6);
+                                        outtFileOutputDelimited_6.write("country");
+                                            outtFileOutputDelimited_6.write(OUT_DELIM_tFileOutputDelimited_6);
+                                        outtFileOutputDelimited_6.write("c_tweet");
+                                        outtFileOutputDelimited_6.write(OUT_DELIM_ROWSEP_tFileOutputDelimited_6);
+                                        outtFileOutputDelimited_6.flush();
+                                    }
+
+
+        resourceMap.put("out_tFileOutputDelimited_6", outtFileOutputDelimited_6);
+resourceMap.put("nb_line_tFileOutputDelimited_6", nb_line_tFileOutputDelimited_6);
+
+ 
+
+
+
+/**
+ * [tFileOutputDelimited_6 begin ] stop
+ */
+
+
+
+	
+	/**
+	 * [tAggregateRow_7_AGGIN begin ] start
+	 */
+
+	
+
+	
+		
+		ok_Hash.put("tAggregateRow_7_AGGIN", false);
+		start_Hash.put("tAggregateRow_7_AGGIN", System.currentTimeMillis());
+		
+	
+		currentVirtualComponent = "tAggregateRow_7";
+	
+	currentComponent="tAggregateRow_7_AGGIN";
+
+	
+		int tos_count_tAggregateRow_7_AGGIN = 0;
+		
+
+java.util.Collection<AggOperationStruct_tAggregateRow_7> values_tAggregateRow_7 = hash_tAggregateRow_7.values();
+
+globalMap.put("tAggregateRow_7_NB_LINE", values_tAggregateRow_7.size());
+
+for(AggOperationStruct_tAggregateRow_7 aggregated_row_tAggregateRow_7 : values_tAggregateRow_7) { // G_AggR_600
+
+
+
+ 
+
+
+
+/**
+ * [tAggregateRow_7_AGGIN begin ] stop
+ */
+	
+	/**
+	 * [tAggregateRow_7_AGGIN main ] start
+	 */
+
+	
+
+	
+	
+		currentVirtualComponent = "tAggregateRow_7";
+	
+	currentComponent="tAggregateRow_7_AGGIN";
+
+	
+
+            				    row13.date = aggregated_row_tAggregateRow_7.date;
+            				    
+            				    row13.hashtag = aggregated_row_tAggregateRow_7.hashtag;
+            				    
+            				    row13.country = aggregated_row_tAggregateRow_7.country;
+            				    row13.c_tweet = aggregated_row_tAggregateRow_7.c_tweet_sum;
+                                	
+
+ 
+
+
+	tos_count_tAggregateRow_7_AGGIN++;
+
+/**
+ * [tAggregateRow_7_AGGIN main ] stop
+ */
+	
+	/**
+	 * [tAggregateRow_7_AGGIN process_data_begin ] start
+	 */
+
+	
+
+	
+	
+		currentVirtualComponent = "tAggregateRow_7";
+	
+	currentComponent="tAggregateRow_7_AGGIN";
+
+	
+
+ 
+
+
+
+/**
+ * [tAggregateRow_7_AGGIN process_data_begin ] stop
+ */
+
+	
+	/**
+	 * [tFileOutputDelimited_6 main ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tFileOutputDelimited_6";
+
+	
+					if(execStat){
+						runStat.updateStatOnConnection(iterateId,1,1,"row13");
+					}
+					
+
+
+                    StringBuilder sb_tFileOutputDelimited_6 = new StringBuilder();
+                            if(row13.date != null) {
+                        sb_tFileOutputDelimited_6.append(
+                            FormatterUtils.format_Date(row13.date, "dd-MM-yyyy")
+                        );
+                            }
+                            sb_tFileOutputDelimited_6.append(OUT_DELIM_tFileOutputDelimited_6);
+                            if(row13.hashtag != null) {
+                        sb_tFileOutputDelimited_6.append(
+                            row13.hashtag
+                        );
+                            }
+                            sb_tFileOutputDelimited_6.append(OUT_DELIM_tFileOutputDelimited_6);
+                            if(row13.country != null) {
+                        sb_tFileOutputDelimited_6.append(
+                            row13.country
+                        );
+                            }
+                            sb_tFileOutputDelimited_6.append(OUT_DELIM_tFileOutputDelimited_6);
+                            if(row13.c_tweet != null) {
+                        sb_tFileOutputDelimited_6.append(
+                            row13.c_tweet
+                        );
+                            }
+                    sb_tFileOutputDelimited_6.append(OUT_DELIM_ROWSEP_tFileOutputDelimited_6);
+
+
+                    nb_line_tFileOutputDelimited_6++;
+                    resourceMap.put("nb_line_tFileOutputDelimited_6", nb_line_tFileOutputDelimited_6);
+
+                        outtFileOutputDelimited_6.write(sb_tFileOutputDelimited_6.toString());
+
+
+
+
+ 
+
+
+	tos_count_tFileOutputDelimited_6++;
+
+/**
+ * [tFileOutputDelimited_6 main ] stop
+ */
+	
+	/**
+	 * [tFileOutputDelimited_6 process_data_begin ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tFileOutputDelimited_6";
+
+	
+
+ 
+
+
+
+/**
+ * [tFileOutputDelimited_6 process_data_begin ] stop
+ */
+	
+	/**
+	 * [tFileOutputDelimited_6 process_data_end ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tFileOutputDelimited_6";
+
+	
+
+ 
+
+
+
+/**
+ * [tFileOutputDelimited_6 process_data_end ] stop
+ */
+
+
+
+	
+	/**
+	 * [tAggregateRow_7_AGGIN process_data_end ] start
+	 */
+
+	
+
+	
+	
+		currentVirtualComponent = "tAggregateRow_7";
+	
+	currentComponent="tAggregateRow_7_AGGIN";
+
+	
+
+ 
+
+
+
+/**
+ * [tAggregateRow_7_AGGIN process_data_end ] stop
+ */
+	
+	/**
+	 * [tAggregateRow_7_AGGIN end ] start
+	 */
+
+	
+
+	
+	
+		currentVirtualComponent = "tAggregateRow_7";
+	
+	currentComponent="tAggregateRow_7_AGGIN";
+
+	
+
+} // G_AggR_600
+
+ 
+
+ok_Hash.put("tAggregateRow_7_AGGIN", true);
+end_Hash.put("tAggregateRow_7_AGGIN", System.currentTimeMillis());
+
+
+
+
+/**
+ * [tAggregateRow_7_AGGIN end ] stop
+ */
+
+	
+	/**
+	 * [tFileOutputDelimited_6 end ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tFileOutputDelimited_6";
+
+	
+
+
+
+		
+			
+					if(outtFileOutputDelimited_6!=null) {
+						outtFileOutputDelimited_6.flush();
+						outtFileOutputDelimited_6.close();
+					}
+				
+				globalMap.put("tFileOutputDelimited_6_NB_LINE",nb_line_tFileOutputDelimited_6);
+				globalMap.put("tFileOutputDelimited_6_FILE_NAME",fileName_tFileOutputDelimited_6);
+			
+		
+		
+		resourceMap.put("finish_tFileOutputDelimited_6", true);
+	
+
+				if(execStat){
+			  		runStat.updateStat(resourceMap,iterateId,2,0,"row13");
+			  	}
+			  	
+ 
+
+ok_Hash.put("tFileOutputDelimited_6", true);
+end_Hash.put("tFileOutputDelimited_6", System.currentTimeMillis());
+
+
+
+
+/**
+ * [tFileOutputDelimited_6 end ] stop
+ */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -8459,6 +14316,18 @@ end_Hash.put("tFileOutputDelimited_2", System.currentTimeMillis());
 				throw error;
 			}finally{
 				
+							//free memory for "tAggregateRow_7_AGGIN"
+							globalMap.remove("tAggregateRow_7");
+						
+							//free memory for "tAggregateRow_6_AGGIN"
+							globalMap.remove("tAggregateRow_6");
+						
+							//free memory for "tAggregateRow_5_AGGIN"
+							globalMap.remove("tAggregateRow_5");
+						
+							//free memory for "tAggregateRow_4_AGGIN"
+							globalMap.remove("tAggregateRow_4");
+						
 							//free memory for "tAggregateRow_2_AGGIN"
 							globalMap.remove("tAggregateRow_2");
 						
@@ -8893,6 +14762,355 @@ end_Hash.put("tFileOutputDelimited_2", System.currentTimeMillis());
 
 
 
+	
+	/**
+	 * [tAggregateRow_4_AGGOUT finally ] start
+	 */
+
+	
+
+	
+	
+		currentVirtualComponent = "tAggregateRow_4";
+	
+	currentComponent="tAggregateRow_4_AGGOUT";
+
+	
+
+ 
+
+
+
+/**
+ * [tAggregateRow_4_AGGOUT finally ] stop
+ */
+
+	
+	/**
+	 * [tAggregateRow_4_AGGIN finally ] start
+	 */
+
+	
+
+	
+	
+		currentVirtualComponent = "tAggregateRow_4";
+	
+	currentComponent="tAggregateRow_4_AGGIN";
+
+	
+
+ 
+
+
+
+/**
+ * [tAggregateRow_4_AGGIN finally ] stop
+ */
+
+	
+	/**
+	 * [tMap_3 finally ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tMap_3";
+
+	
+
+ 
+
+
+
+/**
+ * [tMap_3 finally ] stop
+ */
+
+	
+	/**
+	 * [tAggregateRow_5_AGGOUT finally ] start
+	 */
+
+	
+
+	
+	
+		currentVirtualComponent = "tAggregateRow_5";
+	
+	currentComponent="tAggregateRow_5_AGGOUT";
+
+	
+
+ 
+
+
+
+/**
+ * [tAggregateRow_5_AGGOUT finally ] stop
+ */
+
+	
+	/**
+	 * [tAggregateRow_5_AGGIN finally ] start
+	 */
+
+	
+
+	
+	
+		currentVirtualComponent = "tAggregateRow_5";
+	
+	currentComponent="tAggregateRow_5_AGGIN";
+
+	
+
+ 
+
+
+
+/**
+ * [tAggregateRow_5_AGGIN finally ] stop
+ */
+
+	
+	/**
+	 * [tFileOutputDelimited_4 finally ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tFileOutputDelimited_4";
+
+	
+
+
+		if(resourceMap.get("finish_tFileOutputDelimited_4") == null){ 
+			
+				
+						java.io.Writer outtFileOutputDelimited_4 = (java.io.Writer)resourceMap.get("out_tFileOutputDelimited_4");
+						if(outtFileOutputDelimited_4!=null) {
+							outtFileOutputDelimited_4.flush();
+							outtFileOutputDelimited_4.close();
+						}
+					
+				
+			
+		}
+	
+
+ 
+
+
+
+/**
+ * [tFileOutputDelimited_4 finally ] stop
+ */
+
+
+
+
+
+
+
+
+
+
+	
+	/**
+	 * [tAggregateRow_6_AGGOUT finally ] start
+	 */
+
+	
+
+	
+	
+		currentVirtualComponent = "tAggregateRow_6";
+	
+	currentComponent="tAggregateRow_6_AGGOUT";
+
+	
+
+ 
+
+
+
+/**
+ * [tAggregateRow_6_AGGOUT finally ] stop
+ */
+
+	
+	/**
+	 * [tAggregateRow_6_AGGIN finally ] start
+	 */
+
+	
+
+	
+	
+		currentVirtualComponent = "tAggregateRow_6";
+	
+	currentComponent="tAggregateRow_6_AGGIN";
+
+	
+
+ 
+
+
+
+/**
+ * [tAggregateRow_6_AGGIN finally ] stop
+ */
+
+	
+	/**
+	 * [tFileOutputDelimited_5 finally ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tFileOutputDelimited_5";
+
+	
+
+
+		if(resourceMap.get("finish_tFileOutputDelimited_5") == null){ 
+			
+				
+						java.io.Writer outtFileOutputDelimited_5 = (java.io.Writer)resourceMap.get("out_tFileOutputDelimited_5");
+						if(outtFileOutputDelimited_5!=null) {
+							outtFileOutputDelimited_5.flush();
+							outtFileOutputDelimited_5.close();
+						}
+					
+				
+			
+		}
+	
+
+ 
+
+
+
+/**
+ * [tFileOutputDelimited_5 finally ] stop
+ */
+
+
+
+
+
+
+
+
+
+
+	
+	/**
+	 * [tAggregateRow_7_AGGOUT finally ] start
+	 */
+
+	
+
+	
+	
+		currentVirtualComponent = "tAggregateRow_7";
+	
+	currentComponent="tAggregateRow_7_AGGOUT";
+
+	
+
+ 
+
+
+
+/**
+ * [tAggregateRow_7_AGGOUT finally ] stop
+ */
+
+	
+	/**
+	 * [tAggregateRow_7_AGGIN finally ] start
+	 */
+
+	
+
+	
+	
+		currentVirtualComponent = "tAggregateRow_7";
+	
+	currentComponent="tAggregateRow_7_AGGIN";
+
+	
+
+ 
+
+
+
+/**
+ * [tAggregateRow_7_AGGIN finally ] stop
+ */
+
+	
+	/**
+	 * [tFileOutputDelimited_6 finally ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tFileOutputDelimited_6";
+
+	
+
+
+		if(resourceMap.get("finish_tFileOutputDelimited_6") == null){ 
+			
+				
+						java.io.Writer outtFileOutputDelimited_6 = (java.io.Writer)resourceMap.get("out_tFileOutputDelimited_6");
+						if(outtFileOutputDelimited_6!=null) {
+							outtFileOutputDelimited_6.flush();
+							outtFileOutputDelimited_6.close();
+						}
+					
+				
+			
+		}
+	
+
+ 
+
+
+
+/**
+ * [tFileOutputDelimited_6 finally ] stop
+ */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -9269,7 +15487,7 @@ public void tFileInputDelimited_1Process(final java.util.Map<String, Object> glo
 
 			   		// connection name:row6
 			   		// source node:tFileInputDelimited_1 - inputs:(after_tDBInput_1) outputs:(row6,row6) | target node:tAdvancedHash_row6 - inputs:(row6) outputs:()
-			   		// linked node: tMap_2 - inputs:(row5,row6) outputs:(out2,pos,neg)
+			   		// linked node: tMap_2 - inputs:(row5,row6) outputs:(out2,pos,neg,cnt)
 			   
 			   		org.talend.designer.components.lookup.common.ICommonLookup.MATCHING_MODE matchingModeEnum_row6 = 
 			   			org.talend.designer.components.lookup.common.ICommonLookup.MATCHING_MODE.UNIQUE_MATCH;
@@ -10144,6 +16362,6 @@ if (execStat) {
     ResumeUtil resumeUtil = null;
 }
 /************************************************************************************************
- *     238535 characters generated by Talend Open Studio for Big Data 
- *     on the December 7, 2020 11:38:12 PM CET
+ *     389901 characters generated by Talend Open Studio for Big Data 
+ *     on the December 9, 2020 11:15:35 PM CET
  ************************************************************************************************/

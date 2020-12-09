@@ -51,7 +51,7 @@
     <elementParameter field="TEXT" name="PROPERTIES_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
     <elementParameter field="TEXT" name="SCHEMA_DB_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
     <elementParameter field="TEXT" name="USER_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
-    <elementParameter field="PASSWORD" name="PASS_IMPLICIT_CONTEXT" value="enc:system.encryption.key.v1:yVXBVBw3DrHWVSrcGX65SBoSahn5EH3gigwbjRm7" show="false"/>
+    <elementParameter field="PASSWORD" name="PASS_IMPLICIT_CONTEXT" value="enc:system.encryption.key.v1:Cza/7KWMi8W3/ciq8h86J9rJ0L8Ed0EzcIAhO1Xf" show="false"/>
     <elementParameter field="FILE" name="DBFILE_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
     <elementParameter field="DBTABLE" name="DBTABLE_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
     <elementParameter field="TEXT" name="QUERY_CONDITION_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
@@ -86,7 +86,7 @@
     <elementParameter field="TEXT" name="PROPERTIES" value="&quot;&quot;" show="false"/>
     <elementParameter field="TEXT" name="SCHEMA_DB" value="&quot;&quot;" show="false"/>
     <elementParameter field="TEXT" name="USER" value="&quot;&quot;" show="false"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:HX8K5oPVLYqmLMalo016H04rju9Wf0M2PDnFZZZj" show="false"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:Pqa/nmblnUx+/RwUVXfoMcybWB7+14gfHGPSsxFc" show="false"/>
     <elementParameter field="FILE" name="DBFILE" value="&quot;&quot;" show="false"/>
     <elementParameter field="DBTABLE" name="TABLE_STATS" value="&quot;&quot;" show="false"/>
     <elementParameter field="DBTABLE" name="TABLE_LOGS" value="&quot;&quot;" show="false"/>
@@ -148,7 +148,7 @@
     <elementParameter field="CHECK" name="NEED_AUTH" value="true"/>
     <elementParameter field="CLOSED_LIST" name="AUTH_TYPE" value="OAUTH2_BEARER"/>
     <elementParameter field="TEXT" name="AUTH_USERNAME" value="&quot;username&quot;" show="false"/>
-    <elementParameter field="PASSWORD" name="AUTH_PASSWORD" value="enc:system.encryption.key.v1:f1+3wdjaAX5Gyi/x610GWhu5qT7pGregiGgxMvEtcPXLqJnxn0E=" show="false"/>
+    <elementParameter field="PASSWORD" name="AUTH_PASSWORD" value="enc:system.encryption.key.v1:4bpaRTIvxisJCAeLWwcUsQNauEA5s6dupMzJBmPSToTGN6EfURk=" show="false"/>
     <elementParameter field="TEXT" name="AUTH_BEARER_TOKEN" value="&quot;AAAAAAAAAAAAAAAAAAAAAFEVJgEAAAAAejtPVAQB544BVATEzZjxhVI22ok%3Dcn9mxnTSBKDqaTkwOLzsYemZ9f58ZW0KVOKXDK4i59WtWqCe2d&quot;"/>
     <elementParameter field="CHECK" name="NEED_AUTHORIZATION" value="false" show="false"/>
     <elementParameter field="TEXT" name="ROLE" value="&quot;&quot;" show="false"/>
@@ -176,7 +176,7 @@
     <elementParameter field="TEXT" name="PROXY_HOST" value="&quot;61.163.92.4&quot;" show="false"/>
     <elementParameter field="TEXT" name="PROXY_PORT" value="8080" show="false"/>
     <elementParameter field="TEXT" name="PROXY_USERNAME" value="&quot;&quot;" show="false"/>
-    <elementParameter field="PASSWORD" name="PROXY_PASSWORD" value="enc:system.encryption.key.v1:cTK6yuewAKByZCVeTfSLd+smM8s0PzE1cQB/L1D4" show="false"/>
+    <elementParameter field="PASSWORD" name="PROXY_PASSWORD" value="enc:system.encryption.key.v1:SJpx+CARBo8fmt3ecjCJZ/M9A9xrzSd1anKOPRQg" show="false"/>
     <elementParameter field="TEXT" name="LABEL" value="__UNIQUE_NAME__"/>
     <elementParameter field="TEXT" name="HINT" value="&lt;b>__UNIQUE_NAME__&lt;/b>&lt;br>__COMMENT__"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
@@ -315,7 +315,7 @@
     <elementParameter field="CHECK" name="NEED_AUTH" value="true"/>
     <elementParameter field="CLOSED_LIST" name="AUTH_TYPE" value="OAUTH2_BEARER"/>
     <elementParameter field="TEXT" name="AUTH_USERNAME" value="&quot;username&quot;" show="false"/>
-    <elementParameter field="PASSWORD" name="AUTH_PASSWORD" value="enc:system.encryption.key.v1:ij2VWU1Y8DPu8qPr0l0/c7e3RSWDsmNJdbT366eXSFGyLRVRXuw=" show="false"/>
+    <elementParameter field="PASSWORD" name="AUTH_PASSWORD" value="enc:system.encryption.key.v1:JSbIJmqZ6arJJin52XldTSWctwQrQAfUP6fvog/wOiaW26z50nc=" show="false"/>
     <elementParameter field="TEXT" name="AUTH_BEARER_TOKEN" value="&quot;AAAAAAAAAAAAAAAAAAAAAFEVJgEAAAAAejtPVAQB544BVATEzZjxhVI22ok%3Dcn9mxnTSBKDqaTkwOLzsYemZ9f58ZW0KVOKXDK4i59WtWqCe2d&quot;"/>
     <elementParameter field="CHECK" name="NEED_AUTHORIZATION" value="false" show="false"/>
     <elementParameter field="TEXT" name="ROLE" value="&quot;&quot;" show="false"/>
@@ -343,7 +343,7 @@
     <elementParameter field="TEXT" name="PROXY_HOST" value="&quot;61.163.92.4&quot;" show="false"/>
     <elementParameter field="TEXT" name="PROXY_PORT" value="8080" show="false"/>
     <elementParameter field="TEXT" name="PROXY_USERNAME" value="&quot;&quot;" show="false"/>
-    <elementParameter field="PASSWORD" name="PROXY_PASSWORD" value="enc:system.encryption.key.v1:2QRkOE1sqJ/oS9ntHylIU049ZFRgDEfg0J58nFuc" show="false"/>
+    <elementParameter field="PASSWORD" name="PROXY_PASSWORD" value="enc:system.encryption.key.v1:5UHRbF+mTxTtgxYgG77L+GHonbQgZCBc6pr5swuv" show="false"/>
     <elementParameter field="TEXT" name="LABEL" value="__UNIQUE_NAME__"/>
     <elementParameter field="TEXT" name="HINT" value="&lt;b>__UNIQUE_NAME__&lt;/b>&lt;br>__COMMENT__"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
@@ -482,7 +482,7 @@
     <elementParameter field="CHECK" name="NEED_AUTH" value="true"/>
     <elementParameter field="CLOSED_LIST" name="AUTH_TYPE" value="OAUTH2_BEARER"/>
     <elementParameter field="TEXT" name="AUTH_USERNAME" value="&quot;username&quot;" show="false"/>
-    <elementParameter field="PASSWORD" name="AUTH_PASSWORD" value="enc:system.encryption.key.v1:NRDmIBv1I8bd2pqz0OQKWPzqNK7iREnF8mZ6ZvTcREJz8eVh1T0=" show="false"/>
+    <elementParameter field="PASSWORD" name="AUTH_PASSWORD" value="enc:system.encryption.key.v1:YZlYehpMLuO+pgrwkkRC4RFd9P+5F7QvZ2fH04a01FgFlZHWDwg=" show="false"/>
     <elementParameter field="TEXT" name="AUTH_BEARER_TOKEN" value="&quot;AAAAAAAAAAAAAAAAAAAAAFEVJgEAAAAAejtPVAQB544BVATEzZjxhVI22ok%3Dcn9mxnTSBKDqaTkwOLzsYemZ9f58ZW0KVOKXDK4i59WtWqCe2d&quot;"/>
     <elementParameter field="CHECK" name="NEED_AUTHORIZATION" value="false" show="false"/>
     <elementParameter field="TEXT" name="ROLE" value="&quot;&quot;" show="false"/>
@@ -510,7 +510,7 @@
     <elementParameter field="TEXT" name="PROXY_HOST" value="&quot;61.163.92.4&quot;" show="false"/>
     <elementParameter field="TEXT" name="PROXY_PORT" value="8080" show="false"/>
     <elementParameter field="TEXT" name="PROXY_USERNAME" value="&quot;&quot;" show="false"/>
-    <elementParameter field="PASSWORD" name="PROXY_PASSWORD" value="enc:system.encryption.key.v1:99blVGWWHPjTr4xkv2NmrnGDTh6KplHvLe3n8Iqm" show="false"/>
+    <elementParameter field="PASSWORD" name="PROXY_PASSWORD" value="enc:system.encryption.key.v1:kYOSYvQftNdoug53jihCPsY4zdAreC+oW64ii0v8" show="false"/>
     <elementParameter field="TEXT" name="LABEL" value="__UNIQUE_NAME__"/>
     <elementParameter field="TEXT" name="HINT" value="&lt;b>__UNIQUE_NAME__&lt;/b>&lt;br>__COMMENT__"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>

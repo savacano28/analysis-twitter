@@ -61,7 +61,7 @@
     <elementParameter field="TEXT" name="PROPERTIES_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
     <elementParameter field="TEXT" name="SCHEMA_DB_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
     <elementParameter field="TEXT" name="USER_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
-    <elementParameter field="PASSWORD" name="PASS_IMPLICIT_CONTEXT" value="enc:system.encryption.key.v1:Jizj/lFGFbfUP8EO85rfEeUG1rCZCraPi9DaE/Rh" show="false"/>
+    <elementParameter field="PASSWORD" name="PASS_IMPLICIT_CONTEXT" value="enc:system.encryption.key.v1:14xgEnvRFFho5guRuypaI27pm3q/JABurkbpM5VK" show="false"/>
     <elementParameter field="FILE" name="DBFILE_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
     <elementParameter field="DBTABLE" name="DBTABLE_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
     <elementParameter field="TEXT" name="QUERY_CONDITION_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
@@ -96,7 +96,7 @@
     <elementParameter field="TEXT" name="PROPERTIES" value="&quot;&quot;" show="false"/>
     <elementParameter field="TEXT" name="SCHEMA_DB" value="&quot;&quot;" show="false"/>
     <elementParameter field="TEXT" name="USER" value="&quot;&quot;" show="false"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:ex27JCsPzHD6f0yvM9PAcbtjUSwsHc5m6Z2ON6GA" show="false"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:/L9c3PzZFatmrdkf/28m72xL2kUzS1aNF+UBzvSN" show="false"/>
     <elementParameter field="FILE" name="DBFILE" value="&quot;&quot;" show="false"/>
     <elementParameter field="DBTABLE" name="TABLE_STATS" value="&quot;&quot;" show="false"/>
     <elementParameter field="DBTABLE" name="TABLE_LOGS" value="&quot;&quot;" show="false"/>
@@ -138,7 +138,7 @@
     <elementParameter field="TEXT" name="DBNAME" value="context.connection_postgres_Database"/>
     <elementParameter field="TEXT" name="SCHEMA_DB" value="context.connection_postgres_Schema"/>
     <elementParameter field="TEXT" name="USER" value="context.connection_postgres_Login"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:zYbEMt6Ql9ln+KdAm8otz44B0g0E7wNb82Kz932GX5bGNV/qcJHtwrwWeEH0pCzerJqMk41potGBchXBjXSx1Q=="/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:fZS4RSoSpCxvYaJz+wcv0BfeSFygmwHWNp5XjjwhzfePswt57J8qN8oBxnNlh0BHItq25j7qbQJqSv3JWnjLPg=="/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;all_tweets&quot;"/>
     <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" value="" show="false"/>
@@ -431,6 +431,13 @@
       <column comment="" key="true" length="50" name="country" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
       <column comment="" key="false" length="2" name="s_negativos" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_Integer" usefulColumn="true"/>
     </metadata>
+    <metadata connector="FLOW" name="c_pos">
+      <column comment="" key="false" length="13" name="date" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="DATE" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="50" name="id" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="50" name="hashtag" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="50" name="country" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="2" name="sentiment" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_Integer" usefulColumn="true"/>
+    </metadata>
     <nodeData xsi:type="TalendMapper:MapperData">
       <uiProperties/>
       <varTables sizeState="INTERMEDIATE" name="Var" minimized="true"/>
@@ -452,6 +459,13 @@
         <mapperTableEntries name="country" expression="row5.country " type="id_String" nullable="true"/>
         <mapperTableEntries name="s_negativos" expression="row6.sentiment " type="id_Integer" nullable="true"/>
       </outputTables>
+      <outputTables sizeState="INTERMEDIATE" name="c_pos" activateExpressionFilter="true">
+        <mapperTableEntries name="date" expression="TalendDate.formatDate(&quot;dd-MM-yyyy&quot;,row5.date)" type="id_String" nullable="true"/>
+        <mapperTableEntries name="id" expression="row5.id " type="id_String"/>
+        <mapperTableEntries name="hashtag" expression="row5.hashtag " type="id_String" nullable="true"/>
+        <mapperTableEntries name="country" expression="row5.country " type="id_String" nullable="true"/>
+        <mapperTableEntries name="sentiment" expression="row6.sentiment " type="id_Integer" nullable="true"/>
+      </outputTables>
       <inputTables sizeState="INTERMEDIATE" name="row5" matchingMode="UNIQUE_MATCH" lookupMode="LOAD_ONCE">
         <mapperTableEntries name="id" type="id_String"/>
         <mapperTableEntries name="date" type="id_Date" nullable="true"/>
@@ -466,6 +480,310 @@
         <mapperTableEntries name="sentiment" expression="" type="id_Integer" nullable="true"/>
       </inputTables>
     </nodeData>
+  </node>
+  <node componentName="tAggregateRow" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="736" posY="512">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tAggregateRow_4" show="false"/>
+    <elementParameter field="TABLE" name="GROUPBYS">
+      <elementValue elementRef="OUTPUT_COLUMN" value="id"/>
+      <elementValue elementRef="INPUT_COLUMN" value="id"/>
+      <elementValue elementRef="OUTPUT_COLUMN" value="date"/>
+      <elementValue elementRef="INPUT_COLUMN" value="date"/>
+      <elementValue elementRef="OUTPUT_COLUMN" value="hashtag"/>
+      <elementValue elementRef="INPUT_COLUMN" value="hashtag"/>
+      <elementValue elementRef="OUTPUT_COLUMN" value="country"/>
+      <elementValue elementRef="INPUT_COLUMN" value="country"/>
+    </elementParameter>
+    <elementParameter field="TABLE" name="OPERATIONS">
+      <elementValue elementRef="OUTPUT_COLUMN" value="sentiment"/>
+      <elementValue elementRef="FUNCTION" value="sum"/>
+      <elementValue elementRef="INPUT_COLUMN" value="sentiment"/>
+      <elementValue elementRef="IGNORE_NULL" value="false"/>
+    </elementParameter>
+    <elementParameter field="TEXT" name="LIST_DELIMITER" value="&quot;,&quot;"/>
+    <elementParameter field="CHECK" name="USE_FINANCIAL_PRECISION" value="true"/>
+    <elementParameter field="CHECK" name="CHECK_TYPE_OVERFLOW" value="false"/>
+    <elementParameter field="CHECK" name="CHECK_ULP" value="false"/>
+    <elementParameter field="TEXT" name="LABEL" value="__UNIQUE_NAME__"/>
+    <elementParameter field="TEXT" name="HINT" value="&lt;b>__UNIQUE_NAME__&lt;/b>&lt;br>__COMMENT__"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="tAggregateRow_4">
+      <column comment="" key="false" length="13" name="date" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="DATE" type="id_Date" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="50" name="id" nullable="false" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="50" name="hashtag" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="50" name="country" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="2" name="sentiment" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_Integer" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node componentName="tMap" componentVersion="2.1" offsetLabelX="0" offsetLabelY="0" posX="864" posY="512">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tMap_3" show="false"/>
+    <elementParameter field="EXTERNAL" name="MAP" value=""/>
+    <elementParameter field="CLOSED_LIST" name="LINK_STYLE" value="AUTO"/>
+    <elementParameter field="DIRECTORY" name="TEMPORARY_DATA_DIRECTORY" value=""/>
+    <elementParameter field="IMAGE" name="PREVIEW" value="_GELgsDeLEeuPNu0sBVFG0w-tMap_3-PREVIEW.bmp"/>
+    <elementParameter field="CHECK" name="DIE_ON_ERROR" value="true" show="false"/>
+    <elementParameter field="CHECK" name="LKUP_PARALLELIZE" value="false" show="false"/>
+    <elementParameter field="TEXT" name="LEVENSHTEIN" value="0" show="false"/>
+    <elementParameter field="TEXT" name="JACCARD" value="0" show="false"/>
+    <elementParameter field="CHECK" name="ENABLE_AUTO_CONVERT_TYPE" value="false" show="false"/>
+    <elementParameter field="TEXT" name="ROWS_BUFFER_SIZE" value="2000000"/>
+    <elementParameter field="CHECK" name="CHANGE_HASH_AND_EQUALS_FOR_BIGDECIMAL" value="true"/>
+    <elementParameter field="TEXT" name="LABEL" value="__UNIQUE_NAME__"/>
+    <elementParameter field="TEXT" name="HINT" value="&lt;b>__UNIQUE_NAME__&lt;/b>&lt;br>__COMMENT__"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="c_post">
+      <column comment="" key="false" length="13" name="date" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="DATE" type="id_Date" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="50" name="hashtag" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="50" name="country" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="2" name="c_positives" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_Integer" usefulColumn="true"/>
+    </metadata>
+    <metadata connector="FLOW" name="c_negt">
+      <column comment="" key="false" length="13" name="date" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="DATE" type="id_Date" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="50" name="hashtag" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="50" name="country" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="2" name="c_negatives" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_Integer" usefulColumn="true"/>
+    </metadata>
+    <metadata connector="FLOW" name="c_fr">
+      <column comment="" key="false" length="13" name="date" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="DATE" type="id_Date" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="50" name="hashtag" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="50" name="country" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="2" name="c_tweet" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_Integer" usefulColumn="true"/>
+    </metadata>
+    <nodeData xsi:type="TalendMapper:MapperData">
+      <uiProperties/>
+      <varTables sizeState="INTERMEDIATE" name="Var" minimized="true"/>
+      <outputTables sizeState="INTERMEDIATE" name="c_post" expressionFilter="row10.sentiment >0" activateExpressionFilter="true">
+        <mapperTableEntries name="date" expression="row10.date " type="id_Date" nullable="true"/>
+        <mapperTableEntries name="hashtag" expression="row10.hashtag " type="id_String" nullable="true"/>
+        <mapperTableEntries name="country" expression="row10.country" type="id_String" nullable="true"/>
+        <mapperTableEntries name="c_positives" expression="(row10.sentiment>0?1:0) " type="id_Integer" nullable="true"/>
+      </outputTables>
+      <outputTables sizeState="INTERMEDIATE" name="c_negt" expressionFilter="row10.sentiment &lt;0" activateExpressionFilter="true">
+        <mapperTableEntries name="date" expression="row10.date " type="id_Date" nullable="true"/>
+        <mapperTableEntries name="hashtag" expression="row10.hashtag " type="id_String" nullable="true"/>
+        <mapperTableEntries name="country" expression="row10.country " type="id_String" nullable="true"/>
+        <mapperTableEntries name="c_negatives" expression="(row10.sentiment&lt;0?1:0) " type="id_Integer" nullable="true"/>
+      </outputTables>
+      <outputTables sizeState="INTERMEDIATE" name="c_fr" expressionFilter="row10.sentiment != 0" activateExpressionFilter="true">
+        <mapperTableEntries name="date" expression="row10.date " type="id_Date" nullable="true"/>
+        <mapperTableEntries name="hashtag" expression="row10.hashtag " type="id_String" nullable="true"/>
+        <mapperTableEntries name="country" expression="row10.country " type="id_String" nullable="true"/>
+        <mapperTableEntries name="c_tweet" expression="(row10.sentiment != 0?1:0)" type="id_Integer" nullable="true"/>
+      </outputTables>
+      <inputTables sizeState="INTERMEDIATE" name="row10" matchingMode="UNIQUE_MATCH" lookupMode="LOAD_ONCE">
+        <mapperTableEntries name="date" type="id_Date" nullable="true"/>
+        <mapperTableEntries name="id" type="id_String"/>
+        <mapperTableEntries name="hashtag" type="id_String" nullable="true"/>
+        <mapperTableEntries name="country" type="id_String" nullable="true"/>
+        <mapperTableEntries name="sentiment" type="id_Integer" nullable="true"/>
+      </inputTables>
+    </nodeData>
+  </node>
+  <node componentName="tAggregateRow" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="992" posY="512">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tAggregateRow_5" show="false"/>
+    <elementParameter field="TABLE" name="GROUPBYS">
+      <elementValue elementRef="OUTPUT_COLUMN" value="date"/>
+      <elementValue elementRef="INPUT_COLUMN" value="date"/>
+      <elementValue elementRef="OUTPUT_COLUMN" value="hashtag"/>
+      <elementValue elementRef="INPUT_COLUMN" value="hashtag"/>
+      <elementValue elementRef="OUTPUT_COLUMN" value="country"/>
+      <elementValue elementRef="INPUT_COLUMN" value="country"/>
+    </elementParameter>
+    <elementParameter field="TABLE" name="OPERATIONS">
+      <elementValue elementRef="OUTPUT_COLUMN" value="c_positives"/>
+      <elementValue elementRef="FUNCTION" value="sum"/>
+      <elementValue elementRef="INPUT_COLUMN" value="c_positives"/>
+      <elementValue elementRef="IGNORE_NULL" value="false"/>
+    </elementParameter>
+    <elementParameter field="TEXT" name="LIST_DELIMITER" value="&quot;,&quot;"/>
+    <elementParameter field="CHECK" name="USE_FINANCIAL_PRECISION" value="true"/>
+    <elementParameter field="CHECK" name="CHECK_TYPE_OVERFLOW" value="false"/>
+    <elementParameter field="CHECK" name="CHECK_ULP" value="false"/>
+    <elementParameter field="TEXT" name="LABEL" value="__UNIQUE_NAME__"/>
+    <elementParameter field="TEXT" name="HINT" value="&lt;b>__UNIQUE_NAME__&lt;/b>&lt;br>__COMMENT__"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="tAggregateRow_5">
+      <column comment="" key="false" length="13" name="date" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="DATE" type="id_Date" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="50" name="hashtag" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="50" name="country" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="2" name="c_positives" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_Integer" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node componentName="tAggregateRow" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="992" posY="608">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tAggregateRow_6" show="false"/>
+    <elementParameter field="TABLE" name="GROUPBYS">
+      <elementValue elementRef="OUTPUT_COLUMN" value="date"/>
+      <elementValue elementRef="INPUT_COLUMN" value="date"/>
+      <elementValue elementRef="OUTPUT_COLUMN" value="hashtag"/>
+      <elementValue elementRef="INPUT_COLUMN" value="hashtag"/>
+      <elementValue elementRef="OUTPUT_COLUMN" value="country"/>
+      <elementValue elementRef="INPUT_COLUMN" value="country"/>
+    </elementParameter>
+    <elementParameter field="TABLE" name="OPERATIONS">
+      <elementValue elementRef="OUTPUT_COLUMN" value="c_negatives"/>
+      <elementValue elementRef="FUNCTION" value="sum"/>
+      <elementValue elementRef="INPUT_COLUMN" value="c_negatives"/>
+      <elementValue elementRef="IGNORE_NULL" value="true"/>
+    </elementParameter>
+    <elementParameter field="TEXT" name="LIST_DELIMITER" value="&quot;,&quot;"/>
+    <elementParameter field="CHECK" name="USE_FINANCIAL_PRECISION" value="true"/>
+    <elementParameter field="CHECK" name="CHECK_TYPE_OVERFLOW" value="false"/>
+    <elementParameter field="CHECK" name="CHECK_ULP" value="false"/>
+    <elementParameter field="TEXT" name="LABEL" value="__UNIQUE_NAME__"/>
+    <elementParameter field="TEXT" name="HINT" value="&lt;b>__UNIQUE_NAME__&lt;/b>&lt;br>__COMMENT__"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="tAggregateRow_6">
+      <column comment="" key="false" length="13" name="date" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="DATE" type="id_Date" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="50" name="hashtag" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="50" name="country" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="2" name="c_negatives" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_Integer" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node componentName="tFileOutputDelimited" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="1120" posY="512">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tFileOutputDelimited_4" show="false"/>
+    <elementParameter field="CHECK" name="USESTREAM" value="false"/>
+    <elementParameter field="TEXT" name="STREAMNAME" value="outputStream" show="false"/>
+    <elementParameter field="FILE" name="FILENAME" value="context.path_files_global+&quot;documentations/mesures/c_pos_fr.csv&quot;"/>
+    <elementParameter field="TEXT" name="ROWSEPARATOR" value="&quot;\n&quot;"/>
+    <elementParameter field="CHECK" name="OS_LINE_SEPARATOR_AS_ROW_SEPARATOR" value="true" show="false"/>
+    <elementParameter field="OPENED_LIST" name="CSVROWSEPARATOR" value="&quot;\n&quot;" show="false"/>
+    <elementParameter field="TEXT" name="FIELDSEPARATOR" value="&quot;;&quot;"/>
+    <elementParameter field="CHECK" name="APPEND" value="false"/>
+    <elementParameter field="CHECK" name="INCLUDEHEADER" value="true"/>
+    <elementParameter field="CHECK" name="COMPRESS" value="false"/>
+    <elementParameter field="CHECK" name="ADVANCED_SEPARATOR" value="false"/>
+    <elementParameter field="TEXT" name="THOUSANDS_SEPARATOR" value="&quot;,&quot;" show="false"/>
+    <elementParameter field="TEXT" name="DECIMAL_SEPARATOR" value="&quot;.&quot;" show="false"/>
+    <elementParameter field="CHECK" name="CSV_OPTION" value="false"/>
+    <elementParameter field="TEXT" name="ESCAPE_CHAR" value="&quot;&quot;&quot;" show="false"/>
+    <elementParameter field="TEXT" name="TEXT_ENCLOSURE" value="&quot;&quot;&quot;" show="false"/>
+    <elementParameter field="CHECK" name="CREATE" value="true"/>
+    <elementParameter field="CHECK" name="SPLIT" value="false"/>
+    <elementParameter field="TEXT" name="SPLIT_EVERY" value="1000" show="false"/>
+    <elementParameter field="CHECK" name="FLUSHONROW" value="false"/>
+    <elementParameter field="TEXT" name="FLUSHONROW_NUM" value="1" show="false"/>
+    <elementParameter field="CHECK" name="ROW_MODE" value="false"/>
+    <elementParameter field="ENCODING_TYPE" name="ENCODING" value="&quot;ISO-8859-15&quot;"/>
+    <elementParameter field="TECHNICAL" name="ENCODING:ENCODING_TYPE" value="ISO-8859-15"/>
+    <elementParameter field="CHECK" name="DELETE_EMPTYFILE" value="false"/>
+    <elementParameter field="CHECK" name="FILE_EXIST_EXCEPTION" value="true"/>
+    <elementParameter field="TEXT" name="SCHEMA_OPT_NUM" value="90" show="false"/>
+    <elementParameter field="TEXT" name="LABEL" value="c_pos"/>
+    <elementParameter field="TEXT" name="HINT" value="&lt;b>__UNIQUE_NAME__&lt;/b>&lt;br>__COMMENT__"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="tFileOutputDelimited_4">
+      <column comment="" key="false" length="13" name="date" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="DATE" type="id_Date" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="50" name="hashtag" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="50" name="country" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="2" name="c_positives" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_Integer" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node componentName="tFileOutputDelimited" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="1120" posY="608">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tFileOutputDelimited_5" show="false"/>
+    <elementParameter field="CHECK" name="USESTREAM" value="false"/>
+    <elementParameter field="TEXT" name="STREAMNAME" value="outputStream" show="false"/>
+    <elementParameter field="FILE" name="FILENAME" value="context.path_files_global+&quot;documentations/mesures/c_neg_fr.csv&quot;"/>
+    <elementParameter field="TEXT" name="ROWSEPARATOR" value="&quot;\n&quot;"/>
+    <elementParameter field="CHECK" name="OS_LINE_SEPARATOR_AS_ROW_SEPARATOR" value="true" show="false"/>
+    <elementParameter field="OPENED_LIST" name="CSVROWSEPARATOR" value="&quot;\n&quot;" show="false"/>
+    <elementParameter field="TEXT" name="FIELDSEPARATOR" value="&quot;;&quot;"/>
+    <elementParameter field="CHECK" name="APPEND" value="false"/>
+    <elementParameter field="CHECK" name="INCLUDEHEADER" value="true"/>
+    <elementParameter field="CHECK" name="COMPRESS" value="false"/>
+    <elementParameter field="CHECK" name="ADVANCED_SEPARATOR" value="false"/>
+    <elementParameter field="TEXT" name="THOUSANDS_SEPARATOR" value="&quot;,&quot;" show="false"/>
+    <elementParameter field="TEXT" name="DECIMAL_SEPARATOR" value="&quot;.&quot;" show="false"/>
+    <elementParameter field="CHECK" name="CSV_OPTION" value="false"/>
+    <elementParameter field="TEXT" name="ESCAPE_CHAR" value="&quot;&quot;&quot;" show="false"/>
+    <elementParameter field="TEXT" name="TEXT_ENCLOSURE" value="&quot;&quot;&quot;" show="false"/>
+    <elementParameter field="CHECK" name="CREATE" value="true"/>
+    <elementParameter field="CHECK" name="SPLIT" value="false"/>
+    <elementParameter field="TEXT" name="SPLIT_EVERY" value="1000" show="false"/>
+    <elementParameter field="CHECK" name="FLUSHONROW" value="false"/>
+    <elementParameter field="TEXT" name="FLUSHONROW_NUM" value="1" show="false"/>
+    <elementParameter field="CHECK" name="ROW_MODE" value="false"/>
+    <elementParameter field="ENCODING_TYPE" name="ENCODING" value="&quot;ISO-8859-15&quot;"/>
+    <elementParameter field="TECHNICAL" name="ENCODING:ENCODING_TYPE" value="ISO-8859-15"/>
+    <elementParameter field="CHECK" name="DELETE_EMPTYFILE" value="false"/>
+    <elementParameter field="CHECK" name="FILE_EXIST_EXCEPTION" value="true"/>
+    <elementParameter field="TEXT" name="SCHEMA_OPT_NUM" value="90" show="false"/>
+    <elementParameter field="TEXT" name="LABEL" value="c_neg"/>
+    <elementParameter field="TEXT" name="HINT" value="&lt;b>__UNIQUE_NAME__&lt;/b>&lt;br>__COMMENT__"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="tFileOutputDelimited_5">
+      <column comment="" key="false" length="13" name="date" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="DATE" type="id_Date" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="50" name="hashtag" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="50" name="country" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="2" name="c_negatives" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_Integer" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node componentName="tAggregateRow" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="992" posY="672">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tAggregateRow_7" show="false"/>
+    <elementParameter field="TABLE" name="GROUPBYS">
+      <elementValue elementRef="OUTPUT_COLUMN" value="date"/>
+      <elementValue elementRef="INPUT_COLUMN" value="date"/>
+      <elementValue elementRef="OUTPUT_COLUMN" value="hashtag"/>
+      <elementValue elementRef="INPUT_COLUMN" value="hashtag"/>
+      <elementValue elementRef="OUTPUT_COLUMN" value="country"/>
+      <elementValue elementRef="INPUT_COLUMN" value="country"/>
+    </elementParameter>
+    <elementParameter field="TABLE" name="OPERATIONS">
+      <elementValue elementRef="OUTPUT_COLUMN" value="c_tweet"/>
+      <elementValue elementRef="FUNCTION" value="sum"/>
+      <elementValue elementRef="INPUT_COLUMN" value="c_tweet"/>
+      <elementValue elementRef="IGNORE_NULL" value="true"/>
+    </elementParameter>
+    <elementParameter field="TEXT" name="LIST_DELIMITER" value="&quot;,&quot;"/>
+    <elementParameter field="CHECK" name="USE_FINANCIAL_PRECISION" value="true"/>
+    <elementParameter field="CHECK" name="CHECK_TYPE_OVERFLOW" value="false"/>
+    <elementParameter field="CHECK" name="CHECK_ULP" value="false"/>
+    <elementParameter field="TEXT" name="LABEL" value="__UNIQUE_NAME__"/>
+    <elementParameter field="TEXT" name="HINT" value="&lt;b>__UNIQUE_NAME__&lt;/b>&lt;br>__COMMENT__"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="tAggregateRow_7">
+      <column comment="" key="false" length="13" name="date" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="DATE" type="id_Date" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="50" name="hashtag" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="50" name="country" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="2" name="c_tweet" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_Integer" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node componentName="tFileOutputDelimited" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="1120" posY="672">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tFileOutputDelimited_6" show="false"/>
+    <elementParameter field="CHECK" name="USESTREAM" value="false"/>
+    <elementParameter field="TEXT" name="STREAMNAME" value="outputStream" show="false"/>
+    <elementParameter field="FILE" name="FILENAME" value="context.path_files_global+&quot;documentations/mesures/c_fr.csv&quot;"/>
+    <elementParameter field="TEXT" name="ROWSEPARATOR" value="&quot;\n&quot;"/>
+    <elementParameter field="CHECK" name="OS_LINE_SEPARATOR_AS_ROW_SEPARATOR" value="true" show="false"/>
+    <elementParameter field="OPENED_LIST" name="CSVROWSEPARATOR" value="&quot;\n&quot;" show="false"/>
+    <elementParameter field="TEXT" name="FIELDSEPARATOR" value="&quot;;&quot;"/>
+    <elementParameter field="CHECK" name="APPEND" value="false"/>
+    <elementParameter field="CHECK" name="INCLUDEHEADER" value="true"/>
+    <elementParameter field="CHECK" name="COMPRESS" value="false"/>
+    <elementParameter field="CHECK" name="ADVANCED_SEPARATOR" value="false"/>
+    <elementParameter field="TEXT" name="THOUSANDS_SEPARATOR" value="&quot;,&quot;" show="false"/>
+    <elementParameter field="TEXT" name="DECIMAL_SEPARATOR" value="&quot;.&quot;" show="false"/>
+    <elementParameter field="CHECK" name="CSV_OPTION" value="false"/>
+    <elementParameter field="TEXT" name="ESCAPE_CHAR" value="&quot;&quot;&quot;" show="false"/>
+    <elementParameter field="TEXT" name="TEXT_ENCLOSURE" value="&quot;&quot;&quot;" show="false"/>
+    <elementParameter field="CHECK" name="CREATE" value="true"/>
+    <elementParameter field="CHECK" name="SPLIT" value="false"/>
+    <elementParameter field="TEXT" name="SPLIT_EVERY" value="1000" show="false"/>
+    <elementParameter field="CHECK" name="FLUSHONROW" value="false"/>
+    <elementParameter field="TEXT" name="FLUSHONROW_NUM" value="1" show="false"/>
+    <elementParameter field="CHECK" name="ROW_MODE" value="false"/>
+    <elementParameter field="ENCODING_TYPE" name="ENCODING" value="&quot;ISO-8859-15&quot;"/>
+    <elementParameter field="TECHNICAL" name="ENCODING:ENCODING_TYPE" value="ISO-8859-15"/>
+    <elementParameter field="CHECK" name="DELETE_EMPTYFILE" value="false"/>
+    <elementParameter field="CHECK" name="FILE_EXIST_EXCEPTION" value="true"/>
+    <elementParameter field="TEXT" name="SCHEMA_OPT_NUM" value="90" show="false"/>
+    <elementParameter field="TEXT" name="LABEL" value="c_fr"/>
+    <elementParameter field="TEXT" name="HINT" value="&lt;b>__UNIQUE_NAME__&lt;/b>&lt;br>__COMMENT__"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="tFileOutputDelimited_6">
+      <column comment="" key="false" length="13" name="date" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" sourceType="DATE" type="id_Date" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="50" name="hashtag" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="50" name="country" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="2" name="c_tweet" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_Integer" usefulColumn="true"/>
+    </metadata>
   </node>
   <node componentName="tAggregateRow" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="736" posY="64">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tAggregateRow_1" show="false"/>
@@ -495,66 +813,6 @@
       <column comment="" key="true" length="50" name="hashtag" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
       <column comment="" key="true" length="50" name="country" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
       <column comment="" key="false" length="2" name="s_positivos" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_Integer" usefulColumn="true"/>
-    </metadata>
-  </node>
-  <node componentName="tAggregateRow" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="736" posY="224">
-    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tAggregateRow_2" show="false"/>
-    <elementParameter field="TABLE" name="GROUPBYS">
-      <elementValue elementRef="OUTPUT_COLUMN" value="date"/>
-      <elementValue elementRef="INPUT_COLUMN" value="date"/>
-      <elementValue elementRef="OUTPUT_COLUMN" value="hashtag"/>
-      <elementValue elementRef="INPUT_COLUMN" value="hashtag"/>
-      <elementValue elementRef="OUTPUT_COLUMN" value="country"/>
-      <elementValue elementRef="INPUT_COLUMN" value="country"/>
-    </elementParameter>
-    <elementParameter field="TABLE" name="OPERATIONS">
-      <elementValue elementRef="OUTPUT_COLUMN" value="s_negativos"/>
-      <elementValue elementRef="FUNCTION" value="sum"/>
-      <elementValue elementRef="INPUT_COLUMN" value="s_negativos"/>
-      <elementValue elementRef="IGNORE_NULL" value="true"/>
-    </elementParameter>
-    <elementParameter field="TEXT" name="LIST_DELIMITER" value="&quot;,&quot;"/>
-    <elementParameter field="CHECK" name="USE_FINANCIAL_PRECISION" value="true"/>
-    <elementParameter field="CHECK" name="CHECK_TYPE_OVERFLOW" value="false"/>
-    <elementParameter field="CHECK" name="CHECK_ULP" value="false"/>
-    <elementParameter field="TEXT" name="LABEL" value="__UNIQUE_NAME__"/>
-    <elementParameter field="TEXT" name="HINT" value="&lt;b>__UNIQUE_NAME__&lt;/b>&lt;br>__COMMENT__"/>
-    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
-    <metadata connector="FLOW" name="tAggregateRow_2">
-      <column comment="" key="true" length="13" name="date" nullable="true" pattern="" precision="0" sourceType="DATE" type="id_String" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="true" length="50" name="hashtag" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="true" length="50" name="country" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="2" name="s_negativos" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_Integer" usefulColumn="true"/>
-    </metadata>
-  </node>
-  <node componentName="tAggregateRow" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="736" posY="384">
-    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tAggregateRow_3" show="false"/>
-    <elementParameter field="TABLE" name="GROUPBYS">
-      <elementValue elementRef="OUTPUT_COLUMN" value="date"/>
-      <elementValue elementRef="INPUT_COLUMN" value="date"/>
-      <elementValue elementRef="OUTPUT_COLUMN" value="hashtag"/>
-      <elementValue elementRef="INPUT_COLUMN" value="hashtag"/>
-      <elementValue elementRef="OUTPUT_COLUMN" value="country"/>
-      <elementValue elementRef="INPUT_COLUMN" value="country"/>
-    </elementParameter>
-    <elementParameter field="TABLE" name="OPERATIONS">
-      <elementValue elementRef="OUTPUT_COLUMN" value="t_reception"/>
-      <elementValue elementRef="FUNCTION" value="sum"/>
-      <elementValue elementRef="INPUT_COLUMN" value="t_reception"/>
-      <elementValue elementRef="IGNORE_NULL" value="false"/>
-    </elementParameter>
-    <elementParameter field="TEXT" name="LIST_DELIMITER" value="&quot;,&quot;"/>
-    <elementParameter field="CHECK" name="USE_FINANCIAL_PRECISION" value="true"/>
-    <elementParameter field="CHECK" name="CHECK_TYPE_OVERFLOW" value="false"/>
-    <elementParameter field="CHECK" name="CHECK_ULP" value="false"/>
-    <elementParameter field="TEXT" name="LABEL" value="__UNIQUE_NAME__"/>
-    <elementParameter field="TEXT" name="HINT" value="&lt;b>__UNIQUE_NAME__&lt;/b>&lt;br>__COMMENT__"/>
-    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
-    <metadata connector="FLOW" name="tAggregateRow_3">
-      <column comment="" key="true" length="13" name="date" nullable="true" pattern="" precision="0" sourceType="DATE" type="id_String" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="true" length="50" name="hashtag" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="true" length="50" name="country" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="2" name="t_reception" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_Integer" usefulColumn="true"/>
     </metadata>
   </node>
   <node componentName="tFileOutputDelimited" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="896" posY="64">
@@ -596,6 +854,36 @@
       <column comment="" key="false" length="2" name="s_positivos" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_Integer" usefulColumn="true"/>
     </metadata>
   </node>
+  <node componentName="tAggregateRow" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="736" posY="224">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tAggregateRow_2" show="false"/>
+    <elementParameter field="TABLE" name="GROUPBYS">
+      <elementValue elementRef="OUTPUT_COLUMN" value="date"/>
+      <elementValue elementRef="INPUT_COLUMN" value="date"/>
+      <elementValue elementRef="OUTPUT_COLUMN" value="hashtag"/>
+      <elementValue elementRef="INPUT_COLUMN" value="hashtag"/>
+      <elementValue elementRef="OUTPUT_COLUMN" value="country"/>
+      <elementValue elementRef="INPUT_COLUMN" value="country"/>
+    </elementParameter>
+    <elementParameter field="TABLE" name="OPERATIONS">
+      <elementValue elementRef="OUTPUT_COLUMN" value="s_negativos"/>
+      <elementValue elementRef="FUNCTION" value="sum"/>
+      <elementValue elementRef="INPUT_COLUMN" value="s_negativos"/>
+      <elementValue elementRef="IGNORE_NULL" value="true"/>
+    </elementParameter>
+    <elementParameter field="TEXT" name="LIST_DELIMITER" value="&quot;,&quot;"/>
+    <elementParameter field="CHECK" name="USE_FINANCIAL_PRECISION" value="true"/>
+    <elementParameter field="CHECK" name="CHECK_TYPE_OVERFLOW" value="false"/>
+    <elementParameter field="CHECK" name="CHECK_ULP" value="false"/>
+    <elementParameter field="TEXT" name="LABEL" value="__UNIQUE_NAME__"/>
+    <elementParameter field="TEXT" name="HINT" value="&lt;b>__UNIQUE_NAME__&lt;/b>&lt;br>__COMMENT__"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="tAggregateRow_2">
+      <column comment="" key="true" length="13" name="date" nullable="true" pattern="" precision="0" sourceType="DATE" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="true" length="50" name="hashtag" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="true" length="50" name="country" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="2" name="s_negativos" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_Integer" usefulColumn="true"/>
+    </metadata>
+  </node>
   <node componentName="tFileOutputDelimited" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="896" posY="224">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tFileOutputDelimited_2" show="false"/>
     <elementParameter field="CHECK" name="USESTREAM" value="false"/>
@@ -633,6 +921,36 @@
       <column comment="" key="true" length="50" name="hashtag" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
       <column comment="" key="true" length="50" name="country" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
       <column comment="" key="false" length="2" name="s_negativos" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_Integer" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node componentName="tAggregateRow" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="736" posY="384">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tAggregateRow_3" show="false"/>
+    <elementParameter field="TABLE" name="GROUPBYS">
+      <elementValue elementRef="OUTPUT_COLUMN" value="date"/>
+      <elementValue elementRef="INPUT_COLUMN" value="date"/>
+      <elementValue elementRef="OUTPUT_COLUMN" value="hashtag"/>
+      <elementValue elementRef="INPUT_COLUMN" value="hashtag"/>
+      <elementValue elementRef="OUTPUT_COLUMN" value="country"/>
+      <elementValue elementRef="INPUT_COLUMN" value="country"/>
+    </elementParameter>
+    <elementParameter field="TABLE" name="OPERATIONS">
+      <elementValue elementRef="OUTPUT_COLUMN" value="t_reception"/>
+      <elementValue elementRef="FUNCTION" value="sum"/>
+      <elementValue elementRef="INPUT_COLUMN" value="t_reception"/>
+      <elementValue elementRef="IGNORE_NULL" value="false"/>
+    </elementParameter>
+    <elementParameter field="TEXT" name="LIST_DELIMITER" value="&quot;,&quot;"/>
+    <elementParameter field="CHECK" name="USE_FINANCIAL_PRECISION" value="true"/>
+    <elementParameter field="CHECK" name="CHECK_TYPE_OVERFLOW" value="false"/>
+    <elementParameter field="CHECK" name="CHECK_ULP" value="false"/>
+    <elementParameter field="TEXT" name="LABEL" value="__UNIQUE_NAME__"/>
+    <elementParameter field="TEXT" name="HINT" value="&lt;b>__UNIQUE_NAME__&lt;/b>&lt;br>__COMMENT__"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="tAggregateRow_3">
+      <column comment="" key="true" length="13" name="date" nullable="true" pattern="" precision="0" sourceType="DATE" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="true" length="50" name="hashtag" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="true" length="50" name="country" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="2" name="t_reception" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_Integer" usefulColumn="true"/>
     </metadata>
   </node>
   <node componentName="tFileOutputDelimited" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="896" posY="384">
@@ -734,6 +1052,38 @@
   <connection connectorName="FLOW" label="neg" lineStyle="0" metaname="neg" offsetLabelX="0" offsetLabelY="0" outputId="3" source="tMap_2" target="tAggregateRow_2">
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="neg" show="false"/>
+  </connection>
+  <connection connectorName="FLOW" label="c_pos" lineStyle="0" metaname="c_pos" offsetLabelX="0" offsetLabelY="0" outputId="4" source="tMap_2" target="tAggregateRow_4">
+    <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="c_pos" show="false"/>
+  </connection>
+  <connection connectorName="FLOW" label="row10" lineStyle="0" metaname="tAggregateRow_4" offsetLabelX="0" offsetLabelY="0" source="tAggregateRow_4" target="tMap_3">
+    <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="row10" show="false"/>
+  </connection>
+  <connection connectorName="FLOW" label="c_post" lineStyle="0" metaname="c_post" offsetLabelX="0" offsetLabelY="0" outputId="1" source="tMap_3" target="tAggregateRow_5">
+    <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="c_post" show="false"/>
+  </connection>
+  <connection connectorName="FLOW" label="c_negt" lineStyle="0" metaname="c_negt" offsetLabelX="0" offsetLabelY="0" outputId="2" source="tMap_3" target="tAggregateRow_6">
+    <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="c_negt" show="false"/>
+  </connection>
+  <connection connectorName="FLOW" label="c_fr" lineStyle="0" metaname="c_fr" offsetLabelX="0" offsetLabelY="0" outputId="3" source="tMap_3" target="tAggregateRow_7">
+    <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="c_fr" show="false"/>
+  </connection>
+  <connection connectorName="FLOW" label="row11" lineStyle="0" metaname="tAggregateRow_5" offsetLabelX="0" offsetLabelY="0" source="tAggregateRow_5" target="tFileOutputDelimited_4">
+    <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="row11" show="false"/>
+  </connection>
+  <connection connectorName="FLOW" label="row111" lineStyle="0" metaname="tAggregateRow_6" offsetLabelX="0" offsetLabelY="0" source="tAggregateRow_6" target="tFileOutputDelimited_5">
+    <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="row111" show="false"/>
+  </connection>
+  <connection connectorName="FLOW" label="row112" lineStyle="0" metaname="tAggregateRow_7" offsetLabelX="0" offsetLabelY="0" source="tAggregateRow_7" target="tFileOutputDelimited_6">
+    <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="row112" show="false"/>
   </connection>
   <connection connectorName="FLOW" label="row7" lineStyle="0" metaname="tAggregateRow_1" offsetLabelX="0" offsetLabelY="0" source="tAggregateRow_1" target="tFileOutputDelimited_1">
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>

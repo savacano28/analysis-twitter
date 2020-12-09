@@ -61,7 +61,7 @@
     <elementParameter field="TEXT" name="PROPERTIES_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
     <elementParameter field="TEXT" name="SCHEMA_DB_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
     <elementParameter field="TEXT" name="USER_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
-    <elementParameter field="PASSWORD" name="PASS_IMPLICIT_CONTEXT" value="enc:system.encryption.key.v1:4CEhaSjv4JnjdwaYkYIPPLZhEIcWqd0GSg+jUBdN" show="false"/>
+    <elementParameter field="PASSWORD" name="PASS_IMPLICIT_CONTEXT" value="enc:system.encryption.key.v1:AIDNy/LxpVOm0DNjCU/kxSPrCgvOxUUWuwLPR91e" show="false"/>
     <elementParameter field="FILE" name="DBFILE_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
     <elementParameter field="DBTABLE" name="DBTABLE_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
     <elementParameter field="TEXT" name="QUERY_CONDITION_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
@@ -96,7 +96,7 @@
     <elementParameter field="TEXT" name="PROPERTIES" value="&quot;&quot;" show="false"/>
     <elementParameter field="TEXT" name="SCHEMA_DB" value="&quot;&quot;" show="false"/>
     <elementParameter field="TEXT" name="USER" value="&quot;&quot;" show="false"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:DAmucS8Fb8eHH6kp8aPSOUbSMOrdQI6wnrwGOKU5" show="false"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:hmYoKrTozYDyMC1RcIVxZGtnf6+MPrYmTuZtb4ne" show="false"/>
     <elementParameter field="FILE" name="DBFILE" value="&quot;&quot;" show="false"/>
     <elementParameter field="DBTABLE" name="TABLE_STATS" value="&quot;&quot;" show="false"/>
     <elementParameter field="DBTABLE" name="TABLE_LOGS" value="&quot;&quot;" show="false"/>
@@ -138,7 +138,7 @@
     <elementParameter field="TEXT" name="DBNAME" value="context.connection_postgres_Database"/>
     <elementParameter field="TEXT" name="SCHEMA_DB" value="context.connection_postgres_Schema"/>
     <elementParameter field="TEXT" name="USER" value="context.connection_postgres_Login"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:i8TcZGqPbYtUQsMA2QzIekkK7qQCBR96vw0hIeOG8jKw0Bs17iNReJaYJjTwYQvZ6yOIamDcNjpp7q62GIh84g=="/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:r36zRvSCHQhr/d9sLE163PBRHVoNGalr413YTBC2f9wIbtIurLbEPJd2vGcLf2CJs9FX2Ot9WDspz6Qqm1f+VA=="/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;all_tweets&quot;"/>
     <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" value="" show="false"/>
@@ -227,7 +227,7 @@
     <elementParameter field="TEXT" name="DBNAME" value="context.connection_postgres_Database"/>
     <elementParameter field="TEXT" name="SCHEMA_DB" value="context.connection_postgres_Schema"/>
     <elementParameter field="TEXT" name="USER" value="context.connection_postgres_Login"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:aJhrZcXk/rvl0g6ypQfBvPymm4N1yZutuTpur/rNf4n/RacC/0G+ZTlqfmx1cRHto+GWhNyREbZ2SAgSMgg25w=="/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:VC2AVh8LddfbCE/4P/WBOSag6iJxOzj42p/+S6R3VFlOHuAlRqs/Hu7XCGRNJb1rV91lEYUXScTwonerdw9twA=="/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;all_tweets&quot;"/>
     <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" value="" show="false"/>
@@ -316,7 +316,7 @@
     <elementParameter field="TEXT" name="DBNAME" value="context.connection_postgres_Database"/>
     <elementParameter field="TEXT" name="SCHEMA_DB" value="context.connection_postgres_Schema"/>
     <elementParameter field="TEXT" name="USER" value="context.connection_postgres_Login"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:jFHdmVxSc4IHilPZdVjS2X+pxUU3CQ+gvw9L8vhApqw8lUThkjE8d5l+4VOhm+j98GBEjIjfA8cJEkzgsqoghw=="/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:bCAbSBW+Oif53zIss+HDrnwJ7QJKv6XZ2cg+7MzvlI9kMJZQctjIoB4zisTCiUwVb/zQ14GnbI1qxJm7uPNIgQ=="/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;all_tweets&quot;"/>
     <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" value="" show="false"/>

@@ -14,6 +14,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+
 package analysis_twitter.s5_in_calcul_sentiments_depuis_donnees_tweets_0_1;
 
 import routines.Numeric;
@@ -40,27 +41,31 @@ import java.io.ObjectOutputStream;
 import java.io.ObjectInputStream;
 import java.io.IOException;
 import java.util.Comparator;
+ 
+
+
+
+
 
 @SuppressWarnings("unused")
 
 /**
- * Job: s5_in_calcul_sentiments_depuis_donnees_tweets Purpose:
- * s5_in_calcul_sentiments_depuis_donnees_tweets<br>
+ * Job: s5_in_calcul_sentiments_depuis_donnees_tweets Purpose: s5_in_calcul_sentiments_depuis_donnees_tweets<br>
  * Description: s5_in_calcul_sentiments_depuis_donnees_tweets <br>
- * 
  * @author user@talend.com
  * @version 7.3.1.20200219_1130
  * @status DEV
  */
 public class s5_in_calcul_sentiments_depuis_donnees_tweets implements TalendJob {
 
-	protected static void logIgnoredError(String message, Throwable cause) {
-		System.err.println(message);
-		if (cause != null) {
-			cause.printStackTrace();
-		}
+protected static void logIgnoredError(String message, Throwable cause) {
+       System.err.println(message);
+       if (cause != null) {
+               cause.printStackTrace();
+       }
 
-	}
+}
+
 
 	public final Object obj = new Object();
 
@@ -74,7996 +79,8349 @@ public class s5_in_calcul_sentiments_depuis_donnees_tweets implements TalendJob 
 	public void setValueObject(Object valueObject) {
 		this.valueObject = valueObject;
 	}
-
+	
 	private final static String defaultCharset = java.nio.charset.Charset.defaultCharset().name();
 
+	
 	private final static String utf8Charset = "UTF-8";
-
-	// contains type for every context property
+	//contains type for every context property
 	public class PropertiesWithType extends java.util.Properties {
 		private static final long serialVersionUID = 1L;
-		private java.util.Map<String, String> propertyTypes = new java.util.HashMap<>();
-
-		public PropertiesWithType(java.util.Properties properties) {
+		private java.util.Map<String,String> propertyTypes = new java.util.HashMap<>();
+		
+		public PropertiesWithType(java.util.Properties properties){
 			super(properties);
 		}
-
-		public PropertiesWithType() {
+		public PropertiesWithType(){
 			super();
 		}
-
+		
 		public void setContextType(String key, String type) {
-			propertyTypes.put(key, type);
+			propertyTypes.put(key,type);
 		}
-
+	
 		public String getContextType(String key) {
 			return propertyTypes.get(key);
 		}
 	}
-
+	
 	// create and load default properties
 	private java.util.Properties defaultProps = new java.util.Properties();
-
 	// create application properties with default
 	public class ContextProperties extends PropertiesWithType {
 
 		private static final long serialVersionUID = 1L;
 
-		public ContextProperties(java.util.Properties properties) {
+		public ContextProperties(java.util.Properties properties){
 			super(properties);
 		}
-
-		public ContextProperties() {
+		public ContextProperties(){
 			super();
 		}
 
-		public void synchronizeContext() {
-
-			if (connection_postgres_Server != null) {
-
-				this.setProperty("connection_postgres_Server", connection_postgres_Server.toString());
-
+		public void synchronizeContext(){
+			
+			if(connection_postgres_Server != null){
+				
+					this.setProperty("connection_postgres_Server", connection_postgres_Server.toString());
+				
 			}
-
-			if (connection_postgres_Login != null) {
-
-				this.setProperty("connection_postgres_Login", connection_postgres_Login.toString());
-
+			
+			if(connection_postgres_Login != null){
+				
+					this.setProperty("connection_postgres_Login", connection_postgres_Login.toString());
+				
 			}
-
-			if (connection_postgres_Port != null) {
-
-				this.setProperty("connection_postgres_Port", connection_postgres_Port.toString());
-
+			
+			if(connection_postgres_Port != null){
+				
+					this.setProperty("connection_postgres_Port", connection_postgres_Port.toString());
+				
 			}
-
-			if (connection_postgres_Password != null) {
-
-				this.setProperty("connection_postgres_Password", connection_postgres_Password.toString());
-
+			
+			if(connection_postgres_Password != null){
+				
+					this.setProperty("connection_postgres_Password", connection_postgres_Password.toString());
+				
 			}
-
-			if (connection_postgres_Database != null) {
-
-				this.setProperty("connection_postgres_Database", connection_postgres_Database.toString());
-
+			
+			if(connection_postgres_Database != null){
+				
+					this.setProperty("connection_postgres_Database", connection_postgres_Database.toString());
+				
 			}
-
-			if (connection_postgres_Schema != null) {
-
-				this.setProperty("connection_postgres_Schema", connection_postgres_Schema.toString());
-
+			
+			if(connection_postgres_Schema != null){
+				
+					this.setProperty("connection_postgres_Schema", connection_postgres_Schema.toString());
+				
 			}
-
-			if (connection_postgres_AdditionalParams != null) {
-
-				this.setProperty("connection_postgres_AdditionalParams",
-						connection_postgres_AdditionalParams.toString());
-
+			
+			if(connection_postgres_AdditionalParams != null){
+				
+					this.setProperty("connection_postgres_AdditionalParams", connection_postgres_AdditionalParams.toString());
+				
 			}
-
-			if (path_files_global != null) {
-
-				this.setProperty("path_files_global", path_files_global.toString());
-
+			
+			if(path_files_global != null){
+				
+					this.setProperty("path_files_global", path_files_global.toString());
+				
 			}
-
+			
 		}
 
-		public String connection_postgres_Server;
-
-		public String getConnection_postgres_Server() {
-			return this.connection_postgres_Server;
-		}
-
-		public String connection_postgres_Login;
-
-		public String getConnection_postgres_Login() {
-			return this.connection_postgres_Login;
-		}
-
-		public String connection_postgres_Port;
-
-		public String getConnection_postgres_Port() {
-			return this.connection_postgres_Port;
-		}
-
-		public String connection_postgres_Password;
-
-		public String getConnection_postgres_Password() {
-			return this.connection_postgres_Password;
-		}
-
-		public String connection_postgres_Database;
-
-		public String getConnection_postgres_Database() {
-			return this.connection_postgres_Database;
-		}
-
-		public String connection_postgres_Schema;
-
-		public String getConnection_postgres_Schema() {
-			return this.connection_postgres_Schema;
-		}
-
-		public String connection_postgres_AdditionalParams;
-
-		public String getConnection_postgres_AdditionalParams() {
-			return this.connection_postgres_AdditionalParams;
-		}
-
-		public String path_files_global;
-
-		public String getPath_files_global() {
-			return this.path_files_global;
-		}
+public String connection_postgres_Server;
+public String getConnection_postgres_Server(){
+	return this.connection_postgres_Server;
+}
+public String connection_postgres_Login;
+public String getConnection_postgres_Login(){
+	return this.connection_postgres_Login;
+}
+public String connection_postgres_Port;
+public String getConnection_postgres_Port(){
+	return this.connection_postgres_Port;
+}
+public String connection_postgres_Password;
+public String getConnection_postgres_Password(){
+	return this.connection_postgres_Password;
+}
+public String connection_postgres_Database;
+public String getConnection_postgres_Database(){
+	return this.connection_postgres_Database;
+}
+public String connection_postgres_Schema;
+public String getConnection_postgres_Schema(){
+	return this.connection_postgres_Schema;
+}
+public String connection_postgres_AdditionalParams;
+public String getConnection_postgres_AdditionalParams(){
+	return this.connection_postgres_AdditionalParams;
+}
+public String path_files_global;
+public String getPath_files_global(){
+	return this.path_files_global;
+}
 	}
-
 	protected ContextProperties context = new ContextProperties(); // will be instanciated by MS.
-
 	public ContextProperties getContext() {
 		return this.context;
 	}
-
 	private final String jobVersion = "0.1";
 	private final String jobName = "s5_in_calcul_sentiments_depuis_donnees_tweets";
 	private final String projectName = "ANALYSIS_TWITTER";
 	public Integer errorCode = null;
 	private String currentComponent = "";
+	
+		private final java.util.Map<String, Object> globalMap = new java.util.HashMap<String, Object>();
+        private final static java.util.Map<String, Object> junitGlobalMap = new java.util.HashMap<String, Object>();
+	
+		private final java.util.Map<String, Long> start_Hash = new java.util.HashMap<String, Long>();
+		private final java.util.Map<String, Long> end_Hash = new java.util.HashMap<String, Long>();
+		private final java.util.Map<String, Boolean> ok_Hash = new java.util.HashMap<String, Boolean>();
+		public  final java.util.List<String[]> globalBuffer = new java.util.ArrayList<String[]>();
+	
 
-	private final java.util.Map<String, Object> globalMap = new java.util.HashMap<String, Object>();
-	private final static java.util.Map<String, Object> junitGlobalMap = new java.util.HashMap<String, Object>();
-
-	private final java.util.Map<String, Long> start_Hash = new java.util.HashMap<String, Long>();
-	private final java.util.Map<String, Long> end_Hash = new java.util.HashMap<String, Long>();
-	private final java.util.Map<String, Boolean> ok_Hash = new java.util.HashMap<String, Boolean>();
-	public final java.util.List<String[]> globalBuffer = new java.util.ArrayList<String[]>();
-
-	private RunStat runStat = new RunStat();
+private RunStat runStat = new RunStat();
 
 	// OSGi DataSource
 	private final static String KEY_DB_DATASOURCES = "KEY_DB_DATASOURCES";
-
+	
 	private final static String KEY_DB_DATASOURCES_RAW = "KEY_DB_DATASOURCES_RAW";
 
 	public void setDataSources(java.util.Map<String, javax.sql.DataSource> dataSources) {
 		java.util.Map<String, routines.system.TalendDataSource> talendDataSources = new java.util.HashMap<String, routines.system.TalendDataSource>();
 		for (java.util.Map.Entry<String, javax.sql.DataSource> dataSourceEntry : dataSources.entrySet()) {
-			talendDataSources.put(dataSourceEntry.getKey(),
-					new routines.system.TalendDataSource(dataSourceEntry.getValue()));
+			talendDataSources.put(dataSourceEntry.getKey(), new routines.system.TalendDataSource(dataSourceEntry.getValue()));
 		}
 		globalMap.put(KEY_DB_DATASOURCES, talendDataSources);
 		globalMap.put(KEY_DB_DATASOURCES_RAW, new java.util.HashMap<String, javax.sql.DataSource>(dataSources));
 	}
 
-	private final java.io.ByteArrayOutputStream baos = new java.io.ByteArrayOutputStream();
-	private final java.io.PrintStream errorMessagePS = new java.io.PrintStream(new java.io.BufferedOutputStream(baos));
 
-	public String getExceptionStackTrace() {
-		if ("failure".equals(this.getStatus())) {
-			errorMessagePS.flush();
-			return baos.toString();
-		}
-		return null;
+private final java.io.ByteArrayOutputStream baos = new java.io.ByteArrayOutputStream();
+private final java.io.PrintStream errorMessagePS = new java.io.PrintStream(new java.io.BufferedOutputStream(baos));
+
+public String getExceptionStackTrace() {
+	if ("failure".equals(this.getStatus())) {
+		errorMessagePS.flush();
+		return baos.toString();
+	}
+	return null;
+}
+
+private Exception exception;
+
+public Exception getException() {
+	if ("failure".equals(this.getStatus())) {
+		return this.exception;
+	}
+	return null;
+}
+
+private class TalendException extends Exception {
+
+	private static final long serialVersionUID = 1L;
+
+	private java.util.Map<String, Object> globalMap = null;
+	private Exception e = null;
+	private String currentComponent = null;
+	private String virtualComponentName = null;
+	
+	public void setVirtualComponentName (String virtualComponentName){
+		this.virtualComponentName = virtualComponentName;
 	}
 
-	private Exception exception;
+	private TalendException(Exception e, String errorComponent, final java.util.Map<String, Object> globalMap) {
+		this.currentComponent= errorComponent;
+		this.globalMap = globalMap;
+		this.e = e;
+	}
 
 	public Exception getException() {
-		if ("failure".equals(this.getStatus())) {
-			return this.exception;
-		}
-		return null;
+		return this.e;
 	}
 
-	private class TalendException extends Exception {
+	public String getCurrentComponent() {
+		return this.currentComponent;
+	}
 
-		private static final long serialVersionUID = 1L;
+	
+    public String getExceptionCauseMessage(Exception e){
+        Throwable cause = e;
+        String message = null;
+        int i = 10;
+        while (null != cause && 0 < i--) {
+            message = cause.getMessage();
+            if (null == message) {
+                cause = cause.getCause();
+            } else {
+                break;          
+            }
+        }
+        if (null == message) {
+            message = e.getClass().getName();
+        }   
+        return message;
+    }
 
-		private java.util.Map<String, Object> globalMap = null;
-		private Exception e = null;
-		private String currentComponent = null;
-		private String virtualComponentName = null;
-
-		public void setVirtualComponentName(String virtualComponentName) {
-			this.virtualComponentName = virtualComponentName;
+	@Override
+	public void printStackTrace() {
+		if (!(e instanceof TalendException || e instanceof TDieException)) {
+			if(virtualComponentName!=null && currentComponent.indexOf(virtualComponentName+"_")==0){
+				globalMap.put(virtualComponentName+"_ERROR_MESSAGE",getExceptionCauseMessage(e));
+			}
+			globalMap.put(currentComponent+"_ERROR_MESSAGE",getExceptionCauseMessage(e));
+			System.err.println("Exception in component " + currentComponent + " (" + jobName + ")");
 		}
-
-		private TalendException(Exception e, String errorComponent, final java.util.Map<String, Object> globalMap) {
-			this.currentComponent = errorComponent;
-			this.globalMap = globalMap;
-			this.e = e;
+		if (!(e instanceof TDieException)) {
+			if(e instanceof TalendException){
+				e.printStackTrace();
+			} else {
+				e.printStackTrace();
+				e.printStackTrace(errorMessagePS);
+				s5_in_calcul_sentiments_depuis_donnees_tweets.this.exception = e;
+			}
 		}
-
-		public Exception getException() {
-			return this.e;
-		}
-
-		public String getCurrentComponent() {
-			return this.currentComponent;
-		}
-
-		public String getExceptionCauseMessage(Exception e) {
-			Throwable cause = e;
-			String message = null;
-			int i = 10;
-			while (null != cause && 0 < i--) {
-				message = cause.getMessage();
-				if (null == message) {
-					cause = cause.getCause();
-				} else {
+		if (!(e instanceof TalendException)) {
+		try {
+			for (java.lang.reflect.Method m : this.getClass().getEnclosingClass().getMethods()) {
+				if (m.getName().compareTo(currentComponent + "_error") == 0) {
+					m.invoke(s5_in_calcul_sentiments_depuis_donnees_tweets.this, new Object[] { e , currentComponent, globalMap});
 					break;
 				}
 			}
-			if (null == message) {
-				message = e.getClass().getName();
-			}
-			return message;
-		}
 
-		@Override
-		public void printStackTrace() {
-			if (!(e instanceof TalendException || e instanceof TDieException)) {
-				if (virtualComponentName != null && currentComponent.indexOf(virtualComponentName + "_") == 0) {
-					globalMap.put(virtualComponentName + "_ERROR_MESSAGE", getExceptionCauseMessage(e));
-				}
-				globalMap.put(currentComponent + "_ERROR_MESSAGE", getExceptionCauseMessage(e));
-				System.err.println("Exception in component " + currentComponent + " (" + jobName + ")");
+			if(!(e instanceof TDieException)){
 			}
-			if (!(e instanceof TDieException)) {
-				if (e instanceof TalendException) {
-					e.printStackTrace();
-				} else {
-					e.printStackTrace();
-					e.printStackTrace(errorMessagePS);
-					s5_in_calcul_sentiments_depuis_donnees_tweets.this.exception = e;
-				}
+		} catch (Exception e) {
+			this.e.printStackTrace();
+		}
+		}
+	}
+}
+
+			public void tDBInput_1_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
+				
+				end_Hash.put(errorComponent, System.currentTimeMillis());
+				
+				status = "failure";
+				
+					tDBInput_1_onSubJobError(exception, errorComponent, globalMap);
 			}
-			if (!(e instanceof TalendException)) {
-				try {
-					for (java.lang.reflect.Method m : this.getClass().getEnclosingClass().getMethods()) {
-						if (m.getName().compareTo(currentComponent + "_error") == 0) {
-							m.invoke(s5_in_calcul_sentiments_depuis_donnees_tweets.this,
-									new Object[] { e, currentComponent, globalMap });
-							break;
+			
+			public void tReplace_1_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
+				
+				end_Hash.put(errorComponent, System.currentTimeMillis());
+				
+				status = "failure";
+				
+					tDBInput_1_onSubJobError(exception, errorComponent, globalMap);
+			}
+			
+			public void tMap_1_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
+				
+				end_Hash.put(errorComponent, System.currentTimeMillis());
+				
+				status = "failure";
+				
+					tDBInput_1_onSubJobError(exception, errorComponent, globalMap);
+			}
+			
+			public void tNormalize_1_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
+				
+				end_Hash.put(errorComponent, System.currentTimeMillis());
+				
+				status = "failure";
+				
+					tDBInput_1_onSubJobError(exception, errorComponent, globalMap);
+			}
+			
+			public void tNormalize_2_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
+				
+				end_Hash.put(errorComponent, System.currentTimeMillis());
+				
+				status = "failure";
+				
+					tDBInput_1_onSubJobError(exception, errorComponent, globalMap);
+			}
+			
+			public void tFilterRow_1_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
+				
+				end_Hash.put(errorComponent, System.currentTimeMillis());
+				
+				status = "failure";
+				
+					tDBInput_1_onSubJobError(exception, errorComponent, globalMap);
+			}
+			
+			public void tMap_2_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
+				
+				end_Hash.put(errorComponent, System.currentTimeMillis());
+				
+				status = "failure";
+				
+					tDBInput_1_onSubJobError(exception, errorComponent, globalMap);
+			}
+			
+			public void tFileOutputDelimited_3_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
+				
+				end_Hash.put(errorComponent, System.currentTimeMillis());
+				
+				status = "failure";
+				
+					tDBInput_1_onSubJobError(exception, errorComponent, globalMap);
+			}
+			
+			public void tFileOutputDelimited_1_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
+				
+				end_Hash.put(errorComponent, System.currentTimeMillis());
+				
+				status = "failure";
+				
+					tDBInput_1_onSubJobError(exception, errorComponent, globalMap);
+			}
+			
+			public void tFileOutputDelimited_2_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
+				
+				end_Hash.put(errorComponent, System.currentTimeMillis());
+				
+				status = "failure";
+				
+					tDBInput_1_onSubJobError(exception, errorComponent, globalMap);
+			}
+			
+			public void tMap_3_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
+				
+				end_Hash.put(errorComponent, System.currentTimeMillis());
+				
+				status = "failure";
+				
+					tDBInput_1_onSubJobError(exception, errorComponent, globalMap);
+			}
+			
+			public void tFileOutputDelimited_4_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
+				
+				end_Hash.put(errorComponent, System.currentTimeMillis());
+				
+				status = "failure";
+				
+					tDBInput_1_onSubJobError(exception, errorComponent, globalMap);
+			}
+			
+			public void tFileOutputDelimited_5_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
+				
+				end_Hash.put(errorComponent, System.currentTimeMillis());
+				
+				status = "failure";
+				
+					tDBInput_1_onSubJobError(exception, errorComponent, globalMap);
+			}
+			
+			public void tFileOutputDelimited_6_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
+				
+				end_Hash.put(errorComponent, System.currentTimeMillis());
+				
+				status = "failure";
+				
+					tDBInput_1_onSubJobError(exception, errorComponent, globalMap);
+			}
+			
+			public void tFileInputDelimited_1_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
+				
+				end_Hash.put(errorComponent, System.currentTimeMillis());
+				
+				status = "failure";
+				
+					tDBInput_1_onSubJobError(exception, errorComponent, globalMap);
+			}
+			
+			public void tAdvancedHash_row6_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
+				
+				end_Hash.put(errorComponent, System.currentTimeMillis());
+				
+				status = "failure";
+				
+					tDBInput_1_onSubJobError(exception, errorComponent, globalMap);
+			}
+			
+			public void tAggregateRow_3_AGGOUT_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
+				
+							tAggregateRow_3_AGGIN_error(exception, errorComponent, globalMap);
+						
 						}
-					}
+					
+			public void tAggregateRow_3_AGGIN_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
+				
+				end_Hash.put(errorComponent, System.currentTimeMillis());
+				
+				status = "failure";
+				
+					tDBInput_1_onSubJobError(exception, errorComponent, globalMap);
+			}
+			
+			public void tAggregateRow_1_AGGOUT_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
+				
+							tAggregateRow_1_AGGIN_error(exception, errorComponent, globalMap);
+						
+						}
+					
+			public void tAggregateRow_1_AGGIN_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
+				
+				end_Hash.put(errorComponent, System.currentTimeMillis());
+				
+				status = "failure";
+				
+					tDBInput_1_onSubJobError(exception, errorComponent, globalMap);
+			}
+			
+			public void tAggregateRow_2_AGGOUT_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
+				
+							tAggregateRow_2_AGGIN_error(exception, errorComponent, globalMap);
+						
+						}
+					
+			public void tAggregateRow_2_AGGIN_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
+				
+				end_Hash.put(errorComponent, System.currentTimeMillis());
+				
+				status = "failure";
+				
+					tDBInput_1_onSubJobError(exception, errorComponent, globalMap);
+			}
+			
+			public void tAggregateRow_4_AGGOUT_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
+				
+							tAggregateRow_4_AGGIN_error(exception, errorComponent, globalMap);
+						
+						}
+					
+			public void tAggregateRow_4_AGGIN_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
+				
+				end_Hash.put(errorComponent, System.currentTimeMillis());
+				
+				status = "failure";
+				
+					tDBInput_1_onSubJobError(exception, errorComponent, globalMap);
+			}
+			
+			public void tAggregateRow_5_AGGOUT_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
+				
+							tAggregateRow_5_AGGIN_error(exception, errorComponent, globalMap);
+						
+						}
+					
+			public void tAggregateRow_5_AGGIN_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
+				
+				end_Hash.put(errorComponent, System.currentTimeMillis());
+				
+				status = "failure";
+				
+					tDBInput_1_onSubJobError(exception, errorComponent, globalMap);
+			}
+			
+			public void tAggregateRow_6_AGGOUT_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
+				
+							tAggregateRow_6_AGGIN_error(exception, errorComponent, globalMap);
+						
+						}
+					
+			public void tAggregateRow_6_AGGIN_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
+				
+				end_Hash.put(errorComponent, System.currentTimeMillis());
+				
+				status = "failure";
+				
+					tDBInput_1_onSubJobError(exception, errorComponent, globalMap);
+			}
+			
+			public void tAggregateRow_7_AGGOUT_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
+				
+							tAggregateRow_7_AGGIN_error(exception, errorComponent, globalMap);
+						
+						}
+					
+			public void tAggregateRow_7_AGGIN_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
+				
+				end_Hash.put(errorComponent, System.currentTimeMillis());
+				
+				status = "failure";
+				
+					tDBInput_1_onSubJobError(exception, errorComponent, globalMap);
+			}
+			
+			public void tDBInput_1_onSubJobError(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
 
-					if (!(e instanceof TDieException)) {
-					}
-				} catch (Exception e) {
-					this.e.printStackTrace();
+resumeUtil.addLog("SYSTEM_LOG", "NODE:"+ errorComponent, "", Thread.currentThread().getId()+ "", "FATAL", "", exception.getMessage(), ResumeUtil.getExceptionStackTrace(exception),"");
+
+			}
+	
+
+
+
+
+
+
+public static class row13Struct implements routines.system.IPersistableRow<row13Struct> {
+    final static byte[] commonByteArrayLock_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[0];
+    static byte[] commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[0];
+
+	
+			    public java.util.Date date;
+
+				public java.util.Date getDate () {
+					return this.date;
 				}
-			}
-		}
-	}
-
-	public void tDBInput_1_error(Exception exception, String errorComponent,
-			final java.util.Map<String, Object> globalMap) throws TalendException {
-
-		end_Hash.put(errorComponent, System.currentTimeMillis());
-
-		status = "failure";
-
-		tDBInput_1_onSubJobError(exception, errorComponent, globalMap);
-	}
-
-	public void tReplace_1_error(Exception exception, String errorComponent,
-			final java.util.Map<String, Object> globalMap) throws TalendException {
-
-		end_Hash.put(errorComponent, System.currentTimeMillis());
-
-		status = "failure";
-
-		tDBInput_1_onSubJobError(exception, errorComponent, globalMap);
-	}
-
-	public void tMap_1_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap)
-			throws TalendException {
-
-		end_Hash.put(errorComponent, System.currentTimeMillis());
-
-		status = "failure";
-
-		tDBInput_1_onSubJobError(exception, errorComponent, globalMap);
-	}
-
-	public void tNormalize_1_error(Exception exception, String errorComponent,
-			final java.util.Map<String, Object> globalMap) throws TalendException {
-
-		end_Hash.put(errorComponent, System.currentTimeMillis());
-
-		status = "failure";
-
-		tDBInput_1_onSubJobError(exception, errorComponent, globalMap);
-	}
-
-	public void tNormalize_2_error(Exception exception, String errorComponent,
-			final java.util.Map<String, Object> globalMap) throws TalendException {
-
-		end_Hash.put(errorComponent, System.currentTimeMillis());
-
-		status = "failure";
-
-		tDBInput_1_onSubJobError(exception, errorComponent, globalMap);
-	}
-
-	public void tFilterRow_1_error(Exception exception, String errorComponent,
-			final java.util.Map<String, Object> globalMap) throws TalendException {
-
-		end_Hash.put(errorComponent, System.currentTimeMillis());
-
-		status = "failure";
-
-		tDBInput_1_onSubJobError(exception, errorComponent, globalMap);
-	}
-
-	public void tMap_2_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap)
-			throws TalendException {
-
-		end_Hash.put(errorComponent, System.currentTimeMillis());
-
-		status = "failure";
-
-		tDBInput_1_onSubJobError(exception, errorComponent, globalMap);
-	}
-
-	public void tFileOutputDelimited_3_error(Exception exception, String errorComponent,
-			final java.util.Map<String, Object> globalMap) throws TalendException {
-
-		end_Hash.put(errorComponent, System.currentTimeMillis());
-
-		status = "failure";
-
-		tDBInput_1_onSubJobError(exception, errorComponent, globalMap);
-	}
-
-	public void tFileOutputDelimited_1_error(Exception exception, String errorComponent,
-			final java.util.Map<String, Object> globalMap) throws TalendException {
-
-		end_Hash.put(errorComponent, System.currentTimeMillis());
-
-		status = "failure";
-
-		tDBInput_1_onSubJobError(exception, errorComponent, globalMap);
-	}
-
-	public void tFileOutputDelimited_2_error(Exception exception, String errorComponent,
-			final java.util.Map<String, Object> globalMap) throws TalendException {
-
-		end_Hash.put(errorComponent, System.currentTimeMillis());
-
-		status = "failure";
-
-		tDBInput_1_onSubJobError(exception, errorComponent, globalMap);
-	}
-
-	public void tMap_3_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap)
-			throws TalendException {
-
-		end_Hash.put(errorComponent, System.currentTimeMillis());
-
-		status = "failure";
-
-		tDBInput_1_onSubJobError(exception, errorComponent, globalMap);
-	}
-
-	public void tFileOutputDelimited_4_error(Exception exception, String errorComponent,
-			final java.util.Map<String, Object> globalMap) throws TalendException {
-
-		end_Hash.put(errorComponent, System.currentTimeMillis());
-
-		status = "failure";
-
-		tDBInput_1_onSubJobError(exception, errorComponent, globalMap);
-	}
-
-	public void tFileOutputDelimited_5_error(Exception exception, String errorComponent,
-			final java.util.Map<String, Object> globalMap) throws TalendException {
-
-		end_Hash.put(errorComponent, System.currentTimeMillis());
-
-		status = "failure";
-
-		tDBInput_1_onSubJobError(exception, errorComponent, globalMap);
-	}
-
-	public void tFileOutputDelimited_6_error(Exception exception, String errorComponent,
-			final java.util.Map<String, Object> globalMap) throws TalendException {
-
-		end_Hash.put(errorComponent, System.currentTimeMillis());
-
-		status = "failure";
-
-		tDBInput_1_onSubJobError(exception, errorComponent, globalMap);
-	}
-
-	public void tFileInputDelimited_1_error(Exception exception, String errorComponent,
-			final java.util.Map<String, Object> globalMap) throws TalendException {
-
-		end_Hash.put(errorComponent, System.currentTimeMillis());
-
-		status = "failure";
-
-		tDBInput_1_onSubJobError(exception, errorComponent, globalMap);
-	}
-
-	public void tAdvancedHash_row6_error(Exception exception, String errorComponent,
-			final java.util.Map<String, Object> globalMap) throws TalendException {
-
-		end_Hash.put(errorComponent, System.currentTimeMillis());
-
-		status = "failure";
-
-		tDBInput_1_onSubJobError(exception, errorComponent, globalMap);
-	}
-
-	public void tAggregateRow_3_AGGOUT_error(Exception exception, String errorComponent,
-			final java.util.Map<String, Object> globalMap) throws TalendException {
-
-		tAggregateRow_3_AGGIN_error(exception, errorComponent, globalMap);
-
-	}
-
-	public void tAggregateRow_3_AGGIN_error(Exception exception, String errorComponent,
-			final java.util.Map<String, Object> globalMap) throws TalendException {
-
-		end_Hash.put(errorComponent, System.currentTimeMillis());
-
-		status = "failure";
-
-		tDBInput_1_onSubJobError(exception, errorComponent, globalMap);
-	}
-
-	public void tAggregateRow_1_AGGOUT_error(Exception exception, String errorComponent,
-			final java.util.Map<String, Object> globalMap) throws TalendException {
-
-		tAggregateRow_1_AGGIN_error(exception, errorComponent, globalMap);
-
-	}
-
-	public void tAggregateRow_1_AGGIN_error(Exception exception, String errorComponent,
-			final java.util.Map<String, Object> globalMap) throws TalendException {
-
-		end_Hash.put(errorComponent, System.currentTimeMillis());
-
-		status = "failure";
-
-		tDBInput_1_onSubJobError(exception, errorComponent, globalMap);
-	}
-
-	public void tAggregateRow_2_AGGOUT_error(Exception exception, String errorComponent,
-			final java.util.Map<String, Object> globalMap) throws TalendException {
-
-		tAggregateRow_2_AGGIN_error(exception, errorComponent, globalMap);
-
-	}
-
-	public void tAggregateRow_2_AGGIN_error(Exception exception, String errorComponent,
-			final java.util.Map<String, Object> globalMap) throws TalendException {
-
-		end_Hash.put(errorComponent, System.currentTimeMillis());
-
-		status = "failure";
-
-		tDBInput_1_onSubJobError(exception, errorComponent, globalMap);
-	}
-
-	public void tAggregateRow_4_AGGOUT_error(Exception exception, String errorComponent,
-			final java.util.Map<String, Object> globalMap) throws TalendException {
-
-		tAggregateRow_4_AGGIN_error(exception, errorComponent, globalMap);
-
-	}
-
-	public void tAggregateRow_4_AGGIN_error(Exception exception, String errorComponent,
-			final java.util.Map<String, Object> globalMap) throws TalendException {
-
-		end_Hash.put(errorComponent, System.currentTimeMillis());
-
-		status = "failure";
-
-		tDBInput_1_onSubJobError(exception, errorComponent, globalMap);
-	}
-
-	public void tAggregateRow_5_AGGOUT_error(Exception exception, String errorComponent,
-			final java.util.Map<String, Object> globalMap) throws TalendException {
-
-		tAggregateRow_5_AGGIN_error(exception, errorComponent, globalMap);
-
-	}
-
-	public void tAggregateRow_5_AGGIN_error(Exception exception, String errorComponent,
-			final java.util.Map<String, Object> globalMap) throws TalendException {
-
-		end_Hash.put(errorComponent, System.currentTimeMillis());
-
-		status = "failure";
-
-		tDBInput_1_onSubJobError(exception, errorComponent, globalMap);
-	}
-
-	public void tAggregateRow_6_AGGOUT_error(Exception exception, String errorComponent,
-			final java.util.Map<String, Object> globalMap) throws TalendException {
-
-		tAggregateRow_6_AGGIN_error(exception, errorComponent, globalMap);
-
-	}
-
-	public void tAggregateRow_6_AGGIN_error(Exception exception, String errorComponent,
-			final java.util.Map<String, Object> globalMap) throws TalendException {
-
-		end_Hash.put(errorComponent, System.currentTimeMillis());
-
-		status = "failure";
-
-		tDBInput_1_onSubJobError(exception, errorComponent, globalMap);
-	}
-
-	public void tAggregateRow_7_AGGOUT_error(Exception exception, String errorComponent,
-			final java.util.Map<String, Object> globalMap) throws TalendException {
-
-		tAggregateRow_7_AGGIN_error(exception, errorComponent, globalMap);
-
-	}
-
-	public void tAggregateRow_7_AGGIN_error(Exception exception, String errorComponent,
-			final java.util.Map<String, Object> globalMap) throws TalendException {
-
-		end_Hash.put(errorComponent, System.currentTimeMillis());
-
-		status = "failure";
-
-		tDBInput_1_onSubJobError(exception, errorComponent, globalMap);
-	}
-
-	public void tDBInput_1_onSubJobError(Exception exception, String errorComponent,
-			final java.util.Map<String, Object> globalMap) throws TalendException {
-
-		resumeUtil.addLog("SYSTEM_LOG", "NODE:" + errorComponent, "", Thread.currentThread().getId() + "", "FATAL", "",
-				exception.getMessage(), ResumeUtil.getExceptionStackTrace(exception), "");
-
-	}
-
-	public static class row13Struct implements routines.system.IPersistableRow<row13Struct> {
-		final static byte[] commonByteArrayLock_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[0];
-		static byte[] commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[0];
-
-		public java.util.Date date;
-
-		public java.util.Date getDate() {
-			return this.date;
-		}
-
-		public String hashtag;
-
-		public String getHashtag() {
-			return this.hashtag;
-		}
-
-		public String country;
-
-		public String getCountry() {
-			return this.country;
-		}
-
-		public Integer c_tweet;
-
-		public Integer getC_tweet() {
-			return this.c_tweet;
-		}
-
-		private java.util.Date readDate(ObjectInputStream dis) throws IOException {
-			java.util.Date dateReturn = null;
-			int length = 0;
-			length = dis.readByte();
-			if (length == -1) {
-				dateReturn = null;
-			} else {
-				dateReturn = new Date(dis.readLong());
-			}
-			return dateReturn;
-		}
-
-		private void writeDate(java.util.Date date1, ObjectOutputStream dos) throws IOException {
-			if (date1 == null) {
-				dos.writeByte(-1);
-			} else {
-				dos.writeByte(0);
-				dos.writeLong(date1.getTime());
-			}
-		}
-
-		private String readString(ObjectInputStream dis) throws IOException {
-			String strReturn = null;
-			int length = 0;
-			length = dis.readInt();
-			if (length == -1) {
-				strReturn = null;
-			} else {
-				if (length > commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets.length) {
-					if (length < 1024
-							&& commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets.length == 0) {
-						commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[1024];
-					} else {
-						commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[2
-								* length];
-					}
+				
+			    public String hashtag;
+
+				public String getHashtag () {
+					return this.hashtag;
 				}
-				dis.readFully(commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets, 0,
-						length);
-				strReturn = new String(commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets,
-						0, length, utf8Charset);
-			}
-			return strReturn;
+				
+			    public String country;
+
+				public String getCountry () {
+					return this.country;
+				}
+				
+			    public Integer c_tweet;
+
+				public Integer getC_tweet () {
+					return this.c_tweet;
+				}
+				
+
+
+
+	private java.util.Date readDate(ObjectInputStream dis) throws IOException{
+		java.util.Date dateReturn = null;
+        int length = 0;
+        length = dis.readByte();
+		if (length == -1) {
+			dateReturn = null;
+		} else {
+	    	dateReturn = new Date(dis.readLong());
 		}
+		return dateReturn;
+	}
 
-		private void writeString(String str, ObjectOutputStream dos) throws IOException {
-			if (str == null) {
-				dos.writeInt(-1);
-			} else {
-				byte[] byteArray = str.getBytes(utf8Charset);
-				dos.writeInt(byteArray.length);
-				dos.write(byteArray);
+    private void writeDate(java.util.Date date1, ObjectOutputStream dos) throws IOException{
+		if(date1 == null) {
+            dos.writeByte(-1);
+		} else {
+			dos.writeByte(0);
+	    	dos.writeLong(date1.getTime());
+    	}
+    }
+
+	private String readString(ObjectInputStream dis) throws IOException{
+		String strReturn = null;
+		int length = 0;
+        length = dis.readInt();
+		if (length == -1) {
+			strReturn = null;
+		} else {
+			if(length > commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets.length) {
+				if(length < 1024 && commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets.length == 0) {
+   					commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[1024];
+				} else {
+   					commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[2 * length];
+   				}
 			}
+			dis.readFully(commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets, 0, length);
+			strReturn = new String(commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets, 0, length, utf8Charset);
 		}
+		return strReturn;
+	}
 
-		private Integer readInteger(ObjectInputStream dis) throws IOException {
-			Integer intReturn;
-			int length = 0;
-			length = dis.readByte();
-			if (length == -1) {
-				intReturn = null;
-			} else {
-				intReturn = dis.readInt();
-			}
-			return intReturn;
+    private void writeString(String str, ObjectOutputStream dos) throws IOException{
+		if(str == null) {
+            dos.writeInt(-1);
+		} else {
+            byte[] byteArray = str.getBytes(utf8Charset);
+	    	dos.writeInt(byteArray.length);
+			dos.write(byteArray);
+    	}
+    }
+	private Integer readInteger(ObjectInputStream dis) throws IOException{
+		Integer intReturn;
+        int length = 0;
+        length = dis.readByte();
+		if (length == -1) {
+			intReturn = null;
+		} else {
+	    	intReturn = dis.readInt();
 		}
+		return intReturn;
+	}
 
-		private void writeInteger(Integer intNum, ObjectOutputStream dos) throws IOException {
-			if (intNum == null) {
-				dos.writeByte(-1);
-			} else {
-				dos.writeByte(0);
-				dos.writeInt(intNum);
-			}
-		}
+	private void writeInteger(Integer intNum, ObjectOutputStream dos) throws IOException{
+		if(intNum == null) {
+            dos.writeByte(-1);
+		} else {
+			dos.writeByte(0);
+	    	dos.writeInt(intNum);
+    	}
+	}
 
-		public void readData(ObjectInputStream dis) {
+    public void readData(ObjectInputStream dis) {
 
-			synchronized (commonByteArrayLock_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets) {
+		synchronized(commonByteArrayLock_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets) {
 
-				try {
+        	try {
 
-					int length = 0;
-
+        		int length = 0;
+		
 					this.date = readDate(dis);
-
+					
 					this.hashtag = readString(dis);
-
+					
 					this.country = readString(dis);
+					
+						this.c_tweet = readInteger(dis);
+					
+        	} catch (IOException e) {
+	            throw new RuntimeException(e);
 
-					this.c_tweet = readInteger(dis);
+		
 
-				} catch (IOException e) {
-					throw new RuntimeException(e);
+        }
 
+		
+
+      }
+
+
+    }
+
+    public void writeData(ObjectOutputStream dos) {
+        try {
+
+		
+					// java.util.Date
+				
+						writeDate(this.date,dos);
+					
+					// String
+				
+						writeString(this.hashtag,dos);
+					
+					// String
+				
+						writeString(this.country,dos);
+					
+					// Integer
+				
+						writeInteger(this.c_tweet,dos);
+					
+        	} catch (IOException e) {
+	            throw new RuntimeException(e);
+        }
+
+
+    }
+
+
+    public String toString() {
+
+		StringBuilder sb = new StringBuilder();
+		sb.append(super.toString());
+		sb.append("[");
+		sb.append("date="+String.valueOf(date));
+		sb.append(",hashtag="+hashtag);
+		sb.append(",country="+country);
+		sb.append(",c_tweet="+String.valueOf(c_tweet));
+	    sb.append("]");
+
+	    return sb.toString();
+    }
+
+    /**
+     * Compare keys
+     */
+    public int compareTo(row13Struct other) {
+
+		int returnValue = -1;
+		
+	    return returnValue;
+    }
+
+
+    private int checkNullsAndCompare(Object object1, Object object2) {
+        int returnValue = 0;
+		if (object1 instanceof Comparable && object2 instanceof Comparable) {
+            returnValue = ((Comparable) object1).compareTo(object2);
+        } else if (object1 != null && object2 != null) {
+            returnValue = compareStrings(object1.toString(), object2.toString());
+        } else if (object1 == null && object2 != null) {
+            returnValue = 1;
+        } else if (object1 != null && object2 == null) {
+            returnValue = -1;
+        } else {
+            returnValue = 0;
+        }
+
+        return returnValue;
+    }
+
+    private int compareStrings(String string1, String string2) {
+        return string1.compareTo(string2);
+    }
+
+
+}
+
+public static class OnRowsEndStructtAggregateRow_7 implements routines.system.IPersistableRow<OnRowsEndStructtAggregateRow_7> {
+    final static byte[] commonByteArrayLock_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[0];
+    static byte[] commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[0];
+
+	
+			    public java.util.Date date;
+
+				public java.util.Date getDate () {
+					return this.date;
 				}
+				
+			    public String hashtag;
 
-			}
+				public String getHashtag () {
+					return this.hashtag;
+				}
+				
+			    public String country;
 
+				public String getCountry () {
+					return this.country;
+				}
+				
+			    public Integer c_tweet;
+
+				public Integer getC_tweet () {
+					return this.c_tweet;
+				}
+				
+
+
+
+	private java.util.Date readDate(ObjectInputStream dis) throws IOException{
+		java.util.Date dateReturn = null;
+        int length = 0;
+        length = dis.readByte();
+		if (length == -1) {
+			dateReturn = null;
+		} else {
+	    	dateReturn = new Date(dis.readLong());
 		}
-
-		public void writeData(ObjectOutputStream dos) {
-			try {
-
-				// java.util.Date
-
-				writeDate(this.date, dos);
-
-				// String
-
-				writeString(this.hashtag, dos);
-
-				// String
-
-				writeString(this.country, dos);
-
-				// Integer
-
-				writeInteger(this.c_tweet, dos);
-
-			} catch (IOException e) {
-				throw new RuntimeException(e);
-			}
-
-		}
-
-		public String toString() {
-
-			StringBuilder sb = new StringBuilder();
-			sb.append(super.toString());
-			sb.append("[");
-			sb.append("date=" + String.valueOf(date));
-			sb.append(",hashtag=" + hashtag);
-			sb.append(",country=" + country);
-			sb.append(",c_tweet=" + String.valueOf(c_tweet));
-			sb.append("]");
-
-			return sb.toString();
-		}
-
-		/**
-		 * Compare keys
-		 */
-		public int compareTo(row13Struct other) {
-
-			int returnValue = -1;
-
-			return returnValue;
-		}
-
-		private int checkNullsAndCompare(Object object1, Object object2) {
-			int returnValue = 0;
-			if (object1 instanceof Comparable && object2 instanceof Comparable) {
-				returnValue = ((Comparable) object1).compareTo(object2);
-			} else if (object1 != null && object2 != null) {
-				returnValue = compareStrings(object1.toString(), object2.toString());
-			} else if (object1 == null && object2 != null) {
-				returnValue = 1;
-			} else if (object1 != null && object2 == null) {
-				returnValue = -1;
-			} else {
-				returnValue = 0;
-			}
-
-			return returnValue;
-		}
-
-		private int compareStrings(String string1, String string2) {
-			return string1.compareTo(string2);
-		}
-
+		return dateReturn;
 	}
 
-	public static class OnRowsEndStructtAggregateRow_7
-			implements routines.system.IPersistableRow<OnRowsEndStructtAggregateRow_7> {
-		final static byte[] commonByteArrayLock_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[0];
-		static byte[] commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[0];
+    private void writeDate(java.util.Date date1, ObjectOutputStream dos) throws IOException{
+		if(date1 == null) {
+            dos.writeByte(-1);
+		} else {
+			dos.writeByte(0);
+	    	dos.writeLong(date1.getTime());
+    	}
+    }
 
-		public java.util.Date date;
-
-		public java.util.Date getDate() {
-			return this.date;
-		}
-
-		public String hashtag;
-
-		public String getHashtag() {
-			return this.hashtag;
-		}
-
-		public String country;
-
-		public String getCountry() {
-			return this.country;
-		}
-
-		public Integer c_tweet;
-
-		public Integer getC_tweet() {
-			return this.c_tweet;
-		}
-
-		private java.util.Date readDate(ObjectInputStream dis) throws IOException {
-			java.util.Date dateReturn = null;
-			int length = 0;
-			length = dis.readByte();
-			if (length == -1) {
-				dateReturn = null;
-			} else {
-				dateReturn = new Date(dis.readLong());
+	private String readString(ObjectInputStream dis) throws IOException{
+		String strReturn = null;
+		int length = 0;
+        length = dis.readInt();
+		if (length == -1) {
+			strReturn = null;
+		} else {
+			if(length > commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets.length) {
+				if(length < 1024 && commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets.length == 0) {
+   					commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[1024];
+				} else {
+   					commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[2 * length];
+   				}
 			}
-			return dateReturn;
+			dis.readFully(commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets, 0, length);
+			strReturn = new String(commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets, 0, length, utf8Charset);
 		}
+		return strReturn;
+	}
 
-		private void writeDate(java.util.Date date1, ObjectOutputStream dos) throws IOException {
-			if (date1 == null) {
-				dos.writeByte(-1);
-			} else {
-				dos.writeByte(0);
-				dos.writeLong(date1.getTime());
-			}
+    private void writeString(String str, ObjectOutputStream dos) throws IOException{
+		if(str == null) {
+            dos.writeInt(-1);
+		} else {
+            byte[] byteArray = str.getBytes(utf8Charset);
+	    	dos.writeInt(byteArray.length);
+			dos.write(byteArray);
+    	}
+    }
+	private Integer readInteger(ObjectInputStream dis) throws IOException{
+		Integer intReturn;
+        int length = 0;
+        length = dis.readByte();
+		if (length == -1) {
+			intReturn = null;
+		} else {
+	    	intReturn = dis.readInt();
 		}
+		return intReturn;
+	}
 
-		private String readString(ObjectInputStream dis) throws IOException {
-			String strReturn = null;
-			int length = 0;
-			length = dis.readInt();
-			if (length == -1) {
-				strReturn = null;
-			} else {
-				if (length > commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets.length) {
-					if (length < 1024
-							&& commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets.length == 0) {
-						commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[1024];
-					} else {
-						commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[2
-								* length];
-					}
-				}
-				dis.readFully(commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets, 0,
-						length);
-				strReturn = new String(commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets,
-						0, length, utf8Charset);
-			}
-			return strReturn;
-		}
+	private void writeInteger(Integer intNum, ObjectOutputStream dos) throws IOException{
+		if(intNum == null) {
+            dos.writeByte(-1);
+		} else {
+			dos.writeByte(0);
+	    	dos.writeInt(intNum);
+    	}
+	}
 
-		private void writeString(String str, ObjectOutputStream dos) throws IOException {
-			if (str == null) {
-				dos.writeInt(-1);
-			} else {
-				byte[] byteArray = str.getBytes(utf8Charset);
-				dos.writeInt(byteArray.length);
-				dos.write(byteArray);
-			}
-		}
+    public void readData(ObjectInputStream dis) {
 
-		private Integer readInteger(ObjectInputStream dis) throws IOException {
-			Integer intReturn;
-			int length = 0;
-			length = dis.readByte();
-			if (length == -1) {
-				intReturn = null;
-			} else {
-				intReturn = dis.readInt();
-			}
-			return intReturn;
-		}
+		synchronized(commonByteArrayLock_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets) {
 
-		private void writeInteger(Integer intNum, ObjectOutputStream dos) throws IOException {
-			if (intNum == null) {
-				dos.writeByte(-1);
-			} else {
-				dos.writeByte(0);
-				dos.writeInt(intNum);
-			}
-		}
+        	try {
 
-		public void readData(ObjectInputStream dis) {
-
-			synchronized (commonByteArrayLock_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets) {
-
-				try {
-
-					int length = 0;
-
+        		int length = 0;
+		
 					this.date = readDate(dis);
-
+					
 					this.hashtag = readString(dis);
-
+					
 					this.country = readString(dis);
+					
+						this.c_tweet = readInteger(dis);
+					
+        	} catch (IOException e) {
+	            throw new RuntimeException(e);
 
-					this.c_tweet = readInteger(dis);
+		
 
-				} catch (IOException e) {
-					throw new RuntimeException(e);
+        }
 
+		
+
+      }
+
+
+    }
+
+    public void writeData(ObjectOutputStream dos) {
+        try {
+
+		
+					// java.util.Date
+				
+						writeDate(this.date,dos);
+					
+					// String
+				
+						writeString(this.hashtag,dos);
+					
+					// String
+				
+						writeString(this.country,dos);
+					
+					// Integer
+				
+						writeInteger(this.c_tweet,dos);
+					
+        	} catch (IOException e) {
+	            throw new RuntimeException(e);
+        }
+
+
+    }
+
+
+    public String toString() {
+
+		StringBuilder sb = new StringBuilder();
+		sb.append(super.toString());
+		sb.append("[");
+		sb.append("date="+String.valueOf(date));
+		sb.append(",hashtag="+hashtag);
+		sb.append(",country="+country);
+		sb.append(",c_tweet="+String.valueOf(c_tweet));
+	    sb.append("]");
+
+	    return sb.toString();
+    }
+
+    /**
+     * Compare keys
+     */
+    public int compareTo(OnRowsEndStructtAggregateRow_7 other) {
+
+		int returnValue = -1;
+		
+	    return returnValue;
+    }
+
+
+    private int checkNullsAndCompare(Object object1, Object object2) {
+        int returnValue = 0;
+		if (object1 instanceof Comparable && object2 instanceof Comparable) {
+            returnValue = ((Comparable) object1).compareTo(object2);
+        } else if (object1 != null && object2 != null) {
+            returnValue = compareStrings(object1.toString(), object2.toString());
+        } else if (object1 == null && object2 != null) {
+            returnValue = 1;
+        } else if (object1 != null && object2 == null) {
+            returnValue = -1;
+        } else {
+            returnValue = 0;
+        }
+
+        return returnValue;
+    }
+
+    private int compareStrings(String string1, String string2) {
+        return string1.compareTo(string2);
+    }
+
+
+}
+
+public static class row11Struct implements routines.system.IPersistableRow<row11Struct> {
+    final static byte[] commonByteArrayLock_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[0];
+    static byte[] commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[0];
+
+	
+			    public java.util.Date date;
+
+				public java.util.Date getDate () {
+					return this.date;
 				}
+				
+			    public String hashtag;
 
-			}
+				public String getHashtag () {
+					return this.hashtag;
+				}
+				
+			    public String country;
 
+				public String getCountry () {
+					return this.country;
+				}
+				
+			    public Integer c_negatives;
+
+				public Integer getC_negatives () {
+					return this.c_negatives;
+				}
+				
+
+
+
+	private java.util.Date readDate(ObjectInputStream dis) throws IOException{
+		java.util.Date dateReturn = null;
+        int length = 0;
+        length = dis.readByte();
+		if (length == -1) {
+			dateReturn = null;
+		} else {
+	    	dateReturn = new Date(dis.readLong());
 		}
-
-		public void writeData(ObjectOutputStream dos) {
-			try {
-
-				// java.util.Date
-
-				writeDate(this.date, dos);
-
-				// String
-
-				writeString(this.hashtag, dos);
-
-				// String
-
-				writeString(this.country, dos);
-
-				// Integer
-
-				writeInteger(this.c_tweet, dos);
-
-			} catch (IOException e) {
-				throw new RuntimeException(e);
-			}
-
-		}
-
-		public String toString() {
-
-			StringBuilder sb = new StringBuilder();
-			sb.append(super.toString());
-			sb.append("[");
-			sb.append("date=" + String.valueOf(date));
-			sb.append(",hashtag=" + hashtag);
-			sb.append(",country=" + country);
-			sb.append(",c_tweet=" + String.valueOf(c_tweet));
-			sb.append("]");
-
-			return sb.toString();
-		}
-
-		/**
-		 * Compare keys
-		 */
-		public int compareTo(OnRowsEndStructtAggregateRow_7 other) {
-
-			int returnValue = -1;
-
-			return returnValue;
-		}
-
-		private int checkNullsAndCompare(Object object1, Object object2) {
-			int returnValue = 0;
-			if (object1 instanceof Comparable && object2 instanceof Comparable) {
-				returnValue = ((Comparable) object1).compareTo(object2);
-			} else if (object1 != null && object2 != null) {
-				returnValue = compareStrings(object1.toString(), object2.toString());
-			} else if (object1 == null && object2 != null) {
-				returnValue = 1;
-			} else if (object1 != null && object2 == null) {
-				returnValue = -1;
-			} else {
-				returnValue = 0;
-			}
-
-			return returnValue;
-		}
-
-		private int compareStrings(String string1, String string2) {
-			return string1.compareTo(string2);
-		}
-
+		return dateReturn;
 	}
 
-	public static class row11Struct implements routines.system.IPersistableRow<row11Struct> {
-		final static byte[] commonByteArrayLock_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[0];
-		static byte[] commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[0];
+    private void writeDate(java.util.Date date1, ObjectOutputStream dos) throws IOException{
+		if(date1 == null) {
+            dos.writeByte(-1);
+		} else {
+			dos.writeByte(0);
+	    	dos.writeLong(date1.getTime());
+    	}
+    }
 
-		public java.util.Date date;
-
-		public java.util.Date getDate() {
-			return this.date;
-		}
-
-		public String hashtag;
-
-		public String getHashtag() {
-			return this.hashtag;
-		}
-
-		public String country;
-
-		public String getCountry() {
-			return this.country;
-		}
-
-		public Integer c_negatives;
-
-		public Integer getC_negatives() {
-			return this.c_negatives;
-		}
-
-		private java.util.Date readDate(ObjectInputStream dis) throws IOException {
-			java.util.Date dateReturn = null;
-			int length = 0;
-			length = dis.readByte();
-			if (length == -1) {
-				dateReturn = null;
-			} else {
-				dateReturn = new Date(dis.readLong());
+	private String readString(ObjectInputStream dis) throws IOException{
+		String strReturn = null;
+		int length = 0;
+        length = dis.readInt();
+		if (length == -1) {
+			strReturn = null;
+		} else {
+			if(length > commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets.length) {
+				if(length < 1024 && commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets.length == 0) {
+   					commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[1024];
+				} else {
+   					commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[2 * length];
+   				}
 			}
-			return dateReturn;
+			dis.readFully(commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets, 0, length);
+			strReturn = new String(commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets, 0, length, utf8Charset);
 		}
+		return strReturn;
+	}
 
-		private void writeDate(java.util.Date date1, ObjectOutputStream dos) throws IOException {
-			if (date1 == null) {
-				dos.writeByte(-1);
-			} else {
-				dos.writeByte(0);
-				dos.writeLong(date1.getTime());
-			}
+    private void writeString(String str, ObjectOutputStream dos) throws IOException{
+		if(str == null) {
+            dos.writeInt(-1);
+		} else {
+            byte[] byteArray = str.getBytes(utf8Charset);
+	    	dos.writeInt(byteArray.length);
+			dos.write(byteArray);
+    	}
+    }
+	private Integer readInteger(ObjectInputStream dis) throws IOException{
+		Integer intReturn;
+        int length = 0;
+        length = dis.readByte();
+		if (length == -1) {
+			intReturn = null;
+		} else {
+	    	intReturn = dis.readInt();
 		}
+		return intReturn;
+	}
 
-		private String readString(ObjectInputStream dis) throws IOException {
-			String strReturn = null;
-			int length = 0;
-			length = dis.readInt();
-			if (length == -1) {
-				strReturn = null;
-			} else {
-				if (length > commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets.length) {
-					if (length < 1024
-							&& commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets.length == 0) {
-						commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[1024];
-					} else {
-						commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[2
-								* length];
-					}
-				}
-				dis.readFully(commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets, 0,
-						length);
-				strReturn = new String(commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets,
-						0, length, utf8Charset);
-			}
-			return strReturn;
-		}
+	private void writeInteger(Integer intNum, ObjectOutputStream dos) throws IOException{
+		if(intNum == null) {
+            dos.writeByte(-1);
+		} else {
+			dos.writeByte(0);
+	    	dos.writeInt(intNum);
+    	}
+	}
 
-		private void writeString(String str, ObjectOutputStream dos) throws IOException {
-			if (str == null) {
-				dos.writeInt(-1);
-			} else {
-				byte[] byteArray = str.getBytes(utf8Charset);
-				dos.writeInt(byteArray.length);
-				dos.write(byteArray);
-			}
-		}
+    public void readData(ObjectInputStream dis) {
 
-		private Integer readInteger(ObjectInputStream dis) throws IOException {
-			Integer intReturn;
-			int length = 0;
-			length = dis.readByte();
-			if (length == -1) {
-				intReturn = null;
-			} else {
-				intReturn = dis.readInt();
-			}
-			return intReturn;
-		}
+		synchronized(commonByteArrayLock_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets) {
 
-		private void writeInteger(Integer intNum, ObjectOutputStream dos) throws IOException {
-			if (intNum == null) {
-				dos.writeByte(-1);
-			} else {
-				dos.writeByte(0);
-				dos.writeInt(intNum);
-			}
-		}
+        	try {
 
-		public void readData(ObjectInputStream dis) {
-
-			synchronized (commonByteArrayLock_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets) {
-
-				try {
-
-					int length = 0;
-
+        		int length = 0;
+		
 					this.date = readDate(dis);
-
+					
 					this.hashtag = readString(dis);
-
+					
 					this.country = readString(dis);
+					
+						this.c_negatives = readInteger(dis);
+					
+        	} catch (IOException e) {
+	            throw new RuntimeException(e);
 
-					this.c_negatives = readInteger(dis);
+		
 
-				} catch (IOException e) {
-					throw new RuntimeException(e);
+        }
 
+		
+
+      }
+
+
+    }
+
+    public void writeData(ObjectOutputStream dos) {
+        try {
+
+		
+					// java.util.Date
+				
+						writeDate(this.date,dos);
+					
+					// String
+				
+						writeString(this.hashtag,dos);
+					
+					// String
+				
+						writeString(this.country,dos);
+					
+					// Integer
+				
+						writeInteger(this.c_negatives,dos);
+					
+        	} catch (IOException e) {
+	            throw new RuntimeException(e);
+        }
+
+
+    }
+
+
+    public String toString() {
+
+		StringBuilder sb = new StringBuilder();
+		sb.append(super.toString());
+		sb.append("[");
+		sb.append("date="+String.valueOf(date));
+		sb.append(",hashtag="+hashtag);
+		sb.append(",country="+country);
+		sb.append(",c_negatives="+String.valueOf(c_negatives));
+	    sb.append("]");
+
+	    return sb.toString();
+    }
+
+    /**
+     * Compare keys
+     */
+    public int compareTo(row11Struct other) {
+
+		int returnValue = -1;
+		
+	    return returnValue;
+    }
+
+
+    private int checkNullsAndCompare(Object object1, Object object2) {
+        int returnValue = 0;
+		if (object1 instanceof Comparable && object2 instanceof Comparable) {
+            returnValue = ((Comparable) object1).compareTo(object2);
+        } else if (object1 != null && object2 != null) {
+            returnValue = compareStrings(object1.toString(), object2.toString());
+        } else if (object1 == null && object2 != null) {
+            returnValue = 1;
+        } else if (object1 != null && object2 == null) {
+            returnValue = -1;
+        } else {
+            returnValue = 0;
+        }
+
+        return returnValue;
+    }
+
+    private int compareStrings(String string1, String string2) {
+        return string1.compareTo(string2);
+    }
+
+
+}
+
+public static class OnRowsEndStructtAggregateRow_6 implements routines.system.IPersistableRow<OnRowsEndStructtAggregateRow_6> {
+    final static byte[] commonByteArrayLock_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[0];
+    static byte[] commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[0];
+
+	
+			    public java.util.Date date;
+
+				public java.util.Date getDate () {
+					return this.date;
 				}
+				
+			    public String hashtag;
 
-			}
+				public String getHashtag () {
+					return this.hashtag;
+				}
+				
+			    public String country;
 
+				public String getCountry () {
+					return this.country;
+				}
+				
+			    public Integer c_negatives;
+
+				public Integer getC_negatives () {
+					return this.c_negatives;
+				}
+				
+
+
+
+	private java.util.Date readDate(ObjectInputStream dis) throws IOException{
+		java.util.Date dateReturn = null;
+        int length = 0;
+        length = dis.readByte();
+		if (length == -1) {
+			dateReturn = null;
+		} else {
+	    	dateReturn = new Date(dis.readLong());
 		}
-
-		public void writeData(ObjectOutputStream dos) {
-			try {
-
-				// java.util.Date
-
-				writeDate(this.date, dos);
-
-				// String
-
-				writeString(this.hashtag, dos);
-
-				// String
-
-				writeString(this.country, dos);
-
-				// Integer
-
-				writeInteger(this.c_negatives, dos);
-
-			} catch (IOException e) {
-				throw new RuntimeException(e);
-			}
-
-		}
-
-		public String toString() {
-
-			StringBuilder sb = new StringBuilder();
-			sb.append(super.toString());
-			sb.append("[");
-			sb.append("date=" + String.valueOf(date));
-			sb.append(",hashtag=" + hashtag);
-			sb.append(",country=" + country);
-			sb.append(",c_negatives=" + String.valueOf(c_negatives));
-			sb.append("]");
-
-			return sb.toString();
-		}
-
-		/**
-		 * Compare keys
-		 */
-		public int compareTo(row11Struct other) {
-
-			int returnValue = -1;
-
-			return returnValue;
-		}
-
-		private int checkNullsAndCompare(Object object1, Object object2) {
-			int returnValue = 0;
-			if (object1 instanceof Comparable && object2 instanceof Comparable) {
-				returnValue = ((Comparable) object1).compareTo(object2);
-			} else if (object1 != null && object2 != null) {
-				returnValue = compareStrings(object1.toString(), object2.toString());
-			} else if (object1 == null && object2 != null) {
-				returnValue = 1;
-			} else if (object1 != null && object2 == null) {
-				returnValue = -1;
-			} else {
-				returnValue = 0;
-			}
-
-			return returnValue;
-		}
-
-		private int compareStrings(String string1, String string2) {
-			return string1.compareTo(string2);
-		}
-
+		return dateReturn;
 	}
 
-	public static class OnRowsEndStructtAggregateRow_6
-			implements routines.system.IPersistableRow<OnRowsEndStructtAggregateRow_6> {
-		final static byte[] commonByteArrayLock_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[0];
-		static byte[] commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[0];
+    private void writeDate(java.util.Date date1, ObjectOutputStream dos) throws IOException{
+		if(date1 == null) {
+            dos.writeByte(-1);
+		} else {
+			dos.writeByte(0);
+	    	dos.writeLong(date1.getTime());
+    	}
+    }
 
-		public java.util.Date date;
-
-		public java.util.Date getDate() {
-			return this.date;
-		}
-
-		public String hashtag;
-
-		public String getHashtag() {
-			return this.hashtag;
-		}
-
-		public String country;
-
-		public String getCountry() {
-			return this.country;
-		}
-
-		public Integer c_negatives;
-
-		public Integer getC_negatives() {
-			return this.c_negatives;
-		}
-
-		private java.util.Date readDate(ObjectInputStream dis) throws IOException {
-			java.util.Date dateReturn = null;
-			int length = 0;
-			length = dis.readByte();
-			if (length == -1) {
-				dateReturn = null;
-			} else {
-				dateReturn = new Date(dis.readLong());
+	private String readString(ObjectInputStream dis) throws IOException{
+		String strReturn = null;
+		int length = 0;
+        length = dis.readInt();
+		if (length == -1) {
+			strReturn = null;
+		} else {
+			if(length > commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets.length) {
+				if(length < 1024 && commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets.length == 0) {
+   					commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[1024];
+				} else {
+   					commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[2 * length];
+   				}
 			}
-			return dateReturn;
+			dis.readFully(commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets, 0, length);
+			strReturn = new String(commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets, 0, length, utf8Charset);
 		}
+		return strReturn;
+	}
 
-		private void writeDate(java.util.Date date1, ObjectOutputStream dos) throws IOException {
-			if (date1 == null) {
-				dos.writeByte(-1);
-			} else {
-				dos.writeByte(0);
-				dos.writeLong(date1.getTime());
-			}
+    private void writeString(String str, ObjectOutputStream dos) throws IOException{
+		if(str == null) {
+            dos.writeInt(-1);
+		} else {
+            byte[] byteArray = str.getBytes(utf8Charset);
+	    	dos.writeInt(byteArray.length);
+			dos.write(byteArray);
+    	}
+    }
+	private Integer readInteger(ObjectInputStream dis) throws IOException{
+		Integer intReturn;
+        int length = 0;
+        length = dis.readByte();
+		if (length == -1) {
+			intReturn = null;
+		} else {
+	    	intReturn = dis.readInt();
 		}
+		return intReturn;
+	}
 
-		private String readString(ObjectInputStream dis) throws IOException {
-			String strReturn = null;
-			int length = 0;
-			length = dis.readInt();
-			if (length == -1) {
-				strReturn = null;
-			} else {
-				if (length > commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets.length) {
-					if (length < 1024
-							&& commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets.length == 0) {
-						commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[1024];
-					} else {
-						commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[2
-								* length];
-					}
-				}
-				dis.readFully(commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets, 0,
-						length);
-				strReturn = new String(commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets,
-						0, length, utf8Charset);
-			}
-			return strReturn;
-		}
+	private void writeInteger(Integer intNum, ObjectOutputStream dos) throws IOException{
+		if(intNum == null) {
+            dos.writeByte(-1);
+		} else {
+			dos.writeByte(0);
+	    	dos.writeInt(intNum);
+    	}
+	}
 
-		private void writeString(String str, ObjectOutputStream dos) throws IOException {
-			if (str == null) {
-				dos.writeInt(-1);
-			} else {
-				byte[] byteArray = str.getBytes(utf8Charset);
-				dos.writeInt(byteArray.length);
-				dos.write(byteArray);
-			}
-		}
+    public void readData(ObjectInputStream dis) {
 
-		private Integer readInteger(ObjectInputStream dis) throws IOException {
-			Integer intReturn;
-			int length = 0;
-			length = dis.readByte();
-			if (length == -1) {
-				intReturn = null;
-			} else {
-				intReturn = dis.readInt();
-			}
-			return intReturn;
-		}
+		synchronized(commonByteArrayLock_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets) {
 
-		private void writeInteger(Integer intNum, ObjectOutputStream dos) throws IOException {
-			if (intNum == null) {
-				dos.writeByte(-1);
-			} else {
-				dos.writeByte(0);
-				dos.writeInt(intNum);
-			}
-		}
+        	try {
 
-		public void readData(ObjectInputStream dis) {
-
-			synchronized (commonByteArrayLock_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets) {
-
-				try {
-
-					int length = 0;
-
+        		int length = 0;
+		
 					this.date = readDate(dis);
-
+					
 					this.hashtag = readString(dis);
-
+					
 					this.country = readString(dis);
+					
+						this.c_negatives = readInteger(dis);
+					
+        	} catch (IOException e) {
+	            throw new RuntimeException(e);
 
-					this.c_negatives = readInteger(dis);
+		
 
-				} catch (IOException e) {
-					throw new RuntimeException(e);
+        }
 
+		
+
+      }
+
+
+    }
+
+    public void writeData(ObjectOutputStream dos) {
+        try {
+
+		
+					// java.util.Date
+				
+						writeDate(this.date,dos);
+					
+					// String
+				
+						writeString(this.hashtag,dos);
+					
+					// String
+				
+						writeString(this.country,dos);
+					
+					// Integer
+				
+						writeInteger(this.c_negatives,dos);
+					
+        	} catch (IOException e) {
+	            throw new RuntimeException(e);
+        }
+
+
+    }
+
+
+    public String toString() {
+
+		StringBuilder sb = new StringBuilder();
+		sb.append(super.toString());
+		sb.append("[");
+		sb.append("date="+String.valueOf(date));
+		sb.append(",hashtag="+hashtag);
+		sb.append(",country="+country);
+		sb.append(",c_negatives="+String.valueOf(c_negatives));
+	    sb.append("]");
+
+	    return sb.toString();
+    }
+
+    /**
+     * Compare keys
+     */
+    public int compareTo(OnRowsEndStructtAggregateRow_6 other) {
+
+		int returnValue = -1;
+		
+	    return returnValue;
+    }
+
+
+    private int checkNullsAndCompare(Object object1, Object object2) {
+        int returnValue = 0;
+		if (object1 instanceof Comparable && object2 instanceof Comparable) {
+            returnValue = ((Comparable) object1).compareTo(object2);
+        } else if (object1 != null && object2 != null) {
+            returnValue = compareStrings(object1.toString(), object2.toString());
+        } else if (object1 == null && object2 != null) {
+            returnValue = 1;
+        } else if (object1 != null && object2 == null) {
+            returnValue = -1;
+        } else {
+            returnValue = 0;
+        }
+
+        return returnValue;
+    }
+
+    private int compareStrings(String string1, String string2) {
+        return string1.compareTo(string2);
+    }
+
+
+}
+
+public static class row12Struct implements routines.system.IPersistableRow<row12Struct> {
+    final static byte[] commonByteArrayLock_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[0];
+    static byte[] commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[0];
+
+	
+			    public java.util.Date date;
+
+				public java.util.Date getDate () {
+					return this.date;
 				}
+				
+			    public String hashtag;
 
-			}
+				public String getHashtag () {
+					return this.hashtag;
+				}
+				
+			    public String country;
 
+				public String getCountry () {
+					return this.country;
+				}
+				
+			    public Integer c_positives;
+
+				public Integer getC_positives () {
+					return this.c_positives;
+				}
+				
+
+
+
+	private java.util.Date readDate(ObjectInputStream dis) throws IOException{
+		java.util.Date dateReturn = null;
+        int length = 0;
+        length = dis.readByte();
+		if (length == -1) {
+			dateReturn = null;
+		} else {
+	    	dateReturn = new Date(dis.readLong());
 		}
-
-		public void writeData(ObjectOutputStream dos) {
-			try {
-
-				// java.util.Date
-
-				writeDate(this.date, dos);
-
-				// String
-
-				writeString(this.hashtag, dos);
-
-				// String
-
-				writeString(this.country, dos);
-
-				// Integer
-
-				writeInteger(this.c_negatives, dos);
-
-			} catch (IOException e) {
-				throw new RuntimeException(e);
-			}
-
-		}
-
-		public String toString() {
-
-			StringBuilder sb = new StringBuilder();
-			sb.append(super.toString());
-			sb.append("[");
-			sb.append("date=" + String.valueOf(date));
-			sb.append(",hashtag=" + hashtag);
-			sb.append(",country=" + country);
-			sb.append(",c_negatives=" + String.valueOf(c_negatives));
-			sb.append("]");
-
-			return sb.toString();
-		}
-
-		/**
-		 * Compare keys
-		 */
-		public int compareTo(OnRowsEndStructtAggregateRow_6 other) {
-
-			int returnValue = -1;
-
-			return returnValue;
-		}
-
-		private int checkNullsAndCompare(Object object1, Object object2) {
-			int returnValue = 0;
-			if (object1 instanceof Comparable && object2 instanceof Comparable) {
-				returnValue = ((Comparable) object1).compareTo(object2);
-			} else if (object1 != null && object2 != null) {
-				returnValue = compareStrings(object1.toString(), object2.toString());
-			} else if (object1 == null && object2 != null) {
-				returnValue = 1;
-			} else if (object1 != null && object2 == null) {
-				returnValue = -1;
-			} else {
-				returnValue = 0;
-			}
-
-			return returnValue;
-		}
-
-		private int compareStrings(String string1, String string2) {
-			return string1.compareTo(string2);
-		}
-
+		return dateReturn;
 	}
 
-	public static class row12Struct implements routines.system.IPersistableRow<row12Struct> {
-		final static byte[] commonByteArrayLock_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[0];
-		static byte[] commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[0];
+    private void writeDate(java.util.Date date1, ObjectOutputStream dos) throws IOException{
+		if(date1 == null) {
+            dos.writeByte(-1);
+		} else {
+			dos.writeByte(0);
+	    	dos.writeLong(date1.getTime());
+    	}
+    }
 
-		public java.util.Date date;
-
-		public java.util.Date getDate() {
-			return this.date;
-		}
-
-		public String hashtag;
-
-		public String getHashtag() {
-			return this.hashtag;
-		}
-
-		public String country;
-
-		public String getCountry() {
-			return this.country;
-		}
-
-		public Integer c_positives;
-
-		public Integer getC_positives() {
-			return this.c_positives;
-		}
-
-		private java.util.Date readDate(ObjectInputStream dis) throws IOException {
-			java.util.Date dateReturn = null;
-			int length = 0;
-			length = dis.readByte();
-			if (length == -1) {
-				dateReturn = null;
-			} else {
-				dateReturn = new Date(dis.readLong());
+	private String readString(ObjectInputStream dis) throws IOException{
+		String strReturn = null;
+		int length = 0;
+        length = dis.readInt();
+		if (length == -1) {
+			strReturn = null;
+		} else {
+			if(length > commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets.length) {
+				if(length < 1024 && commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets.length == 0) {
+   					commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[1024];
+				} else {
+   					commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[2 * length];
+   				}
 			}
-			return dateReturn;
+			dis.readFully(commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets, 0, length);
+			strReturn = new String(commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets, 0, length, utf8Charset);
 		}
+		return strReturn;
+	}
 
-		private void writeDate(java.util.Date date1, ObjectOutputStream dos) throws IOException {
-			if (date1 == null) {
-				dos.writeByte(-1);
-			} else {
-				dos.writeByte(0);
-				dos.writeLong(date1.getTime());
-			}
+    private void writeString(String str, ObjectOutputStream dos) throws IOException{
+		if(str == null) {
+            dos.writeInt(-1);
+		} else {
+            byte[] byteArray = str.getBytes(utf8Charset);
+	    	dos.writeInt(byteArray.length);
+			dos.write(byteArray);
+    	}
+    }
+	private Integer readInteger(ObjectInputStream dis) throws IOException{
+		Integer intReturn;
+        int length = 0;
+        length = dis.readByte();
+		if (length == -1) {
+			intReturn = null;
+		} else {
+	    	intReturn = dis.readInt();
 		}
+		return intReturn;
+	}
 
-		private String readString(ObjectInputStream dis) throws IOException {
-			String strReturn = null;
-			int length = 0;
-			length = dis.readInt();
-			if (length == -1) {
-				strReturn = null;
-			} else {
-				if (length > commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets.length) {
-					if (length < 1024
-							&& commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets.length == 0) {
-						commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[1024];
-					} else {
-						commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[2
-								* length];
-					}
-				}
-				dis.readFully(commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets, 0,
-						length);
-				strReturn = new String(commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets,
-						0, length, utf8Charset);
-			}
-			return strReturn;
-		}
+	private void writeInteger(Integer intNum, ObjectOutputStream dos) throws IOException{
+		if(intNum == null) {
+            dos.writeByte(-1);
+		} else {
+			dos.writeByte(0);
+	    	dos.writeInt(intNum);
+    	}
+	}
 
-		private void writeString(String str, ObjectOutputStream dos) throws IOException {
-			if (str == null) {
-				dos.writeInt(-1);
-			} else {
-				byte[] byteArray = str.getBytes(utf8Charset);
-				dos.writeInt(byteArray.length);
-				dos.write(byteArray);
-			}
-		}
+    public void readData(ObjectInputStream dis) {
 
-		private Integer readInteger(ObjectInputStream dis) throws IOException {
-			Integer intReturn;
-			int length = 0;
-			length = dis.readByte();
-			if (length == -1) {
-				intReturn = null;
-			} else {
-				intReturn = dis.readInt();
-			}
-			return intReturn;
-		}
+		synchronized(commonByteArrayLock_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets) {
 
-		private void writeInteger(Integer intNum, ObjectOutputStream dos) throws IOException {
-			if (intNum == null) {
-				dos.writeByte(-1);
-			} else {
-				dos.writeByte(0);
-				dos.writeInt(intNum);
-			}
-		}
+        	try {
 
-		public void readData(ObjectInputStream dis) {
-
-			synchronized (commonByteArrayLock_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets) {
-
-				try {
-
-					int length = 0;
-
+        		int length = 0;
+		
 					this.date = readDate(dis);
-
+					
 					this.hashtag = readString(dis);
-
+					
 					this.country = readString(dis);
+					
+						this.c_positives = readInteger(dis);
+					
+        	} catch (IOException e) {
+	            throw new RuntimeException(e);
 
-					this.c_positives = readInteger(dis);
+		
 
-				} catch (IOException e) {
-					throw new RuntimeException(e);
+        }
 
+		
+
+      }
+
+
+    }
+
+    public void writeData(ObjectOutputStream dos) {
+        try {
+
+		
+					// java.util.Date
+				
+						writeDate(this.date,dos);
+					
+					// String
+				
+						writeString(this.hashtag,dos);
+					
+					// String
+				
+						writeString(this.country,dos);
+					
+					// Integer
+				
+						writeInteger(this.c_positives,dos);
+					
+        	} catch (IOException e) {
+	            throw new RuntimeException(e);
+        }
+
+
+    }
+
+
+    public String toString() {
+
+		StringBuilder sb = new StringBuilder();
+		sb.append(super.toString());
+		sb.append("[");
+		sb.append("date="+String.valueOf(date));
+		sb.append(",hashtag="+hashtag);
+		sb.append(",country="+country);
+		sb.append(",c_positives="+String.valueOf(c_positives));
+	    sb.append("]");
+
+	    return sb.toString();
+    }
+
+    /**
+     * Compare keys
+     */
+    public int compareTo(row12Struct other) {
+
+		int returnValue = -1;
+		
+	    return returnValue;
+    }
+
+
+    private int checkNullsAndCompare(Object object1, Object object2) {
+        int returnValue = 0;
+		if (object1 instanceof Comparable && object2 instanceof Comparable) {
+            returnValue = ((Comparable) object1).compareTo(object2);
+        } else if (object1 != null && object2 != null) {
+            returnValue = compareStrings(object1.toString(), object2.toString());
+        } else if (object1 == null && object2 != null) {
+            returnValue = 1;
+        } else if (object1 != null && object2 == null) {
+            returnValue = -1;
+        } else {
+            returnValue = 0;
+        }
+
+        return returnValue;
+    }
+
+    private int compareStrings(String string1, String string2) {
+        return string1.compareTo(string2);
+    }
+
+
+}
+
+public static class OnRowsEndStructtAggregateRow_5 implements routines.system.IPersistableRow<OnRowsEndStructtAggregateRow_5> {
+    final static byte[] commonByteArrayLock_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[0];
+    static byte[] commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[0];
+
+	
+			    public java.util.Date date;
+
+				public java.util.Date getDate () {
+					return this.date;
 				}
+				
+			    public String hashtag;
 
-			}
+				public String getHashtag () {
+					return this.hashtag;
+				}
+				
+			    public String country;
 
+				public String getCountry () {
+					return this.country;
+				}
+				
+			    public Integer c_positives;
+
+				public Integer getC_positives () {
+					return this.c_positives;
+				}
+				
+
+
+
+	private java.util.Date readDate(ObjectInputStream dis) throws IOException{
+		java.util.Date dateReturn = null;
+        int length = 0;
+        length = dis.readByte();
+		if (length == -1) {
+			dateReturn = null;
+		} else {
+	    	dateReturn = new Date(dis.readLong());
 		}
-
-		public void writeData(ObjectOutputStream dos) {
-			try {
-
-				// java.util.Date
-
-				writeDate(this.date, dos);
-
-				// String
-
-				writeString(this.hashtag, dos);
-
-				// String
-
-				writeString(this.country, dos);
-
-				// Integer
-
-				writeInteger(this.c_positives, dos);
-
-			} catch (IOException e) {
-				throw new RuntimeException(e);
-			}
-
-		}
-
-		public String toString() {
-
-			StringBuilder sb = new StringBuilder();
-			sb.append(super.toString());
-			sb.append("[");
-			sb.append("date=" + String.valueOf(date));
-			sb.append(",hashtag=" + hashtag);
-			sb.append(",country=" + country);
-			sb.append(",c_positives=" + String.valueOf(c_positives));
-			sb.append("]");
-
-			return sb.toString();
-		}
-
-		/**
-		 * Compare keys
-		 */
-		public int compareTo(row12Struct other) {
-
-			int returnValue = -1;
-
-			return returnValue;
-		}
-
-		private int checkNullsAndCompare(Object object1, Object object2) {
-			int returnValue = 0;
-			if (object1 instanceof Comparable && object2 instanceof Comparable) {
-				returnValue = ((Comparable) object1).compareTo(object2);
-			} else if (object1 != null && object2 != null) {
-				returnValue = compareStrings(object1.toString(), object2.toString());
-			} else if (object1 == null && object2 != null) {
-				returnValue = 1;
-			} else if (object1 != null && object2 == null) {
-				returnValue = -1;
-			} else {
-				returnValue = 0;
-			}
-
-			return returnValue;
-		}
-
-		private int compareStrings(String string1, String string2) {
-			return string1.compareTo(string2);
-		}
-
+		return dateReturn;
 	}
 
-	public static class OnRowsEndStructtAggregateRow_5
-			implements routines.system.IPersistableRow<OnRowsEndStructtAggregateRow_5> {
-		final static byte[] commonByteArrayLock_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[0];
-		static byte[] commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[0];
+    private void writeDate(java.util.Date date1, ObjectOutputStream dos) throws IOException{
+		if(date1 == null) {
+            dos.writeByte(-1);
+		} else {
+			dos.writeByte(0);
+	    	dos.writeLong(date1.getTime());
+    	}
+    }
 
-		public java.util.Date date;
-
-		public java.util.Date getDate() {
-			return this.date;
-		}
-
-		public String hashtag;
-
-		public String getHashtag() {
-			return this.hashtag;
-		}
-
-		public String country;
-
-		public String getCountry() {
-			return this.country;
-		}
-
-		public Integer c_positives;
-
-		public Integer getC_positives() {
-			return this.c_positives;
-		}
-
-		private java.util.Date readDate(ObjectInputStream dis) throws IOException {
-			java.util.Date dateReturn = null;
-			int length = 0;
-			length = dis.readByte();
-			if (length == -1) {
-				dateReturn = null;
-			} else {
-				dateReturn = new Date(dis.readLong());
+	private String readString(ObjectInputStream dis) throws IOException{
+		String strReturn = null;
+		int length = 0;
+        length = dis.readInt();
+		if (length == -1) {
+			strReturn = null;
+		} else {
+			if(length > commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets.length) {
+				if(length < 1024 && commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets.length == 0) {
+   					commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[1024];
+				} else {
+   					commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[2 * length];
+   				}
 			}
-			return dateReturn;
+			dis.readFully(commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets, 0, length);
+			strReturn = new String(commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets, 0, length, utf8Charset);
 		}
+		return strReturn;
+	}
 
-		private void writeDate(java.util.Date date1, ObjectOutputStream dos) throws IOException {
-			if (date1 == null) {
-				dos.writeByte(-1);
-			} else {
-				dos.writeByte(0);
-				dos.writeLong(date1.getTime());
-			}
+    private void writeString(String str, ObjectOutputStream dos) throws IOException{
+		if(str == null) {
+            dos.writeInt(-1);
+		} else {
+            byte[] byteArray = str.getBytes(utf8Charset);
+	    	dos.writeInt(byteArray.length);
+			dos.write(byteArray);
+    	}
+    }
+	private Integer readInteger(ObjectInputStream dis) throws IOException{
+		Integer intReturn;
+        int length = 0;
+        length = dis.readByte();
+		if (length == -1) {
+			intReturn = null;
+		} else {
+	    	intReturn = dis.readInt();
 		}
+		return intReturn;
+	}
 
-		private String readString(ObjectInputStream dis) throws IOException {
-			String strReturn = null;
-			int length = 0;
-			length = dis.readInt();
-			if (length == -1) {
-				strReturn = null;
-			} else {
-				if (length > commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets.length) {
-					if (length < 1024
-							&& commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets.length == 0) {
-						commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[1024];
-					} else {
-						commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[2
-								* length];
-					}
-				}
-				dis.readFully(commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets, 0,
-						length);
-				strReturn = new String(commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets,
-						0, length, utf8Charset);
-			}
-			return strReturn;
-		}
+	private void writeInteger(Integer intNum, ObjectOutputStream dos) throws IOException{
+		if(intNum == null) {
+            dos.writeByte(-1);
+		} else {
+			dos.writeByte(0);
+	    	dos.writeInt(intNum);
+    	}
+	}
 
-		private void writeString(String str, ObjectOutputStream dos) throws IOException {
-			if (str == null) {
-				dos.writeInt(-1);
-			} else {
-				byte[] byteArray = str.getBytes(utf8Charset);
-				dos.writeInt(byteArray.length);
-				dos.write(byteArray);
-			}
-		}
+    public void readData(ObjectInputStream dis) {
 
-		private Integer readInteger(ObjectInputStream dis) throws IOException {
-			Integer intReturn;
-			int length = 0;
-			length = dis.readByte();
-			if (length == -1) {
-				intReturn = null;
-			} else {
-				intReturn = dis.readInt();
-			}
-			return intReturn;
-		}
+		synchronized(commonByteArrayLock_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets) {
 
-		private void writeInteger(Integer intNum, ObjectOutputStream dos) throws IOException {
-			if (intNum == null) {
-				dos.writeByte(-1);
-			} else {
-				dos.writeByte(0);
-				dos.writeInt(intNum);
-			}
-		}
+        	try {
 
-		public void readData(ObjectInputStream dis) {
-
-			synchronized (commonByteArrayLock_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets) {
-
-				try {
-
-					int length = 0;
-
+        		int length = 0;
+		
 					this.date = readDate(dis);
-
+					
 					this.hashtag = readString(dis);
-
+					
 					this.country = readString(dis);
+					
+						this.c_positives = readInteger(dis);
+					
+        	} catch (IOException e) {
+	            throw new RuntimeException(e);
 
-					this.c_positives = readInteger(dis);
+		
 
-				} catch (IOException e) {
-					throw new RuntimeException(e);
+        }
 
+		
+
+      }
+
+
+    }
+
+    public void writeData(ObjectOutputStream dos) {
+        try {
+
+		
+					// java.util.Date
+				
+						writeDate(this.date,dos);
+					
+					// String
+				
+						writeString(this.hashtag,dos);
+					
+					// String
+				
+						writeString(this.country,dos);
+					
+					// Integer
+				
+						writeInteger(this.c_positives,dos);
+					
+        	} catch (IOException e) {
+	            throw new RuntimeException(e);
+        }
+
+
+    }
+
+
+    public String toString() {
+
+		StringBuilder sb = new StringBuilder();
+		sb.append(super.toString());
+		sb.append("[");
+		sb.append("date="+String.valueOf(date));
+		sb.append(",hashtag="+hashtag);
+		sb.append(",country="+country);
+		sb.append(",c_positives="+String.valueOf(c_positives));
+	    sb.append("]");
+
+	    return sb.toString();
+    }
+
+    /**
+     * Compare keys
+     */
+    public int compareTo(OnRowsEndStructtAggregateRow_5 other) {
+
+		int returnValue = -1;
+		
+	    return returnValue;
+    }
+
+
+    private int checkNullsAndCompare(Object object1, Object object2) {
+        int returnValue = 0;
+		if (object1 instanceof Comparable && object2 instanceof Comparable) {
+            returnValue = ((Comparable) object1).compareTo(object2);
+        } else if (object1 != null && object2 != null) {
+            returnValue = compareStrings(object1.toString(), object2.toString());
+        } else if (object1 == null && object2 != null) {
+            returnValue = 1;
+        } else if (object1 != null && object2 == null) {
+            returnValue = -1;
+        } else {
+            returnValue = 0;
+        }
+
+        return returnValue;
+    }
+
+    private int compareStrings(String string1, String string2) {
+        return string1.compareTo(string2);
+    }
+
+
+}
+
+public static class c_postStruct implements routines.system.IPersistableRow<c_postStruct> {
+    final static byte[] commonByteArrayLock_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[0];
+    static byte[] commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[0];
+
+	
+			    public java.util.Date date;
+
+				public java.util.Date getDate () {
+					return this.date;
 				}
+				
+			    public String hashtag;
 
-			}
+				public String getHashtag () {
+					return this.hashtag;
+				}
+				
+			    public String country;
 
+				public String getCountry () {
+					return this.country;
+				}
+				
+			    public Integer c_positives;
+
+				public Integer getC_positives () {
+					return this.c_positives;
+				}
+				
+
+
+
+	private java.util.Date readDate(ObjectInputStream dis) throws IOException{
+		java.util.Date dateReturn = null;
+        int length = 0;
+        length = dis.readByte();
+		if (length == -1) {
+			dateReturn = null;
+		} else {
+	    	dateReturn = new Date(dis.readLong());
 		}
-
-		public void writeData(ObjectOutputStream dos) {
-			try {
-
-				// java.util.Date
-
-				writeDate(this.date, dos);
-
-				// String
-
-				writeString(this.hashtag, dos);
-
-				// String
-
-				writeString(this.country, dos);
-
-				// Integer
-
-				writeInteger(this.c_positives, dos);
-
-			} catch (IOException e) {
-				throw new RuntimeException(e);
-			}
-
-		}
-
-		public String toString() {
-
-			StringBuilder sb = new StringBuilder();
-			sb.append(super.toString());
-			sb.append("[");
-			sb.append("date=" + String.valueOf(date));
-			sb.append(",hashtag=" + hashtag);
-			sb.append(",country=" + country);
-			sb.append(",c_positives=" + String.valueOf(c_positives));
-			sb.append("]");
-
-			return sb.toString();
-		}
-
-		/**
-		 * Compare keys
-		 */
-		public int compareTo(OnRowsEndStructtAggregateRow_5 other) {
-
-			int returnValue = -1;
-
-			return returnValue;
-		}
-
-		private int checkNullsAndCompare(Object object1, Object object2) {
-			int returnValue = 0;
-			if (object1 instanceof Comparable && object2 instanceof Comparable) {
-				returnValue = ((Comparable) object1).compareTo(object2);
-			} else if (object1 != null && object2 != null) {
-				returnValue = compareStrings(object1.toString(), object2.toString());
-			} else if (object1 == null && object2 != null) {
-				returnValue = 1;
-			} else if (object1 != null && object2 == null) {
-				returnValue = -1;
-			} else {
-				returnValue = 0;
-			}
-
-			return returnValue;
-		}
-
-		private int compareStrings(String string1, String string2) {
-			return string1.compareTo(string2);
-		}
-
+		return dateReturn;
 	}
 
-	public static class c_postStruct implements routines.system.IPersistableRow<c_postStruct> {
-		final static byte[] commonByteArrayLock_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[0];
-		static byte[] commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[0];
+    private void writeDate(java.util.Date date1, ObjectOutputStream dos) throws IOException{
+		if(date1 == null) {
+            dos.writeByte(-1);
+		} else {
+			dos.writeByte(0);
+	    	dos.writeLong(date1.getTime());
+    	}
+    }
 
-		public java.util.Date date;
-
-		public java.util.Date getDate() {
-			return this.date;
-		}
-
-		public String hashtag;
-
-		public String getHashtag() {
-			return this.hashtag;
-		}
-
-		public String country;
-
-		public String getCountry() {
-			return this.country;
-		}
-
-		public Integer c_positives;
-
-		public Integer getC_positives() {
-			return this.c_positives;
-		}
-
-		private java.util.Date readDate(ObjectInputStream dis) throws IOException {
-			java.util.Date dateReturn = null;
-			int length = 0;
-			length = dis.readByte();
-			if (length == -1) {
-				dateReturn = null;
-			} else {
-				dateReturn = new Date(dis.readLong());
+	private String readString(ObjectInputStream dis) throws IOException{
+		String strReturn = null;
+		int length = 0;
+        length = dis.readInt();
+		if (length == -1) {
+			strReturn = null;
+		} else {
+			if(length > commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets.length) {
+				if(length < 1024 && commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets.length == 0) {
+   					commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[1024];
+				} else {
+   					commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[2 * length];
+   				}
 			}
-			return dateReturn;
+			dis.readFully(commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets, 0, length);
+			strReturn = new String(commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets, 0, length, utf8Charset);
 		}
+		return strReturn;
+	}
 
-		private void writeDate(java.util.Date date1, ObjectOutputStream dos) throws IOException {
-			if (date1 == null) {
-				dos.writeByte(-1);
-			} else {
-				dos.writeByte(0);
-				dos.writeLong(date1.getTime());
-			}
+    private void writeString(String str, ObjectOutputStream dos) throws IOException{
+		if(str == null) {
+            dos.writeInt(-1);
+		} else {
+            byte[] byteArray = str.getBytes(utf8Charset);
+	    	dos.writeInt(byteArray.length);
+			dos.write(byteArray);
+    	}
+    }
+	private Integer readInteger(ObjectInputStream dis) throws IOException{
+		Integer intReturn;
+        int length = 0;
+        length = dis.readByte();
+		if (length == -1) {
+			intReturn = null;
+		} else {
+	    	intReturn = dis.readInt();
 		}
+		return intReturn;
+	}
 
-		private String readString(ObjectInputStream dis) throws IOException {
-			String strReturn = null;
-			int length = 0;
-			length = dis.readInt();
-			if (length == -1) {
-				strReturn = null;
-			} else {
-				if (length > commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets.length) {
-					if (length < 1024
-							&& commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets.length == 0) {
-						commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[1024];
-					} else {
-						commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[2
-								* length];
-					}
-				}
-				dis.readFully(commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets, 0,
-						length);
-				strReturn = new String(commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets,
-						0, length, utf8Charset);
-			}
-			return strReturn;
-		}
+	private void writeInteger(Integer intNum, ObjectOutputStream dos) throws IOException{
+		if(intNum == null) {
+            dos.writeByte(-1);
+		} else {
+			dos.writeByte(0);
+	    	dos.writeInt(intNum);
+    	}
+	}
 
-		private void writeString(String str, ObjectOutputStream dos) throws IOException {
-			if (str == null) {
-				dos.writeInt(-1);
-			} else {
-				byte[] byteArray = str.getBytes(utf8Charset);
-				dos.writeInt(byteArray.length);
-				dos.write(byteArray);
-			}
-		}
+    public void readData(ObjectInputStream dis) {
 
-		private Integer readInteger(ObjectInputStream dis) throws IOException {
-			Integer intReturn;
-			int length = 0;
-			length = dis.readByte();
-			if (length == -1) {
-				intReturn = null;
-			} else {
-				intReturn = dis.readInt();
-			}
-			return intReturn;
-		}
+		synchronized(commonByteArrayLock_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets) {
 
-		private void writeInteger(Integer intNum, ObjectOutputStream dos) throws IOException {
-			if (intNum == null) {
-				dos.writeByte(-1);
-			} else {
-				dos.writeByte(0);
-				dos.writeInt(intNum);
-			}
-		}
+        	try {
 
-		public void readData(ObjectInputStream dis) {
-
-			synchronized (commonByteArrayLock_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets) {
-
-				try {
-
-					int length = 0;
-
+        		int length = 0;
+		
 					this.date = readDate(dis);
-
+					
 					this.hashtag = readString(dis);
-
+					
 					this.country = readString(dis);
+					
+						this.c_positives = readInteger(dis);
+					
+        	} catch (IOException e) {
+	            throw new RuntimeException(e);
 
-					this.c_positives = readInteger(dis);
+		
 
-				} catch (IOException e) {
-					throw new RuntimeException(e);
+        }
 
+		
+
+      }
+
+
+    }
+
+    public void writeData(ObjectOutputStream dos) {
+        try {
+
+		
+					// java.util.Date
+				
+						writeDate(this.date,dos);
+					
+					// String
+				
+						writeString(this.hashtag,dos);
+					
+					// String
+				
+						writeString(this.country,dos);
+					
+					// Integer
+				
+						writeInteger(this.c_positives,dos);
+					
+        	} catch (IOException e) {
+	            throw new RuntimeException(e);
+        }
+
+
+    }
+
+
+    public String toString() {
+
+		StringBuilder sb = new StringBuilder();
+		sb.append(super.toString());
+		sb.append("[");
+		sb.append("date="+String.valueOf(date));
+		sb.append(",hashtag="+hashtag);
+		sb.append(",country="+country);
+		sb.append(",c_positives="+String.valueOf(c_positives));
+	    sb.append("]");
+
+	    return sb.toString();
+    }
+
+    /**
+     * Compare keys
+     */
+    public int compareTo(c_postStruct other) {
+
+		int returnValue = -1;
+		
+	    return returnValue;
+    }
+
+
+    private int checkNullsAndCompare(Object object1, Object object2) {
+        int returnValue = 0;
+		if (object1 instanceof Comparable && object2 instanceof Comparable) {
+            returnValue = ((Comparable) object1).compareTo(object2);
+        } else if (object1 != null && object2 != null) {
+            returnValue = compareStrings(object1.toString(), object2.toString());
+        } else if (object1 == null && object2 != null) {
+            returnValue = 1;
+        } else if (object1 != null && object2 == null) {
+            returnValue = -1;
+        } else {
+            returnValue = 0;
+        }
+
+        return returnValue;
+    }
+
+    private int compareStrings(String string1, String string2) {
+        return string1.compareTo(string2);
+    }
+
+
+}
+
+public static class c_negtStruct implements routines.system.IPersistableRow<c_negtStruct> {
+    final static byte[] commonByteArrayLock_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[0];
+    static byte[] commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[0];
+
+	
+			    public java.util.Date date;
+
+				public java.util.Date getDate () {
+					return this.date;
 				}
+				
+			    public String hashtag;
 
-			}
+				public String getHashtag () {
+					return this.hashtag;
+				}
+				
+			    public String country;
 
+				public String getCountry () {
+					return this.country;
+				}
+				
+			    public Integer c_negatives;
+
+				public Integer getC_negatives () {
+					return this.c_negatives;
+				}
+				
+
+
+
+	private java.util.Date readDate(ObjectInputStream dis) throws IOException{
+		java.util.Date dateReturn = null;
+        int length = 0;
+        length = dis.readByte();
+		if (length == -1) {
+			dateReturn = null;
+		} else {
+	    	dateReturn = new Date(dis.readLong());
 		}
-
-		public void writeData(ObjectOutputStream dos) {
-			try {
-
-				// java.util.Date
-
-				writeDate(this.date, dos);
-
-				// String
-
-				writeString(this.hashtag, dos);
-
-				// String
-
-				writeString(this.country, dos);
-
-				// Integer
-
-				writeInteger(this.c_positives, dos);
-
-			} catch (IOException e) {
-				throw new RuntimeException(e);
-			}
-
-		}
-
-		public String toString() {
-
-			StringBuilder sb = new StringBuilder();
-			sb.append(super.toString());
-			sb.append("[");
-			sb.append("date=" + String.valueOf(date));
-			sb.append(",hashtag=" + hashtag);
-			sb.append(",country=" + country);
-			sb.append(",c_positives=" + String.valueOf(c_positives));
-			sb.append("]");
-
-			return sb.toString();
-		}
-
-		/**
-		 * Compare keys
-		 */
-		public int compareTo(c_postStruct other) {
-
-			int returnValue = -1;
-
-			return returnValue;
-		}
-
-		private int checkNullsAndCompare(Object object1, Object object2) {
-			int returnValue = 0;
-			if (object1 instanceof Comparable && object2 instanceof Comparable) {
-				returnValue = ((Comparable) object1).compareTo(object2);
-			} else if (object1 != null && object2 != null) {
-				returnValue = compareStrings(object1.toString(), object2.toString());
-			} else if (object1 == null && object2 != null) {
-				returnValue = 1;
-			} else if (object1 != null && object2 == null) {
-				returnValue = -1;
-			} else {
-				returnValue = 0;
-			}
-
-			return returnValue;
-		}
-
-		private int compareStrings(String string1, String string2) {
-			return string1.compareTo(string2);
-		}
-
+		return dateReturn;
 	}
 
-	public static class c_negtStruct implements routines.system.IPersistableRow<c_negtStruct> {
-		final static byte[] commonByteArrayLock_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[0];
-		static byte[] commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[0];
+    private void writeDate(java.util.Date date1, ObjectOutputStream dos) throws IOException{
+		if(date1 == null) {
+            dos.writeByte(-1);
+		} else {
+			dos.writeByte(0);
+	    	dos.writeLong(date1.getTime());
+    	}
+    }
 
-		public java.util.Date date;
-
-		public java.util.Date getDate() {
-			return this.date;
-		}
-
-		public String hashtag;
-
-		public String getHashtag() {
-			return this.hashtag;
-		}
-
-		public String country;
-
-		public String getCountry() {
-			return this.country;
-		}
-
-		public Integer c_negatives;
-
-		public Integer getC_negatives() {
-			return this.c_negatives;
-		}
-
-		private java.util.Date readDate(ObjectInputStream dis) throws IOException {
-			java.util.Date dateReturn = null;
-			int length = 0;
-			length = dis.readByte();
-			if (length == -1) {
-				dateReturn = null;
-			} else {
-				dateReturn = new Date(dis.readLong());
+	private String readString(ObjectInputStream dis) throws IOException{
+		String strReturn = null;
+		int length = 0;
+        length = dis.readInt();
+		if (length == -1) {
+			strReturn = null;
+		} else {
+			if(length > commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets.length) {
+				if(length < 1024 && commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets.length == 0) {
+   					commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[1024];
+				} else {
+   					commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[2 * length];
+   				}
 			}
-			return dateReturn;
+			dis.readFully(commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets, 0, length);
+			strReturn = new String(commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets, 0, length, utf8Charset);
 		}
+		return strReturn;
+	}
 
-		private void writeDate(java.util.Date date1, ObjectOutputStream dos) throws IOException {
-			if (date1 == null) {
-				dos.writeByte(-1);
-			} else {
-				dos.writeByte(0);
-				dos.writeLong(date1.getTime());
-			}
+    private void writeString(String str, ObjectOutputStream dos) throws IOException{
+		if(str == null) {
+            dos.writeInt(-1);
+		} else {
+            byte[] byteArray = str.getBytes(utf8Charset);
+	    	dos.writeInt(byteArray.length);
+			dos.write(byteArray);
+    	}
+    }
+	private Integer readInteger(ObjectInputStream dis) throws IOException{
+		Integer intReturn;
+        int length = 0;
+        length = dis.readByte();
+		if (length == -1) {
+			intReturn = null;
+		} else {
+	    	intReturn = dis.readInt();
 		}
+		return intReturn;
+	}
 
-		private String readString(ObjectInputStream dis) throws IOException {
-			String strReturn = null;
-			int length = 0;
-			length = dis.readInt();
-			if (length == -1) {
-				strReturn = null;
-			} else {
-				if (length > commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets.length) {
-					if (length < 1024
-							&& commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets.length == 0) {
-						commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[1024];
-					} else {
-						commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[2
-								* length];
-					}
-				}
-				dis.readFully(commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets, 0,
-						length);
-				strReturn = new String(commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets,
-						0, length, utf8Charset);
-			}
-			return strReturn;
-		}
+	private void writeInteger(Integer intNum, ObjectOutputStream dos) throws IOException{
+		if(intNum == null) {
+            dos.writeByte(-1);
+		} else {
+			dos.writeByte(0);
+	    	dos.writeInt(intNum);
+    	}
+	}
 
-		private void writeString(String str, ObjectOutputStream dos) throws IOException {
-			if (str == null) {
-				dos.writeInt(-1);
-			} else {
-				byte[] byteArray = str.getBytes(utf8Charset);
-				dos.writeInt(byteArray.length);
-				dos.write(byteArray);
-			}
-		}
+    public void readData(ObjectInputStream dis) {
 
-		private Integer readInteger(ObjectInputStream dis) throws IOException {
-			Integer intReturn;
-			int length = 0;
-			length = dis.readByte();
-			if (length == -1) {
-				intReturn = null;
-			} else {
-				intReturn = dis.readInt();
-			}
-			return intReturn;
-		}
+		synchronized(commonByteArrayLock_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets) {
 
-		private void writeInteger(Integer intNum, ObjectOutputStream dos) throws IOException {
-			if (intNum == null) {
-				dos.writeByte(-1);
-			} else {
-				dos.writeByte(0);
-				dos.writeInt(intNum);
-			}
-		}
+        	try {
 
-		public void readData(ObjectInputStream dis) {
-
-			synchronized (commonByteArrayLock_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets) {
-
-				try {
-
-					int length = 0;
-
+        		int length = 0;
+		
 					this.date = readDate(dis);
-
+					
 					this.hashtag = readString(dis);
-
+					
 					this.country = readString(dis);
+					
+						this.c_negatives = readInteger(dis);
+					
+        	} catch (IOException e) {
+	            throw new RuntimeException(e);
 
-					this.c_negatives = readInteger(dis);
+		
 
-				} catch (IOException e) {
-					throw new RuntimeException(e);
+        }
 
+		
+
+      }
+
+
+    }
+
+    public void writeData(ObjectOutputStream dos) {
+        try {
+
+		
+					// java.util.Date
+				
+						writeDate(this.date,dos);
+					
+					// String
+				
+						writeString(this.hashtag,dos);
+					
+					// String
+				
+						writeString(this.country,dos);
+					
+					// Integer
+				
+						writeInteger(this.c_negatives,dos);
+					
+        	} catch (IOException e) {
+	            throw new RuntimeException(e);
+        }
+
+
+    }
+
+
+    public String toString() {
+
+		StringBuilder sb = new StringBuilder();
+		sb.append(super.toString());
+		sb.append("[");
+		sb.append("date="+String.valueOf(date));
+		sb.append(",hashtag="+hashtag);
+		sb.append(",country="+country);
+		sb.append(",c_negatives="+String.valueOf(c_negatives));
+	    sb.append("]");
+
+	    return sb.toString();
+    }
+
+    /**
+     * Compare keys
+     */
+    public int compareTo(c_negtStruct other) {
+
+		int returnValue = -1;
+		
+	    return returnValue;
+    }
+
+
+    private int checkNullsAndCompare(Object object1, Object object2) {
+        int returnValue = 0;
+		if (object1 instanceof Comparable && object2 instanceof Comparable) {
+            returnValue = ((Comparable) object1).compareTo(object2);
+        } else if (object1 != null && object2 != null) {
+            returnValue = compareStrings(object1.toString(), object2.toString());
+        } else if (object1 == null && object2 != null) {
+            returnValue = 1;
+        } else if (object1 != null && object2 == null) {
+            returnValue = -1;
+        } else {
+            returnValue = 0;
+        }
+
+        return returnValue;
+    }
+
+    private int compareStrings(String string1, String string2) {
+        return string1.compareTo(string2);
+    }
+
+
+}
+
+public static class count_inStruct implements routines.system.IPersistableRow<count_inStruct> {
+    final static byte[] commonByteArrayLock_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[0];
+    static byte[] commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[0];
+
+	
+			    public java.util.Date date;
+
+				public java.util.Date getDate () {
+					return this.date;
 				}
+				
+			    public String hashtag;
 
-			}
+				public String getHashtag () {
+					return this.hashtag;
+				}
+				
+			    public String country;
 
+				public String getCountry () {
+					return this.country;
+				}
+				
+			    public Integer c_tweet;
+
+				public Integer getC_tweet () {
+					return this.c_tweet;
+				}
+				
+
+
+
+	private java.util.Date readDate(ObjectInputStream dis) throws IOException{
+		java.util.Date dateReturn = null;
+        int length = 0;
+        length = dis.readByte();
+		if (length == -1) {
+			dateReturn = null;
+		} else {
+	    	dateReturn = new Date(dis.readLong());
 		}
-
-		public void writeData(ObjectOutputStream dos) {
-			try {
-
-				// java.util.Date
-
-				writeDate(this.date, dos);
-
-				// String
-
-				writeString(this.hashtag, dos);
-
-				// String
-
-				writeString(this.country, dos);
-
-				// Integer
-
-				writeInteger(this.c_negatives, dos);
-
-			} catch (IOException e) {
-				throw new RuntimeException(e);
-			}
-
-		}
-
-		public String toString() {
-
-			StringBuilder sb = new StringBuilder();
-			sb.append(super.toString());
-			sb.append("[");
-			sb.append("date=" + String.valueOf(date));
-			sb.append(",hashtag=" + hashtag);
-			sb.append(",country=" + country);
-			sb.append(",c_negatives=" + String.valueOf(c_negatives));
-			sb.append("]");
-
-			return sb.toString();
-		}
-
-		/**
-		 * Compare keys
-		 */
-		public int compareTo(c_negtStruct other) {
-
-			int returnValue = -1;
-
-			return returnValue;
-		}
-
-		private int checkNullsAndCompare(Object object1, Object object2) {
-			int returnValue = 0;
-			if (object1 instanceof Comparable && object2 instanceof Comparable) {
-				returnValue = ((Comparable) object1).compareTo(object2);
-			} else if (object1 != null && object2 != null) {
-				returnValue = compareStrings(object1.toString(), object2.toString());
-			} else if (object1 == null && object2 != null) {
-				returnValue = 1;
-			} else if (object1 != null && object2 == null) {
-				returnValue = -1;
-			} else {
-				returnValue = 0;
-			}
-
-			return returnValue;
-		}
-
-		private int compareStrings(String string1, String string2) {
-			return string1.compareTo(string2);
-		}
-
+		return dateReturn;
 	}
 
-	public static class count_inStruct implements routines.system.IPersistableRow<count_inStruct> {
-		final static byte[] commonByteArrayLock_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[0];
-		static byte[] commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[0];
+    private void writeDate(java.util.Date date1, ObjectOutputStream dos) throws IOException{
+		if(date1 == null) {
+            dos.writeByte(-1);
+		} else {
+			dos.writeByte(0);
+	    	dos.writeLong(date1.getTime());
+    	}
+    }
 
-		public java.util.Date date;
-
-		public java.util.Date getDate() {
-			return this.date;
-		}
-
-		public String hashtag;
-
-		public String getHashtag() {
-			return this.hashtag;
-		}
-
-		public String country;
-
-		public String getCountry() {
-			return this.country;
-		}
-
-		public Integer c_tweet;
-
-		public Integer getC_tweet() {
-			return this.c_tweet;
-		}
-
-		private java.util.Date readDate(ObjectInputStream dis) throws IOException {
-			java.util.Date dateReturn = null;
-			int length = 0;
-			length = dis.readByte();
-			if (length == -1) {
-				dateReturn = null;
-			} else {
-				dateReturn = new Date(dis.readLong());
+	private String readString(ObjectInputStream dis) throws IOException{
+		String strReturn = null;
+		int length = 0;
+        length = dis.readInt();
+		if (length == -1) {
+			strReturn = null;
+		} else {
+			if(length > commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets.length) {
+				if(length < 1024 && commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets.length == 0) {
+   					commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[1024];
+				} else {
+   					commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[2 * length];
+   				}
 			}
-			return dateReturn;
+			dis.readFully(commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets, 0, length);
+			strReturn = new String(commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets, 0, length, utf8Charset);
 		}
+		return strReturn;
+	}
 
-		private void writeDate(java.util.Date date1, ObjectOutputStream dos) throws IOException {
-			if (date1 == null) {
-				dos.writeByte(-1);
-			} else {
-				dos.writeByte(0);
-				dos.writeLong(date1.getTime());
-			}
+    private void writeString(String str, ObjectOutputStream dos) throws IOException{
+		if(str == null) {
+            dos.writeInt(-1);
+		} else {
+            byte[] byteArray = str.getBytes(utf8Charset);
+	    	dos.writeInt(byteArray.length);
+			dos.write(byteArray);
+    	}
+    }
+	private Integer readInteger(ObjectInputStream dis) throws IOException{
+		Integer intReturn;
+        int length = 0;
+        length = dis.readByte();
+		if (length == -1) {
+			intReturn = null;
+		} else {
+	    	intReturn = dis.readInt();
 		}
+		return intReturn;
+	}
 
-		private String readString(ObjectInputStream dis) throws IOException {
-			String strReturn = null;
-			int length = 0;
-			length = dis.readInt();
-			if (length == -1) {
-				strReturn = null;
-			} else {
-				if (length > commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets.length) {
-					if (length < 1024
-							&& commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets.length == 0) {
-						commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[1024];
-					} else {
-						commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[2
-								* length];
-					}
-				}
-				dis.readFully(commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets, 0,
-						length);
-				strReturn = new String(commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets,
-						0, length, utf8Charset);
-			}
-			return strReturn;
-		}
+	private void writeInteger(Integer intNum, ObjectOutputStream dos) throws IOException{
+		if(intNum == null) {
+            dos.writeByte(-1);
+		} else {
+			dos.writeByte(0);
+	    	dos.writeInt(intNum);
+    	}
+	}
 
-		private void writeString(String str, ObjectOutputStream dos) throws IOException {
-			if (str == null) {
-				dos.writeInt(-1);
-			} else {
-				byte[] byteArray = str.getBytes(utf8Charset);
-				dos.writeInt(byteArray.length);
-				dos.write(byteArray);
-			}
-		}
+    public void readData(ObjectInputStream dis) {
 
-		private Integer readInteger(ObjectInputStream dis) throws IOException {
-			Integer intReturn;
-			int length = 0;
-			length = dis.readByte();
-			if (length == -1) {
-				intReturn = null;
-			} else {
-				intReturn = dis.readInt();
-			}
-			return intReturn;
-		}
+		synchronized(commonByteArrayLock_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets) {
 
-		private void writeInteger(Integer intNum, ObjectOutputStream dos) throws IOException {
-			if (intNum == null) {
-				dos.writeByte(-1);
-			} else {
-				dos.writeByte(0);
-				dos.writeInt(intNum);
-			}
-		}
+        	try {
 
-		public void readData(ObjectInputStream dis) {
-
-			synchronized (commonByteArrayLock_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets) {
-
-				try {
-
-					int length = 0;
-
+        		int length = 0;
+		
 					this.date = readDate(dis);
-
+					
 					this.hashtag = readString(dis);
-
+					
 					this.country = readString(dis);
+					
+						this.c_tweet = readInteger(dis);
+					
+        	} catch (IOException e) {
+	            throw new RuntimeException(e);
 
-					this.c_tweet = readInteger(dis);
+		
 
-				} catch (IOException e) {
-					throw new RuntimeException(e);
+        }
 
+		
+
+      }
+
+
+    }
+
+    public void writeData(ObjectOutputStream dos) {
+        try {
+
+		
+					// java.util.Date
+				
+						writeDate(this.date,dos);
+					
+					// String
+				
+						writeString(this.hashtag,dos);
+					
+					// String
+				
+						writeString(this.country,dos);
+					
+					// Integer
+				
+						writeInteger(this.c_tweet,dos);
+					
+        	} catch (IOException e) {
+	            throw new RuntimeException(e);
+        }
+
+
+    }
+
+
+    public String toString() {
+
+		StringBuilder sb = new StringBuilder();
+		sb.append(super.toString());
+		sb.append("[");
+		sb.append("date="+String.valueOf(date));
+		sb.append(",hashtag="+hashtag);
+		sb.append(",country="+country);
+		sb.append(",c_tweet="+String.valueOf(c_tweet));
+	    sb.append("]");
+
+	    return sb.toString();
+    }
+
+    /**
+     * Compare keys
+     */
+    public int compareTo(count_inStruct other) {
+
+		int returnValue = -1;
+		
+	    return returnValue;
+    }
+
+
+    private int checkNullsAndCompare(Object object1, Object object2) {
+        int returnValue = 0;
+		if (object1 instanceof Comparable && object2 instanceof Comparable) {
+            returnValue = ((Comparable) object1).compareTo(object2);
+        } else if (object1 != null && object2 != null) {
+            returnValue = compareStrings(object1.toString(), object2.toString());
+        } else if (object1 == null && object2 != null) {
+            returnValue = 1;
+        } else if (object1 != null && object2 == null) {
+            returnValue = -1;
+        } else {
+            returnValue = 0;
+        }
+
+        return returnValue;
+    }
+
+    private int compareStrings(String string1, String string2) {
+        return string1.compareTo(string2);
+    }
+
+
+}
+
+public static class row10Struct implements routines.system.IPersistableRow<row10Struct> {
+    final static byte[] commonByteArrayLock_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[0];
+    static byte[] commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[0];
+
+	
+			    public java.util.Date date;
+
+				public java.util.Date getDate () {
+					return this.date;
 				}
+				
+			    public String id;
 
-			}
+				public String getId () {
+					return this.id;
+				}
+				
+			    public String hashtag;
 
+				public String getHashtag () {
+					return this.hashtag;
+				}
+				
+			    public String country;
+
+				public String getCountry () {
+					return this.country;
+				}
+				
+			    public Integer sentiment;
+
+				public Integer getSentiment () {
+					return this.sentiment;
+				}
+				
+
+
+
+	private java.util.Date readDate(ObjectInputStream dis) throws IOException{
+		java.util.Date dateReturn = null;
+        int length = 0;
+        length = dis.readByte();
+		if (length == -1) {
+			dateReturn = null;
+		} else {
+	    	dateReturn = new Date(dis.readLong());
 		}
-
-		public void writeData(ObjectOutputStream dos) {
-			try {
-
-				// java.util.Date
-
-				writeDate(this.date, dos);
-
-				// String
-
-				writeString(this.hashtag, dos);
-
-				// String
-
-				writeString(this.country, dos);
-
-				// Integer
-
-				writeInteger(this.c_tweet, dos);
-
-			} catch (IOException e) {
-				throw new RuntimeException(e);
-			}
-
-		}
-
-		public String toString() {
-
-			StringBuilder sb = new StringBuilder();
-			sb.append(super.toString());
-			sb.append("[");
-			sb.append("date=" + String.valueOf(date));
-			sb.append(",hashtag=" + hashtag);
-			sb.append(",country=" + country);
-			sb.append(",c_tweet=" + String.valueOf(c_tweet));
-			sb.append("]");
-
-			return sb.toString();
-		}
-
-		/**
-		 * Compare keys
-		 */
-		public int compareTo(count_inStruct other) {
-
-			int returnValue = -1;
-
-			return returnValue;
-		}
-
-		private int checkNullsAndCompare(Object object1, Object object2) {
-			int returnValue = 0;
-			if (object1 instanceof Comparable && object2 instanceof Comparable) {
-				returnValue = ((Comparable) object1).compareTo(object2);
-			} else if (object1 != null && object2 != null) {
-				returnValue = compareStrings(object1.toString(), object2.toString());
-			} else if (object1 == null && object2 != null) {
-				returnValue = 1;
-			} else if (object1 != null && object2 == null) {
-				returnValue = -1;
-			} else {
-				returnValue = 0;
-			}
-
-			return returnValue;
-		}
-
-		private int compareStrings(String string1, String string2) {
-			return string1.compareTo(string2);
-		}
-
+		return dateReturn;
 	}
 
-	public static class row10Struct implements routines.system.IPersistableRow<row10Struct> {
-		final static byte[] commonByteArrayLock_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[0];
-		static byte[] commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[0];
+    private void writeDate(java.util.Date date1, ObjectOutputStream dos) throws IOException{
+		if(date1 == null) {
+            dos.writeByte(-1);
+		} else {
+			dos.writeByte(0);
+	    	dos.writeLong(date1.getTime());
+    	}
+    }
 
-		public java.util.Date date;
-
-		public java.util.Date getDate() {
-			return this.date;
-		}
-
-		public String id;
-
-		public String getId() {
-			return this.id;
-		}
-
-		public String hashtag;
-
-		public String getHashtag() {
-			return this.hashtag;
-		}
-
-		public String country;
-
-		public String getCountry() {
-			return this.country;
-		}
-
-		public Integer sentiment;
-
-		public Integer getSentiment() {
-			return this.sentiment;
-		}
-
-		private java.util.Date readDate(ObjectInputStream dis) throws IOException {
-			java.util.Date dateReturn = null;
-			int length = 0;
-			length = dis.readByte();
-			if (length == -1) {
-				dateReturn = null;
-			} else {
-				dateReturn = new Date(dis.readLong());
+	private String readString(ObjectInputStream dis) throws IOException{
+		String strReturn = null;
+		int length = 0;
+        length = dis.readInt();
+		if (length == -1) {
+			strReturn = null;
+		} else {
+			if(length > commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets.length) {
+				if(length < 1024 && commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets.length == 0) {
+   					commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[1024];
+				} else {
+   					commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[2 * length];
+   				}
 			}
-			return dateReturn;
+			dis.readFully(commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets, 0, length);
+			strReturn = new String(commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets, 0, length, utf8Charset);
 		}
+		return strReturn;
+	}
 
-		private void writeDate(java.util.Date date1, ObjectOutputStream dos) throws IOException {
-			if (date1 == null) {
-				dos.writeByte(-1);
-			} else {
-				dos.writeByte(0);
-				dos.writeLong(date1.getTime());
-			}
+    private void writeString(String str, ObjectOutputStream dos) throws IOException{
+		if(str == null) {
+            dos.writeInt(-1);
+		} else {
+            byte[] byteArray = str.getBytes(utf8Charset);
+	    	dos.writeInt(byteArray.length);
+			dos.write(byteArray);
+    	}
+    }
+	private Integer readInteger(ObjectInputStream dis) throws IOException{
+		Integer intReturn;
+        int length = 0;
+        length = dis.readByte();
+		if (length == -1) {
+			intReturn = null;
+		} else {
+	    	intReturn = dis.readInt();
 		}
+		return intReturn;
+	}
 
-		private String readString(ObjectInputStream dis) throws IOException {
-			String strReturn = null;
-			int length = 0;
-			length = dis.readInt();
-			if (length == -1) {
-				strReturn = null;
-			} else {
-				if (length > commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets.length) {
-					if (length < 1024
-							&& commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets.length == 0) {
-						commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[1024];
-					} else {
-						commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[2
-								* length];
-					}
-				}
-				dis.readFully(commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets, 0,
-						length);
-				strReturn = new String(commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets,
-						0, length, utf8Charset);
-			}
-			return strReturn;
-		}
+	private void writeInteger(Integer intNum, ObjectOutputStream dos) throws IOException{
+		if(intNum == null) {
+            dos.writeByte(-1);
+		} else {
+			dos.writeByte(0);
+	    	dos.writeInt(intNum);
+    	}
+	}
 
-		private void writeString(String str, ObjectOutputStream dos) throws IOException {
-			if (str == null) {
-				dos.writeInt(-1);
-			} else {
-				byte[] byteArray = str.getBytes(utf8Charset);
-				dos.writeInt(byteArray.length);
-				dos.write(byteArray);
-			}
-		}
+    public void readData(ObjectInputStream dis) {
 
-		private Integer readInteger(ObjectInputStream dis) throws IOException {
-			Integer intReturn;
-			int length = 0;
-			length = dis.readByte();
-			if (length == -1) {
-				intReturn = null;
-			} else {
-				intReturn = dis.readInt();
-			}
-			return intReturn;
-		}
+		synchronized(commonByteArrayLock_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets) {
 
-		private void writeInteger(Integer intNum, ObjectOutputStream dos) throws IOException {
-			if (intNum == null) {
-				dos.writeByte(-1);
-			} else {
-				dos.writeByte(0);
-				dos.writeInt(intNum);
-			}
-		}
+        	try {
 
-		public void readData(ObjectInputStream dis) {
-
-			synchronized (commonByteArrayLock_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets) {
-
-				try {
-
-					int length = 0;
-
+        		int length = 0;
+		
 					this.date = readDate(dis);
-
+					
 					this.id = readString(dis);
-
+					
 					this.hashtag = readString(dis);
-
+					
 					this.country = readString(dis);
+					
+						this.sentiment = readInteger(dis);
+					
+        	} catch (IOException e) {
+	            throw new RuntimeException(e);
 
-					this.sentiment = readInteger(dis);
+		
 
-				} catch (IOException e) {
-					throw new RuntimeException(e);
+        }
 
+		
+
+      }
+
+
+    }
+
+    public void writeData(ObjectOutputStream dos) {
+        try {
+
+		
+					// java.util.Date
+				
+						writeDate(this.date,dos);
+					
+					// String
+				
+						writeString(this.id,dos);
+					
+					// String
+				
+						writeString(this.hashtag,dos);
+					
+					// String
+				
+						writeString(this.country,dos);
+					
+					// Integer
+				
+						writeInteger(this.sentiment,dos);
+					
+        	} catch (IOException e) {
+	            throw new RuntimeException(e);
+        }
+
+
+    }
+
+
+    public String toString() {
+
+		StringBuilder sb = new StringBuilder();
+		sb.append(super.toString());
+		sb.append("[");
+		sb.append("date="+String.valueOf(date));
+		sb.append(",id="+id);
+		sb.append(",hashtag="+hashtag);
+		sb.append(",country="+country);
+		sb.append(",sentiment="+String.valueOf(sentiment));
+	    sb.append("]");
+
+	    return sb.toString();
+    }
+
+    /**
+     * Compare keys
+     */
+    public int compareTo(row10Struct other) {
+
+		int returnValue = -1;
+		
+	    return returnValue;
+    }
+
+
+    private int checkNullsAndCompare(Object object1, Object object2) {
+        int returnValue = 0;
+		if (object1 instanceof Comparable && object2 instanceof Comparable) {
+            returnValue = ((Comparable) object1).compareTo(object2);
+        } else if (object1 != null && object2 != null) {
+            returnValue = compareStrings(object1.toString(), object2.toString());
+        } else if (object1 == null && object2 != null) {
+            returnValue = 1;
+        } else if (object1 != null && object2 == null) {
+            returnValue = -1;
+        } else {
+            returnValue = 0;
+        }
+
+        return returnValue;
+    }
+
+    private int compareStrings(String string1, String string2) {
+        return string1.compareTo(string2);
+    }
+
+
+}
+
+public static class OnRowsEndStructtAggregateRow_4 implements routines.system.IPersistableRow<OnRowsEndStructtAggregateRow_4> {
+    final static byte[] commonByteArrayLock_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[0];
+    static byte[] commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[0];
+
+	
+			    public java.util.Date date;
+
+				public java.util.Date getDate () {
+					return this.date;
 				}
+				
+			    public String id;
 
-			}
+				public String getId () {
+					return this.id;
+				}
+				
+			    public String hashtag;
 
+				public String getHashtag () {
+					return this.hashtag;
+				}
+				
+			    public String country;
+
+				public String getCountry () {
+					return this.country;
+				}
+				
+			    public Integer sentiment;
+
+				public Integer getSentiment () {
+					return this.sentiment;
+				}
+				
+
+
+
+	private java.util.Date readDate(ObjectInputStream dis) throws IOException{
+		java.util.Date dateReturn = null;
+        int length = 0;
+        length = dis.readByte();
+		if (length == -1) {
+			dateReturn = null;
+		} else {
+	    	dateReturn = new Date(dis.readLong());
 		}
-
-		public void writeData(ObjectOutputStream dos) {
-			try {
-
-				// java.util.Date
-
-				writeDate(this.date, dos);
-
-				// String
-
-				writeString(this.id, dos);
-
-				// String
-
-				writeString(this.hashtag, dos);
-
-				// String
-
-				writeString(this.country, dos);
-
-				// Integer
-
-				writeInteger(this.sentiment, dos);
-
-			} catch (IOException e) {
-				throw new RuntimeException(e);
-			}
-
-		}
-
-		public String toString() {
-
-			StringBuilder sb = new StringBuilder();
-			sb.append(super.toString());
-			sb.append("[");
-			sb.append("date=" + String.valueOf(date));
-			sb.append(",id=" + id);
-			sb.append(",hashtag=" + hashtag);
-			sb.append(",country=" + country);
-			sb.append(",sentiment=" + String.valueOf(sentiment));
-			sb.append("]");
-
-			return sb.toString();
-		}
-
-		/**
-		 * Compare keys
-		 */
-		public int compareTo(row10Struct other) {
-
-			int returnValue = -1;
-
-			return returnValue;
-		}
-
-		private int checkNullsAndCompare(Object object1, Object object2) {
-			int returnValue = 0;
-			if (object1 instanceof Comparable && object2 instanceof Comparable) {
-				returnValue = ((Comparable) object1).compareTo(object2);
-			} else if (object1 != null && object2 != null) {
-				returnValue = compareStrings(object1.toString(), object2.toString());
-			} else if (object1 == null && object2 != null) {
-				returnValue = 1;
-			} else if (object1 != null && object2 == null) {
-				returnValue = -1;
-			} else {
-				returnValue = 0;
-			}
-
-			return returnValue;
-		}
-
-		private int compareStrings(String string1, String string2) {
-			return string1.compareTo(string2);
-		}
-
+		return dateReturn;
 	}
 
-	public static class OnRowsEndStructtAggregateRow_4
-			implements routines.system.IPersistableRow<OnRowsEndStructtAggregateRow_4> {
-		final static byte[] commonByteArrayLock_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[0];
-		static byte[] commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[0];
+    private void writeDate(java.util.Date date1, ObjectOutputStream dos) throws IOException{
+		if(date1 == null) {
+            dos.writeByte(-1);
+		} else {
+			dos.writeByte(0);
+	    	dos.writeLong(date1.getTime());
+    	}
+    }
 
-		public java.util.Date date;
-
-		public java.util.Date getDate() {
-			return this.date;
-		}
-
-		public String id;
-
-		public String getId() {
-			return this.id;
-		}
-
-		public String hashtag;
-
-		public String getHashtag() {
-			return this.hashtag;
-		}
-
-		public String country;
-
-		public String getCountry() {
-			return this.country;
-		}
-
-		public Integer sentiment;
-
-		public Integer getSentiment() {
-			return this.sentiment;
-		}
-
-		private java.util.Date readDate(ObjectInputStream dis) throws IOException {
-			java.util.Date dateReturn = null;
-			int length = 0;
-			length = dis.readByte();
-			if (length == -1) {
-				dateReturn = null;
-			} else {
-				dateReturn = new Date(dis.readLong());
+	private String readString(ObjectInputStream dis) throws IOException{
+		String strReturn = null;
+		int length = 0;
+        length = dis.readInt();
+		if (length == -1) {
+			strReturn = null;
+		} else {
+			if(length > commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets.length) {
+				if(length < 1024 && commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets.length == 0) {
+   					commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[1024];
+				} else {
+   					commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[2 * length];
+   				}
 			}
-			return dateReturn;
+			dis.readFully(commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets, 0, length);
+			strReturn = new String(commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets, 0, length, utf8Charset);
 		}
+		return strReturn;
+	}
 
-		private void writeDate(java.util.Date date1, ObjectOutputStream dos) throws IOException {
-			if (date1 == null) {
-				dos.writeByte(-1);
-			} else {
-				dos.writeByte(0);
-				dos.writeLong(date1.getTime());
-			}
+    private void writeString(String str, ObjectOutputStream dos) throws IOException{
+		if(str == null) {
+            dos.writeInt(-1);
+		} else {
+            byte[] byteArray = str.getBytes(utf8Charset);
+	    	dos.writeInt(byteArray.length);
+			dos.write(byteArray);
+    	}
+    }
+	private Integer readInteger(ObjectInputStream dis) throws IOException{
+		Integer intReturn;
+        int length = 0;
+        length = dis.readByte();
+		if (length == -1) {
+			intReturn = null;
+		} else {
+	    	intReturn = dis.readInt();
 		}
+		return intReturn;
+	}
 
-		private String readString(ObjectInputStream dis) throws IOException {
-			String strReturn = null;
-			int length = 0;
-			length = dis.readInt();
-			if (length == -1) {
-				strReturn = null;
-			} else {
-				if (length > commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets.length) {
-					if (length < 1024
-							&& commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets.length == 0) {
-						commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[1024];
-					} else {
-						commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[2
-								* length];
-					}
-				}
-				dis.readFully(commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets, 0,
-						length);
-				strReturn = new String(commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets,
-						0, length, utf8Charset);
-			}
-			return strReturn;
-		}
+	private void writeInteger(Integer intNum, ObjectOutputStream dos) throws IOException{
+		if(intNum == null) {
+            dos.writeByte(-1);
+		} else {
+			dos.writeByte(0);
+	    	dos.writeInt(intNum);
+    	}
+	}
 
-		private void writeString(String str, ObjectOutputStream dos) throws IOException {
-			if (str == null) {
-				dos.writeInt(-1);
-			} else {
-				byte[] byteArray = str.getBytes(utf8Charset);
-				dos.writeInt(byteArray.length);
-				dos.write(byteArray);
-			}
-		}
+    public void readData(ObjectInputStream dis) {
 
-		private Integer readInteger(ObjectInputStream dis) throws IOException {
-			Integer intReturn;
-			int length = 0;
-			length = dis.readByte();
-			if (length == -1) {
-				intReturn = null;
-			} else {
-				intReturn = dis.readInt();
-			}
-			return intReturn;
-		}
+		synchronized(commonByteArrayLock_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets) {
 
-		private void writeInteger(Integer intNum, ObjectOutputStream dos) throws IOException {
-			if (intNum == null) {
-				dos.writeByte(-1);
-			} else {
-				dos.writeByte(0);
-				dos.writeInt(intNum);
-			}
-		}
+        	try {
 
-		public void readData(ObjectInputStream dis) {
-
-			synchronized (commonByteArrayLock_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets) {
-
-				try {
-
-					int length = 0;
-
+        		int length = 0;
+		
 					this.date = readDate(dis);
-
+					
 					this.id = readString(dis);
-
+					
 					this.hashtag = readString(dis);
-
+					
 					this.country = readString(dis);
+					
+						this.sentiment = readInteger(dis);
+					
+        	} catch (IOException e) {
+	            throw new RuntimeException(e);
 
-					this.sentiment = readInteger(dis);
+		
 
-				} catch (IOException e) {
-					throw new RuntimeException(e);
+        }
 
+		
+
+      }
+
+
+    }
+
+    public void writeData(ObjectOutputStream dos) {
+        try {
+
+		
+					// java.util.Date
+				
+						writeDate(this.date,dos);
+					
+					// String
+				
+						writeString(this.id,dos);
+					
+					// String
+				
+						writeString(this.hashtag,dos);
+					
+					// String
+				
+						writeString(this.country,dos);
+					
+					// Integer
+				
+						writeInteger(this.sentiment,dos);
+					
+        	} catch (IOException e) {
+	            throw new RuntimeException(e);
+        }
+
+
+    }
+
+
+    public String toString() {
+
+		StringBuilder sb = new StringBuilder();
+		sb.append(super.toString());
+		sb.append("[");
+		sb.append("date="+String.valueOf(date));
+		sb.append(",id="+id);
+		sb.append(",hashtag="+hashtag);
+		sb.append(",country="+country);
+		sb.append(",sentiment="+String.valueOf(sentiment));
+	    sb.append("]");
+
+	    return sb.toString();
+    }
+
+    /**
+     * Compare keys
+     */
+    public int compareTo(OnRowsEndStructtAggregateRow_4 other) {
+
+		int returnValue = -1;
+		
+	    return returnValue;
+    }
+
+
+    private int checkNullsAndCompare(Object object1, Object object2) {
+        int returnValue = 0;
+		if (object1 instanceof Comparable && object2 instanceof Comparable) {
+            returnValue = ((Comparable) object1).compareTo(object2);
+        } else if (object1 != null && object2 != null) {
+            returnValue = compareStrings(object1.toString(), object2.toString());
+        } else if (object1 == null && object2 != null) {
+            returnValue = 1;
+        } else if (object1 != null && object2 == null) {
+            returnValue = -1;
+        } else {
+            returnValue = 0;
+        }
+
+        return returnValue;
+    }
+
+    private int compareStrings(String string1, String string2) {
+        return string1.compareTo(string2);
+    }
+
+
+}
+
+public static class row8Struct implements routines.system.IPersistableRow<row8Struct> {
+    final static byte[] commonByteArrayLock_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[0];
+    static byte[] commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[0];
+	protected static final int DEFAULT_HASHCODE = 1;
+    protected static final int PRIME = 31;
+    protected int hashCode = DEFAULT_HASHCODE;
+    public boolean hashCodeDirty = true;
+
+    public String loopKey;
+
+
+
+	
+			    public String date;
+
+				public String getDate () {
+					return this.date;
 				}
+				
+			    public String hashtag;
 
-			}
+				public String getHashtag () {
+					return this.hashtag;
+				}
+				
+			    public String country;
 
+				public String getCountry () {
+					return this.country;
+				}
+				
+			    public Integer s_negativos;
+
+				public Integer getS_negativos () {
+					return this.s_negativos;
+				}
+				
+
+
+	@Override
+	public int hashCode() {
+		if (this.hashCodeDirty) {
+			final int prime = PRIME;
+			int result = DEFAULT_HASHCODE;
+	
+						result = prime * result + ((this.date == null) ? 0 : this.date.hashCode());
+					
+						result = prime * result + ((this.hashtag == null) ? 0 : this.hashtag.hashCode());
+					
+						result = prime * result + ((this.country == null) ? 0 : this.country.hashCode());
+					
+    		this.hashCode = result;
+    		this.hashCodeDirty = false;
 		}
-
-		public void writeData(ObjectOutputStream dos) {
-			try {
-
-				// java.util.Date
-
-				writeDate(this.date, dos);
-
-				// String
-
-				writeString(this.id, dos);
-
-				// String
-
-				writeString(this.hashtag, dos);
-
-				// String
-
-				writeString(this.country, dos);
-
-				// Integer
-
-				writeInteger(this.sentiment, dos);
-
-			} catch (IOException e) {
-				throw new RuntimeException(e);
-			}
-
-		}
-
-		public String toString() {
-
-			StringBuilder sb = new StringBuilder();
-			sb.append(super.toString());
-			sb.append("[");
-			sb.append("date=" + String.valueOf(date));
-			sb.append(",id=" + id);
-			sb.append(",hashtag=" + hashtag);
-			sb.append(",country=" + country);
-			sb.append(",sentiment=" + String.valueOf(sentiment));
-			sb.append("]");
-
-			return sb.toString();
-		}
-
-		/**
-		 * Compare keys
-		 */
-		public int compareTo(OnRowsEndStructtAggregateRow_4 other) {
-
-			int returnValue = -1;
-
-			return returnValue;
-		}
-
-		private int checkNullsAndCompare(Object object1, Object object2) {
-			int returnValue = 0;
-			if (object1 instanceof Comparable && object2 instanceof Comparable) {
-				returnValue = ((Comparable) object1).compareTo(object2);
-			} else if (object1 != null && object2 != null) {
-				returnValue = compareStrings(object1.toString(), object2.toString());
-			} else if (object1 == null && object2 != null) {
-				returnValue = 1;
-			} else if (object1 != null && object2 == null) {
-				returnValue = -1;
-			} else {
-				returnValue = 0;
-			}
-
-			return returnValue;
-		}
-
-		private int compareStrings(String string1, String string2) {
-			return string1.compareTo(string2);
-		}
-
+		return this.hashCode;
 	}
 
-	public static class row8Struct implements routines.system.IPersistableRow<row8Struct> {
-		final static byte[] commonByteArrayLock_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[0];
-		static byte[] commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[0];
-		protected static final int DEFAULT_HASHCODE = 1;
-		protected static final int PRIME = 31;
-		protected int hashCode = DEFAULT_HASHCODE;
-		public boolean hashCodeDirty = true;
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj) return true;
+		if (obj == null) return false;
+		if (getClass() != obj.getClass()) return false;
+		final row8Struct other = (row8Struct) obj;
+		
+						if (this.date == null) {
+							if (other.date != null)
+								return false;
+						
+						} else if (!this.date.equals(other.date))
+						
+							return false;
+					
+						if (this.hashtag == null) {
+							if (other.hashtag != null)
+								return false;
+						
+						} else if (!this.hashtag.equals(other.hashtag))
+						
+							return false;
+					
+						if (this.country == null) {
+							if (other.country != null)
+								return false;
+						
+						} else if (!this.country.equals(other.country))
+						
+							return false;
+					
 
-		public String loopKey;
+		return true;
+    }
 
-		public String date;
+	public void copyDataTo(row8Struct other) {
 
-		public String getDate() {
-			return this.date;
-		}
+		other.date = this.date;
+	            other.hashtag = this.hashtag;
+	            other.country = this.country;
+	            other.s_negativos = this.s_negativos;
+	            
+	}
 
-		public String hashtag;
+	public void copyKeysDataTo(row8Struct other) {
 
-		public String getHashtag() {
-			return this.hashtag;
-		}
+		other.date = this.date;
+	            	other.hashtag = this.hashtag;
+	            	other.country = this.country;
+	            	
+	}
 
-		public String country;
 
-		public String getCountry() {
-			return this.country;
-		}
 
-		public Integer s_negativos;
 
-		public Integer getS_negativos() {
-			return this.s_negativos;
-		}
-
-		@Override
-		public int hashCode() {
-			if (this.hashCodeDirty) {
-				final int prime = PRIME;
-				int result = DEFAULT_HASHCODE;
-
-				result = prime * result + ((this.date == null) ? 0 : this.date.hashCode());
-
-				result = prime * result + ((this.hashtag == null) ? 0 : this.hashtag.hashCode());
-
-				result = prime * result + ((this.country == null) ? 0 : this.country.hashCode());
-
-				this.hashCode = result;
-				this.hashCodeDirty = false;
+	private String readString(ObjectInputStream dis) throws IOException{
+		String strReturn = null;
+		int length = 0;
+        length = dis.readInt();
+		if (length == -1) {
+			strReturn = null;
+		} else {
+			if(length > commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets.length) {
+				if(length < 1024 && commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets.length == 0) {
+   					commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[1024];
+				} else {
+   					commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[2 * length];
+   				}
 			}
-			return this.hashCode;
+			dis.readFully(commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets, 0, length);
+			strReturn = new String(commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets, 0, length, utf8Charset);
 		}
+		return strReturn;
+	}
 
-		@Override
-		public boolean equals(Object obj) {
-			if (this == obj)
-				return true;
-			if (obj == null)
-				return false;
-			if (getClass() != obj.getClass())
-				return false;
-			final row8Struct other = (row8Struct) obj;
-
-			if (this.date == null) {
-				if (other.date != null)
-					return false;
-
-			} else if (!this.date.equals(other.date))
-
-				return false;
-
-			if (this.hashtag == null) {
-				if (other.hashtag != null)
-					return false;
-
-			} else if (!this.hashtag.equals(other.hashtag))
-
-				return false;
-
-			if (this.country == null) {
-				if (other.country != null)
-					return false;
-
-			} else if (!this.country.equals(other.country))
-
-				return false;
-
-			return true;
+    private void writeString(String str, ObjectOutputStream dos) throws IOException{
+		if(str == null) {
+            dos.writeInt(-1);
+		} else {
+            byte[] byteArray = str.getBytes(utf8Charset);
+	    	dos.writeInt(byteArray.length);
+			dos.write(byteArray);
+    	}
+    }
+	private Integer readInteger(ObjectInputStream dis) throws IOException{
+		Integer intReturn;
+        int length = 0;
+        length = dis.readByte();
+		if (length == -1) {
+			intReturn = null;
+		} else {
+	    	intReturn = dis.readInt();
 		}
+		return intReturn;
+	}
 
-		public void copyDataTo(row8Struct other) {
+	private void writeInteger(Integer intNum, ObjectOutputStream dos) throws IOException{
+		if(intNum == null) {
+            dos.writeByte(-1);
+		} else {
+			dos.writeByte(0);
+	    	dos.writeInt(intNum);
+    	}
+	}
 
-			other.date = this.date;
-			other.hashtag = this.hashtag;
-			other.country = this.country;
-			other.s_negativos = this.s_negativos;
+    public void readData(ObjectInputStream dis) {
 
-		}
+		synchronized(commonByteArrayLock_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets) {
 
-		public void copyKeysDataTo(row8Struct other) {
+        	try {
 
-			other.date = this.date;
-			other.hashtag = this.hashtag;
-			other.country = this.country;
-
-		}
-
-		private String readString(ObjectInputStream dis) throws IOException {
-			String strReturn = null;
-			int length = 0;
-			length = dis.readInt();
-			if (length == -1) {
-				strReturn = null;
-			} else {
-				if (length > commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets.length) {
-					if (length < 1024
-							&& commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets.length == 0) {
-						commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[1024];
-					} else {
-						commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[2
-								* length];
-					}
-				}
-				dis.readFully(commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets, 0,
-						length);
-				strReturn = new String(commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets,
-						0, length, utf8Charset);
-			}
-			return strReturn;
-		}
-
-		private void writeString(String str, ObjectOutputStream dos) throws IOException {
-			if (str == null) {
-				dos.writeInt(-1);
-			} else {
-				byte[] byteArray = str.getBytes(utf8Charset);
-				dos.writeInt(byteArray.length);
-				dos.write(byteArray);
-			}
-		}
-
-		private Integer readInteger(ObjectInputStream dis) throws IOException {
-			Integer intReturn;
-			int length = 0;
-			length = dis.readByte();
-			if (length == -1) {
-				intReturn = null;
-			} else {
-				intReturn = dis.readInt();
-			}
-			return intReturn;
-		}
-
-		private void writeInteger(Integer intNum, ObjectOutputStream dos) throws IOException {
-			if (intNum == null) {
-				dos.writeByte(-1);
-			} else {
-				dos.writeByte(0);
-				dos.writeInt(intNum);
-			}
-		}
-
-		public void readData(ObjectInputStream dis) {
-
-			synchronized (commonByteArrayLock_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets) {
-
-				try {
-
-					int length = 0;
-
+        		int length = 0;
+		
 					this.date = readString(dis);
-
+					
 					this.hashtag = readString(dis);
-
+					
 					this.country = readString(dis);
+					
+						this.s_negativos = readInteger(dis);
+					
+        	} catch (IOException e) {
+	            throw new RuntimeException(e);
 
-					this.s_negativos = readInteger(dis);
+		
 
-				} catch (IOException e) {
-					throw new RuntimeException(e);
+        }
 
+		
+
+      }
+
+
+    }
+
+    public void writeData(ObjectOutputStream dos) {
+        try {
+
+		
+					// String
+				
+						writeString(this.date,dos);
+					
+					// String
+				
+						writeString(this.hashtag,dos);
+					
+					// String
+				
+						writeString(this.country,dos);
+					
+					// Integer
+				
+						writeInteger(this.s_negativos,dos);
+					
+        	} catch (IOException e) {
+	            throw new RuntimeException(e);
+        }
+
+
+    }
+
+
+    public String toString() {
+
+		StringBuilder sb = new StringBuilder();
+		sb.append(super.toString());
+		sb.append("[");
+		sb.append("date="+date);
+		sb.append(",hashtag="+hashtag);
+		sb.append(",country="+country);
+		sb.append(",s_negativos="+String.valueOf(s_negativos));
+	    sb.append("]");
+
+	    return sb.toString();
+    }
+
+    /**
+     * Compare keys
+     */
+    public int compareTo(row8Struct other) {
+
+		int returnValue = -1;
+		
+						returnValue = checkNullsAndCompare(this.date, other.date);
+						if(returnValue != 0) {
+							return returnValue;
+						}
+
+					
+						returnValue = checkNullsAndCompare(this.hashtag, other.hashtag);
+						if(returnValue != 0) {
+							return returnValue;
+						}
+
+					
+						returnValue = checkNullsAndCompare(this.country, other.country);
+						if(returnValue != 0) {
+							return returnValue;
+						}
+
+					
+	    return returnValue;
+    }
+
+
+    private int checkNullsAndCompare(Object object1, Object object2) {
+        int returnValue = 0;
+		if (object1 instanceof Comparable && object2 instanceof Comparable) {
+            returnValue = ((Comparable) object1).compareTo(object2);
+        } else if (object1 != null && object2 != null) {
+            returnValue = compareStrings(object1.toString(), object2.toString());
+        } else if (object1 == null && object2 != null) {
+            returnValue = 1;
+        } else if (object1 != null && object2 == null) {
+            returnValue = -1;
+        } else {
+            returnValue = 0;
+        }
+
+        return returnValue;
+    }
+
+    private int compareStrings(String string1, String string2) {
+        return string1.compareTo(string2);
+    }
+
+
+}
+
+public static class OnRowsEndStructtAggregateRow_2 implements routines.system.IPersistableRow<OnRowsEndStructtAggregateRow_2> {
+    final static byte[] commonByteArrayLock_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[0];
+    static byte[] commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[0];
+	protected static final int DEFAULT_HASHCODE = 1;
+    protected static final int PRIME = 31;
+    protected int hashCode = DEFAULT_HASHCODE;
+    public boolean hashCodeDirty = true;
+
+    public String loopKey;
+
+
+
+	
+			    public String date;
+
+				public String getDate () {
+					return this.date;
 				}
+				
+			    public String hashtag;
 
-			}
+				public String getHashtag () {
+					return this.hashtag;
+				}
+				
+			    public String country;
 
+				public String getCountry () {
+					return this.country;
+				}
+				
+			    public Integer s_negativos;
+
+				public Integer getS_negativos () {
+					return this.s_negativos;
+				}
+				
+
+
+	@Override
+	public int hashCode() {
+		if (this.hashCodeDirty) {
+			final int prime = PRIME;
+			int result = DEFAULT_HASHCODE;
+	
+						result = prime * result + ((this.date == null) ? 0 : this.date.hashCode());
+					
+						result = prime * result + ((this.hashtag == null) ? 0 : this.hashtag.hashCode());
+					
+						result = prime * result + ((this.country == null) ? 0 : this.country.hashCode());
+					
+    		this.hashCode = result;
+    		this.hashCodeDirty = false;
 		}
-
-		public void writeData(ObjectOutputStream dos) {
-			try {
-
-				// String
-
-				writeString(this.date, dos);
-
-				// String
-
-				writeString(this.hashtag, dos);
-
-				// String
-
-				writeString(this.country, dos);
-
-				// Integer
-
-				writeInteger(this.s_negativos, dos);
-
-			} catch (IOException e) {
-				throw new RuntimeException(e);
-			}
-
-		}
-
-		public String toString() {
-
-			StringBuilder sb = new StringBuilder();
-			sb.append(super.toString());
-			sb.append("[");
-			sb.append("date=" + date);
-			sb.append(",hashtag=" + hashtag);
-			sb.append(",country=" + country);
-			sb.append(",s_negativos=" + String.valueOf(s_negativos));
-			sb.append("]");
-
-			return sb.toString();
-		}
-
-		/**
-		 * Compare keys
-		 */
-		public int compareTo(row8Struct other) {
-
-			int returnValue = -1;
-
-			returnValue = checkNullsAndCompare(this.date, other.date);
-			if (returnValue != 0) {
-				return returnValue;
-			}
-
-			returnValue = checkNullsAndCompare(this.hashtag, other.hashtag);
-			if (returnValue != 0) {
-				return returnValue;
-			}
-
-			returnValue = checkNullsAndCompare(this.country, other.country);
-			if (returnValue != 0) {
-				return returnValue;
-			}
-
-			return returnValue;
-		}
-
-		private int checkNullsAndCompare(Object object1, Object object2) {
-			int returnValue = 0;
-			if (object1 instanceof Comparable && object2 instanceof Comparable) {
-				returnValue = ((Comparable) object1).compareTo(object2);
-			} else if (object1 != null && object2 != null) {
-				returnValue = compareStrings(object1.toString(), object2.toString());
-			} else if (object1 == null && object2 != null) {
-				returnValue = 1;
-			} else if (object1 != null && object2 == null) {
-				returnValue = -1;
-			} else {
-				returnValue = 0;
-			}
-
-			return returnValue;
-		}
-
-		private int compareStrings(String string1, String string2) {
-			return string1.compareTo(string2);
-		}
-
+		return this.hashCode;
 	}
 
-	public static class OnRowsEndStructtAggregateRow_2
-			implements routines.system.IPersistableRow<OnRowsEndStructtAggregateRow_2> {
-		final static byte[] commonByteArrayLock_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[0];
-		static byte[] commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[0];
-		protected static final int DEFAULT_HASHCODE = 1;
-		protected static final int PRIME = 31;
-		protected int hashCode = DEFAULT_HASHCODE;
-		public boolean hashCodeDirty = true;
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj) return true;
+		if (obj == null) return false;
+		if (getClass() != obj.getClass()) return false;
+		final OnRowsEndStructtAggregateRow_2 other = (OnRowsEndStructtAggregateRow_2) obj;
+		
+						if (this.date == null) {
+							if (other.date != null)
+								return false;
+						
+						} else if (!this.date.equals(other.date))
+						
+							return false;
+					
+						if (this.hashtag == null) {
+							if (other.hashtag != null)
+								return false;
+						
+						} else if (!this.hashtag.equals(other.hashtag))
+						
+							return false;
+					
+						if (this.country == null) {
+							if (other.country != null)
+								return false;
+						
+						} else if (!this.country.equals(other.country))
+						
+							return false;
+					
 
-		public String loopKey;
+		return true;
+    }
 
-		public String date;
+	public void copyDataTo(OnRowsEndStructtAggregateRow_2 other) {
 
-		public String getDate() {
-			return this.date;
-		}
+		other.date = this.date;
+	            other.hashtag = this.hashtag;
+	            other.country = this.country;
+	            other.s_negativos = this.s_negativos;
+	            
+	}
 
-		public String hashtag;
+	public void copyKeysDataTo(OnRowsEndStructtAggregateRow_2 other) {
 
-		public String getHashtag() {
-			return this.hashtag;
-		}
+		other.date = this.date;
+	            	other.hashtag = this.hashtag;
+	            	other.country = this.country;
+	            	
+	}
 
-		public String country;
 
-		public String getCountry() {
-			return this.country;
-		}
 
-		public Integer s_negativos;
 
-		public Integer getS_negativos() {
-			return this.s_negativos;
-		}
-
-		@Override
-		public int hashCode() {
-			if (this.hashCodeDirty) {
-				final int prime = PRIME;
-				int result = DEFAULT_HASHCODE;
-
-				result = prime * result + ((this.date == null) ? 0 : this.date.hashCode());
-
-				result = prime * result + ((this.hashtag == null) ? 0 : this.hashtag.hashCode());
-
-				result = prime * result + ((this.country == null) ? 0 : this.country.hashCode());
-
-				this.hashCode = result;
-				this.hashCodeDirty = false;
+	private String readString(ObjectInputStream dis) throws IOException{
+		String strReturn = null;
+		int length = 0;
+        length = dis.readInt();
+		if (length == -1) {
+			strReturn = null;
+		} else {
+			if(length > commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets.length) {
+				if(length < 1024 && commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets.length == 0) {
+   					commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[1024];
+				} else {
+   					commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[2 * length];
+   				}
 			}
-			return this.hashCode;
+			dis.readFully(commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets, 0, length);
+			strReturn = new String(commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets, 0, length, utf8Charset);
 		}
+		return strReturn;
+	}
 
-		@Override
-		public boolean equals(Object obj) {
-			if (this == obj)
-				return true;
-			if (obj == null)
-				return false;
-			if (getClass() != obj.getClass())
-				return false;
-			final OnRowsEndStructtAggregateRow_2 other = (OnRowsEndStructtAggregateRow_2) obj;
-
-			if (this.date == null) {
-				if (other.date != null)
-					return false;
-
-			} else if (!this.date.equals(other.date))
-
-				return false;
-
-			if (this.hashtag == null) {
-				if (other.hashtag != null)
-					return false;
-
-			} else if (!this.hashtag.equals(other.hashtag))
-
-				return false;
-
-			if (this.country == null) {
-				if (other.country != null)
-					return false;
-
-			} else if (!this.country.equals(other.country))
-
-				return false;
-
-			return true;
+    private void writeString(String str, ObjectOutputStream dos) throws IOException{
+		if(str == null) {
+            dos.writeInt(-1);
+		} else {
+            byte[] byteArray = str.getBytes(utf8Charset);
+	    	dos.writeInt(byteArray.length);
+			dos.write(byteArray);
+    	}
+    }
+	private Integer readInteger(ObjectInputStream dis) throws IOException{
+		Integer intReturn;
+        int length = 0;
+        length = dis.readByte();
+		if (length == -1) {
+			intReturn = null;
+		} else {
+	    	intReturn = dis.readInt();
 		}
+		return intReturn;
+	}
 
-		public void copyDataTo(OnRowsEndStructtAggregateRow_2 other) {
+	private void writeInteger(Integer intNum, ObjectOutputStream dos) throws IOException{
+		if(intNum == null) {
+            dos.writeByte(-1);
+		} else {
+			dos.writeByte(0);
+	    	dos.writeInt(intNum);
+    	}
+	}
 
-			other.date = this.date;
-			other.hashtag = this.hashtag;
-			other.country = this.country;
-			other.s_negativos = this.s_negativos;
+    public void readData(ObjectInputStream dis) {
 
-		}
+		synchronized(commonByteArrayLock_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets) {
 
-		public void copyKeysDataTo(OnRowsEndStructtAggregateRow_2 other) {
+        	try {
 
-			other.date = this.date;
-			other.hashtag = this.hashtag;
-			other.country = this.country;
-
-		}
-
-		private String readString(ObjectInputStream dis) throws IOException {
-			String strReturn = null;
-			int length = 0;
-			length = dis.readInt();
-			if (length == -1) {
-				strReturn = null;
-			} else {
-				if (length > commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets.length) {
-					if (length < 1024
-							&& commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets.length == 0) {
-						commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[1024];
-					} else {
-						commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[2
-								* length];
-					}
-				}
-				dis.readFully(commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets, 0,
-						length);
-				strReturn = new String(commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets,
-						0, length, utf8Charset);
-			}
-			return strReturn;
-		}
-
-		private void writeString(String str, ObjectOutputStream dos) throws IOException {
-			if (str == null) {
-				dos.writeInt(-1);
-			} else {
-				byte[] byteArray = str.getBytes(utf8Charset);
-				dos.writeInt(byteArray.length);
-				dos.write(byteArray);
-			}
-		}
-
-		private Integer readInteger(ObjectInputStream dis) throws IOException {
-			Integer intReturn;
-			int length = 0;
-			length = dis.readByte();
-			if (length == -1) {
-				intReturn = null;
-			} else {
-				intReturn = dis.readInt();
-			}
-			return intReturn;
-		}
-
-		private void writeInteger(Integer intNum, ObjectOutputStream dos) throws IOException {
-			if (intNum == null) {
-				dos.writeByte(-1);
-			} else {
-				dos.writeByte(0);
-				dos.writeInt(intNum);
-			}
-		}
-
-		public void readData(ObjectInputStream dis) {
-
-			synchronized (commonByteArrayLock_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets) {
-
-				try {
-
-					int length = 0;
-
+        		int length = 0;
+		
 					this.date = readString(dis);
-
+					
 					this.hashtag = readString(dis);
-
+					
 					this.country = readString(dis);
+					
+						this.s_negativos = readInteger(dis);
+					
+        	} catch (IOException e) {
+	            throw new RuntimeException(e);
 
-					this.s_negativos = readInteger(dis);
+		
 
-				} catch (IOException e) {
-					throw new RuntimeException(e);
+        }
 
+		
+
+      }
+
+
+    }
+
+    public void writeData(ObjectOutputStream dos) {
+        try {
+
+		
+					// String
+				
+						writeString(this.date,dos);
+					
+					// String
+				
+						writeString(this.hashtag,dos);
+					
+					// String
+				
+						writeString(this.country,dos);
+					
+					// Integer
+				
+						writeInteger(this.s_negativos,dos);
+					
+        	} catch (IOException e) {
+	            throw new RuntimeException(e);
+        }
+
+
+    }
+
+
+    public String toString() {
+
+		StringBuilder sb = new StringBuilder();
+		sb.append(super.toString());
+		sb.append("[");
+		sb.append("date="+date);
+		sb.append(",hashtag="+hashtag);
+		sb.append(",country="+country);
+		sb.append(",s_negativos="+String.valueOf(s_negativos));
+	    sb.append("]");
+
+	    return sb.toString();
+    }
+
+    /**
+     * Compare keys
+     */
+    public int compareTo(OnRowsEndStructtAggregateRow_2 other) {
+
+		int returnValue = -1;
+		
+						returnValue = checkNullsAndCompare(this.date, other.date);
+						if(returnValue != 0) {
+							return returnValue;
+						}
+
+					
+						returnValue = checkNullsAndCompare(this.hashtag, other.hashtag);
+						if(returnValue != 0) {
+							return returnValue;
+						}
+
+					
+						returnValue = checkNullsAndCompare(this.country, other.country);
+						if(returnValue != 0) {
+							return returnValue;
+						}
+
+					
+	    return returnValue;
+    }
+
+
+    private int checkNullsAndCompare(Object object1, Object object2) {
+        int returnValue = 0;
+		if (object1 instanceof Comparable && object2 instanceof Comparable) {
+            returnValue = ((Comparable) object1).compareTo(object2);
+        } else if (object1 != null && object2 != null) {
+            returnValue = compareStrings(object1.toString(), object2.toString());
+        } else if (object1 == null && object2 != null) {
+            returnValue = 1;
+        } else if (object1 != null && object2 == null) {
+            returnValue = -1;
+        } else {
+            returnValue = 0;
+        }
+
+        return returnValue;
+    }
+
+    private int compareStrings(String string1, String string2) {
+        return string1.compareTo(string2);
+    }
+
+
+}
+
+public static class row7Struct implements routines.system.IPersistableRow<row7Struct> {
+    final static byte[] commonByteArrayLock_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[0];
+    static byte[] commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[0];
+	protected static final int DEFAULT_HASHCODE = 1;
+    protected static final int PRIME = 31;
+    protected int hashCode = DEFAULT_HASHCODE;
+    public boolean hashCodeDirty = true;
+
+    public String loopKey;
+
+
+
+	
+			    public String date;
+
+				public String getDate () {
+					return this.date;
 				}
+				
+			    public String hashtag;
 
-			}
+				public String getHashtag () {
+					return this.hashtag;
+				}
+				
+			    public String country;
 
+				public String getCountry () {
+					return this.country;
+				}
+				
+			    public Integer s_positivos;
+
+				public Integer getS_positivos () {
+					return this.s_positivos;
+				}
+				
+
+
+	@Override
+	public int hashCode() {
+		if (this.hashCodeDirty) {
+			final int prime = PRIME;
+			int result = DEFAULT_HASHCODE;
+	
+						result = prime * result + ((this.date == null) ? 0 : this.date.hashCode());
+					
+						result = prime * result + ((this.hashtag == null) ? 0 : this.hashtag.hashCode());
+					
+						result = prime * result + ((this.country == null) ? 0 : this.country.hashCode());
+					
+    		this.hashCode = result;
+    		this.hashCodeDirty = false;
 		}
-
-		public void writeData(ObjectOutputStream dos) {
-			try {
-
-				// String
-
-				writeString(this.date, dos);
-
-				// String
-
-				writeString(this.hashtag, dos);
-
-				// String
-
-				writeString(this.country, dos);
-
-				// Integer
-
-				writeInteger(this.s_negativos, dos);
-
-			} catch (IOException e) {
-				throw new RuntimeException(e);
-			}
-
-		}
-
-		public String toString() {
-
-			StringBuilder sb = new StringBuilder();
-			sb.append(super.toString());
-			sb.append("[");
-			sb.append("date=" + date);
-			sb.append(",hashtag=" + hashtag);
-			sb.append(",country=" + country);
-			sb.append(",s_negativos=" + String.valueOf(s_negativos));
-			sb.append("]");
-
-			return sb.toString();
-		}
-
-		/**
-		 * Compare keys
-		 */
-		public int compareTo(OnRowsEndStructtAggregateRow_2 other) {
-
-			int returnValue = -1;
-
-			returnValue = checkNullsAndCompare(this.date, other.date);
-			if (returnValue != 0) {
-				return returnValue;
-			}
-
-			returnValue = checkNullsAndCompare(this.hashtag, other.hashtag);
-			if (returnValue != 0) {
-				return returnValue;
-			}
-
-			returnValue = checkNullsAndCompare(this.country, other.country);
-			if (returnValue != 0) {
-				return returnValue;
-			}
-
-			return returnValue;
-		}
-
-		private int checkNullsAndCompare(Object object1, Object object2) {
-			int returnValue = 0;
-			if (object1 instanceof Comparable && object2 instanceof Comparable) {
-				returnValue = ((Comparable) object1).compareTo(object2);
-			} else if (object1 != null && object2 != null) {
-				returnValue = compareStrings(object1.toString(), object2.toString());
-			} else if (object1 == null && object2 != null) {
-				returnValue = 1;
-			} else if (object1 != null && object2 == null) {
-				returnValue = -1;
-			} else {
-				returnValue = 0;
-			}
-
-			return returnValue;
-		}
-
-		private int compareStrings(String string1, String string2) {
-			return string1.compareTo(string2);
-		}
-
+		return this.hashCode;
 	}
 
-	public static class row7Struct implements routines.system.IPersistableRow<row7Struct> {
-		final static byte[] commonByteArrayLock_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[0];
-		static byte[] commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[0];
-		protected static final int DEFAULT_HASHCODE = 1;
-		protected static final int PRIME = 31;
-		protected int hashCode = DEFAULT_HASHCODE;
-		public boolean hashCodeDirty = true;
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj) return true;
+		if (obj == null) return false;
+		if (getClass() != obj.getClass()) return false;
+		final row7Struct other = (row7Struct) obj;
+		
+						if (this.date == null) {
+							if (other.date != null)
+								return false;
+						
+						} else if (!this.date.equals(other.date))
+						
+							return false;
+					
+						if (this.hashtag == null) {
+							if (other.hashtag != null)
+								return false;
+						
+						} else if (!this.hashtag.equals(other.hashtag))
+						
+							return false;
+					
+						if (this.country == null) {
+							if (other.country != null)
+								return false;
+						
+						} else if (!this.country.equals(other.country))
+						
+							return false;
+					
 
-		public String loopKey;
+		return true;
+    }
 
-		public String date;
+	public void copyDataTo(row7Struct other) {
 
-		public String getDate() {
-			return this.date;
-		}
+		other.date = this.date;
+	            other.hashtag = this.hashtag;
+	            other.country = this.country;
+	            other.s_positivos = this.s_positivos;
+	            
+	}
 
-		public String hashtag;
+	public void copyKeysDataTo(row7Struct other) {
 
-		public String getHashtag() {
-			return this.hashtag;
-		}
+		other.date = this.date;
+	            	other.hashtag = this.hashtag;
+	            	other.country = this.country;
+	            	
+	}
 
-		public String country;
 
-		public String getCountry() {
-			return this.country;
-		}
 
-		public Integer s_positivos;
 
-		public Integer getS_positivos() {
-			return this.s_positivos;
-		}
-
-		@Override
-		public int hashCode() {
-			if (this.hashCodeDirty) {
-				final int prime = PRIME;
-				int result = DEFAULT_HASHCODE;
-
-				result = prime * result + ((this.date == null) ? 0 : this.date.hashCode());
-
-				result = prime * result + ((this.hashtag == null) ? 0 : this.hashtag.hashCode());
-
-				result = prime * result + ((this.country == null) ? 0 : this.country.hashCode());
-
-				this.hashCode = result;
-				this.hashCodeDirty = false;
+	private String readString(ObjectInputStream dis) throws IOException{
+		String strReturn = null;
+		int length = 0;
+        length = dis.readInt();
+		if (length == -1) {
+			strReturn = null;
+		} else {
+			if(length > commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets.length) {
+				if(length < 1024 && commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets.length == 0) {
+   					commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[1024];
+				} else {
+   					commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[2 * length];
+   				}
 			}
-			return this.hashCode;
+			dis.readFully(commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets, 0, length);
+			strReturn = new String(commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets, 0, length, utf8Charset);
 		}
+		return strReturn;
+	}
 
-		@Override
-		public boolean equals(Object obj) {
-			if (this == obj)
-				return true;
-			if (obj == null)
-				return false;
-			if (getClass() != obj.getClass())
-				return false;
-			final row7Struct other = (row7Struct) obj;
-
-			if (this.date == null) {
-				if (other.date != null)
-					return false;
-
-			} else if (!this.date.equals(other.date))
-
-				return false;
-
-			if (this.hashtag == null) {
-				if (other.hashtag != null)
-					return false;
-
-			} else if (!this.hashtag.equals(other.hashtag))
-
-				return false;
-
-			if (this.country == null) {
-				if (other.country != null)
-					return false;
-
-			} else if (!this.country.equals(other.country))
-
-				return false;
-
-			return true;
+    private void writeString(String str, ObjectOutputStream dos) throws IOException{
+		if(str == null) {
+            dos.writeInt(-1);
+		} else {
+            byte[] byteArray = str.getBytes(utf8Charset);
+	    	dos.writeInt(byteArray.length);
+			dos.write(byteArray);
+    	}
+    }
+	private Integer readInteger(ObjectInputStream dis) throws IOException{
+		Integer intReturn;
+        int length = 0;
+        length = dis.readByte();
+		if (length == -1) {
+			intReturn = null;
+		} else {
+	    	intReturn = dis.readInt();
 		}
+		return intReturn;
+	}
 
-		public void copyDataTo(row7Struct other) {
+	private void writeInteger(Integer intNum, ObjectOutputStream dos) throws IOException{
+		if(intNum == null) {
+            dos.writeByte(-1);
+		} else {
+			dos.writeByte(0);
+	    	dos.writeInt(intNum);
+    	}
+	}
 
-			other.date = this.date;
-			other.hashtag = this.hashtag;
-			other.country = this.country;
-			other.s_positivos = this.s_positivos;
+    public void readData(ObjectInputStream dis) {
 
-		}
+		synchronized(commonByteArrayLock_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets) {
 
-		public void copyKeysDataTo(row7Struct other) {
+        	try {
 
-			other.date = this.date;
-			other.hashtag = this.hashtag;
-			other.country = this.country;
-
-		}
-
-		private String readString(ObjectInputStream dis) throws IOException {
-			String strReturn = null;
-			int length = 0;
-			length = dis.readInt();
-			if (length == -1) {
-				strReturn = null;
-			} else {
-				if (length > commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets.length) {
-					if (length < 1024
-							&& commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets.length == 0) {
-						commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[1024];
-					} else {
-						commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[2
-								* length];
-					}
-				}
-				dis.readFully(commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets, 0,
-						length);
-				strReturn = new String(commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets,
-						0, length, utf8Charset);
-			}
-			return strReturn;
-		}
-
-		private void writeString(String str, ObjectOutputStream dos) throws IOException {
-			if (str == null) {
-				dos.writeInt(-1);
-			} else {
-				byte[] byteArray = str.getBytes(utf8Charset);
-				dos.writeInt(byteArray.length);
-				dos.write(byteArray);
-			}
-		}
-
-		private Integer readInteger(ObjectInputStream dis) throws IOException {
-			Integer intReturn;
-			int length = 0;
-			length = dis.readByte();
-			if (length == -1) {
-				intReturn = null;
-			} else {
-				intReturn = dis.readInt();
-			}
-			return intReturn;
-		}
-
-		private void writeInteger(Integer intNum, ObjectOutputStream dos) throws IOException {
-			if (intNum == null) {
-				dos.writeByte(-1);
-			} else {
-				dos.writeByte(0);
-				dos.writeInt(intNum);
-			}
-		}
-
-		public void readData(ObjectInputStream dis) {
-
-			synchronized (commonByteArrayLock_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets) {
-
-				try {
-
-					int length = 0;
-
+        		int length = 0;
+		
 					this.date = readString(dis);
-
+					
 					this.hashtag = readString(dis);
-
+					
 					this.country = readString(dis);
+					
+						this.s_positivos = readInteger(dis);
+					
+        	} catch (IOException e) {
+	            throw new RuntimeException(e);
 
-					this.s_positivos = readInteger(dis);
+		
 
-				} catch (IOException e) {
-					throw new RuntimeException(e);
+        }
 
+		
+
+      }
+
+
+    }
+
+    public void writeData(ObjectOutputStream dos) {
+        try {
+
+		
+					// String
+				
+						writeString(this.date,dos);
+					
+					// String
+				
+						writeString(this.hashtag,dos);
+					
+					// String
+				
+						writeString(this.country,dos);
+					
+					// Integer
+				
+						writeInteger(this.s_positivos,dos);
+					
+        	} catch (IOException e) {
+	            throw new RuntimeException(e);
+        }
+
+
+    }
+
+
+    public String toString() {
+
+		StringBuilder sb = new StringBuilder();
+		sb.append(super.toString());
+		sb.append("[");
+		sb.append("date="+date);
+		sb.append(",hashtag="+hashtag);
+		sb.append(",country="+country);
+		sb.append(",s_positivos="+String.valueOf(s_positivos));
+	    sb.append("]");
+
+	    return sb.toString();
+    }
+
+    /**
+     * Compare keys
+     */
+    public int compareTo(row7Struct other) {
+
+		int returnValue = -1;
+		
+						returnValue = checkNullsAndCompare(this.date, other.date);
+						if(returnValue != 0) {
+							return returnValue;
+						}
+
+					
+						returnValue = checkNullsAndCompare(this.hashtag, other.hashtag);
+						if(returnValue != 0) {
+							return returnValue;
+						}
+
+					
+						returnValue = checkNullsAndCompare(this.country, other.country);
+						if(returnValue != 0) {
+							return returnValue;
+						}
+
+					
+	    return returnValue;
+    }
+
+
+    private int checkNullsAndCompare(Object object1, Object object2) {
+        int returnValue = 0;
+		if (object1 instanceof Comparable && object2 instanceof Comparable) {
+            returnValue = ((Comparable) object1).compareTo(object2);
+        } else if (object1 != null && object2 != null) {
+            returnValue = compareStrings(object1.toString(), object2.toString());
+        } else if (object1 == null && object2 != null) {
+            returnValue = 1;
+        } else if (object1 != null && object2 == null) {
+            returnValue = -1;
+        } else {
+            returnValue = 0;
+        }
+
+        return returnValue;
+    }
+
+    private int compareStrings(String string1, String string2) {
+        return string1.compareTo(string2);
+    }
+
+
+}
+
+public static class OnRowsEndStructtAggregateRow_1 implements routines.system.IPersistableRow<OnRowsEndStructtAggregateRow_1> {
+    final static byte[] commonByteArrayLock_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[0];
+    static byte[] commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[0];
+	protected static final int DEFAULT_HASHCODE = 1;
+    protected static final int PRIME = 31;
+    protected int hashCode = DEFAULT_HASHCODE;
+    public boolean hashCodeDirty = true;
+
+    public String loopKey;
+
+
+
+	
+			    public String date;
+
+				public String getDate () {
+					return this.date;
 				}
+				
+			    public String hashtag;
 
-			}
+				public String getHashtag () {
+					return this.hashtag;
+				}
+				
+			    public String country;
 
+				public String getCountry () {
+					return this.country;
+				}
+				
+			    public Integer s_positivos;
+
+				public Integer getS_positivos () {
+					return this.s_positivos;
+				}
+				
+
+
+	@Override
+	public int hashCode() {
+		if (this.hashCodeDirty) {
+			final int prime = PRIME;
+			int result = DEFAULT_HASHCODE;
+	
+						result = prime * result + ((this.date == null) ? 0 : this.date.hashCode());
+					
+						result = prime * result + ((this.hashtag == null) ? 0 : this.hashtag.hashCode());
+					
+						result = prime * result + ((this.country == null) ? 0 : this.country.hashCode());
+					
+    		this.hashCode = result;
+    		this.hashCodeDirty = false;
 		}
-
-		public void writeData(ObjectOutputStream dos) {
-			try {
-
-				// String
-
-				writeString(this.date, dos);
-
-				// String
-
-				writeString(this.hashtag, dos);
-
-				// String
-
-				writeString(this.country, dos);
-
-				// Integer
-
-				writeInteger(this.s_positivos, dos);
-
-			} catch (IOException e) {
-				throw new RuntimeException(e);
-			}
-
-		}
-
-		public String toString() {
-
-			StringBuilder sb = new StringBuilder();
-			sb.append(super.toString());
-			sb.append("[");
-			sb.append("date=" + date);
-			sb.append(",hashtag=" + hashtag);
-			sb.append(",country=" + country);
-			sb.append(",s_positivos=" + String.valueOf(s_positivos));
-			sb.append("]");
-
-			return sb.toString();
-		}
-
-		/**
-		 * Compare keys
-		 */
-		public int compareTo(row7Struct other) {
-
-			int returnValue = -1;
-
-			returnValue = checkNullsAndCompare(this.date, other.date);
-			if (returnValue != 0) {
-				return returnValue;
-			}
-
-			returnValue = checkNullsAndCompare(this.hashtag, other.hashtag);
-			if (returnValue != 0) {
-				return returnValue;
-			}
-
-			returnValue = checkNullsAndCompare(this.country, other.country);
-			if (returnValue != 0) {
-				return returnValue;
-			}
-
-			return returnValue;
-		}
-
-		private int checkNullsAndCompare(Object object1, Object object2) {
-			int returnValue = 0;
-			if (object1 instanceof Comparable && object2 instanceof Comparable) {
-				returnValue = ((Comparable) object1).compareTo(object2);
-			} else if (object1 != null && object2 != null) {
-				returnValue = compareStrings(object1.toString(), object2.toString());
-			} else if (object1 == null && object2 != null) {
-				returnValue = 1;
-			} else if (object1 != null && object2 == null) {
-				returnValue = -1;
-			} else {
-				returnValue = 0;
-			}
-
-			return returnValue;
-		}
-
-		private int compareStrings(String string1, String string2) {
-			return string1.compareTo(string2);
-		}
-
+		return this.hashCode;
 	}
 
-	public static class OnRowsEndStructtAggregateRow_1
-			implements routines.system.IPersistableRow<OnRowsEndStructtAggregateRow_1> {
-		final static byte[] commonByteArrayLock_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[0];
-		static byte[] commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[0];
-		protected static final int DEFAULT_HASHCODE = 1;
-		protected static final int PRIME = 31;
-		protected int hashCode = DEFAULT_HASHCODE;
-		public boolean hashCodeDirty = true;
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj) return true;
+		if (obj == null) return false;
+		if (getClass() != obj.getClass()) return false;
+		final OnRowsEndStructtAggregateRow_1 other = (OnRowsEndStructtAggregateRow_1) obj;
+		
+						if (this.date == null) {
+							if (other.date != null)
+								return false;
+						
+						} else if (!this.date.equals(other.date))
+						
+							return false;
+					
+						if (this.hashtag == null) {
+							if (other.hashtag != null)
+								return false;
+						
+						} else if (!this.hashtag.equals(other.hashtag))
+						
+							return false;
+					
+						if (this.country == null) {
+							if (other.country != null)
+								return false;
+						
+						} else if (!this.country.equals(other.country))
+						
+							return false;
+					
 
-		public String loopKey;
+		return true;
+    }
 
-		public String date;
+	public void copyDataTo(OnRowsEndStructtAggregateRow_1 other) {
 
-		public String getDate() {
-			return this.date;
-		}
+		other.date = this.date;
+	            other.hashtag = this.hashtag;
+	            other.country = this.country;
+	            other.s_positivos = this.s_positivos;
+	            
+	}
 
-		public String hashtag;
+	public void copyKeysDataTo(OnRowsEndStructtAggregateRow_1 other) {
 
-		public String getHashtag() {
-			return this.hashtag;
-		}
+		other.date = this.date;
+	            	other.hashtag = this.hashtag;
+	            	other.country = this.country;
+	            	
+	}
 
-		public String country;
 
-		public String getCountry() {
-			return this.country;
-		}
 
-		public Integer s_positivos;
 
-		public Integer getS_positivos() {
-			return this.s_positivos;
-		}
-
-		@Override
-		public int hashCode() {
-			if (this.hashCodeDirty) {
-				final int prime = PRIME;
-				int result = DEFAULT_HASHCODE;
-
-				result = prime * result + ((this.date == null) ? 0 : this.date.hashCode());
-
-				result = prime * result + ((this.hashtag == null) ? 0 : this.hashtag.hashCode());
-
-				result = prime * result + ((this.country == null) ? 0 : this.country.hashCode());
-
-				this.hashCode = result;
-				this.hashCodeDirty = false;
+	private String readString(ObjectInputStream dis) throws IOException{
+		String strReturn = null;
+		int length = 0;
+        length = dis.readInt();
+		if (length == -1) {
+			strReturn = null;
+		} else {
+			if(length > commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets.length) {
+				if(length < 1024 && commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets.length == 0) {
+   					commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[1024];
+				} else {
+   					commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[2 * length];
+   				}
 			}
-			return this.hashCode;
+			dis.readFully(commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets, 0, length);
+			strReturn = new String(commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets, 0, length, utf8Charset);
 		}
+		return strReturn;
+	}
 
-		@Override
-		public boolean equals(Object obj) {
-			if (this == obj)
-				return true;
-			if (obj == null)
-				return false;
-			if (getClass() != obj.getClass())
-				return false;
-			final OnRowsEndStructtAggregateRow_1 other = (OnRowsEndStructtAggregateRow_1) obj;
-
-			if (this.date == null) {
-				if (other.date != null)
-					return false;
-
-			} else if (!this.date.equals(other.date))
-
-				return false;
-
-			if (this.hashtag == null) {
-				if (other.hashtag != null)
-					return false;
-
-			} else if (!this.hashtag.equals(other.hashtag))
-
-				return false;
-
-			if (this.country == null) {
-				if (other.country != null)
-					return false;
-
-			} else if (!this.country.equals(other.country))
-
-				return false;
-
-			return true;
+    private void writeString(String str, ObjectOutputStream dos) throws IOException{
+		if(str == null) {
+            dos.writeInt(-1);
+		} else {
+            byte[] byteArray = str.getBytes(utf8Charset);
+	    	dos.writeInt(byteArray.length);
+			dos.write(byteArray);
+    	}
+    }
+	private Integer readInteger(ObjectInputStream dis) throws IOException{
+		Integer intReturn;
+        int length = 0;
+        length = dis.readByte();
+		if (length == -1) {
+			intReturn = null;
+		} else {
+	    	intReturn = dis.readInt();
 		}
+		return intReturn;
+	}
 
-		public void copyDataTo(OnRowsEndStructtAggregateRow_1 other) {
+	private void writeInteger(Integer intNum, ObjectOutputStream dos) throws IOException{
+		if(intNum == null) {
+            dos.writeByte(-1);
+		} else {
+			dos.writeByte(0);
+	    	dos.writeInt(intNum);
+    	}
+	}
 
-			other.date = this.date;
-			other.hashtag = this.hashtag;
-			other.country = this.country;
-			other.s_positivos = this.s_positivos;
+    public void readData(ObjectInputStream dis) {
 
-		}
+		synchronized(commonByteArrayLock_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets) {
 
-		public void copyKeysDataTo(OnRowsEndStructtAggregateRow_1 other) {
+        	try {
 
-			other.date = this.date;
-			other.hashtag = this.hashtag;
-			other.country = this.country;
-
-		}
-
-		private String readString(ObjectInputStream dis) throws IOException {
-			String strReturn = null;
-			int length = 0;
-			length = dis.readInt();
-			if (length == -1) {
-				strReturn = null;
-			} else {
-				if (length > commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets.length) {
-					if (length < 1024
-							&& commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets.length == 0) {
-						commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[1024];
-					} else {
-						commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[2
-								* length];
-					}
-				}
-				dis.readFully(commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets, 0,
-						length);
-				strReturn = new String(commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets,
-						0, length, utf8Charset);
-			}
-			return strReturn;
-		}
-
-		private void writeString(String str, ObjectOutputStream dos) throws IOException {
-			if (str == null) {
-				dos.writeInt(-1);
-			} else {
-				byte[] byteArray = str.getBytes(utf8Charset);
-				dos.writeInt(byteArray.length);
-				dos.write(byteArray);
-			}
-		}
-
-		private Integer readInteger(ObjectInputStream dis) throws IOException {
-			Integer intReturn;
-			int length = 0;
-			length = dis.readByte();
-			if (length == -1) {
-				intReturn = null;
-			} else {
-				intReturn = dis.readInt();
-			}
-			return intReturn;
-		}
-
-		private void writeInteger(Integer intNum, ObjectOutputStream dos) throws IOException {
-			if (intNum == null) {
-				dos.writeByte(-1);
-			} else {
-				dos.writeByte(0);
-				dos.writeInt(intNum);
-			}
-		}
-
-		public void readData(ObjectInputStream dis) {
-
-			synchronized (commonByteArrayLock_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets) {
-
-				try {
-
-					int length = 0;
-
+        		int length = 0;
+		
 					this.date = readString(dis);
-
+					
 					this.hashtag = readString(dis);
-
+					
 					this.country = readString(dis);
+					
+						this.s_positivos = readInteger(dis);
+					
+        	} catch (IOException e) {
+	            throw new RuntimeException(e);
 
-					this.s_positivos = readInteger(dis);
+		
 
-				} catch (IOException e) {
-					throw new RuntimeException(e);
+        }
 
+		
+
+      }
+
+
+    }
+
+    public void writeData(ObjectOutputStream dos) {
+        try {
+
+		
+					// String
+				
+						writeString(this.date,dos);
+					
+					// String
+				
+						writeString(this.hashtag,dos);
+					
+					// String
+				
+						writeString(this.country,dos);
+					
+					// Integer
+				
+						writeInteger(this.s_positivos,dos);
+					
+        	} catch (IOException e) {
+	            throw new RuntimeException(e);
+        }
+
+
+    }
+
+
+    public String toString() {
+
+		StringBuilder sb = new StringBuilder();
+		sb.append(super.toString());
+		sb.append("[");
+		sb.append("date="+date);
+		sb.append(",hashtag="+hashtag);
+		sb.append(",country="+country);
+		sb.append(",s_positivos="+String.valueOf(s_positivos));
+	    sb.append("]");
+
+	    return sb.toString();
+    }
+
+    /**
+     * Compare keys
+     */
+    public int compareTo(OnRowsEndStructtAggregateRow_1 other) {
+
+		int returnValue = -1;
+		
+						returnValue = checkNullsAndCompare(this.date, other.date);
+						if(returnValue != 0) {
+							return returnValue;
+						}
+
+					
+						returnValue = checkNullsAndCompare(this.hashtag, other.hashtag);
+						if(returnValue != 0) {
+							return returnValue;
+						}
+
+					
+						returnValue = checkNullsAndCompare(this.country, other.country);
+						if(returnValue != 0) {
+							return returnValue;
+						}
+
+					
+	    return returnValue;
+    }
+
+
+    private int checkNullsAndCompare(Object object1, Object object2) {
+        int returnValue = 0;
+		if (object1 instanceof Comparable && object2 instanceof Comparable) {
+            returnValue = ((Comparable) object1).compareTo(object2);
+        } else if (object1 != null && object2 != null) {
+            returnValue = compareStrings(object1.toString(), object2.toString());
+        } else if (object1 == null && object2 != null) {
+            returnValue = 1;
+        } else if (object1 != null && object2 == null) {
+            returnValue = -1;
+        } else {
+            returnValue = 0;
+        }
+
+        return returnValue;
+    }
+
+    private int compareStrings(String string1, String string2) {
+        return string1.compareTo(string2);
+    }
+
+
+}
+
+public static class row9Struct implements routines.system.IPersistableRow<row9Struct> {
+    final static byte[] commonByteArrayLock_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[0];
+    static byte[] commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[0];
+	protected static final int DEFAULT_HASHCODE = 1;
+    protected static final int PRIME = 31;
+    protected int hashCode = DEFAULT_HASHCODE;
+    public boolean hashCodeDirty = true;
+
+    public String loopKey;
+
+
+
+	
+			    public String date;
+
+				public String getDate () {
+					return this.date;
 				}
+				
+			    public String hashtag;
 
-			}
+				public String getHashtag () {
+					return this.hashtag;
+				}
+				
+			    public String country;
 
+				public String getCountry () {
+					return this.country;
+				}
+				
+			    public Integer t_reception;
+
+				public Integer getT_reception () {
+					return this.t_reception;
+				}
+				
+
+
+	@Override
+	public int hashCode() {
+		if (this.hashCodeDirty) {
+			final int prime = PRIME;
+			int result = DEFAULT_HASHCODE;
+	
+						result = prime * result + ((this.date == null) ? 0 : this.date.hashCode());
+					
+						result = prime * result + ((this.hashtag == null) ? 0 : this.hashtag.hashCode());
+					
+						result = prime * result + ((this.country == null) ? 0 : this.country.hashCode());
+					
+    		this.hashCode = result;
+    		this.hashCodeDirty = false;
 		}
-
-		public void writeData(ObjectOutputStream dos) {
-			try {
-
-				// String
-
-				writeString(this.date, dos);
-
-				// String
-
-				writeString(this.hashtag, dos);
-
-				// String
-
-				writeString(this.country, dos);
-
-				// Integer
-
-				writeInteger(this.s_positivos, dos);
-
-			} catch (IOException e) {
-				throw new RuntimeException(e);
-			}
-
-		}
-
-		public String toString() {
-
-			StringBuilder sb = new StringBuilder();
-			sb.append(super.toString());
-			sb.append("[");
-			sb.append("date=" + date);
-			sb.append(",hashtag=" + hashtag);
-			sb.append(",country=" + country);
-			sb.append(",s_positivos=" + String.valueOf(s_positivos));
-			sb.append("]");
-
-			return sb.toString();
-		}
-
-		/**
-		 * Compare keys
-		 */
-		public int compareTo(OnRowsEndStructtAggregateRow_1 other) {
-
-			int returnValue = -1;
-
-			returnValue = checkNullsAndCompare(this.date, other.date);
-			if (returnValue != 0) {
-				return returnValue;
-			}
-
-			returnValue = checkNullsAndCompare(this.hashtag, other.hashtag);
-			if (returnValue != 0) {
-				return returnValue;
-			}
-
-			returnValue = checkNullsAndCompare(this.country, other.country);
-			if (returnValue != 0) {
-				return returnValue;
-			}
-
-			return returnValue;
-		}
-
-		private int checkNullsAndCompare(Object object1, Object object2) {
-			int returnValue = 0;
-			if (object1 instanceof Comparable && object2 instanceof Comparable) {
-				returnValue = ((Comparable) object1).compareTo(object2);
-			} else if (object1 != null && object2 != null) {
-				returnValue = compareStrings(object1.toString(), object2.toString());
-			} else if (object1 == null && object2 != null) {
-				returnValue = 1;
-			} else if (object1 != null && object2 == null) {
-				returnValue = -1;
-			} else {
-				returnValue = 0;
-			}
-
-			return returnValue;
-		}
-
-		private int compareStrings(String string1, String string2) {
-			return string1.compareTo(string2);
-		}
-
+		return this.hashCode;
 	}
 
-	public static class row9Struct implements routines.system.IPersistableRow<row9Struct> {
-		final static byte[] commonByteArrayLock_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[0];
-		static byte[] commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[0];
-		protected static final int DEFAULT_HASHCODE = 1;
-		protected static final int PRIME = 31;
-		protected int hashCode = DEFAULT_HASHCODE;
-		public boolean hashCodeDirty = true;
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj) return true;
+		if (obj == null) return false;
+		if (getClass() != obj.getClass()) return false;
+		final row9Struct other = (row9Struct) obj;
+		
+						if (this.date == null) {
+							if (other.date != null)
+								return false;
+						
+						} else if (!this.date.equals(other.date))
+						
+							return false;
+					
+						if (this.hashtag == null) {
+							if (other.hashtag != null)
+								return false;
+						
+						} else if (!this.hashtag.equals(other.hashtag))
+						
+							return false;
+					
+						if (this.country == null) {
+							if (other.country != null)
+								return false;
+						
+						} else if (!this.country.equals(other.country))
+						
+							return false;
+					
 
-		public String loopKey;
+		return true;
+    }
 
-		public String date;
+	public void copyDataTo(row9Struct other) {
 
-		public String getDate() {
-			return this.date;
-		}
+		other.date = this.date;
+	            other.hashtag = this.hashtag;
+	            other.country = this.country;
+	            other.t_reception = this.t_reception;
+	            
+	}
 
-		public String hashtag;
+	public void copyKeysDataTo(row9Struct other) {
 
-		public String getHashtag() {
-			return this.hashtag;
-		}
+		other.date = this.date;
+	            	other.hashtag = this.hashtag;
+	            	other.country = this.country;
+	            	
+	}
 
-		public String country;
 
-		public String getCountry() {
-			return this.country;
-		}
 
-		public Integer t_reception;
 
-		public Integer getT_reception() {
-			return this.t_reception;
-		}
-
-		@Override
-		public int hashCode() {
-			if (this.hashCodeDirty) {
-				final int prime = PRIME;
-				int result = DEFAULT_HASHCODE;
-
-				result = prime * result + ((this.date == null) ? 0 : this.date.hashCode());
-
-				result = prime * result + ((this.hashtag == null) ? 0 : this.hashtag.hashCode());
-
-				result = prime * result + ((this.country == null) ? 0 : this.country.hashCode());
-
-				this.hashCode = result;
-				this.hashCodeDirty = false;
+	private String readString(ObjectInputStream dis) throws IOException{
+		String strReturn = null;
+		int length = 0;
+        length = dis.readInt();
+		if (length == -1) {
+			strReturn = null;
+		} else {
+			if(length > commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets.length) {
+				if(length < 1024 && commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets.length == 0) {
+   					commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[1024];
+				} else {
+   					commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[2 * length];
+   				}
 			}
-			return this.hashCode;
+			dis.readFully(commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets, 0, length);
+			strReturn = new String(commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets, 0, length, utf8Charset);
 		}
+		return strReturn;
+	}
 
-		@Override
-		public boolean equals(Object obj) {
-			if (this == obj)
-				return true;
-			if (obj == null)
-				return false;
-			if (getClass() != obj.getClass())
-				return false;
-			final row9Struct other = (row9Struct) obj;
-
-			if (this.date == null) {
-				if (other.date != null)
-					return false;
-
-			} else if (!this.date.equals(other.date))
-
-				return false;
-
-			if (this.hashtag == null) {
-				if (other.hashtag != null)
-					return false;
-
-			} else if (!this.hashtag.equals(other.hashtag))
-
-				return false;
-
-			if (this.country == null) {
-				if (other.country != null)
-					return false;
-
-			} else if (!this.country.equals(other.country))
-
-				return false;
-
-			return true;
+    private void writeString(String str, ObjectOutputStream dos) throws IOException{
+		if(str == null) {
+            dos.writeInt(-1);
+		} else {
+            byte[] byteArray = str.getBytes(utf8Charset);
+	    	dos.writeInt(byteArray.length);
+			dos.write(byteArray);
+    	}
+    }
+	private Integer readInteger(ObjectInputStream dis) throws IOException{
+		Integer intReturn;
+        int length = 0;
+        length = dis.readByte();
+		if (length == -1) {
+			intReturn = null;
+		} else {
+	    	intReturn = dis.readInt();
 		}
+		return intReturn;
+	}
 
-		public void copyDataTo(row9Struct other) {
+	private void writeInteger(Integer intNum, ObjectOutputStream dos) throws IOException{
+		if(intNum == null) {
+            dos.writeByte(-1);
+		} else {
+			dos.writeByte(0);
+	    	dos.writeInt(intNum);
+    	}
+	}
 
-			other.date = this.date;
-			other.hashtag = this.hashtag;
-			other.country = this.country;
-			other.t_reception = this.t_reception;
+    public void readData(ObjectInputStream dis) {
 
-		}
+		synchronized(commonByteArrayLock_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets) {
 
-		public void copyKeysDataTo(row9Struct other) {
+        	try {
 
-			other.date = this.date;
-			other.hashtag = this.hashtag;
-			other.country = this.country;
-
-		}
-
-		private String readString(ObjectInputStream dis) throws IOException {
-			String strReturn = null;
-			int length = 0;
-			length = dis.readInt();
-			if (length == -1) {
-				strReturn = null;
-			} else {
-				if (length > commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets.length) {
-					if (length < 1024
-							&& commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets.length == 0) {
-						commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[1024];
-					} else {
-						commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[2
-								* length];
-					}
-				}
-				dis.readFully(commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets, 0,
-						length);
-				strReturn = new String(commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets,
-						0, length, utf8Charset);
-			}
-			return strReturn;
-		}
-
-		private void writeString(String str, ObjectOutputStream dos) throws IOException {
-			if (str == null) {
-				dos.writeInt(-1);
-			} else {
-				byte[] byteArray = str.getBytes(utf8Charset);
-				dos.writeInt(byteArray.length);
-				dos.write(byteArray);
-			}
-		}
-
-		private Integer readInteger(ObjectInputStream dis) throws IOException {
-			Integer intReturn;
-			int length = 0;
-			length = dis.readByte();
-			if (length == -1) {
-				intReturn = null;
-			} else {
-				intReturn = dis.readInt();
-			}
-			return intReturn;
-		}
-
-		private void writeInteger(Integer intNum, ObjectOutputStream dos) throws IOException {
-			if (intNum == null) {
-				dos.writeByte(-1);
-			} else {
-				dos.writeByte(0);
-				dos.writeInt(intNum);
-			}
-		}
-
-		public void readData(ObjectInputStream dis) {
-
-			synchronized (commonByteArrayLock_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets) {
-
-				try {
-
-					int length = 0;
-
+        		int length = 0;
+		
 					this.date = readString(dis);
-
+					
 					this.hashtag = readString(dis);
-
+					
 					this.country = readString(dis);
+					
+						this.t_reception = readInteger(dis);
+					
+        	} catch (IOException e) {
+	            throw new RuntimeException(e);
 
-					this.t_reception = readInteger(dis);
+		
 
-				} catch (IOException e) {
-					throw new RuntimeException(e);
+        }
 
+		
+
+      }
+
+
+    }
+
+    public void writeData(ObjectOutputStream dos) {
+        try {
+
+		
+					// String
+				
+						writeString(this.date,dos);
+					
+					// String
+				
+						writeString(this.hashtag,dos);
+					
+					// String
+				
+						writeString(this.country,dos);
+					
+					// Integer
+				
+						writeInteger(this.t_reception,dos);
+					
+        	} catch (IOException e) {
+	            throw new RuntimeException(e);
+        }
+
+
+    }
+
+
+    public String toString() {
+
+		StringBuilder sb = new StringBuilder();
+		sb.append(super.toString());
+		sb.append("[");
+		sb.append("date="+date);
+		sb.append(",hashtag="+hashtag);
+		sb.append(",country="+country);
+		sb.append(",t_reception="+String.valueOf(t_reception));
+	    sb.append("]");
+
+	    return sb.toString();
+    }
+
+    /**
+     * Compare keys
+     */
+    public int compareTo(row9Struct other) {
+
+		int returnValue = -1;
+		
+						returnValue = checkNullsAndCompare(this.date, other.date);
+						if(returnValue != 0) {
+							return returnValue;
+						}
+
+					
+						returnValue = checkNullsAndCompare(this.hashtag, other.hashtag);
+						if(returnValue != 0) {
+							return returnValue;
+						}
+
+					
+						returnValue = checkNullsAndCompare(this.country, other.country);
+						if(returnValue != 0) {
+							return returnValue;
+						}
+
+					
+	    return returnValue;
+    }
+
+
+    private int checkNullsAndCompare(Object object1, Object object2) {
+        int returnValue = 0;
+		if (object1 instanceof Comparable && object2 instanceof Comparable) {
+            returnValue = ((Comparable) object1).compareTo(object2);
+        } else if (object1 != null && object2 != null) {
+            returnValue = compareStrings(object1.toString(), object2.toString());
+        } else if (object1 == null && object2 != null) {
+            returnValue = 1;
+        } else if (object1 != null && object2 == null) {
+            returnValue = -1;
+        } else {
+            returnValue = 0;
+        }
+
+        return returnValue;
+    }
+
+    private int compareStrings(String string1, String string2) {
+        return string1.compareTo(string2);
+    }
+
+
+}
+
+public static class OnRowsEndStructtAggregateRow_3 implements routines.system.IPersistableRow<OnRowsEndStructtAggregateRow_3> {
+    final static byte[] commonByteArrayLock_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[0];
+    static byte[] commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[0];
+	protected static final int DEFAULT_HASHCODE = 1;
+    protected static final int PRIME = 31;
+    protected int hashCode = DEFAULT_HASHCODE;
+    public boolean hashCodeDirty = true;
+
+    public String loopKey;
+
+
+
+	
+			    public String date;
+
+				public String getDate () {
+					return this.date;
 				}
+				
+			    public String hashtag;
 
-			}
+				public String getHashtag () {
+					return this.hashtag;
+				}
+				
+			    public String country;
 
+				public String getCountry () {
+					return this.country;
+				}
+				
+			    public Integer t_reception;
+
+				public Integer getT_reception () {
+					return this.t_reception;
+				}
+				
+
+
+	@Override
+	public int hashCode() {
+		if (this.hashCodeDirty) {
+			final int prime = PRIME;
+			int result = DEFAULT_HASHCODE;
+	
+						result = prime * result + ((this.date == null) ? 0 : this.date.hashCode());
+					
+						result = prime * result + ((this.hashtag == null) ? 0 : this.hashtag.hashCode());
+					
+						result = prime * result + ((this.country == null) ? 0 : this.country.hashCode());
+					
+    		this.hashCode = result;
+    		this.hashCodeDirty = false;
 		}
-
-		public void writeData(ObjectOutputStream dos) {
-			try {
-
-				// String
-
-				writeString(this.date, dos);
-
-				// String
-
-				writeString(this.hashtag, dos);
-
-				// String
-
-				writeString(this.country, dos);
-
-				// Integer
-
-				writeInteger(this.t_reception, dos);
-
-			} catch (IOException e) {
-				throw new RuntimeException(e);
-			}
-
-		}
-
-		public String toString() {
-
-			StringBuilder sb = new StringBuilder();
-			sb.append(super.toString());
-			sb.append("[");
-			sb.append("date=" + date);
-			sb.append(",hashtag=" + hashtag);
-			sb.append(",country=" + country);
-			sb.append(",t_reception=" + String.valueOf(t_reception));
-			sb.append("]");
-
-			return sb.toString();
-		}
-
-		/**
-		 * Compare keys
-		 */
-		public int compareTo(row9Struct other) {
-
-			int returnValue = -1;
-
-			returnValue = checkNullsAndCompare(this.date, other.date);
-			if (returnValue != 0) {
-				return returnValue;
-			}
-
-			returnValue = checkNullsAndCompare(this.hashtag, other.hashtag);
-			if (returnValue != 0) {
-				return returnValue;
-			}
-
-			returnValue = checkNullsAndCompare(this.country, other.country);
-			if (returnValue != 0) {
-				return returnValue;
-			}
-
-			return returnValue;
-		}
-
-		private int checkNullsAndCompare(Object object1, Object object2) {
-			int returnValue = 0;
-			if (object1 instanceof Comparable && object2 instanceof Comparable) {
-				returnValue = ((Comparable) object1).compareTo(object2);
-			} else if (object1 != null && object2 != null) {
-				returnValue = compareStrings(object1.toString(), object2.toString());
-			} else if (object1 == null && object2 != null) {
-				returnValue = 1;
-			} else if (object1 != null && object2 == null) {
-				returnValue = -1;
-			} else {
-				returnValue = 0;
-			}
-
-			return returnValue;
-		}
-
-		private int compareStrings(String string1, String string2) {
-			return string1.compareTo(string2);
-		}
-
+		return this.hashCode;
 	}
 
-	public static class OnRowsEndStructtAggregateRow_3
-			implements routines.system.IPersistableRow<OnRowsEndStructtAggregateRow_3> {
-		final static byte[] commonByteArrayLock_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[0];
-		static byte[] commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[0];
-		protected static final int DEFAULT_HASHCODE = 1;
-		protected static final int PRIME = 31;
-		protected int hashCode = DEFAULT_HASHCODE;
-		public boolean hashCodeDirty = true;
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj) return true;
+		if (obj == null) return false;
+		if (getClass() != obj.getClass()) return false;
+		final OnRowsEndStructtAggregateRow_3 other = (OnRowsEndStructtAggregateRow_3) obj;
+		
+						if (this.date == null) {
+							if (other.date != null)
+								return false;
+						
+						} else if (!this.date.equals(other.date))
+						
+							return false;
+					
+						if (this.hashtag == null) {
+							if (other.hashtag != null)
+								return false;
+						
+						} else if (!this.hashtag.equals(other.hashtag))
+						
+							return false;
+					
+						if (this.country == null) {
+							if (other.country != null)
+								return false;
+						
+						} else if (!this.country.equals(other.country))
+						
+							return false;
+					
 
-		public String loopKey;
+		return true;
+    }
 
-		public String date;
+	public void copyDataTo(OnRowsEndStructtAggregateRow_3 other) {
 
-		public String getDate() {
-			return this.date;
-		}
+		other.date = this.date;
+	            other.hashtag = this.hashtag;
+	            other.country = this.country;
+	            other.t_reception = this.t_reception;
+	            
+	}
 
-		public String hashtag;
+	public void copyKeysDataTo(OnRowsEndStructtAggregateRow_3 other) {
 
-		public String getHashtag() {
-			return this.hashtag;
-		}
+		other.date = this.date;
+	            	other.hashtag = this.hashtag;
+	            	other.country = this.country;
+	            	
+	}
 
-		public String country;
 
-		public String getCountry() {
-			return this.country;
-		}
 
-		public Integer t_reception;
 
-		public Integer getT_reception() {
-			return this.t_reception;
-		}
-
-		@Override
-		public int hashCode() {
-			if (this.hashCodeDirty) {
-				final int prime = PRIME;
-				int result = DEFAULT_HASHCODE;
-
-				result = prime * result + ((this.date == null) ? 0 : this.date.hashCode());
-
-				result = prime * result + ((this.hashtag == null) ? 0 : this.hashtag.hashCode());
-
-				result = prime * result + ((this.country == null) ? 0 : this.country.hashCode());
-
-				this.hashCode = result;
-				this.hashCodeDirty = false;
+	private String readString(ObjectInputStream dis) throws IOException{
+		String strReturn = null;
+		int length = 0;
+        length = dis.readInt();
+		if (length == -1) {
+			strReturn = null;
+		} else {
+			if(length > commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets.length) {
+				if(length < 1024 && commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets.length == 0) {
+   					commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[1024];
+				} else {
+   					commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[2 * length];
+   				}
 			}
-			return this.hashCode;
+			dis.readFully(commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets, 0, length);
+			strReturn = new String(commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets, 0, length, utf8Charset);
 		}
+		return strReturn;
+	}
 
-		@Override
-		public boolean equals(Object obj) {
-			if (this == obj)
-				return true;
-			if (obj == null)
-				return false;
-			if (getClass() != obj.getClass())
-				return false;
-			final OnRowsEndStructtAggregateRow_3 other = (OnRowsEndStructtAggregateRow_3) obj;
-
-			if (this.date == null) {
-				if (other.date != null)
-					return false;
-
-			} else if (!this.date.equals(other.date))
-
-				return false;
-
-			if (this.hashtag == null) {
-				if (other.hashtag != null)
-					return false;
-
-			} else if (!this.hashtag.equals(other.hashtag))
-
-				return false;
-
-			if (this.country == null) {
-				if (other.country != null)
-					return false;
-
-			} else if (!this.country.equals(other.country))
-
-				return false;
-
-			return true;
+    private void writeString(String str, ObjectOutputStream dos) throws IOException{
+		if(str == null) {
+            dos.writeInt(-1);
+		} else {
+            byte[] byteArray = str.getBytes(utf8Charset);
+	    	dos.writeInt(byteArray.length);
+			dos.write(byteArray);
+    	}
+    }
+	private Integer readInteger(ObjectInputStream dis) throws IOException{
+		Integer intReturn;
+        int length = 0;
+        length = dis.readByte();
+		if (length == -1) {
+			intReturn = null;
+		} else {
+	    	intReturn = dis.readInt();
 		}
+		return intReturn;
+	}
 
-		public void copyDataTo(OnRowsEndStructtAggregateRow_3 other) {
+	private void writeInteger(Integer intNum, ObjectOutputStream dos) throws IOException{
+		if(intNum == null) {
+            dos.writeByte(-1);
+		} else {
+			dos.writeByte(0);
+	    	dos.writeInt(intNum);
+    	}
+	}
 
-			other.date = this.date;
-			other.hashtag = this.hashtag;
-			other.country = this.country;
-			other.t_reception = this.t_reception;
+    public void readData(ObjectInputStream dis) {
 
-		}
+		synchronized(commonByteArrayLock_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets) {
 
-		public void copyKeysDataTo(OnRowsEndStructtAggregateRow_3 other) {
+        	try {
 
-			other.date = this.date;
-			other.hashtag = this.hashtag;
-			other.country = this.country;
-
-		}
-
-		private String readString(ObjectInputStream dis) throws IOException {
-			String strReturn = null;
-			int length = 0;
-			length = dis.readInt();
-			if (length == -1) {
-				strReturn = null;
-			} else {
-				if (length > commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets.length) {
-					if (length < 1024
-							&& commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets.length == 0) {
-						commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[1024];
-					} else {
-						commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[2
-								* length];
-					}
-				}
-				dis.readFully(commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets, 0,
-						length);
-				strReturn = new String(commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets,
-						0, length, utf8Charset);
-			}
-			return strReturn;
-		}
-
-		private void writeString(String str, ObjectOutputStream dos) throws IOException {
-			if (str == null) {
-				dos.writeInt(-1);
-			} else {
-				byte[] byteArray = str.getBytes(utf8Charset);
-				dos.writeInt(byteArray.length);
-				dos.write(byteArray);
-			}
-		}
-
-		private Integer readInteger(ObjectInputStream dis) throws IOException {
-			Integer intReturn;
-			int length = 0;
-			length = dis.readByte();
-			if (length == -1) {
-				intReturn = null;
-			} else {
-				intReturn = dis.readInt();
-			}
-			return intReturn;
-		}
-
-		private void writeInteger(Integer intNum, ObjectOutputStream dos) throws IOException {
-			if (intNum == null) {
-				dos.writeByte(-1);
-			} else {
-				dos.writeByte(0);
-				dos.writeInt(intNum);
-			}
-		}
-
-		public void readData(ObjectInputStream dis) {
-
-			synchronized (commonByteArrayLock_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets) {
-
-				try {
-
-					int length = 0;
-
+        		int length = 0;
+		
 					this.date = readString(dis);
-
+					
 					this.hashtag = readString(dis);
-
+					
 					this.country = readString(dis);
+					
+						this.t_reception = readInteger(dis);
+					
+        	} catch (IOException e) {
+	            throw new RuntimeException(e);
 
-					this.t_reception = readInteger(dis);
+		
 
-				} catch (IOException e) {
-					throw new RuntimeException(e);
+        }
 
+		
+
+      }
+
+
+    }
+
+    public void writeData(ObjectOutputStream dos) {
+        try {
+
+		
+					// String
+				
+						writeString(this.date,dos);
+					
+					// String
+				
+						writeString(this.hashtag,dos);
+					
+					// String
+				
+						writeString(this.country,dos);
+					
+					// Integer
+				
+						writeInteger(this.t_reception,dos);
+					
+        	} catch (IOException e) {
+	            throw new RuntimeException(e);
+        }
+
+
+    }
+
+
+    public String toString() {
+
+		StringBuilder sb = new StringBuilder();
+		sb.append(super.toString());
+		sb.append("[");
+		sb.append("date="+date);
+		sb.append(",hashtag="+hashtag);
+		sb.append(",country="+country);
+		sb.append(",t_reception="+String.valueOf(t_reception));
+	    sb.append("]");
+
+	    return sb.toString();
+    }
+
+    /**
+     * Compare keys
+     */
+    public int compareTo(OnRowsEndStructtAggregateRow_3 other) {
+
+		int returnValue = -1;
+		
+						returnValue = checkNullsAndCompare(this.date, other.date);
+						if(returnValue != 0) {
+							return returnValue;
+						}
+
+					
+						returnValue = checkNullsAndCompare(this.hashtag, other.hashtag);
+						if(returnValue != 0) {
+							return returnValue;
+						}
+
+					
+						returnValue = checkNullsAndCompare(this.country, other.country);
+						if(returnValue != 0) {
+							return returnValue;
+						}
+
+					
+	    return returnValue;
+    }
+
+
+    private int checkNullsAndCompare(Object object1, Object object2) {
+        int returnValue = 0;
+		if (object1 instanceof Comparable && object2 instanceof Comparable) {
+            returnValue = ((Comparable) object1).compareTo(object2);
+        } else if (object1 != null && object2 != null) {
+            returnValue = compareStrings(object1.toString(), object2.toString());
+        } else if (object1 == null && object2 != null) {
+            returnValue = 1;
+        } else if (object1 != null && object2 == null) {
+            returnValue = -1;
+        } else {
+            returnValue = 0;
+        }
+
+        return returnValue;
+    }
+
+    private int compareStrings(String string1, String string2) {
+        return string1.compareTo(string2);
+    }
+
+
+}
+
+public static class out2Struct implements routines.system.IPersistableRow<out2Struct> {
+    final static byte[] commonByteArrayLock_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[0];
+    static byte[] commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[0];
+	protected static final int DEFAULT_HASHCODE = 1;
+    protected static final int PRIME = 31;
+    protected int hashCode = DEFAULT_HASHCODE;
+    public boolean hashCodeDirty = true;
+
+    public String loopKey;
+
+
+
+	
+			    public String date;
+
+				public String getDate () {
+					return this.date;
 				}
+				
+			    public String hashtag;
 
-			}
+				public String getHashtag () {
+					return this.hashtag;
+				}
+				
+			    public String country;
 
+				public String getCountry () {
+					return this.country;
+				}
+				
+			    public Integer t_reception;
+
+				public Integer getT_reception () {
+					return this.t_reception;
+				}
+				
+
+
+	@Override
+	public int hashCode() {
+		if (this.hashCodeDirty) {
+			final int prime = PRIME;
+			int result = DEFAULT_HASHCODE;
+	
+						result = prime * result + ((this.date == null) ? 0 : this.date.hashCode());
+					
+						result = prime * result + ((this.hashtag == null) ? 0 : this.hashtag.hashCode());
+					
+						result = prime * result + ((this.country == null) ? 0 : this.country.hashCode());
+					
+    		this.hashCode = result;
+    		this.hashCodeDirty = false;
 		}
-
-		public void writeData(ObjectOutputStream dos) {
-			try {
-
-				// String
-
-				writeString(this.date, dos);
-
-				// String
-
-				writeString(this.hashtag, dos);
-
-				// String
-
-				writeString(this.country, dos);
-
-				// Integer
-
-				writeInteger(this.t_reception, dos);
-
-			} catch (IOException e) {
-				throw new RuntimeException(e);
-			}
-
-		}
-
-		public String toString() {
-
-			StringBuilder sb = new StringBuilder();
-			sb.append(super.toString());
-			sb.append("[");
-			sb.append("date=" + date);
-			sb.append(",hashtag=" + hashtag);
-			sb.append(",country=" + country);
-			sb.append(",t_reception=" + String.valueOf(t_reception));
-			sb.append("]");
-
-			return sb.toString();
-		}
-
-		/**
-		 * Compare keys
-		 */
-		public int compareTo(OnRowsEndStructtAggregateRow_3 other) {
-
-			int returnValue = -1;
-
-			returnValue = checkNullsAndCompare(this.date, other.date);
-			if (returnValue != 0) {
-				return returnValue;
-			}
-
-			returnValue = checkNullsAndCompare(this.hashtag, other.hashtag);
-			if (returnValue != 0) {
-				return returnValue;
-			}
-
-			returnValue = checkNullsAndCompare(this.country, other.country);
-			if (returnValue != 0) {
-				return returnValue;
-			}
-
-			return returnValue;
-		}
-
-		private int checkNullsAndCompare(Object object1, Object object2) {
-			int returnValue = 0;
-			if (object1 instanceof Comparable && object2 instanceof Comparable) {
-				returnValue = ((Comparable) object1).compareTo(object2);
-			} else if (object1 != null && object2 != null) {
-				returnValue = compareStrings(object1.toString(), object2.toString());
-			} else if (object1 == null && object2 != null) {
-				returnValue = 1;
-			} else if (object1 != null && object2 == null) {
-				returnValue = -1;
-			} else {
-				returnValue = 0;
-			}
-
-			return returnValue;
-		}
-
-		private int compareStrings(String string1, String string2) {
-			return string1.compareTo(string2);
-		}
-
+		return this.hashCode;
 	}
 
-	public static class out2Struct implements routines.system.IPersistableRow<out2Struct> {
-		final static byte[] commonByteArrayLock_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[0];
-		static byte[] commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[0];
-		protected static final int DEFAULT_HASHCODE = 1;
-		protected static final int PRIME = 31;
-		protected int hashCode = DEFAULT_HASHCODE;
-		public boolean hashCodeDirty = true;
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj) return true;
+		if (obj == null) return false;
+		if (getClass() != obj.getClass()) return false;
+		final out2Struct other = (out2Struct) obj;
+		
+						if (this.date == null) {
+							if (other.date != null)
+								return false;
+						
+						} else if (!this.date.equals(other.date))
+						
+							return false;
+					
+						if (this.hashtag == null) {
+							if (other.hashtag != null)
+								return false;
+						
+						} else if (!this.hashtag.equals(other.hashtag))
+						
+							return false;
+					
+						if (this.country == null) {
+							if (other.country != null)
+								return false;
+						
+						} else if (!this.country.equals(other.country))
+						
+							return false;
+					
 
-		public String loopKey;
+		return true;
+    }
 
-		public String date;
+	public void copyDataTo(out2Struct other) {
 
-		public String getDate() {
-			return this.date;
-		}
+		other.date = this.date;
+	            other.hashtag = this.hashtag;
+	            other.country = this.country;
+	            other.t_reception = this.t_reception;
+	            
+	}
 
-		public String hashtag;
+	public void copyKeysDataTo(out2Struct other) {
 
-		public String getHashtag() {
-			return this.hashtag;
-		}
+		other.date = this.date;
+	            	other.hashtag = this.hashtag;
+	            	other.country = this.country;
+	            	
+	}
 
-		public String country;
 
-		public String getCountry() {
-			return this.country;
-		}
 
-		public Integer t_reception;
 
-		public Integer getT_reception() {
-			return this.t_reception;
-		}
-
-		@Override
-		public int hashCode() {
-			if (this.hashCodeDirty) {
-				final int prime = PRIME;
-				int result = DEFAULT_HASHCODE;
-
-				result = prime * result + ((this.date == null) ? 0 : this.date.hashCode());
-
-				result = prime * result + ((this.hashtag == null) ? 0 : this.hashtag.hashCode());
-
-				result = prime * result + ((this.country == null) ? 0 : this.country.hashCode());
-
-				this.hashCode = result;
-				this.hashCodeDirty = false;
+	private String readString(ObjectInputStream dis) throws IOException{
+		String strReturn = null;
+		int length = 0;
+        length = dis.readInt();
+		if (length == -1) {
+			strReturn = null;
+		} else {
+			if(length > commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets.length) {
+				if(length < 1024 && commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets.length == 0) {
+   					commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[1024];
+				} else {
+   					commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[2 * length];
+   				}
 			}
-			return this.hashCode;
+			dis.readFully(commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets, 0, length);
+			strReturn = new String(commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets, 0, length, utf8Charset);
 		}
+		return strReturn;
+	}
 
-		@Override
-		public boolean equals(Object obj) {
-			if (this == obj)
-				return true;
-			if (obj == null)
-				return false;
-			if (getClass() != obj.getClass())
-				return false;
-			final out2Struct other = (out2Struct) obj;
-
-			if (this.date == null) {
-				if (other.date != null)
-					return false;
-
-			} else if (!this.date.equals(other.date))
-
-				return false;
-
-			if (this.hashtag == null) {
-				if (other.hashtag != null)
-					return false;
-
-			} else if (!this.hashtag.equals(other.hashtag))
-
-				return false;
-
-			if (this.country == null) {
-				if (other.country != null)
-					return false;
-
-			} else if (!this.country.equals(other.country))
-
-				return false;
-
-			return true;
+    private void writeString(String str, ObjectOutputStream dos) throws IOException{
+		if(str == null) {
+            dos.writeInt(-1);
+		} else {
+            byte[] byteArray = str.getBytes(utf8Charset);
+	    	dos.writeInt(byteArray.length);
+			dos.write(byteArray);
+    	}
+    }
+	private Integer readInteger(ObjectInputStream dis) throws IOException{
+		Integer intReturn;
+        int length = 0;
+        length = dis.readByte();
+		if (length == -1) {
+			intReturn = null;
+		} else {
+	    	intReturn = dis.readInt();
 		}
+		return intReturn;
+	}
 
-		public void copyDataTo(out2Struct other) {
+	private void writeInteger(Integer intNum, ObjectOutputStream dos) throws IOException{
+		if(intNum == null) {
+            dos.writeByte(-1);
+		} else {
+			dos.writeByte(0);
+	    	dos.writeInt(intNum);
+    	}
+	}
 
-			other.date = this.date;
-			other.hashtag = this.hashtag;
-			other.country = this.country;
-			other.t_reception = this.t_reception;
+    public void readData(ObjectInputStream dis) {
 
-		}
+		synchronized(commonByteArrayLock_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets) {
 
-		public void copyKeysDataTo(out2Struct other) {
+        	try {
 
-			other.date = this.date;
-			other.hashtag = this.hashtag;
-			other.country = this.country;
-
-		}
-
-		private String readString(ObjectInputStream dis) throws IOException {
-			String strReturn = null;
-			int length = 0;
-			length = dis.readInt();
-			if (length == -1) {
-				strReturn = null;
-			} else {
-				if (length > commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets.length) {
-					if (length < 1024
-							&& commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets.length == 0) {
-						commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[1024];
-					} else {
-						commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[2
-								* length];
-					}
-				}
-				dis.readFully(commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets, 0,
-						length);
-				strReturn = new String(commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets,
-						0, length, utf8Charset);
-			}
-			return strReturn;
-		}
-
-		private void writeString(String str, ObjectOutputStream dos) throws IOException {
-			if (str == null) {
-				dos.writeInt(-1);
-			} else {
-				byte[] byteArray = str.getBytes(utf8Charset);
-				dos.writeInt(byteArray.length);
-				dos.write(byteArray);
-			}
-		}
-
-		private Integer readInteger(ObjectInputStream dis) throws IOException {
-			Integer intReturn;
-			int length = 0;
-			length = dis.readByte();
-			if (length == -1) {
-				intReturn = null;
-			} else {
-				intReturn = dis.readInt();
-			}
-			return intReturn;
-		}
-
-		private void writeInteger(Integer intNum, ObjectOutputStream dos) throws IOException {
-			if (intNum == null) {
-				dos.writeByte(-1);
-			} else {
-				dos.writeByte(0);
-				dos.writeInt(intNum);
-			}
-		}
-
-		public void readData(ObjectInputStream dis) {
-
-			synchronized (commonByteArrayLock_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets) {
-
-				try {
-
-					int length = 0;
-
+        		int length = 0;
+		
 					this.date = readString(dis);
-
+					
 					this.hashtag = readString(dis);
-
+					
 					this.country = readString(dis);
+					
+						this.t_reception = readInteger(dis);
+					
+        	} catch (IOException e) {
+	            throw new RuntimeException(e);
 
-					this.t_reception = readInteger(dis);
+		
 
-				} catch (IOException e) {
-					throw new RuntimeException(e);
+        }
 
+		
+
+      }
+
+
+    }
+
+    public void writeData(ObjectOutputStream dos) {
+        try {
+
+		
+					// String
+				
+						writeString(this.date,dos);
+					
+					// String
+				
+						writeString(this.hashtag,dos);
+					
+					// String
+				
+						writeString(this.country,dos);
+					
+					// Integer
+				
+						writeInteger(this.t_reception,dos);
+					
+        	} catch (IOException e) {
+	            throw new RuntimeException(e);
+        }
+
+
+    }
+
+
+    public String toString() {
+
+		StringBuilder sb = new StringBuilder();
+		sb.append(super.toString());
+		sb.append("[");
+		sb.append("date="+date);
+		sb.append(",hashtag="+hashtag);
+		sb.append(",country="+country);
+		sb.append(",t_reception="+String.valueOf(t_reception));
+	    sb.append("]");
+
+	    return sb.toString();
+    }
+
+    /**
+     * Compare keys
+     */
+    public int compareTo(out2Struct other) {
+
+		int returnValue = -1;
+		
+						returnValue = checkNullsAndCompare(this.date, other.date);
+						if(returnValue != 0) {
+							return returnValue;
+						}
+
+					
+						returnValue = checkNullsAndCompare(this.hashtag, other.hashtag);
+						if(returnValue != 0) {
+							return returnValue;
+						}
+
+					
+						returnValue = checkNullsAndCompare(this.country, other.country);
+						if(returnValue != 0) {
+							return returnValue;
+						}
+
+					
+	    return returnValue;
+    }
+
+
+    private int checkNullsAndCompare(Object object1, Object object2) {
+        int returnValue = 0;
+		if (object1 instanceof Comparable && object2 instanceof Comparable) {
+            returnValue = ((Comparable) object1).compareTo(object2);
+        } else if (object1 != null && object2 != null) {
+            returnValue = compareStrings(object1.toString(), object2.toString());
+        } else if (object1 == null && object2 != null) {
+            returnValue = 1;
+        } else if (object1 != null && object2 == null) {
+            returnValue = -1;
+        } else {
+            returnValue = 0;
+        }
+
+        return returnValue;
+    }
+
+    private int compareStrings(String string1, String string2) {
+        return string1.compareTo(string2);
+    }
+
+
+}
+
+public static class posStruct implements routines.system.IPersistableRow<posStruct> {
+    final static byte[] commonByteArrayLock_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[0];
+    static byte[] commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[0];
+	protected static final int DEFAULT_HASHCODE = 1;
+    protected static final int PRIME = 31;
+    protected int hashCode = DEFAULT_HASHCODE;
+    public boolean hashCodeDirty = true;
+
+    public String loopKey;
+
+
+
+	
+			    public String date;
+
+				public String getDate () {
+					return this.date;
 				}
+				
+			    public String hashtag;
 
-			}
+				public String getHashtag () {
+					return this.hashtag;
+				}
+				
+			    public String country;
 
+				public String getCountry () {
+					return this.country;
+				}
+				
+			    public Integer s_positivos;
+
+				public Integer getS_positivos () {
+					return this.s_positivos;
+				}
+				
+
+
+	@Override
+	public int hashCode() {
+		if (this.hashCodeDirty) {
+			final int prime = PRIME;
+			int result = DEFAULT_HASHCODE;
+	
+						result = prime * result + ((this.date == null) ? 0 : this.date.hashCode());
+					
+						result = prime * result + ((this.hashtag == null) ? 0 : this.hashtag.hashCode());
+					
+						result = prime * result + ((this.country == null) ? 0 : this.country.hashCode());
+					
+    		this.hashCode = result;
+    		this.hashCodeDirty = false;
 		}
-
-		public void writeData(ObjectOutputStream dos) {
-			try {
-
-				// String
-
-				writeString(this.date, dos);
-
-				// String
-
-				writeString(this.hashtag, dos);
-
-				// String
-
-				writeString(this.country, dos);
-
-				// Integer
-
-				writeInteger(this.t_reception, dos);
-
-			} catch (IOException e) {
-				throw new RuntimeException(e);
-			}
-
-		}
-
-		public String toString() {
-
-			StringBuilder sb = new StringBuilder();
-			sb.append(super.toString());
-			sb.append("[");
-			sb.append("date=" + date);
-			sb.append(",hashtag=" + hashtag);
-			sb.append(",country=" + country);
-			sb.append(",t_reception=" + String.valueOf(t_reception));
-			sb.append("]");
-
-			return sb.toString();
-		}
-
-		/**
-		 * Compare keys
-		 */
-		public int compareTo(out2Struct other) {
-
-			int returnValue = -1;
-
-			returnValue = checkNullsAndCompare(this.date, other.date);
-			if (returnValue != 0) {
-				return returnValue;
-			}
-
-			returnValue = checkNullsAndCompare(this.hashtag, other.hashtag);
-			if (returnValue != 0) {
-				return returnValue;
-			}
-
-			returnValue = checkNullsAndCompare(this.country, other.country);
-			if (returnValue != 0) {
-				return returnValue;
-			}
-
-			return returnValue;
-		}
-
-		private int checkNullsAndCompare(Object object1, Object object2) {
-			int returnValue = 0;
-			if (object1 instanceof Comparable && object2 instanceof Comparable) {
-				returnValue = ((Comparable) object1).compareTo(object2);
-			} else if (object1 != null && object2 != null) {
-				returnValue = compareStrings(object1.toString(), object2.toString());
-			} else if (object1 == null && object2 != null) {
-				returnValue = 1;
-			} else if (object1 != null && object2 == null) {
-				returnValue = -1;
-			} else {
-				returnValue = 0;
-			}
-
-			return returnValue;
-		}
-
-		private int compareStrings(String string1, String string2) {
-			return string1.compareTo(string2);
-		}
-
+		return this.hashCode;
 	}
 
-	public static class posStruct implements routines.system.IPersistableRow<posStruct> {
-		final static byte[] commonByteArrayLock_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[0];
-		static byte[] commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[0];
-		protected static final int DEFAULT_HASHCODE = 1;
-		protected static final int PRIME = 31;
-		protected int hashCode = DEFAULT_HASHCODE;
-		public boolean hashCodeDirty = true;
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj) return true;
+		if (obj == null) return false;
+		if (getClass() != obj.getClass()) return false;
+		final posStruct other = (posStruct) obj;
+		
+						if (this.date == null) {
+							if (other.date != null)
+								return false;
+						
+						} else if (!this.date.equals(other.date))
+						
+							return false;
+					
+						if (this.hashtag == null) {
+							if (other.hashtag != null)
+								return false;
+						
+						} else if (!this.hashtag.equals(other.hashtag))
+						
+							return false;
+					
+						if (this.country == null) {
+							if (other.country != null)
+								return false;
+						
+						} else if (!this.country.equals(other.country))
+						
+							return false;
+					
 
-		public String loopKey;
+		return true;
+    }
 
-		public String date;
+	public void copyDataTo(posStruct other) {
 
-		public String getDate() {
-			return this.date;
-		}
+		other.date = this.date;
+	            other.hashtag = this.hashtag;
+	            other.country = this.country;
+	            other.s_positivos = this.s_positivos;
+	            
+	}
 
-		public String hashtag;
+	public void copyKeysDataTo(posStruct other) {
 
-		public String getHashtag() {
-			return this.hashtag;
-		}
+		other.date = this.date;
+	            	other.hashtag = this.hashtag;
+	            	other.country = this.country;
+	            	
+	}
 
-		public String country;
 
-		public String getCountry() {
-			return this.country;
-		}
 
-		public Integer s_positivos;
 
-		public Integer getS_positivos() {
-			return this.s_positivos;
-		}
-
-		@Override
-		public int hashCode() {
-			if (this.hashCodeDirty) {
-				final int prime = PRIME;
-				int result = DEFAULT_HASHCODE;
-
-				result = prime * result + ((this.date == null) ? 0 : this.date.hashCode());
-
-				result = prime * result + ((this.hashtag == null) ? 0 : this.hashtag.hashCode());
-
-				result = prime * result + ((this.country == null) ? 0 : this.country.hashCode());
-
-				this.hashCode = result;
-				this.hashCodeDirty = false;
+	private String readString(ObjectInputStream dis) throws IOException{
+		String strReturn = null;
+		int length = 0;
+        length = dis.readInt();
+		if (length == -1) {
+			strReturn = null;
+		} else {
+			if(length > commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets.length) {
+				if(length < 1024 && commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets.length == 0) {
+   					commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[1024];
+				} else {
+   					commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[2 * length];
+   				}
 			}
-			return this.hashCode;
+			dis.readFully(commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets, 0, length);
+			strReturn = new String(commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets, 0, length, utf8Charset);
 		}
+		return strReturn;
+	}
 
-		@Override
-		public boolean equals(Object obj) {
-			if (this == obj)
-				return true;
-			if (obj == null)
-				return false;
-			if (getClass() != obj.getClass())
-				return false;
-			final posStruct other = (posStruct) obj;
-
-			if (this.date == null) {
-				if (other.date != null)
-					return false;
-
-			} else if (!this.date.equals(other.date))
-
-				return false;
-
-			if (this.hashtag == null) {
-				if (other.hashtag != null)
-					return false;
-
-			} else if (!this.hashtag.equals(other.hashtag))
-
-				return false;
-
-			if (this.country == null) {
-				if (other.country != null)
-					return false;
-
-			} else if (!this.country.equals(other.country))
-
-				return false;
-
-			return true;
+    private void writeString(String str, ObjectOutputStream dos) throws IOException{
+		if(str == null) {
+            dos.writeInt(-1);
+		} else {
+            byte[] byteArray = str.getBytes(utf8Charset);
+	    	dos.writeInt(byteArray.length);
+			dos.write(byteArray);
+    	}
+    }
+	private Integer readInteger(ObjectInputStream dis) throws IOException{
+		Integer intReturn;
+        int length = 0;
+        length = dis.readByte();
+		if (length == -1) {
+			intReturn = null;
+		} else {
+	    	intReturn = dis.readInt();
 		}
+		return intReturn;
+	}
 
-		public void copyDataTo(posStruct other) {
+	private void writeInteger(Integer intNum, ObjectOutputStream dos) throws IOException{
+		if(intNum == null) {
+            dos.writeByte(-1);
+		} else {
+			dos.writeByte(0);
+	    	dos.writeInt(intNum);
+    	}
+	}
 
-			other.date = this.date;
-			other.hashtag = this.hashtag;
-			other.country = this.country;
-			other.s_positivos = this.s_positivos;
+    public void readData(ObjectInputStream dis) {
 
-		}
+		synchronized(commonByteArrayLock_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets) {
 
-		public void copyKeysDataTo(posStruct other) {
+        	try {
 
-			other.date = this.date;
-			other.hashtag = this.hashtag;
-			other.country = this.country;
-
-		}
-
-		private String readString(ObjectInputStream dis) throws IOException {
-			String strReturn = null;
-			int length = 0;
-			length = dis.readInt();
-			if (length == -1) {
-				strReturn = null;
-			} else {
-				if (length > commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets.length) {
-					if (length < 1024
-							&& commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets.length == 0) {
-						commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[1024];
-					} else {
-						commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[2
-								* length];
-					}
-				}
-				dis.readFully(commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets, 0,
-						length);
-				strReturn = new String(commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets,
-						0, length, utf8Charset);
-			}
-			return strReturn;
-		}
-
-		private void writeString(String str, ObjectOutputStream dos) throws IOException {
-			if (str == null) {
-				dos.writeInt(-1);
-			} else {
-				byte[] byteArray = str.getBytes(utf8Charset);
-				dos.writeInt(byteArray.length);
-				dos.write(byteArray);
-			}
-		}
-
-		private Integer readInteger(ObjectInputStream dis) throws IOException {
-			Integer intReturn;
-			int length = 0;
-			length = dis.readByte();
-			if (length == -1) {
-				intReturn = null;
-			} else {
-				intReturn = dis.readInt();
-			}
-			return intReturn;
-		}
-
-		private void writeInteger(Integer intNum, ObjectOutputStream dos) throws IOException {
-			if (intNum == null) {
-				dos.writeByte(-1);
-			} else {
-				dos.writeByte(0);
-				dos.writeInt(intNum);
-			}
-		}
-
-		public void readData(ObjectInputStream dis) {
-
-			synchronized (commonByteArrayLock_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets) {
-
-				try {
-
-					int length = 0;
-
+        		int length = 0;
+		
 					this.date = readString(dis);
-
+					
 					this.hashtag = readString(dis);
-
+					
 					this.country = readString(dis);
+					
+						this.s_positivos = readInteger(dis);
+					
+        	} catch (IOException e) {
+	            throw new RuntimeException(e);
 
-					this.s_positivos = readInteger(dis);
+		
 
-				} catch (IOException e) {
-					throw new RuntimeException(e);
+        }
 
+		
+
+      }
+
+
+    }
+
+    public void writeData(ObjectOutputStream dos) {
+        try {
+
+		
+					// String
+				
+						writeString(this.date,dos);
+					
+					// String
+				
+						writeString(this.hashtag,dos);
+					
+					// String
+				
+						writeString(this.country,dos);
+					
+					// Integer
+				
+						writeInteger(this.s_positivos,dos);
+					
+        	} catch (IOException e) {
+	            throw new RuntimeException(e);
+        }
+
+
+    }
+
+
+    public String toString() {
+
+		StringBuilder sb = new StringBuilder();
+		sb.append(super.toString());
+		sb.append("[");
+		sb.append("date="+date);
+		sb.append(",hashtag="+hashtag);
+		sb.append(",country="+country);
+		sb.append(",s_positivos="+String.valueOf(s_positivos));
+	    sb.append("]");
+
+	    return sb.toString();
+    }
+
+    /**
+     * Compare keys
+     */
+    public int compareTo(posStruct other) {
+
+		int returnValue = -1;
+		
+						returnValue = checkNullsAndCompare(this.date, other.date);
+						if(returnValue != 0) {
+							return returnValue;
+						}
+
+					
+						returnValue = checkNullsAndCompare(this.hashtag, other.hashtag);
+						if(returnValue != 0) {
+							return returnValue;
+						}
+
+					
+						returnValue = checkNullsAndCompare(this.country, other.country);
+						if(returnValue != 0) {
+							return returnValue;
+						}
+
+					
+	    return returnValue;
+    }
+
+
+    private int checkNullsAndCompare(Object object1, Object object2) {
+        int returnValue = 0;
+		if (object1 instanceof Comparable && object2 instanceof Comparable) {
+            returnValue = ((Comparable) object1).compareTo(object2);
+        } else if (object1 != null && object2 != null) {
+            returnValue = compareStrings(object1.toString(), object2.toString());
+        } else if (object1 == null && object2 != null) {
+            returnValue = 1;
+        } else if (object1 != null && object2 == null) {
+            returnValue = -1;
+        } else {
+            returnValue = 0;
+        }
+
+        return returnValue;
+    }
+
+    private int compareStrings(String string1, String string2) {
+        return string1.compareTo(string2);
+    }
+
+
+}
+
+public static class negStruct implements routines.system.IPersistableRow<negStruct> {
+    final static byte[] commonByteArrayLock_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[0];
+    static byte[] commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[0];
+	protected static final int DEFAULT_HASHCODE = 1;
+    protected static final int PRIME = 31;
+    protected int hashCode = DEFAULT_HASHCODE;
+    public boolean hashCodeDirty = true;
+
+    public String loopKey;
+
+
+
+	
+			    public String date;
+
+				public String getDate () {
+					return this.date;
 				}
+				
+			    public String hashtag;
 
-			}
+				public String getHashtag () {
+					return this.hashtag;
+				}
+				
+			    public String country;
 
+				public String getCountry () {
+					return this.country;
+				}
+				
+			    public Integer s_negativos;
+
+				public Integer getS_negativos () {
+					return this.s_negativos;
+				}
+				
+
+
+	@Override
+	public int hashCode() {
+		if (this.hashCodeDirty) {
+			final int prime = PRIME;
+			int result = DEFAULT_HASHCODE;
+	
+						result = prime * result + ((this.date == null) ? 0 : this.date.hashCode());
+					
+						result = prime * result + ((this.hashtag == null) ? 0 : this.hashtag.hashCode());
+					
+						result = prime * result + ((this.country == null) ? 0 : this.country.hashCode());
+					
+    		this.hashCode = result;
+    		this.hashCodeDirty = false;
 		}
-
-		public void writeData(ObjectOutputStream dos) {
-			try {
-
-				// String
-
-				writeString(this.date, dos);
-
-				// String
-
-				writeString(this.hashtag, dos);
-
-				// String
-
-				writeString(this.country, dos);
-
-				// Integer
-
-				writeInteger(this.s_positivos, dos);
-
-			} catch (IOException e) {
-				throw new RuntimeException(e);
-			}
-
-		}
-
-		public String toString() {
-
-			StringBuilder sb = new StringBuilder();
-			sb.append(super.toString());
-			sb.append("[");
-			sb.append("date=" + date);
-			sb.append(",hashtag=" + hashtag);
-			sb.append(",country=" + country);
-			sb.append(",s_positivos=" + String.valueOf(s_positivos));
-			sb.append("]");
-
-			return sb.toString();
-		}
-
-		/**
-		 * Compare keys
-		 */
-		public int compareTo(posStruct other) {
-
-			int returnValue = -1;
-
-			returnValue = checkNullsAndCompare(this.date, other.date);
-			if (returnValue != 0) {
-				return returnValue;
-			}
-
-			returnValue = checkNullsAndCompare(this.hashtag, other.hashtag);
-			if (returnValue != 0) {
-				return returnValue;
-			}
-
-			returnValue = checkNullsAndCompare(this.country, other.country);
-			if (returnValue != 0) {
-				return returnValue;
-			}
-
-			return returnValue;
-		}
-
-		private int checkNullsAndCompare(Object object1, Object object2) {
-			int returnValue = 0;
-			if (object1 instanceof Comparable && object2 instanceof Comparable) {
-				returnValue = ((Comparable) object1).compareTo(object2);
-			} else if (object1 != null && object2 != null) {
-				returnValue = compareStrings(object1.toString(), object2.toString());
-			} else if (object1 == null && object2 != null) {
-				returnValue = 1;
-			} else if (object1 != null && object2 == null) {
-				returnValue = -1;
-			} else {
-				returnValue = 0;
-			}
-
-			return returnValue;
-		}
-
-		private int compareStrings(String string1, String string2) {
-			return string1.compareTo(string2);
-		}
-
+		return this.hashCode;
 	}
 
-	public static class negStruct implements routines.system.IPersistableRow<negStruct> {
-		final static byte[] commonByteArrayLock_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[0];
-		static byte[] commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[0];
-		protected static final int DEFAULT_HASHCODE = 1;
-		protected static final int PRIME = 31;
-		protected int hashCode = DEFAULT_HASHCODE;
-		public boolean hashCodeDirty = true;
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj) return true;
+		if (obj == null) return false;
+		if (getClass() != obj.getClass()) return false;
+		final negStruct other = (negStruct) obj;
+		
+						if (this.date == null) {
+							if (other.date != null)
+								return false;
+						
+						} else if (!this.date.equals(other.date))
+						
+							return false;
+					
+						if (this.hashtag == null) {
+							if (other.hashtag != null)
+								return false;
+						
+						} else if (!this.hashtag.equals(other.hashtag))
+						
+							return false;
+					
+						if (this.country == null) {
+							if (other.country != null)
+								return false;
+						
+						} else if (!this.country.equals(other.country))
+						
+							return false;
+					
 
-		public String loopKey;
+		return true;
+    }
 
-		public String date;
+	public void copyDataTo(negStruct other) {
 
-		public String getDate() {
-			return this.date;
-		}
+		other.date = this.date;
+	            other.hashtag = this.hashtag;
+	            other.country = this.country;
+	            other.s_negativos = this.s_negativos;
+	            
+	}
 
-		public String hashtag;
+	public void copyKeysDataTo(negStruct other) {
 
-		public String getHashtag() {
-			return this.hashtag;
-		}
+		other.date = this.date;
+	            	other.hashtag = this.hashtag;
+	            	other.country = this.country;
+	            	
+	}
 
-		public String country;
 
-		public String getCountry() {
-			return this.country;
-		}
 
-		public Integer s_negativos;
 
-		public Integer getS_negativos() {
-			return this.s_negativos;
-		}
-
-		@Override
-		public int hashCode() {
-			if (this.hashCodeDirty) {
-				final int prime = PRIME;
-				int result = DEFAULT_HASHCODE;
-
-				result = prime * result + ((this.date == null) ? 0 : this.date.hashCode());
-
-				result = prime * result + ((this.hashtag == null) ? 0 : this.hashtag.hashCode());
-
-				result = prime * result + ((this.country == null) ? 0 : this.country.hashCode());
-
-				this.hashCode = result;
-				this.hashCodeDirty = false;
+	private String readString(ObjectInputStream dis) throws IOException{
+		String strReturn = null;
+		int length = 0;
+        length = dis.readInt();
+		if (length == -1) {
+			strReturn = null;
+		} else {
+			if(length > commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets.length) {
+				if(length < 1024 && commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets.length == 0) {
+   					commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[1024];
+				} else {
+   					commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[2 * length];
+   				}
 			}
-			return this.hashCode;
+			dis.readFully(commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets, 0, length);
+			strReturn = new String(commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets, 0, length, utf8Charset);
 		}
+		return strReturn;
+	}
 
-		@Override
-		public boolean equals(Object obj) {
-			if (this == obj)
-				return true;
-			if (obj == null)
-				return false;
-			if (getClass() != obj.getClass())
-				return false;
-			final negStruct other = (negStruct) obj;
-
-			if (this.date == null) {
-				if (other.date != null)
-					return false;
-
-			} else if (!this.date.equals(other.date))
-
-				return false;
-
-			if (this.hashtag == null) {
-				if (other.hashtag != null)
-					return false;
-
-			} else if (!this.hashtag.equals(other.hashtag))
-
-				return false;
-
-			if (this.country == null) {
-				if (other.country != null)
-					return false;
-
-			} else if (!this.country.equals(other.country))
-
-				return false;
-
-			return true;
+    private void writeString(String str, ObjectOutputStream dos) throws IOException{
+		if(str == null) {
+            dos.writeInt(-1);
+		} else {
+            byte[] byteArray = str.getBytes(utf8Charset);
+	    	dos.writeInt(byteArray.length);
+			dos.write(byteArray);
+    	}
+    }
+	private Integer readInteger(ObjectInputStream dis) throws IOException{
+		Integer intReturn;
+        int length = 0;
+        length = dis.readByte();
+		if (length == -1) {
+			intReturn = null;
+		} else {
+	    	intReturn = dis.readInt();
 		}
+		return intReturn;
+	}
 
-		public void copyDataTo(negStruct other) {
+	private void writeInteger(Integer intNum, ObjectOutputStream dos) throws IOException{
+		if(intNum == null) {
+            dos.writeByte(-1);
+		} else {
+			dos.writeByte(0);
+	    	dos.writeInt(intNum);
+    	}
+	}
 
-			other.date = this.date;
-			other.hashtag = this.hashtag;
-			other.country = this.country;
-			other.s_negativos = this.s_negativos;
+    public void readData(ObjectInputStream dis) {
 
-		}
+		synchronized(commonByteArrayLock_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets) {
 
-		public void copyKeysDataTo(negStruct other) {
+        	try {
 
-			other.date = this.date;
-			other.hashtag = this.hashtag;
-			other.country = this.country;
-
-		}
-
-		private String readString(ObjectInputStream dis) throws IOException {
-			String strReturn = null;
-			int length = 0;
-			length = dis.readInt();
-			if (length == -1) {
-				strReturn = null;
-			} else {
-				if (length > commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets.length) {
-					if (length < 1024
-							&& commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets.length == 0) {
-						commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[1024];
-					} else {
-						commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[2
-								* length];
-					}
-				}
-				dis.readFully(commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets, 0,
-						length);
-				strReturn = new String(commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets,
-						0, length, utf8Charset);
-			}
-			return strReturn;
-		}
-
-		private void writeString(String str, ObjectOutputStream dos) throws IOException {
-			if (str == null) {
-				dos.writeInt(-1);
-			} else {
-				byte[] byteArray = str.getBytes(utf8Charset);
-				dos.writeInt(byteArray.length);
-				dos.write(byteArray);
-			}
-		}
-
-		private Integer readInteger(ObjectInputStream dis) throws IOException {
-			Integer intReturn;
-			int length = 0;
-			length = dis.readByte();
-			if (length == -1) {
-				intReturn = null;
-			} else {
-				intReturn = dis.readInt();
-			}
-			return intReturn;
-		}
-
-		private void writeInteger(Integer intNum, ObjectOutputStream dos) throws IOException {
-			if (intNum == null) {
-				dos.writeByte(-1);
-			} else {
-				dos.writeByte(0);
-				dos.writeInt(intNum);
-			}
-		}
-
-		public void readData(ObjectInputStream dis) {
-
-			synchronized (commonByteArrayLock_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets) {
-
-				try {
-
-					int length = 0;
-
+        		int length = 0;
+		
 					this.date = readString(dis);
-
+					
 					this.hashtag = readString(dis);
-
+					
 					this.country = readString(dis);
+					
+						this.s_negativos = readInteger(dis);
+					
+        	} catch (IOException e) {
+	            throw new RuntimeException(e);
 
-					this.s_negativos = readInteger(dis);
+		
 
-				} catch (IOException e) {
-					throw new RuntimeException(e);
+        }
 
+		
+
+      }
+
+
+    }
+
+    public void writeData(ObjectOutputStream dos) {
+        try {
+
+		
+					// String
+				
+						writeString(this.date,dos);
+					
+					// String
+				
+						writeString(this.hashtag,dos);
+					
+					// String
+				
+						writeString(this.country,dos);
+					
+					// Integer
+				
+						writeInteger(this.s_negativos,dos);
+					
+        	} catch (IOException e) {
+	            throw new RuntimeException(e);
+        }
+
+
+    }
+
+
+    public String toString() {
+
+		StringBuilder sb = new StringBuilder();
+		sb.append(super.toString());
+		sb.append("[");
+		sb.append("date="+date);
+		sb.append(",hashtag="+hashtag);
+		sb.append(",country="+country);
+		sb.append(",s_negativos="+String.valueOf(s_negativos));
+	    sb.append("]");
+
+	    return sb.toString();
+    }
+
+    /**
+     * Compare keys
+     */
+    public int compareTo(negStruct other) {
+
+		int returnValue = -1;
+		
+						returnValue = checkNullsAndCompare(this.date, other.date);
+						if(returnValue != 0) {
+							return returnValue;
+						}
+
+					
+						returnValue = checkNullsAndCompare(this.hashtag, other.hashtag);
+						if(returnValue != 0) {
+							return returnValue;
+						}
+
+					
+						returnValue = checkNullsAndCompare(this.country, other.country);
+						if(returnValue != 0) {
+							return returnValue;
+						}
+
+					
+	    return returnValue;
+    }
+
+
+    private int checkNullsAndCompare(Object object1, Object object2) {
+        int returnValue = 0;
+		if (object1 instanceof Comparable && object2 instanceof Comparable) {
+            returnValue = ((Comparable) object1).compareTo(object2);
+        } else if (object1 != null && object2 != null) {
+            returnValue = compareStrings(object1.toString(), object2.toString());
+        } else if (object1 == null && object2 != null) {
+            returnValue = 1;
+        } else if (object1 != null && object2 == null) {
+            returnValue = -1;
+        } else {
+            returnValue = 0;
+        }
+
+        return returnValue;
+    }
+
+    private int compareStrings(String string1, String string2) {
+        return string1.compareTo(string2);
+    }
+
+
+}
+
+public static class cntStruct implements routines.system.IPersistableRow<cntStruct> {
+    final static byte[] commonByteArrayLock_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[0];
+    static byte[] commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[0];
+
+	
+			    public java.util.Date date;
+
+				public java.util.Date getDate () {
+					return this.date;
 				}
+				
+			    public String id;
 
-			}
+				public String getId () {
+					return this.id;
+				}
+				
+			    public String hashtag;
 
+				public String getHashtag () {
+					return this.hashtag;
+				}
+				
+			    public String country;
+
+				public String getCountry () {
+					return this.country;
+				}
+				
+			    public Integer sentiment;
+
+				public Integer getSentiment () {
+					return this.sentiment;
+				}
+				
+
+
+
+	private java.util.Date readDate(ObjectInputStream dis) throws IOException{
+		java.util.Date dateReturn = null;
+        int length = 0;
+        length = dis.readByte();
+		if (length == -1) {
+			dateReturn = null;
+		} else {
+	    	dateReturn = new Date(dis.readLong());
 		}
-
-		public void writeData(ObjectOutputStream dos) {
-			try {
-
-				// String
-
-				writeString(this.date, dos);
-
-				// String
-
-				writeString(this.hashtag, dos);
-
-				// String
-
-				writeString(this.country, dos);
-
-				// Integer
-
-				writeInteger(this.s_negativos, dos);
-
-			} catch (IOException e) {
-				throw new RuntimeException(e);
-			}
-
-		}
-
-		public String toString() {
-
-			StringBuilder sb = new StringBuilder();
-			sb.append(super.toString());
-			sb.append("[");
-			sb.append("date=" + date);
-			sb.append(",hashtag=" + hashtag);
-			sb.append(",country=" + country);
-			sb.append(",s_negativos=" + String.valueOf(s_negativos));
-			sb.append("]");
-
-			return sb.toString();
-		}
-
-		/**
-		 * Compare keys
-		 */
-		public int compareTo(negStruct other) {
-
-			int returnValue = -1;
-
-			returnValue = checkNullsAndCompare(this.date, other.date);
-			if (returnValue != 0) {
-				return returnValue;
-			}
-
-			returnValue = checkNullsAndCompare(this.hashtag, other.hashtag);
-			if (returnValue != 0) {
-				return returnValue;
-			}
-
-			returnValue = checkNullsAndCompare(this.country, other.country);
-			if (returnValue != 0) {
-				return returnValue;
-			}
-
-			return returnValue;
-		}
-
-		private int checkNullsAndCompare(Object object1, Object object2) {
-			int returnValue = 0;
-			if (object1 instanceof Comparable && object2 instanceof Comparable) {
-				returnValue = ((Comparable) object1).compareTo(object2);
-			} else if (object1 != null && object2 != null) {
-				returnValue = compareStrings(object1.toString(), object2.toString());
-			} else if (object1 == null && object2 != null) {
-				returnValue = 1;
-			} else if (object1 != null && object2 == null) {
-				returnValue = -1;
-			} else {
-				returnValue = 0;
-			}
-
-			return returnValue;
-		}
-
-		private int compareStrings(String string1, String string2) {
-			return string1.compareTo(string2);
-		}
-
+		return dateReturn;
 	}
 
-	public static class cntStruct implements routines.system.IPersistableRow<cntStruct> {
-		final static byte[] commonByteArrayLock_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[0];
-		static byte[] commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[0];
+    private void writeDate(java.util.Date date1, ObjectOutputStream dos) throws IOException{
+		if(date1 == null) {
+            dos.writeByte(-1);
+		} else {
+			dos.writeByte(0);
+	    	dos.writeLong(date1.getTime());
+    	}
+    }
 
-		public java.util.Date date;
-
-		public java.util.Date getDate() {
-			return this.date;
-		}
-
-		public String id;
-
-		public String getId() {
-			return this.id;
-		}
-
-		public String hashtag;
-
-		public String getHashtag() {
-			return this.hashtag;
-		}
-
-		public String country;
-
-		public String getCountry() {
-			return this.country;
-		}
-
-		public Integer sentiment;
-
-		public Integer getSentiment() {
-			return this.sentiment;
-		}
-
-		private java.util.Date readDate(ObjectInputStream dis) throws IOException {
-			java.util.Date dateReturn = null;
-			int length = 0;
-			length = dis.readByte();
-			if (length == -1) {
-				dateReturn = null;
-			} else {
-				dateReturn = new Date(dis.readLong());
+	private String readString(ObjectInputStream dis) throws IOException{
+		String strReturn = null;
+		int length = 0;
+        length = dis.readInt();
+		if (length == -1) {
+			strReturn = null;
+		} else {
+			if(length > commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets.length) {
+				if(length < 1024 && commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets.length == 0) {
+   					commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[1024];
+				} else {
+   					commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[2 * length];
+   				}
 			}
-			return dateReturn;
+			dis.readFully(commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets, 0, length);
+			strReturn = new String(commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets, 0, length, utf8Charset);
 		}
+		return strReturn;
+	}
 
-		private void writeDate(java.util.Date date1, ObjectOutputStream dos) throws IOException {
-			if (date1 == null) {
-				dos.writeByte(-1);
-			} else {
-				dos.writeByte(0);
-				dos.writeLong(date1.getTime());
-			}
+    private void writeString(String str, ObjectOutputStream dos) throws IOException{
+		if(str == null) {
+            dos.writeInt(-1);
+		} else {
+            byte[] byteArray = str.getBytes(utf8Charset);
+	    	dos.writeInt(byteArray.length);
+			dos.write(byteArray);
+    	}
+    }
+	private Integer readInteger(ObjectInputStream dis) throws IOException{
+		Integer intReturn;
+        int length = 0;
+        length = dis.readByte();
+		if (length == -1) {
+			intReturn = null;
+		} else {
+	    	intReturn = dis.readInt();
 		}
+		return intReturn;
+	}
 
-		private String readString(ObjectInputStream dis) throws IOException {
-			String strReturn = null;
-			int length = 0;
-			length = dis.readInt();
-			if (length == -1) {
-				strReturn = null;
-			} else {
-				if (length > commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets.length) {
-					if (length < 1024
-							&& commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets.length == 0) {
-						commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[1024];
-					} else {
-						commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[2
-								* length];
-					}
-				}
-				dis.readFully(commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets, 0,
-						length);
-				strReturn = new String(commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets,
-						0, length, utf8Charset);
-			}
-			return strReturn;
-		}
+	private void writeInteger(Integer intNum, ObjectOutputStream dos) throws IOException{
+		if(intNum == null) {
+            dos.writeByte(-1);
+		} else {
+			dos.writeByte(0);
+	    	dos.writeInt(intNum);
+    	}
+	}
 
-		private void writeString(String str, ObjectOutputStream dos) throws IOException {
-			if (str == null) {
-				dos.writeInt(-1);
-			} else {
-				byte[] byteArray = str.getBytes(utf8Charset);
-				dos.writeInt(byteArray.length);
-				dos.write(byteArray);
-			}
-		}
+    public void readData(ObjectInputStream dis) {
 
-		private Integer readInteger(ObjectInputStream dis) throws IOException {
-			Integer intReturn;
-			int length = 0;
-			length = dis.readByte();
-			if (length == -1) {
-				intReturn = null;
-			} else {
-				intReturn = dis.readInt();
-			}
-			return intReturn;
-		}
+		synchronized(commonByteArrayLock_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets) {
 
-		private void writeInteger(Integer intNum, ObjectOutputStream dos) throws IOException {
-			if (intNum == null) {
-				dos.writeByte(-1);
-			} else {
-				dos.writeByte(0);
-				dos.writeInt(intNum);
-			}
-		}
+        	try {
 
-		public void readData(ObjectInputStream dis) {
-
-			synchronized (commonByteArrayLock_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets) {
-
-				try {
-
-					int length = 0;
-
+        		int length = 0;
+		
 					this.date = readDate(dis);
-
+					
 					this.id = readString(dis);
-
+					
 					this.hashtag = readString(dis);
-
+					
 					this.country = readString(dis);
+					
+						this.sentiment = readInteger(dis);
+					
+        	} catch (IOException e) {
+	            throw new RuntimeException(e);
 
-					this.sentiment = readInteger(dis);
+		
 
-				} catch (IOException e) {
-					throw new RuntimeException(e);
+        }
 
+		
+
+      }
+
+
+    }
+
+    public void writeData(ObjectOutputStream dos) {
+        try {
+
+		
+					// java.util.Date
+				
+						writeDate(this.date,dos);
+					
+					// String
+				
+						writeString(this.id,dos);
+					
+					// String
+				
+						writeString(this.hashtag,dos);
+					
+					// String
+				
+						writeString(this.country,dos);
+					
+					// Integer
+				
+						writeInteger(this.sentiment,dos);
+					
+        	} catch (IOException e) {
+	            throw new RuntimeException(e);
+        }
+
+
+    }
+
+
+    public String toString() {
+
+		StringBuilder sb = new StringBuilder();
+		sb.append(super.toString());
+		sb.append("[");
+		sb.append("date="+String.valueOf(date));
+		sb.append(",id="+id);
+		sb.append(",hashtag="+hashtag);
+		sb.append(",country="+country);
+		sb.append(",sentiment="+String.valueOf(sentiment));
+	    sb.append("]");
+
+	    return sb.toString();
+    }
+
+    /**
+     * Compare keys
+     */
+    public int compareTo(cntStruct other) {
+
+		int returnValue = -1;
+		
+	    return returnValue;
+    }
+
+
+    private int checkNullsAndCompare(Object object1, Object object2) {
+        int returnValue = 0;
+		if (object1 instanceof Comparable && object2 instanceof Comparable) {
+            returnValue = ((Comparable) object1).compareTo(object2);
+        } else if (object1 != null && object2 != null) {
+            returnValue = compareStrings(object1.toString(), object2.toString());
+        } else if (object1 == null && object2 != null) {
+            returnValue = 1;
+        } else if (object1 != null && object2 == null) {
+            returnValue = -1;
+        } else {
+            returnValue = 0;
+        }
+
+        return returnValue;
+    }
+
+    private int compareStrings(String string1, String string2) {
+        return string1.compareTo(string2);
+    }
+
+
+}
+
+public static class row5Struct implements routines.system.IPersistableRow<row5Struct> {
+    final static byte[] commonByteArrayLock_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[0];
+    static byte[] commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[0];
+
+	
+			    public String id;
+
+				public String getId () {
+					return this.id;
 				}
+				
+			    public java.util.Date date;
 
+				public java.util.Date getDate () {
+					return this.date;
+				}
+				
+			    public String hashtag;
+
+				public String getHashtag () {
+					return this.hashtag;
+				}
+				
+			    public String country;
+
+				public String getCountry () {
+					return this.country;
+				}
+				
+			    public String full_text;
+
+				public String getFull_text () {
+					return this.full_text;
+				}
+				
+			    public String text;
+
+				public String getText () {
+					return this.text;
+				}
+				
+
+
+
+	private String readString(ObjectInputStream dis) throws IOException{
+		String strReturn = null;
+		int length = 0;
+        length = dis.readInt();
+		if (length == -1) {
+			strReturn = null;
+		} else {
+			if(length > commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets.length) {
+				if(length < 1024 && commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets.length == 0) {
+   					commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[1024];
+				} else {
+   					commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[2 * length];
+   				}
 			}
-
+			dis.readFully(commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets, 0, length);
+			strReturn = new String(commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets, 0, length, utf8Charset);
 		}
-
-		public void writeData(ObjectOutputStream dos) {
-			try {
-
-				// java.util.Date
-
-				writeDate(this.date, dos);
-
-				// String
-
-				writeString(this.id, dos);
-
-				// String
-
-				writeString(this.hashtag, dos);
-
-				// String
-
-				writeString(this.country, dos);
-
-				// Integer
-
-				writeInteger(this.sentiment, dos);
-
-			} catch (IOException e) {
-				throw new RuntimeException(e);
-			}
-
-		}
-
-		public String toString() {
-
-			StringBuilder sb = new StringBuilder();
-			sb.append(super.toString());
-			sb.append("[");
-			sb.append("date=" + String.valueOf(date));
-			sb.append(",id=" + id);
-			sb.append(",hashtag=" + hashtag);
-			sb.append(",country=" + country);
-			sb.append(",sentiment=" + String.valueOf(sentiment));
-			sb.append("]");
-
-			return sb.toString();
-		}
-
-		/**
-		 * Compare keys
-		 */
-		public int compareTo(cntStruct other) {
-
-			int returnValue = -1;
-
-			return returnValue;
-		}
-
-		private int checkNullsAndCompare(Object object1, Object object2) {
-			int returnValue = 0;
-			if (object1 instanceof Comparable && object2 instanceof Comparable) {
-				returnValue = ((Comparable) object1).compareTo(object2);
-			} else if (object1 != null && object2 != null) {
-				returnValue = compareStrings(object1.toString(), object2.toString());
-			} else if (object1 == null && object2 != null) {
-				returnValue = 1;
-			} else if (object1 != null && object2 == null) {
-				returnValue = -1;
-			} else {
-				returnValue = 0;
-			}
-
-			return returnValue;
-		}
-
-		private int compareStrings(String string1, String string2) {
-			return string1.compareTo(string2);
-		}
-
+		return strReturn;
 	}
 
-	public static class row5Struct implements routines.system.IPersistableRow<row5Struct> {
-		final static byte[] commonByteArrayLock_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[0];
-		static byte[] commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[0];
+    private void writeString(String str, ObjectOutputStream dos) throws IOException{
+		if(str == null) {
+            dos.writeInt(-1);
+		} else {
+            byte[] byteArray = str.getBytes(utf8Charset);
+	    	dos.writeInt(byteArray.length);
+			dos.write(byteArray);
+    	}
+    }
 
-		public String id;
-
-		public String getId() {
-			return this.id;
+	private java.util.Date readDate(ObjectInputStream dis) throws IOException{
+		java.util.Date dateReturn = null;
+        int length = 0;
+        length = dis.readByte();
+		if (length == -1) {
+			dateReturn = null;
+		} else {
+	    	dateReturn = new Date(dis.readLong());
 		}
+		return dateReturn;
+	}
 
-		public java.util.Date date;
+    private void writeDate(java.util.Date date1, ObjectOutputStream dos) throws IOException{
+		if(date1 == null) {
+            dos.writeByte(-1);
+		} else {
+			dos.writeByte(0);
+	    	dos.writeLong(date1.getTime());
+    	}
+    }
 
-		public java.util.Date getDate() {
-			return this.date;
-		}
+    public void readData(ObjectInputStream dis) {
 
-		public String hashtag;
+		synchronized(commonByteArrayLock_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets) {
 
-		public String getHashtag() {
-			return this.hashtag;
-		}
+        	try {
 
-		public String country;
-
-		public String getCountry() {
-			return this.country;
-		}
-
-		public String full_text;
-
-		public String getFull_text() {
-			return this.full_text;
-		}
-
-		public String text;
-
-		public String getText() {
-			return this.text;
-		}
-
-		private String readString(ObjectInputStream dis) throws IOException {
-			String strReturn = null;
-			int length = 0;
-			length = dis.readInt();
-			if (length == -1) {
-				strReturn = null;
-			} else {
-				if (length > commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets.length) {
-					if (length < 1024
-							&& commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets.length == 0) {
-						commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[1024];
-					} else {
-						commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[2
-								* length];
-					}
-				}
-				dis.readFully(commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets, 0,
-						length);
-				strReturn = new String(commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets,
-						0, length, utf8Charset);
-			}
-			return strReturn;
-		}
-
-		private void writeString(String str, ObjectOutputStream dos) throws IOException {
-			if (str == null) {
-				dos.writeInt(-1);
-			} else {
-				byte[] byteArray = str.getBytes(utf8Charset);
-				dos.writeInt(byteArray.length);
-				dos.write(byteArray);
-			}
-		}
-
-		private java.util.Date readDate(ObjectInputStream dis) throws IOException {
-			java.util.Date dateReturn = null;
-			int length = 0;
-			length = dis.readByte();
-			if (length == -1) {
-				dateReturn = null;
-			} else {
-				dateReturn = new Date(dis.readLong());
-			}
-			return dateReturn;
-		}
-
-		private void writeDate(java.util.Date date1, ObjectOutputStream dos) throws IOException {
-			if (date1 == null) {
-				dos.writeByte(-1);
-			} else {
-				dos.writeByte(0);
-				dos.writeLong(date1.getTime());
-			}
-		}
-
-		public void readData(ObjectInputStream dis) {
-
-			synchronized (commonByteArrayLock_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets) {
-
-				try {
-
-					int length = 0;
-
+        		int length = 0;
+		
 					this.id = readString(dis);
-
+					
 					this.date = readDate(dis);
-
+					
 					this.hashtag = readString(dis);
-
+					
 					this.country = readString(dis);
-
+					
 					this.full_text = readString(dis);
-
+					
 					this.text = readString(dis);
+					
+        	} catch (IOException e) {
+	            throw new RuntimeException(e);
 
-				} catch (IOException e) {
-					throw new RuntimeException(e);
+		
 
+        }
+
+		
+
+      }
+
+
+    }
+
+    public void writeData(ObjectOutputStream dos) {
+        try {
+
+		
+					// String
+				
+						writeString(this.id,dos);
+					
+					// java.util.Date
+				
+						writeDate(this.date,dos);
+					
+					// String
+				
+						writeString(this.hashtag,dos);
+					
+					// String
+				
+						writeString(this.country,dos);
+					
+					// String
+				
+						writeString(this.full_text,dos);
+					
+					// String
+				
+						writeString(this.text,dos);
+					
+        	} catch (IOException e) {
+	            throw new RuntimeException(e);
+        }
+
+
+    }
+
+
+    public String toString() {
+
+		StringBuilder sb = new StringBuilder();
+		sb.append(super.toString());
+		sb.append("[");
+		sb.append("id="+id);
+		sb.append(",date="+String.valueOf(date));
+		sb.append(",hashtag="+hashtag);
+		sb.append(",country="+country);
+		sb.append(",full_text="+full_text);
+		sb.append(",text="+text);
+	    sb.append("]");
+
+	    return sb.toString();
+    }
+
+    /**
+     * Compare keys
+     */
+    public int compareTo(row5Struct other) {
+
+		int returnValue = -1;
+		
+	    return returnValue;
+    }
+
+
+    private int checkNullsAndCompare(Object object1, Object object2) {
+        int returnValue = 0;
+		if (object1 instanceof Comparable && object2 instanceof Comparable) {
+            returnValue = ((Comparable) object1).compareTo(object2);
+        } else if (object1 != null && object2 != null) {
+            returnValue = compareStrings(object1.toString(), object2.toString());
+        } else if (object1 == null && object2 != null) {
+            returnValue = 1;
+        } else if (object1 != null && object2 == null) {
+            returnValue = -1;
+        } else {
+            returnValue = 0;
+        }
+
+        return returnValue;
+    }
+
+    private int compareStrings(String string1, String string2) {
+        return string1.compareTo(string2);
+    }
+
+
+}
+
+public static class row4Struct implements routines.system.IPersistableRow<row4Struct> {
+    final static byte[] commonByteArrayLock_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[0];
+    static byte[] commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[0];
+
+	
+			    public String id;
+
+				public String getId () {
+					return this.id;
 				}
+				
+			    public java.util.Date date;
 
+				public java.util.Date getDate () {
+					return this.date;
+				}
+				
+			    public String hashtag;
+
+				public String getHashtag () {
+					return this.hashtag;
+				}
+				
+			    public String country;
+
+				public String getCountry () {
+					return this.country;
+				}
+				
+			    public String full_text;
+
+				public String getFull_text () {
+					return this.full_text;
+				}
+				
+			    public String text;
+
+				public String getText () {
+					return this.text;
+				}
+				
+
+
+
+	private String readString(ObjectInputStream dis) throws IOException{
+		String strReturn = null;
+		int length = 0;
+        length = dis.readInt();
+		if (length == -1) {
+			strReturn = null;
+		} else {
+			if(length > commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets.length) {
+				if(length < 1024 && commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets.length == 0) {
+   					commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[1024];
+				} else {
+   					commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[2 * length];
+   				}
 			}
-
+			dis.readFully(commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets, 0, length);
+			strReturn = new String(commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets, 0, length, utf8Charset);
 		}
-
-		public void writeData(ObjectOutputStream dos) {
-			try {
-
-				// String
-
-				writeString(this.id, dos);
-
-				// java.util.Date
-
-				writeDate(this.date, dos);
-
-				// String
-
-				writeString(this.hashtag, dos);
-
-				// String
-
-				writeString(this.country, dos);
-
-				// String
-
-				writeString(this.full_text, dos);
-
-				// String
-
-				writeString(this.text, dos);
-
-			} catch (IOException e) {
-				throw new RuntimeException(e);
-			}
-
-		}
-
-		public String toString() {
-
-			StringBuilder sb = new StringBuilder();
-			sb.append(super.toString());
-			sb.append("[");
-			sb.append("id=" + id);
-			sb.append(",date=" + String.valueOf(date));
-			sb.append(",hashtag=" + hashtag);
-			sb.append(",country=" + country);
-			sb.append(",full_text=" + full_text);
-			sb.append(",text=" + text);
-			sb.append("]");
-
-			return sb.toString();
-		}
-
-		/**
-		 * Compare keys
-		 */
-		public int compareTo(row5Struct other) {
-
-			int returnValue = -1;
-
-			return returnValue;
-		}
-
-		private int checkNullsAndCompare(Object object1, Object object2) {
-			int returnValue = 0;
-			if (object1 instanceof Comparable && object2 instanceof Comparable) {
-				returnValue = ((Comparable) object1).compareTo(object2);
-			} else if (object1 != null && object2 != null) {
-				returnValue = compareStrings(object1.toString(), object2.toString());
-			} else if (object1 == null && object2 != null) {
-				returnValue = 1;
-			} else if (object1 != null && object2 == null) {
-				returnValue = -1;
-			} else {
-				returnValue = 0;
-			}
-
-			return returnValue;
-		}
-
-		private int compareStrings(String string1, String string2) {
-			return string1.compareTo(string2);
-		}
-
+		return strReturn;
 	}
 
-	public static class row4Struct implements routines.system.IPersistableRow<row4Struct> {
-		final static byte[] commonByteArrayLock_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[0];
-		static byte[] commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[0];
+    private void writeString(String str, ObjectOutputStream dos) throws IOException{
+		if(str == null) {
+            dos.writeInt(-1);
+		} else {
+            byte[] byteArray = str.getBytes(utf8Charset);
+	    	dos.writeInt(byteArray.length);
+			dos.write(byteArray);
+    	}
+    }
 
-		public String id;
-
-		public String getId() {
-			return this.id;
+	private java.util.Date readDate(ObjectInputStream dis) throws IOException{
+		java.util.Date dateReturn = null;
+        int length = 0;
+        length = dis.readByte();
+		if (length == -1) {
+			dateReturn = null;
+		} else {
+	    	dateReturn = new Date(dis.readLong());
 		}
+		return dateReturn;
+	}
 
-		public java.util.Date date;
+    private void writeDate(java.util.Date date1, ObjectOutputStream dos) throws IOException{
+		if(date1 == null) {
+            dos.writeByte(-1);
+		} else {
+			dos.writeByte(0);
+	    	dos.writeLong(date1.getTime());
+    	}
+    }
 
-		public java.util.Date getDate() {
-			return this.date;
-		}
+    public void readData(ObjectInputStream dis) {
 
-		public String hashtag;
+		synchronized(commonByteArrayLock_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets) {
 
-		public String getHashtag() {
-			return this.hashtag;
-		}
+        	try {
 
-		public String country;
-
-		public String getCountry() {
-			return this.country;
-		}
-
-		public String full_text;
-
-		public String getFull_text() {
-			return this.full_text;
-		}
-
-		public String text;
-
-		public String getText() {
-			return this.text;
-		}
-
-		private String readString(ObjectInputStream dis) throws IOException {
-			String strReturn = null;
-			int length = 0;
-			length = dis.readInt();
-			if (length == -1) {
-				strReturn = null;
-			} else {
-				if (length > commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets.length) {
-					if (length < 1024
-							&& commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets.length == 0) {
-						commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[1024];
-					} else {
-						commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[2
-								* length];
-					}
-				}
-				dis.readFully(commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets, 0,
-						length);
-				strReturn = new String(commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets,
-						0, length, utf8Charset);
-			}
-			return strReturn;
-		}
-
-		private void writeString(String str, ObjectOutputStream dos) throws IOException {
-			if (str == null) {
-				dos.writeInt(-1);
-			} else {
-				byte[] byteArray = str.getBytes(utf8Charset);
-				dos.writeInt(byteArray.length);
-				dos.write(byteArray);
-			}
-		}
-
-		private java.util.Date readDate(ObjectInputStream dis) throws IOException {
-			java.util.Date dateReturn = null;
-			int length = 0;
-			length = dis.readByte();
-			if (length == -1) {
-				dateReturn = null;
-			} else {
-				dateReturn = new Date(dis.readLong());
-			}
-			return dateReturn;
-		}
-
-		private void writeDate(java.util.Date date1, ObjectOutputStream dos) throws IOException {
-			if (date1 == null) {
-				dos.writeByte(-1);
-			} else {
-				dos.writeByte(0);
-				dos.writeLong(date1.getTime());
-			}
-		}
-
-		public void readData(ObjectInputStream dis) {
-
-			synchronized (commonByteArrayLock_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets) {
-
-				try {
-
-					int length = 0;
-
+        		int length = 0;
+		
 					this.id = readString(dis);
-
+					
 					this.date = readDate(dis);
-
+					
 					this.hashtag = readString(dis);
-
+					
 					this.country = readString(dis);
-
+					
 					this.full_text = readString(dis);
-
+					
 					this.text = readString(dis);
+					
+        	} catch (IOException e) {
+	            throw new RuntimeException(e);
 
-				} catch (IOException e) {
-					throw new RuntimeException(e);
+		
 
+        }
+
+		
+
+      }
+
+
+    }
+
+    public void writeData(ObjectOutputStream dos) {
+        try {
+
+		
+					// String
+				
+						writeString(this.id,dos);
+					
+					// java.util.Date
+				
+						writeDate(this.date,dos);
+					
+					// String
+				
+						writeString(this.hashtag,dos);
+					
+					// String
+				
+						writeString(this.country,dos);
+					
+					// String
+				
+						writeString(this.full_text,dos);
+					
+					// String
+				
+						writeString(this.text,dos);
+					
+        	} catch (IOException e) {
+	            throw new RuntimeException(e);
+        }
+
+
+    }
+
+
+    public String toString() {
+
+		StringBuilder sb = new StringBuilder();
+		sb.append(super.toString());
+		sb.append("[");
+		sb.append("id="+id);
+		sb.append(",date="+String.valueOf(date));
+		sb.append(",hashtag="+hashtag);
+		sb.append(",country="+country);
+		sb.append(",full_text="+full_text);
+		sb.append(",text="+text);
+	    sb.append("]");
+
+	    return sb.toString();
+    }
+
+    /**
+     * Compare keys
+     */
+    public int compareTo(row4Struct other) {
+
+		int returnValue = -1;
+		
+	    return returnValue;
+    }
+
+
+    private int checkNullsAndCompare(Object object1, Object object2) {
+        int returnValue = 0;
+		if (object1 instanceof Comparable && object2 instanceof Comparable) {
+            returnValue = ((Comparable) object1).compareTo(object2);
+        } else if (object1 != null && object2 != null) {
+            returnValue = compareStrings(object1.toString(), object2.toString());
+        } else if (object1 == null && object2 != null) {
+            returnValue = 1;
+        } else if (object1 != null && object2 == null) {
+            returnValue = -1;
+        } else {
+            returnValue = 0;
+        }
+
+        return returnValue;
+    }
+
+    private int compareStrings(String string1, String string2) {
+        return string1.compareTo(string2);
+    }
+
+
+}
+
+public static class row3Struct implements routines.system.IPersistableRow<row3Struct> {
+    final static byte[] commonByteArrayLock_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[0];
+    static byte[] commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[0];
+
+	
+			    public String id;
+
+				public String getId () {
+					return this.id;
 				}
+				
+			    public java.util.Date date;
 
+				public java.util.Date getDate () {
+					return this.date;
+				}
+				
+			    public String hashtag;
+
+				public String getHashtag () {
+					return this.hashtag;
+				}
+				
+			    public String country;
+
+				public String getCountry () {
+					return this.country;
+				}
+				
+			    public String full_text;
+
+				public String getFull_text () {
+					return this.full_text;
+				}
+				
+			    public String text;
+
+				public String getText () {
+					return this.text;
+				}
+				
+
+
+
+	private String readString(ObjectInputStream dis) throws IOException{
+		String strReturn = null;
+		int length = 0;
+        length = dis.readInt();
+		if (length == -1) {
+			strReturn = null;
+		} else {
+			if(length > commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets.length) {
+				if(length < 1024 && commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets.length == 0) {
+   					commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[1024];
+				} else {
+   					commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[2 * length];
+   				}
 			}
-
+			dis.readFully(commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets, 0, length);
+			strReturn = new String(commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets, 0, length, utf8Charset);
 		}
-
-		public void writeData(ObjectOutputStream dos) {
-			try {
-
-				// String
-
-				writeString(this.id, dos);
-
-				// java.util.Date
-
-				writeDate(this.date, dos);
-
-				// String
-
-				writeString(this.hashtag, dos);
-
-				// String
-
-				writeString(this.country, dos);
-
-				// String
-
-				writeString(this.full_text, dos);
-
-				// String
-
-				writeString(this.text, dos);
-
-			} catch (IOException e) {
-				throw new RuntimeException(e);
-			}
-
-		}
-
-		public String toString() {
-
-			StringBuilder sb = new StringBuilder();
-			sb.append(super.toString());
-			sb.append("[");
-			sb.append("id=" + id);
-			sb.append(",date=" + String.valueOf(date));
-			sb.append(",hashtag=" + hashtag);
-			sb.append(",country=" + country);
-			sb.append(",full_text=" + full_text);
-			sb.append(",text=" + text);
-			sb.append("]");
-
-			return sb.toString();
-		}
-
-		/**
-		 * Compare keys
-		 */
-		public int compareTo(row4Struct other) {
-
-			int returnValue = -1;
-
-			return returnValue;
-		}
-
-		private int checkNullsAndCompare(Object object1, Object object2) {
-			int returnValue = 0;
-			if (object1 instanceof Comparable && object2 instanceof Comparable) {
-				returnValue = ((Comparable) object1).compareTo(object2);
-			} else if (object1 != null && object2 != null) {
-				returnValue = compareStrings(object1.toString(), object2.toString());
-			} else if (object1 == null && object2 != null) {
-				returnValue = 1;
-			} else if (object1 != null && object2 == null) {
-				returnValue = -1;
-			} else {
-				returnValue = 0;
-			}
-
-			return returnValue;
-		}
-
-		private int compareStrings(String string1, String string2) {
-			return string1.compareTo(string2);
-		}
-
+		return strReturn;
 	}
 
-	public static class row3Struct implements routines.system.IPersistableRow<row3Struct> {
-		final static byte[] commonByteArrayLock_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[0];
-		static byte[] commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[0];
+    private void writeString(String str, ObjectOutputStream dos) throws IOException{
+		if(str == null) {
+            dos.writeInt(-1);
+		} else {
+            byte[] byteArray = str.getBytes(utf8Charset);
+	    	dos.writeInt(byteArray.length);
+			dos.write(byteArray);
+    	}
+    }
 
-		public String id;
-
-		public String getId() {
-			return this.id;
+	private java.util.Date readDate(ObjectInputStream dis) throws IOException{
+		java.util.Date dateReturn = null;
+        int length = 0;
+        length = dis.readByte();
+		if (length == -1) {
+			dateReturn = null;
+		} else {
+	    	dateReturn = new Date(dis.readLong());
 		}
+		return dateReturn;
+	}
 
-		public java.util.Date date;
+    private void writeDate(java.util.Date date1, ObjectOutputStream dos) throws IOException{
+		if(date1 == null) {
+            dos.writeByte(-1);
+		} else {
+			dos.writeByte(0);
+	    	dos.writeLong(date1.getTime());
+    	}
+    }
 
-		public java.util.Date getDate() {
-			return this.date;
-		}
+    public void readData(ObjectInputStream dis) {
 
-		public String hashtag;
+		synchronized(commonByteArrayLock_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets) {
 
-		public String getHashtag() {
-			return this.hashtag;
-		}
+        	try {
 
-		public String country;
-
-		public String getCountry() {
-			return this.country;
-		}
-
-		public String full_text;
-
-		public String getFull_text() {
-			return this.full_text;
-		}
-
-		public String text;
-
-		public String getText() {
-			return this.text;
-		}
-
-		private String readString(ObjectInputStream dis) throws IOException {
-			String strReturn = null;
-			int length = 0;
-			length = dis.readInt();
-			if (length == -1) {
-				strReturn = null;
-			} else {
-				if (length > commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets.length) {
-					if (length < 1024
-							&& commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets.length == 0) {
-						commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[1024];
-					} else {
-						commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[2
-								* length];
-					}
-				}
-				dis.readFully(commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets, 0,
-						length);
-				strReturn = new String(commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets,
-						0, length, utf8Charset);
-			}
-			return strReturn;
-		}
-
-		private void writeString(String str, ObjectOutputStream dos) throws IOException {
-			if (str == null) {
-				dos.writeInt(-1);
-			} else {
-				byte[] byteArray = str.getBytes(utf8Charset);
-				dos.writeInt(byteArray.length);
-				dos.write(byteArray);
-			}
-		}
-
-		private java.util.Date readDate(ObjectInputStream dis) throws IOException {
-			java.util.Date dateReturn = null;
-			int length = 0;
-			length = dis.readByte();
-			if (length == -1) {
-				dateReturn = null;
-			} else {
-				dateReturn = new Date(dis.readLong());
-			}
-			return dateReturn;
-		}
-
-		private void writeDate(java.util.Date date1, ObjectOutputStream dos) throws IOException {
-			if (date1 == null) {
-				dos.writeByte(-1);
-			} else {
-				dos.writeByte(0);
-				dos.writeLong(date1.getTime());
-			}
-		}
-
-		public void readData(ObjectInputStream dis) {
-
-			synchronized (commonByteArrayLock_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets) {
-
-				try {
-
-					int length = 0;
-
+        		int length = 0;
+		
 					this.id = readString(dis);
-
+					
 					this.date = readDate(dis);
-
+					
 					this.hashtag = readString(dis);
-
+					
 					this.country = readString(dis);
-
+					
 					this.full_text = readString(dis);
-
+					
 					this.text = readString(dis);
+					
+        	} catch (IOException e) {
+	            throw new RuntimeException(e);
 
-				} catch (IOException e) {
-					throw new RuntimeException(e);
+		
 
+        }
+
+		
+
+      }
+
+
+    }
+
+    public void writeData(ObjectOutputStream dos) {
+        try {
+
+		
+					// String
+				
+						writeString(this.id,dos);
+					
+					// java.util.Date
+				
+						writeDate(this.date,dos);
+					
+					// String
+				
+						writeString(this.hashtag,dos);
+					
+					// String
+				
+						writeString(this.country,dos);
+					
+					// String
+				
+						writeString(this.full_text,dos);
+					
+					// String
+				
+						writeString(this.text,dos);
+					
+        	} catch (IOException e) {
+	            throw new RuntimeException(e);
+        }
+
+
+    }
+
+
+    public String toString() {
+
+		StringBuilder sb = new StringBuilder();
+		sb.append(super.toString());
+		sb.append("[");
+		sb.append("id="+id);
+		sb.append(",date="+String.valueOf(date));
+		sb.append(",hashtag="+hashtag);
+		sb.append(",country="+country);
+		sb.append(",full_text="+full_text);
+		sb.append(",text="+text);
+	    sb.append("]");
+
+	    return sb.toString();
+    }
+
+    /**
+     * Compare keys
+     */
+    public int compareTo(row3Struct other) {
+
+		int returnValue = -1;
+		
+	    return returnValue;
+    }
+
+
+    private int checkNullsAndCompare(Object object1, Object object2) {
+        int returnValue = 0;
+		if (object1 instanceof Comparable && object2 instanceof Comparable) {
+            returnValue = ((Comparable) object1).compareTo(object2);
+        } else if (object1 != null && object2 != null) {
+            returnValue = compareStrings(object1.toString(), object2.toString());
+        } else if (object1 == null && object2 != null) {
+            returnValue = 1;
+        } else if (object1 != null && object2 == null) {
+            returnValue = -1;
+        } else {
+            returnValue = 0;
+        }
+
+        return returnValue;
+    }
+
+    private int compareStrings(String string1, String string2) {
+        return string1.compareTo(string2);
+    }
+
+
+}
+
+public static class out1Struct implements routines.system.IPersistableRow<out1Struct> {
+    final static byte[] commonByteArrayLock_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[0];
+    static byte[] commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[0];
+
+	
+			    public String id;
+
+				public String getId () {
+					return this.id;
 				}
+				
+			    public java.util.Date date;
 
+				public java.util.Date getDate () {
+					return this.date;
+				}
+				
+			    public String hashtag;
+
+				public String getHashtag () {
+					return this.hashtag;
+				}
+				
+			    public String country;
+
+				public String getCountry () {
+					return this.country;
+				}
+				
+			    public String full_text;
+
+				public String getFull_text () {
+					return this.full_text;
+				}
+				
+			    public String text;
+
+				public String getText () {
+					return this.text;
+				}
+				
+
+
+
+	private String readString(ObjectInputStream dis) throws IOException{
+		String strReturn = null;
+		int length = 0;
+        length = dis.readInt();
+		if (length == -1) {
+			strReturn = null;
+		} else {
+			if(length > commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets.length) {
+				if(length < 1024 && commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets.length == 0) {
+   					commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[1024];
+				} else {
+   					commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[2 * length];
+   				}
 			}
-
+			dis.readFully(commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets, 0, length);
+			strReturn = new String(commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets, 0, length, utf8Charset);
 		}
-
-		public void writeData(ObjectOutputStream dos) {
-			try {
-
-				// String
-
-				writeString(this.id, dos);
-
-				// java.util.Date
-
-				writeDate(this.date, dos);
-
-				// String
-
-				writeString(this.hashtag, dos);
-
-				// String
-
-				writeString(this.country, dos);
-
-				// String
-
-				writeString(this.full_text, dos);
-
-				// String
-
-				writeString(this.text, dos);
-
-			} catch (IOException e) {
-				throw new RuntimeException(e);
-			}
-
-		}
-
-		public String toString() {
-
-			StringBuilder sb = new StringBuilder();
-			sb.append(super.toString());
-			sb.append("[");
-			sb.append("id=" + id);
-			sb.append(",date=" + String.valueOf(date));
-			sb.append(",hashtag=" + hashtag);
-			sb.append(",country=" + country);
-			sb.append(",full_text=" + full_text);
-			sb.append(",text=" + text);
-			sb.append("]");
-
-			return sb.toString();
-		}
-
-		/**
-		 * Compare keys
-		 */
-		public int compareTo(row3Struct other) {
-
-			int returnValue = -1;
-
-			return returnValue;
-		}
-
-		private int checkNullsAndCompare(Object object1, Object object2) {
-			int returnValue = 0;
-			if (object1 instanceof Comparable && object2 instanceof Comparable) {
-				returnValue = ((Comparable) object1).compareTo(object2);
-			} else if (object1 != null && object2 != null) {
-				returnValue = compareStrings(object1.toString(), object2.toString());
-			} else if (object1 == null && object2 != null) {
-				returnValue = 1;
-			} else if (object1 != null && object2 == null) {
-				returnValue = -1;
-			} else {
-				returnValue = 0;
-			}
-
-			return returnValue;
-		}
-
-		private int compareStrings(String string1, String string2) {
-			return string1.compareTo(string2);
-		}
-
+		return strReturn;
 	}
 
-	public static class out1Struct implements routines.system.IPersistableRow<out1Struct> {
-		final static byte[] commonByteArrayLock_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[0];
-		static byte[] commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[0];
+    private void writeString(String str, ObjectOutputStream dos) throws IOException{
+		if(str == null) {
+            dos.writeInt(-1);
+		} else {
+            byte[] byteArray = str.getBytes(utf8Charset);
+	    	dos.writeInt(byteArray.length);
+			dos.write(byteArray);
+    	}
+    }
 
-		public String id;
-
-		public String getId() {
-			return this.id;
+	private java.util.Date readDate(ObjectInputStream dis) throws IOException{
+		java.util.Date dateReturn = null;
+        int length = 0;
+        length = dis.readByte();
+		if (length == -1) {
+			dateReturn = null;
+		} else {
+	    	dateReturn = new Date(dis.readLong());
 		}
+		return dateReturn;
+	}
 
-		public java.util.Date date;
+    private void writeDate(java.util.Date date1, ObjectOutputStream dos) throws IOException{
+		if(date1 == null) {
+            dos.writeByte(-1);
+		} else {
+			dos.writeByte(0);
+	    	dos.writeLong(date1.getTime());
+    	}
+    }
 
-		public java.util.Date getDate() {
-			return this.date;
-		}
+    public void readData(ObjectInputStream dis) {
 
-		public String hashtag;
+		synchronized(commonByteArrayLock_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets) {
 
-		public String getHashtag() {
-			return this.hashtag;
-		}
+        	try {
 
-		public String country;
-
-		public String getCountry() {
-			return this.country;
-		}
-
-		public String full_text;
-
-		public String getFull_text() {
-			return this.full_text;
-		}
-
-		public String text;
-
-		public String getText() {
-			return this.text;
-		}
-
-		private String readString(ObjectInputStream dis) throws IOException {
-			String strReturn = null;
-			int length = 0;
-			length = dis.readInt();
-			if (length == -1) {
-				strReturn = null;
-			} else {
-				if (length > commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets.length) {
-					if (length < 1024
-							&& commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets.length == 0) {
-						commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[1024];
-					} else {
-						commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[2
-								* length];
-					}
-				}
-				dis.readFully(commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets, 0,
-						length);
-				strReturn = new String(commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets,
-						0, length, utf8Charset);
-			}
-			return strReturn;
-		}
-
-		private void writeString(String str, ObjectOutputStream dos) throws IOException {
-			if (str == null) {
-				dos.writeInt(-1);
-			} else {
-				byte[] byteArray = str.getBytes(utf8Charset);
-				dos.writeInt(byteArray.length);
-				dos.write(byteArray);
-			}
-		}
-
-		private java.util.Date readDate(ObjectInputStream dis) throws IOException {
-			java.util.Date dateReturn = null;
-			int length = 0;
-			length = dis.readByte();
-			if (length == -1) {
-				dateReturn = null;
-			} else {
-				dateReturn = new Date(dis.readLong());
-			}
-			return dateReturn;
-		}
-
-		private void writeDate(java.util.Date date1, ObjectOutputStream dos) throws IOException {
-			if (date1 == null) {
-				dos.writeByte(-1);
-			} else {
-				dos.writeByte(0);
-				dos.writeLong(date1.getTime());
-			}
-		}
-
-		public void readData(ObjectInputStream dis) {
-
-			synchronized (commonByteArrayLock_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets) {
-
-				try {
-
-					int length = 0;
-
+        		int length = 0;
+		
 					this.id = readString(dis);
-
+					
 					this.date = readDate(dis);
-
+					
 					this.hashtag = readString(dis);
-
+					
 					this.country = readString(dis);
-
+					
 					this.full_text = readString(dis);
-
+					
 					this.text = readString(dis);
+					
+        	} catch (IOException e) {
+	            throw new RuntimeException(e);
 
-				} catch (IOException e) {
-					throw new RuntimeException(e);
+		
 
+        }
+
+		
+
+      }
+
+
+    }
+
+    public void writeData(ObjectOutputStream dos) {
+        try {
+
+		
+					// String
+				
+						writeString(this.id,dos);
+					
+					// java.util.Date
+				
+						writeDate(this.date,dos);
+					
+					// String
+				
+						writeString(this.hashtag,dos);
+					
+					// String
+				
+						writeString(this.country,dos);
+					
+					// String
+				
+						writeString(this.full_text,dos);
+					
+					// String
+				
+						writeString(this.text,dos);
+					
+        	} catch (IOException e) {
+	            throw new RuntimeException(e);
+        }
+
+
+    }
+
+
+    public String toString() {
+
+		StringBuilder sb = new StringBuilder();
+		sb.append(super.toString());
+		sb.append("[");
+		sb.append("id="+id);
+		sb.append(",date="+String.valueOf(date));
+		sb.append(",hashtag="+hashtag);
+		sb.append(",country="+country);
+		sb.append(",full_text="+full_text);
+		sb.append(",text="+text);
+	    sb.append("]");
+
+	    return sb.toString();
+    }
+
+    /**
+     * Compare keys
+     */
+    public int compareTo(out1Struct other) {
+
+		int returnValue = -1;
+		
+	    return returnValue;
+    }
+
+
+    private int checkNullsAndCompare(Object object1, Object object2) {
+        int returnValue = 0;
+		if (object1 instanceof Comparable && object2 instanceof Comparable) {
+            returnValue = ((Comparable) object1).compareTo(object2);
+        } else if (object1 != null && object2 != null) {
+            returnValue = compareStrings(object1.toString(), object2.toString());
+        } else if (object1 == null && object2 != null) {
+            returnValue = 1;
+        } else if (object1 != null && object2 == null) {
+            returnValue = -1;
+        } else {
+            returnValue = 0;
+        }
+
+        return returnValue;
+    }
+
+    private int compareStrings(String string1, String string2) {
+        return string1.compareTo(string2);
+    }
+
+
+}
+
+public static class row2Struct implements routines.system.IPersistableRow<row2Struct> {
+    final static byte[] commonByteArrayLock_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[0];
+    static byte[] commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[0];
+
+	
+			    public String id;
+
+				public String getId () {
+					return this.id;
 				}
+				
+			    public String date;
 
+				public String getDate () {
+					return this.date;
+				}
+				
+			    public String hashtag;
+
+				public String getHashtag () {
+					return this.hashtag;
+				}
+				
+			    public String country;
+
+				public String getCountry () {
+					return this.country;
+				}
+				
+			    public String text;
+
+				public String getText () {
+					return this.text;
+				}
+				
+
+
+
+	private String readString(ObjectInputStream dis) throws IOException{
+		String strReturn = null;
+		int length = 0;
+        length = dis.readInt();
+		if (length == -1) {
+			strReturn = null;
+		} else {
+			if(length > commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets.length) {
+				if(length < 1024 && commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets.length == 0) {
+   					commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[1024];
+				} else {
+   					commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[2 * length];
+   				}
 			}
-
+			dis.readFully(commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets, 0, length);
+			strReturn = new String(commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets, 0, length, utf8Charset);
 		}
-
-		public void writeData(ObjectOutputStream dos) {
-			try {
-
-				// String
-
-				writeString(this.id, dos);
-
-				// java.util.Date
-
-				writeDate(this.date, dos);
-
-				// String
-
-				writeString(this.hashtag, dos);
-
-				// String
-
-				writeString(this.country, dos);
-
-				// String
-
-				writeString(this.full_text, dos);
-
-				// String
-
-				writeString(this.text, dos);
-
-			} catch (IOException e) {
-				throw new RuntimeException(e);
-			}
-
-		}
-
-		public String toString() {
-
-			StringBuilder sb = new StringBuilder();
-			sb.append(super.toString());
-			sb.append("[");
-			sb.append("id=" + id);
-			sb.append(",date=" + String.valueOf(date));
-			sb.append(",hashtag=" + hashtag);
-			sb.append(",country=" + country);
-			sb.append(",full_text=" + full_text);
-			sb.append(",text=" + text);
-			sb.append("]");
-
-			return sb.toString();
-		}
-
-		/**
-		 * Compare keys
-		 */
-		public int compareTo(out1Struct other) {
-
-			int returnValue = -1;
-
-			return returnValue;
-		}
-
-		private int checkNullsAndCompare(Object object1, Object object2) {
-			int returnValue = 0;
-			if (object1 instanceof Comparable && object2 instanceof Comparable) {
-				returnValue = ((Comparable) object1).compareTo(object2);
-			} else if (object1 != null && object2 != null) {
-				returnValue = compareStrings(object1.toString(), object2.toString());
-			} else if (object1 == null && object2 != null) {
-				returnValue = 1;
-			} else if (object1 != null && object2 == null) {
-				returnValue = -1;
-			} else {
-				returnValue = 0;
-			}
-
-			return returnValue;
-		}
-
-		private int compareStrings(String string1, String string2) {
-			return string1.compareTo(string2);
-		}
-
+		return strReturn;
 	}
 
-	public static class row2Struct implements routines.system.IPersistableRow<row2Struct> {
-		final static byte[] commonByteArrayLock_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[0];
-		static byte[] commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[0];
+    private void writeString(String str, ObjectOutputStream dos) throws IOException{
+		if(str == null) {
+            dos.writeInt(-1);
+		} else {
+            byte[] byteArray = str.getBytes(utf8Charset);
+	    	dos.writeInt(byteArray.length);
+			dos.write(byteArray);
+    	}
+    }
 
-		public String id;
+    public void readData(ObjectInputStream dis) {
 
-		public String getId() {
-			return this.id;
-		}
+		synchronized(commonByteArrayLock_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets) {
 
-		public String date;
+        	try {
 
-		public String getDate() {
-			return this.date;
-		}
-
-		public String hashtag;
-
-		public String getHashtag() {
-			return this.hashtag;
-		}
-
-		public String country;
-
-		public String getCountry() {
-			return this.country;
-		}
-
-		public String text;
-
-		public String getText() {
-			return this.text;
-		}
-
-		private String readString(ObjectInputStream dis) throws IOException {
-			String strReturn = null;
-			int length = 0;
-			length = dis.readInt();
-			if (length == -1) {
-				strReturn = null;
-			} else {
-				if (length > commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets.length) {
-					if (length < 1024
-							&& commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets.length == 0) {
-						commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[1024];
-					} else {
-						commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[2
-								* length];
-					}
-				}
-				dis.readFully(commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets, 0,
-						length);
-				strReturn = new String(commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets,
-						0, length, utf8Charset);
-			}
-			return strReturn;
-		}
-
-		private void writeString(String str, ObjectOutputStream dos) throws IOException {
-			if (str == null) {
-				dos.writeInt(-1);
-			} else {
-				byte[] byteArray = str.getBytes(utf8Charset);
-				dos.writeInt(byteArray.length);
-				dos.write(byteArray);
-			}
-		}
-
-		public void readData(ObjectInputStream dis) {
-
-			synchronized (commonByteArrayLock_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets) {
-
-				try {
-
-					int length = 0;
-
+        		int length = 0;
+		
 					this.id = readString(dis);
-
+					
 					this.date = readString(dis);
-
+					
 					this.hashtag = readString(dis);
-
+					
 					this.country = readString(dis);
-
+					
 					this.text = readString(dis);
+					
+        	} catch (IOException e) {
+	            throw new RuntimeException(e);
 
-				} catch (IOException e) {
-					throw new RuntimeException(e);
+		
 
+        }
+
+		
+
+      }
+
+
+    }
+
+    public void writeData(ObjectOutputStream dos) {
+        try {
+
+		
+					// String
+				
+						writeString(this.id,dos);
+					
+					// String
+				
+						writeString(this.date,dos);
+					
+					// String
+				
+						writeString(this.hashtag,dos);
+					
+					// String
+				
+						writeString(this.country,dos);
+					
+					// String
+				
+						writeString(this.text,dos);
+					
+        	} catch (IOException e) {
+	            throw new RuntimeException(e);
+        }
+
+
+    }
+
+
+    public String toString() {
+
+		StringBuilder sb = new StringBuilder();
+		sb.append(super.toString());
+		sb.append("[");
+		sb.append("id="+id);
+		sb.append(",date="+date);
+		sb.append(",hashtag="+hashtag);
+		sb.append(",country="+country);
+		sb.append(",text="+text);
+	    sb.append("]");
+
+	    return sb.toString();
+    }
+
+    /**
+     * Compare keys
+     */
+    public int compareTo(row2Struct other) {
+
+		int returnValue = -1;
+		
+	    return returnValue;
+    }
+
+
+    private int checkNullsAndCompare(Object object1, Object object2) {
+        int returnValue = 0;
+		if (object1 instanceof Comparable && object2 instanceof Comparable) {
+            returnValue = ((Comparable) object1).compareTo(object2);
+        } else if (object1 != null && object2 != null) {
+            returnValue = compareStrings(object1.toString(), object2.toString());
+        } else if (object1 == null && object2 != null) {
+            returnValue = 1;
+        } else if (object1 != null && object2 == null) {
+            returnValue = -1;
+        } else {
+            returnValue = 0;
+        }
+
+        return returnValue;
+    }
+
+    private int compareStrings(String string1, String string2) {
+        return string1.compareTo(string2);
+    }
+
+
+}
+
+public static class row1Struct implements routines.system.IPersistableRow<row1Struct> {
+    final static byte[] commonByteArrayLock_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[0];
+    static byte[] commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[0];
+
+	
+			    public String id;
+
+				public String getId () {
+					return this.id;
 				}
+				
+			    public String date;
 
+				public String getDate () {
+					return this.date;
+				}
+				
+			    public String hashtag;
+
+				public String getHashtag () {
+					return this.hashtag;
+				}
+				
+			    public String country;
+
+				public String getCountry () {
+					return this.country;
+				}
+				
+			    public String text;
+
+				public String getText () {
+					return this.text;
+				}
+				
+
+
+
+	private String readString(ObjectInputStream dis) throws IOException{
+		String strReturn = null;
+		int length = 0;
+        length = dis.readInt();
+		if (length == -1) {
+			strReturn = null;
+		} else {
+			if(length > commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets.length) {
+				if(length < 1024 && commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets.length == 0) {
+   					commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[1024];
+				} else {
+   					commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[2 * length];
+   				}
 			}
-
+			dis.readFully(commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets, 0, length);
+			strReturn = new String(commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets, 0, length, utf8Charset);
 		}
-
-		public void writeData(ObjectOutputStream dos) {
-			try {
-
-				// String
-
-				writeString(this.id, dos);
-
-				// String
-
-				writeString(this.date, dos);
-
-				// String
-
-				writeString(this.hashtag, dos);
-
-				// String
-
-				writeString(this.country, dos);
-
-				// String
-
-				writeString(this.text, dos);
-
-			} catch (IOException e) {
-				throw new RuntimeException(e);
-			}
-
-		}
-
-		public String toString() {
-
-			StringBuilder sb = new StringBuilder();
-			sb.append(super.toString());
-			sb.append("[");
-			sb.append("id=" + id);
-			sb.append(",date=" + date);
-			sb.append(",hashtag=" + hashtag);
-			sb.append(",country=" + country);
-			sb.append(",text=" + text);
-			sb.append("]");
-
-			return sb.toString();
-		}
-
-		/**
-		 * Compare keys
-		 */
-		public int compareTo(row2Struct other) {
-
-			int returnValue = -1;
-
-			return returnValue;
-		}
-
-		private int checkNullsAndCompare(Object object1, Object object2) {
-			int returnValue = 0;
-			if (object1 instanceof Comparable && object2 instanceof Comparable) {
-				returnValue = ((Comparable) object1).compareTo(object2);
-			} else if (object1 != null && object2 != null) {
-				returnValue = compareStrings(object1.toString(), object2.toString());
-			} else if (object1 == null && object2 != null) {
-				returnValue = 1;
-			} else if (object1 != null && object2 == null) {
-				returnValue = -1;
-			} else {
-				returnValue = 0;
-			}
-
-			return returnValue;
-		}
-
-		private int compareStrings(String string1, String string2) {
-			return string1.compareTo(string2);
-		}
-
+		return strReturn;
 	}
 
-	public static class row1Struct implements routines.system.IPersistableRow<row1Struct> {
-		final static byte[] commonByteArrayLock_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[0];
-		static byte[] commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[0];
+    private void writeString(String str, ObjectOutputStream dos) throws IOException{
+		if(str == null) {
+            dos.writeInt(-1);
+		} else {
+            byte[] byteArray = str.getBytes(utf8Charset);
+	    	dos.writeInt(byteArray.length);
+			dos.write(byteArray);
+    	}
+    }
 
-		public String id;
+    public void readData(ObjectInputStream dis) {
 
-		public String getId() {
-			return this.id;
-		}
+		synchronized(commonByteArrayLock_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets) {
 
-		public String date;
+        	try {
 
-		public String getDate() {
-			return this.date;
-		}
-
-		public String hashtag;
-
-		public String getHashtag() {
-			return this.hashtag;
-		}
-
-		public String country;
-
-		public String getCountry() {
-			return this.country;
-		}
-
-		public String text;
-
-		public String getText() {
-			return this.text;
-		}
-
-		private String readString(ObjectInputStream dis) throws IOException {
-			String strReturn = null;
-			int length = 0;
-			length = dis.readInt();
-			if (length == -1) {
-				strReturn = null;
-			} else {
-				if (length > commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets.length) {
-					if (length < 1024
-							&& commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets.length == 0) {
-						commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[1024];
-					} else {
-						commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[2
-								* length];
-					}
-				}
-				dis.readFully(commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets, 0,
-						length);
-				strReturn = new String(commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets,
-						0, length, utf8Charset);
-			}
-			return strReturn;
-		}
-
-		private void writeString(String str, ObjectOutputStream dos) throws IOException {
-			if (str == null) {
-				dos.writeInt(-1);
-			} else {
-				byte[] byteArray = str.getBytes(utf8Charset);
-				dos.writeInt(byteArray.length);
-				dos.write(byteArray);
-			}
-		}
-
-		public void readData(ObjectInputStream dis) {
-
-			synchronized (commonByteArrayLock_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets) {
-
-				try {
-
-					int length = 0;
-
+        		int length = 0;
+		
 					this.id = readString(dis);
-
+					
 					this.date = readString(dis);
-
+					
 					this.hashtag = readString(dis);
-
+					
 					this.country = readString(dis);
-
+					
 					this.text = readString(dis);
+					
+        	} catch (IOException e) {
+	            throw new RuntimeException(e);
 
-				} catch (IOException e) {
-					throw new RuntimeException(e);
+		
 
+        }
+
+		
+
+      }
+
+
+    }
+
+    public void writeData(ObjectOutputStream dos) {
+        try {
+
+		
+					// String
+				
+						writeString(this.id,dos);
+					
+					// String
+				
+						writeString(this.date,dos);
+					
+					// String
+				
+						writeString(this.hashtag,dos);
+					
+					// String
+				
+						writeString(this.country,dos);
+					
+					// String
+				
+						writeString(this.text,dos);
+					
+        	} catch (IOException e) {
+	            throw new RuntimeException(e);
+        }
+
+
+    }
+
+
+    public String toString() {
+
+		StringBuilder sb = new StringBuilder();
+		sb.append(super.toString());
+		sb.append("[");
+		sb.append("id="+id);
+		sb.append(",date="+date);
+		sb.append(",hashtag="+hashtag);
+		sb.append(",country="+country);
+		sb.append(",text="+text);
+	    sb.append("]");
+
+	    return sb.toString();
+    }
+
+    /**
+     * Compare keys
+     */
+    public int compareTo(row1Struct other) {
+
+		int returnValue = -1;
+		
+	    return returnValue;
+    }
+
+
+    private int checkNullsAndCompare(Object object1, Object object2) {
+        int returnValue = 0;
+		if (object1 instanceof Comparable && object2 instanceof Comparable) {
+            returnValue = ((Comparable) object1).compareTo(object2);
+        } else if (object1 != null && object2 != null) {
+            returnValue = compareStrings(object1.toString(), object2.toString());
+        } else if (object1 == null && object2 != null) {
+            returnValue = 1;
+        } else if (object1 != null && object2 == null) {
+            returnValue = -1;
+        } else {
+            returnValue = 0;
+        }
+
+        return returnValue;
+    }
+
+    private int compareStrings(String string1, String string2) {
+        return string1.compareTo(string2);
+    }
+
+
+}
+
+public static class after_tDBInput_1Struct implements routines.system.IPersistableRow<after_tDBInput_1Struct> {
+    final static byte[] commonByteArrayLock_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[0];
+    static byte[] commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[0];
+
+	
+			    public String id;
+
+				public String getId () {
+					return this.id;
 				}
+				
+			    public String date;
 
+				public String getDate () {
+					return this.date;
+				}
+				
+			    public String hashtag;
+
+				public String getHashtag () {
+					return this.hashtag;
+				}
+				
+			    public String country;
+
+				public String getCountry () {
+					return this.country;
+				}
+				
+			    public String text;
+
+				public String getText () {
+					return this.text;
+				}
+				
+
+
+
+	private String readString(ObjectInputStream dis) throws IOException{
+		String strReturn = null;
+		int length = 0;
+        length = dis.readInt();
+		if (length == -1) {
+			strReturn = null;
+		} else {
+			if(length > commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets.length) {
+				if(length < 1024 && commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets.length == 0) {
+   					commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[1024];
+				} else {
+   					commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[2 * length];
+   				}
 			}
-
+			dis.readFully(commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets, 0, length);
+			strReturn = new String(commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets, 0, length, utf8Charset);
 		}
-
-		public void writeData(ObjectOutputStream dos) {
-			try {
-
-				// String
-
-				writeString(this.id, dos);
-
-				// String
-
-				writeString(this.date, dos);
-
-				// String
-
-				writeString(this.hashtag, dos);
-
-				// String
-
-				writeString(this.country, dos);
-
-				// String
-
-				writeString(this.text, dos);
-
-			} catch (IOException e) {
-				throw new RuntimeException(e);
-			}
-
-		}
-
-		public String toString() {
-
-			StringBuilder sb = new StringBuilder();
-			sb.append(super.toString());
-			sb.append("[");
-			sb.append("id=" + id);
-			sb.append(",date=" + date);
-			sb.append(",hashtag=" + hashtag);
-			sb.append(",country=" + country);
-			sb.append(",text=" + text);
-			sb.append("]");
-
-			return sb.toString();
-		}
-
-		/**
-		 * Compare keys
-		 */
-		public int compareTo(row1Struct other) {
-
-			int returnValue = -1;
-
-			return returnValue;
-		}
-
-		private int checkNullsAndCompare(Object object1, Object object2) {
-			int returnValue = 0;
-			if (object1 instanceof Comparable && object2 instanceof Comparable) {
-				returnValue = ((Comparable) object1).compareTo(object2);
-			} else if (object1 != null && object2 != null) {
-				returnValue = compareStrings(object1.toString(), object2.toString());
-			} else if (object1 == null && object2 != null) {
-				returnValue = 1;
-			} else if (object1 != null && object2 == null) {
-				returnValue = -1;
-			} else {
-				returnValue = 0;
-			}
-
-			return returnValue;
-		}
-
-		private int compareStrings(String string1, String string2) {
-			return string1.compareTo(string2);
-		}
-
+		return strReturn;
 	}
 
-	public static class after_tDBInput_1Struct implements routines.system.IPersistableRow<after_tDBInput_1Struct> {
-		final static byte[] commonByteArrayLock_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[0];
-		static byte[] commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[0];
+    private void writeString(String str, ObjectOutputStream dos) throws IOException{
+		if(str == null) {
+            dos.writeInt(-1);
+		} else {
+            byte[] byteArray = str.getBytes(utf8Charset);
+	    	dos.writeInt(byteArray.length);
+			dos.write(byteArray);
+    	}
+    }
 
-		public String id;
+    public void readData(ObjectInputStream dis) {
 
-		public String getId() {
-			return this.id;
-		}
+		synchronized(commonByteArrayLock_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets) {
 
-		public String date;
+        	try {
 
-		public String getDate() {
-			return this.date;
-		}
-
-		public String hashtag;
-
-		public String getHashtag() {
-			return this.hashtag;
-		}
-
-		public String country;
-
-		public String getCountry() {
-			return this.country;
-		}
-
-		public String text;
-
-		public String getText() {
-			return this.text;
-		}
-
-		private String readString(ObjectInputStream dis) throws IOException {
-			String strReturn = null;
-			int length = 0;
-			length = dis.readInt();
-			if (length == -1) {
-				strReturn = null;
-			} else {
-				if (length > commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets.length) {
-					if (length < 1024
-							&& commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets.length == 0) {
-						commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[1024];
-					} else {
-						commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[2
-								* length];
-					}
-				}
-				dis.readFully(commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets, 0,
-						length);
-				strReturn = new String(commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets,
-						0, length, utf8Charset);
-			}
-			return strReturn;
-		}
-
-		private void writeString(String str, ObjectOutputStream dos) throws IOException {
-			if (str == null) {
-				dos.writeInt(-1);
-			} else {
-				byte[] byteArray = str.getBytes(utf8Charset);
-				dos.writeInt(byteArray.length);
-				dos.write(byteArray);
-			}
-		}
-
-		public void readData(ObjectInputStream dis) {
-
-			synchronized (commonByteArrayLock_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets) {
-
-				try {
-
-					int length = 0;
-
+        		int length = 0;
+		
 					this.id = readString(dis);
-
+					
 					this.date = readString(dis);
-
+					
 					this.hashtag = readString(dis);
-
+					
 					this.country = readString(dis);
-
+					
 					this.text = readString(dis);
+					
+        	} catch (IOException e) {
+	            throw new RuntimeException(e);
 
-				} catch (IOException e) {
-					throw new RuntimeException(e);
+		
 
-				}
+        }
 
-			}
+		
 
-		}
+      }
 
-		public void writeData(ObjectOutputStream dos) {
-			try {
 
-				// String
+    }
 
-				writeString(this.id, dos);
+    public void writeData(ObjectOutputStream dos) {
+        try {
 
-				// String
+		
+					// String
+				
+						writeString(this.id,dos);
+					
+					// String
+				
+						writeString(this.date,dos);
+					
+					// String
+				
+						writeString(this.hashtag,dos);
+					
+					// String
+				
+						writeString(this.country,dos);
+					
+					// String
+				
+						writeString(this.text,dos);
+					
+        	} catch (IOException e) {
+	            throw new RuntimeException(e);
+        }
 
-				writeString(this.date, dos);
 
-				// String
+    }
 
-				writeString(this.hashtag, dos);
 
-				// String
+    public String toString() {
 
-				writeString(this.country, dos);
+		StringBuilder sb = new StringBuilder();
+		sb.append(super.toString());
+		sb.append("[");
+		sb.append("id="+id);
+		sb.append(",date="+date);
+		sb.append(",hashtag="+hashtag);
+		sb.append(",country="+country);
+		sb.append(",text="+text);
+	    sb.append("]");
 
-				// String
+	    return sb.toString();
+    }
 
-				writeString(this.text, dos);
+    /**
+     * Compare keys
+     */
+    public int compareTo(after_tDBInput_1Struct other) {
 
-			} catch (IOException e) {
-				throw new RuntimeException(e);
-			}
+		int returnValue = -1;
+		
+	    return returnValue;
+    }
 
-		}
 
-		public String toString() {
+    private int checkNullsAndCompare(Object object1, Object object2) {
+        int returnValue = 0;
+		if (object1 instanceof Comparable && object2 instanceof Comparable) {
+            returnValue = ((Comparable) object1).compareTo(object2);
+        } else if (object1 != null && object2 != null) {
+            returnValue = compareStrings(object1.toString(), object2.toString());
+        } else if (object1 == null && object2 != null) {
+            returnValue = 1;
+        } else if (object1 != null && object2 == null) {
+            returnValue = -1;
+        } else {
+            returnValue = 0;
+        }
 
-			StringBuilder sb = new StringBuilder();
-			sb.append(super.toString());
-			sb.append("[");
-			sb.append("id=" + id);
-			sb.append(",date=" + date);
-			sb.append(",hashtag=" + hashtag);
-			sb.append(",country=" + country);
-			sb.append(",text=" + text);
-			sb.append("]");
+        return returnValue;
+    }
 
-			return sb.toString();
-		}
+    private int compareStrings(String string1, String string2) {
+        return string1.compareTo(string2);
+    }
 
-		/**
-		 * Compare keys
-		 */
-		public int compareTo(after_tDBInput_1Struct other) {
 
-			int returnValue = -1;
+}
+public void tDBInput_1Process(final java.util.Map<String, Object> globalMap) throws TalendException {
+	globalMap.put("tDBInput_1_SUBPROCESS_STATE", 0);
 
-			return returnValue;
-		}
-
-		private int checkNullsAndCompare(Object object1, Object object2) {
-			int returnValue = 0;
-			if (object1 instanceof Comparable && object2 instanceof Comparable) {
-				returnValue = ((Comparable) object1).compareTo(object2);
-			} else if (object1 != null && object2 != null) {
-				returnValue = compareStrings(object1.toString(), object2.toString());
-			} else if (object1 == null && object2 != null) {
-				returnValue = 1;
-			} else if (object1 != null && object2 == null) {
-				returnValue = -1;
-			} else {
-				returnValue = 0;
-			}
-
-			return returnValue;
-		}
-
-		private int compareStrings(String string1, String string2) {
-			return string1.compareTo(string2);
-		}
-
-	}
-
-	public void tDBInput_1Process(final java.util.Map<String, Object> globalMap) throws TalendException {
-		globalMap.put("tDBInput_1_SUBPROCESS_STATE", 0);
-
-		final boolean execStat = this.execStat;
+ final boolean execStat = this.execStat;
 		String currentVirtualComponent = null;
-
+	
 		String iterateId = "";
+	
+	
+	String currentComponent = "";
+	java.util.Map<String, Object> resourceMap = new java.util.HashMap<String, Object>();
 
-		String currentComponent = "";
-		java.util.Map<String, Object> resourceMap = new java.util.HashMap<String, Object>();
-
-		try {
+	try {
 			// TDI-39566 avoid throwing an useless Exception
 			boolean resumeIt = true;
 			if (globalResumeTicket == false && resumeEntryMethodName != null) {
 				String currentMethodName = new java.lang.Exception().getStackTrace()[0].getMethodName();
 				resumeIt = resumeEntryMethodName.equals(currentMethodName);
 			}
-			if (resumeIt || globalResumeTicket) { // start the resume
+			if (resumeIt || globalResumeTicket) { //start the resume
 				globalResumeTicket = true;
 
-				tFileInputDelimited_1Process(globalMap);
 
-				row1Struct row1 = new row1Struct();
-				row2Struct row2 = new row2Struct();
-				out1Struct out1 = new out1Struct();
-				row3Struct row3 = new row3Struct();
-				row4Struct row4 = new row4Struct();
-				row5Struct row5 = new row5Struct();
-				out2Struct out2 = new out2Struct();
-				row9Struct row9 = new row9Struct();
-				posStruct pos = new posStruct();
-				row7Struct row7 = new row7Struct();
-				negStruct neg = new negStruct();
-				row8Struct row8 = new row8Struct();
-				cntStruct cnt = new cntStruct();
-				row10Struct row10 = new row10Struct();
-				c_postStruct c_post = new c_postStruct();
-				row12Struct row12 = new row12Struct();
-				c_negtStruct c_negt = new c_negtStruct();
-				row11Struct row11 = new row11Struct();
-				count_inStruct count_in = new count_inStruct();
-				row13Struct row13 = new row13Struct();
+		tFileInputDelimited_1Process(globalMap);
 
-				/**
-				 * [tAggregateRow_3_AGGOUT begin ] start
-				 */
+		row1Struct row1 = new row1Struct();
+row2Struct row2 = new row2Struct();
+out1Struct out1 = new out1Struct();
+row3Struct row3 = new row3Struct();
+row4Struct row4 = new row4Struct();
+row5Struct row5 = new row5Struct();
+out2Struct out2 = new out2Struct();
+row9Struct row9 = new row9Struct();
+posStruct pos = new posStruct();
+row7Struct row7 = new row7Struct();
+negStruct neg = new negStruct();
+row8Struct row8 = new row8Struct();
+cntStruct cnt = new cntStruct();
+row10Struct row10 = new row10Struct();
+c_postStruct c_post = new c_postStruct();
+row12Struct row12 = new row12Struct();
+c_negtStruct c_negt = new c_negtStruct();
+row11Struct row11 = new row11Struct();
+count_inStruct count_in = new count_inStruct();
+row13Struct row13 = new row13Struct();
 
-				ok_Hash.put("tAggregateRow_3_AGGOUT", false);
-				start_Hash.put("tAggregateRow_3_AGGOUT", System.currentTimeMillis());
 
-				currentVirtualComponent = "tAggregateRow_3";
 
-				currentComponent = "tAggregateRow_3_AGGOUT";
 
-				if (execStat) {
-					runStat.updateStatOnConnection(resourceMap, iterateId, 0, 0, "out2");
-				}
 
-				int tos_count_tAggregateRow_3_AGGOUT = 0;
+
+
+
+
+
+	
+	/**
+	 * [tAggregateRow_3_AGGOUT begin ] start
+	 */
+
+	
+
+	
+		
+		ok_Hash.put("tAggregateRow_3_AGGOUT", false);
+		start_Hash.put("tAggregateRow_3_AGGOUT", System.currentTimeMillis());
+		
+	
+		currentVirtualComponent = "tAggregateRow_3";
+	
+	currentComponent="tAggregateRow_3_AGGOUT";
+
+	
+					if(execStat) {
+						runStat.updateStatOnConnection(resourceMap,iterateId,0,0,"out2");
+					}
+				
+		int tos_count_tAggregateRow_3_AGGOUT = 0;
+		
 
 // ------------ Seems it is not used
 
-				java.util.Map hashAggreg_tAggregateRow_3 = new java.util.HashMap();
+java.util.Map hashAggreg_tAggregateRow_3 = new java.util.HashMap(); 
 
 // ------------
 
-				class UtilClass_tAggregateRow_3 { // G_OutBegin_AggR_144
+	class UtilClass_tAggregateRow_3 { // G_OutBegin_AggR_144
 
-					public double sd(Double[] data) {
-						final int n = data.length;
-						if (n < 2) {
-							return Double.NaN;
-						}
-						double d1 = 0d;
-						double d2 = 0d;
+		public double sd(Double[] data) {
+	        final int n = data.length;
+        	if (n < 2) {
+	            return Double.NaN;
+        	}
+        	double d1 = 0d;
+        	double d2 =0d;
+	        
+	        for (int i = 0; i < data.length; i++) {
+            	d1 += (data[i]*data[i]);
+            	d2 += data[i];
+        	}
+        
+	        return Math.sqrt((n*d1 - d2*d2)/n/(n-1));
+	    }
+	    
+		public void checkedIADD(byte a, byte b, boolean checkTypeOverFlow, boolean checkUlp) {
+		    byte r = (byte) (a + b);
+		    if (checkTypeOverFlow && ((a ^ r) & (b ^ r)) < 0) {
+		        throw new RuntimeException(buildOverflowMessage(String.valueOf(a), String.valueOf(b), "'short/Short'", "'byte/Byte'"));
+		    }
+		}
+		
+		public void checkedIADD(short a, short b, boolean checkTypeOverFlow, boolean checkUlp) {
+		    short r = (short) (a + b);
+		    if (checkTypeOverFlow && ((a ^ r) & (b ^ r)) < 0) {
+		        throw new RuntimeException(buildOverflowMessage(String.valueOf(a), String.valueOf(b), "'int/Integer'", "'short/Short'"));
+		    }
+		}
+		
+		public void checkedIADD(int a, int b, boolean checkTypeOverFlow, boolean checkUlp) {
+		    int r = a + b;
+		    if (checkTypeOverFlow && ((a ^ r) & (b ^ r)) < 0) {
+		        throw new RuntimeException(buildOverflowMessage(String.valueOf(a), String.valueOf(b), "'long/Long'", "'int/Integer'"));
+		    }
+		}
+		
+		public void checkedIADD(long a, long b, boolean checkTypeOverFlow, boolean checkUlp) {
+		    long r = a + b;
+		    if (checkTypeOverFlow && ((a ^ r) & (b ^ r)) < 0) {
+		        throw new RuntimeException(buildOverflowMessage(String.valueOf(a), String.valueOf(b), "'BigDecimal'", "'long/Long'"));
+		    }
+		}
+		
+		public void checkedIADD(float a, float b, boolean checkTypeOverFlow, boolean checkUlp) {
+		
+			if(checkUlp) {
+			    float minAddedValue = Math.ulp(a);
+			    if (minAddedValue > Math.abs(b)) {
+			        throw new RuntimeException(buildPrecisionMessage(String.valueOf(a), String.valueOf(b), "'double' or 'BigDecimal'", "'float/Float'"));
+			    }
+			}
+			
+		    if (checkTypeOverFlow && ((double) a + (double) b > (double) Float.MAX_VALUE) || ((double) a + (double) b < (double) -Float.MAX_VALUE)) {
+		        throw new RuntimeException(buildOverflowMessage(String.valueOf(a), String.valueOf(b), "'double' or 'BigDecimal'", "'float/Float'"));
+		    }
+		}
+		
+		public void checkedIADD(double a, double b, boolean checkTypeOverFlow, boolean checkUlp) {
+		
+			if(checkUlp) {
+			    double minAddedValue = Math.ulp(a);
+			    if (minAddedValue > Math.abs(b)) {
+			        throw new RuntimeException(buildPrecisionMessage(String.valueOf(a), String.valueOf(a), "'BigDecimal'", "'double/Double'"));
+			    }
+			}
+		
+		    if (checkTypeOverFlow && (a + b > (double) Double.MAX_VALUE) || (a + b < -Double.MAX_VALUE )) {
+		        throw new RuntimeException(buildOverflowMessage(String.valueOf(a), String.valueOf(b), "'BigDecimal'", "'double/Double'"));
+		    }
+		}
+		
+		public void checkedIADD(double a, byte b, boolean checkTypeOverFlow, boolean checkUlp) {
+		
+		    if (checkTypeOverFlow && (a + b > (double) Double.MAX_VALUE) || (a + b < -Double.MAX_VALUE )) {
+		        throw new RuntimeException(buildOverflowMessage(String.valueOf(a), String.valueOf(b), "'BigDecimal'", "'double/Double'"));
+		    }
+		}
+		
+		public void checkedIADD(double a, short b, boolean checkTypeOverFlow, boolean checkUlp) {
+		
+		    if (checkTypeOverFlow && (a + b > (double) Double.MAX_VALUE) || (a + b < -Double.MAX_VALUE )) {
+		        throw new RuntimeException(buildOverflowMessage(String.valueOf(a), String.valueOf(b), "'BigDecimal'", "'double/Double'"));
+		    }
+		}
+		
+		public void checkedIADD(double a, int b, boolean checkTypeOverFlow, boolean checkUlp) {
+		
+		    if (checkTypeOverFlow && (a + b > (double) Double.MAX_VALUE) || (a + b < -Double.MAX_VALUE )) {
+		        throw new RuntimeException(buildOverflowMessage(String.valueOf(a), String.valueOf(b), "'BigDecimal'", "'double/Double'"));
+		    }
+		}
+		
+		public void checkedIADD(double a, float b, boolean checkTypeOverFlow, boolean checkUlp) {
+		
+			if(checkUlp) {
+			    double minAddedValue = Math.ulp(a);
+			    if (minAddedValue > Math.abs(b)) {
+			        throw new RuntimeException(buildPrecisionMessage(String.valueOf(a), String.valueOf(a), "'BigDecimal'", "'double/Double'"));
+			    }
+			}
+		
+		    if (checkTypeOverFlow && (a + b > (double) Double.MAX_VALUE) || (a + b < -Double.MAX_VALUE )) {
+		        throw new RuntimeException(buildOverflowMessage(String.valueOf(a), String.valueOf(b), "'BigDecimal'", "'double/Double'"));
+		    }
+		}
+		
+		private String buildOverflowMessage(String a, String b, String advicedTypes, String originalType) {
+		    return "Type overflow when adding " + b + " to " + a
+		    + ", to resolve this problem, increase the precision by using "+ advicedTypes +" type in place of "+ originalType +".";
+		}
+		
+		private String buildPrecisionMessage(String a, String b, String advicedTypes, String originalType) {
+		    return "The double precision is unsufficient to add the value " + b + " to " + a
+		    + ", to resolve this problem, increase the precision by using "+ advicedTypes +" type in place of "+ originalType +".";
+		}
 
-						for (int i = 0; i < data.length; i++) {
-							d1 += (data[i] * data[i]);
-							d2 += data[i];
-						}
+	} // G_OutBegin_AggR_144
 
-						return Math.sqrt((n * d1 - d2 * d2) / n / (n - 1));
-					}
+	UtilClass_tAggregateRow_3 utilClass_tAggregateRow_3 = new UtilClass_tAggregateRow_3();
 
-					public void checkedIADD(byte a, byte b, boolean checkTypeOverFlow, boolean checkUlp) {
-						byte r = (byte) (a + b);
-						if (checkTypeOverFlow && ((a ^ r) & (b ^ r)) < 0) {
-							throw new RuntimeException(buildOverflowMessage(String.valueOf(a), String.valueOf(b),
-									"'short/Short'", "'byte/Byte'"));
-						}
-					}
+	
 
-					public void checkedIADD(short a, short b, boolean checkTypeOverFlow, boolean checkUlp) {
-						short r = (short) (a + b);
-						if (checkTypeOverFlow && ((a ^ r) & (b ^ r)) < 0) {
-							throw new RuntimeException(buildOverflowMessage(String.valueOf(a), String.valueOf(b),
-									"'int/Integer'", "'short/Short'"));
-						}
-					}
+	class AggOperationStruct_tAggregateRow_3 { // G_OutBegin_AggR_100
 
-					public void checkedIADD(int a, int b, boolean checkTypeOverFlow, boolean checkUlp) {
-						int r = a + b;
-						if (checkTypeOverFlow && ((a ^ r) & (b ^ r)) < 0) {
-							throw new RuntimeException(buildOverflowMessage(String.valueOf(a), String.valueOf(b),
-									"'long/Long'", "'int/Integer'"));
-						}
-					}
+		private static final int DEFAULT_HASHCODE = 1;
+	    private static final int PRIME = 31;
+	    private int hashCode = DEFAULT_HASHCODE;
+	    public boolean hashCodeDirty = true;
 
-					public void checkedIADD(long a, long b, boolean checkTypeOverFlow, boolean checkUlp) {
-						long r = a + b;
-						if (checkTypeOverFlow && ((a ^ r) & (b ^ r)) < 0) {
-							throw new RuntimeException(buildOverflowMessage(String.valueOf(a), String.valueOf(b),
-									"'BigDecimal'", "'long/Long'"));
-						}
-					}
-
-					public void checkedIADD(float a, float b, boolean checkTypeOverFlow, boolean checkUlp) {
-
-						if (checkUlp) {
-							float minAddedValue = Math.ulp(a);
-							if (minAddedValue > Math.abs(b)) {
-								throw new RuntimeException(buildPrecisionMessage(String.valueOf(a), String.valueOf(b),
-										"'double' or 'BigDecimal'", "'float/Float'"));
-							}
-						}
-
-						if (checkTypeOverFlow && ((double) a + (double) b > (double) Float.MAX_VALUE)
-								|| ((double) a + (double) b < (double) -Float.MAX_VALUE)) {
-							throw new RuntimeException(buildOverflowMessage(String.valueOf(a), String.valueOf(b),
-									"'double' or 'BigDecimal'", "'float/Float'"));
-						}
-					}
-
-					public void checkedIADD(double a, double b, boolean checkTypeOverFlow, boolean checkUlp) {
-
-						if (checkUlp) {
-							double minAddedValue = Math.ulp(a);
-							if (minAddedValue > Math.abs(b)) {
-								throw new RuntimeException(buildPrecisionMessage(String.valueOf(a), String.valueOf(a),
-										"'BigDecimal'", "'double/Double'"));
-							}
-						}
-
-						if (checkTypeOverFlow && (a + b > (double) Double.MAX_VALUE) || (a + b < -Double.MAX_VALUE)) {
-							throw new RuntimeException(buildOverflowMessage(String.valueOf(a), String.valueOf(b),
-									"'BigDecimal'", "'double/Double'"));
-						}
-					}
-
-					public void checkedIADD(double a, byte b, boolean checkTypeOverFlow, boolean checkUlp) {
-
-						if (checkTypeOverFlow && (a + b > (double) Double.MAX_VALUE) || (a + b < -Double.MAX_VALUE)) {
-							throw new RuntimeException(buildOverflowMessage(String.valueOf(a), String.valueOf(b),
-									"'BigDecimal'", "'double/Double'"));
-						}
-					}
-
-					public void checkedIADD(double a, short b, boolean checkTypeOverFlow, boolean checkUlp) {
-
-						if (checkTypeOverFlow && (a + b > (double) Double.MAX_VALUE) || (a + b < -Double.MAX_VALUE)) {
-							throw new RuntimeException(buildOverflowMessage(String.valueOf(a), String.valueOf(b),
-									"'BigDecimal'", "'double/Double'"));
-						}
-					}
-
-					public void checkedIADD(double a, int b, boolean checkTypeOverFlow, boolean checkUlp) {
-
-						if (checkTypeOverFlow && (a + b > (double) Double.MAX_VALUE) || (a + b < -Double.MAX_VALUE)) {
-							throw new RuntimeException(buildOverflowMessage(String.valueOf(a), String.valueOf(b),
-									"'BigDecimal'", "'double/Double'"));
-						}
-					}
-
-					public void checkedIADD(double a, float b, boolean checkTypeOverFlow, boolean checkUlp) {
-
-						if (checkUlp) {
-							double minAddedValue = Math.ulp(a);
-							if (minAddedValue > Math.abs(b)) {
-								throw new RuntimeException(buildPrecisionMessage(String.valueOf(a), String.valueOf(a),
-										"'BigDecimal'", "'double/Double'"));
-							}
-						}
-
-						if (checkTypeOverFlow && (a + b > (double) Double.MAX_VALUE) || (a + b < -Double.MAX_VALUE)) {
-							throw new RuntimeException(buildOverflowMessage(String.valueOf(a), String.valueOf(b),
-									"'BigDecimal'", "'double/Double'"));
-						}
-					}
-
-					private String buildOverflowMessage(String a, String b, String advicedTypes, String originalType) {
-						return "Type overflow when adding " + b + " to " + a
-								+ ", to resolve this problem, increase the precision by using " + advicedTypes
-								+ " type in place of " + originalType + ".";
-					}
-
-					private String buildPrecisionMessage(String a, String b, String advicedTypes, String originalType) {
-						return "The double precision is unsufficient to add the value " + b + " to " + a
-								+ ", to resolve this problem, increase the precision by using " + advicedTypes
-								+ " type in place of " + originalType + ".";
-					}
-
-				} // G_OutBegin_AggR_144
-
-				UtilClass_tAggregateRow_3 utilClass_tAggregateRow_3 = new UtilClass_tAggregateRow_3();
-
-				class AggOperationStruct_tAggregateRow_3 { // G_OutBegin_AggR_100
-
-					private static final int DEFAULT_HASHCODE = 1;
-					private static final int PRIME = 31;
-					private int hashCode = DEFAULT_HASHCODE;
-					public boolean hashCodeDirty = true;
-
-					String date;
-					String hashtag;
-					String country;
-					Integer t_reception_sum;
-
-					@Override
-					public int hashCode() {
-						if (this.hashCodeDirty) {
-							final int prime = PRIME;
-							int result = DEFAULT_HASHCODE;
-
+    				String date;
+    				String hashtag;
+    				String country;
+         			Integer t_reception_sum;
+        
+	    @Override
+		public int hashCode() {
+			if (this.hashCodeDirty) {
+				final int prime = PRIME;
+				int result = DEFAULT_HASHCODE;
+		
 							result = prime * result + ((this.date == null) ? 0 : this.date.hashCode());
-
+							
 							result = prime * result + ((this.hashtag == null) ? 0 : this.hashtag.hashCode());
-
+							
 							result = prime * result + ((this.country == null) ? 0 : this.country.hashCode());
+							
+	    		this.hashCode = result;
+	    		this.hashCodeDirty = false;		
+			}
+			return this.hashCode;
+		}
+		
+		@Override
+		public boolean equals(Object obj) {
+			if (this == obj) return true;
+			if (obj == null) return false;
+			if (getClass() != obj.getClass()) return false;
+			final AggOperationStruct_tAggregateRow_3 other = (AggOperationStruct_tAggregateRow_3) obj;
+			
+							if (this.date == null) {
+								if (other.date != null) 
+									return false;
+							} else if (!this.date.equals(other.date)) 
+								return false;
+						
+							if (this.hashtag == null) {
+								if (other.hashtag != null) 
+									return false;
+							} else if (!this.hashtag.equals(other.hashtag)) 
+								return false;
+						
+							if (this.country == null) {
+								if (other.country != null) 
+									return false;
+							} else if (!this.country.equals(other.country)) 
+								return false;
+						
+			
+			return true;
+		}
+  
+        
+	} // G_OutBegin_AggR_100
 
-							this.hashCode = result;
-							this.hashCodeDirty = false;
-						}
-						return this.hashCode;
+	AggOperationStruct_tAggregateRow_3 operation_result_tAggregateRow_3 = null;
+	AggOperationStruct_tAggregateRow_3 operation_finder_tAggregateRow_3 = new AggOperationStruct_tAggregateRow_3();
+	java.util.Map<AggOperationStruct_tAggregateRow_3,AggOperationStruct_tAggregateRow_3> hash_tAggregateRow_3 = new java.util.HashMap<AggOperationStruct_tAggregateRow_3,AggOperationStruct_tAggregateRow_3>();
+	
+
+ 
+
+
+
+/**
+ * [tAggregateRow_3_AGGOUT begin ] stop
+ */
+
+
+
+
+	
+	/**
+	 * [tAggregateRow_1_AGGOUT begin ] start
+	 */
+
+	
+
+	
+		
+		ok_Hash.put("tAggregateRow_1_AGGOUT", false);
+		start_Hash.put("tAggregateRow_1_AGGOUT", System.currentTimeMillis());
+		
+	
+		currentVirtualComponent = "tAggregateRow_1";
+	
+	currentComponent="tAggregateRow_1_AGGOUT";
+
+	
+					if(execStat) {
+						runStat.updateStatOnConnection(resourceMap,iterateId,0,0,"pos");
 					}
-
-					@Override
-					public boolean equals(Object obj) {
-						if (this == obj)
-							return true;
-						if (obj == null)
-							return false;
-						if (getClass() != obj.getClass())
-							return false;
-						final AggOperationStruct_tAggregateRow_3 other = (AggOperationStruct_tAggregateRow_3) obj;
-
-						if (this.date == null) {
-							if (other.date != null)
-								return false;
-						} else if (!this.date.equals(other.date))
-							return false;
-
-						if (this.hashtag == null) {
-							if (other.hashtag != null)
-								return false;
-						} else if (!this.hashtag.equals(other.hashtag))
-							return false;
-
-						if (this.country == null) {
-							if (other.country != null)
-								return false;
-						} else if (!this.country.equals(other.country))
-							return false;
-
-						return true;
-					}
-
-				} // G_OutBegin_AggR_100
-
-				AggOperationStruct_tAggregateRow_3 operation_result_tAggregateRow_3 = null;
-				AggOperationStruct_tAggregateRow_3 operation_finder_tAggregateRow_3 = new AggOperationStruct_tAggregateRow_3();
-				java.util.Map<AggOperationStruct_tAggregateRow_3, AggOperationStruct_tAggregateRow_3> hash_tAggregateRow_3 = new java.util.HashMap<AggOperationStruct_tAggregateRow_3, AggOperationStruct_tAggregateRow_3>();
-
-				/**
-				 * [tAggregateRow_3_AGGOUT begin ] stop
-				 */
-
-				/**
-				 * [tAggregateRow_1_AGGOUT begin ] start
-				 */
-
-				ok_Hash.put("tAggregateRow_1_AGGOUT", false);
-				start_Hash.put("tAggregateRow_1_AGGOUT", System.currentTimeMillis());
-
-				currentVirtualComponent = "tAggregateRow_1";
-
-				currentComponent = "tAggregateRow_1_AGGOUT";
-
-				if (execStat) {
-					runStat.updateStatOnConnection(resourceMap, iterateId, 0, 0, "pos");
-				}
-
-				int tos_count_tAggregateRow_1_AGGOUT = 0;
+				
+		int tos_count_tAggregateRow_1_AGGOUT = 0;
+		
 
 // ------------ Seems it is not used
 
-				java.util.Map hashAggreg_tAggregateRow_1 = new java.util.HashMap();
+java.util.Map hashAggreg_tAggregateRow_1 = new java.util.HashMap(); 
 
 // ------------
 
-				class UtilClass_tAggregateRow_1 { // G_OutBegin_AggR_144
+	class UtilClass_tAggregateRow_1 { // G_OutBegin_AggR_144
 
-					public double sd(Double[] data) {
-						final int n = data.length;
-						if (n < 2) {
-							return Double.NaN;
-						}
-						double d1 = 0d;
-						double d2 = 0d;
+		public double sd(Double[] data) {
+	        final int n = data.length;
+        	if (n < 2) {
+	            return Double.NaN;
+        	}
+        	double d1 = 0d;
+        	double d2 =0d;
+	        
+	        for (int i = 0; i < data.length; i++) {
+            	d1 += (data[i]*data[i]);
+            	d2 += data[i];
+        	}
+        
+	        return Math.sqrt((n*d1 - d2*d2)/n/(n-1));
+	    }
+	    
+		public void checkedIADD(byte a, byte b, boolean checkTypeOverFlow, boolean checkUlp) {
+		    byte r = (byte) (a + b);
+		    if (checkTypeOverFlow && ((a ^ r) & (b ^ r)) < 0) {
+		        throw new RuntimeException(buildOverflowMessage(String.valueOf(a), String.valueOf(b), "'short/Short'", "'byte/Byte'"));
+		    }
+		}
+		
+		public void checkedIADD(short a, short b, boolean checkTypeOverFlow, boolean checkUlp) {
+		    short r = (short) (a + b);
+		    if (checkTypeOverFlow && ((a ^ r) & (b ^ r)) < 0) {
+		        throw new RuntimeException(buildOverflowMessage(String.valueOf(a), String.valueOf(b), "'int/Integer'", "'short/Short'"));
+		    }
+		}
+		
+		public void checkedIADD(int a, int b, boolean checkTypeOverFlow, boolean checkUlp) {
+		    int r = a + b;
+		    if (checkTypeOverFlow && ((a ^ r) & (b ^ r)) < 0) {
+		        throw new RuntimeException(buildOverflowMessage(String.valueOf(a), String.valueOf(b), "'long/Long'", "'int/Integer'"));
+		    }
+		}
+		
+		public void checkedIADD(long a, long b, boolean checkTypeOverFlow, boolean checkUlp) {
+		    long r = a + b;
+		    if (checkTypeOverFlow && ((a ^ r) & (b ^ r)) < 0) {
+		        throw new RuntimeException(buildOverflowMessage(String.valueOf(a), String.valueOf(b), "'BigDecimal'", "'long/Long'"));
+		    }
+		}
+		
+		public void checkedIADD(float a, float b, boolean checkTypeOverFlow, boolean checkUlp) {
+		
+			if(checkUlp) {
+			    float minAddedValue = Math.ulp(a);
+			    if (minAddedValue > Math.abs(b)) {
+			        throw new RuntimeException(buildPrecisionMessage(String.valueOf(a), String.valueOf(b), "'double' or 'BigDecimal'", "'float/Float'"));
+			    }
+			}
+			
+		    if (checkTypeOverFlow && ((double) a + (double) b > (double) Float.MAX_VALUE) || ((double) a + (double) b < (double) -Float.MAX_VALUE)) {
+		        throw new RuntimeException(buildOverflowMessage(String.valueOf(a), String.valueOf(b), "'double' or 'BigDecimal'", "'float/Float'"));
+		    }
+		}
+		
+		public void checkedIADD(double a, double b, boolean checkTypeOverFlow, boolean checkUlp) {
+		
+			if(checkUlp) {
+			    double minAddedValue = Math.ulp(a);
+			    if (minAddedValue > Math.abs(b)) {
+			        throw new RuntimeException(buildPrecisionMessage(String.valueOf(a), String.valueOf(a), "'BigDecimal'", "'double/Double'"));
+			    }
+			}
+		
+		    if (checkTypeOverFlow && (a + b > (double) Double.MAX_VALUE) || (a + b < -Double.MAX_VALUE )) {
+		        throw new RuntimeException(buildOverflowMessage(String.valueOf(a), String.valueOf(b), "'BigDecimal'", "'double/Double'"));
+		    }
+		}
+		
+		public void checkedIADD(double a, byte b, boolean checkTypeOverFlow, boolean checkUlp) {
+		
+		    if (checkTypeOverFlow && (a + b > (double) Double.MAX_VALUE) || (a + b < -Double.MAX_VALUE )) {
+		        throw new RuntimeException(buildOverflowMessage(String.valueOf(a), String.valueOf(b), "'BigDecimal'", "'double/Double'"));
+		    }
+		}
+		
+		public void checkedIADD(double a, short b, boolean checkTypeOverFlow, boolean checkUlp) {
+		
+		    if (checkTypeOverFlow && (a + b > (double) Double.MAX_VALUE) || (a + b < -Double.MAX_VALUE )) {
+		        throw new RuntimeException(buildOverflowMessage(String.valueOf(a), String.valueOf(b), "'BigDecimal'", "'double/Double'"));
+		    }
+		}
+		
+		public void checkedIADD(double a, int b, boolean checkTypeOverFlow, boolean checkUlp) {
+		
+		    if (checkTypeOverFlow && (a + b > (double) Double.MAX_VALUE) || (a + b < -Double.MAX_VALUE )) {
+		        throw new RuntimeException(buildOverflowMessage(String.valueOf(a), String.valueOf(b), "'BigDecimal'", "'double/Double'"));
+		    }
+		}
+		
+		public void checkedIADD(double a, float b, boolean checkTypeOverFlow, boolean checkUlp) {
+		
+			if(checkUlp) {
+			    double minAddedValue = Math.ulp(a);
+			    if (minAddedValue > Math.abs(b)) {
+			        throw new RuntimeException(buildPrecisionMessage(String.valueOf(a), String.valueOf(a), "'BigDecimal'", "'double/Double'"));
+			    }
+			}
+		
+		    if (checkTypeOverFlow && (a + b > (double) Double.MAX_VALUE) || (a + b < -Double.MAX_VALUE )) {
+		        throw new RuntimeException(buildOverflowMessage(String.valueOf(a), String.valueOf(b), "'BigDecimal'", "'double/Double'"));
+		    }
+		}
+		
+		private String buildOverflowMessage(String a, String b, String advicedTypes, String originalType) {
+		    return "Type overflow when adding " + b + " to " + a
+		    + ", to resolve this problem, increase the precision by using "+ advicedTypes +" type in place of "+ originalType +".";
+		}
+		
+		private String buildPrecisionMessage(String a, String b, String advicedTypes, String originalType) {
+		    return "The double precision is unsufficient to add the value " + b + " to " + a
+		    + ", to resolve this problem, increase the precision by using "+ advicedTypes +" type in place of "+ originalType +".";
+		}
 
-						for (int i = 0; i < data.length; i++) {
-							d1 += (data[i] * data[i]);
-							d2 += data[i];
-						}
+	} // G_OutBegin_AggR_144
 
-						return Math.sqrt((n * d1 - d2 * d2) / n / (n - 1));
-					}
+	UtilClass_tAggregateRow_1 utilClass_tAggregateRow_1 = new UtilClass_tAggregateRow_1();
 
-					public void checkedIADD(byte a, byte b, boolean checkTypeOverFlow, boolean checkUlp) {
-						byte r = (byte) (a + b);
-						if (checkTypeOverFlow && ((a ^ r) & (b ^ r)) < 0) {
-							throw new RuntimeException(buildOverflowMessage(String.valueOf(a), String.valueOf(b),
-									"'short/Short'", "'byte/Byte'"));
-						}
-					}
+	
 
-					public void checkedIADD(short a, short b, boolean checkTypeOverFlow, boolean checkUlp) {
-						short r = (short) (a + b);
-						if (checkTypeOverFlow && ((a ^ r) & (b ^ r)) < 0) {
-							throw new RuntimeException(buildOverflowMessage(String.valueOf(a), String.valueOf(b),
-									"'int/Integer'", "'short/Short'"));
-						}
-					}
+	class AggOperationStruct_tAggregateRow_1 { // G_OutBegin_AggR_100
 
-					public void checkedIADD(int a, int b, boolean checkTypeOverFlow, boolean checkUlp) {
-						int r = a + b;
-						if (checkTypeOverFlow && ((a ^ r) & (b ^ r)) < 0) {
-							throw new RuntimeException(buildOverflowMessage(String.valueOf(a), String.valueOf(b),
-									"'long/Long'", "'int/Integer'"));
-						}
-					}
+		private static final int DEFAULT_HASHCODE = 1;
+	    private static final int PRIME = 31;
+	    private int hashCode = DEFAULT_HASHCODE;
+	    public boolean hashCodeDirty = true;
 
-					public void checkedIADD(long a, long b, boolean checkTypeOverFlow, boolean checkUlp) {
-						long r = a + b;
-						if (checkTypeOverFlow && ((a ^ r) & (b ^ r)) < 0) {
-							throw new RuntimeException(buildOverflowMessage(String.valueOf(a), String.valueOf(b),
-									"'BigDecimal'", "'long/Long'"));
-						}
-					}
-
-					public void checkedIADD(float a, float b, boolean checkTypeOverFlow, boolean checkUlp) {
-
-						if (checkUlp) {
-							float minAddedValue = Math.ulp(a);
-							if (minAddedValue > Math.abs(b)) {
-								throw new RuntimeException(buildPrecisionMessage(String.valueOf(a), String.valueOf(b),
-										"'double' or 'BigDecimal'", "'float/Float'"));
-							}
-						}
-
-						if (checkTypeOverFlow && ((double) a + (double) b > (double) Float.MAX_VALUE)
-								|| ((double) a + (double) b < (double) -Float.MAX_VALUE)) {
-							throw new RuntimeException(buildOverflowMessage(String.valueOf(a), String.valueOf(b),
-									"'double' or 'BigDecimal'", "'float/Float'"));
-						}
-					}
-
-					public void checkedIADD(double a, double b, boolean checkTypeOverFlow, boolean checkUlp) {
-
-						if (checkUlp) {
-							double minAddedValue = Math.ulp(a);
-							if (minAddedValue > Math.abs(b)) {
-								throw new RuntimeException(buildPrecisionMessage(String.valueOf(a), String.valueOf(a),
-										"'BigDecimal'", "'double/Double'"));
-							}
-						}
-
-						if (checkTypeOverFlow && (a + b > (double) Double.MAX_VALUE) || (a + b < -Double.MAX_VALUE)) {
-							throw new RuntimeException(buildOverflowMessage(String.valueOf(a), String.valueOf(b),
-									"'BigDecimal'", "'double/Double'"));
-						}
-					}
-
-					public void checkedIADD(double a, byte b, boolean checkTypeOverFlow, boolean checkUlp) {
-
-						if (checkTypeOverFlow && (a + b > (double) Double.MAX_VALUE) || (a + b < -Double.MAX_VALUE)) {
-							throw new RuntimeException(buildOverflowMessage(String.valueOf(a), String.valueOf(b),
-									"'BigDecimal'", "'double/Double'"));
-						}
-					}
-
-					public void checkedIADD(double a, short b, boolean checkTypeOverFlow, boolean checkUlp) {
-
-						if (checkTypeOverFlow && (a + b > (double) Double.MAX_VALUE) || (a + b < -Double.MAX_VALUE)) {
-							throw new RuntimeException(buildOverflowMessage(String.valueOf(a), String.valueOf(b),
-									"'BigDecimal'", "'double/Double'"));
-						}
-					}
-
-					public void checkedIADD(double a, int b, boolean checkTypeOverFlow, boolean checkUlp) {
-
-						if (checkTypeOverFlow && (a + b > (double) Double.MAX_VALUE) || (a + b < -Double.MAX_VALUE)) {
-							throw new RuntimeException(buildOverflowMessage(String.valueOf(a), String.valueOf(b),
-									"'BigDecimal'", "'double/Double'"));
-						}
-					}
-
-					public void checkedIADD(double a, float b, boolean checkTypeOverFlow, boolean checkUlp) {
-
-						if (checkUlp) {
-							double minAddedValue = Math.ulp(a);
-							if (minAddedValue > Math.abs(b)) {
-								throw new RuntimeException(buildPrecisionMessage(String.valueOf(a), String.valueOf(a),
-										"'BigDecimal'", "'double/Double'"));
-							}
-						}
-
-						if (checkTypeOverFlow && (a + b > (double) Double.MAX_VALUE) || (a + b < -Double.MAX_VALUE)) {
-							throw new RuntimeException(buildOverflowMessage(String.valueOf(a), String.valueOf(b),
-									"'BigDecimal'", "'double/Double'"));
-						}
-					}
-
-					private String buildOverflowMessage(String a, String b, String advicedTypes, String originalType) {
-						return "Type overflow when adding " + b + " to " + a
-								+ ", to resolve this problem, increase the precision by using " + advicedTypes
-								+ " type in place of " + originalType + ".";
-					}
-
-					private String buildPrecisionMessage(String a, String b, String advicedTypes, String originalType) {
-						return "The double precision is unsufficient to add the value " + b + " to " + a
-								+ ", to resolve this problem, increase the precision by using " + advicedTypes
-								+ " type in place of " + originalType + ".";
-					}
-
-				} // G_OutBegin_AggR_144
-
-				UtilClass_tAggregateRow_1 utilClass_tAggregateRow_1 = new UtilClass_tAggregateRow_1();
-
-				class AggOperationStruct_tAggregateRow_1 { // G_OutBegin_AggR_100
-
-					private static final int DEFAULT_HASHCODE = 1;
-					private static final int PRIME = 31;
-					private int hashCode = DEFAULT_HASHCODE;
-					public boolean hashCodeDirty = true;
-
-					String date;
-					String hashtag;
-					String country;
-					Integer s_positivos_sum;
-
-					@Override
-					public int hashCode() {
-						if (this.hashCodeDirty) {
-							final int prime = PRIME;
-							int result = DEFAULT_HASHCODE;
-
+    				String date;
+    				String hashtag;
+    				String country;
+         			Integer s_positivos_sum;
+        
+	    @Override
+		public int hashCode() {
+			if (this.hashCodeDirty) {
+				final int prime = PRIME;
+				int result = DEFAULT_HASHCODE;
+		
 							result = prime * result + ((this.date == null) ? 0 : this.date.hashCode());
-
+							
 							result = prime * result + ((this.hashtag == null) ? 0 : this.hashtag.hashCode());
-
+							
 							result = prime * result + ((this.country == null) ? 0 : this.country.hashCode());
+							
+	    		this.hashCode = result;
+	    		this.hashCodeDirty = false;		
+			}
+			return this.hashCode;
+		}
+		
+		@Override
+		public boolean equals(Object obj) {
+			if (this == obj) return true;
+			if (obj == null) return false;
+			if (getClass() != obj.getClass()) return false;
+			final AggOperationStruct_tAggregateRow_1 other = (AggOperationStruct_tAggregateRow_1) obj;
+			
+							if (this.date == null) {
+								if (other.date != null) 
+									return false;
+							} else if (!this.date.equals(other.date)) 
+								return false;
+						
+							if (this.hashtag == null) {
+								if (other.hashtag != null) 
+									return false;
+							} else if (!this.hashtag.equals(other.hashtag)) 
+								return false;
+						
+							if (this.country == null) {
+								if (other.country != null) 
+									return false;
+							} else if (!this.country.equals(other.country)) 
+								return false;
+						
+			
+			return true;
+		}
+  
+        
+	} // G_OutBegin_AggR_100
 
-							this.hashCode = result;
-							this.hashCodeDirty = false;
-						}
-						return this.hashCode;
+	AggOperationStruct_tAggregateRow_1 operation_result_tAggregateRow_1 = null;
+	AggOperationStruct_tAggregateRow_1 operation_finder_tAggregateRow_1 = new AggOperationStruct_tAggregateRow_1();
+	java.util.Map<AggOperationStruct_tAggregateRow_1,AggOperationStruct_tAggregateRow_1> hash_tAggregateRow_1 = new java.util.HashMap<AggOperationStruct_tAggregateRow_1,AggOperationStruct_tAggregateRow_1>();
+	
+
+ 
+
+
+
+/**
+ * [tAggregateRow_1_AGGOUT begin ] stop
+ */
+
+
+
+
+	
+	/**
+	 * [tAggregateRow_2_AGGOUT begin ] start
+	 */
+
+	
+
+	
+		
+		ok_Hash.put("tAggregateRow_2_AGGOUT", false);
+		start_Hash.put("tAggregateRow_2_AGGOUT", System.currentTimeMillis());
+		
+	
+		currentVirtualComponent = "tAggregateRow_2";
+	
+	currentComponent="tAggregateRow_2_AGGOUT";
+
+	
+					if(execStat) {
+						runStat.updateStatOnConnection(resourceMap,iterateId,0,0,"neg");
 					}
-
-					@Override
-					public boolean equals(Object obj) {
-						if (this == obj)
-							return true;
-						if (obj == null)
-							return false;
-						if (getClass() != obj.getClass())
-							return false;
-						final AggOperationStruct_tAggregateRow_1 other = (AggOperationStruct_tAggregateRow_1) obj;
-
-						if (this.date == null) {
-							if (other.date != null)
-								return false;
-						} else if (!this.date.equals(other.date))
-							return false;
-
-						if (this.hashtag == null) {
-							if (other.hashtag != null)
-								return false;
-						} else if (!this.hashtag.equals(other.hashtag))
-							return false;
-
-						if (this.country == null) {
-							if (other.country != null)
-								return false;
-						} else if (!this.country.equals(other.country))
-							return false;
-
-						return true;
-					}
-
-				} // G_OutBegin_AggR_100
-
-				AggOperationStruct_tAggregateRow_1 operation_result_tAggregateRow_1 = null;
-				AggOperationStruct_tAggregateRow_1 operation_finder_tAggregateRow_1 = new AggOperationStruct_tAggregateRow_1();
-				java.util.Map<AggOperationStruct_tAggregateRow_1, AggOperationStruct_tAggregateRow_1> hash_tAggregateRow_1 = new java.util.HashMap<AggOperationStruct_tAggregateRow_1, AggOperationStruct_tAggregateRow_1>();
-
-				/**
-				 * [tAggregateRow_1_AGGOUT begin ] stop
-				 */
-
-				/**
-				 * [tAggregateRow_2_AGGOUT begin ] start
-				 */
-
-				ok_Hash.put("tAggregateRow_2_AGGOUT", false);
-				start_Hash.put("tAggregateRow_2_AGGOUT", System.currentTimeMillis());
-
-				currentVirtualComponent = "tAggregateRow_2";
-
-				currentComponent = "tAggregateRow_2_AGGOUT";
-
-				if (execStat) {
-					runStat.updateStatOnConnection(resourceMap, iterateId, 0, 0, "neg");
-				}
-
-				int tos_count_tAggregateRow_2_AGGOUT = 0;
+				
+		int tos_count_tAggregateRow_2_AGGOUT = 0;
+		
 
 // ------------ Seems it is not used
 
-				java.util.Map hashAggreg_tAggregateRow_2 = new java.util.HashMap();
+java.util.Map hashAggreg_tAggregateRow_2 = new java.util.HashMap(); 
 
 // ------------
 
-				class UtilClass_tAggregateRow_2 { // G_OutBegin_AggR_144
+	class UtilClass_tAggregateRow_2 { // G_OutBegin_AggR_144
 
-					public double sd(Double[] data) {
-						final int n = data.length;
-						if (n < 2) {
-							return Double.NaN;
-						}
-						double d1 = 0d;
-						double d2 = 0d;
+		public double sd(Double[] data) {
+	        final int n = data.length;
+        	if (n < 2) {
+	            return Double.NaN;
+        	}
+        	double d1 = 0d;
+        	double d2 =0d;
+	        
+	        for (int i = 0; i < data.length; i++) {
+            	d1 += (data[i]*data[i]);
+            	d2 += data[i];
+        	}
+        
+	        return Math.sqrt((n*d1 - d2*d2)/n/(n-1));
+	    }
+	    
+		public void checkedIADD(byte a, byte b, boolean checkTypeOverFlow, boolean checkUlp) {
+		    byte r = (byte) (a + b);
+		    if (checkTypeOverFlow && ((a ^ r) & (b ^ r)) < 0) {
+		        throw new RuntimeException(buildOverflowMessage(String.valueOf(a), String.valueOf(b), "'short/Short'", "'byte/Byte'"));
+		    }
+		}
+		
+		public void checkedIADD(short a, short b, boolean checkTypeOverFlow, boolean checkUlp) {
+		    short r = (short) (a + b);
+		    if (checkTypeOverFlow && ((a ^ r) & (b ^ r)) < 0) {
+		        throw new RuntimeException(buildOverflowMessage(String.valueOf(a), String.valueOf(b), "'int/Integer'", "'short/Short'"));
+		    }
+		}
+		
+		public void checkedIADD(int a, int b, boolean checkTypeOverFlow, boolean checkUlp) {
+		    int r = a + b;
+		    if (checkTypeOverFlow && ((a ^ r) & (b ^ r)) < 0) {
+		        throw new RuntimeException(buildOverflowMessage(String.valueOf(a), String.valueOf(b), "'long/Long'", "'int/Integer'"));
+		    }
+		}
+		
+		public void checkedIADD(long a, long b, boolean checkTypeOverFlow, boolean checkUlp) {
+		    long r = a + b;
+		    if (checkTypeOverFlow && ((a ^ r) & (b ^ r)) < 0) {
+		        throw new RuntimeException(buildOverflowMessage(String.valueOf(a), String.valueOf(b), "'BigDecimal'", "'long/Long'"));
+		    }
+		}
+		
+		public void checkedIADD(float a, float b, boolean checkTypeOverFlow, boolean checkUlp) {
+		
+			if(checkUlp) {
+			    float minAddedValue = Math.ulp(a);
+			    if (minAddedValue > Math.abs(b)) {
+			        throw new RuntimeException(buildPrecisionMessage(String.valueOf(a), String.valueOf(b), "'double' or 'BigDecimal'", "'float/Float'"));
+			    }
+			}
+			
+		    if (checkTypeOverFlow && ((double) a + (double) b > (double) Float.MAX_VALUE) || ((double) a + (double) b < (double) -Float.MAX_VALUE)) {
+		        throw new RuntimeException(buildOverflowMessage(String.valueOf(a), String.valueOf(b), "'double' or 'BigDecimal'", "'float/Float'"));
+		    }
+		}
+		
+		public void checkedIADD(double a, double b, boolean checkTypeOverFlow, boolean checkUlp) {
+		
+			if(checkUlp) {
+			    double minAddedValue = Math.ulp(a);
+			    if (minAddedValue > Math.abs(b)) {
+			        throw new RuntimeException(buildPrecisionMessage(String.valueOf(a), String.valueOf(a), "'BigDecimal'", "'double/Double'"));
+			    }
+			}
+		
+		    if (checkTypeOverFlow && (a + b > (double) Double.MAX_VALUE) || (a + b < -Double.MAX_VALUE )) {
+		        throw new RuntimeException(buildOverflowMessage(String.valueOf(a), String.valueOf(b), "'BigDecimal'", "'double/Double'"));
+		    }
+		}
+		
+		public void checkedIADD(double a, byte b, boolean checkTypeOverFlow, boolean checkUlp) {
+		
+		    if (checkTypeOverFlow && (a + b > (double) Double.MAX_VALUE) || (a + b < -Double.MAX_VALUE )) {
+		        throw new RuntimeException(buildOverflowMessage(String.valueOf(a), String.valueOf(b), "'BigDecimal'", "'double/Double'"));
+		    }
+		}
+		
+		public void checkedIADD(double a, short b, boolean checkTypeOverFlow, boolean checkUlp) {
+		
+		    if (checkTypeOverFlow && (a + b > (double) Double.MAX_VALUE) || (a + b < -Double.MAX_VALUE )) {
+		        throw new RuntimeException(buildOverflowMessage(String.valueOf(a), String.valueOf(b), "'BigDecimal'", "'double/Double'"));
+		    }
+		}
+		
+		public void checkedIADD(double a, int b, boolean checkTypeOverFlow, boolean checkUlp) {
+		
+		    if (checkTypeOverFlow && (a + b > (double) Double.MAX_VALUE) || (a + b < -Double.MAX_VALUE )) {
+		        throw new RuntimeException(buildOverflowMessage(String.valueOf(a), String.valueOf(b), "'BigDecimal'", "'double/Double'"));
+		    }
+		}
+		
+		public void checkedIADD(double a, float b, boolean checkTypeOverFlow, boolean checkUlp) {
+		
+			if(checkUlp) {
+			    double minAddedValue = Math.ulp(a);
+			    if (minAddedValue > Math.abs(b)) {
+			        throw new RuntimeException(buildPrecisionMessage(String.valueOf(a), String.valueOf(a), "'BigDecimal'", "'double/Double'"));
+			    }
+			}
+		
+		    if (checkTypeOverFlow && (a + b > (double) Double.MAX_VALUE) || (a + b < -Double.MAX_VALUE )) {
+		        throw new RuntimeException(buildOverflowMessage(String.valueOf(a), String.valueOf(b), "'BigDecimal'", "'double/Double'"));
+		    }
+		}
+		
+		private String buildOverflowMessage(String a, String b, String advicedTypes, String originalType) {
+		    return "Type overflow when adding " + b + " to " + a
+		    + ", to resolve this problem, increase the precision by using "+ advicedTypes +" type in place of "+ originalType +".";
+		}
+		
+		private String buildPrecisionMessage(String a, String b, String advicedTypes, String originalType) {
+		    return "The double precision is unsufficient to add the value " + b + " to " + a
+		    + ", to resolve this problem, increase the precision by using "+ advicedTypes +" type in place of "+ originalType +".";
+		}
 
-						for (int i = 0; i < data.length; i++) {
-							d1 += (data[i] * data[i]);
-							d2 += data[i];
-						}
+	} // G_OutBegin_AggR_144
 
-						return Math.sqrt((n * d1 - d2 * d2) / n / (n - 1));
-					}
+	UtilClass_tAggregateRow_2 utilClass_tAggregateRow_2 = new UtilClass_tAggregateRow_2();
 
-					public void checkedIADD(byte a, byte b, boolean checkTypeOverFlow, boolean checkUlp) {
-						byte r = (byte) (a + b);
-						if (checkTypeOverFlow && ((a ^ r) & (b ^ r)) < 0) {
-							throw new RuntimeException(buildOverflowMessage(String.valueOf(a), String.valueOf(b),
-									"'short/Short'", "'byte/Byte'"));
-						}
-					}
+	
 
-					public void checkedIADD(short a, short b, boolean checkTypeOverFlow, boolean checkUlp) {
-						short r = (short) (a + b);
-						if (checkTypeOverFlow && ((a ^ r) & (b ^ r)) < 0) {
-							throw new RuntimeException(buildOverflowMessage(String.valueOf(a), String.valueOf(b),
-									"'int/Integer'", "'short/Short'"));
-						}
-					}
+	class AggOperationStruct_tAggregateRow_2 { // G_OutBegin_AggR_100
 
-					public void checkedIADD(int a, int b, boolean checkTypeOverFlow, boolean checkUlp) {
-						int r = a + b;
-						if (checkTypeOverFlow && ((a ^ r) & (b ^ r)) < 0) {
-							throw new RuntimeException(buildOverflowMessage(String.valueOf(a), String.valueOf(b),
-									"'long/Long'", "'int/Integer'"));
-						}
-					}
+		private static final int DEFAULT_HASHCODE = 1;
+	    private static final int PRIME = 31;
+	    private int hashCode = DEFAULT_HASHCODE;
+	    public boolean hashCodeDirty = true;
 
-					public void checkedIADD(long a, long b, boolean checkTypeOverFlow, boolean checkUlp) {
-						long r = a + b;
-						if (checkTypeOverFlow && ((a ^ r) & (b ^ r)) < 0) {
-							throw new RuntimeException(buildOverflowMessage(String.valueOf(a), String.valueOf(b),
-									"'BigDecimal'", "'long/Long'"));
-						}
-					}
-
-					public void checkedIADD(float a, float b, boolean checkTypeOverFlow, boolean checkUlp) {
-
-						if (checkUlp) {
-							float minAddedValue = Math.ulp(a);
-							if (minAddedValue > Math.abs(b)) {
-								throw new RuntimeException(buildPrecisionMessage(String.valueOf(a), String.valueOf(b),
-										"'double' or 'BigDecimal'", "'float/Float'"));
-							}
-						}
-
-						if (checkTypeOverFlow && ((double) a + (double) b > (double) Float.MAX_VALUE)
-								|| ((double) a + (double) b < (double) -Float.MAX_VALUE)) {
-							throw new RuntimeException(buildOverflowMessage(String.valueOf(a), String.valueOf(b),
-									"'double' or 'BigDecimal'", "'float/Float'"));
-						}
-					}
-
-					public void checkedIADD(double a, double b, boolean checkTypeOverFlow, boolean checkUlp) {
-
-						if (checkUlp) {
-							double minAddedValue = Math.ulp(a);
-							if (minAddedValue > Math.abs(b)) {
-								throw new RuntimeException(buildPrecisionMessage(String.valueOf(a), String.valueOf(a),
-										"'BigDecimal'", "'double/Double'"));
-							}
-						}
-
-						if (checkTypeOverFlow && (a + b > (double) Double.MAX_VALUE) || (a + b < -Double.MAX_VALUE)) {
-							throw new RuntimeException(buildOverflowMessage(String.valueOf(a), String.valueOf(b),
-									"'BigDecimal'", "'double/Double'"));
-						}
-					}
-
-					public void checkedIADD(double a, byte b, boolean checkTypeOverFlow, boolean checkUlp) {
-
-						if (checkTypeOverFlow && (a + b > (double) Double.MAX_VALUE) || (a + b < -Double.MAX_VALUE)) {
-							throw new RuntimeException(buildOverflowMessage(String.valueOf(a), String.valueOf(b),
-									"'BigDecimal'", "'double/Double'"));
-						}
-					}
-
-					public void checkedIADD(double a, short b, boolean checkTypeOverFlow, boolean checkUlp) {
-
-						if (checkTypeOverFlow && (a + b > (double) Double.MAX_VALUE) || (a + b < -Double.MAX_VALUE)) {
-							throw new RuntimeException(buildOverflowMessage(String.valueOf(a), String.valueOf(b),
-									"'BigDecimal'", "'double/Double'"));
-						}
-					}
-
-					public void checkedIADD(double a, int b, boolean checkTypeOverFlow, boolean checkUlp) {
-
-						if (checkTypeOverFlow && (a + b > (double) Double.MAX_VALUE) || (a + b < -Double.MAX_VALUE)) {
-							throw new RuntimeException(buildOverflowMessage(String.valueOf(a), String.valueOf(b),
-									"'BigDecimal'", "'double/Double'"));
-						}
-					}
-
-					public void checkedIADD(double a, float b, boolean checkTypeOverFlow, boolean checkUlp) {
-
-						if (checkUlp) {
-							double minAddedValue = Math.ulp(a);
-							if (minAddedValue > Math.abs(b)) {
-								throw new RuntimeException(buildPrecisionMessage(String.valueOf(a), String.valueOf(a),
-										"'BigDecimal'", "'double/Double'"));
-							}
-						}
-
-						if (checkTypeOverFlow && (a + b > (double) Double.MAX_VALUE) || (a + b < -Double.MAX_VALUE)) {
-							throw new RuntimeException(buildOverflowMessage(String.valueOf(a), String.valueOf(b),
-									"'BigDecimal'", "'double/Double'"));
-						}
-					}
-
-					private String buildOverflowMessage(String a, String b, String advicedTypes, String originalType) {
-						return "Type overflow when adding " + b + " to " + a
-								+ ", to resolve this problem, increase the precision by using " + advicedTypes
-								+ " type in place of " + originalType + ".";
-					}
-
-					private String buildPrecisionMessage(String a, String b, String advicedTypes, String originalType) {
-						return "The double precision is unsufficient to add the value " + b + " to " + a
-								+ ", to resolve this problem, increase the precision by using " + advicedTypes
-								+ " type in place of " + originalType + ".";
-					}
-
-				} // G_OutBegin_AggR_144
-
-				UtilClass_tAggregateRow_2 utilClass_tAggregateRow_2 = new UtilClass_tAggregateRow_2();
-
-				class AggOperationStruct_tAggregateRow_2 { // G_OutBegin_AggR_100
-
-					private static final int DEFAULT_HASHCODE = 1;
-					private static final int PRIME = 31;
-					private int hashCode = DEFAULT_HASHCODE;
-					public boolean hashCodeDirty = true;
-
-					String date;
-					String hashtag;
-					String country;
-					Integer s_negativos_sum;
-
-					@Override
-					public int hashCode() {
-						if (this.hashCodeDirty) {
-							final int prime = PRIME;
-							int result = DEFAULT_HASHCODE;
-
+    				String date;
+    				String hashtag;
+    				String country;
+         			Integer s_negativos_sum;
+        
+	    @Override
+		public int hashCode() {
+			if (this.hashCodeDirty) {
+				final int prime = PRIME;
+				int result = DEFAULT_HASHCODE;
+		
 							result = prime * result + ((this.date == null) ? 0 : this.date.hashCode());
-
+							
 							result = prime * result + ((this.hashtag == null) ? 0 : this.hashtag.hashCode());
-
+							
 							result = prime * result + ((this.country == null) ? 0 : this.country.hashCode());
+							
+	    		this.hashCode = result;
+	    		this.hashCodeDirty = false;		
+			}
+			return this.hashCode;
+		}
+		
+		@Override
+		public boolean equals(Object obj) {
+			if (this == obj) return true;
+			if (obj == null) return false;
+			if (getClass() != obj.getClass()) return false;
+			final AggOperationStruct_tAggregateRow_2 other = (AggOperationStruct_tAggregateRow_2) obj;
+			
+							if (this.date == null) {
+								if (other.date != null) 
+									return false;
+							} else if (!this.date.equals(other.date)) 
+								return false;
+						
+							if (this.hashtag == null) {
+								if (other.hashtag != null) 
+									return false;
+							} else if (!this.hashtag.equals(other.hashtag)) 
+								return false;
+						
+							if (this.country == null) {
+								if (other.country != null) 
+									return false;
+							} else if (!this.country.equals(other.country)) 
+								return false;
+						
+			
+			return true;
+		}
+  
+        
+	} // G_OutBegin_AggR_100
 
-							this.hashCode = result;
-							this.hashCodeDirty = false;
-						}
-						return this.hashCode;
+	AggOperationStruct_tAggregateRow_2 operation_result_tAggregateRow_2 = null;
+	AggOperationStruct_tAggregateRow_2 operation_finder_tAggregateRow_2 = new AggOperationStruct_tAggregateRow_2();
+	java.util.Map<AggOperationStruct_tAggregateRow_2,AggOperationStruct_tAggregateRow_2> hash_tAggregateRow_2 = new java.util.HashMap<AggOperationStruct_tAggregateRow_2,AggOperationStruct_tAggregateRow_2>();
+	
+
+ 
+
+
+
+/**
+ * [tAggregateRow_2_AGGOUT begin ] stop
+ */
+
+
+
+
+	
+	/**
+	 * [tAggregateRow_4_AGGOUT begin ] start
+	 */
+
+	
+
+	
+		
+		ok_Hash.put("tAggregateRow_4_AGGOUT", false);
+		start_Hash.put("tAggregateRow_4_AGGOUT", System.currentTimeMillis());
+		
+	
+		currentVirtualComponent = "tAggregateRow_4";
+	
+	currentComponent="tAggregateRow_4_AGGOUT";
+
+	
+					if(execStat) {
+						runStat.updateStatOnConnection(resourceMap,iterateId,0,0,"cnt");
 					}
-
-					@Override
-					public boolean equals(Object obj) {
-						if (this == obj)
-							return true;
-						if (obj == null)
-							return false;
-						if (getClass() != obj.getClass())
-							return false;
-						final AggOperationStruct_tAggregateRow_2 other = (AggOperationStruct_tAggregateRow_2) obj;
-
-						if (this.date == null) {
-							if (other.date != null)
-								return false;
-						} else if (!this.date.equals(other.date))
-							return false;
-
-						if (this.hashtag == null) {
-							if (other.hashtag != null)
-								return false;
-						} else if (!this.hashtag.equals(other.hashtag))
-							return false;
-
-						if (this.country == null) {
-							if (other.country != null)
-								return false;
-						} else if (!this.country.equals(other.country))
-							return false;
-
-						return true;
-					}
-
-				} // G_OutBegin_AggR_100
-
-				AggOperationStruct_tAggregateRow_2 operation_result_tAggregateRow_2 = null;
-				AggOperationStruct_tAggregateRow_2 operation_finder_tAggregateRow_2 = new AggOperationStruct_tAggregateRow_2();
-				java.util.Map<AggOperationStruct_tAggregateRow_2, AggOperationStruct_tAggregateRow_2> hash_tAggregateRow_2 = new java.util.HashMap<AggOperationStruct_tAggregateRow_2, AggOperationStruct_tAggregateRow_2>();
-
-				/**
-				 * [tAggregateRow_2_AGGOUT begin ] stop
-				 */
-
-				/**
-				 * [tAggregateRow_4_AGGOUT begin ] start
-				 */
-
-				ok_Hash.put("tAggregateRow_4_AGGOUT", false);
-				start_Hash.put("tAggregateRow_4_AGGOUT", System.currentTimeMillis());
-
-				currentVirtualComponent = "tAggregateRow_4";
-
-				currentComponent = "tAggregateRow_4_AGGOUT";
-
-				if (execStat) {
-					runStat.updateStatOnConnection(resourceMap, iterateId, 0, 0, "cnt");
-				}
-
-				int tos_count_tAggregateRow_4_AGGOUT = 0;
+				
+		int tos_count_tAggregateRow_4_AGGOUT = 0;
+		
 
 // ------------ Seems it is not used
 
-				java.util.Map hashAggreg_tAggregateRow_4 = new java.util.HashMap();
+java.util.Map hashAggreg_tAggregateRow_4 = new java.util.HashMap(); 
 
 // ------------
 
-				class UtilClass_tAggregateRow_4 { // G_OutBegin_AggR_144
+	class UtilClass_tAggregateRow_4 { // G_OutBegin_AggR_144
 
-					public double sd(Double[] data) {
-						final int n = data.length;
-						if (n < 2) {
-							return Double.NaN;
-						}
-						double d1 = 0d;
-						double d2 = 0d;
+		public double sd(Double[] data) {
+	        final int n = data.length;
+        	if (n < 2) {
+	            return Double.NaN;
+        	}
+        	double d1 = 0d;
+        	double d2 =0d;
+	        
+	        for (int i = 0; i < data.length; i++) {
+            	d1 += (data[i]*data[i]);
+            	d2 += data[i];
+        	}
+        
+	        return Math.sqrt((n*d1 - d2*d2)/n/(n-1));
+	    }
+	    
+		public void checkedIADD(byte a, byte b, boolean checkTypeOverFlow, boolean checkUlp) {
+		    byte r = (byte) (a + b);
+		    if (checkTypeOverFlow && ((a ^ r) & (b ^ r)) < 0) {
+		        throw new RuntimeException(buildOverflowMessage(String.valueOf(a), String.valueOf(b), "'short/Short'", "'byte/Byte'"));
+		    }
+		}
+		
+		public void checkedIADD(short a, short b, boolean checkTypeOverFlow, boolean checkUlp) {
+		    short r = (short) (a + b);
+		    if (checkTypeOverFlow && ((a ^ r) & (b ^ r)) < 0) {
+		        throw new RuntimeException(buildOverflowMessage(String.valueOf(a), String.valueOf(b), "'int/Integer'", "'short/Short'"));
+		    }
+		}
+		
+		public void checkedIADD(int a, int b, boolean checkTypeOverFlow, boolean checkUlp) {
+		    int r = a + b;
+		    if (checkTypeOverFlow && ((a ^ r) & (b ^ r)) < 0) {
+		        throw new RuntimeException(buildOverflowMessage(String.valueOf(a), String.valueOf(b), "'long/Long'", "'int/Integer'"));
+		    }
+		}
+		
+		public void checkedIADD(long a, long b, boolean checkTypeOverFlow, boolean checkUlp) {
+		    long r = a + b;
+		    if (checkTypeOverFlow && ((a ^ r) & (b ^ r)) < 0) {
+		        throw new RuntimeException(buildOverflowMessage(String.valueOf(a), String.valueOf(b), "'BigDecimal'", "'long/Long'"));
+		    }
+		}
+		
+		public void checkedIADD(float a, float b, boolean checkTypeOverFlow, boolean checkUlp) {
+		
+			if(checkUlp) {
+			    float minAddedValue = Math.ulp(a);
+			    if (minAddedValue > Math.abs(b)) {
+			        throw new RuntimeException(buildPrecisionMessage(String.valueOf(a), String.valueOf(b), "'double' or 'BigDecimal'", "'float/Float'"));
+			    }
+			}
+			
+		    if (checkTypeOverFlow && ((double) a + (double) b > (double) Float.MAX_VALUE) || ((double) a + (double) b < (double) -Float.MAX_VALUE)) {
+		        throw new RuntimeException(buildOverflowMessage(String.valueOf(a), String.valueOf(b), "'double' or 'BigDecimal'", "'float/Float'"));
+		    }
+		}
+		
+		public void checkedIADD(double a, double b, boolean checkTypeOverFlow, boolean checkUlp) {
+		
+			if(checkUlp) {
+			    double minAddedValue = Math.ulp(a);
+			    if (minAddedValue > Math.abs(b)) {
+			        throw new RuntimeException(buildPrecisionMessage(String.valueOf(a), String.valueOf(a), "'BigDecimal'", "'double/Double'"));
+			    }
+			}
+		
+		    if (checkTypeOverFlow && (a + b > (double) Double.MAX_VALUE) || (a + b < -Double.MAX_VALUE )) {
+		        throw new RuntimeException(buildOverflowMessage(String.valueOf(a), String.valueOf(b), "'BigDecimal'", "'double/Double'"));
+		    }
+		}
+		
+		public void checkedIADD(double a, byte b, boolean checkTypeOverFlow, boolean checkUlp) {
+		
+		    if (checkTypeOverFlow && (a + b > (double) Double.MAX_VALUE) || (a + b < -Double.MAX_VALUE )) {
+		        throw new RuntimeException(buildOverflowMessage(String.valueOf(a), String.valueOf(b), "'BigDecimal'", "'double/Double'"));
+		    }
+		}
+		
+		public void checkedIADD(double a, short b, boolean checkTypeOverFlow, boolean checkUlp) {
+		
+		    if (checkTypeOverFlow && (a + b > (double) Double.MAX_VALUE) || (a + b < -Double.MAX_VALUE )) {
+		        throw new RuntimeException(buildOverflowMessage(String.valueOf(a), String.valueOf(b), "'BigDecimal'", "'double/Double'"));
+		    }
+		}
+		
+		public void checkedIADD(double a, int b, boolean checkTypeOverFlow, boolean checkUlp) {
+		
+		    if (checkTypeOverFlow && (a + b > (double) Double.MAX_VALUE) || (a + b < -Double.MAX_VALUE )) {
+		        throw new RuntimeException(buildOverflowMessage(String.valueOf(a), String.valueOf(b), "'BigDecimal'", "'double/Double'"));
+		    }
+		}
+		
+		public void checkedIADD(double a, float b, boolean checkTypeOverFlow, boolean checkUlp) {
+		
+			if(checkUlp) {
+			    double minAddedValue = Math.ulp(a);
+			    if (minAddedValue > Math.abs(b)) {
+			        throw new RuntimeException(buildPrecisionMessage(String.valueOf(a), String.valueOf(a), "'BigDecimal'", "'double/Double'"));
+			    }
+			}
+		
+		    if (checkTypeOverFlow && (a + b > (double) Double.MAX_VALUE) || (a + b < -Double.MAX_VALUE )) {
+		        throw new RuntimeException(buildOverflowMessage(String.valueOf(a), String.valueOf(b), "'BigDecimal'", "'double/Double'"));
+		    }
+		}
+		
+		private String buildOverflowMessage(String a, String b, String advicedTypes, String originalType) {
+		    return "Type overflow when adding " + b + " to " + a
+		    + ", to resolve this problem, increase the precision by using "+ advicedTypes +" type in place of "+ originalType +".";
+		}
+		
+		private String buildPrecisionMessage(String a, String b, String advicedTypes, String originalType) {
+		    return "The double precision is unsufficient to add the value " + b + " to " + a
+		    + ", to resolve this problem, increase the precision by using "+ advicedTypes +" type in place of "+ originalType +".";
+		}
 
-						for (int i = 0; i < data.length; i++) {
-							d1 += (data[i] * data[i]);
-							d2 += data[i];
-						}
+	} // G_OutBegin_AggR_144
 
-						return Math.sqrt((n * d1 - d2 * d2) / n / (n - 1));
-					}
+	UtilClass_tAggregateRow_4 utilClass_tAggregateRow_4 = new UtilClass_tAggregateRow_4();
 
-					public void checkedIADD(byte a, byte b, boolean checkTypeOverFlow, boolean checkUlp) {
-						byte r = (byte) (a + b);
-						if (checkTypeOverFlow && ((a ^ r) & (b ^ r)) < 0) {
-							throw new RuntimeException(buildOverflowMessage(String.valueOf(a), String.valueOf(b),
-									"'short/Short'", "'byte/Byte'"));
-						}
-					}
+	
 
-					public void checkedIADD(short a, short b, boolean checkTypeOverFlow, boolean checkUlp) {
-						short r = (short) (a + b);
-						if (checkTypeOverFlow && ((a ^ r) & (b ^ r)) < 0) {
-							throw new RuntimeException(buildOverflowMessage(String.valueOf(a), String.valueOf(b),
-									"'int/Integer'", "'short/Short'"));
-						}
-					}
+	class AggOperationStruct_tAggregateRow_4 { // G_OutBegin_AggR_100
 
-					public void checkedIADD(int a, int b, boolean checkTypeOverFlow, boolean checkUlp) {
-						int r = a + b;
-						if (checkTypeOverFlow && ((a ^ r) & (b ^ r)) < 0) {
-							throw new RuntimeException(buildOverflowMessage(String.valueOf(a), String.valueOf(b),
-									"'long/Long'", "'int/Integer'"));
-						}
-					}
+		private static final int DEFAULT_HASHCODE = 1;
+	    private static final int PRIME = 31;
+	    private int hashCode = DEFAULT_HASHCODE;
+	    public boolean hashCodeDirty = true;
 
-					public void checkedIADD(long a, long b, boolean checkTypeOverFlow, boolean checkUlp) {
-						long r = a + b;
-						if (checkTypeOverFlow && ((a ^ r) & (b ^ r)) < 0) {
-							throw new RuntimeException(buildOverflowMessage(String.valueOf(a), String.valueOf(b),
-									"'BigDecimal'", "'long/Long'"));
-						}
-					}
-
-					public void checkedIADD(float a, float b, boolean checkTypeOverFlow, boolean checkUlp) {
-
-						if (checkUlp) {
-							float minAddedValue = Math.ulp(a);
-							if (minAddedValue > Math.abs(b)) {
-								throw new RuntimeException(buildPrecisionMessage(String.valueOf(a), String.valueOf(b),
-										"'double' or 'BigDecimal'", "'float/Float'"));
-							}
-						}
-
-						if (checkTypeOverFlow && ((double) a + (double) b > (double) Float.MAX_VALUE)
-								|| ((double) a + (double) b < (double) -Float.MAX_VALUE)) {
-							throw new RuntimeException(buildOverflowMessage(String.valueOf(a), String.valueOf(b),
-									"'double' or 'BigDecimal'", "'float/Float'"));
-						}
-					}
-
-					public void checkedIADD(double a, double b, boolean checkTypeOverFlow, boolean checkUlp) {
-
-						if (checkUlp) {
-							double minAddedValue = Math.ulp(a);
-							if (minAddedValue > Math.abs(b)) {
-								throw new RuntimeException(buildPrecisionMessage(String.valueOf(a), String.valueOf(a),
-										"'BigDecimal'", "'double/Double'"));
-							}
-						}
-
-						if (checkTypeOverFlow && (a + b > (double) Double.MAX_VALUE) || (a + b < -Double.MAX_VALUE)) {
-							throw new RuntimeException(buildOverflowMessage(String.valueOf(a), String.valueOf(b),
-									"'BigDecimal'", "'double/Double'"));
-						}
-					}
-
-					public void checkedIADD(double a, byte b, boolean checkTypeOverFlow, boolean checkUlp) {
-
-						if (checkTypeOverFlow && (a + b > (double) Double.MAX_VALUE) || (a + b < -Double.MAX_VALUE)) {
-							throw new RuntimeException(buildOverflowMessage(String.valueOf(a), String.valueOf(b),
-									"'BigDecimal'", "'double/Double'"));
-						}
-					}
-
-					public void checkedIADD(double a, short b, boolean checkTypeOverFlow, boolean checkUlp) {
-
-						if (checkTypeOverFlow && (a + b > (double) Double.MAX_VALUE) || (a + b < -Double.MAX_VALUE)) {
-							throw new RuntimeException(buildOverflowMessage(String.valueOf(a), String.valueOf(b),
-									"'BigDecimal'", "'double/Double'"));
-						}
-					}
-
-					public void checkedIADD(double a, int b, boolean checkTypeOverFlow, boolean checkUlp) {
-
-						if (checkTypeOverFlow && (a + b > (double) Double.MAX_VALUE) || (a + b < -Double.MAX_VALUE)) {
-							throw new RuntimeException(buildOverflowMessage(String.valueOf(a), String.valueOf(b),
-									"'BigDecimal'", "'double/Double'"));
-						}
-					}
-
-					public void checkedIADD(double a, float b, boolean checkTypeOverFlow, boolean checkUlp) {
-
-						if (checkUlp) {
-							double minAddedValue = Math.ulp(a);
-							if (minAddedValue > Math.abs(b)) {
-								throw new RuntimeException(buildPrecisionMessage(String.valueOf(a), String.valueOf(a),
-										"'BigDecimal'", "'double/Double'"));
-							}
-						}
-
-						if (checkTypeOverFlow && (a + b > (double) Double.MAX_VALUE) || (a + b < -Double.MAX_VALUE)) {
-							throw new RuntimeException(buildOverflowMessage(String.valueOf(a), String.valueOf(b),
-									"'BigDecimal'", "'double/Double'"));
-						}
-					}
-
-					private String buildOverflowMessage(String a, String b, String advicedTypes, String originalType) {
-						return "Type overflow when adding " + b + " to " + a
-								+ ", to resolve this problem, increase the precision by using " + advicedTypes
-								+ " type in place of " + originalType + ".";
-					}
-
-					private String buildPrecisionMessage(String a, String b, String advicedTypes, String originalType) {
-						return "The double precision is unsufficient to add the value " + b + " to " + a
-								+ ", to resolve this problem, increase the precision by using " + advicedTypes
-								+ " type in place of " + originalType + ".";
-					}
-
-				} // G_OutBegin_AggR_144
-
-				UtilClass_tAggregateRow_4 utilClass_tAggregateRow_4 = new UtilClass_tAggregateRow_4();
-
-				class AggOperationStruct_tAggregateRow_4 { // G_OutBegin_AggR_100
-
-					private static final int DEFAULT_HASHCODE = 1;
-					private static final int PRIME = 31;
-					private int hashCode = DEFAULT_HASHCODE;
-					public boolean hashCodeDirty = true;
-
-					java.util.Date date;
-					String id;
-					String hashtag;
-					String country;
-					Integer sentiment_sum;
-
-					@Override
-					public int hashCode() {
-						if (this.hashCodeDirty) {
-							final int prime = PRIME;
-							int result = DEFAULT_HASHCODE;
-
+    				java.util.Date date;
+    				String id;
+    				String hashtag;
+    				String country;
+         			Integer sentiment_sum;
+        
+	    @Override
+		public int hashCode() {
+			if (this.hashCodeDirty) {
+				final int prime = PRIME;
+				int result = DEFAULT_HASHCODE;
+		
 							result = prime * result + ((this.date == null) ? 0 : this.date.hashCode());
-
+							
 							result = prime * result + ((this.id == null) ? 0 : this.id.hashCode());
-
+							
 							result = prime * result + ((this.hashtag == null) ? 0 : this.hashtag.hashCode());
-
+							
 							result = prime * result + ((this.country == null) ? 0 : this.country.hashCode());
+							
+	    		this.hashCode = result;
+	    		this.hashCodeDirty = false;		
+			}
+			return this.hashCode;
+		}
+		
+		@Override
+		public boolean equals(Object obj) {
+			if (this == obj) return true;
+			if (obj == null) return false;
+			if (getClass() != obj.getClass()) return false;
+			final AggOperationStruct_tAggregateRow_4 other = (AggOperationStruct_tAggregateRow_4) obj;
+			
+							if (this.date == null) {
+								if (other.date != null) 
+									return false;
+							} else if (!this.date.equals(other.date)) 
+								return false;
+						
+							if (this.id == null) {
+								if (other.id != null) 
+									return false;
+							} else if (!this.id.equals(other.id)) 
+								return false;
+						
+							if (this.hashtag == null) {
+								if (other.hashtag != null) 
+									return false;
+							} else if (!this.hashtag.equals(other.hashtag)) 
+								return false;
+						
+							if (this.country == null) {
+								if (other.country != null) 
+									return false;
+							} else if (!this.country.equals(other.country)) 
+								return false;
+						
+			
+			return true;
+		}
+  
+        
+	} // G_OutBegin_AggR_100
 
-							this.hashCode = result;
-							this.hashCodeDirty = false;
-						}
-						return this.hashCode;
+	AggOperationStruct_tAggregateRow_4 operation_result_tAggregateRow_4 = null;
+	AggOperationStruct_tAggregateRow_4 operation_finder_tAggregateRow_4 = new AggOperationStruct_tAggregateRow_4();
+	java.util.Map<AggOperationStruct_tAggregateRow_4,AggOperationStruct_tAggregateRow_4> hash_tAggregateRow_4 = new java.util.HashMap<AggOperationStruct_tAggregateRow_4,AggOperationStruct_tAggregateRow_4>();
+	
+
+ 
+
+
+
+/**
+ * [tAggregateRow_4_AGGOUT begin ] stop
+ */
+
+
+
+	
+	/**
+	 * [tMap_2 begin ] start
+	 */
+
+	
+
+	
+		
+		ok_Hash.put("tMap_2", false);
+		start_Hash.put("tMap_2", System.currentTimeMillis());
+		
+	
+	currentComponent="tMap_2";
+
+	
+					if(execStat) {
+						runStat.updateStatOnConnection(resourceMap,iterateId,0,0,"row5");
 					}
+				
+		int tos_count_tMap_2 = 0;
+		
 
-					@Override
-					public boolean equals(Object obj) {
-						if (this == obj)
-							return true;
-						if (obj == null)
-							return false;
-						if (getClass() != obj.getClass())
-							return false;
-						final AggOperationStruct_tAggregateRow_4 other = (AggOperationStruct_tAggregateRow_4) obj;
 
-						if (this.date == null) {
-							if (other.date != null)
-								return false;
-						} else if (!this.date.equals(other.date))
-							return false;
 
-						if (this.id == null) {
-							if (other.id != null)
-								return false;
-						} else if (!this.id.equals(other.id))
-							return false;
-
-						if (this.hashtag == null) {
-							if (other.hashtag != null)
-								return false;
-						} else if (!this.hashtag.equals(other.hashtag))
-							return false;
-
-						if (this.country == null) {
-							if (other.country != null)
-								return false;
-						} else if (!this.country.equals(other.country))
-							return false;
-
-						return true;
-					}
-
-				} // G_OutBegin_AggR_100
-
-				AggOperationStruct_tAggregateRow_4 operation_result_tAggregateRow_4 = null;
-				AggOperationStruct_tAggregateRow_4 operation_finder_tAggregateRow_4 = new AggOperationStruct_tAggregateRow_4();
-				java.util.Map<AggOperationStruct_tAggregateRow_4, AggOperationStruct_tAggregateRow_4> hash_tAggregateRow_4 = new java.util.HashMap<AggOperationStruct_tAggregateRow_4, AggOperationStruct_tAggregateRow_4>();
-
-				/**
-				 * [tAggregateRow_4_AGGOUT begin ] stop
-				 */
-
-				/**
-				 * [tMap_2 begin ] start
-				 */
-
-				ok_Hash.put("tMap_2", false);
-				start_Hash.put("tMap_2", System.currentTimeMillis());
-
-				currentComponent = "tMap_2";
-
-				if (execStat) {
-					runStat.updateStatOnConnection(resourceMap, iterateId, 0, 0, "row5");
-				}
-
-				int tos_count_tMap_2 = 0;
 
 // ###############################
 // # Lookup's keys initialization
+	
+		org.talend.designer.components.lookup.memory.AdvancedMemoryLookup<row6Struct> tHash_Lookup_row6 = (org.talend.designer.components.lookup.memory.AdvancedMemoryLookup<row6Struct>) 
+				((org.talend.designer.components.lookup.memory.AdvancedMemoryLookup<row6Struct>) 
+					globalMap.get( "tHash_Lookup_row6" ))
+					;					
+					
+	
 
-				org.talend.designer.components.lookup.memory.AdvancedMemoryLookup<row6Struct> tHash_Lookup_row6 = (org.talend.designer.components.lookup.memory.AdvancedMemoryLookup<row6Struct>) ((org.talend.designer.components.lookup.memory.AdvancedMemoryLookup<row6Struct>) globalMap
-						.get("tHash_Lookup_row6"));
-
-				row6Struct row6HashKey = new row6Struct();
-				row6Struct row6Default = new row6Struct();
+row6Struct row6HashKey = new row6Struct();
+row6Struct row6Default = new row6Struct();
 // ###############################        
 
 // ###############################
 // # Vars initialization
-				class Var__tMap_2__Struct {
-				}
-				Var__tMap_2__Struct Var__tMap_2 = new Var__tMap_2__Struct();
+class  Var__tMap_2__Struct  {
+}
+Var__tMap_2__Struct Var__tMap_2 = new Var__tMap_2__Struct();
 // ###############################
 
 // ###############################
 // # Outputs initialization
-				out2Struct out2_tmp = new out2Struct();
-				posStruct pos_tmp = new posStruct();
-				negStruct neg_tmp = new negStruct();
-				cntStruct cnt_tmp = new cntStruct();
+out2Struct out2_tmp = new out2Struct();
+posStruct pos_tmp = new posStruct();
+negStruct neg_tmp = new negStruct();
+cntStruct cnt_tmp = new cntStruct();
 // ###############################
 
-				/**
-				 * [tMap_2 begin ] stop
-				 */
+        
+        
 
-				/**
-				 * [tFilterRow_1 begin ] start
-				 */
 
-				ok_Hash.put("tFilterRow_1", false);
-				start_Hash.put("tFilterRow_1", System.currentTimeMillis());
 
-				currentComponent = "tFilterRow_1";
+        
 
-				if (execStat) {
-					runStat.updateStatOnConnection(resourceMap, iterateId, 0, 0, "row4");
-				}
 
-				int tos_count_tFilterRow_1 = 0;
 
-				int nb_line_tFilterRow_1 = 0;
-				int nb_line_ok_tFilterRow_1 = 0;
-				int nb_line_reject_tFilterRow_1 = 0;
 
-				class Operator_tFilterRow_1 {
-					private String sErrorMsg = "";
-					private boolean bMatchFlag = true;
-					private String sUnionFlag = "&&";
 
-					public Operator_tFilterRow_1(String unionFlag) {
-						sUnionFlag = unionFlag;
-						bMatchFlag = "||".equals(unionFlag) ? false : true;
+
+
+
+
+ 
+
+
+
+/**
+ * [tMap_2 begin ] stop
+ */
+
+
+
+	
+	/**
+	 * [tFilterRow_1 begin ] start
+	 */
+
+	
+
+	
+		
+		ok_Hash.put("tFilterRow_1", false);
+		start_Hash.put("tFilterRow_1", System.currentTimeMillis());
+		
+	
+	currentComponent="tFilterRow_1";
+
+	
+					if(execStat) {
+						runStat.updateStatOnConnection(resourceMap,iterateId,0,0,"row4");
 					}
+				
+		int tos_count_tFilterRow_1 = 0;
+		
+    int nb_line_tFilterRow_1 = 0;
+    int nb_line_ok_tFilterRow_1 = 0;
+    int nb_line_reject_tFilterRow_1 = 0;
 
-					public String getErrorMsg() {
-						if (sErrorMsg != null && sErrorMsg.length() > 1)
-							return sErrorMsg.substring(1);
-						else
-							return null;
+    class Operator_tFilterRow_1 {
+      private String sErrorMsg = "";
+      private boolean bMatchFlag = true;
+      private String sUnionFlag = "&&";
+
+      public Operator_tFilterRow_1(String unionFlag){
+        sUnionFlag = unionFlag;
+        bMatchFlag =  "||".equals(unionFlag) ? false : true;
+      }
+
+      public String getErrorMsg() {
+        if (sErrorMsg != null && sErrorMsg.length() > 1)
+          return sErrorMsg.substring(1);
+        else 
+          return null;
+      }
+
+      public boolean getMatchFlag() {
+        return bMatchFlag;
+      }
+
+      public void matches(boolean partMatched, String reason) {
+        // no need to care about the next judgement
+        if ("||".equals(sUnionFlag) && bMatchFlag){
+          return;
+        }
+
+        if (!partMatched) {
+          sErrorMsg += "|" + reason;
+        }
+
+        if ("||".equals(sUnionFlag))
+          bMatchFlag = bMatchFlag || partMatched;
+        else
+          bMatchFlag = bMatchFlag && partMatched;
+      }
+    }
+
+ 
+
+
+
+/**
+ * [tFilterRow_1 begin ] stop
+ */
+
+
+
+	
+	/**
+	 * [tNormalize_2 begin ] start
+	 */
+
+	
+
+	
+		
+		ok_Hash.put("tNormalize_2", false);
+		start_Hash.put("tNormalize_2", System.currentTimeMillis());
+		
+	
+	currentComponent="tNormalize_2";
+
+	
+					if(execStat) {
+						runStat.updateStatOnConnection(resourceMap,iterateId,0,0,"row3");
 					}
+				
+		int tos_count_tNormalize_2 = 0;
+		
 
-					public boolean getMatchFlag() {
-						return bMatchFlag;
+	int lastNoEmptyIndex_tNormalize_2 = 0;
+    int nb_line_tNormalize_2 = 0;
+        String tmp_tNormalize_2 = null;
+        StringBuilder currentRecord_tNormalize_2 = null;
+        String [] normalizeRecord_tNormalize_2 = null;
+        java.util.Set<String> recordSet_tNormalize_2 = new java.util.HashSet<String>();
+        
+				if ( ((String)" \n").length() == 0 ){
+					throw new IllegalArgumentException("Field Separator must be assigned a char."); 
+				}
+				
+
+ 
+
+
+
+/**
+ * [tNormalize_2 begin ] stop
+ */
+
+
+
+	
+	/**
+	 * [tNormalize_1 begin ] start
+	 */
+
+	
+
+	
+		
+		ok_Hash.put("tNormalize_1", false);
+		start_Hash.put("tNormalize_1", System.currentTimeMillis());
+		
+	
+	currentComponent="tNormalize_1";
+
+	
+					if(execStat) {
+						runStat.updateStatOnConnection(resourceMap,iterateId,0,0,"out1");
 					}
+				
+		int tos_count_tNormalize_1 = 0;
+		
 
-					public void matches(boolean partMatched, String reason) {
-						// no need to care about the next judgement
-						if ("||".equals(sUnionFlag) && bMatchFlag) {
-							return;
-						}
+	int lastNoEmptyIndex_tNormalize_1 = 0;
+    int nb_line_tNormalize_1 = 0;
+        String tmp_tNormalize_1 = null;
+        StringBuilder currentRecord_tNormalize_1 = null;
+        String [] normalizeRecord_tNormalize_1 = null;
+        java.util.Set<String> recordSet_tNormalize_1 = new java.util.HashSet<String>();
+        
+				if ( ((String)" ").length() == 0 ){
+					throw new IllegalArgumentException("Field Separator must be assigned a char."); 
+				}
+				
 
-						if (!partMatched) {
-							sErrorMsg += "|" + reason;
-						}
+ 
 
-						if ("||".equals(sUnionFlag))
-							bMatchFlag = bMatchFlag || partMatched;
-						else
-							bMatchFlag = bMatchFlag && partMatched;
+
+
+/**
+ * [tNormalize_1 begin ] stop
+ */
+
+
+
+	
+	/**
+	 * [tMap_1 begin ] start
+	 */
+
+	
+
+	
+		
+		ok_Hash.put("tMap_1", false);
+		start_Hash.put("tMap_1", System.currentTimeMillis());
+		
+	
+	currentComponent="tMap_1";
+
+	
+					if(execStat) {
+						runStat.updateStatOnConnection(resourceMap,iterateId,0,0,"row2");
 					}
-				}
+				
+		int tos_count_tMap_1 = 0;
+		
 
-				/**
-				 * [tFilterRow_1 begin ] stop
-				 */
 
-				/**
-				 * [tNormalize_2 begin ] start
-				 */
 
-				ok_Hash.put("tNormalize_2", false);
-				start_Hash.put("tNormalize_2", System.currentTimeMillis());
-
-				currentComponent = "tNormalize_2";
-
-				if (execStat) {
-					runStat.updateStatOnConnection(resourceMap, iterateId, 0, 0, "row3");
-				}
-
-				int tos_count_tNormalize_2 = 0;
-
-				int lastNoEmptyIndex_tNormalize_2 = 0;
-				int nb_line_tNormalize_2 = 0;
-				String tmp_tNormalize_2 = null;
-				StringBuilder currentRecord_tNormalize_2 = null;
-				String[] normalizeRecord_tNormalize_2 = null;
-				java.util.Set<String> recordSet_tNormalize_2 = new java.util.HashSet<String>();
-
-				if (((String) " \n").length() == 0) {
-					throw new IllegalArgumentException("Field Separator must be assigned a char.");
-				}
-
-				/**
-				 * [tNormalize_2 begin ] stop
-				 */
-
-				/**
-				 * [tNormalize_1 begin ] start
-				 */
-
-				ok_Hash.put("tNormalize_1", false);
-				start_Hash.put("tNormalize_1", System.currentTimeMillis());
-
-				currentComponent = "tNormalize_1";
-
-				if (execStat) {
-					runStat.updateStatOnConnection(resourceMap, iterateId, 0, 0, "out1");
-				}
-
-				int tos_count_tNormalize_1 = 0;
-
-				int lastNoEmptyIndex_tNormalize_1 = 0;
-				int nb_line_tNormalize_1 = 0;
-				String tmp_tNormalize_1 = null;
-				StringBuilder currentRecord_tNormalize_1 = null;
-				String[] normalizeRecord_tNormalize_1 = null;
-				java.util.Set<String> recordSet_tNormalize_1 = new java.util.HashSet<String>();
-
-				if (((String) " ").length() == 0) {
-					throw new IllegalArgumentException("Field Separator must be assigned a char.");
-				}
-
-				/**
-				 * [tNormalize_1 begin ] stop
-				 */
-
-				/**
-				 * [tMap_1 begin ] start
-				 */
-
-				ok_Hash.put("tMap_1", false);
-				start_Hash.put("tMap_1", System.currentTimeMillis());
-
-				currentComponent = "tMap_1";
-
-				if (execStat) {
-					runStat.updateStatOnConnection(resourceMap, iterateId, 0, 0, "row2");
-				}
-
-				int tos_count_tMap_1 = 0;
 
 // ###############################
 // # Lookup's keys initialization
@@ -8071,2712 +8429,3793 @@ public class s5_in_calcul_sentiments_depuis_donnees_tweets implements TalendJob 
 
 // ###############################
 // # Vars initialization
-				class Var__tMap_1__Struct {
-				}
-				Var__tMap_1__Struct Var__tMap_1 = new Var__tMap_1__Struct();
+class  Var__tMap_1__Struct  {
+}
+Var__tMap_1__Struct Var__tMap_1 = new Var__tMap_1__Struct();
 // ###############################
 
 // ###############################
 // # Outputs initialization
-				out1Struct out1_tmp = new out1Struct();
+out1Struct out1_tmp = new out1Struct();
 // ###############################
 
-				/**
-				 * [tMap_1 begin ] stop
-				 */
+        
+        
 
-				/**
-				 * [tReplace_1 begin ] start
-				 */
 
-				ok_Hash.put("tReplace_1", false);
-				start_Hash.put("tReplace_1", System.currentTimeMillis());
 
-				currentComponent = "tReplace_1";
+        
 
-				if (execStat) {
-					runStat.updateStatOnConnection(resourceMap, iterateId, 0, 0, "row1");
-				}
 
-				int tos_count_tReplace_1 = 0;
 
-				int nb_line_tReplace_1 = 0;
 
-				/**
-				 * [tReplace_1 begin ] stop
-				 */
 
-				/**
-				 * [tDBInput_1 begin ] start
-				 */
 
-				ok_Hash.put("tDBInput_1", false);
-				start_Hash.put("tDBInput_1", System.currentTimeMillis());
 
-				currentComponent = "tDBInput_1";
 
-				int tos_count_tDBInput_1 = 0;
 
-				int nb_line_tDBInput_1 = 0;
-				java.sql.Connection conn_tDBInput_1 = null;
+ 
+
+
+
+/**
+ * [tMap_1 begin ] stop
+ */
+
+
+
+	
+	/**
+	 * [tReplace_1 begin ] start
+	 */
+
+	
+
+	
+		
+		ok_Hash.put("tReplace_1", false);
+		start_Hash.put("tReplace_1", System.currentTimeMillis());
+		
+	
+	currentComponent="tReplace_1";
+
+	
+					if(execStat) {
+						runStat.updateStatOnConnection(resourceMap,iterateId,0,0,"row1");
+					}
+				
+		int tos_count_tReplace_1 = 0;
+		
+
+
+int nb_line_tReplace_1 = 0;
+ 
+
+
+
+/**
+ * [tReplace_1 begin ] stop
+ */
+
+
+
+	
+	/**
+	 * [tDBInput_1 begin ] start
+	 */
+
+	
+
+	
+		
+		ok_Hash.put("tDBInput_1", false);
+		start_Hash.put("tDBInput_1", System.currentTimeMillis());
+		
+	
+	currentComponent="tDBInput_1";
+
+	
+		int tos_count_tDBInput_1 = 0;
+		
+	
+    
+	
+		    int nb_line_tDBInput_1 = 0;
+		    java.sql.Connection conn_tDBInput_1 = null;
 				String driverClass_tDBInput_1 = "org.postgresql.Driver";
-				java.lang.Class jdbcclazz_tDBInput_1 = java.lang.Class.forName(driverClass_tDBInput_1);
+			    java.lang.Class jdbcclazz_tDBInput_1 = java.lang.Class.forName(driverClass_tDBInput_1);
 				String dbUser_tDBInput_1 = context.connection_postgres_Login;
-
-				final String decryptedPassword_tDBInput_1 = context.connection_postgres_Password;
-
+				
+				
+	final String decryptedPassword_tDBInput_1 = context.connection_postgres_Password; 
+				
 				String dbPwd_tDBInput_1 = decryptedPassword_tDBInput_1;
-
-				String url_tDBInput_1 = "jdbc:postgresql://" + context.connection_postgres_Server + ":"
-						+ context.connection_postgres_Port + "/" + context.connection_postgres_Database + "?"
-						+ context.connection_postgres_AdditionalParams;
-
-				conn_tDBInput_1 = java.sql.DriverManager.getConnection(url_tDBInput_1, dbUser_tDBInput_1,
-						dbPwd_tDBInput_1);
-
+				
+				String url_tDBInput_1 = "jdbc:postgresql://" + context.connection_postgres_Server + ":" + context.connection_postgres_Port + "/" + context.connection_postgres_Database + "?" + context.connection_postgres_AdditionalParams;
+				
+				conn_tDBInput_1 = java.sql.DriverManager.getConnection(url_tDBInput_1,dbUser_tDBInput_1,dbPwd_tDBInput_1);
+		        
 				conn_tDBInput_1.setAutoCommit(false);
+			
+		    
+			java.sql.Statement stmt_tDBInput_1 = conn_tDBInput_1.createStatement();
 
-				java.sql.Statement stmt_tDBInput_1 = conn_tDBInput_1.createStatement();
+		    String dbquery_tDBInput_1 = "select id,to_char(date,'dd-MM-yyyy') as date,hashtag,country,text from all_tweets where country <> 'France';";
+			
 
-				String dbquery_tDBInput_1 = "select id,to_char(date,'dd-MM-yyyy') as date,hashtag,country,text from all_tweets where country <> 'France';";
+            	globalMap.put("tDBInput_1_QUERY",dbquery_tDBInput_1);
+		    java.sql.ResultSet rs_tDBInput_1 = null;
 
-				globalMap.put("tDBInput_1_QUERY", dbquery_tDBInput_1);
-				java.sql.ResultSet rs_tDBInput_1 = null;
+		    try {
+		    	rs_tDBInput_1 = stmt_tDBInput_1.executeQuery(dbquery_tDBInput_1);
+		    	java.sql.ResultSetMetaData rsmd_tDBInput_1 = rs_tDBInput_1.getMetaData();
+		    	int colQtyInRs_tDBInput_1 = rsmd_tDBInput_1.getColumnCount();
 
-				try {
-					rs_tDBInput_1 = stmt_tDBInput_1.executeQuery(dbquery_tDBInput_1);
-					java.sql.ResultSetMetaData rsmd_tDBInput_1 = rs_tDBInput_1.getMetaData();
-					int colQtyInRs_tDBInput_1 = rsmd_tDBInput_1.getColumnCount();
+		    String tmpContent_tDBInput_1 = null;
+		    
+		    
+		    while (rs_tDBInput_1.next()) {
+		        nb_line_tDBInput_1++;
+		        
+							if(colQtyInRs_tDBInput_1 < 1) {
+								row1.id = null;
+							} else {
+	                         		
+        	row1.id = routines.system.JDBCUtil.getString(rs_tDBInput_1, 1, false);
+		                    }
+							if(colQtyInRs_tDBInput_1 < 2) {
+								row1.date = null;
+							} else {
+	                         		
+        	row1.date = routines.system.JDBCUtil.getString(rs_tDBInput_1, 2, false);
+		                    }
+							if(colQtyInRs_tDBInput_1 < 3) {
+								row1.hashtag = null;
+							} else {
+	                         		
+        	row1.hashtag = routines.system.JDBCUtil.getString(rs_tDBInput_1, 3, false);
+		                    }
+							if(colQtyInRs_tDBInput_1 < 4) {
+								row1.country = null;
+							} else {
+	                         		
+        	row1.country = routines.system.JDBCUtil.getString(rs_tDBInput_1, 4, false);
+		                    }
+							if(colQtyInRs_tDBInput_1 < 5) {
+								row1.text = null;
+							} else {
+	                         		
+        	row1.text = routines.system.JDBCUtil.getString(rs_tDBInput_1, 5, false);
+		                    }
+					
 
-					String tmpContent_tDBInput_1 = null;
 
-					while (rs_tDBInput_1.next()) {
-						nb_line_tDBInput_1++;
+ 
 
-						if (colQtyInRs_tDBInput_1 < 1) {
-							row1.id = null;
-						} else {
 
-							row1.id = routines.system.JDBCUtil.getString(rs_tDBInput_1, 1, false);
-						}
-						if (colQtyInRs_tDBInput_1 < 2) {
-							row1.date = null;
-						} else {
 
-							row1.date = routines.system.JDBCUtil.getString(rs_tDBInput_1, 2, false);
-						}
-						if (colQtyInRs_tDBInput_1 < 3) {
-							row1.hashtag = null;
-						} else {
+/**
+ * [tDBInput_1 begin ] stop
+ */
+	
+	/**
+	 * [tDBInput_1 main ] start
+	 */
 
-							row1.hashtag = routines.system.JDBCUtil.getString(rs_tDBInput_1, 3, false);
-						}
-						if (colQtyInRs_tDBInput_1 < 4) {
-							row1.country = null;
-						} else {
+	
 
-							row1.country = routines.system.JDBCUtil.getString(rs_tDBInput_1, 4, false);
-						}
-						if (colQtyInRs_tDBInput_1 < 5) {
-							row1.text = null;
-						} else {
+	
+	
+	currentComponent="tDBInput_1";
 
-							row1.text = routines.system.JDBCUtil.getString(rs_tDBInput_1, 5, false);
-						}
+	
 
-						/**
-						 * [tDBInput_1 begin ] stop
-						 */
+ 
 
-						/**
-						 * [tDBInput_1 main ] start
-						 */
 
-						currentComponent = "tDBInput_1";
+	tos_count_tDBInput_1++;
 
-						tos_count_tDBInput_1++;
+/**
+ * [tDBInput_1 main ] stop
+ */
+	
+	/**
+	 * [tDBInput_1 process_data_begin ] start
+	 */
 
-						/**
-						 * [tDBInput_1 main ] stop
-						 */
+	
 
-						/**
-						 * [tDBInput_1 process_data_begin ] start
-						 */
+	
+	
+	currentComponent="tDBInput_1";
 
-						currentComponent = "tDBInput_1";
+	
 
-						/**
-						 * [tDBInput_1 process_data_begin ] stop
-						 */
+ 
 
-						/**
-						 * [tReplace_1 main ] start
-						 */
 
-						currentComponent = "tReplace_1";
 
-						if (execStat) {
-							runStat.updateStatOnConnection(iterateId, 1, 1, "row1");
-						}
+/**
+ * [tDBInput_1 process_data_begin ] stop
+ */
 
-						row1.text = StringUtils.replaceAll(row1.text, "[^A-ZÜÖÄa-z ]+", "" + "");
-						row2.id = row1.id;
+	
+	/**
+	 * [tReplace_1 main ] start
+	 */
 
-						row2.date = row1.date;
+	
 
-						row2.hashtag = row1.hashtag;
+	
+	
+	currentComponent="tReplace_1";
 
-						row2.country = row1.country;
+	
+					if(execStat){
+						runStat.updateStatOnConnection(iterateId,1,1,"row1");
+					}
+					
 
-						row2.text = row1.text;
+                    row1.text = StringUtils.replaceAll(row1.text, "[^A-ZÜÖÄa-z ]+", "" + "");                
+	        row2.id = row1.id;
+	        
+	        row2.date = row1.date;
+	        
+	        row2.hashtag = row1.hashtag;
+	        
+	        row2.country = row1.country;
+	        
+	        row2.text = row1.text;
+	        
+    nb_line_tReplace_1++;
 
-						nb_line_tReplace_1++;
+ 
 
-						tos_count_tReplace_1++;
 
-						/**
-						 * [tReplace_1 main ] stop
-						 */
+	tos_count_tReplace_1++;
 
-						/**
-						 * [tReplace_1 process_data_begin ] start
-						 */
+/**
+ * [tReplace_1 main ] stop
+ */
+	
+	/**
+	 * [tReplace_1 process_data_begin ] start
+	 */
 
-						currentComponent = "tReplace_1";
+	
 
-						/**
-						 * [tReplace_1 process_data_begin ] stop
-						 */
+	
+	
+	currentComponent="tReplace_1";
 
-						/**
-						 * [tMap_1 main ] start
-						 */
+	
 
-						currentComponent = "tMap_1";
+ 
 
-						if (execStat) {
-							runStat.updateStatOnConnection(iterateId, 1, 1, "row2");
-						}
 
-						boolean hasCasePrimitiveKeyWithNull_tMap_1 = false;
 
-						// ###############################
-						// # Input tables (lookups)
-						boolean rejectedInnerJoin_tMap_1 = false;
-						boolean mainRowRejected_tMap_1 = false;
+/**
+ * [tReplace_1 process_data_begin ] stop
+ */
 
-						// ###############################
-						{ // start of Var scope
+	
+	/**
+	 * [tMap_1 main ] start
+	 */
 
-							// ###############################
-							// # Vars tables
+	
 
-							Var__tMap_1__Struct Var = Var__tMap_1;// ###############################
-							// ###############################
-							// # Output tables
+	
+	
+	currentComponent="tMap_1";
 
-							out1 = null;
+	
+					if(execStat){
+						runStat.updateStatOnConnection(iterateId,1,1,"row2");
+					}
+					
+
+		
+		
+		boolean hasCasePrimitiveKeyWithNull_tMap_1 = false;
+		
+        // ###############################
+        // # Input tables (lookups)
+		  boolean rejectedInnerJoin_tMap_1 = false;
+		  boolean mainRowRejected_tMap_1 = false;
+            				    								  
+		// ###############################
+        { // start of Var scope
+        
+	        // ###############################
+        	// # Vars tables
+        
+Var__tMap_1__Struct Var = Var__tMap_1;// ###############################
+        // ###############################
+        // # Output tables
+
+out1 = null;
+
 
 // # Output table : 'out1'
-							out1_tmp.id = row2.id;
-							out1_tmp.date = TalendDate.parseDate("dd-MM-yyyy", row2.date);
-							out1_tmp.hashtag = row2.hashtag;
-							out1_tmp.country = row2.country;
-							out1_tmp.full_text = row2.text;
-							out1_tmp.text = row2.text;
-							out1 = out1_tmp;
+out1_tmp.id = row2.id ;
+out1_tmp.date = TalendDate.parseDate("dd-MM-yyyy",row2.date ) ;
+out1_tmp.hashtag = row2.hashtag ;
+out1_tmp.country = row2.country ;
+out1_tmp.full_text = row2.text ;
+out1_tmp.text = row2.text ;
+out1 = out1_tmp;
 // ###############################
 
-						} // end of Var scope
+} // end of Var scope
 
-						rejectedInnerJoin_tMap_1 = false;
+rejectedInnerJoin_tMap_1 = false;
 
-						tos_count_tMap_1++;
 
-						/**
-						 * [tMap_1 main ] stop
-						 */
 
-						/**
-						 * [tMap_1 process_data_begin ] start
-						 */
 
-						currentComponent = "tMap_1";
 
-						/**
-						 * [tMap_1 process_data_begin ] stop
-						 */
+
+
+
+
+
+ 
+
+
+	tos_count_tMap_1++;
+
+/**
+ * [tMap_1 main ] stop
+ */
+	
+	/**
+	 * [tMap_1 process_data_begin ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tMap_1";
+
+	
+
+ 
+
+
+
+/**
+ * [tMap_1 process_data_begin ] stop
+ */
 // Start of branch "out1"
-						if (out1 != null) {
+if(out1 != null) { 
 
-							/**
-							 * [tNormalize_1 main ] start
-							 */
 
-							currentComponent = "tNormalize_1";
 
-							if (execStat) {
-								runStat.updateStatOnConnection(iterateId, 1, 1, "out1");
-							}
+	
+	/**
+	 * [tNormalize_1 main ] start
+	 */
 
-							normalizeRecord_tNormalize_1 = new String[1];
-							if (out1.text != null) {
-								if ("".equals(out1.text)) {
-									normalizeRecord_tNormalize_1[0] = "";
-								} else {
+	
 
-									normalizeRecord_tNormalize_1 = out1.text.split(" ", -1);
+	
+	
+	currentComponent="tNormalize_1";
 
-								}
-							}
-							lastNoEmptyIndex_tNormalize_1 = normalizeRecord_tNormalize_1.length;
+	
+					if(execStat){
+						runStat.updateStatOnConnection(iterateId,1,1,"out1");
+					}
+					
 
-							for (int i_tNormalize_1 = 0; i_tNormalize_1 < lastNoEmptyIndex_tNormalize_1; i_tNormalize_1++) {
+            normalizeRecord_tNormalize_1 = new String[1];
+            if(out1.text != null) {
+				if("".equals(out1.text)){
+		        	normalizeRecord_tNormalize_1[0] = "";
+		        }else{
+	                
+	                		normalizeRecord_tNormalize_1 = out1.text.split(" ",-1);
+	                        
+                }           
+            }
+             		lastNoEmptyIndex_tNormalize_1=normalizeRecord_tNormalize_1.length;
+	             	
+            	
+            	for(int i_tNormalize_1 = 0 ; i_tNormalize_1 < lastNoEmptyIndex_tNormalize_1 ; i_tNormalize_1++) {
+		  			
+	                currentRecord_tNormalize_1 = new StringBuilder();
+	                nb_line_tNormalize_1++;               
+	                
+	                        	row3.id = out1.id;
+	                        
+	                        	row3.date = out1.date;
+	                        
+	                        	row3.hashtag = out1.hashtag;
+	                        
+	                        	row3.country = out1.country;
+	                        
+	                        	row3.full_text = out1.full_text;
+	                        
+	                        	row3.text = normalizeRecord_tNormalize_1[i_tNormalize_1];
+		                    
 
-								currentRecord_tNormalize_1 = new StringBuilder();
-								nb_line_tNormalize_1++;
+ 
 
-								row3.id = out1.id;
 
-								row3.date = out1.date;
+	tos_count_tNormalize_1++;
 
-								row3.hashtag = out1.hashtag;
+/**
+ * [tNormalize_1 main ] stop
+ */
+	
+	/**
+	 * [tNormalize_1 process_data_begin ] start
+	 */
 
-								row3.country = out1.country;
+	
 
-								row3.full_text = out1.full_text;
+	
+	
+	currentComponent="tNormalize_1";
 
-								row3.text = normalizeRecord_tNormalize_1[i_tNormalize_1];
+	
 
-								tos_count_tNormalize_1++;
+ 
 
-								/**
-								 * [tNormalize_1 main ] stop
-								 */
 
-								/**
-								 * [tNormalize_1 process_data_begin ] start
-								 */
 
-								currentComponent = "tNormalize_1";
+/**
+ * [tNormalize_1 process_data_begin ] stop
+ */
 
-								/**
-								 * [tNormalize_1 process_data_begin ] stop
-								 */
+	
+	/**
+	 * [tNormalize_2 main ] start
+	 */
 
-								/**
-								 * [tNormalize_2 main ] start
-								 */
+	
 
-								currentComponent = "tNormalize_2";
+	
+	
+	currentComponent="tNormalize_2";
 
-								if (execStat) {
-									runStat.updateStatOnConnection(iterateId, 1, 1, "row3");
-								}
+	
+					if(execStat){
+						runStat.updateStatOnConnection(iterateId,1,1,"row3");
+					}
+					
 
-								normalizeRecord_tNormalize_2 = new String[1];
-								if (row3.text != null) {
-									if ("".equals(row3.text)) {
-										normalizeRecord_tNormalize_2[0] = "";
-									} else {
+            normalizeRecord_tNormalize_2 = new String[1];
+            if(row3.text != null) {
+				if("".equals(row3.text)){
+		        	normalizeRecord_tNormalize_2[0] = "";
+		        }else{
+	                
+	                		normalizeRecord_tNormalize_2 = row3.text.split(" \n",-1);
+	                        
+                }           
+            }
+             		lastNoEmptyIndex_tNormalize_2=normalizeRecord_tNormalize_2.length;
+	             	
+            	
+            	for(int i_tNormalize_2 = 0 ; i_tNormalize_2 < lastNoEmptyIndex_tNormalize_2 ; i_tNormalize_2++) {
+		  			
+	                currentRecord_tNormalize_2 = new StringBuilder();
+	                nb_line_tNormalize_2++;               
+	                
+	                        	row4.id = row3.id;
+	                        
+	                        	row4.date = row3.date;
+	                        
+	                        	row4.hashtag = row3.hashtag;
+	                        
+	                        	row4.country = row3.country;
+	                        
+	                        	row4.full_text = row3.full_text;
+	                        
+	                        	row4.text = normalizeRecord_tNormalize_2[i_tNormalize_2];
+		                    
 
-										normalizeRecord_tNormalize_2 = row3.text.split(" \n", -1);
+ 
 
-									}
-								}
-								lastNoEmptyIndex_tNormalize_2 = normalizeRecord_tNormalize_2.length;
 
-								for (int i_tNormalize_2 = 0; i_tNormalize_2 < lastNoEmptyIndex_tNormalize_2; i_tNormalize_2++) {
+	tos_count_tNormalize_2++;
 
-									currentRecord_tNormalize_2 = new StringBuilder();
-									nb_line_tNormalize_2++;
+/**
+ * [tNormalize_2 main ] stop
+ */
+	
+	/**
+	 * [tNormalize_2 process_data_begin ] start
+	 */
 
-									row4.id = row3.id;
+	
 
-									row4.date = row3.date;
+	
+	
+	currentComponent="tNormalize_2";
 
-									row4.hashtag = row3.hashtag;
+	
 
-									row4.country = row3.country;
+ 
 
-									row4.full_text = row3.full_text;
 
-									row4.text = normalizeRecord_tNormalize_2[i_tNormalize_2];
 
-									tos_count_tNormalize_2++;
+/**
+ * [tNormalize_2 process_data_begin ] stop
+ */
 
-									/**
-									 * [tNormalize_2 main ] stop
-									 */
+	
+	/**
+	 * [tFilterRow_1 main ] start
+	 */
 
-									/**
-									 * [tNormalize_2 process_data_begin ] start
-									 */
+	
 
-									currentComponent = "tNormalize_2";
+	
+	
+	currentComponent="tFilterRow_1";
 
-									/**
-									 * [tNormalize_2 process_data_begin ] stop
-									 */
+	
+					if(execStat){
+						runStat.updateStatOnConnection(iterateId,1,1,"row4");
+					}
+					
 
-									/**
-									 * [tFilterRow_1 main ] start
-									 */
+          row5 = null;
+    Operator_tFilterRow_1 ope_tFilterRow_1 = new Operator_tFilterRow_1("&&");
+	        ope_tFilterRow_1.matches((row4.text != null)
+	                       , "text!=null failed");
+    
+    if (ope_tFilterRow_1.getMatchFlag()) {
+              if(row5 == null){ 
+                row5 = new row5Struct();
+              }
+               row5.id = row4.id;
+               row5.date = row4.date;
+               row5.hashtag = row4.hashtag;
+               row5.country = row4.country;
+               row5.full_text = row4.full_text;
+               row5.text = row4.text;    
+      nb_line_ok_tFilterRow_1++;
+    } else {
+      nb_line_reject_tFilterRow_1++;
+    }
 
-									currentComponent = "tFilterRow_1";
+nb_line_tFilterRow_1++;
 
-									if (execStat) {
-										runStat.updateStatOnConnection(iterateId, 1, 1, "row4");
-									}
+ 
 
-									row5 = null;
-									Operator_tFilterRow_1 ope_tFilterRow_1 = new Operator_tFilterRow_1("&&");
-									ope_tFilterRow_1.matches((row4.text != null), "text!=null failed");
 
-									if (ope_tFilterRow_1.getMatchFlag()) {
-										if (row5 == null) {
-											row5 = new row5Struct();
-										}
-										row5.id = row4.id;
-										row5.date = row4.date;
-										row5.hashtag = row4.hashtag;
-										row5.country = row4.country;
-										row5.full_text = row4.full_text;
-										row5.text = row4.text;
-										nb_line_ok_tFilterRow_1++;
-									} else {
-										nb_line_reject_tFilterRow_1++;
-									}
+	tos_count_tFilterRow_1++;
 
-									nb_line_tFilterRow_1++;
+/**
+ * [tFilterRow_1 main ] stop
+ */
+	
+	/**
+	 * [tFilterRow_1 process_data_begin ] start
+	 */
 
-									tos_count_tFilterRow_1++;
+	
 
-									/**
-									 * [tFilterRow_1 main ] stop
-									 */
+	
+	
+	currentComponent="tFilterRow_1";
 
-									/**
-									 * [tFilterRow_1 process_data_begin ] start
-									 */
+	
 
-									currentComponent = "tFilterRow_1";
+ 
 
-									/**
-									 * [tFilterRow_1 process_data_begin ] stop
-									 */
+
+
+/**
+ * [tFilterRow_1 process_data_begin ] stop
+ */
 // Start of branch "row5"
-									if (row5 != null) {
+if(row5 != null) { 
 
-										/**
-										 * [tMap_2 main ] start
-										 */
 
-										currentComponent = "tMap_2";
 
-										if (execStat) {
-											runStat.updateStatOnConnection(iterateId, 1, 1, "row5");
-										}
+	
+	/**
+	 * [tMap_2 main ] start
+	 */
 
-										boolean hasCasePrimitiveKeyWithNull_tMap_2 = false;
+	
 
-										// ###############################
-										// # Input tables (lookups)
-										boolean rejectedInnerJoin_tMap_2 = false;
-										boolean mainRowRejected_tMap_2 = false;
+	
+	
+	currentComponent="tMap_2";
 
-										///////////////////////////////////////////////
-										// Starting Lookup Table "row6"
-										///////////////////////////////////////////////
+	
+					if(execStat){
+						runStat.updateStatOnConnection(iterateId,1,1,"row5");
+					}
+					
 
-										boolean forceLooprow6 = false;
+		
+		
+		boolean hasCasePrimitiveKeyWithNull_tMap_2 = false;
+		
+        // ###############################
+        // # Input tables (lookups)
+		  boolean rejectedInnerJoin_tMap_2 = false;
+		  boolean mainRowRejected_tMap_2 = false;
+            				    								  
+		
 
-										row6Struct row6ObjectFromLookup = null;
+				///////////////////////////////////////////////
+				// Starting Lookup Table "row6" 
+				///////////////////////////////////////////////
 
-										if (!rejectedInnerJoin_tMap_2) { // G_TM_M_020
 
-											hasCasePrimitiveKeyWithNull_tMap_2 = false;
+				
+				
+                            
+ 					    boolean forceLooprow6 = false;
+       		  	    	
+       		  	    	
+ 							row6Struct row6ObjectFromLookup = null;
+                          
+		           		  	if(!rejectedInnerJoin_tMap_2) { // G_TM_M_020
 
-											row6HashKey.word_english = row5.text.toLowerCase();
+								
+								hasCasePrimitiveKeyWithNull_tMap_2 = false;
+								
+                        		    		    row6HashKey.word_english = row5.text.toLowerCase() ;
+                        		    		
 
-											row6HashKey.hashCodeDirty = true;
+								
+		                        	row6HashKey.hashCodeDirty = true;
+                        		
+	  					
+	  							
+			  					
+			  					
+	  					
+		  							tHash_Lookup_row6.lookup( row6HashKey );
 
-											tHash_Lookup_row6.lookup(row6HashKey);
+	  							
 
-										} // G_TM_M_020
+	  							
 
-										if (tHash_Lookup_row6 != null && tHash_Lookup_row6.getCount(row6HashKey) > 1) { // G
-																														// 071
+ 								
+		  				
+	  								
+						
+									
+  									  		
+ 								
 
-											// System.out.println("WARNING: UNIQUE MATCH is configured for the lookup
-											// 'row6' and it contains more one result from keys : row6.word_english = '"
-											// + row6HashKey.word_english + "'");
-										} // G 071
 
-										row6Struct row6 = null;
 
-										row6Struct fromLookup_row6 = null;
-										row6 = row6Default;
+							} // G_TM_M_020
+			           		  	  
+							
+				           		if(tHash_Lookup_row6 != null && tHash_Lookup_row6.getCount(row6HashKey) > 1) { // G 071
+			  							
+			  						
+									 		
+									//System.out.println("WARNING: UNIQUE MATCH is configured for the lookup 'row6' and it contains more one result from keys :  row6.word_english = '" + row6HashKey.word_english + "'");
+								} // G 071
+							
 
-										if (tHash_Lookup_row6 != null && tHash_Lookup_row6.hasNext()) { // G 099
+							row6Struct row6 = null;
+                    		  	 
+							   
+                    		  	 
+	       		  	    	row6Struct fromLookup_row6 = null;
+							row6 = row6Default;
+										 
+							
+								 
+							
+							
+								if (tHash_Lookup_row6 !=null && tHash_Lookup_row6.hasNext()) { // G 099
+								
+							
+								
+								fromLookup_row6 = tHash_Lookup_row6.next();
 
-											fromLookup_row6 = tHash_Lookup_row6.next();
+							
+							
+								} // G 099
+							
+							
 
-										} // G 099
+							if(fromLookup_row6 != null) {
+								row6 = fromLookup_row6;
+							}
+							
+							
+							
+			  							
+								
+	                    		  	
+		                    
+	            	
+	            	
+	            // ###############################
+        { // start of Var scope
+        
+	        // ###############################
+        	// # Vars tables
+        
+Var__tMap_2__Struct Var = Var__tMap_2;// ###############################
+        // ###############################
+        // # Output tables
 
-										if (fromLookup_row6 != null) {
-											row6 = fromLookup_row6;
-										}
+out2 = null;
+pos = null;
+neg = null;
+cnt = null;
 
-										// ###############################
-										{ // start of Var scope
-
-											// ###############################
-											// # Vars tables
-
-											Var__tMap_2__Struct Var = Var__tMap_2;// ###############################
-											// ###############################
-											// # Output tables
-
-											out2 = null;
-											pos = null;
-											neg = null;
-											cnt = null;
 
 // # Output table : 'out2'
-											out2_tmp.date = TalendDate.formatDate("dd-MM-yyyy", row5.date);
-											out2_tmp.hashtag = row5.hashtag;
-											out2_tmp.country = row5.country;
-											out2_tmp.t_reception = row6.sentiment;
-											out2 = out2_tmp;
+out2_tmp.date = TalendDate.formatDate("dd-MM-yyyy",row5.date) ;
+out2_tmp.hashtag = row5.hashtag ;
+out2_tmp.country = row5.country ;
+out2_tmp.t_reception = row6.sentiment ;
+out2 = out2_tmp;
 
 // # Output table : 'pos'
 // # Filter conditions 
-											if (
+if( 
 
-											!Relational.ISNULL(row6.sentiment) && row6.sentiment > 0
+!Relational.ISNULL(row6.sentiment) && row6.sentiment > 0
 
-											) {
-												pos_tmp.date = TalendDate.formatDate("dd-MM-yyyy", row5.date);
-												pos_tmp.hashtag = row5.hashtag;
-												pos_tmp.country = row5.country;
-												pos_tmp.s_positivos = row6.sentiment;
-												pos = pos_tmp;
-											} // closing filter/reject
+ ) {
+pos_tmp.date = TalendDate.formatDate("dd-MM-yyyy",row5.date);
+pos_tmp.hashtag = row5.hashtag ;
+pos_tmp.country = row5.country ;
+pos_tmp.s_positivos = row6.sentiment ;
+pos = pos_tmp;
+} // closing filter/reject
 
 // # Output table : 'neg'
 // # Filter conditions 
-											if (
+if( 
 
-											!Relational.ISNULL(row6.sentiment) && row6.sentiment < 0
+!Relational.ISNULL(row6.sentiment) && row6.sentiment < 0
 
-											) {
-												neg_tmp.date = TalendDate.formatDate("dd-MM-yyyy", row5.date);
-												neg_tmp.hashtag = row5.hashtag;
-												neg_tmp.country = row5.country;
-												neg_tmp.s_negativos = row6.sentiment;
-												neg = neg_tmp;
-											} // closing filter/reject
+ ) {
+neg_tmp.date = TalendDate.formatDate("dd-MM-yyyy",row5.date);
+neg_tmp.hashtag = row5.hashtag ;
+neg_tmp.country = row5.country ;
+neg_tmp.s_negativos = row6.sentiment ;
+neg = neg_tmp;
+} // closing filter/reject
 
 // # Output table : 'cnt'
-											cnt_tmp.date = row5.date;
-											cnt_tmp.id = row5.id;
-											cnt_tmp.hashtag = row5.hashtag;
-											cnt_tmp.country = row5.country;
-											cnt_tmp.sentiment = row6.sentiment;
-											cnt = cnt_tmp;
+cnt_tmp.date = row5.date ;
+cnt_tmp.id = row5.id ;
+cnt_tmp.hashtag = row5.hashtag ;
+cnt_tmp.country = row5.country ;
+cnt_tmp.sentiment = row6.sentiment ;
+cnt = cnt_tmp;
 // ###############################
 
-										} // end of Var scope
+} // end of Var scope
 
-										rejectedInnerJoin_tMap_2 = false;
+rejectedInnerJoin_tMap_2 = false;
 
-										tos_count_tMap_2++;
 
-										/**
-										 * [tMap_2 main ] stop
-										 */
 
-										/**
-										 * [tMap_2 process_data_begin ] start
-										 */
 
-										currentComponent = "tMap_2";
 
-										/**
-										 * [tMap_2 process_data_begin ] stop
-										 */
+
+
+
+
+
+ 
+
+
+	tos_count_tMap_2++;
+
+/**
+ * [tMap_2 main ] stop
+ */
+	
+	/**
+	 * [tMap_2 process_data_begin ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tMap_2";
+
+	
+
+ 
+
+
+
+/**
+ * [tMap_2 process_data_begin ] stop
+ */
 // Start of branch "out2"
-										if (out2 != null) {
+if(out2 != null) { 
 
-											/**
-											 * [tAggregateRow_3_AGGOUT main ] start
-											 */
 
-											currentVirtualComponent = "tAggregateRow_3";
 
-											currentComponent = "tAggregateRow_3_AGGOUT";
+	
+	/**
+	 * [tAggregateRow_3_AGGOUT main ] start
+	 */
 
-											if (execStat) {
-												runStat.updateStatOnConnection(iterateId, 1, 1, "out2");
-											}
+	
 
-											operation_finder_tAggregateRow_3.date = out2.date;
-											operation_finder_tAggregateRow_3.hashtag = out2.hashtag;
-											operation_finder_tAggregateRow_3.country = out2.country;
+	
+	
+		currentVirtualComponent = "tAggregateRow_3";
+	
+	currentComponent="tAggregateRow_3_AGGOUT";
 
-											operation_finder_tAggregateRow_3.hashCodeDirty = true;
+	
+					if(execStat){
+						runStat.updateStatOnConnection(iterateId,1,1,"out2");
+					}
+					
+	
+operation_finder_tAggregateRow_3.date = out2.date;
+			operation_finder_tAggregateRow_3.hashtag = out2.hashtag;
+			operation_finder_tAggregateRow_3.country = out2.country;
+			
 
-											operation_result_tAggregateRow_3 = hash_tAggregateRow_3
-													.get(operation_finder_tAggregateRow_3);
+	operation_finder_tAggregateRow_3.hashCodeDirty = true;
+	
+	operation_result_tAggregateRow_3 = hash_tAggregateRow_3.get(operation_finder_tAggregateRow_3);
 
-											if (operation_result_tAggregateRow_3 == null) { // G_OutMain_AggR_001
+	
 
-												operation_result_tAggregateRow_3 = new AggOperationStruct_tAggregateRow_3();
+	if(operation_result_tAggregateRow_3 == null) { // G_OutMain_AggR_001
 
-												operation_result_tAggregateRow_3.date = operation_finder_tAggregateRow_3.date;
-												operation_result_tAggregateRow_3.hashtag = operation_finder_tAggregateRow_3.hashtag;
-												operation_result_tAggregateRow_3.country = operation_finder_tAggregateRow_3.country;
+		operation_result_tAggregateRow_3 = new AggOperationStruct_tAggregateRow_3();
 
-												hash_tAggregateRow_3.put(operation_result_tAggregateRow_3,
-														operation_result_tAggregateRow_3);
+		operation_result_tAggregateRow_3.date = operation_finder_tAggregateRow_3.date;
+				operation_result_tAggregateRow_3.hashtag = operation_finder_tAggregateRow_3.hashtag;
+				operation_result_tAggregateRow_3.country = operation_finder_tAggregateRow_3.country;
+				
+		
+		
 
-											} // G_OutMain_AggR_001
+		hash_tAggregateRow_3.put(operation_result_tAggregateRow_3, operation_result_tAggregateRow_3);
+	
+	} // G_OutMain_AggR_001
 
-											if (operation_result_tAggregateRow_3.t_reception_sum == null) {
-												operation_result_tAggregateRow_3.t_reception_sum = (int) 0;
-											}
 
-											if (out2.t_reception != null)
-												operation_result_tAggregateRow_3.t_reception_sum += out2.t_reception;
+	
+					if(operation_result_tAggregateRow_3.t_reception_sum == null) {
+						operation_result_tAggregateRow_3.t_reception_sum = (int) 0;
+					}
+					
+					if( out2.t_reception != null)
+						operation_result_tAggregateRow_3.t_reception_sum += out2.t_reception;
 
-											tos_count_tAggregateRow_3_AGGOUT++;
 
-											/**
-											 * [tAggregateRow_3_AGGOUT main ] stop
-											 */
+ 
 
-											/**
-											 * [tAggregateRow_3_AGGOUT process_data_begin ] start
-											 */
 
-											currentVirtualComponent = "tAggregateRow_3";
+	tos_count_tAggregateRow_3_AGGOUT++;
 
-											currentComponent = "tAggregateRow_3_AGGOUT";
+/**
+ * [tAggregateRow_3_AGGOUT main ] stop
+ */
+	
+	/**
+	 * [tAggregateRow_3_AGGOUT process_data_begin ] start
+	 */
 
-											/**
-											 * [tAggregateRow_3_AGGOUT process_data_begin ] stop
-											 */
+	
 
-											/**
-											 * [tAggregateRow_3_AGGOUT process_data_end ] start
-											 */
+	
+	
+		currentVirtualComponent = "tAggregateRow_3";
+	
+	currentComponent="tAggregateRow_3_AGGOUT";
 
-											currentVirtualComponent = "tAggregateRow_3";
+	
 
-											currentComponent = "tAggregateRow_3_AGGOUT";
+ 
 
-											/**
-											 * [tAggregateRow_3_AGGOUT process_data_end ] stop
-											 */
 
-										} // End of branch "out2"
+
+/**
+ * [tAggregateRow_3_AGGOUT process_data_begin ] stop
+ */
+	
+	/**
+	 * [tAggregateRow_3_AGGOUT process_data_end ] start
+	 */
+
+	
+
+	
+	
+		currentVirtualComponent = "tAggregateRow_3";
+	
+	currentComponent="tAggregateRow_3_AGGOUT";
+
+	
+
+ 
+
+
+
+/**
+ * [tAggregateRow_3_AGGOUT process_data_end ] stop
+ */
+
+} // End of branch "out2"
+
+
+
 
 // Start of branch "pos"
-										if (pos != null) {
+if(pos != null) { 
 
-											/**
-											 * [tAggregateRow_1_AGGOUT main ] start
-											 */
 
-											currentVirtualComponent = "tAggregateRow_1";
 
-											currentComponent = "tAggregateRow_1_AGGOUT";
+	
+	/**
+	 * [tAggregateRow_1_AGGOUT main ] start
+	 */
 
-											if (execStat) {
-												runStat.updateStatOnConnection(iterateId, 1, 1, "pos");
-											}
+	
 
-											operation_finder_tAggregateRow_1.date = pos.date;
-											operation_finder_tAggregateRow_1.hashtag = pos.hashtag;
-											operation_finder_tAggregateRow_1.country = pos.country;
+	
+	
+		currentVirtualComponent = "tAggregateRow_1";
+	
+	currentComponent="tAggregateRow_1_AGGOUT";
 
-											operation_finder_tAggregateRow_1.hashCodeDirty = true;
+	
+					if(execStat){
+						runStat.updateStatOnConnection(iterateId,1,1,"pos");
+					}
+					
+	
+operation_finder_tAggregateRow_1.date = pos.date;
+			operation_finder_tAggregateRow_1.hashtag = pos.hashtag;
+			operation_finder_tAggregateRow_1.country = pos.country;
+			
 
-											operation_result_tAggregateRow_1 = hash_tAggregateRow_1
-													.get(operation_finder_tAggregateRow_1);
+	operation_finder_tAggregateRow_1.hashCodeDirty = true;
+	
+	operation_result_tAggregateRow_1 = hash_tAggregateRow_1.get(operation_finder_tAggregateRow_1);
 
-											if (operation_result_tAggregateRow_1 == null) { // G_OutMain_AggR_001
+	
 
-												operation_result_tAggregateRow_1 = new AggOperationStruct_tAggregateRow_1();
+	if(operation_result_tAggregateRow_1 == null) { // G_OutMain_AggR_001
 
-												operation_result_tAggregateRow_1.date = operation_finder_tAggregateRow_1.date;
-												operation_result_tAggregateRow_1.hashtag = operation_finder_tAggregateRow_1.hashtag;
-												operation_result_tAggregateRow_1.country = operation_finder_tAggregateRow_1.country;
+		operation_result_tAggregateRow_1 = new AggOperationStruct_tAggregateRow_1();
 
-												hash_tAggregateRow_1.put(operation_result_tAggregateRow_1,
-														operation_result_tAggregateRow_1);
+		operation_result_tAggregateRow_1.date = operation_finder_tAggregateRow_1.date;
+				operation_result_tAggregateRow_1.hashtag = operation_finder_tAggregateRow_1.hashtag;
+				operation_result_tAggregateRow_1.country = operation_finder_tAggregateRow_1.country;
+				
+		
+		
 
-											} // G_OutMain_AggR_001
+		hash_tAggregateRow_1.put(operation_result_tAggregateRow_1, operation_result_tAggregateRow_1);
+	
+	} // G_OutMain_AggR_001
 
-											if (operation_result_tAggregateRow_1.s_positivos_sum == null) {
-												operation_result_tAggregateRow_1.s_positivos_sum = (int) 0;
-											}
 
-											if (pos.s_positivos != null)
-												operation_result_tAggregateRow_1.s_positivos_sum += pos.s_positivos;
+	
+					if(operation_result_tAggregateRow_1.s_positivos_sum == null) {
+						operation_result_tAggregateRow_1.s_positivos_sum = (int) 0;
+					}
+					
+					if( pos.s_positivos != null)
+						operation_result_tAggregateRow_1.s_positivos_sum += pos.s_positivos;
 
-											tos_count_tAggregateRow_1_AGGOUT++;
 
-											/**
-											 * [tAggregateRow_1_AGGOUT main ] stop
-											 */
+ 
 
-											/**
-											 * [tAggregateRow_1_AGGOUT process_data_begin ] start
-											 */
 
-											currentVirtualComponent = "tAggregateRow_1";
+	tos_count_tAggregateRow_1_AGGOUT++;
 
-											currentComponent = "tAggregateRow_1_AGGOUT";
+/**
+ * [tAggregateRow_1_AGGOUT main ] stop
+ */
+	
+	/**
+	 * [tAggregateRow_1_AGGOUT process_data_begin ] start
+	 */
 
-											/**
-											 * [tAggregateRow_1_AGGOUT process_data_begin ] stop
-											 */
+	
 
-											/**
-											 * [tAggregateRow_1_AGGOUT process_data_end ] start
-											 */
+	
+	
+		currentVirtualComponent = "tAggregateRow_1";
+	
+	currentComponent="tAggregateRow_1_AGGOUT";
 
-											currentVirtualComponent = "tAggregateRow_1";
+	
 
-											currentComponent = "tAggregateRow_1_AGGOUT";
+ 
 
-											/**
-											 * [tAggregateRow_1_AGGOUT process_data_end ] stop
-											 */
 
-										} // End of branch "pos"
+
+/**
+ * [tAggregateRow_1_AGGOUT process_data_begin ] stop
+ */
+	
+	/**
+	 * [tAggregateRow_1_AGGOUT process_data_end ] start
+	 */
+
+	
+
+	
+	
+		currentVirtualComponent = "tAggregateRow_1";
+	
+	currentComponent="tAggregateRow_1_AGGOUT";
+
+	
+
+ 
+
+
+
+/**
+ * [tAggregateRow_1_AGGOUT process_data_end ] stop
+ */
+
+} // End of branch "pos"
+
+
+
 
 // Start of branch "neg"
-										if (neg != null) {
+if(neg != null) { 
 
-											/**
-											 * [tAggregateRow_2_AGGOUT main ] start
-											 */
 
-											currentVirtualComponent = "tAggregateRow_2";
 
-											currentComponent = "tAggregateRow_2_AGGOUT";
+	
+	/**
+	 * [tAggregateRow_2_AGGOUT main ] start
+	 */
 
-											if (execStat) {
-												runStat.updateStatOnConnection(iterateId, 1, 1, "neg");
-											}
+	
 
-											operation_finder_tAggregateRow_2.date = neg.date;
-											operation_finder_tAggregateRow_2.hashtag = neg.hashtag;
-											operation_finder_tAggregateRow_2.country = neg.country;
+	
+	
+		currentVirtualComponent = "tAggregateRow_2";
+	
+	currentComponent="tAggregateRow_2_AGGOUT";
 
-											operation_finder_tAggregateRow_2.hashCodeDirty = true;
+	
+					if(execStat){
+						runStat.updateStatOnConnection(iterateId,1,1,"neg");
+					}
+					
+	
+operation_finder_tAggregateRow_2.date = neg.date;
+			operation_finder_tAggregateRow_2.hashtag = neg.hashtag;
+			operation_finder_tAggregateRow_2.country = neg.country;
+			
 
-											operation_result_tAggregateRow_2 = hash_tAggregateRow_2
-													.get(operation_finder_tAggregateRow_2);
+	operation_finder_tAggregateRow_2.hashCodeDirty = true;
+	
+	operation_result_tAggregateRow_2 = hash_tAggregateRow_2.get(operation_finder_tAggregateRow_2);
 
-											if (operation_result_tAggregateRow_2 == null) { // G_OutMain_AggR_001
+	
 
-												operation_result_tAggregateRow_2 = new AggOperationStruct_tAggregateRow_2();
+	if(operation_result_tAggregateRow_2 == null) { // G_OutMain_AggR_001
 
-												operation_result_tAggregateRow_2.date = operation_finder_tAggregateRow_2.date;
-												operation_result_tAggregateRow_2.hashtag = operation_finder_tAggregateRow_2.hashtag;
-												operation_result_tAggregateRow_2.country = operation_finder_tAggregateRow_2.country;
+		operation_result_tAggregateRow_2 = new AggOperationStruct_tAggregateRow_2();
 
-												hash_tAggregateRow_2.put(operation_result_tAggregateRow_2,
-														operation_result_tAggregateRow_2);
+		operation_result_tAggregateRow_2.date = operation_finder_tAggregateRow_2.date;
+				operation_result_tAggregateRow_2.hashtag = operation_finder_tAggregateRow_2.hashtag;
+				operation_result_tAggregateRow_2.country = operation_finder_tAggregateRow_2.country;
+				
+		
+		
 
-											} // G_OutMain_AggR_001
+		hash_tAggregateRow_2.put(operation_result_tAggregateRow_2, operation_result_tAggregateRow_2);
+	
+	} // G_OutMain_AggR_001
 
-											if (neg.s_negativos != null) { // G_OutMain_AggR_546
 
-												if (operation_result_tAggregateRow_2.s_negativos_sum == null) {
-													operation_result_tAggregateRow_2.s_negativos_sum = (int) 0;
-												}
+	
+				if(neg.s_negativos != null) { // G_OutMain_AggR_546
+				
+					if(operation_result_tAggregateRow_2.s_negativos_sum == null) {
+						operation_result_tAggregateRow_2.s_negativos_sum = (int) 0;
+					}
+					
+					if( neg.s_negativos != null)
+						operation_result_tAggregateRow_2.s_negativos_sum += neg.s_negativos;
+				} // G_OutMain_AggR_546
+				
 
-												if (neg.s_negativos != null)
-													operation_result_tAggregateRow_2.s_negativos_sum += neg.s_negativos;
-											} // G_OutMain_AggR_546
 
-											tos_count_tAggregateRow_2_AGGOUT++;
+ 
 
-											/**
-											 * [tAggregateRow_2_AGGOUT main ] stop
-											 */
 
-											/**
-											 * [tAggregateRow_2_AGGOUT process_data_begin ] start
-											 */
+	tos_count_tAggregateRow_2_AGGOUT++;
 
-											currentVirtualComponent = "tAggregateRow_2";
+/**
+ * [tAggregateRow_2_AGGOUT main ] stop
+ */
+	
+	/**
+	 * [tAggregateRow_2_AGGOUT process_data_begin ] start
+	 */
 
-											currentComponent = "tAggregateRow_2_AGGOUT";
+	
 
-											/**
-											 * [tAggregateRow_2_AGGOUT process_data_begin ] stop
-											 */
+	
+	
+		currentVirtualComponent = "tAggregateRow_2";
+	
+	currentComponent="tAggregateRow_2_AGGOUT";
 
-											/**
-											 * [tAggregateRow_2_AGGOUT process_data_end ] start
-											 */
+	
 
-											currentVirtualComponent = "tAggregateRow_2";
+ 
 
-											currentComponent = "tAggregateRow_2_AGGOUT";
 
-											/**
-											 * [tAggregateRow_2_AGGOUT process_data_end ] stop
-											 */
 
-										} // End of branch "neg"
+/**
+ * [tAggregateRow_2_AGGOUT process_data_begin ] stop
+ */
+	
+	/**
+	 * [tAggregateRow_2_AGGOUT process_data_end ] start
+	 */
+
+	
+
+	
+	
+		currentVirtualComponent = "tAggregateRow_2";
+	
+	currentComponent="tAggregateRow_2_AGGOUT";
+
+	
+
+ 
+
+
+
+/**
+ * [tAggregateRow_2_AGGOUT process_data_end ] stop
+ */
+
+} // End of branch "neg"
+
+
+
 
 // Start of branch "cnt"
-										if (cnt != null) {
+if(cnt != null) { 
 
-											/**
-											 * [tAggregateRow_4_AGGOUT main ] start
-											 */
 
-											currentVirtualComponent = "tAggregateRow_4";
 
-											currentComponent = "tAggregateRow_4_AGGOUT";
+	
+	/**
+	 * [tAggregateRow_4_AGGOUT main ] start
+	 */
 
-											if (execStat) {
-												runStat.updateStatOnConnection(iterateId, 1, 1, "cnt");
-											}
+	
 
-											operation_finder_tAggregateRow_4.date = cnt.date;
-											operation_finder_tAggregateRow_4.id = cnt.id;
-											operation_finder_tAggregateRow_4.hashtag = cnt.hashtag;
-											operation_finder_tAggregateRow_4.country = cnt.country;
+	
+	
+		currentVirtualComponent = "tAggregateRow_4";
+	
+	currentComponent="tAggregateRow_4_AGGOUT";
 
-											operation_finder_tAggregateRow_4.hashCodeDirty = true;
-
-											operation_result_tAggregateRow_4 = hash_tAggregateRow_4
-													.get(operation_finder_tAggregateRow_4);
-
-											if (operation_result_tAggregateRow_4 == null) { // G_OutMain_AggR_001
-
-												operation_result_tAggregateRow_4 = new AggOperationStruct_tAggregateRow_4();
-
-												operation_result_tAggregateRow_4.date = operation_finder_tAggregateRow_4.date;
-												operation_result_tAggregateRow_4.id = operation_finder_tAggregateRow_4.id;
-												operation_result_tAggregateRow_4.hashtag = operation_finder_tAggregateRow_4.hashtag;
-												operation_result_tAggregateRow_4.country = operation_finder_tAggregateRow_4.country;
-
-												hash_tAggregateRow_4.put(operation_result_tAggregateRow_4,
-														operation_result_tAggregateRow_4);
-
-											} // G_OutMain_AggR_001
-
-											if (operation_result_tAggregateRow_4.sentiment_sum == null) {
-												operation_result_tAggregateRow_4.sentiment_sum = (int) 0;
-											}
-
-											if (cnt.sentiment != null)
-												operation_result_tAggregateRow_4.sentiment_sum += cnt.sentiment;
-
-											tos_count_tAggregateRow_4_AGGOUT++;
-
-											/**
-											 * [tAggregateRow_4_AGGOUT main ] stop
-											 */
-
-											/**
-											 * [tAggregateRow_4_AGGOUT process_data_begin ] start
-											 */
-
-											currentVirtualComponent = "tAggregateRow_4";
-
-											currentComponent = "tAggregateRow_4_AGGOUT";
-
-											/**
-											 * [tAggregateRow_4_AGGOUT process_data_begin ] stop
-											 */
-
-											/**
-											 * [tAggregateRow_4_AGGOUT process_data_end ] start
-											 */
-
-											currentVirtualComponent = "tAggregateRow_4";
-
-											currentComponent = "tAggregateRow_4_AGGOUT";
-
-											/**
-											 * [tAggregateRow_4_AGGOUT process_data_end ] stop
-											 */
-
-										} // End of branch "cnt"
-
-										/**
-										 * [tMap_2 process_data_end ] start
-										 */
-
-										currentComponent = "tMap_2";
-
-										/**
-										 * [tMap_2 process_data_end ] stop
-										 */
-
-									} // End of branch "row5"
-
-									/**
-									 * [tFilterRow_1 process_data_end ] start
-									 */
-
-									currentComponent = "tFilterRow_1";
-
-									/**
-									 * [tFilterRow_1 process_data_end ] stop
-									 */
-									// end for
-								}
-
-								/**
-								 * [tNormalize_2 process_data_end ] start
-								 */
-
-								currentComponent = "tNormalize_2";
-
-								/**
-								 * [tNormalize_2 process_data_end ] stop
-								 */
-								// end for
-							}
-
-							/**
-							 * [tNormalize_1 process_data_end ] start
-							 */
-
-							currentComponent = "tNormalize_1";
-
-							/**
-							 * [tNormalize_1 process_data_end ] stop
-							 */
-
-						} // End of branch "out1"
-
-						/**
-						 * [tMap_1 process_data_end ] start
-						 */
-
-						currentComponent = "tMap_1";
-
-						/**
-						 * [tMap_1 process_data_end ] stop
-						 */
-
-						/**
-						 * [tReplace_1 process_data_end ] start
-						 */
-
-						currentComponent = "tReplace_1";
-
-						/**
-						 * [tReplace_1 process_data_end ] stop
-						 */
-
-						/**
-						 * [tDBInput_1 process_data_end ] start
-						 */
-
-						currentComponent = "tDBInput_1";
-
-						/**
-						 * [tDBInput_1 process_data_end ] stop
-						 */
-
-						/**
-						 * [tDBInput_1 end ] start
-						 */
-
-						currentComponent = "tDBInput_1";
-
+	
+					if(execStat){
+						runStat.updateStatOnConnection(iterateId,1,1,"cnt");
 					}
-				} finally {
-					if (rs_tDBInput_1 != null) {
-						rs_tDBInput_1.close();
+					
+	
+operation_finder_tAggregateRow_4.date = cnt.date;
+			operation_finder_tAggregateRow_4.id = cnt.id;
+			operation_finder_tAggregateRow_4.hashtag = cnt.hashtag;
+			operation_finder_tAggregateRow_4.country = cnt.country;
+			
+
+	operation_finder_tAggregateRow_4.hashCodeDirty = true;
+	
+	operation_result_tAggregateRow_4 = hash_tAggregateRow_4.get(operation_finder_tAggregateRow_4);
+
+	
+
+	if(operation_result_tAggregateRow_4 == null) { // G_OutMain_AggR_001
+
+		operation_result_tAggregateRow_4 = new AggOperationStruct_tAggregateRow_4();
+
+		operation_result_tAggregateRow_4.date = operation_finder_tAggregateRow_4.date;
+				operation_result_tAggregateRow_4.id = operation_finder_tAggregateRow_4.id;
+				operation_result_tAggregateRow_4.hashtag = operation_finder_tAggregateRow_4.hashtag;
+				operation_result_tAggregateRow_4.country = operation_finder_tAggregateRow_4.country;
+				
+		
+		
+
+		hash_tAggregateRow_4.put(operation_result_tAggregateRow_4, operation_result_tAggregateRow_4);
+	
+	} // G_OutMain_AggR_001
+
+
+	
+					if(operation_result_tAggregateRow_4.sentiment_sum == null) {
+						operation_result_tAggregateRow_4.sentiment_sum = (int) 0;
 					}
-					if (stmt_tDBInput_1 != null) {
-						stmt_tDBInput_1.close();
-					}
-					if (conn_tDBInput_1 != null && !conn_tDBInput_1.isClosed()) {
+					
+					if( cnt.sentiment != null)
+						operation_result_tAggregateRow_4.sentiment_sum += cnt.sentiment;
 
-						conn_tDBInput_1.commit();
 
-						conn_tDBInput_1.close();
+ 
 
-						if ("com.mysql.cj.jdbc.Driver".equals((String) globalMap.get("driverClass_"))
-								&& routines.system.BundleUtils.inOSGi()) {
-							Class.forName("com.mysql.cj.jdbc.AbandonedConnectionCleanupThread")
-									.getMethod("checkedShutdown").invoke(null, (Object[]) null);
-						}
 
-					}
+	tos_count_tAggregateRow_4_AGGOUT++;
 
-				}
-				globalMap.put("tDBInput_1_NB_LINE", nb_line_tDBInput_1);
+/**
+ * [tAggregateRow_4_AGGOUT main ] stop
+ */
+	
+	/**
+	 * [tAggregateRow_4_AGGOUT process_data_begin ] start
+	 */
 
-				ok_Hash.put("tDBInput_1", true);
-				end_Hash.put("tDBInput_1", System.currentTimeMillis());
+	
 
-				/**
-				 * [tDBInput_1 end ] stop
-				 */
+	
+	
+		currentVirtualComponent = "tAggregateRow_4";
+	
+	currentComponent="tAggregateRow_4_AGGOUT";
 
-				/**
-				 * [tReplace_1 end ] start
-				 */
+	
 
-				currentComponent = "tReplace_1";
+ 
 
-				globalMap.put("tReplace_1_NB_LINE", nb_line_tReplace_1);
-				if (execStat) {
-					runStat.updateStat(resourceMap, iterateId, 2, 0, "row1");
-				}
 
-				ok_Hash.put("tReplace_1", true);
-				end_Hash.put("tReplace_1", System.currentTimeMillis());
 
-				/**
-				 * [tReplace_1 end ] stop
-				 */
+/**
+ * [tAggregateRow_4_AGGOUT process_data_begin ] stop
+ */
+	
+	/**
+	 * [tAggregateRow_4_AGGOUT process_data_end ] start
+	 */
 
-				/**
-				 * [tMap_1 end ] start
-				 */
+	
 
-				currentComponent = "tMap_1";
+	
+	
+		currentVirtualComponent = "tAggregateRow_4";
+	
+	currentComponent="tAggregateRow_4_AGGOUT";
+
+	
+
+ 
+
+
+
+/**
+ * [tAggregateRow_4_AGGOUT process_data_end ] stop
+ */
+
+} // End of branch "cnt"
+
+
+
+
+	
+	/**
+	 * [tMap_2 process_data_end ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tMap_2";
+
+	
+
+ 
+
+
+
+/**
+ * [tMap_2 process_data_end ] stop
+ */
+
+} // End of branch "row5"
+
+
+
+
+	
+	/**
+	 * [tFilterRow_1 process_data_end ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tFilterRow_1";
+
+	
+
+ 
+
+
+
+/**
+ * [tFilterRow_1 process_data_end ] stop
+ */
+		// end for
+	}
+
+
+
+	
+	/**
+	 * [tNormalize_2 process_data_end ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tNormalize_2";
+
+	
+
+ 
+
+
+
+/**
+ * [tNormalize_2 process_data_end ] stop
+ */
+		// end for
+	}
+
+
+
+	
+	/**
+	 * [tNormalize_1 process_data_end ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tNormalize_1";
+
+	
+
+ 
+
+
+
+/**
+ * [tNormalize_1 process_data_end ] stop
+ */
+
+} // End of branch "out1"
+
+
+
+
+	
+	/**
+	 * [tMap_1 process_data_end ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tMap_1";
+
+	
+
+ 
+
+
+
+/**
+ * [tMap_1 process_data_end ] stop
+ */
+
+
+
+	
+	/**
+	 * [tReplace_1 process_data_end ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tReplace_1";
+
+	
+
+ 
+
+
+
+/**
+ * [tReplace_1 process_data_end ] stop
+ */
+
+
+
+	
+	/**
+	 * [tDBInput_1 process_data_end ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tDBInput_1";
+
+	
+
+ 
+
+
+
+/**
+ * [tDBInput_1 process_data_end ] stop
+ */
+	
+	/**
+	 * [tDBInput_1 end ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tDBInput_1";
+
+	
+
+	}
+}finally{
+	if (rs_tDBInput_1 != null) {
+		rs_tDBInput_1.close();
+	}
+	if (stmt_tDBInput_1 != null) {
+		stmt_tDBInput_1.close();
+	}
+	if(conn_tDBInput_1 != null && !conn_tDBInput_1.isClosed()) {
+		
+			conn_tDBInput_1.commit();
+			
+		
+			conn_tDBInput_1.close();
+			
+			if("com.mysql.cj.jdbc.Driver".equals((String)globalMap.get("driverClass_"))
+			    && routines.system.BundleUtils.inOSGi()) {
+			        Class.forName("com.mysql.cj.jdbc.AbandonedConnectionCleanupThread").
+			            getMethod("checkedShutdown").invoke(null, (Object[]) null);
+			}
+			
+	}
+	
+}
+globalMap.put("tDBInput_1_NB_LINE",nb_line_tDBInput_1);
+ 
+
+ok_Hash.put("tDBInput_1", true);
+end_Hash.put("tDBInput_1", System.currentTimeMillis());
+
+
+
+
+/**
+ * [tDBInput_1 end ] stop
+ */
+
+	
+	/**
+	 * [tReplace_1 end ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tReplace_1";
+
+	
+
+
+globalMap.put("tReplace_1_NB_LINE",nb_line_tReplace_1);
+				if(execStat){
+			  		runStat.updateStat(resourceMap,iterateId,2,0,"row1");
+			  	}
+			  	
+ 
+
+ok_Hash.put("tReplace_1", true);
+end_Hash.put("tReplace_1", System.currentTimeMillis());
+
+
+
+
+/**
+ * [tReplace_1 end ] stop
+ */
+
+	
+	/**
+	 * [tMap_1 end ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tMap_1";
+
+	
+
 
 // ###############################
 // # Lookup hashes releasing
 // ###############################      
 
-				if (execStat) {
-					runStat.updateStat(resourceMap, iterateId, 2, 0, "row2");
-				}
 
-				ok_Hash.put("tMap_1", true);
-				end_Hash.put("tMap_1", System.currentTimeMillis());
 
-				/**
-				 * [tMap_1 end ] stop
-				 */
 
-				/**
-				 * [tNormalize_1 end ] start
-				 */
 
-				currentComponent = "tNormalize_1";
+				if(execStat){
+			  		runStat.updateStat(resourceMap,iterateId,2,0,"row2");
+			  	}
+			  	
+ 
 
-				globalMap.put("tNormalize_1_NB_LINE", nb_line_tNormalize_1);
-				if (execStat) {
-					runStat.updateStat(resourceMap, iterateId, 2, 0, "out1");
-				}
+ok_Hash.put("tMap_1", true);
+end_Hash.put("tMap_1", System.currentTimeMillis());
 
-				ok_Hash.put("tNormalize_1", true);
-				end_Hash.put("tNormalize_1", System.currentTimeMillis());
 
-				/**
-				 * [tNormalize_1 end ] stop
-				 */
 
-				/**
-				 * [tNormalize_2 end ] start
-				 */
 
-				currentComponent = "tNormalize_2";
+/**
+ * [tMap_1 end ] stop
+ */
 
-				globalMap.put("tNormalize_2_NB_LINE", nb_line_tNormalize_2);
-				if (execStat) {
-					runStat.updateStat(resourceMap, iterateId, 2, 0, "row3");
-				}
+	
+	/**
+	 * [tNormalize_1 end ] start
+	 */
 
-				ok_Hash.put("tNormalize_2", true);
-				end_Hash.put("tNormalize_2", System.currentTimeMillis());
+	
 
-				/**
-				 * [tNormalize_2 end ] stop
-				 */
+	
+	
+	currentComponent="tNormalize_1";
 
-				/**
-				 * [tFilterRow_1 end ] start
-				 */
+	
 
-				currentComponent = "tFilterRow_1";
+    globalMap.put("tNormalize_1_NB_LINE", nb_line_tNormalize_1);
+				if(execStat){
+			  		runStat.updateStat(resourceMap,iterateId,2,0,"out1");
+			  	}
+			  	
+ 
 
-				globalMap.put("tFilterRow_1_NB_LINE", nb_line_tFilterRow_1);
-				globalMap.put("tFilterRow_1_NB_LINE_OK", nb_line_ok_tFilterRow_1);
-				globalMap.put("tFilterRow_1_NB_LINE_REJECT", nb_line_reject_tFilterRow_1);
+ok_Hash.put("tNormalize_1", true);
+end_Hash.put("tNormalize_1", System.currentTimeMillis());
 
-				if (execStat) {
-					runStat.updateStat(resourceMap, iterateId, 2, 0, "row4");
-				}
 
-				ok_Hash.put("tFilterRow_1", true);
-				end_Hash.put("tFilterRow_1", System.currentTimeMillis());
 
-				/**
-				 * [tFilterRow_1 end ] stop
-				 */
 
-				/**
-				 * [tMap_2 end ] start
-				 */
+/**
+ * [tNormalize_1 end ] stop
+ */
 
-				currentComponent = "tMap_2";
+	
+	/**
+	 * [tNormalize_2 end ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tNormalize_2";
+
+	
+
+    globalMap.put("tNormalize_2_NB_LINE", nb_line_tNormalize_2);
+				if(execStat){
+			  		runStat.updateStat(resourceMap,iterateId,2,0,"row3");
+			  	}
+			  	
+ 
+
+ok_Hash.put("tNormalize_2", true);
+end_Hash.put("tNormalize_2", System.currentTimeMillis());
+
+
+
+
+/**
+ * [tNormalize_2 end ] stop
+ */
+
+	
+	/**
+	 * [tFilterRow_1 end ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tFilterRow_1";
+
+	
+    globalMap.put("tFilterRow_1_NB_LINE", nb_line_tFilterRow_1);
+    globalMap.put("tFilterRow_1_NB_LINE_OK", nb_line_ok_tFilterRow_1);
+    globalMap.put("tFilterRow_1_NB_LINE_REJECT", nb_line_reject_tFilterRow_1);
+    
+
+				if(execStat){
+			  		runStat.updateStat(resourceMap,iterateId,2,0,"row4");
+			  	}
+			  	
+ 
+
+ok_Hash.put("tFilterRow_1", true);
+end_Hash.put("tFilterRow_1", System.currentTimeMillis());
+
+
+
+
+/**
+ * [tFilterRow_1 end ] stop
+ */
+
+	
+	/**
+	 * [tMap_2 end ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tMap_2";
+
+	
+
 
 // ###############################
 // # Lookup hashes releasing
-				if (tHash_Lookup_row6 != null) {
-					tHash_Lookup_row6.endGet();
-				}
-				globalMap.remove("tHash_Lookup_row6");
+					if(tHash_Lookup_row6 != null) {
+						tHash_Lookup_row6.endGet();
+					}
+					globalMap.remove( "tHash_Lookup_row6" );
 
+					
+					
+				
 // ###############################      
 
-				if (execStat) {
-					runStat.updateStat(resourceMap, iterateId, 2, 0, "row5");
-				}
 
-				ok_Hash.put("tMap_2", true);
-				end_Hash.put("tMap_2", System.currentTimeMillis());
 
-				/**
-				 * [tMap_2 end ] stop
-				 */
 
-				/**
-				 * [tAggregateRow_3_AGGOUT end ] start
-				 */
 
-				currentVirtualComponent = "tAggregateRow_3";
+				if(execStat){
+			  		runStat.updateStat(resourceMap,iterateId,2,0,"row5");
+			  	}
+			  	
+ 
 
-				currentComponent = "tAggregateRow_3_AGGOUT";
+ok_Hash.put("tMap_2", true);
+end_Hash.put("tMap_2", System.currentTimeMillis());
 
-				if (execStat) {
-					runStat.updateStat(resourceMap, iterateId, 2, 0, "out2");
-				}
 
-				ok_Hash.put("tAggregateRow_3_AGGOUT", true);
-				end_Hash.put("tAggregateRow_3_AGGOUT", System.currentTimeMillis());
 
-				/**
-				 * [tAggregateRow_3_AGGOUT end ] stop
-				 */
 
-				/**
-				 * [tFileOutputDelimited_3 begin ] start
-				 */
+/**
+ * [tMap_2 end ] stop
+ */
 
-				ok_Hash.put("tFileOutputDelimited_3", false);
-				start_Hash.put("tFileOutputDelimited_3", System.currentTimeMillis());
+	
+	/**
+	 * [tAggregateRow_3_AGGOUT end ] start
+	 */
 
-				currentComponent = "tFileOutputDelimited_3";
+	
 
-				if (execStat) {
-					runStat.updateStatOnConnection(resourceMap, iterateId, 0, 0, "row9");
-				}
+	
+	
+		currentVirtualComponent = "tAggregateRow_3";
+	
+	currentComponent="tAggregateRow_3_AGGOUT";
 
-				int tos_count_tFileOutputDelimited_3 = 0;
+	
 
-				String fileName_tFileOutputDelimited_3 = "";
-				fileName_tFileOutputDelimited_3 = (new java.io.File(
-						context.path_files_global + "documentations/mesures/sent_sum_in.csv")).getAbsolutePath()
-								.replace("\\", "/");
-				String fullName_tFileOutputDelimited_3 = null;
-				String extension_tFileOutputDelimited_3 = null;
-				String directory_tFileOutputDelimited_3 = null;
-				if ((fileName_tFileOutputDelimited_3.indexOf("/") != -1)) {
-					if (fileName_tFileOutputDelimited_3.lastIndexOf(".") < fileName_tFileOutputDelimited_3
-							.lastIndexOf("/")) {
-						fullName_tFileOutputDelimited_3 = fileName_tFileOutputDelimited_3;
-						extension_tFileOutputDelimited_3 = "";
-					} else {
-						fullName_tFileOutputDelimited_3 = fileName_tFileOutputDelimited_3.substring(0,
-								fileName_tFileOutputDelimited_3.lastIndexOf("."));
-						extension_tFileOutputDelimited_3 = fileName_tFileOutputDelimited_3
-								.substring(fileName_tFileOutputDelimited_3.lastIndexOf("."));
+				if(execStat){
+			  		runStat.updateStat(resourceMap,iterateId,2,0,"out2");
+			  	}
+			  	
+ 
+
+ok_Hash.put("tAggregateRow_3_AGGOUT", true);
+end_Hash.put("tAggregateRow_3_AGGOUT", System.currentTimeMillis());
+
+
+
+
+/**
+ * [tAggregateRow_3_AGGOUT end ] stop
+ */
+
+
+	
+	/**
+	 * [tFileOutputDelimited_3 begin ] start
+	 */
+
+	
+
+	
+		
+		ok_Hash.put("tFileOutputDelimited_3", false);
+		start_Hash.put("tFileOutputDelimited_3", System.currentTimeMillis());
+		
+	
+	currentComponent="tFileOutputDelimited_3";
+
+	
+					if(execStat) {
+						runStat.updateStatOnConnection(resourceMap,iterateId,0,0,"row9");
 					}
-					directory_tFileOutputDelimited_3 = fileName_tFileOutputDelimited_3.substring(0,
-							fileName_tFileOutputDelimited_3.lastIndexOf("/"));
-				} else {
-					if (fileName_tFileOutputDelimited_3.lastIndexOf(".") != -1) {
-						fullName_tFileOutputDelimited_3 = fileName_tFileOutputDelimited_3.substring(0,
-								fileName_tFileOutputDelimited_3.lastIndexOf("."));
-						extension_tFileOutputDelimited_3 = fileName_tFileOutputDelimited_3
-								.substring(fileName_tFileOutputDelimited_3.lastIndexOf("."));
-					} else {
-						fullName_tFileOutputDelimited_3 = fileName_tFileOutputDelimited_3;
-						extension_tFileOutputDelimited_3 = "";
+				
+		int tos_count_tFileOutputDelimited_3 = 0;
+		
+
+String fileName_tFileOutputDelimited_3 = "";
+    fileName_tFileOutputDelimited_3 = (new java.io.File(context.path_files_global+"documentations/mesures/sent_sum_in.csv")).getAbsolutePath().replace("\\","/");
+    String fullName_tFileOutputDelimited_3 = null;
+    String extension_tFileOutputDelimited_3 = null;
+    String directory_tFileOutputDelimited_3 = null;
+    if((fileName_tFileOutputDelimited_3.indexOf("/") != -1)) {
+        if(fileName_tFileOutputDelimited_3.lastIndexOf(".") < fileName_tFileOutputDelimited_3.lastIndexOf("/")) {
+            fullName_tFileOutputDelimited_3 = fileName_tFileOutputDelimited_3;
+            extension_tFileOutputDelimited_3 = "";
+        } else {
+            fullName_tFileOutputDelimited_3 = fileName_tFileOutputDelimited_3.substring(0, fileName_tFileOutputDelimited_3.lastIndexOf("."));
+            extension_tFileOutputDelimited_3 = fileName_tFileOutputDelimited_3.substring(fileName_tFileOutputDelimited_3.lastIndexOf("."));
+        }
+        directory_tFileOutputDelimited_3 = fileName_tFileOutputDelimited_3.substring(0, fileName_tFileOutputDelimited_3.lastIndexOf("/"));
+    } else {
+        if(fileName_tFileOutputDelimited_3.lastIndexOf(".") != -1) {
+            fullName_tFileOutputDelimited_3 = fileName_tFileOutputDelimited_3.substring(0, fileName_tFileOutputDelimited_3.lastIndexOf("."));
+            extension_tFileOutputDelimited_3 = fileName_tFileOutputDelimited_3.substring(fileName_tFileOutputDelimited_3.lastIndexOf("."));
+        } else {
+            fullName_tFileOutputDelimited_3 = fileName_tFileOutputDelimited_3;
+            extension_tFileOutputDelimited_3 = "";
+        }
+        directory_tFileOutputDelimited_3 = "";
+    }
+    boolean isFileGenerated_tFileOutputDelimited_3 = true;
+    java.io.File filetFileOutputDelimited_3 = new java.io.File(fileName_tFileOutputDelimited_3);
+    globalMap.put("tFileOutputDelimited_3_FILE_NAME",fileName_tFileOutputDelimited_3);
+    if(filetFileOutputDelimited_3.exists()){
+            throw new RuntimeException("The particular file \""+filetFileOutputDelimited_3.getAbsoluteFile() +
+            "\" already exist. If you want to overwrite the file, please uncheck the" + 
+            " \"Throw an error if the file already exist\" option in Advanced settings.");
+        }
+            int nb_line_tFileOutputDelimited_3 = 0;
+            int splitedFileNo_tFileOutputDelimited_3 = 0;
+            int currentRow_tFileOutputDelimited_3 = 0;
+
+            final String OUT_DELIM_tFileOutputDelimited_3 = /** Start field tFileOutputDelimited_3:FIELDSEPARATOR */";"/** End field tFileOutputDelimited_3:FIELDSEPARATOR */;
+
+            final String OUT_DELIM_ROWSEP_tFileOutputDelimited_3 = /** Start field tFileOutputDelimited_3:ROWSEPARATOR */"\n"/** End field tFileOutputDelimited_3:ROWSEPARATOR */;
+
+                    //create directory only if not exists
+                    if(directory_tFileOutputDelimited_3 != null && directory_tFileOutputDelimited_3.trim().length() != 0) {
+                        java.io.File dir_tFileOutputDelimited_3 = new java.io.File(directory_tFileOutputDelimited_3);
+                        if(!dir_tFileOutputDelimited_3.exists()) {
+                            dir_tFileOutputDelimited_3.mkdirs();
+                        }
+                    }
+
+                        //routines.system.Row
+                        java.io.Writer outtFileOutputDelimited_3 = null;
+
+                        java.io.File fileToDelete_tFileOutputDelimited_3 = new java.io.File(fileName_tFileOutputDelimited_3);
+                        if(fileToDelete_tFileOutputDelimited_3.exists()) {
+                            fileToDelete_tFileOutputDelimited_3.delete();
+                        }
+                        outtFileOutputDelimited_3 = new java.io.BufferedWriter(new java.io.OutputStreamWriter(
+                        new java.io.FileOutputStream(fileName_tFileOutputDelimited_3, false),"ISO-8859-15"));
+                                    if(filetFileOutputDelimited_3.length()==0){
+                                        outtFileOutputDelimited_3.write("date");
+                                            outtFileOutputDelimited_3.write(OUT_DELIM_tFileOutputDelimited_3);
+                                        outtFileOutputDelimited_3.write("hashtag");
+                                            outtFileOutputDelimited_3.write(OUT_DELIM_tFileOutputDelimited_3);
+                                        outtFileOutputDelimited_3.write("country");
+                                            outtFileOutputDelimited_3.write(OUT_DELIM_tFileOutputDelimited_3);
+                                        outtFileOutputDelimited_3.write("t_reception");
+                                        outtFileOutputDelimited_3.write(OUT_DELIM_ROWSEP_tFileOutputDelimited_3);
+                                        outtFileOutputDelimited_3.flush();
+                                    }
+
+
+        resourceMap.put("out_tFileOutputDelimited_3", outtFileOutputDelimited_3);
+resourceMap.put("nb_line_tFileOutputDelimited_3", nb_line_tFileOutputDelimited_3);
+
+ 
+
+
+
+/**
+ * [tFileOutputDelimited_3 begin ] stop
+ */
+
+
+
+	
+	/**
+	 * [tAggregateRow_3_AGGIN begin ] start
+	 */
+
+	
+
+	
+		
+		ok_Hash.put("tAggregateRow_3_AGGIN", false);
+		start_Hash.put("tAggregateRow_3_AGGIN", System.currentTimeMillis());
+		
+	
+		currentVirtualComponent = "tAggregateRow_3";
+	
+	currentComponent="tAggregateRow_3_AGGIN";
+
+	
+		int tos_count_tAggregateRow_3_AGGIN = 0;
+		
+
+java.util.Collection<AggOperationStruct_tAggregateRow_3> values_tAggregateRow_3 = hash_tAggregateRow_3.values();
+
+globalMap.put("tAggregateRow_3_NB_LINE", values_tAggregateRow_3.size());
+
+for(AggOperationStruct_tAggregateRow_3 aggregated_row_tAggregateRow_3 : values_tAggregateRow_3) { // G_AggR_600
+
+
+
+ 
+
+
+
+/**
+ * [tAggregateRow_3_AGGIN begin ] stop
+ */
+	
+	/**
+	 * [tAggregateRow_3_AGGIN main ] start
+	 */
+
+	
+
+	
+	
+		currentVirtualComponent = "tAggregateRow_3";
+	
+	currentComponent="tAggregateRow_3_AGGIN";
+
+	
+
+            				    row9.date = aggregated_row_tAggregateRow_3.date;
+            				    
+            				    row9.hashtag = aggregated_row_tAggregateRow_3.hashtag;
+            				    
+            				    row9.country = aggregated_row_tAggregateRow_3.country;
+            				    row9.t_reception = aggregated_row_tAggregateRow_3.t_reception_sum;
+                                	
+
+ 
+
+
+	tos_count_tAggregateRow_3_AGGIN++;
+
+/**
+ * [tAggregateRow_3_AGGIN main ] stop
+ */
+	
+	/**
+	 * [tAggregateRow_3_AGGIN process_data_begin ] start
+	 */
+
+	
+
+	
+	
+		currentVirtualComponent = "tAggregateRow_3";
+	
+	currentComponent="tAggregateRow_3_AGGIN";
+
+	
+
+ 
+
+
+
+/**
+ * [tAggregateRow_3_AGGIN process_data_begin ] stop
+ */
+
+	
+	/**
+	 * [tFileOutputDelimited_3 main ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tFileOutputDelimited_3";
+
+	
+					if(execStat){
+						runStat.updateStatOnConnection(iterateId,1,1,"row9");
 					}
-					directory_tFileOutputDelimited_3 = "";
-				}
-				boolean isFileGenerated_tFileOutputDelimited_3 = true;
-				java.io.File filetFileOutputDelimited_3 = new java.io.File(fileName_tFileOutputDelimited_3);
-				globalMap.put("tFileOutputDelimited_3_FILE_NAME", fileName_tFileOutputDelimited_3);
-				if (filetFileOutputDelimited_3.exists()) {
-					throw new RuntimeException("The particular file \"" + filetFileOutputDelimited_3.getAbsoluteFile()
-							+ "\" already exist. If you want to overwrite the file, please uncheck the"
-							+ " \"Throw an error if the file already exist\" option in Advanced settings.");
-				}
-				int nb_line_tFileOutputDelimited_3 = 0;
-				int splitedFileNo_tFileOutputDelimited_3 = 0;
-				int currentRow_tFileOutputDelimited_3 = 0;
+					
 
-				final String OUT_DELIM_tFileOutputDelimited_3 = /** Start field tFileOutputDelimited_3:FIELDSEPARATOR */
-						";"/** End field tFileOutputDelimited_3:FIELDSEPARATOR */
-				;
 
-				final String OUT_DELIM_ROWSEP_tFileOutputDelimited_3 = /**
-																		 * Start field
-																		 * tFileOutputDelimited_3:ROWSEPARATOR
-																		 */
-						"\n"/** End field tFileOutputDelimited_3:ROWSEPARATOR */
-				;
+                    StringBuilder sb_tFileOutputDelimited_3 = new StringBuilder();
+                            if(row9.date != null) {
+                        sb_tFileOutputDelimited_3.append(
+                            row9.date
+                        );
+                            }
+                            sb_tFileOutputDelimited_3.append(OUT_DELIM_tFileOutputDelimited_3);
+                            if(row9.hashtag != null) {
+                        sb_tFileOutputDelimited_3.append(
+                            row9.hashtag
+                        );
+                            }
+                            sb_tFileOutputDelimited_3.append(OUT_DELIM_tFileOutputDelimited_3);
+                            if(row9.country != null) {
+                        sb_tFileOutputDelimited_3.append(
+                            row9.country
+                        );
+                            }
+                            sb_tFileOutputDelimited_3.append(OUT_DELIM_tFileOutputDelimited_3);
+                            if(row9.t_reception != null) {
+                        sb_tFileOutputDelimited_3.append(
+                            row9.t_reception
+                        );
+                            }
+                    sb_tFileOutputDelimited_3.append(OUT_DELIM_ROWSEP_tFileOutputDelimited_3);
 
-				// create directory only if not exists
-				if (directory_tFileOutputDelimited_3 != null && directory_tFileOutputDelimited_3.trim().length() != 0) {
-					java.io.File dir_tFileOutputDelimited_3 = new java.io.File(directory_tFileOutputDelimited_3);
-					if (!dir_tFileOutputDelimited_3.exists()) {
-						dir_tFileOutputDelimited_3.mkdirs();
+
+                    nb_line_tFileOutputDelimited_3++;
+                    resourceMap.put("nb_line_tFileOutputDelimited_3", nb_line_tFileOutputDelimited_3);
+
+                        outtFileOutputDelimited_3.write(sb_tFileOutputDelimited_3.toString());
+
+
+
+
+ 
+
+
+	tos_count_tFileOutputDelimited_3++;
+
+/**
+ * [tFileOutputDelimited_3 main ] stop
+ */
+	
+	/**
+	 * [tFileOutputDelimited_3 process_data_begin ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tFileOutputDelimited_3";
+
+	
+
+ 
+
+
+
+/**
+ * [tFileOutputDelimited_3 process_data_begin ] stop
+ */
+	
+	/**
+	 * [tFileOutputDelimited_3 process_data_end ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tFileOutputDelimited_3";
+
+	
+
+ 
+
+
+
+/**
+ * [tFileOutputDelimited_3 process_data_end ] stop
+ */
+
+
+
+	
+	/**
+	 * [tAggregateRow_3_AGGIN process_data_end ] start
+	 */
+
+	
+
+	
+	
+		currentVirtualComponent = "tAggregateRow_3";
+	
+	currentComponent="tAggregateRow_3_AGGIN";
+
+	
+
+ 
+
+
+
+/**
+ * [tAggregateRow_3_AGGIN process_data_end ] stop
+ */
+	
+	/**
+	 * [tAggregateRow_3_AGGIN end ] start
+	 */
+
+	
+
+	
+	
+		currentVirtualComponent = "tAggregateRow_3";
+	
+	currentComponent="tAggregateRow_3_AGGIN";
+
+	
+
+} // G_AggR_600
+
+ 
+
+ok_Hash.put("tAggregateRow_3_AGGIN", true);
+end_Hash.put("tAggregateRow_3_AGGIN", System.currentTimeMillis());
+
+
+
+
+/**
+ * [tAggregateRow_3_AGGIN end ] stop
+ */
+
+	
+	/**
+	 * [tFileOutputDelimited_3 end ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tFileOutputDelimited_3";
+
+	
+
+
+
+		
+			
+					if(outtFileOutputDelimited_3!=null) {
+						outtFileOutputDelimited_3.flush();
+						outtFileOutputDelimited_3.close();
 					}
-				}
+				
+				globalMap.put("tFileOutputDelimited_3_NB_LINE",nb_line_tFileOutputDelimited_3);
+				globalMap.put("tFileOutputDelimited_3_FILE_NAME",fileName_tFileOutputDelimited_3);
+			
+		
+		
+		resourceMap.put("finish_tFileOutputDelimited_3", true);
+	
 
-				// routines.system.Row
-				java.io.Writer outtFileOutputDelimited_3 = null;
+				if(execStat){
+			  		runStat.updateStat(resourceMap,iterateId,2,0,"row9");
+			  	}
+			  	
+ 
 
-				java.io.File fileToDelete_tFileOutputDelimited_3 = new java.io.File(fileName_tFileOutputDelimited_3);
-				if (fileToDelete_tFileOutputDelimited_3.exists()) {
-					fileToDelete_tFileOutputDelimited_3.delete();
-				}
-				outtFileOutputDelimited_3 = new java.io.BufferedWriter(new java.io.OutputStreamWriter(
-						new java.io.FileOutputStream(fileName_tFileOutputDelimited_3, false), "ISO-8859-15"));
-				if (filetFileOutputDelimited_3.length() == 0) {
-					outtFileOutputDelimited_3.write("date");
-					outtFileOutputDelimited_3.write(OUT_DELIM_tFileOutputDelimited_3);
-					outtFileOutputDelimited_3.write("hashtag");
-					outtFileOutputDelimited_3.write(OUT_DELIM_tFileOutputDelimited_3);
-					outtFileOutputDelimited_3.write("country");
-					outtFileOutputDelimited_3.write(OUT_DELIM_tFileOutputDelimited_3);
-					outtFileOutputDelimited_3.write("t_reception");
-					outtFileOutputDelimited_3.write(OUT_DELIM_ROWSEP_tFileOutputDelimited_3);
-					outtFileOutputDelimited_3.flush();
-				}
+ok_Hash.put("tFileOutputDelimited_3", true);
+end_Hash.put("tFileOutputDelimited_3", System.currentTimeMillis());
 
-				resourceMap.put("out_tFileOutputDelimited_3", outtFileOutputDelimited_3);
-				resourceMap.put("nb_line_tFileOutputDelimited_3", nb_line_tFileOutputDelimited_3);
 
-				/**
-				 * [tFileOutputDelimited_3 begin ] stop
-				 */
 
-				/**
-				 * [tAggregateRow_3_AGGIN begin ] start
-				 */
 
-				ok_Hash.put("tAggregateRow_3_AGGIN", false);
-				start_Hash.put("tAggregateRow_3_AGGIN", System.currentTimeMillis());
+/**
+ * [tFileOutputDelimited_3 end ] stop
+ */
 
-				currentVirtualComponent = "tAggregateRow_3";
 
-				currentComponent = "tAggregateRow_3_AGGIN";
 
-				int tos_count_tAggregateRow_3_AGGIN = 0;
 
-				java.util.Collection<AggOperationStruct_tAggregateRow_3> values_tAggregateRow_3 = hash_tAggregateRow_3
-						.values();
 
-				globalMap.put("tAggregateRow_3_NB_LINE", values_tAggregateRow_3.size());
 
-				for (AggOperationStruct_tAggregateRow_3 aggregated_row_tAggregateRow_3 : values_tAggregateRow_3) { // G_AggR_600
 
-					/**
-					 * [tAggregateRow_3_AGGIN begin ] stop
-					 */
 
-					/**
-					 * [tAggregateRow_3_AGGIN main ] start
-					 */
 
-					currentVirtualComponent = "tAggregateRow_3";
 
-					currentComponent = "tAggregateRow_3_AGGIN";
+	
+	/**
+	 * [tAggregateRow_1_AGGOUT end ] start
+	 */
 
-					row9.date = aggregated_row_tAggregateRow_3.date;
+	
 
-					row9.hashtag = aggregated_row_tAggregateRow_3.hashtag;
+	
+	
+		currentVirtualComponent = "tAggregateRow_1";
+	
+	currentComponent="tAggregateRow_1_AGGOUT";
 
-					row9.country = aggregated_row_tAggregateRow_3.country;
-					row9.t_reception = aggregated_row_tAggregateRow_3.t_reception_sum;
+	
 
-					tos_count_tAggregateRow_3_AGGIN++;
+				if(execStat){
+			  		runStat.updateStat(resourceMap,iterateId,2,0,"pos");
+			  	}
+			  	
+ 
 
-					/**
-					 * [tAggregateRow_3_AGGIN main ] stop
-					 */
+ok_Hash.put("tAggregateRow_1_AGGOUT", true);
+end_Hash.put("tAggregateRow_1_AGGOUT", System.currentTimeMillis());
 
-					/**
-					 * [tAggregateRow_3_AGGIN process_data_begin ] start
-					 */
 
-					currentVirtualComponent = "tAggregateRow_3";
 
-					currentComponent = "tAggregateRow_3_AGGIN";
 
-					/**
-					 * [tAggregateRow_3_AGGIN process_data_begin ] stop
-					 */
+/**
+ * [tAggregateRow_1_AGGOUT end ] stop
+ */
 
-					/**
-					 * [tFileOutputDelimited_3 main ] start
-					 */
 
-					currentComponent = "tFileOutputDelimited_3";
+	
+	/**
+	 * [tFileOutputDelimited_1 begin ] start
+	 */
 
-					if (execStat) {
-						runStat.updateStatOnConnection(iterateId, 1, 1, "row9");
+	
+
+	
+		
+		ok_Hash.put("tFileOutputDelimited_1", false);
+		start_Hash.put("tFileOutputDelimited_1", System.currentTimeMillis());
+		
+	
+	currentComponent="tFileOutputDelimited_1";
+
+	
+					if(execStat) {
+						runStat.updateStatOnConnection(resourceMap,iterateId,0,0,"row7");
 					}
+				
+		int tos_count_tFileOutputDelimited_1 = 0;
+		
 
-					StringBuilder sb_tFileOutputDelimited_3 = new StringBuilder();
-					if (row9.date != null) {
-						sb_tFileOutputDelimited_3.append(row9.date);
+String fileName_tFileOutputDelimited_1 = "";
+    fileName_tFileOutputDelimited_1 = (new java.io.File(context.path_files_global+"documentations/mesures/sent_pos_in.csv")).getAbsolutePath().replace("\\","/");
+    String fullName_tFileOutputDelimited_1 = null;
+    String extension_tFileOutputDelimited_1 = null;
+    String directory_tFileOutputDelimited_1 = null;
+    if((fileName_tFileOutputDelimited_1.indexOf("/") != -1)) {
+        if(fileName_tFileOutputDelimited_1.lastIndexOf(".") < fileName_tFileOutputDelimited_1.lastIndexOf("/")) {
+            fullName_tFileOutputDelimited_1 = fileName_tFileOutputDelimited_1;
+            extension_tFileOutputDelimited_1 = "";
+        } else {
+            fullName_tFileOutputDelimited_1 = fileName_tFileOutputDelimited_1.substring(0, fileName_tFileOutputDelimited_1.lastIndexOf("."));
+            extension_tFileOutputDelimited_1 = fileName_tFileOutputDelimited_1.substring(fileName_tFileOutputDelimited_1.lastIndexOf("."));
+        }
+        directory_tFileOutputDelimited_1 = fileName_tFileOutputDelimited_1.substring(0, fileName_tFileOutputDelimited_1.lastIndexOf("/"));
+    } else {
+        if(fileName_tFileOutputDelimited_1.lastIndexOf(".") != -1) {
+            fullName_tFileOutputDelimited_1 = fileName_tFileOutputDelimited_1.substring(0, fileName_tFileOutputDelimited_1.lastIndexOf("."));
+            extension_tFileOutputDelimited_1 = fileName_tFileOutputDelimited_1.substring(fileName_tFileOutputDelimited_1.lastIndexOf("."));
+        } else {
+            fullName_tFileOutputDelimited_1 = fileName_tFileOutputDelimited_1;
+            extension_tFileOutputDelimited_1 = "";
+        }
+        directory_tFileOutputDelimited_1 = "";
+    }
+    boolean isFileGenerated_tFileOutputDelimited_1 = true;
+    java.io.File filetFileOutputDelimited_1 = new java.io.File(fileName_tFileOutputDelimited_1);
+    globalMap.put("tFileOutputDelimited_1_FILE_NAME",fileName_tFileOutputDelimited_1);
+    if(filetFileOutputDelimited_1.exists()){
+            throw new RuntimeException("The particular file \""+filetFileOutputDelimited_1.getAbsoluteFile() +
+            "\" already exist. If you want to overwrite the file, please uncheck the" + 
+            " \"Throw an error if the file already exist\" option in Advanced settings.");
+        }
+            int nb_line_tFileOutputDelimited_1 = 0;
+            int splitedFileNo_tFileOutputDelimited_1 = 0;
+            int currentRow_tFileOutputDelimited_1 = 0;
+
+            final String OUT_DELIM_tFileOutputDelimited_1 = /** Start field tFileOutputDelimited_1:FIELDSEPARATOR */";"/** End field tFileOutputDelimited_1:FIELDSEPARATOR */;
+
+            final String OUT_DELIM_ROWSEP_tFileOutputDelimited_1 = /** Start field tFileOutputDelimited_1:ROWSEPARATOR */"\n"/** End field tFileOutputDelimited_1:ROWSEPARATOR */;
+
+                    //create directory only if not exists
+                    if(directory_tFileOutputDelimited_1 != null && directory_tFileOutputDelimited_1.trim().length() != 0) {
+                        java.io.File dir_tFileOutputDelimited_1 = new java.io.File(directory_tFileOutputDelimited_1);
+                        if(!dir_tFileOutputDelimited_1.exists()) {
+                            dir_tFileOutputDelimited_1.mkdirs();
+                        }
+                    }
+
+                        //routines.system.Row
+                        java.io.Writer outtFileOutputDelimited_1 = null;
+
+                        java.io.File fileToDelete_tFileOutputDelimited_1 = new java.io.File(fileName_tFileOutputDelimited_1);
+                        if(fileToDelete_tFileOutputDelimited_1.exists()) {
+                            fileToDelete_tFileOutputDelimited_1.delete();
+                        }
+                        outtFileOutputDelimited_1 = new java.io.BufferedWriter(new java.io.OutputStreamWriter(
+                        new java.io.FileOutputStream(fileName_tFileOutputDelimited_1, false),"ISO-8859-15"));
+                                    if(filetFileOutputDelimited_1.length()==0){
+                                        outtFileOutputDelimited_1.write("date");
+                                            outtFileOutputDelimited_1.write(OUT_DELIM_tFileOutputDelimited_1);
+                                        outtFileOutputDelimited_1.write("hashtag");
+                                            outtFileOutputDelimited_1.write(OUT_DELIM_tFileOutputDelimited_1);
+                                        outtFileOutputDelimited_1.write("country");
+                                            outtFileOutputDelimited_1.write(OUT_DELIM_tFileOutputDelimited_1);
+                                        outtFileOutputDelimited_1.write("s_positivos");
+                                        outtFileOutputDelimited_1.write(OUT_DELIM_ROWSEP_tFileOutputDelimited_1);
+                                        outtFileOutputDelimited_1.flush();
+                                    }
+
+
+        resourceMap.put("out_tFileOutputDelimited_1", outtFileOutputDelimited_1);
+resourceMap.put("nb_line_tFileOutputDelimited_1", nb_line_tFileOutputDelimited_1);
+
+ 
+
+
+
+/**
+ * [tFileOutputDelimited_1 begin ] stop
+ */
+
+
+
+	
+	/**
+	 * [tAggregateRow_1_AGGIN begin ] start
+	 */
+
+	
+
+	
+		
+		ok_Hash.put("tAggregateRow_1_AGGIN", false);
+		start_Hash.put("tAggregateRow_1_AGGIN", System.currentTimeMillis());
+		
+	
+		currentVirtualComponent = "tAggregateRow_1";
+	
+	currentComponent="tAggregateRow_1_AGGIN";
+
+	
+		int tos_count_tAggregateRow_1_AGGIN = 0;
+		
+
+java.util.Collection<AggOperationStruct_tAggregateRow_1> values_tAggregateRow_1 = hash_tAggregateRow_1.values();
+
+globalMap.put("tAggregateRow_1_NB_LINE", values_tAggregateRow_1.size());
+
+for(AggOperationStruct_tAggregateRow_1 aggregated_row_tAggregateRow_1 : values_tAggregateRow_1) { // G_AggR_600
+
+
+
+ 
+
+
+
+/**
+ * [tAggregateRow_1_AGGIN begin ] stop
+ */
+	
+	/**
+	 * [tAggregateRow_1_AGGIN main ] start
+	 */
+
+	
+
+	
+	
+		currentVirtualComponent = "tAggregateRow_1";
+	
+	currentComponent="tAggregateRow_1_AGGIN";
+
+	
+
+            				    row7.date = aggregated_row_tAggregateRow_1.date;
+            				    
+            				    row7.hashtag = aggregated_row_tAggregateRow_1.hashtag;
+            				    
+            				    row7.country = aggregated_row_tAggregateRow_1.country;
+            				    row7.s_positivos = aggregated_row_tAggregateRow_1.s_positivos_sum;
+                                	
+
+ 
+
+
+	tos_count_tAggregateRow_1_AGGIN++;
+
+/**
+ * [tAggregateRow_1_AGGIN main ] stop
+ */
+	
+	/**
+	 * [tAggregateRow_1_AGGIN process_data_begin ] start
+	 */
+
+	
+
+	
+	
+		currentVirtualComponent = "tAggregateRow_1";
+	
+	currentComponent="tAggregateRow_1_AGGIN";
+
+	
+
+ 
+
+
+
+/**
+ * [tAggregateRow_1_AGGIN process_data_begin ] stop
+ */
+
+	
+	/**
+	 * [tFileOutputDelimited_1 main ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tFileOutputDelimited_1";
+
+	
+					if(execStat){
+						runStat.updateStatOnConnection(iterateId,1,1,"row7");
 					}
-					sb_tFileOutputDelimited_3.append(OUT_DELIM_tFileOutputDelimited_3);
-					if (row9.hashtag != null) {
-						sb_tFileOutputDelimited_3.append(row9.hashtag);
+					
+
+
+                    StringBuilder sb_tFileOutputDelimited_1 = new StringBuilder();
+                            if(row7.date != null) {
+                        sb_tFileOutputDelimited_1.append(
+                            row7.date
+                        );
+                            }
+                            sb_tFileOutputDelimited_1.append(OUT_DELIM_tFileOutputDelimited_1);
+                            if(row7.hashtag != null) {
+                        sb_tFileOutputDelimited_1.append(
+                            row7.hashtag
+                        );
+                            }
+                            sb_tFileOutputDelimited_1.append(OUT_DELIM_tFileOutputDelimited_1);
+                            if(row7.country != null) {
+                        sb_tFileOutputDelimited_1.append(
+                            row7.country
+                        );
+                            }
+                            sb_tFileOutputDelimited_1.append(OUT_DELIM_tFileOutputDelimited_1);
+                            if(row7.s_positivos != null) {
+                        sb_tFileOutputDelimited_1.append(
+                            row7.s_positivos
+                        );
+                            }
+                    sb_tFileOutputDelimited_1.append(OUT_DELIM_ROWSEP_tFileOutputDelimited_1);
+
+
+                    nb_line_tFileOutputDelimited_1++;
+                    resourceMap.put("nb_line_tFileOutputDelimited_1", nb_line_tFileOutputDelimited_1);
+
+                        outtFileOutputDelimited_1.write(sb_tFileOutputDelimited_1.toString());
+
+
+
+
+ 
+
+
+	tos_count_tFileOutputDelimited_1++;
+
+/**
+ * [tFileOutputDelimited_1 main ] stop
+ */
+	
+	/**
+	 * [tFileOutputDelimited_1 process_data_begin ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tFileOutputDelimited_1";
+
+	
+
+ 
+
+
+
+/**
+ * [tFileOutputDelimited_1 process_data_begin ] stop
+ */
+	
+	/**
+	 * [tFileOutputDelimited_1 process_data_end ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tFileOutputDelimited_1";
+
+	
+
+ 
+
+
+
+/**
+ * [tFileOutputDelimited_1 process_data_end ] stop
+ */
+
+
+
+	
+	/**
+	 * [tAggregateRow_1_AGGIN process_data_end ] start
+	 */
+
+	
+
+	
+	
+		currentVirtualComponent = "tAggregateRow_1";
+	
+	currentComponent="tAggregateRow_1_AGGIN";
+
+	
+
+ 
+
+
+
+/**
+ * [tAggregateRow_1_AGGIN process_data_end ] stop
+ */
+	
+	/**
+	 * [tAggregateRow_1_AGGIN end ] start
+	 */
+
+	
+
+	
+	
+		currentVirtualComponent = "tAggregateRow_1";
+	
+	currentComponent="tAggregateRow_1_AGGIN";
+
+	
+
+} // G_AggR_600
+
+ 
+
+ok_Hash.put("tAggregateRow_1_AGGIN", true);
+end_Hash.put("tAggregateRow_1_AGGIN", System.currentTimeMillis());
+
+
+
+
+/**
+ * [tAggregateRow_1_AGGIN end ] stop
+ */
+
+	
+	/**
+	 * [tFileOutputDelimited_1 end ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tFileOutputDelimited_1";
+
+	
+
+
+
+		
+			
+					if(outtFileOutputDelimited_1!=null) {
+						outtFileOutputDelimited_1.flush();
+						outtFileOutputDelimited_1.close();
 					}
-					sb_tFileOutputDelimited_3.append(OUT_DELIM_tFileOutputDelimited_3);
-					if (row9.country != null) {
-						sb_tFileOutputDelimited_3.append(row9.country);
+				
+				globalMap.put("tFileOutputDelimited_1_NB_LINE",nb_line_tFileOutputDelimited_1);
+				globalMap.put("tFileOutputDelimited_1_FILE_NAME",fileName_tFileOutputDelimited_1);
+			
+		
+		
+		resourceMap.put("finish_tFileOutputDelimited_1", true);
+	
+
+				if(execStat){
+			  		runStat.updateStat(resourceMap,iterateId,2,0,"row7");
+			  	}
+			  	
+ 
+
+ok_Hash.put("tFileOutputDelimited_1", true);
+end_Hash.put("tFileOutputDelimited_1", System.currentTimeMillis());
+
+
+
+
+/**
+ * [tFileOutputDelimited_1 end ] stop
+ */
+
+
+
+
+
+
+
+
+
+
+	
+	/**
+	 * [tAggregateRow_2_AGGOUT end ] start
+	 */
+
+	
+
+	
+	
+		currentVirtualComponent = "tAggregateRow_2";
+	
+	currentComponent="tAggregateRow_2_AGGOUT";
+
+	
+
+				if(execStat){
+			  		runStat.updateStat(resourceMap,iterateId,2,0,"neg");
+			  	}
+			  	
+ 
+
+ok_Hash.put("tAggregateRow_2_AGGOUT", true);
+end_Hash.put("tAggregateRow_2_AGGOUT", System.currentTimeMillis());
+
+
+
+
+/**
+ * [tAggregateRow_2_AGGOUT end ] stop
+ */
+
+
+	
+	/**
+	 * [tFileOutputDelimited_2 begin ] start
+	 */
+
+	
+
+	
+		
+		ok_Hash.put("tFileOutputDelimited_2", false);
+		start_Hash.put("tFileOutputDelimited_2", System.currentTimeMillis());
+		
+	
+	currentComponent="tFileOutputDelimited_2";
+
+	
+					if(execStat) {
+						runStat.updateStatOnConnection(resourceMap,iterateId,0,0,"row8");
 					}
-					sb_tFileOutputDelimited_3.append(OUT_DELIM_tFileOutputDelimited_3);
-					if (row9.t_reception != null) {
-						sb_tFileOutputDelimited_3.append(row9.t_reception);
+				
+		int tos_count_tFileOutputDelimited_2 = 0;
+		
+
+String fileName_tFileOutputDelimited_2 = "";
+    fileName_tFileOutputDelimited_2 = (new java.io.File(context.path_files_global+"documentations/mesures/sent_neg_in.csv")).getAbsolutePath().replace("\\","/");
+    String fullName_tFileOutputDelimited_2 = null;
+    String extension_tFileOutputDelimited_2 = null;
+    String directory_tFileOutputDelimited_2 = null;
+    if((fileName_tFileOutputDelimited_2.indexOf("/") != -1)) {
+        if(fileName_tFileOutputDelimited_2.lastIndexOf(".") < fileName_tFileOutputDelimited_2.lastIndexOf("/")) {
+            fullName_tFileOutputDelimited_2 = fileName_tFileOutputDelimited_2;
+            extension_tFileOutputDelimited_2 = "";
+        } else {
+            fullName_tFileOutputDelimited_2 = fileName_tFileOutputDelimited_2.substring(0, fileName_tFileOutputDelimited_2.lastIndexOf("."));
+            extension_tFileOutputDelimited_2 = fileName_tFileOutputDelimited_2.substring(fileName_tFileOutputDelimited_2.lastIndexOf("."));
+        }
+        directory_tFileOutputDelimited_2 = fileName_tFileOutputDelimited_2.substring(0, fileName_tFileOutputDelimited_2.lastIndexOf("/"));
+    } else {
+        if(fileName_tFileOutputDelimited_2.lastIndexOf(".") != -1) {
+            fullName_tFileOutputDelimited_2 = fileName_tFileOutputDelimited_2.substring(0, fileName_tFileOutputDelimited_2.lastIndexOf("."));
+            extension_tFileOutputDelimited_2 = fileName_tFileOutputDelimited_2.substring(fileName_tFileOutputDelimited_2.lastIndexOf("."));
+        } else {
+            fullName_tFileOutputDelimited_2 = fileName_tFileOutputDelimited_2;
+            extension_tFileOutputDelimited_2 = "";
+        }
+        directory_tFileOutputDelimited_2 = "";
+    }
+    boolean isFileGenerated_tFileOutputDelimited_2 = true;
+    java.io.File filetFileOutputDelimited_2 = new java.io.File(fileName_tFileOutputDelimited_2);
+    globalMap.put("tFileOutputDelimited_2_FILE_NAME",fileName_tFileOutputDelimited_2);
+    if(filetFileOutputDelimited_2.exists()){
+            throw new RuntimeException("The particular file \""+filetFileOutputDelimited_2.getAbsoluteFile() +
+            "\" already exist. If you want to overwrite the file, please uncheck the" + 
+            " \"Throw an error if the file already exist\" option in Advanced settings.");
+        }
+            int nb_line_tFileOutputDelimited_2 = 0;
+            int splitedFileNo_tFileOutputDelimited_2 = 0;
+            int currentRow_tFileOutputDelimited_2 = 0;
+
+            final String OUT_DELIM_tFileOutputDelimited_2 = /** Start field tFileOutputDelimited_2:FIELDSEPARATOR */";"/** End field tFileOutputDelimited_2:FIELDSEPARATOR */;
+
+            final String OUT_DELIM_ROWSEP_tFileOutputDelimited_2 = /** Start field tFileOutputDelimited_2:ROWSEPARATOR */"\n"/** End field tFileOutputDelimited_2:ROWSEPARATOR */;
+
+                    //create directory only if not exists
+                    if(directory_tFileOutputDelimited_2 != null && directory_tFileOutputDelimited_2.trim().length() != 0) {
+                        java.io.File dir_tFileOutputDelimited_2 = new java.io.File(directory_tFileOutputDelimited_2);
+                        if(!dir_tFileOutputDelimited_2.exists()) {
+                            dir_tFileOutputDelimited_2.mkdirs();
+                        }
+                    }
+
+                        //routines.system.Row
+                        java.io.Writer outtFileOutputDelimited_2 = null;
+
+                        java.io.File fileToDelete_tFileOutputDelimited_2 = new java.io.File(fileName_tFileOutputDelimited_2);
+                        if(fileToDelete_tFileOutputDelimited_2.exists()) {
+                            fileToDelete_tFileOutputDelimited_2.delete();
+                        }
+                        outtFileOutputDelimited_2 = new java.io.BufferedWriter(new java.io.OutputStreamWriter(
+                        new java.io.FileOutputStream(fileName_tFileOutputDelimited_2, false),"ISO-8859-15"));
+                                    if(filetFileOutputDelimited_2.length()==0){
+                                        outtFileOutputDelimited_2.write("date");
+                                            outtFileOutputDelimited_2.write(OUT_DELIM_tFileOutputDelimited_2);
+                                        outtFileOutputDelimited_2.write("hashtag");
+                                            outtFileOutputDelimited_2.write(OUT_DELIM_tFileOutputDelimited_2);
+                                        outtFileOutputDelimited_2.write("country");
+                                            outtFileOutputDelimited_2.write(OUT_DELIM_tFileOutputDelimited_2);
+                                        outtFileOutputDelimited_2.write("s_negativos");
+                                        outtFileOutputDelimited_2.write(OUT_DELIM_ROWSEP_tFileOutputDelimited_2);
+                                        outtFileOutputDelimited_2.flush();
+                                    }
+
+
+        resourceMap.put("out_tFileOutputDelimited_2", outtFileOutputDelimited_2);
+resourceMap.put("nb_line_tFileOutputDelimited_2", nb_line_tFileOutputDelimited_2);
+
+ 
+
+
+
+/**
+ * [tFileOutputDelimited_2 begin ] stop
+ */
+
+
+
+	
+	/**
+	 * [tAggregateRow_2_AGGIN begin ] start
+	 */
+
+	
+
+	
+		
+		ok_Hash.put("tAggregateRow_2_AGGIN", false);
+		start_Hash.put("tAggregateRow_2_AGGIN", System.currentTimeMillis());
+		
+	
+		currentVirtualComponent = "tAggregateRow_2";
+	
+	currentComponent="tAggregateRow_2_AGGIN";
+
+	
+		int tos_count_tAggregateRow_2_AGGIN = 0;
+		
+
+java.util.Collection<AggOperationStruct_tAggregateRow_2> values_tAggregateRow_2 = hash_tAggregateRow_2.values();
+
+globalMap.put("tAggregateRow_2_NB_LINE", values_tAggregateRow_2.size());
+
+for(AggOperationStruct_tAggregateRow_2 aggregated_row_tAggregateRow_2 : values_tAggregateRow_2) { // G_AggR_600
+
+
+
+ 
+
+
+
+/**
+ * [tAggregateRow_2_AGGIN begin ] stop
+ */
+	
+	/**
+	 * [tAggregateRow_2_AGGIN main ] start
+	 */
+
+	
+
+	
+	
+		currentVirtualComponent = "tAggregateRow_2";
+	
+	currentComponent="tAggregateRow_2_AGGIN";
+
+	
+
+            				    row8.date = aggregated_row_tAggregateRow_2.date;
+            				    
+            				    row8.hashtag = aggregated_row_tAggregateRow_2.hashtag;
+            				    
+            				    row8.country = aggregated_row_tAggregateRow_2.country;
+            				    row8.s_negativos = aggregated_row_tAggregateRow_2.s_negativos_sum;
+                                	
+
+ 
+
+
+	tos_count_tAggregateRow_2_AGGIN++;
+
+/**
+ * [tAggregateRow_2_AGGIN main ] stop
+ */
+	
+	/**
+	 * [tAggregateRow_2_AGGIN process_data_begin ] start
+	 */
+
+	
+
+	
+	
+		currentVirtualComponent = "tAggregateRow_2";
+	
+	currentComponent="tAggregateRow_2_AGGIN";
+
+	
+
+ 
+
+
+
+/**
+ * [tAggregateRow_2_AGGIN process_data_begin ] stop
+ */
+
+	
+	/**
+	 * [tFileOutputDelimited_2 main ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tFileOutputDelimited_2";
+
+	
+					if(execStat){
+						runStat.updateStatOnConnection(iterateId,1,1,"row8");
 					}
-					sb_tFileOutputDelimited_3.append(OUT_DELIM_ROWSEP_tFileOutputDelimited_3);
+					
 
-					nb_line_tFileOutputDelimited_3++;
-					resourceMap.put("nb_line_tFileOutputDelimited_3", nb_line_tFileOutputDelimited_3);
 
-					outtFileOutputDelimited_3.write(sb_tFileOutputDelimited_3.toString());
+                    StringBuilder sb_tFileOutputDelimited_2 = new StringBuilder();
+                            if(row8.date != null) {
+                        sb_tFileOutputDelimited_2.append(
+                            row8.date
+                        );
+                            }
+                            sb_tFileOutputDelimited_2.append(OUT_DELIM_tFileOutputDelimited_2);
+                            if(row8.hashtag != null) {
+                        sb_tFileOutputDelimited_2.append(
+                            row8.hashtag
+                        );
+                            }
+                            sb_tFileOutputDelimited_2.append(OUT_DELIM_tFileOutputDelimited_2);
+                            if(row8.country != null) {
+                        sb_tFileOutputDelimited_2.append(
+                            row8.country
+                        );
+                            }
+                            sb_tFileOutputDelimited_2.append(OUT_DELIM_tFileOutputDelimited_2);
+                            if(row8.s_negativos != null) {
+                        sb_tFileOutputDelimited_2.append(
+                            row8.s_negativos
+                        );
+                            }
+                    sb_tFileOutputDelimited_2.append(OUT_DELIM_ROWSEP_tFileOutputDelimited_2);
 
-					tos_count_tFileOutputDelimited_3++;
 
-					/**
-					 * [tFileOutputDelimited_3 main ] stop
-					 */
+                    nb_line_tFileOutputDelimited_2++;
+                    resourceMap.put("nb_line_tFileOutputDelimited_2", nb_line_tFileOutputDelimited_2);
 
-					/**
-					 * [tFileOutputDelimited_3 process_data_begin ] start
-					 */
+                        outtFileOutputDelimited_2.write(sb_tFileOutputDelimited_2.toString());
 
-					currentComponent = "tFileOutputDelimited_3";
 
-					/**
-					 * [tFileOutputDelimited_3 process_data_begin ] stop
-					 */
 
-					/**
-					 * [tFileOutputDelimited_3 process_data_end ] start
-					 */
 
-					currentComponent = "tFileOutputDelimited_3";
+ 
 
-					/**
-					 * [tFileOutputDelimited_3 process_data_end ] stop
-					 */
 
-					/**
-					 * [tAggregateRow_3_AGGIN process_data_end ] start
-					 */
+	tos_count_tFileOutputDelimited_2++;
 
-					currentVirtualComponent = "tAggregateRow_3";
+/**
+ * [tFileOutputDelimited_2 main ] stop
+ */
+	
+	/**
+	 * [tFileOutputDelimited_2 process_data_begin ] start
+	 */
 
-					currentComponent = "tAggregateRow_3_AGGIN";
+	
 
-					/**
-					 * [tAggregateRow_3_AGGIN process_data_end ] stop
-					 */
+	
+	
+	currentComponent="tFileOutputDelimited_2";
 
-					/**
-					 * [tAggregateRow_3_AGGIN end ] start
-					 */
+	
 
-					currentVirtualComponent = "tAggregateRow_3";
+ 
 
-					currentComponent = "tAggregateRow_3_AGGIN";
 
-				} // G_AggR_600
 
-				ok_Hash.put("tAggregateRow_3_AGGIN", true);
-				end_Hash.put("tAggregateRow_3_AGGIN", System.currentTimeMillis());
+/**
+ * [tFileOutputDelimited_2 process_data_begin ] stop
+ */
+	
+	/**
+	 * [tFileOutputDelimited_2 process_data_end ] start
+	 */
 
-				/**
-				 * [tAggregateRow_3_AGGIN end ] stop
-				 */
+	
 
-				/**
-				 * [tFileOutputDelimited_3 end ] start
-				 */
+	
+	
+	currentComponent="tFileOutputDelimited_2";
 
-				currentComponent = "tFileOutputDelimited_3";
+	
 
-				if (outtFileOutputDelimited_3 != null) {
-					outtFileOutputDelimited_3.flush();
-					outtFileOutputDelimited_3.close();
-				}
+ 
 
-				globalMap.put("tFileOutputDelimited_3_NB_LINE", nb_line_tFileOutputDelimited_3);
-				globalMap.put("tFileOutputDelimited_3_FILE_NAME", fileName_tFileOutputDelimited_3);
 
-				resourceMap.put("finish_tFileOutputDelimited_3", true);
 
-				if (execStat) {
-					runStat.updateStat(resourceMap, iterateId, 2, 0, "row9");
-				}
+/**
+ * [tFileOutputDelimited_2 process_data_end ] stop
+ */
 
-				ok_Hash.put("tFileOutputDelimited_3", true);
-				end_Hash.put("tFileOutputDelimited_3", System.currentTimeMillis());
 
-				/**
-				 * [tFileOutputDelimited_3 end ] stop
-				 */
 
-				/**
-				 * [tAggregateRow_1_AGGOUT end ] start
-				 */
+	
+	/**
+	 * [tAggregateRow_2_AGGIN process_data_end ] start
+	 */
 
-				currentVirtualComponent = "tAggregateRow_1";
+	
 
-				currentComponent = "tAggregateRow_1_AGGOUT";
+	
+	
+		currentVirtualComponent = "tAggregateRow_2";
+	
+	currentComponent="tAggregateRow_2_AGGIN";
 
-				if (execStat) {
-					runStat.updateStat(resourceMap, iterateId, 2, 0, "pos");
-				}
+	
 
-				ok_Hash.put("tAggregateRow_1_AGGOUT", true);
-				end_Hash.put("tAggregateRow_1_AGGOUT", System.currentTimeMillis());
+ 
 
-				/**
-				 * [tAggregateRow_1_AGGOUT end ] stop
-				 */
 
-				/**
-				 * [tFileOutputDelimited_1 begin ] start
-				 */
 
-				ok_Hash.put("tFileOutputDelimited_1", false);
-				start_Hash.put("tFileOutputDelimited_1", System.currentTimeMillis());
+/**
+ * [tAggregateRow_2_AGGIN process_data_end ] stop
+ */
+	
+	/**
+	 * [tAggregateRow_2_AGGIN end ] start
+	 */
 
-				currentComponent = "tFileOutputDelimited_1";
+	
 
-				if (execStat) {
-					runStat.updateStatOnConnection(resourceMap, iterateId, 0, 0, "row7");
-				}
+	
+	
+		currentVirtualComponent = "tAggregateRow_2";
+	
+	currentComponent="tAggregateRow_2_AGGIN";
 
-				int tos_count_tFileOutputDelimited_1 = 0;
+	
 
-				String fileName_tFileOutputDelimited_1 = "";
-				fileName_tFileOutputDelimited_1 = (new java.io.File(
-						context.path_files_global + "documentations/mesures/sent_pos_in.csv")).getAbsolutePath()
-								.replace("\\", "/");
-				String fullName_tFileOutputDelimited_1 = null;
-				String extension_tFileOutputDelimited_1 = null;
-				String directory_tFileOutputDelimited_1 = null;
-				if ((fileName_tFileOutputDelimited_1.indexOf("/") != -1)) {
-					if (fileName_tFileOutputDelimited_1.lastIndexOf(".") < fileName_tFileOutputDelimited_1
-							.lastIndexOf("/")) {
-						fullName_tFileOutputDelimited_1 = fileName_tFileOutputDelimited_1;
-						extension_tFileOutputDelimited_1 = "";
-					} else {
-						fullName_tFileOutputDelimited_1 = fileName_tFileOutputDelimited_1.substring(0,
-								fileName_tFileOutputDelimited_1.lastIndexOf("."));
-						extension_tFileOutputDelimited_1 = fileName_tFileOutputDelimited_1
-								.substring(fileName_tFileOutputDelimited_1.lastIndexOf("."));
+} // G_AggR_600
+
+ 
+
+ok_Hash.put("tAggregateRow_2_AGGIN", true);
+end_Hash.put("tAggregateRow_2_AGGIN", System.currentTimeMillis());
+
+
+
+
+/**
+ * [tAggregateRow_2_AGGIN end ] stop
+ */
+
+	
+	/**
+	 * [tFileOutputDelimited_2 end ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tFileOutputDelimited_2";
+
+	
+
+
+
+		
+			
+					if(outtFileOutputDelimited_2!=null) {
+						outtFileOutputDelimited_2.flush();
+						outtFileOutputDelimited_2.close();
 					}
-					directory_tFileOutputDelimited_1 = fileName_tFileOutputDelimited_1.substring(0,
-							fileName_tFileOutputDelimited_1.lastIndexOf("/"));
-				} else {
-					if (fileName_tFileOutputDelimited_1.lastIndexOf(".") != -1) {
-						fullName_tFileOutputDelimited_1 = fileName_tFileOutputDelimited_1.substring(0,
-								fileName_tFileOutputDelimited_1.lastIndexOf("."));
-						extension_tFileOutputDelimited_1 = fileName_tFileOutputDelimited_1
-								.substring(fileName_tFileOutputDelimited_1.lastIndexOf("."));
-					} else {
-						fullName_tFileOutputDelimited_1 = fileName_tFileOutputDelimited_1;
-						extension_tFileOutputDelimited_1 = "";
+				
+				globalMap.put("tFileOutputDelimited_2_NB_LINE",nb_line_tFileOutputDelimited_2);
+				globalMap.put("tFileOutputDelimited_2_FILE_NAME",fileName_tFileOutputDelimited_2);
+			
+		
+		
+		resourceMap.put("finish_tFileOutputDelimited_2", true);
+	
+
+				if(execStat){
+			  		runStat.updateStat(resourceMap,iterateId,2,0,"row8");
+			  	}
+			  	
+ 
+
+ok_Hash.put("tFileOutputDelimited_2", true);
+end_Hash.put("tFileOutputDelimited_2", System.currentTimeMillis());
+
+
+
+
+/**
+ * [tFileOutputDelimited_2 end ] stop
+ */
+
+
+
+
+
+
+
+
+
+
+	
+	/**
+	 * [tAggregateRow_4_AGGOUT end ] start
+	 */
+
+	
+
+	
+	
+		currentVirtualComponent = "tAggregateRow_4";
+	
+	currentComponent="tAggregateRow_4_AGGOUT";
+
+	
+
+				if(execStat){
+			  		runStat.updateStat(resourceMap,iterateId,2,0,"cnt");
+			  	}
+			  	
+ 
+
+ok_Hash.put("tAggregateRow_4_AGGOUT", true);
+end_Hash.put("tAggregateRow_4_AGGOUT", System.currentTimeMillis());
+
+
+
+
+/**
+ * [tAggregateRow_4_AGGOUT end ] stop
+ */
+
+
+
+	
+	/**
+	 * [tAggregateRow_5_AGGOUT begin ] start
+	 */
+
+	
+
+	
+		
+		ok_Hash.put("tAggregateRow_5_AGGOUT", false);
+		start_Hash.put("tAggregateRow_5_AGGOUT", System.currentTimeMillis());
+		
+	
+		currentVirtualComponent = "tAggregateRow_5";
+	
+	currentComponent="tAggregateRow_5_AGGOUT";
+
+	
+					if(execStat) {
+						runStat.updateStatOnConnection(resourceMap,iterateId,0,0,"c_post");
 					}
-					directory_tFileOutputDelimited_1 = "";
-				}
-				boolean isFileGenerated_tFileOutputDelimited_1 = true;
-				java.io.File filetFileOutputDelimited_1 = new java.io.File(fileName_tFileOutputDelimited_1);
-				globalMap.put("tFileOutputDelimited_1_FILE_NAME", fileName_tFileOutputDelimited_1);
-				if (filetFileOutputDelimited_1.exists()) {
-					throw new RuntimeException("The particular file \"" + filetFileOutputDelimited_1.getAbsoluteFile()
-							+ "\" already exist. If you want to overwrite the file, please uncheck the"
-							+ " \"Throw an error if the file already exist\" option in Advanced settings.");
-				}
-				int nb_line_tFileOutputDelimited_1 = 0;
-				int splitedFileNo_tFileOutputDelimited_1 = 0;
-				int currentRow_tFileOutputDelimited_1 = 0;
-
-				final String OUT_DELIM_tFileOutputDelimited_1 = /** Start field tFileOutputDelimited_1:FIELDSEPARATOR */
-						";"/** End field tFileOutputDelimited_1:FIELDSEPARATOR */
-				;
-
-				final String OUT_DELIM_ROWSEP_tFileOutputDelimited_1 = /**
-																		 * Start field
-																		 * tFileOutputDelimited_1:ROWSEPARATOR
-																		 */
-						"\n"/** End field tFileOutputDelimited_1:ROWSEPARATOR */
-				;
-
-				// create directory only if not exists
-				if (directory_tFileOutputDelimited_1 != null && directory_tFileOutputDelimited_1.trim().length() != 0) {
-					java.io.File dir_tFileOutputDelimited_1 = new java.io.File(directory_tFileOutputDelimited_1);
-					if (!dir_tFileOutputDelimited_1.exists()) {
-						dir_tFileOutputDelimited_1.mkdirs();
-					}
-				}
-
-				// routines.system.Row
-				java.io.Writer outtFileOutputDelimited_1 = null;
-
-				java.io.File fileToDelete_tFileOutputDelimited_1 = new java.io.File(fileName_tFileOutputDelimited_1);
-				if (fileToDelete_tFileOutputDelimited_1.exists()) {
-					fileToDelete_tFileOutputDelimited_1.delete();
-				}
-				outtFileOutputDelimited_1 = new java.io.BufferedWriter(new java.io.OutputStreamWriter(
-						new java.io.FileOutputStream(fileName_tFileOutputDelimited_1, false), "ISO-8859-15"));
-				if (filetFileOutputDelimited_1.length() == 0) {
-					outtFileOutputDelimited_1.write("date");
-					outtFileOutputDelimited_1.write(OUT_DELIM_tFileOutputDelimited_1);
-					outtFileOutputDelimited_1.write("hashtag");
-					outtFileOutputDelimited_1.write(OUT_DELIM_tFileOutputDelimited_1);
-					outtFileOutputDelimited_1.write("country");
-					outtFileOutputDelimited_1.write(OUT_DELIM_tFileOutputDelimited_1);
-					outtFileOutputDelimited_1.write("s_positivos");
-					outtFileOutputDelimited_1.write(OUT_DELIM_ROWSEP_tFileOutputDelimited_1);
-					outtFileOutputDelimited_1.flush();
-				}
-
-				resourceMap.put("out_tFileOutputDelimited_1", outtFileOutputDelimited_1);
-				resourceMap.put("nb_line_tFileOutputDelimited_1", nb_line_tFileOutputDelimited_1);
-
-				/**
-				 * [tFileOutputDelimited_1 begin ] stop
-				 */
-
-				/**
-				 * [tAggregateRow_1_AGGIN begin ] start
-				 */
-
-				ok_Hash.put("tAggregateRow_1_AGGIN", false);
-				start_Hash.put("tAggregateRow_1_AGGIN", System.currentTimeMillis());
-
-				currentVirtualComponent = "tAggregateRow_1";
-
-				currentComponent = "tAggregateRow_1_AGGIN";
-
-				int tos_count_tAggregateRow_1_AGGIN = 0;
-
-				java.util.Collection<AggOperationStruct_tAggregateRow_1> values_tAggregateRow_1 = hash_tAggregateRow_1
-						.values();
-
-				globalMap.put("tAggregateRow_1_NB_LINE", values_tAggregateRow_1.size());
-
-				for (AggOperationStruct_tAggregateRow_1 aggregated_row_tAggregateRow_1 : values_tAggregateRow_1) { // G_AggR_600
-
-					/**
-					 * [tAggregateRow_1_AGGIN begin ] stop
-					 */
-
-					/**
-					 * [tAggregateRow_1_AGGIN main ] start
-					 */
-
-					currentVirtualComponent = "tAggregateRow_1";
-
-					currentComponent = "tAggregateRow_1_AGGIN";
-
-					row7.date = aggregated_row_tAggregateRow_1.date;
-
-					row7.hashtag = aggregated_row_tAggregateRow_1.hashtag;
-
-					row7.country = aggregated_row_tAggregateRow_1.country;
-					row7.s_positivos = aggregated_row_tAggregateRow_1.s_positivos_sum;
-
-					tos_count_tAggregateRow_1_AGGIN++;
-
-					/**
-					 * [tAggregateRow_1_AGGIN main ] stop
-					 */
-
-					/**
-					 * [tAggregateRow_1_AGGIN process_data_begin ] start
-					 */
-
-					currentVirtualComponent = "tAggregateRow_1";
-
-					currentComponent = "tAggregateRow_1_AGGIN";
-
-					/**
-					 * [tAggregateRow_1_AGGIN process_data_begin ] stop
-					 */
-
-					/**
-					 * [tFileOutputDelimited_1 main ] start
-					 */
-
-					currentComponent = "tFileOutputDelimited_1";
-
-					if (execStat) {
-						runStat.updateStatOnConnection(iterateId, 1, 1, "row7");
-					}
-
-					StringBuilder sb_tFileOutputDelimited_1 = new StringBuilder();
-					if (row7.date != null) {
-						sb_tFileOutputDelimited_1.append(row7.date);
-					}
-					sb_tFileOutputDelimited_1.append(OUT_DELIM_tFileOutputDelimited_1);
-					if (row7.hashtag != null) {
-						sb_tFileOutputDelimited_1.append(row7.hashtag);
-					}
-					sb_tFileOutputDelimited_1.append(OUT_DELIM_tFileOutputDelimited_1);
-					if (row7.country != null) {
-						sb_tFileOutputDelimited_1.append(row7.country);
-					}
-					sb_tFileOutputDelimited_1.append(OUT_DELIM_tFileOutputDelimited_1);
-					if (row7.s_positivos != null) {
-						sb_tFileOutputDelimited_1.append(row7.s_positivos);
-					}
-					sb_tFileOutputDelimited_1.append(OUT_DELIM_ROWSEP_tFileOutputDelimited_1);
-
-					nb_line_tFileOutputDelimited_1++;
-					resourceMap.put("nb_line_tFileOutputDelimited_1", nb_line_tFileOutputDelimited_1);
-
-					outtFileOutputDelimited_1.write(sb_tFileOutputDelimited_1.toString());
-
-					tos_count_tFileOutputDelimited_1++;
-
-					/**
-					 * [tFileOutputDelimited_1 main ] stop
-					 */
-
-					/**
-					 * [tFileOutputDelimited_1 process_data_begin ] start
-					 */
-
-					currentComponent = "tFileOutputDelimited_1";
-
-					/**
-					 * [tFileOutputDelimited_1 process_data_begin ] stop
-					 */
-
-					/**
-					 * [tFileOutputDelimited_1 process_data_end ] start
-					 */
-
-					currentComponent = "tFileOutputDelimited_1";
-
-					/**
-					 * [tFileOutputDelimited_1 process_data_end ] stop
-					 */
-
-					/**
-					 * [tAggregateRow_1_AGGIN process_data_end ] start
-					 */
-
-					currentVirtualComponent = "tAggregateRow_1";
-
-					currentComponent = "tAggregateRow_1_AGGIN";
-
-					/**
-					 * [tAggregateRow_1_AGGIN process_data_end ] stop
-					 */
-
-					/**
-					 * [tAggregateRow_1_AGGIN end ] start
-					 */
-
-					currentVirtualComponent = "tAggregateRow_1";
-
-					currentComponent = "tAggregateRow_1_AGGIN";
-
-				} // G_AggR_600
-
-				ok_Hash.put("tAggregateRow_1_AGGIN", true);
-				end_Hash.put("tAggregateRow_1_AGGIN", System.currentTimeMillis());
-
-				/**
-				 * [tAggregateRow_1_AGGIN end ] stop
-				 */
-
-				/**
-				 * [tFileOutputDelimited_1 end ] start
-				 */
-
-				currentComponent = "tFileOutputDelimited_1";
-
-				if (outtFileOutputDelimited_1 != null) {
-					outtFileOutputDelimited_1.flush();
-					outtFileOutputDelimited_1.close();
-				}
-
-				globalMap.put("tFileOutputDelimited_1_NB_LINE", nb_line_tFileOutputDelimited_1);
-				globalMap.put("tFileOutputDelimited_1_FILE_NAME", fileName_tFileOutputDelimited_1);
-
-				resourceMap.put("finish_tFileOutputDelimited_1", true);
-
-				if (execStat) {
-					runStat.updateStat(resourceMap, iterateId, 2, 0, "row7");
-				}
-
-				ok_Hash.put("tFileOutputDelimited_1", true);
-				end_Hash.put("tFileOutputDelimited_1", System.currentTimeMillis());
-
-				/**
-				 * [tFileOutputDelimited_1 end ] stop
-				 */
-
-				/**
-				 * [tAggregateRow_2_AGGOUT end ] start
-				 */
-
-				currentVirtualComponent = "tAggregateRow_2";
-
-				currentComponent = "tAggregateRow_2_AGGOUT";
-
-				if (execStat) {
-					runStat.updateStat(resourceMap, iterateId, 2, 0, "neg");
-				}
-
-				ok_Hash.put("tAggregateRow_2_AGGOUT", true);
-				end_Hash.put("tAggregateRow_2_AGGOUT", System.currentTimeMillis());
-
-				/**
-				 * [tAggregateRow_2_AGGOUT end ] stop
-				 */
-
-				/**
-				 * [tFileOutputDelimited_2 begin ] start
-				 */
-
-				ok_Hash.put("tFileOutputDelimited_2", false);
-				start_Hash.put("tFileOutputDelimited_2", System.currentTimeMillis());
-
-				currentComponent = "tFileOutputDelimited_2";
-
-				if (execStat) {
-					runStat.updateStatOnConnection(resourceMap, iterateId, 0, 0, "row8");
-				}
-
-				int tos_count_tFileOutputDelimited_2 = 0;
-
-				String fileName_tFileOutputDelimited_2 = "";
-				fileName_tFileOutputDelimited_2 = (new java.io.File(
-						context.path_files_global + "documentations/mesures/sent_neg_in.csv")).getAbsolutePath()
-								.replace("\\", "/");
-				String fullName_tFileOutputDelimited_2 = null;
-				String extension_tFileOutputDelimited_2 = null;
-				String directory_tFileOutputDelimited_2 = null;
-				if ((fileName_tFileOutputDelimited_2.indexOf("/") != -1)) {
-					if (fileName_tFileOutputDelimited_2.lastIndexOf(".") < fileName_tFileOutputDelimited_2
-							.lastIndexOf("/")) {
-						fullName_tFileOutputDelimited_2 = fileName_tFileOutputDelimited_2;
-						extension_tFileOutputDelimited_2 = "";
-					} else {
-						fullName_tFileOutputDelimited_2 = fileName_tFileOutputDelimited_2.substring(0,
-								fileName_tFileOutputDelimited_2.lastIndexOf("."));
-						extension_tFileOutputDelimited_2 = fileName_tFileOutputDelimited_2
-								.substring(fileName_tFileOutputDelimited_2.lastIndexOf("."));
-					}
-					directory_tFileOutputDelimited_2 = fileName_tFileOutputDelimited_2.substring(0,
-							fileName_tFileOutputDelimited_2.lastIndexOf("/"));
-				} else {
-					if (fileName_tFileOutputDelimited_2.lastIndexOf(".") != -1) {
-						fullName_tFileOutputDelimited_2 = fileName_tFileOutputDelimited_2.substring(0,
-								fileName_tFileOutputDelimited_2.lastIndexOf("."));
-						extension_tFileOutputDelimited_2 = fileName_tFileOutputDelimited_2
-								.substring(fileName_tFileOutputDelimited_2.lastIndexOf("."));
-					} else {
-						fullName_tFileOutputDelimited_2 = fileName_tFileOutputDelimited_2;
-						extension_tFileOutputDelimited_2 = "";
-					}
-					directory_tFileOutputDelimited_2 = "";
-				}
-				boolean isFileGenerated_tFileOutputDelimited_2 = true;
-				java.io.File filetFileOutputDelimited_2 = new java.io.File(fileName_tFileOutputDelimited_2);
-				globalMap.put("tFileOutputDelimited_2_FILE_NAME", fileName_tFileOutputDelimited_2);
-				if (filetFileOutputDelimited_2.exists()) {
-					throw new RuntimeException("The particular file \"" + filetFileOutputDelimited_2.getAbsoluteFile()
-							+ "\" already exist. If you want to overwrite the file, please uncheck the"
-							+ " \"Throw an error if the file already exist\" option in Advanced settings.");
-				}
-				int nb_line_tFileOutputDelimited_2 = 0;
-				int splitedFileNo_tFileOutputDelimited_2 = 0;
-				int currentRow_tFileOutputDelimited_2 = 0;
-
-				final String OUT_DELIM_tFileOutputDelimited_2 = /** Start field tFileOutputDelimited_2:FIELDSEPARATOR */
-						";"/** End field tFileOutputDelimited_2:FIELDSEPARATOR */
-				;
-
-				final String OUT_DELIM_ROWSEP_tFileOutputDelimited_2 = /**
-																		 * Start field
-																		 * tFileOutputDelimited_2:ROWSEPARATOR
-																		 */
-						"\n"/** End field tFileOutputDelimited_2:ROWSEPARATOR */
-				;
-
-				// create directory only if not exists
-				if (directory_tFileOutputDelimited_2 != null && directory_tFileOutputDelimited_2.trim().length() != 0) {
-					java.io.File dir_tFileOutputDelimited_2 = new java.io.File(directory_tFileOutputDelimited_2);
-					if (!dir_tFileOutputDelimited_2.exists()) {
-						dir_tFileOutputDelimited_2.mkdirs();
-					}
-				}
-
-				// routines.system.Row
-				java.io.Writer outtFileOutputDelimited_2 = null;
-
-				java.io.File fileToDelete_tFileOutputDelimited_2 = new java.io.File(fileName_tFileOutputDelimited_2);
-				if (fileToDelete_tFileOutputDelimited_2.exists()) {
-					fileToDelete_tFileOutputDelimited_2.delete();
-				}
-				outtFileOutputDelimited_2 = new java.io.BufferedWriter(new java.io.OutputStreamWriter(
-						new java.io.FileOutputStream(fileName_tFileOutputDelimited_2, false), "ISO-8859-15"));
-				if (filetFileOutputDelimited_2.length() == 0) {
-					outtFileOutputDelimited_2.write("date");
-					outtFileOutputDelimited_2.write(OUT_DELIM_tFileOutputDelimited_2);
-					outtFileOutputDelimited_2.write("hashtag");
-					outtFileOutputDelimited_2.write(OUT_DELIM_tFileOutputDelimited_2);
-					outtFileOutputDelimited_2.write("country");
-					outtFileOutputDelimited_2.write(OUT_DELIM_tFileOutputDelimited_2);
-					outtFileOutputDelimited_2.write("s_negativos");
-					outtFileOutputDelimited_2.write(OUT_DELIM_ROWSEP_tFileOutputDelimited_2);
-					outtFileOutputDelimited_2.flush();
-				}
-
-				resourceMap.put("out_tFileOutputDelimited_2", outtFileOutputDelimited_2);
-				resourceMap.put("nb_line_tFileOutputDelimited_2", nb_line_tFileOutputDelimited_2);
-
-				/**
-				 * [tFileOutputDelimited_2 begin ] stop
-				 */
-
-				/**
-				 * [tAggregateRow_2_AGGIN begin ] start
-				 */
-
-				ok_Hash.put("tAggregateRow_2_AGGIN", false);
-				start_Hash.put("tAggregateRow_2_AGGIN", System.currentTimeMillis());
-
-				currentVirtualComponent = "tAggregateRow_2";
-
-				currentComponent = "tAggregateRow_2_AGGIN";
-
-				int tos_count_tAggregateRow_2_AGGIN = 0;
-
-				java.util.Collection<AggOperationStruct_tAggregateRow_2> values_tAggregateRow_2 = hash_tAggregateRow_2
-						.values();
-
-				globalMap.put("tAggregateRow_2_NB_LINE", values_tAggregateRow_2.size());
-
-				for (AggOperationStruct_tAggregateRow_2 aggregated_row_tAggregateRow_2 : values_tAggregateRow_2) { // G_AggR_600
-
-					/**
-					 * [tAggregateRow_2_AGGIN begin ] stop
-					 */
-
-					/**
-					 * [tAggregateRow_2_AGGIN main ] start
-					 */
-
-					currentVirtualComponent = "tAggregateRow_2";
-
-					currentComponent = "tAggregateRow_2_AGGIN";
-
-					row8.date = aggregated_row_tAggregateRow_2.date;
-
-					row8.hashtag = aggregated_row_tAggregateRow_2.hashtag;
-
-					row8.country = aggregated_row_tAggregateRow_2.country;
-					row8.s_negativos = aggregated_row_tAggregateRow_2.s_negativos_sum;
-
-					tos_count_tAggregateRow_2_AGGIN++;
-
-					/**
-					 * [tAggregateRow_2_AGGIN main ] stop
-					 */
-
-					/**
-					 * [tAggregateRow_2_AGGIN process_data_begin ] start
-					 */
-
-					currentVirtualComponent = "tAggregateRow_2";
-
-					currentComponent = "tAggregateRow_2_AGGIN";
-
-					/**
-					 * [tAggregateRow_2_AGGIN process_data_begin ] stop
-					 */
-
-					/**
-					 * [tFileOutputDelimited_2 main ] start
-					 */
-
-					currentComponent = "tFileOutputDelimited_2";
-
-					if (execStat) {
-						runStat.updateStatOnConnection(iterateId, 1, 1, "row8");
-					}
-
-					StringBuilder sb_tFileOutputDelimited_2 = new StringBuilder();
-					if (row8.date != null) {
-						sb_tFileOutputDelimited_2.append(row8.date);
-					}
-					sb_tFileOutputDelimited_2.append(OUT_DELIM_tFileOutputDelimited_2);
-					if (row8.hashtag != null) {
-						sb_tFileOutputDelimited_2.append(row8.hashtag);
-					}
-					sb_tFileOutputDelimited_2.append(OUT_DELIM_tFileOutputDelimited_2);
-					if (row8.country != null) {
-						sb_tFileOutputDelimited_2.append(row8.country);
-					}
-					sb_tFileOutputDelimited_2.append(OUT_DELIM_tFileOutputDelimited_2);
-					if (row8.s_negativos != null) {
-						sb_tFileOutputDelimited_2.append(row8.s_negativos);
-					}
-					sb_tFileOutputDelimited_2.append(OUT_DELIM_ROWSEP_tFileOutputDelimited_2);
-
-					nb_line_tFileOutputDelimited_2++;
-					resourceMap.put("nb_line_tFileOutputDelimited_2", nb_line_tFileOutputDelimited_2);
-
-					outtFileOutputDelimited_2.write(sb_tFileOutputDelimited_2.toString());
-
-					tos_count_tFileOutputDelimited_2++;
-
-					/**
-					 * [tFileOutputDelimited_2 main ] stop
-					 */
-
-					/**
-					 * [tFileOutputDelimited_2 process_data_begin ] start
-					 */
-
-					currentComponent = "tFileOutputDelimited_2";
-
-					/**
-					 * [tFileOutputDelimited_2 process_data_begin ] stop
-					 */
-
-					/**
-					 * [tFileOutputDelimited_2 process_data_end ] start
-					 */
-
-					currentComponent = "tFileOutputDelimited_2";
-
-					/**
-					 * [tFileOutputDelimited_2 process_data_end ] stop
-					 */
-
-					/**
-					 * [tAggregateRow_2_AGGIN process_data_end ] start
-					 */
-
-					currentVirtualComponent = "tAggregateRow_2";
-
-					currentComponent = "tAggregateRow_2_AGGIN";
-
-					/**
-					 * [tAggregateRow_2_AGGIN process_data_end ] stop
-					 */
-
-					/**
-					 * [tAggregateRow_2_AGGIN end ] start
-					 */
-
-					currentVirtualComponent = "tAggregateRow_2";
-
-					currentComponent = "tAggregateRow_2_AGGIN";
-
-				} // G_AggR_600
-
-				ok_Hash.put("tAggregateRow_2_AGGIN", true);
-				end_Hash.put("tAggregateRow_2_AGGIN", System.currentTimeMillis());
-
-				/**
-				 * [tAggregateRow_2_AGGIN end ] stop
-				 */
-
-				/**
-				 * [tFileOutputDelimited_2 end ] start
-				 */
-
-				currentComponent = "tFileOutputDelimited_2";
-
-				if (outtFileOutputDelimited_2 != null) {
-					outtFileOutputDelimited_2.flush();
-					outtFileOutputDelimited_2.close();
-				}
-
-				globalMap.put("tFileOutputDelimited_2_NB_LINE", nb_line_tFileOutputDelimited_2);
-				globalMap.put("tFileOutputDelimited_2_FILE_NAME", fileName_tFileOutputDelimited_2);
-
-				resourceMap.put("finish_tFileOutputDelimited_2", true);
-
-				if (execStat) {
-					runStat.updateStat(resourceMap, iterateId, 2, 0, "row8");
-				}
-
-				ok_Hash.put("tFileOutputDelimited_2", true);
-				end_Hash.put("tFileOutputDelimited_2", System.currentTimeMillis());
-
-				/**
-				 * [tFileOutputDelimited_2 end ] stop
-				 */
-
-				/**
-				 * [tAggregateRow_4_AGGOUT end ] start
-				 */
-
-				currentVirtualComponent = "tAggregateRow_4";
-
-				currentComponent = "tAggregateRow_4_AGGOUT";
-
-				if (execStat) {
-					runStat.updateStat(resourceMap, iterateId, 2, 0, "cnt");
-				}
-
-				ok_Hash.put("tAggregateRow_4_AGGOUT", true);
-				end_Hash.put("tAggregateRow_4_AGGOUT", System.currentTimeMillis());
-
-				/**
-				 * [tAggregateRow_4_AGGOUT end ] stop
-				 */
-
-				/**
-				 * [tAggregateRow_5_AGGOUT begin ] start
-				 */
-
-				ok_Hash.put("tAggregateRow_5_AGGOUT", false);
-				start_Hash.put("tAggregateRow_5_AGGOUT", System.currentTimeMillis());
-
-				currentVirtualComponent = "tAggregateRow_5";
-
-				currentComponent = "tAggregateRow_5_AGGOUT";
-
-				if (execStat) {
-					runStat.updateStatOnConnection(resourceMap, iterateId, 0, 0, "c_post");
-				}
-
-				int tos_count_tAggregateRow_5_AGGOUT = 0;
+				
+		int tos_count_tAggregateRow_5_AGGOUT = 0;
+		
 
 // ------------ Seems it is not used
 
-				java.util.Map hashAggreg_tAggregateRow_5 = new java.util.HashMap();
+java.util.Map hashAggreg_tAggregateRow_5 = new java.util.HashMap(); 
 
 // ------------
 
-				class UtilClass_tAggregateRow_5 { // G_OutBegin_AggR_144
+	class UtilClass_tAggregateRow_5 { // G_OutBegin_AggR_144
 
-					public double sd(Double[] data) {
-						final int n = data.length;
-						if (n < 2) {
-							return Double.NaN;
-						}
-						double d1 = 0d;
-						double d2 = 0d;
+		public double sd(Double[] data) {
+	        final int n = data.length;
+        	if (n < 2) {
+	            return Double.NaN;
+        	}
+        	double d1 = 0d;
+        	double d2 =0d;
+	        
+	        for (int i = 0; i < data.length; i++) {
+            	d1 += (data[i]*data[i]);
+            	d2 += data[i];
+        	}
+        
+	        return Math.sqrt((n*d1 - d2*d2)/n/(n-1));
+	    }
+	    
+		public void checkedIADD(byte a, byte b, boolean checkTypeOverFlow, boolean checkUlp) {
+		    byte r = (byte) (a + b);
+		    if (checkTypeOverFlow && ((a ^ r) & (b ^ r)) < 0) {
+		        throw new RuntimeException(buildOverflowMessage(String.valueOf(a), String.valueOf(b), "'short/Short'", "'byte/Byte'"));
+		    }
+		}
+		
+		public void checkedIADD(short a, short b, boolean checkTypeOverFlow, boolean checkUlp) {
+		    short r = (short) (a + b);
+		    if (checkTypeOverFlow && ((a ^ r) & (b ^ r)) < 0) {
+		        throw new RuntimeException(buildOverflowMessage(String.valueOf(a), String.valueOf(b), "'int/Integer'", "'short/Short'"));
+		    }
+		}
+		
+		public void checkedIADD(int a, int b, boolean checkTypeOverFlow, boolean checkUlp) {
+		    int r = a + b;
+		    if (checkTypeOverFlow && ((a ^ r) & (b ^ r)) < 0) {
+		        throw new RuntimeException(buildOverflowMessage(String.valueOf(a), String.valueOf(b), "'long/Long'", "'int/Integer'"));
+		    }
+		}
+		
+		public void checkedIADD(long a, long b, boolean checkTypeOverFlow, boolean checkUlp) {
+		    long r = a + b;
+		    if (checkTypeOverFlow && ((a ^ r) & (b ^ r)) < 0) {
+		        throw new RuntimeException(buildOverflowMessage(String.valueOf(a), String.valueOf(b), "'BigDecimal'", "'long/Long'"));
+		    }
+		}
+		
+		public void checkedIADD(float a, float b, boolean checkTypeOverFlow, boolean checkUlp) {
+		
+			if(checkUlp) {
+			    float minAddedValue = Math.ulp(a);
+			    if (minAddedValue > Math.abs(b)) {
+			        throw new RuntimeException(buildPrecisionMessage(String.valueOf(a), String.valueOf(b), "'double' or 'BigDecimal'", "'float/Float'"));
+			    }
+			}
+			
+		    if (checkTypeOverFlow && ((double) a + (double) b > (double) Float.MAX_VALUE) || ((double) a + (double) b < (double) -Float.MAX_VALUE)) {
+		        throw new RuntimeException(buildOverflowMessage(String.valueOf(a), String.valueOf(b), "'double' or 'BigDecimal'", "'float/Float'"));
+		    }
+		}
+		
+		public void checkedIADD(double a, double b, boolean checkTypeOverFlow, boolean checkUlp) {
+		
+			if(checkUlp) {
+			    double minAddedValue = Math.ulp(a);
+			    if (minAddedValue > Math.abs(b)) {
+			        throw new RuntimeException(buildPrecisionMessage(String.valueOf(a), String.valueOf(a), "'BigDecimal'", "'double/Double'"));
+			    }
+			}
+		
+		    if (checkTypeOverFlow && (a + b > (double) Double.MAX_VALUE) || (a + b < -Double.MAX_VALUE )) {
+		        throw new RuntimeException(buildOverflowMessage(String.valueOf(a), String.valueOf(b), "'BigDecimal'", "'double/Double'"));
+		    }
+		}
+		
+		public void checkedIADD(double a, byte b, boolean checkTypeOverFlow, boolean checkUlp) {
+		
+		    if (checkTypeOverFlow && (a + b > (double) Double.MAX_VALUE) || (a + b < -Double.MAX_VALUE )) {
+		        throw new RuntimeException(buildOverflowMessage(String.valueOf(a), String.valueOf(b), "'BigDecimal'", "'double/Double'"));
+		    }
+		}
+		
+		public void checkedIADD(double a, short b, boolean checkTypeOverFlow, boolean checkUlp) {
+		
+		    if (checkTypeOverFlow && (a + b > (double) Double.MAX_VALUE) || (a + b < -Double.MAX_VALUE )) {
+		        throw new RuntimeException(buildOverflowMessage(String.valueOf(a), String.valueOf(b), "'BigDecimal'", "'double/Double'"));
+		    }
+		}
+		
+		public void checkedIADD(double a, int b, boolean checkTypeOverFlow, boolean checkUlp) {
+		
+		    if (checkTypeOverFlow && (a + b > (double) Double.MAX_VALUE) || (a + b < -Double.MAX_VALUE )) {
+		        throw new RuntimeException(buildOverflowMessage(String.valueOf(a), String.valueOf(b), "'BigDecimal'", "'double/Double'"));
+		    }
+		}
+		
+		public void checkedIADD(double a, float b, boolean checkTypeOverFlow, boolean checkUlp) {
+		
+			if(checkUlp) {
+			    double minAddedValue = Math.ulp(a);
+			    if (minAddedValue > Math.abs(b)) {
+			        throw new RuntimeException(buildPrecisionMessage(String.valueOf(a), String.valueOf(a), "'BigDecimal'", "'double/Double'"));
+			    }
+			}
+		
+		    if (checkTypeOverFlow && (a + b > (double) Double.MAX_VALUE) || (a + b < -Double.MAX_VALUE )) {
+		        throw new RuntimeException(buildOverflowMessage(String.valueOf(a), String.valueOf(b), "'BigDecimal'", "'double/Double'"));
+		    }
+		}
+		
+		private String buildOverflowMessage(String a, String b, String advicedTypes, String originalType) {
+		    return "Type overflow when adding " + b + " to " + a
+		    + ", to resolve this problem, increase the precision by using "+ advicedTypes +" type in place of "+ originalType +".";
+		}
+		
+		private String buildPrecisionMessage(String a, String b, String advicedTypes, String originalType) {
+		    return "The double precision is unsufficient to add the value " + b + " to " + a
+		    + ", to resolve this problem, increase the precision by using "+ advicedTypes +" type in place of "+ originalType +".";
+		}
 
-						for (int i = 0; i < data.length; i++) {
-							d1 += (data[i] * data[i]);
-							d2 += data[i];
-						}
+	} // G_OutBegin_AggR_144
 
-						return Math.sqrt((n * d1 - d2 * d2) / n / (n - 1));
-					}
+	UtilClass_tAggregateRow_5 utilClass_tAggregateRow_5 = new UtilClass_tAggregateRow_5();
 
-					public void checkedIADD(byte a, byte b, boolean checkTypeOverFlow, boolean checkUlp) {
-						byte r = (byte) (a + b);
-						if (checkTypeOverFlow && ((a ^ r) & (b ^ r)) < 0) {
-							throw new RuntimeException(buildOverflowMessage(String.valueOf(a), String.valueOf(b),
-									"'short/Short'", "'byte/Byte'"));
-						}
-					}
+	
 
-					public void checkedIADD(short a, short b, boolean checkTypeOverFlow, boolean checkUlp) {
-						short r = (short) (a + b);
-						if (checkTypeOverFlow && ((a ^ r) & (b ^ r)) < 0) {
-							throw new RuntimeException(buildOverflowMessage(String.valueOf(a), String.valueOf(b),
-									"'int/Integer'", "'short/Short'"));
-						}
-					}
+	class AggOperationStruct_tAggregateRow_5 { // G_OutBegin_AggR_100
 
-					public void checkedIADD(int a, int b, boolean checkTypeOverFlow, boolean checkUlp) {
-						int r = a + b;
-						if (checkTypeOverFlow && ((a ^ r) & (b ^ r)) < 0) {
-							throw new RuntimeException(buildOverflowMessage(String.valueOf(a), String.valueOf(b),
-									"'long/Long'", "'int/Integer'"));
-						}
-					}
+		private static final int DEFAULT_HASHCODE = 1;
+	    private static final int PRIME = 31;
+	    private int hashCode = DEFAULT_HASHCODE;
+	    public boolean hashCodeDirty = true;
 
-					public void checkedIADD(long a, long b, boolean checkTypeOverFlow, boolean checkUlp) {
-						long r = a + b;
-						if (checkTypeOverFlow && ((a ^ r) & (b ^ r)) < 0) {
-							throw new RuntimeException(buildOverflowMessage(String.valueOf(a), String.valueOf(b),
-									"'BigDecimal'", "'long/Long'"));
-						}
-					}
-
-					public void checkedIADD(float a, float b, boolean checkTypeOverFlow, boolean checkUlp) {
-
-						if (checkUlp) {
-							float minAddedValue = Math.ulp(a);
-							if (minAddedValue > Math.abs(b)) {
-								throw new RuntimeException(buildPrecisionMessage(String.valueOf(a), String.valueOf(b),
-										"'double' or 'BigDecimal'", "'float/Float'"));
-							}
-						}
-
-						if (checkTypeOverFlow && ((double) a + (double) b > (double) Float.MAX_VALUE)
-								|| ((double) a + (double) b < (double) -Float.MAX_VALUE)) {
-							throw new RuntimeException(buildOverflowMessage(String.valueOf(a), String.valueOf(b),
-									"'double' or 'BigDecimal'", "'float/Float'"));
-						}
-					}
-
-					public void checkedIADD(double a, double b, boolean checkTypeOverFlow, boolean checkUlp) {
-
-						if (checkUlp) {
-							double minAddedValue = Math.ulp(a);
-							if (minAddedValue > Math.abs(b)) {
-								throw new RuntimeException(buildPrecisionMessage(String.valueOf(a), String.valueOf(a),
-										"'BigDecimal'", "'double/Double'"));
-							}
-						}
-
-						if (checkTypeOverFlow && (a + b > (double) Double.MAX_VALUE) || (a + b < -Double.MAX_VALUE)) {
-							throw new RuntimeException(buildOverflowMessage(String.valueOf(a), String.valueOf(b),
-									"'BigDecimal'", "'double/Double'"));
-						}
-					}
-
-					public void checkedIADD(double a, byte b, boolean checkTypeOverFlow, boolean checkUlp) {
-
-						if (checkTypeOverFlow && (a + b > (double) Double.MAX_VALUE) || (a + b < -Double.MAX_VALUE)) {
-							throw new RuntimeException(buildOverflowMessage(String.valueOf(a), String.valueOf(b),
-									"'BigDecimal'", "'double/Double'"));
-						}
-					}
-
-					public void checkedIADD(double a, short b, boolean checkTypeOverFlow, boolean checkUlp) {
-
-						if (checkTypeOverFlow && (a + b > (double) Double.MAX_VALUE) || (a + b < -Double.MAX_VALUE)) {
-							throw new RuntimeException(buildOverflowMessage(String.valueOf(a), String.valueOf(b),
-									"'BigDecimal'", "'double/Double'"));
-						}
-					}
-
-					public void checkedIADD(double a, int b, boolean checkTypeOverFlow, boolean checkUlp) {
-
-						if (checkTypeOverFlow && (a + b > (double) Double.MAX_VALUE) || (a + b < -Double.MAX_VALUE)) {
-							throw new RuntimeException(buildOverflowMessage(String.valueOf(a), String.valueOf(b),
-									"'BigDecimal'", "'double/Double'"));
-						}
-					}
-
-					public void checkedIADD(double a, float b, boolean checkTypeOverFlow, boolean checkUlp) {
-
-						if (checkUlp) {
-							double minAddedValue = Math.ulp(a);
-							if (minAddedValue > Math.abs(b)) {
-								throw new RuntimeException(buildPrecisionMessage(String.valueOf(a), String.valueOf(a),
-										"'BigDecimal'", "'double/Double'"));
-							}
-						}
-
-						if (checkTypeOverFlow && (a + b > (double) Double.MAX_VALUE) || (a + b < -Double.MAX_VALUE)) {
-							throw new RuntimeException(buildOverflowMessage(String.valueOf(a), String.valueOf(b),
-									"'BigDecimal'", "'double/Double'"));
-						}
-					}
-
-					private String buildOverflowMessage(String a, String b, String advicedTypes, String originalType) {
-						return "Type overflow when adding " + b + " to " + a
-								+ ", to resolve this problem, increase the precision by using " + advicedTypes
-								+ " type in place of " + originalType + ".";
-					}
-
-					private String buildPrecisionMessage(String a, String b, String advicedTypes, String originalType) {
-						return "The double precision is unsufficient to add the value " + b + " to " + a
-								+ ", to resolve this problem, increase the precision by using " + advicedTypes
-								+ " type in place of " + originalType + ".";
-					}
-
-				} // G_OutBegin_AggR_144
-
-				UtilClass_tAggregateRow_5 utilClass_tAggregateRow_5 = new UtilClass_tAggregateRow_5();
-
-				class AggOperationStruct_tAggregateRow_5 { // G_OutBegin_AggR_100
-
-					private static final int DEFAULT_HASHCODE = 1;
-					private static final int PRIME = 31;
-					private int hashCode = DEFAULT_HASHCODE;
-					public boolean hashCodeDirty = true;
-
-					java.util.Date date;
-					String hashtag;
-					String country;
-					Integer c_positives_sum;
-
-					@Override
-					public int hashCode() {
-						if (this.hashCodeDirty) {
-							final int prime = PRIME;
-							int result = DEFAULT_HASHCODE;
-
+    				java.util.Date date;
+    				String hashtag;
+    				String country;
+         			Integer c_positives_sum;
+        
+	    @Override
+		public int hashCode() {
+			if (this.hashCodeDirty) {
+				final int prime = PRIME;
+				int result = DEFAULT_HASHCODE;
+		
 							result = prime * result + ((this.date == null) ? 0 : this.date.hashCode());
-
+							
 							result = prime * result + ((this.hashtag == null) ? 0 : this.hashtag.hashCode());
-
+							
 							result = prime * result + ((this.country == null) ? 0 : this.country.hashCode());
+							
+	    		this.hashCode = result;
+	    		this.hashCodeDirty = false;		
+			}
+			return this.hashCode;
+		}
+		
+		@Override
+		public boolean equals(Object obj) {
+			if (this == obj) return true;
+			if (obj == null) return false;
+			if (getClass() != obj.getClass()) return false;
+			final AggOperationStruct_tAggregateRow_5 other = (AggOperationStruct_tAggregateRow_5) obj;
+			
+							if (this.date == null) {
+								if (other.date != null) 
+									return false;
+							} else if (!this.date.equals(other.date)) 
+								return false;
+						
+							if (this.hashtag == null) {
+								if (other.hashtag != null) 
+									return false;
+							} else if (!this.hashtag.equals(other.hashtag)) 
+								return false;
+						
+							if (this.country == null) {
+								if (other.country != null) 
+									return false;
+							} else if (!this.country.equals(other.country)) 
+								return false;
+						
+			
+			return true;
+		}
+  
+        
+	} // G_OutBegin_AggR_100
 
-							this.hashCode = result;
-							this.hashCodeDirty = false;
-						}
-						return this.hashCode;
+	AggOperationStruct_tAggregateRow_5 operation_result_tAggregateRow_5 = null;
+	AggOperationStruct_tAggregateRow_5 operation_finder_tAggregateRow_5 = new AggOperationStruct_tAggregateRow_5();
+	java.util.Map<AggOperationStruct_tAggregateRow_5,AggOperationStruct_tAggregateRow_5> hash_tAggregateRow_5 = new java.util.HashMap<AggOperationStruct_tAggregateRow_5,AggOperationStruct_tAggregateRow_5>();
+	
+
+ 
+
+
+
+/**
+ * [tAggregateRow_5_AGGOUT begin ] stop
+ */
+
+
+
+
+	
+	/**
+	 * [tAggregateRow_6_AGGOUT begin ] start
+	 */
+
+	
+
+	
+		
+		ok_Hash.put("tAggregateRow_6_AGGOUT", false);
+		start_Hash.put("tAggregateRow_6_AGGOUT", System.currentTimeMillis());
+		
+	
+		currentVirtualComponent = "tAggregateRow_6";
+	
+	currentComponent="tAggregateRow_6_AGGOUT";
+
+	
+					if(execStat) {
+						runStat.updateStatOnConnection(resourceMap,iterateId,0,0,"c_negt");
 					}
-
-					@Override
-					public boolean equals(Object obj) {
-						if (this == obj)
-							return true;
-						if (obj == null)
-							return false;
-						if (getClass() != obj.getClass())
-							return false;
-						final AggOperationStruct_tAggregateRow_5 other = (AggOperationStruct_tAggregateRow_5) obj;
-
-						if (this.date == null) {
-							if (other.date != null)
-								return false;
-						} else if (!this.date.equals(other.date))
-							return false;
-
-						if (this.hashtag == null) {
-							if (other.hashtag != null)
-								return false;
-						} else if (!this.hashtag.equals(other.hashtag))
-							return false;
-
-						if (this.country == null) {
-							if (other.country != null)
-								return false;
-						} else if (!this.country.equals(other.country))
-							return false;
-
-						return true;
-					}
-
-				} // G_OutBegin_AggR_100
-
-				AggOperationStruct_tAggregateRow_5 operation_result_tAggregateRow_5 = null;
-				AggOperationStruct_tAggregateRow_5 operation_finder_tAggregateRow_5 = new AggOperationStruct_tAggregateRow_5();
-				java.util.Map<AggOperationStruct_tAggregateRow_5, AggOperationStruct_tAggregateRow_5> hash_tAggregateRow_5 = new java.util.HashMap<AggOperationStruct_tAggregateRow_5, AggOperationStruct_tAggregateRow_5>();
-
-				/**
-				 * [tAggregateRow_5_AGGOUT begin ] stop
-				 */
-
-				/**
-				 * [tAggregateRow_6_AGGOUT begin ] start
-				 */
-
-				ok_Hash.put("tAggregateRow_6_AGGOUT", false);
-				start_Hash.put("tAggregateRow_6_AGGOUT", System.currentTimeMillis());
-
-				currentVirtualComponent = "tAggregateRow_6";
-
-				currentComponent = "tAggregateRow_6_AGGOUT";
-
-				if (execStat) {
-					runStat.updateStatOnConnection(resourceMap, iterateId, 0, 0, "c_negt");
-				}
-
-				int tos_count_tAggregateRow_6_AGGOUT = 0;
+				
+		int tos_count_tAggregateRow_6_AGGOUT = 0;
+		
 
 // ------------ Seems it is not used
 
-				java.util.Map hashAggreg_tAggregateRow_6 = new java.util.HashMap();
+java.util.Map hashAggreg_tAggregateRow_6 = new java.util.HashMap(); 
 
 // ------------
 
-				class UtilClass_tAggregateRow_6 { // G_OutBegin_AggR_144
+	class UtilClass_tAggregateRow_6 { // G_OutBegin_AggR_144
 
-					public double sd(Double[] data) {
-						final int n = data.length;
-						if (n < 2) {
-							return Double.NaN;
-						}
-						double d1 = 0d;
-						double d2 = 0d;
+		public double sd(Double[] data) {
+	        final int n = data.length;
+        	if (n < 2) {
+	            return Double.NaN;
+        	}
+        	double d1 = 0d;
+        	double d2 =0d;
+	        
+	        for (int i = 0; i < data.length; i++) {
+            	d1 += (data[i]*data[i]);
+            	d2 += data[i];
+        	}
+        
+	        return Math.sqrt((n*d1 - d2*d2)/n/(n-1));
+	    }
+	    
+		public void checkedIADD(byte a, byte b, boolean checkTypeOverFlow, boolean checkUlp) {
+		    byte r = (byte) (a + b);
+		    if (checkTypeOverFlow && ((a ^ r) & (b ^ r)) < 0) {
+		        throw new RuntimeException(buildOverflowMessage(String.valueOf(a), String.valueOf(b), "'short/Short'", "'byte/Byte'"));
+		    }
+		}
+		
+		public void checkedIADD(short a, short b, boolean checkTypeOverFlow, boolean checkUlp) {
+		    short r = (short) (a + b);
+		    if (checkTypeOverFlow && ((a ^ r) & (b ^ r)) < 0) {
+		        throw new RuntimeException(buildOverflowMessage(String.valueOf(a), String.valueOf(b), "'int/Integer'", "'short/Short'"));
+		    }
+		}
+		
+		public void checkedIADD(int a, int b, boolean checkTypeOverFlow, boolean checkUlp) {
+		    int r = a + b;
+		    if (checkTypeOverFlow && ((a ^ r) & (b ^ r)) < 0) {
+		        throw new RuntimeException(buildOverflowMessage(String.valueOf(a), String.valueOf(b), "'long/Long'", "'int/Integer'"));
+		    }
+		}
+		
+		public void checkedIADD(long a, long b, boolean checkTypeOverFlow, boolean checkUlp) {
+		    long r = a + b;
+		    if (checkTypeOverFlow && ((a ^ r) & (b ^ r)) < 0) {
+		        throw new RuntimeException(buildOverflowMessage(String.valueOf(a), String.valueOf(b), "'BigDecimal'", "'long/Long'"));
+		    }
+		}
+		
+		public void checkedIADD(float a, float b, boolean checkTypeOverFlow, boolean checkUlp) {
+		
+			if(checkUlp) {
+			    float minAddedValue = Math.ulp(a);
+			    if (minAddedValue > Math.abs(b)) {
+			        throw new RuntimeException(buildPrecisionMessage(String.valueOf(a), String.valueOf(b), "'double' or 'BigDecimal'", "'float/Float'"));
+			    }
+			}
+			
+		    if (checkTypeOverFlow && ((double) a + (double) b > (double) Float.MAX_VALUE) || ((double) a + (double) b < (double) -Float.MAX_VALUE)) {
+		        throw new RuntimeException(buildOverflowMessage(String.valueOf(a), String.valueOf(b), "'double' or 'BigDecimal'", "'float/Float'"));
+		    }
+		}
+		
+		public void checkedIADD(double a, double b, boolean checkTypeOverFlow, boolean checkUlp) {
+		
+			if(checkUlp) {
+			    double minAddedValue = Math.ulp(a);
+			    if (minAddedValue > Math.abs(b)) {
+			        throw new RuntimeException(buildPrecisionMessage(String.valueOf(a), String.valueOf(a), "'BigDecimal'", "'double/Double'"));
+			    }
+			}
+		
+		    if (checkTypeOverFlow && (a + b > (double) Double.MAX_VALUE) || (a + b < -Double.MAX_VALUE )) {
+		        throw new RuntimeException(buildOverflowMessage(String.valueOf(a), String.valueOf(b), "'BigDecimal'", "'double/Double'"));
+		    }
+		}
+		
+		public void checkedIADD(double a, byte b, boolean checkTypeOverFlow, boolean checkUlp) {
+		
+		    if (checkTypeOverFlow && (a + b > (double) Double.MAX_VALUE) || (a + b < -Double.MAX_VALUE )) {
+		        throw new RuntimeException(buildOverflowMessage(String.valueOf(a), String.valueOf(b), "'BigDecimal'", "'double/Double'"));
+		    }
+		}
+		
+		public void checkedIADD(double a, short b, boolean checkTypeOverFlow, boolean checkUlp) {
+		
+		    if (checkTypeOverFlow && (a + b > (double) Double.MAX_VALUE) || (a + b < -Double.MAX_VALUE )) {
+		        throw new RuntimeException(buildOverflowMessage(String.valueOf(a), String.valueOf(b), "'BigDecimal'", "'double/Double'"));
+		    }
+		}
+		
+		public void checkedIADD(double a, int b, boolean checkTypeOverFlow, boolean checkUlp) {
+		
+		    if (checkTypeOverFlow && (a + b > (double) Double.MAX_VALUE) || (a + b < -Double.MAX_VALUE )) {
+		        throw new RuntimeException(buildOverflowMessage(String.valueOf(a), String.valueOf(b), "'BigDecimal'", "'double/Double'"));
+		    }
+		}
+		
+		public void checkedIADD(double a, float b, boolean checkTypeOverFlow, boolean checkUlp) {
+		
+			if(checkUlp) {
+			    double minAddedValue = Math.ulp(a);
+			    if (minAddedValue > Math.abs(b)) {
+			        throw new RuntimeException(buildPrecisionMessage(String.valueOf(a), String.valueOf(a), "'BigDecimal'", "'double/Double'"));
+			    }
+			}
+		
+		    if (checkTypeOverFlow && (a + b > (double) Double.MAX_VALUE) || (a + b < -Double.MAX_VALUE )) {
+		        throw new RuntimeException(buildOverflowMessage(String.valueOf(a), String.valueOf(b), "'BigDecimal'", "'double/Double'"));
+		    }
+		}
+		
+		private String buildOverflowMessage(String a, String b, String advicedTypes, String originalType) {
+		    return "Type overflow when adding " + b + " to " + a
+		    + ", to resolve this problem, increase the precision by using "+ advicedTypes +" type in place of "+ originalType +".";
+		}
+		
+		private String buildPrecisionMessage(String a, String b, String advicedTypes, String originalType) {
+		    return "The double precision is unsufficient to add the value " + b + " to " + a
+		    + ", to resolve this problem, increase the precision by using "+ advicedTypes +" type in place of "+ originalType +".";
+		}
 
-						for (int i = 0; i < data.length; i++) {
-							d1 += (data[i] * data[i]);
-							d2 += data[i];
-						}
+	} // G_OutBegin_AggR_144
 
-						return Math.sqrt((n * d1 - d2 * d2) / n / (n - 1));
-					}
+	UtilClass_tAggregateRow_6 utilClass_tAggregateRow_6 = new UtilClass_tAggregateRow_6();
 
-					public void checkedIADD(byte a, byte b, boolean checkTypeOverFlow, boolean checkUlp) {
-						byte r = (byte) (a + b);
-						if (checkTypeOverFlow && ((a ^ r) & (b ^ r)) < 0) {
-							throw new RuntimeException(buildOverflowMessage(String.valueOf(a), String.valueOf(b),
-									"'short/Short'", "'byte/Byte'"));
-						}
-					}
+	
 
-					public void checkedIADD(short a, short b, boolean checkTypeOverFlow, boolean checkUlp) {
-						short r = (short) (a + b);
-						if (checkTypeOverFlow && ((a ^ r) & (b ^ r)) < 0) {
-							throw new RuntimeException(buildOverflowMessage(String.valueOf(a), String.valueOf(b),
-									"'int/Integer'", "'short/Short'"));
-						}
-					}
+	class AggOperationStruct_tAggregateRow_6 { // G_OutBegin_AggR_100
 
-					public void checkedIADD(int a, int b, boolean checkTypeOverFlow, boolean checkUlp) {
-						int r = a + b;
-						if (checkTypeOverFlow && ((a ^ r) & (b ^ r)) < 0) {
-							throw new RuntimeException(buildOverflowMessage(String.valueOf(a), String.valueOf(b),
-									"'long/Long'", "'int/Integer'"));
-						}
-					}
+		private static final int DEFAULT_HASHCODE = 1;
+	    private static final int PRIME = 31;
+	    private int hashCode = DEFAULT_HASHCODE;
+	    public boolean hashCodeDirty = true;
 
-					public void checkedIADD(long a, long b, boolean checkTypeOverFlow, boolean checkUlp) {
-						long r = a + b;
-						if (checkTypeOverFlow && ((a ^ r) & (b ^ r)) < 0) {
-							throw new RuntimeException(buildOverflowMessage(String.valueOf(a), String.valueOf(b),
-									"'BigDecimal'", "'long/Long'"));
-						}
-					}
-
-					public void checkedIADD(float a, float b, boolean checkTypeOverFlow, boolean checkUlp) {
-
-						if (checkUlp) {
-							float minAddedValue = Math.ulp(a);
-							if (minAddedValue > Math.abs(b)) {
-								throw new RuntimeException(buildPrecisionMessage(String.valueOf(a), String.valueOf(b),
-										"'double' or 'BigDecimal'", "'float/Float'"));
-							}
-						}
-
-						if (checkTypeOverFlow && ((double) a + (double) b > (double) Float.MAX_VALUE)
-								|| ((double) a + (double) b < (double) -Float.MAX_VALUE)) {
-							throw new RuntimeException(buildOverflowMessage(String.valueOf(a), String.valueOf(b),
-									"'double' or 'BigDecimal'", "'float/Float'"));
-						}
-					}
-
-					public void checkedIADD(double a, double b, boolean checkTypeOverFlow, boolean checkUlp) {
-
-						if (checkUlp) {
-							double minAddedValue = Math.ulp(a);
-							if (minAddedValue > Math.abs(b)) {
-								throw new RuntimeException(buildPrecisionMessage(String.valueOf(a), String.valueOf(a),
-										"'BigDecimal'", "'double/Double'"));
-							}
-						}
-
-						if (checkTypeOverFlow && (a + b > (double) Double.MAX_VALUE) || (a + b < -Double.MAX_VALUE)) {
-							throw new RuntimeException(buildOverflowMessage(String.valueOf(a), String.valueOf(b),
-									"'BigDecimal'", "'double/Double'"));
-						}
-					}
-
-					public void checkedIADD(double a, byte b, boolean checkTypeOverFlow, boolean checkUlp) {
-
-						if (checkTypeOverFlow && (a + b > (double) Double.MAX_VALUE) || (a + b < -Double.MAX_VALUE)) {
-							throw new RuntimeException(buildOverflowMessage(String.valueOf(a), String.valueOf(b),
-									"'BigDecimal'", "'double/Double'"));
-						}
-					}
-
-					public void checkedIADD(double a, short b, boolean checkTypeOverFlow, boolean checkUlp) {
-
-						if (checkTypeOverFlow && (a + b > (double) Double.MAX_VALUE) || (a + b < -Double.MAX_VALUE)) {
-							throw new RuntimeException(buildOverflowMessage(String.valueOf(a), String.valueOf(b),
-									"'BigDecimal'", "'double/Double'"));
-						}
-					}
-
-					public void checkedIADD(double a, int b, boolean checkTypeOverFlow, boolean checkUlp) {
-
-						if (checkTypeOverFlow && (a + b > (double) Double.MAX_VALUE) || (a + b < -Double.MAX_VALUE)) {
-							throw new RuntimeException(buildOverflowMessage(String.valueOf(a), String.valueOf(b),
-									"'BigDecimal'", "'double/Double'"));
-						}
-					}
-
-					public void checkedIADD(double a, float b, boolean checkTypeOverFlow, boolean checkUlp) {
-
-						if (checkUlp) {
-							double minAddedValue = Math.ulp(a);
-							if (minAddedValue > Math.abs(b)) {
-								throw new RuntimeException(buildPrecisionMessage(String.valueOf(a), String.valueOf(a),
-										"'BigDecimal'", "'double/Double'"));
-							}
-						}
-
-						if (checkTypeOverFlow && (a + b > (double) Double.MAX_VALUE) || (a + b < -Double.MAX_VALUE)) {
-							throw new RuntimeException(buildOverflowMessage(String.valueOf(a), String.valueOf(b),
-									"'BigDecimal'", "'double/Double'"));
-						}
-					}
-
-					private String buildOverflowMessage(String a, String b, String advicedTypes, String originalType) {
-						return "Type overflow when adding " + b + " to " + a
-								+ ", to resolve this problem, increase the precision by using " + advicedTypes
-								+ " type in place of " + originalType + ".";
-					}
-
-					private String buildPrecisionMessage(String a, String b, String advicedTypes, String originalType) {
-						return "The double precision is unsufficient to add the value " + b + " to " + a
-								+ ", to resolve this problem, increase the precision by using " + advicedTypes
-								+ " type in place of " + originalType + ".";
-					}
-
-				} // G_OutBegin_AggR_144
-
-				UtilClass_tAggregateRow_6 utilClass_tAggregateRow_6 = new UtilClass_tAggregateRow_6();
-
-				class AggOperationStruct_tAggregateRow_6 { // G_OutBegin_AggR_100
-
-					private static final int DEFAULT_HASHCODE = 1;
-					private static final int PRIME = 31;
-					private int hashCode = DEFAULT_HASHCODE;
-					public boolean hashCodeDirty = true;
-
-					java.util.Date date;
-					String hashtag;
-					String country;
-					Integer c_negatives_sum;
-
-					@Override
-					public int hashCode() {
-						if (this.hashCodeDirty) {
-							final int prime = PRIME;
-							int result = DEFAULT_HASHCODE;
-
+    				java.util.Date date;
+    				String hashtag;
+    				String country;
+         			Integer c_negatives_sum;
+        
+	    @Override
+		public int hashCode() {
+			if (this.hashCodeDirty) {
+				final int prime = PRIME;
+				int result = DEFAULT_HASHCODE;
+		
 							result = prime * result + ((this.date == null) ? 0 : this.date.hashCode());
-
+							
 							result = prime * result + ((this.hashtag == null) ? 0 : this.hashtag.hashCode());
-
+							
 							result = prime * result + ((this.country == null) ? 0 : this.country.hashCode());
+							
+	    		this.hashCode = result;
+	    		this.hashCodeDirty = false;		
+			}
+			return this.hashCode;
+		}
+		
+		@Override
+		public boolean equals(Object obj) {
+			if (this == obj) return true;
+			if (obj == null) return false;
+			if (getClass() != obj.getClass()) return false;
+			final AggOperationStruct_tAggregateRow_6 other = (AggOperationStruct_tAggregateRow_6) obj;
+			
+							if (this.date == null) {
+								if (other.date != null) 
+									return false;
+							} else if (!this.date.equals(other.date)) 
+								return false;
+						
+							if (this.hashtag == null) {
+								if (other.hashtag != null) 
+									return false;
+							} else if (!this.hashtag.equals(other.hashtag)) 
+								return false;
+						
+							if (this.country == null) {
+								if (other.country != null) 
+									return false;
+							} else if (!this.country.equals(other.country)) 
+								return false;
+						
+			
+			return true;
+		}
+  
+        
+	} // G_OutBegin_AggR_100
 
-							this.hashCode = result;
-							this.hashCodeDirty = false;
-						}
-						return this.hashCode;
+	AggOperationStruct_tAggregateRow_6 operation_result_tAggregateRow_6 = null;
+	AggOperationStruct_tAggregateRow_6 operation_finder_tAggregateRow_6 = new AggOperationStruct_tAggregateRow_6();
+	java.util.Map<AggOperationStruct_tAggregateRow_6,AggOperationStruct_tAggregateRow_6> hash_tAggregateRow_6 = new java.util.HashMap<AggOperationStruct_tAggregateRow_6,AggOperationStruct_tAggregateRow_6>();
+	
+
+ 
+
+
+
+/**
+ * [tAggregateRow_6_AGGOUT begin ] stop
+ */
+
+
+
+
+	
+	/**
+	 * [tAggregateRow_7_AGGOUT begin ] start
+	 */
+
+	
+
+	
+		
+		ok_Hash.put("tAggregateRow_7_AGGOUT", false);
+		start_Hash.put("tAggregateRow_7_AGGOUT", System.currentTimeMillis());
+		
+	
+		currentVirtualComponent = "tAggregateRow_7";
+	
+	currentComponent="tAggregateRow_7_AGGOUT";
+
+	
+					if(execStat) {
+						runStat.updateStatOnConnection(resourceMap,iterateId,0,0,"count_in");
 					}
-
-					@Override
-					public boolean equals(Object obj) {
-						if (this == obj)
-							return true;
-						if (obj == null)
-							return false;
-						if (getClass() != obj.getClass())
-							return false;
-						final AggOperationStruct_tAggregateRow_6 other = (AggOperationStruct_tAggregateRow_6) obj;
-
-						if (this.date == null) {
-							if (other.date != null)
-								return false;
-						} else if (!this.date.equals(other.date))
-							return false;
-
-						if (this.hashtag == null) {
-							if (other.hashtag != null)
-								return false;
-						} else if (!this.hashtag.equals(other.hashtag))
-							return false;
-
-						if (this.country == null) {
-							if (other.country != null)
-								return false;
-						} else if (!this.country.equals(other.country))
-							return false;
-
-						return true;
-					}
-
-				} // G_OutBegin_AggR_100
-
-				AggOperationStruct_tAggregateRow_6 operation_result_tAggregateRow_6 = null;
-				AggOperationStruct_tAggregateRow_6 operation_finder_tAggregateRow_6 = new AggOperationStruct_tAggregateRow_6();
-				java.util.Map<AggOperationStruct_tAggregateRow_6, AggOperationStruct_tAggregateRow_6> hash_tAggregateRow_6 = new java.util.HashMap<AggOperationStruct_tAggregateRow_6, AggOperationStruct_tAggregateRow_6>();
-
-				/**
-				 * [tAggregateRow_6_AGGOUT begin ] stop
-				 */
-
-				/**
-				 * [tAggregateRow_7_AGGOUT begin ] start
-				 */
-
-				ok_Hash.put("tAggregateRow_7_AGGOUT", false);
-				start_Hash.put("tAggregateRow_7_AGGOUT", System.currentTimeMillis());
-
-				currentVirtualComponent = "tAggregateRow_7";
-
-				currentComponent = "tAggregateRow_7_AGGOUT";
-
-				if (execStat) {
-					runStat.updateStatOnConnection(resourceMap, iterateId, 0, 0, "count_in");
-				}
-
-				int tos_count_tAggregateRow_7_AGGOUT = 0;
+				
+		int tos_count_tAggregateRow_7_AGGOUT = 0;
+		
 
 // ------------ Seems it is not used
 
-				java.util.Map hashAggreg_tAggregateRow_7 = new java.util.HashMap();
+java.util.Map hashAggreg_tAggregateRow_7 = new java.util.HashMap(); 
 
 // ------------
 
-				class UtilClass_tAggregateRow_7 { // G_OutBegin_AggR_144
+	class UtilClass_tAggregateRow_7 { // G_OutBegin_AggR_144
 
-					public double sd(Double[] data) {
-						final int n = data.length;
-						if (n < 2) {
-							return Double.NaN;
-						}
-						double d1 = 0d;
-						double d2 = 0d;
+		public double sd(Double[] data) {
+	        final int n = data.length;
+        	if (n < 2) {
+	            return Double.NaN;
+        	}
+        	double d1 = 0d;
+        	double d2 =0d;
+	        
+	        for (int i = 0; i < data.length; i++) {
+            	d1 += (data[i]*data[i]);
+            	d2 += data[i];
+        	}
+        
+	        return Math.sqrt((n*d1 - d2*d2)/n/(n-1));
+	    }
+	    
+		public void checkedIADD(byte a, byte b, boolean checkTypeOverFlow, boolean checkUlp) {
+		    byte r = (byte) (a + b);
+		    if (checkTypeOverFlow && ((a ^ r) & (b ^ r)) < 0) {
+		        throw new RuntimeException(buildOverflowMessage(String.valueOf(a), String.valueOf(b), "'short/Short'", "'byte/Byte'"));
+		    }
+		}
+		
+		public void checkedIADD(short a, short b, boolean checkTypeOverFlow, boolean checkUlp) {
+		    short r = (short) (a + b);
+		    if (checkTypeOverFlow && ((a ^ r) & (b ^ r)) < 0) {
+		        throw new RuntimeException(buildOverflowMessage(String.valueOf(a), String.valueOf(b), "'int/Integer'", "'short/Short'"));
+		    }
+		}
+		
+		public void checkedIADD(int a, int b, boolean checkTypeOverFlow, boolean checkUlp) {
+		    int r = a + b;
+		    if (checkTypeOverFlow && ((a ^ r) & (b ^ r)) < 0) {
+		        throw new RuntimeException(buildOverflowMessage(String.valueOf(a), String.valueOf(b), "'long/Long'", "'int/Integer'"));
+		    }
+		}
+		
+		public void checkedIADD(long a, long b, boolean checkTypeOverFlow, boolean checkUlp) {
+		    long r = a + b;
+		    if (checkTypeOverFlow && ((a ^ r) & (b ^ r)) < 0) {
+		        throw new RuntimeException(buildOverflowMessage(String.valueOf(a), String.valueOf(b), "'BigDecimal'", "'long/Long'"));
+		    }
+		}
+		
+		public void checkedIADD(float a, float b, boolean checkTypeOverFlow, boolean checkUlp) {
+		
+			if(checkUlp) {
+			    float minAddedValue = Math.ulp(a);
+			    if (minAddedValue > Math.abs(b)) {
+			        throw new RuntimeException(buildPrecisionMessage(String.valueOf(a), String.valueOf(b), "'double' or 'BigDecimal'", "'float/Float'"));
+			    }
+			}
+			
+		    if (checkTypeOverFlow && ((double) a + (double) b > (double) Float.MAX_VALUE) || ((double) a + (double) b < (double) -Float.MAX_VALUE)) {
+		        throw new RuntimeException(buildOverflowMessage(String.valueOf(a), String.valueOf(b), "'double' or 'BigDecimal'", "'float/Float'"));
+		    }
+		}
+		
+		public void checkedIADD(double a, double b, boolean checkTypeOverFlow, boolean checkUlp) {
+		
+			if(checkUlp) {
+			    double minAddedValue = Math.ulp(a);
+			    if (minAddedValue > Math.abs(b)) {
+			        throw new RuntimeException(buildPrecisionMessage(String.valueOf(a), String.valueOf(a), "'BigDecimal'", "'double/Double'"));
+			    }
+			}
+		
+		    if (checkTypeOverFlow && (a + b > (double) Double.MAX_VALUE) || (a + b < -Double.MAX_VALUE )) {
+		        throw new RuntimeException(buildOverflowMessage(String.valueOf(a), String.valueOf(b), "'BigDecimal'", "'double/Double'"));
+		    }
+		}
+		
+		public void checkedIADD(double a, byte b, boolean checkTypeOverFlow, boolean checkUlp) {
+		
+		    if (checkTypeOverFlow && (a + b > (double) Double.MAX_VALUE) || (a + b < -Double.MAX_VALUE )) {
+		        throw new RuntimeException(buildOverflowMessage(String.valueOf(a), String.valueOf(b), "'BigDecimal'", "'double/Double'"));
+		    }
+		}
+		
+		public void checkedIADD(double a, short b, boolean checkTypeOverFlow, boolean checkUlp) {
+		
+		    if (checkTypeOverFlow && (a + b > (double) Double.MAX_VALUE) || (a + b < -Double.MAX_VALUE )) {
+		        throw new RuntimeException(buildOverflowMessage(String.valueOf(a), String.valueOf(b), "'BigDecimal'", "'double/Double'"));
+		    }
+		}
+		
+		public void checkedIADD(double a, int b, boolean checkTypeOverFlow, boolean checkUlp) {
+		
+		    if (checkTypeOverFlow && (a + b > (double) Double.MAX_VALUE) || (a + b < -Double.MAX_VALUE )) {
+		        throw new RuntimeException(buildOverflowMessage(String.valueOf(a), String.valueOf(b), "'BigDecimal'", "'double/Double'"));
+		    }
+		}
+		
+		public void checkedIADD(double a, float b, boolean checkTypeOverFlow, boolean checkUlp) {
+		
+			if(checkUlp) {
+			    double minAddedValue = Math.ulp(a);
+			    if (minAddedValue > Math.abs(b)) {
+			        throw new RuntimeException(buildPrecisionMessage(String.valueOf(a), String.valueOf(a), "'BigDecimal'", "'double/Double'"));
+			    }
+			}
+		
+		    if (checkTypeOverFlow && (a + b > (double) Double.MAX_VALUE) || (a + b < -Double.MAX_VALUE )) {
+		        throw new RuntimeException(buildOverflowMessage(String.valueOf(a), String.valueOf(b), "'BigDecimal'", "'double/Double'"));
+		    }
+		}
+		
+		private String buildOverflowMessage(String a, String b, String advicedTypes, String originalType) {
+		    return "Type overflow when adding " + b + " to " + a
+		    + ", to resolve this problem, increase the precision by using "+ advicedTypes +" type in place of "+ originalType +".";
+		}
+		
+		private String buildPrecisionMessage(String a, String b, String advicedTypes, String originalType) {
+		    return "The double precision is unsufficient to add the value " + b + " to " + a
+		    + ", to resolve this problem, increase the precision by using "+ advicedTypes +" type in place of "+ originalType +".";
+		}
 
-						for (int i = 0; i < data.length; i++) {
-							d1 += (data[i] * data[i]);
-							d2 += data[i];
-						}
+	} // G_OutBegin_AggR_144
 
-						return Math.sqrt((n * d1 - d2 * d2) / n / (n - 1));
-					}
+	UtilClass_tAggregateRow_7 utilClass_tAggregateRow_7 = new UtilClass_tAggregateRow_7();
 
-					public void checkedIADD(byte a, byte b, boolean checkTypeOverFlow, boolean checkUlp) {
-						byte r = (byte) (a + b);
-						if (checkTypeOverFlow && ((a ^ r) & (b ^ r)) < 0) {
-							throw new RuntimeException(buildOverflowMessage(String.valueOf(a), String.valueOf(b),
-									"'short/Short'", "'byte/Byte'"));
-						}
-					}
+	
 
-					public void checkedIADD(short a, short b, boolean checkTypeOverFlow, boolean checkUlp) {
-						short r = (short) (a + b);
-						if (checkTypeOverFlow && ((a ^ r) & (b ^ r)) < 0) {
-							throw new RuntimeException(buildOverflowMessage(String.valueOf(a), String.valueOf(b),
-									"'int/Integer'", "'short/Short'"));
-						}
-					}
+	class AggOperationStruct_tAggregateRow_7 { // G_OutBegin_AggR_100
 
-					public void checkedIADD(int a, int b, boolean checkTypeOverFlow, boolean checkUlp) {
-						int r = a + b;
-						if (checkTypeOverFlow && ((a ^ r) & (b ^ r)) < 0) {
-							throw new RuntimeException(buildOverflowMessage(String.valueOf(a), String.valueOf(b),
-									"'long/Long'", "'int/Integer'"));
-						}
-					}
+		private static final int DEFAULT_HASHCODE = 1;
+	    private static final int PRIME = 31;
+	    private int hashCode = DEFAULT_HASHCODE;
+	    public boolean hashCodeDirty = true;
 
-					public void checkedIADD(long a, long b, boolean checkTypeOverFlow, boolean checkUlp) {
-						long r = a + b;
-						if (checkTypeOverFlow && ((a ^ r) & (b ^ r)) < 0) {
-							throw new RuntimeException(buildOverflowMessage(String.valueOf(a), String.valueOf(b),
-									"'BigDecimal'", "'long/Long'"));
-						}
-					}
-
-					public void checkedIADD(float a, float b, boolean checkTypeOverFlow, boolean checkUlp) {
-
-						if (checkUlp) {
-							float minAddedValue = Math.ulp(a);
-							if (minAddedValue > Math.abs(b)) {
-								throw new RuntimeException(buildPrecisionMessage(String.valueOf(a), String.valueOf(b),
-										"'double' or 'BigDecimal'", "'float/Float'"));
-							}
-						}
-
-						if (checkTypeOverFlow && ((double) a + (double) b > (double) Float.MAX_VALUE)
-								|| ((double) a + (double) b < (double) -Float.MAX_VALUE)) {
-							throw new RuntimeException(buildOverflowMessage(String.valueOf(a), String.valueOf(b),
-									"'double' or 'BigDecimal'", "'float/Float'"));
-						}
-					}
-
-					public void checkedIADD(double a, double b, boolean checkTypeOverFlow, boolean checkUlp) {
-
-						if (checkUlp) {
-							double minAddedValue = Math.ulp(a);
-							if (minAddedValue > Math.abs(b)) {
-								throw new RuntimeException(buildPrecisionMessage(String.valueOf(a), String.valueOf(a),
-										"'BigDecimal'", "'double/Double'"));
-							}
-						}
-
-						if (checkTypeOverFlow && (a + b > (double) Double.MAX_VALUE) || (a + b < -Double.MAX_VALUE)) {
-							throw new RuntimeException(buildOverflowMessage(String.valueOf(a), String.valueOf(b),
-									"'BigDecimal'", "'double/Double'"));
-						}
-					}
-
-					public void checkedIADD(double a, byte b, boolean checkTypeOverFlow, boolean checkUlp) {
-
-						if (checkTypeOverFlow && (a + b > (double) Double.MAX_VALUE) || (a + b < -Double.MAX_VALUE)) {
-							throw new RuntimeException(buildOverflowMessage(String.valueOf(a), String.valueOf(b),
-									"'BigDecimal'", "'double/Double'"));
-						}
-					}
-
-					public void checkedIADD(double a, short b, boolean checkTypeOverFlow, boolean checkUlp) {
-
-						if (checkTypeOverFlow && (a + b > (double) Double.MAX_VALUE) || (a + b < -Double.MAX_VALUE)) {
-							throw new RuntimeException(buildOverflowMessage(String.valueOf(a), String.valueOf(b),
-									"'BigDecimal'", "'double/Double'"));
-						}
-					}
-
-					public void checkedIADD(double a, int b, boolean checkTypeOverFlow, boolean checkUlp) {
-
-						if (checkTypeOverFlow && (a + b > (double) Double.MAX_VALUE) || (a + b < -Double.MAX_VALUE)) {
-							throw new RuntimeException(buildOverflowMessage(String.valueOf(a), String.valueOf(b),
-									"'BigDecimal'", "'double/Double'"));
-						}
-					}
-
-					public void checkedIADD(double a, float b, boolean checkTypeOverFlow, boolean checkUlp) {
-
-						if (checkUlp) {
-							double minAddedValue = Math.ulp(a);
-							if (minAddedValue > Math.abs(b)) {
-								throw new RuntimeException(buildPrecisionMessage(String.valueOf(a), String.valueOf(a),
-										"'BigDecimal'", "'double/Double'"));
-							}
-						}
-
-						if (checkTypeOverFlow && (a + b > (double) Double.MAX_VALUE) || (a + b < -Double.MAX_VALUE)) {
-							throw new RuntimeException(buildOverflowMessage(String.valueOf(a), String.valueOf(b),
-									"'BigDecimal'", "'double/Double'"));
-						}
-					}
-
-					private String buildOverflowMessage(String a, String b, String advicedTypes, String originalType) {
-						return "Type overflow when adding " + b + " to " + a
-								+ ", to resolve this problem, increase the precision by using " + advicedTypes
-								+ " type in place of " + originalType + ".";
-					}
-
-					private String buildPrecisionMessage(String a, String b, String advicedTypes, String originalType) {
-						return "The double precision is unsufficient to add the value " + b + " to " + a
-								+ ", to resolve this problem, increase the precision by using " + advicedTypes
-								+ " type in place of " + originalType + ".";
-					}
-
-				} // G_OutBegin_AggR_144
-
-				UtilClass_tAggregateRow_7 utilClass_tAggregateRow_7 = new UtilClass_tAggregateRow_7();
-
-				class AggOperationStruct_tAggregateRow_7 { // G_OutBegin_AggR_100
-
-					private static final int DEFAULT_HASHCODE = 1;
-					private static final int PRIME = 31;
-					private int hashCode = DEFAULT_HASHCODE;
-					public boolean hashCodeDirty = true;
-
-					java.util.Date date;
-					String hashtag;
-					String country;
-					Integer c_tweet_sum;
-
-					@Override
-					public int hashCode() {
-						if (this.hashCodeDirty) {
-							final int prime = PRIME;
-							int result = DEFAULT_HASHCODE;
-
+    				java.util.Date date;
+    				String hashtag;
+    				String country;
+         			Integer c_tweet_sum;
+        
+	    @Override
+		public int hashCode() {
+			if (this.hashCodeDirty) {
+				final int prime = PRIME;
+				int result = DEFAULT_HASHCODE;
+		
 							result = prime * result + ((this.date == null) ? 0 : this.date.hashCode());
-
+							
 							result = prime * result + ((this.hashtag == null) ? 0 : this.hashtag.hashCode());
-
+							
 							result = prime * result + ((this.country == null) ? 0 : this.country.hashCode());
+							
+	    		this.hashCode = result;
+	    		this.hashCodeDirty = false;		
+			}
+			return this.hashCode;
+		}
+		
+		@Override
+		public boolean equals(Object obj) {
+			if (this == obj) return true;
+			if (obj == null) return false;
+			if (getClass() != obj.getClass()) return false;
+			final AggOperationStruct_tAggregateRow_7 other = (AggOperationStruct_tAggregateRow_7) obj;
+			
+							if (this.date == null) {
+								if (other.date != null) 
+									return false;
+							} else if (!this.date.equals(other.date)) 
+								return false;
+						
+							if (this.hashtag == null) {
+								if (other.hashtag != null) 
+									return false;
+							} else if (!this.hashtag.equals(other.hashtag)) 
+								return false;
+						
+							if (this.country == null) {
+								if (other.country != null) 
+									return false;
+							} else if (!this.country.equals(other.country)) 
+								return false;
+						
+			
+			return true;
+		}
+  
+        
+	} // G_OutBegin_AggR_100
 
-							this.hashCode = result;
-							this.hashCodeDirty = false;
-						}
-						return this.hashCode;
+	AggOperationStruct_tAggregateRow_7 operation_result_tAggregateRow_7 = null;
+	AggOperationStruct_tAggregateRow_7 operation_finder_tAggregateRow_7 = new AggOperationStruct_tAggregateRow_7();
+	java.util.Map<AggOperationStruct_tAggregateRow_7,AggOperationStruct_tAggregateRow_7> hash_tAggregateRow_7 = new java.util.HashMap<AggOperationStruct_tAggregateRow_7,AggOperationStruct_tAggregateRow_7>();
+	
+
+ 
+
+
+
+/**
+ * [tAggregateRow_7_AGGOUT begin ] stop
+ */
+
+
+
+	
+	/**
+	 * [tMap_3 begin ] start
+	 */
+
+	
+
+	
+		
+		ok_Hash.put("tMap_3", false);
+		start_Hash.put("tMap_3", System.currentTimeMillis());
+		
+	
+	currentComponent="tMap_3";
+
+	
+					if(execStat) {
+						runStat.updateStatOnConnection(resourceMap,iterateId,0,0,"row10");
 					}
+				
+		int tos_count_tMap_3 = 0;
+		
 
-					@Override
-					public boolean equals(Object obj) {
-						if (this == obj)
-							return true;
-						if (obj == null)
-							return false;
-						if (getClass() != obj.getClass())
-							return false;
-						final AggOperationStruct_tAggregateRow_7 other = (AggOperationStruct_tAggregateRow_7) obj;
 
-						if (this.date == null) {
-							if (other.date != null)
-								return false;
-						} else if (!this.date.equals(other.date))
-							return false;
 
-						if (this.hashtag == null) {
-							if (other.hashtag != null)
-								return false;
-						} else if (!this.hashtag.equals(other.hashtag))
-							return false;
-
-						if (this.country == null) {
-							if (other.country != null)
-								return false;
-						} else if (!this.country.equals(other.country))
-							return false;
-
-						return true;
-					}
-
-				} // G_OutBegin_AggR_100
-
-				AggOperationStruct_tAggregateRow_7 operation_result_tAggregateRow_7 = null;
-				AggOperationStruct_tAggregateRow_7 operation_finder_tAggregateRow_7 = new AggOperationStruct_tAggregateRow_7();
-				java.util.Map<AggOperationStruct_tAggregateRow_7, AggOperationStruct_tAggregateRow_7> hash_tAggregateRow_7 = new java.util.HashMap<AggOperationStruct_tAggregateRow_7, AggOperationStruct_tAggregateRow_7>();
-
-				/**
-				 * [tAggregateRow_7_AGGOUT begin ] stop
-				 */
-
-				/**
-				 * [tMap_3 begin ] start
-				 */
-
-				ok_Hash.put("tMap_3", false);
-				start_Hash.put("tMap_3", System.currentTimeMillis());
-
-				currentComponent = "tMap_3";
-
-				if (execStat) {
-					runStat.updateStatOnConnection(resourceMap, iterateId, 0, 0, "row10");
-				}
-
-				int tos_count_tMap_3 = 0;
 
 // ###############################
 // # Lookup's keys initialization
@@ -10784,2746 +12223,4104 @@ public class s5_in_calcul_sentiments_depuis_donnees_tweets implements TalendJob 
 
 // ###############################
 // # Vars initialization
-				class Var__tMap_3__Struct {
-				}
-				Var__tMap_3__Struct Var__tMap_3 = new Var__tMap_3__Struct();
+class  Var__tMap_3__Struct  {
+}
+Var__tMap_3__Struct Var__tMap_3 = new Var__tMap_3__Struct();
 // ###############################
 
 // ###############################
 // # Outputs initialization
-				c_postStruct c_post_tmp = new c_postStruct();
-				c_negtStruct c_negt_tmp = new c_negtStruct();
-				count_inStruct count_in_tmp = new count_inStruct();
+c_postStruct c_post_tmp = new c_postStruct();
+c_negtStruct c_negt_tmp = new c_negtStruct();
+count_inStruct count_in_tmp = new count_inStruct();
 // ###############################
 
-				/**
-				 * [tMap_3 begin ] stop
-				 */
+        
+        
 
-				/**
-				 * [tAggregateRow_4_AGGIN begin ] start
-				 */
 
-				ok_Hash.put("tAggregateRow_4_AGGIN", false);
-				start_Hash.put("tAggregateRow_4_AGGIN", System.currentTimeMillis());
 
-				currentVirtualComponent = "tAggregateRow_4";
+        
 
-				currentComponent = "tAggregateRow_4_AGGIN";
 
-				int tos_count_tAggregateRow_4_AGGIN = 0;
 
-				java.util.Collection<AggOperationStruct_tAggregateRow_4> values_tAggregateRow_4 = hash_tAggregateRow_4
-						.values();
 
-				globalMap.put("tAggregateRow_4_NB_LINE", values_tAggregateRow_4.size());
 
-				for (AggOperationStruct_tAggregateRow_4 aggregated_row_tAggregateRow_4 : values_tAggregateRow_4) { // G_AggR_600
 
-					/**
-					 * [tAggregateRow_4_AGGIN begin ] stop
-					 */
 
-					/**
-					 * [tAggregateRow_4_AGGIN main ] start
-					 */
 
-					currentVirtualComponent = "tAggregateRow_4";
 
-					currentComponent = "tAggregateRow_4_AGGIN";
+ 
 
-					row10.date = aggregated_row_tAggregateRow_4.date;
 
-					row10.id = aggregated_row_tAggregateRow_4.id;
 
-					row10.hashtag = aggregated_row_tAggregateRow_4.hashtag;
+/**
+ * [tMap_3 begin ] stop
+ */
 
-					row10.country = aggregated_row_tAggregateRow_4.country;
-					row10.sentiment = aggregated_row_tAggregateRow_4.sentiment_sum;
 
-					tos_count_tAggregateRow_4_AGGIN++;
 
-					/**
-					 * [tAggregateRow_4_AGGIN main ] stop
-					 */
+	
+	/**
+	 * [tAggregateRow_4_AGGIN begin ] start
+	 */
 
-					/**
-					 * [tAggregateRow_4_AGGIN process_data_begin ] start
-					 */
+	
 
-					currentVirtualComponent = "tAggregateRow_4";
+	
+		
+		ok_Hash.put("tAggregateRow_4_AGGIN", false);
+		start_Hash.put("tAggregateRow_4_AGGIN", System.currentTimeMillis());
+		
+	
+		currentVirtualComponent = "tAggregateRow_4";
+	
+	currentComponent="tAggregateRow_4_AGGIN";
 
-					currentComponent = "tAggregateRow_4_AGGIN";
+	
+		int tos_count_tAggregateRow_4_AGGIN = 0;
+		
 
-					/**
-					 * [tAggregateRow_4_AGGIN process_data_begin ] stop
-					 */
+java.util.Collection<AggOperationStruct_tAggregateRow_4> values_tAggregateRow_4 = hash_tAggregateRow_4.values();
 
-					/**
-					 * [tMap_3 main ] start
-					 */
+globalMap.put("tAggregateRow_4_NB_LINE", values_tAggregateRow_4.size());
 
-					currentComponent = "tMap_3";
+for(AggOperationStruct_tAggregateRow_4 aggregated_row_tAggregateRow_4 : values_tAggregateRow_4) { // G_AggR_600
 
-					if (execStat) {
-						runStat.updateStatOnConnection(iterateId, 1, 1, "row10");
+
+
+ 
+
+
+
+/**
+ * [tAggregateRow_4_AGGIN begin ] stop
+ */
+	
+	/**
+	 * [tAggregateRow_4_AGGIN main ] start
+	 */
+
+	
+
+	
+	
+		currentVirtualComponent = "tAggregateRow_4";
+	
+	currentComponent="tAggregateRow_4_AGGIN";
+
+	
+
+            				    row10.date = aggregated_row_tAggregateRow_4.date;
+            				    
+            				    row10.id = aggregated_row_tAggregateRow_4.id;
+            				    
+            				    row10.hashtag = aggregated_row_tAggregateRow_4.hashtag;
+            				    
+            				    row10.country = aggregated_row_tAggregateRow_4.country;
+            				    row10.sentiment = aggregated_row_tAggregateRow_4.sentiment_sum;
+                                	
+
+ 
+
+
+	tos_count_tAggregateRow_4_AGGIN++;
+
+/**
+ * [tAggregateRow_4_AGGIN main ] stop
+ */
+	
+	/**
+	 * [tAggregateRow_4_AGGIN process_data_begin ] start
+	 */
+
+	
+
+	
+	
+		currentVirtualComponent = "tAggregateRow_4";
+	
+	currentComponent="tAggregateRow_4_AGGIN";
+
+	
+
+ 
+
+
+
+/**
+ * [tAggregateRow_4_AGGIN process_data_begin ] stop
+ */
+
+	
+	/**
+	 * [tMap_3 main ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tMap_3";
+
+	
+					if(execStat){
+						runStat.updateStatOnConnection(iterateId,1,1,"row10");
 					}
+					
 
-					boolean hasCasePrimitiveKeyWithNull_tMap_3 = false;
+		
+		
+		boolean hasCasePrimitiveKeyWithNull_tMap_3 = false;
+		
+        // ###############################
+        // # Input tables (lookups)
+		  boolean rejectedInnerJoin_tMap_3 = false;
+		  boolean mainRowRejected_tMap_3 = false;
+            				    								  
+		// ###############################
+        { // start of Var scope
+        
+	        // ###############################
+        	// # Vars tables
+        
+Var__tMap_3__Struct Var = Var__tMap_3;// ###############################
+        // ###############################
+        // # Output tables
 
-					// ###############################
-					// # Input tables (lookups)
-					boolean rejectedInnerJoin_tMap_3 = false;
-					boolean mainRowRejected_tMap_3 = false;
+c_post = null;
+c_negt = null;
+count_in = null;
 
-					// ###############################
-					{ // start of Var scope
-
-						// ###############################
-						// # Vars tables
-
-						Var__tMap_3__Struct Var = Var__tMap_3;// ###############################
-						// ###############################
-						// # Output tables
-
-						c_post = null;
-						c_negt = null;
-						count_in = null;
 
 // # Output table : 'c_post'
 // # Filter conditions 
-						if (
+if( 
 
-						row10.sentiment > 0
+row10.sentiment >0
 
-						) {
-							c_post_tmp.date = row10.date;
-							c_post_tmp.hashtag = row10.hashtag;
-							c_post_tmp.country = row10.country;
-							c_post_tmp.c_positives = (row10.sentiment > 0 ? 1 : 0);
-							c_post = c_post_tmp;
-						} // closing filter/reject
+ ) {
+c_post_tmp.date = row10.date ;
+c_post_tmp.hashtag = row10.hashtag ;
+c_post_tmp.country = row10.country;
+c_post_tmp.c_positives = (row10.sentiment>0?1:0) ;
+c_post = c_post_tmp;
+} // closing filter/reject
 
 // # Output table : 'c_negt'
 // # Filter conditions 
-						if (
+if( 
 
-						row10.sentiment < 0
+row10.sentiment <0
 
-						) {
-							c_negt_tmp.date = row10.date;
-							c_negt_tmp.hashtag = row10.hashtag;
-							c_negt_tmp.country = row10.country;
-							c_negt_tmp.c_negatives = (row10.sentiment < 0 ? 1 : 0);
-							c_negt = c_negt_tmp;
-						} // closing filter/reject
+ ) {
+c_negt_tmp.date = row10.date ;
+c_negt_tmp.hashtag = row10.hashtag ;
+c_negt_tmp.country = row10.country ;
+c_negt_tmp.c_negatives = (row10.sentiment<0?1:0) ;
+c_negt = c_negt_tmp;
+} // closing filter/reject
 
 // # Output table : 'count_in'
 // # Filter conditions 
-						if (
+if( 
 
-						row10.sentiment != 0
+row10.sentiment != 0
 
-						) {
-							count_in_tmp.date = row10.date;
-							count_in_tmp.hashtag = row10.hashtag;
-							count_in_tmp.country = row10.country;
-							count_in_tmp.c_tweet = (row10.sentiment != 0 ? 1 : 0);
-							count_in = count_in_tmp;
-						} // closing filter/reject
+ ) {
+count_in_tmp.date = row10.date ;
+count_in_tmp.hashtag = row10.hashtag ;
+count_in_tmp.country = row10.country ;
+count_in_tmp.c_tweet = (row10.sentiment != 0?1:0);
+count_in = count_in_tmp;
+} // closing filter/reject
 // ###############################
 
-					} // end of Var scope
+} // end of Var scope
 
-					rejectedInnerJoin_tMap_3 = false;
+rejectedInnerJoin_tMap_3 = false;
 
-					tos_count_tMap_3++;
 
-					/**
-					 * [tMap_3 main ] stop
-					 */
 
-					/**
-					 * [tMap_3 process_data_begin ] start
-					 */
 
-					currentComponent = "tMap_3";
 
-					/**
-					 * [tMap_3 process_data_begin ] stop
-					 */
+
+
+
+
+
+ 
+
+
+	tos_count_tMap_3++;
+
+/**
+ * [tMap_3 main ] stop
+ */
+	
+	/**
+	 * [tMap_3 process_data_begin ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tMap_3";
+
+	
+
+ 
+
+
+
+/**
+ * [tMap_3 process_data_begin ] stop
+ */
 // Start of branch "c_post"
-					if (c_post != null) {
+if(c_post != null) { 
 
-						/**
-						 * [tAggregateRow_5_AGGOUT main ] start
-						 */
 
-						currentVirtualComponent = "tAggregateRow_5";
 
-						currentComponent = "tAggregateRow_5_AGGOUT";
+	
+	/**
+	 * [tAggregateRow_5_AGGOUT main ] start
+	 */
 
-						if (execStat) {
-							runStat.updateStatOnConnection(iterateId, 1, 1, "c_post");
-						}
+	
 
-						operation_finder_tAggregateRow_5.date = c_post.date;
-						operation_finder_tAggregateRow_5.hashtag = c_post.hashtag;
-						operation_finder_tAggregateRow_5.country = c_post.country;
+	
+	
+		currentVirtualComponent = "tAggregateRow_5";
+	
+	currentComponent="tAggregateRow_5_AGGOUT";
 
-						operation_finder_tAggregateRow_5.hashCodeDirty = true;
+	
+					if(execStat){
+						runStat.updateStatOnConnection(iterateId,1,1,"c_post");
+					}
+					
+	
+operation_finder_tAggregateRow_5.date = c_post.date;
+			operation_finder_tAggregateRow_5.hashtag = c_post.hashtag;
+			operation_finder_tAggregateRow_5.country = c_post.country;
+			
 
-						operation_result_tAggregateRow_5 = hash_tAggregateRow_5.get(operation_finder_tAggregateRow_5);
+	operation_finder_tAggregateRow_5.hashCodeDirty = true;
+	
+	operation_result_tAggregateRow_5 = hash_tAggregateRow_5.get(operation_finder_tAggregateRow_5);
 
-						if (operation_result_tAggregateRow_5 == null) { // G_OutMain_AggR_001
+	
 
-							operation_result_tAggregateRow_5 = new AggOperationStruct_tAggregateRow_5();
+	if(operation_result_tAggregateRow_5 == null) { // G_OutMain_AggR_001
 
-							operation_result_tAggregateRow_5.date = operation_finder_tAggregateRow_5.date;
-							operation_result_tAggregateRow_5.hashtag = operation_finder_tAggregateRow_5.hashtag;
-							operation_result_tAggregateRow_5.country = operation_finder_tAggregateRow_5.country;
+		operation_result_tAggregateRow_5 = new AggOperationStruct_tAggregateRow_5();
 
-							hash_tAggregateRow_5.put(operation_result_tAggregateRow_5,
-									operation_result_tAggregateRow_5);
+		operation_result_tAggregateRow_5.date = operation_finder_tAggregateRow_5.date;
+				operation_result_tAggregateRow_5.hashtag = operation_finder_tAggregateRow_5.hashtag;
+				operation_result_tAggregateRow_5.country = operation_finder_tAggregateRow_5.country;
+				
+		
+		
 
-						} // G_OutMain_AggR_001
+		hash_tAggregateRow_5.put(operation_result_tAggregateRow_5, operation_result_tAggregateRow_5);
+	
+	} // G_OutMain_AggR_001
 
-						if (c_post.c_positives != null) { // G_OutMain_AggR_546
 
-							if (operation_result_tAggregateRow_5.c_positives_sum == null) {
-								operation_result_tAggregateRow_5.c_positives_sum = (int) 0;
-							}
+	
+				if(c_post.c_positives != null) { // G_OutMain_AggR_546
+				
+					if(operation_result_tAggregateRow_5.c_positives_sum == null) {
+						operation_result_tAggregateRow_5.c_positives_sum = (int) 0;
+					}
+					
+					if( c_post.c_positives != null)
+						operation_result_tAggregateRow_5.c_positives_sum += c_post.c_positives;
+				} // G_OutMain_AggR_546
+				
 
-							if (c_post.c_positives != null)
-								operation_result_tAggregateRow_5.c_positives_sum += c_post.c_positives;
-						} // G_OutMain_AggR_546
 
-						tos_count_tAggregateRow_5_AGGOUT++;
+ 
 
-						/**
-						 * [tAggregateRow_5_AGGOUT main ] stop
-						 */
 
-						/**
-						 * [tAggregateRow_5_AGGOUT process_data_begin ] start
-						 */
+	tos_count_tAggregateRow_5_AGGOUT++;
 
-						currentVirtualComponent = "tAggregateRow_5";
+/**
+ * [tAggregateRow_5_AGGOUT main ] stop
+ */
+	
+	/**
+	 * [tAggregateRow_5_AGGOUT process_data_begin ] start
+	 */
 
-						currentComponent = "tAggregateRow_5_AGGOUT";
+	
 
-						/**
-						 * [tAggregateRow_5_AGGOUT process_data_begin ] stop
-						 */
+	
+	
+		currentVirtualComponent = "tAggregateRow_5";
+	
+	currentComponent="tAggregateRow_5_AGGOUT";
 
-						/**
-						 * [tAggregateRow_5_AGGOUT process_data_end ] start
-						 */
+	
 
-						currentVirtualComponent = "tAggregateRow_5";
+ 
 
-						currentComponent = "tAggregateRow_5_AGGOUT";
 
-						/**
-						 * [tAggregateRow_5_AGGOUT process_data_end ] stop
-						 */
 
-					} // End of branch "c_post"
+/**
+ * [tAggregateRow_5_AGGOUT process_data_begin ] stop
+ */
+	
+	/**
+	 * [tAggregateRow_5_AGGOUT process_data_end ] start
+	 */
+
+	
+
+	
+	
+		currentVirtualComponent = "tAggregateRow_5";
+	
+	currentComponent="tAggregateRow_5_AGGOUT";
+
+	
+
+ 
+
+
+
+/**
+ * [tAggregateRow_5_AGGOUT process_data_end ] stop
+ */
+
+} // End of branch "c_post"
+
+
+
 
 // Start of branch "c_negt"
-					if (c_negt != null) {
+if(c_negt != null) { 
 
-						/**
-						 * [tAggregateRow_6_AGGOUT main ] start
-						 */
 
-						currentVirtualComponent = "tAggregateRow_6";
 
-						currentComponent = "tAggregateRow_6_AGGOUT";
+	
+	/**
+	 * [tAggregateRow_6_AGGOUT main ] start
+	 */
 
-						if (execStat) {
-							runStat.updateStatOnConnection(iterateId, 1, 1, "c_negt");
-						}
+	
 
-						operation_finder_tAggregateRow_6.date = c_negt.date;
-						operation_finder_tAggregateRow_6.hashtag = c_negt.hashtag;
-						operation_finder_tAggregateRow_6.country = c_negt.country;
+	
+	
+		currentVirtualComponent = "tAggregateRow_6";
+	
+	currentComponent="tAggregateRow_6_AGGOUT";
 
-						operation_finder_tAggregateRow_6.hashCodeDirty = true;
+	
+					if(execStat){
+						runStat.updateStatOnConnection(iterateId,1,1,"c_negt");
+					}
+					
+	
+operation_finder_tAggregateRow_6.date = c_negt.date;
+			operation_finder_tAggregateRow_6.hashtag = c_negt.hashtag;
+			operation_finder_tAggregateRow_6.country = c_negt.country;
+			
 
-						operation_result_tAggregateRow_6 = hash_tAggregateRow_6.get(operation_finder_tAggregateRow_6);
+	operation_finder_tAggregateRow_6.hashCodeDirty = true;
+	
+	operation_result_tAggregateRow_6 = hash_tAggregateRow_6.get(operation_finder_tAggregateRow_6);
 
-						if (operation_result_tAggregateRow_6 == null) { // G_OutMain_AggR_001
+	
 
-							operation_result_tAggregateRow_6 = new AggOperationStruct_tAggregateRow_6();
+	if(operation_result_tAggregateRow_6 == null) { // G_OutMain_AggR_001
 
-							operation_result_tAggregateRow_6.date = operation_finder_tAggregateRow_6.date;
-							operation_result_tAggregateRow_6.hashtag = operation_finder_tAggregateRow_6.hashtag;
-							operation_result_tAggregateRow_6.country = operation_finder_tAggregateRow_6.country;
+		operation_result_tAggregateRow_6 = new AggOperationStruct_tAggregateRow_6();
 
-							hash_tAggregateRow_6.put(operation_result_tAggregateRow_6,
-									operation_result_tAggregateRow_6);
+		operation_result_tAggregateRow_6.date = operation_finder_tAggregateRow_6.date;
+				operation_result_tAggregateRow_6.hashtag = operation_finder_tAggregateRow_6.hashtag;
+				operation_result_tAggregateRow_6.country = operation_finder_tAggregateRow_6.country;
+				
+		
+		
 
-						} // G_OutMain_AggR_001
+		hash_tAggregateRow_6.put(operation_result_tAggregateRow_6, operation_result_tAggregateRow_6);
+	
+	} // G_OutMain_AggR_001
 
-						if (c_negt.c_negatives != null) { // G_OutMain_AggR_546
 
-							if (operation_result_tAggregateRow_6.c_negatives_sum == null) {
-								operation_result_tAggregateRow_6.c_negatives_sum = (int) 0;
-							}
+	
+				if(c_negt.c_negatives != null) { // G_OutMain_AggR_546
+				
+					if(operation_result_tAggregateRow_6.c_negatives_sum == null) {
+						operation_result_tAggregateRow_6.c_negatives_sum = (int) 0;
+					}
+					
+					if( c_negt.c_negatives != null)
+						operation_result_tAggregateRow_6.c_negatives_sum += c_negt.c_negatives;
+				} // G_OutMain_AggR_546
+				
 
-							if (c_negt.c_negatives != null)
-								operation_result_tAggregateRow_6.c_negatives_sum += c_negt.c_negatives;
-						} // G_OutMain_AggR_546
 
-						tos_count_tAggregateRow_6_AGGOUT++;
+ 
 
-						/**
-						 * [tAggregateRow_6_AGGOUT main ] stop
-						 */
 
-						/**
-						 * [tAggregateRow_6_AGGOUT process_data_begin ] start
-						 */
+	tos_count_tAggregateRow_6_AGGOUT++;
 
-						currentVirtualComponent = "tAggregateRow_6";
+/**
+ * [tAggregateRow_6_AGGOUT main ] stop
+ */
+	
+	/**
+	 * [tAggregateRow_6_AGGOUT process_data_begin ] start
+	 */
 
-						currentComponent = "tAggregateRow_6_AGGOUT";
+	
 
-						/**
-						 * [tAggregateRow_6_AGGOUT process_data_begin ] stop
-						 */
+	
+	
+		currentVirtualComponent = "tAggregateRow_6";
+	
+	currentComponent="tAggregateRow_6_AGGOUT";
 
-						/**
-						 * [tAggregateRow_6_AGGOUT process_data_end ] start
-						 */
+	
 
-						currentVirtualComponent = "tAggregateRow_6";
+ 
 
-						currentComponent = "tAggregateRow_6_AGGOUT";
 
-						/**
-						 * [tAggregateRow_6_AGGOUT process_data_end ] stop
-						 */
 
-					} // End of branch "c_negt"
+/**
+ * [tAggregateRow_6_AGGOUT process_data_begin ] stop
+ */
+	
+	/**
+	 * [tAggregateRow_6_AGGOUT process_data_end ] start
+	 */
+
+	
+
+	
+	
+		currentVirtualComponent = "tAggregateRow_6";
+	
+	currentComponent="tAggregateRow_6_AGGOUT";
+
+	
+
+ 
+
+
+
+/**
+ * [tAggregateRow_6_AGGOUT process_data_end ] stop
+ */
+
+} // End of branch "c_negt"
+
+
+
 
 // Start of branch "count_in"
-					if (count_in != null) {
+if(count_in != null) { 
 
-						/**
-						 * [tAggregateRow_7_AGGOUT main ] start
-						 */
 
-						currentVirtualComponent = "tAggregateRow_7";
 
-						currentComponent = "tAggregateRow_7_AGGOUT";
+	
+	/**
+	 * [tAggregateRow_7_AGGOUT main ] start
+	 */
 
-						if (execStat) {
-							runStat.updateStatOnConnection(iterateId, 1, 1, "count_in");
-						}
+	
 
-						operation_finder_tAggregateRow_7.date = count_in.date;
-						operation_finder_tAggregateRow_7.hashtag = count_in.hashtag;
-						operation_finder_tAggregateRow_7.country = count_in.country;
+	
+	
+		currentVirtualComponent = "tAggregateRow_7";
+	
+	currentComponent="tAggregateRow_7_AGGOUT";
 
-						operation_finder_tAggregateRow_7.hashCodeDirty = true;
+	
+					if(execStat){
+						runStat.updateStatOnConnection(iterateId,1,1,"count_in");
+					}
+					
+	
+operation_finder_tAggregateRow_7.date = count_in.date;
+			operation_finder_tAggregateRow_7.hashtag = count_in.hashtag;
+			operation_finder_tAggregateRow_7.country = count_in.country;
+			
 
-						operation_result_tAggregateRow_7 = hash_tAggregateRow_7.get(operation_finder_tAggregateRow_7);
+	operation_finder_tAggregateRow_7.hashCodeDirty = true;
+	
+	operation_result_tAggregateRow_7 = hash_tAggregateRow_7.get(operation_finder_tAggregateRow_7);
 
-						if (operation_result_tAggregateRow_7 == null) { // G_OutMain_AggR_001
+	
 
-							operation_result_tAggregateRow_7 = new AggOperationStruct_tAggregateRow_7();
+	if(operation_result_tAggregateRow_7 == null) { // G_OutMain_AggR_001
 
-							operation_result_tAggregateRow_7.date = operation_finder_tAggregateRow_7.date;
-							operation_result_tAggregateRow_7.hashtag = operation_finder_tAggregateRow_7.hashtag;
-							operation_result_tAggregateRow_7.country = operation_finder_tAggregateRow_7.country;
+		operation_result_tAggregateRow_7 = new AggOperationStruct_tAggregateRow_7();
 
-							hash_tAggregateRow_7.put(operation_result_tAggregateRow_7,
-									operation_result_tAggregateRow_7);
+		operation_result_tAggregateRow_7.date = operation_finder_tAggregateRow_7.date;
+				operation_result_tAggregateRow_7.hashtag = operation_finder_tAggregateRow_7.hashtag;
+				operation_result_tAggregateRow_7.country = operation_finder_tAggregateRow_7.country;
+				
+		
+		
 
-						} // G_OutMain_AggR_001
+		hash_tAggregateRow_7.put(operation_result_tAggregateRow_7, operation_result_tAggregateRow_7);
+	
+	} // G_OutMain_AggR_001
 
-						if (count_in.c_tweet != null) { // G_OutMain_AggR_546
 
-							if (operation_result_tAggregateRow_7.c_tweet_sum == null) {
-								operation_result_tAggregateRow_7.c_tweet_sum = (int) 0;
-							}
+	
+				if(count_in.c_tweet != null) { // G_OutMain_AggR_546
+				
+					if(operation_result_tAggregateRow_7.c_tweet_sum == null) {
+						operation_result_tAggregateRow_7.c_tweet_sum = (int) 0;
+					}
+					
+					if( count_in.c_tweet != null)
+						operation_result_tAggregateRow_7.c_tweet_sum += count_in.c_tweet;
+				} // G_OutMain_AggR_546
+				
 
-							if (count_in.c_tweet != null)
-								operation_result_tAggregateRow_7.c_tweet_sum += count_in.c_tweet;
-						} // G_OutMain_AggR_546
 
-						tos_count_tAggregateRow_7_AGGOUT++;
+ 
 
-						/**
-						 * [tAggregateRow_7_AGGOUT main ] stop
-						 */
 
-						/**
-						 * [tAggregateRow_7_AGGOUT process_data_begin ] start
-						 */
+	tos_count_tAggregateRow_7_AGGOUT++;
 
-						currentVirtualComponent = "tAggregateRow_7";
+/**
+ * [tAggregateRow_7_AGGOUT main ] stop
+ */
+	
+	/**
+	 * [tAggregateRow_7_AGGOUT process_data_begin ] start
+	 */
 
-						currentComponent = "tAggregateRow_7_AGGOUT";
+	
 
-						/**
-						 * [tAggregateRow_7_AGGOUT process_data_begin ] stop
-						 */
+	
+	
+		currentVirtualComponent = "tAggregateRow_7";
+	
+	currentComponent="tAggregateRow_7_AGGOUT";
 
-						/**
-						 * [tAggregateRow_7_AGGOUT process_data_end ] start
-						 */
+	
 
-						currentVirtualComponent = "tAggregateRow_7";
+ 
 
-						currentComponent = "tAggregateRow_7_AGGOUT";
 
-						/**
-						 * [tAggregateRow_7_AGGOUT process_data_end ] stop
-						 */
 
-					} // End of branch "count_in"
+/**
+ * [tAggregateRow_7_AGGOUT process_data_begin ] stop
+ */
+	
+	/**
+	 * [tAggregateRow_7_AGGOUT process_data_end ] start
+	 */
 
-					/**
-					 * [tMap_3 process_data_end ] start
-					 */
+	
 
-					currentComponent = "tMap_3";
+	
+	
+		currentVirtualComponent = "tAggregateRow_7";
+	
+	currentComponent="tAggregateRow_7_AGGOUT";
 
-					/**
-					 * [tMap_3 process_data_end ] stop
-					 */
+	
 
-					/**
-					 * [tAggregateRow_4_AGGIN process_data_end ] start
-					 */
+ 
 
-					currentVirtualComponent = "tAggregateRow_4";
 
-					currentComponent = "tAggregateRow_4_AGGIN";
 
-					/**
-					 * [tAggregateRow_4_AGGIN process_data_end ] stop
-					 */
+/**
+ * [tAggregateRow_7_AGGOUT process_data_end ] stop
+ */
 
-					/**
-					 * [tAggregateRow_4_AGGIN end ] start
-					 */
+} // End of branch "count_in"
 
-					currentVirtualComponent = "tAggregateRow_4";
 
-					currentComponent = "tAggregateRow_4_AGGIN";
 
-				} // G_AggR_600
 
-				ok_Hash.put("tAggregateRow_4_AGGIN", true);
-				end_Hash.put("tAggregateRow_4_AGGIN", System.currentTimeMillis());
+	
+	/**
+	 * [tMap_3 process_data_end ] start
+	 */
 
-				/**
-				 * [tAggregateRow_4_AGGIN end ] stop
-				 */
+	
 
-				/**
-				 * [tMap_3 end ] start
-				 */
+	
+	
+	currentComponent="tMap_3";
 
-				currentComponent = "tMap_3";
+	
+
+ 
+
+
+
+/**
+ * [tMap_3 process_data_end ] stop
+ */
+
+
+
+	
+	/**
+	 * [tAggregateRow_4_AGGIN process_data_end ] start
+	 */
+
+	
+
+	
+	
+		currentVirtualComponent = "tAggregateRow_4";
+	
+	currentComponent="tAggregateRow_4_AGGIN";
+
+	
+
+ 
+
+
+
+/**
+ * [tAggregateRow_4_AGGIN process_data_end ] stop
+ */
+	
+	/**
+	 * [tAggregateRow_4_AGGIN end ] start
+	 */
+
+	
+
+	
+	
+		currentVirtualComponent = "tAggregateRow_4";
+	
+	currentComponent="tAggregateRow_4_AGGIN";
+
+	
+
+} // G_AggR_600
+
+ 
+
+ok_Hash.put("tAggregateRow_4_AGGIN", true);
+end_Hash.put("tAggregateRow_4_AGGIN", System.currentTimeMillis());
+
+
+
+
+/**
+ * [tAggregateRow_4_AGGIN end ] stop
+ */
+
+	
+	/**
+	 * [tMap_3 end ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tMap_3";
+
+	
+
 
 // ###############################
 // # Lookup hashes releasing
 // ###############################      
 
-				if (execStat) {
-					runStat.updateStat(resourceMap, iterateId, 2, 0, "row10");
-				}
 
-				ok_Hash.put("tMap_3", true);
-				end_Hash.put("tMap_3", System.currentTimeMillis());
 
-				/**
-				 * [tMap_3 end ] stop
-				 */
 
-				/**
-				 * [tAggregateRow_5_AGGOUT end ] start
-				 */
 
-				currentVirtualComponent = "tAggregateRow_5";
+				if(execStat){
+			  		runStat.updateStat(resourceMap,iterateId,2,0,"row10");
+			  	}
+			  	
+ 
 
-				currentComponent = "tAggregateRow_5_AGGOUT";
+ok_Hash.put("tMap_3", true);
+end_Hash.put("tMap_3", System.currentTimeMillis());
 
-				if (execStat) {
-					runStat.updateStat(resourceMap, iterateId, 2, 0, "c_post");
-				}
 
-				ok_Hash.put("tAggregateRow_5_AGGOUT", true);
-				end_Hash.put("tAggregateRow_5_AGGOUT", System.currentTimeMillis());
 
-				/**
-				 * [tAggregateRow_5_AGGOUT end ] stop
-				 */
 
-				/**
-				 * [tFileOutputDelimited_4 begin ] start
-				 */
+/**
+ * [tMap_3 end ] stop
+ */
 
-				ok_Hash.put("tFileOutputDelimited_4", false);
-				start_Hash.put("tFileOutputDelimited_4", System.currentTimeMillis());
+	
+	/**
+	 * [tAggregateRow_5_AGGOUT end ] start
+	 */
 
-				currentComponent = "tFileOutputDelimited_4";
+	
 
-				if (execStat) {
-					runStat.updateStatOnConnection(resourceMap, iterateId, 0, 0, "row12");
-				}
+	
+	
+		currentVirtualComponent = "tAggregateRow_5";
+	
+	currentComponent="tAggregateRow_5_AGGOUT";
 
-				int tos_count_tFileOutputDelimited_4 = 0;
+	
 
-				String fileName_tFileOutputDelimited_4 = "";
-				fileName_tFileOutputDelimited_4 = (new java.io.File(
-						context.path_files_global + "documentations/mesures/c_pos_in.csv")).getAbsolutePath()
-								.replace("\\", "/");
-				String fullName_tFileOutputDelimited_4 = null;
-				String extension_tFileOutputDelimited_4 = null;
-				String directory_tFileOutputDelimited_4 = null;
-				if ((fileName_tFileOutputDelimited_4.indexOf("/") != -1)) {
-					if (fileName_tFileOutputDelimited_4.lastIndexOf(".") < fileName_tFileOutputDelimited_4
-							.lastIndexOf("/")) {
-						fullName_tFileOutputDelimited_4 = fileName_tFileOutputDelimited_4;
-						extension_tFileOutputDelimited_4 = "";
-					} else {
-						fullName_tFileOutputDelimited_4 = fileName_tFileOutputDelimited_4.substring(0,
-								fileName_tFileOutputDelimited_4.lastIndexOf("."));
-						extension_tFileOutputDelimited_4 = fileName_tFileOutputDelimited_4
-								.substring(fileName_tFileOutputDelimited_4.lastIndexOf("."));
+				if(execStat){
+			  		runStat.updateStat(resourceMap,iterateId,2,0,"c_post");
+			  	}
+			  	
+ 
+
+ok_Hash.put("tAggregateRow_5_AGGOUT", true);
+end_Hash.put("tAggregateRow_5_AGGOUT", System.currentTimeMillis());
+
+
+
+
+/**
+ * [tAggregateRow_5_AGGOUT end ] stop
+ */
+
+
+	
+	/**
+	 * [tFileOutputDelimited_4 begin ] start
+	 */
+
+	
+
+	
+		
+		ok_Hash.put("tFileOutputDelimited_4", false);
+		start_Hash.put("tFileOutputDelimited_4", System.currentTimeMillis());
+		
+	
+	currentComponent="tFileOutputDelimited_4";
+
+	
+					if(execStat) {
+						runStat.updateStatOnConnection(resourceMap,iterateId,0,0,"row12");
 					}
-					directory_tFileOutputDelimited_4 = fileName_tFileOutputDelimited_4.substring(0,
-							fileName_tFileOutputDelimited_4.lastIndexOf("/"));
-				} else {
-					if (fileName_tFileOutputDelimited_4.lastIndexOf(".") != -1) {
-						fullName_tFileOutputDelimited_4 = fileName_tFileOutputDelimited_4.substring(0,
-								fileName_tFileOutputDelimited_4.lastIndexOf("."));
-						extension_tFileOutputDelimited_4 = fileName_tFileOutputDelimited_4
-								.substring(fileName_tFileOutputDelimited_4.lastIndexOf("."));
-					} else {
-						fullName_tFileOutputDelimited_4 = fileName_tFileOutputDelimited_4;
-						extension_tFileOutputDelimited_4 = "";
+				
+		int tos_count_tFileOutputDelimited_4 = 0;
+		
+
+String fileName_tFileOutputDelimited_4 = "";
+    fileName_tFileOutputDelimited_4 = (new java.io.File(context.path_files_global+"documentations/mesures/c_pos_in.csv")).getAbsolutePath().replace("\\","/");
+    String fullName_tFileOutputDelimited_4 = null;
+    String extension_tFileOutputDelimited_4 = null;
+    String directory_tFileOutputDelimited_4 = null;
+    if((fileName_tFileOutputDelimited_4.indexOf("/") != -1)) {
+        if(fileName_tFileOutputDelimited_4.lastIndexOf(".") < fileName_tFileOutputDelimited_4.lastIndexOf("/")) {
+            fullName_tFileOutputDelimited_4 = fileName_tFileOutputDelimited_4;
+            extension_tFileOutputDelimited_4 = "";
+        } else {
+            fullName_tFileOutputDelimited_4 = fileName_tFileOutputDelimited_4.substring(0, fileName_tFileOutputDelimited_4.lastIndexOf("."));
+            extension_tFileOutputDelimited_4 = fileName_tFileOutputDelimited_4.substring(fileName_tFileOutputDelimited_4.lastIndexOf("."));
+        }
+        directory_tFileOutputDelimited_4 = fileName_tFileOutputDelimited_4.substring(0, fileName_tFileOutputDelimited_4.lastIndexOf("/"));
+    } else {
+        if(fileName_tFileOutputDelimited_4.lastIndexOf(".") != -1) {
+            fullName_tFileOutputDelimited_4 = fileName_tFileOutputDelimited_4.substring(0, fileName_tFileOutputDelimited_4.lastIndexOf("."));
+            extension_tFileOutputDelimited_4 = fileName_tFileOutputDelimited_4.substring(fileName_tFileOutputDelimited_4.lastIndexOf("."));
+        } else {
+            fullName_tFileOutputDelimited_4 = fileName_tFileOutputDelimited_4;
+            extension_tFileOutputDelimited_4 = "";
+        }
+        directory_tFileOutputDelimited_4 = "";
+    }
+    boolean isFileGenerated_tFileOutputDelimited_4 = true;
+    java.io.File filetFileOutputDelimited_4 = new java.io.File(fileName_tFileOutputDelimited_4);
+    globalMap.put("tFileOutputDelimited_4_FILE_NAME",fileName_tFileOutputDelimited_4);
+    if(filetFileOutputDelimited_4.exists()){
+            throw new RuntimeException("The particular file \""+filetFileOutputDelimited_4.getAbsoluteFile() +
+            "\" already exist. If you want to overwrite the file, please uncheck the" + 
+            " \"Throw an error if the file already exist\" option in Advanced settings.");
+        }
+            int nb_line_tFileOutputDelimited_4 = 0;
+            int splitedFileNo_tFileOutputDelimited_4 = 0;
+            int currentRow_tFileOutputDelimited_4 = 0;
+
+            final String OUT_DELIM_tFileOutputDelimited_4 = /** Start field tFileOutputDelimited_4:FIELDSEPARATOR */";"/** End field tFileOutputDelimited_4:FIELDSEPARATOR */;
+
+            final String OUT_DELIM_ROWSEP_tFileOutputDelimited_4 = /** Start field tFileOutputDelimited_4:ROWSEPARATOR */"\n"/** End field tFileOutputDelimited_4:ROWSEPARATOR */;
+
+                    //create directory only if not exists
+                    if(directory_tFileOutputDelimited_4 != null && directory_tFileOutputDelimited_4.trim().length() != 0) {
+                        java.io.File dir_tFileOutputDelimited_4 = new java.io.File(directory_tFileOutputDelimited_4);
+                        if(!dir_tFileOutputDelimited_4.exists()) {
+                            dir_tFileOutputDelimited_4.mkdirs();
+                        }
+                    }
+
+                        //routines.system.Row
+                        java.io.Writer outtFileOutputDelimited_4 = null;
+
+                        java.io.File fileToDelete_tFileOutputDelimited_4 = new java.io.File(fileName_tFileOutputDelimited_4);
+                        if(fileToDelete_tFileOutputDelimited_4.exists()) {
+                            fileToDelete_tFileOutputDelimited_4.delete();
+                        }
+                        outtFileOutputDelimited_4 = new java.io.BufferedWriter(new java.io.OutputStreamWriter(
+                        new java.io.FileOutputStream(fileName_tFileOutputDelimited_4, false),"ISO-8859-15"));
+                                    if(filetFileOutputDelimited_4.length()==0){
+                                        outtFileOutputDelimited_4.write("date");
+                                            outtFileOutputDelimited_4.write(OUT_DELIM_tFileOutputDelimited_4);
+                                        outtFileOutputDelimited_4.write("hashtag");
+                                            outtFileOutputDelimited_4.write(OUT_DELIM_tFileOutputDelimited_4);
+                                        outtFileOutputDelimited_4.write("country");
+                                            outtFileOutputDelimited_4.write(OUT_DELIM_tFileOutputDelimited_4);
+                                        outtFileOutputDelimited_4.write("c_positives");
+                                        outtFileOutputDelimited_4.write(OUT_DELIM_ROWSEP_tFileOutputDelimited_4);
+                                        outtFileOutputDelimited_4.flush();
+                                    }
+
+
+        resourceMap.put("out_tFileOutputDelimited_4", outtFileOutputDelimited_4);
+resourceMap.put("nb_line_tFileOutputDelimited_4", nb_line_tFileOutputDelimited_4);
+
+ 
+
+
+
+/**
+ * [tFileOutputDelimited_4 begin ] stop
+ */
+
+
+
+	
+	/**
+	 * [tAggregateRow_5_AGGIN begin ] start
+	 */
+
+	
+
+	
+		
+		ok_Hash.put("tAggregateRow_5_AGGIN", false);
+		start_Hash.put("tAggregateRow_5_AGGIN", System.currentTimeMillis());
+		
+	
+		currentVirtualComponent = "tAggregateRow_5";
+	
+	currentComponent="tAggregateRow_5_AGGIN";
+
+	
+		int tos_count_tAggregateRow_5_AGGIN = 0;
+		
+
+java.util.Collection<AggOperationStruct_tAggregateRow_5> values_tAggregateRow_5 = hash_tAggregateRow_5.values();
+
+globalMap.put("tAggregateRow_5_NB_LINE", values_tAggregateRow_5.size());
+
+for(AggOperationStruct_tAggregateRow_5 aggregated_row_tAggregateRow_5 : values_tAggregateRow_5) { // G_AggR_600
+
+
+
+ 
+
+
+
+/**
+ * [tAggregateRow_5_AGGIN begin ] stop
+ */
+	
+	/**
+	 * [tAggregateRow_5_AGGIN main ] start
+	 */
+
+	
+
+	
+	
+		currentVirtualComponent = "tAggregateRow_5";
+	
+	currentComponent="tAggregateRow_5_AGGIN";
+
+	
+
+            				    row12.date = aggregated_row_tAggregateRow_5.date;
+            				    
+            				    row12.hashtag = aggregated_row_tAggregateRow_5.hashtag;
+            				    
+            				    row12.country = aggregated_row_tAggregateRow_5.country;
+            				    row12.c_positives = aggregated_row_tAggregateRow_5.c_positives_sum;
+                                	
+
+ 
+
+
+	tos_count_tAggregateRow_5_AGGIN++;
+
+/**
+ * [tAggregateRow_5_AGGIN main ] stop
+ */
+	
+	/**
+	 * [tAggregateRow_5_AGGIN process_data_begin ] start
+	 */
+
+	
+
+	
+	
+		currentVirtualComponent = "tAggregateRow_5";
+	
+	currentComponent="tAggregateRow_5_AGGIN";
+
+	
+
+ 
+
+
+
+/**
+ * [tAggregateRow_5_AGGIN process_data_begin ] stop
+ */
+
+	
+	/**
+	 * [tFileOutputDelimited_4 main ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tFileOutputDelimited_4";
+
+	
+					if(execStat){
+						runStat.updateStatOnConnection(iterateId,1,1,"row12");
 					}
-					directory_tFileOutputDelimited_4 = "";
-				}
-				boolean isFileGenerated_tFileOutputDelimited_4 = true;
-				java.io.File filetFileOutputDelimited_4 = new java.io.File(fileName_tFileOutputDelimited_4);
-				globalMap.put("tFileOutputDelimited_4_FILE_NAME", fileName_tFileOutputDelimited_4);
-				if (filetFileOutputDelimited_4.exists()) {
-					throw new RuntimeException("The particular file \"" + filetFileOutputDelimited_4.getAbsoluteFile()
-							+ "\" already exist. If you want to overwrite the file, please uncheck the"
-							+ " \"Throw an error if the file already exist\" option in Advanced settings.");
-				}
-				int nb_line_tFileOutputDelimited_4 = 0;
-				int splitedFileNo_tFileOutputDelimited_4 = 0;
-				int currentRow_tFileOutputDelimited_4 = 0;
-
-				final String OUT_DELIM_tFileOutputDelimited_4 = /** Start field tFileOutputDelimited_4:FIELDSEPARATOR */
-						";"/** End field tFileOutputDelimited_4:FIELDSEPARATOR */
-				;
-
-				final String OUT_DELIM_ROWSEP_tFileOutputDelimited_4 = /**
-																		 * Start field
-																		 * tFileOutputDelimited_4:ROWSEPARATOR
-																		 */
-						"\n"/** End field tFileOutputDelimited_4:ROWSEPARATOR */
-				;
+					
 
-				// create directory only if not exists
-				if (directory_tFileOutputDelimited_4 != null && directory_tFileOutputDelimited_4.trim().length() != 0) {
-					java.io.File dir_tFileOutputDelimited_4 = new java.io.File(directory_tFileOutputDelimited_4);
-					if (!dir_tFileOutputDelimited_4.exists()) {
-						dir_tFileOutputDelimited_4.mkdirs();
-					}
-				}
-
-				// routines.system.Row
-				java.io.Writer outtFileOutputDelimited_4 = null;
-
-				java.io.File fileToDelete_tFileOutputDelimited_4 = new java.io.File(fileName_tFileOutputDelimited_4);
-				if (fileToDelete_tFileOutputDelimited_4.exists()) {
-					fileToDelete_tFileOutputDelimited_4.delete();
-				}
-				outtFileOutputDelimited_4 = new java.io.BufferedWriter(new java.io.OutputStreamWriter(
-						new java.io.FileOutputStream(fileName_tFileOutputDelimited_4, false), "ISO-8859-15"));
-				if (filetFileOutputDelimited_4.length() == 0) {
-					outtFileOutputDelimited_4.write("date");
-					outtFileOutputDelimited_4.write(OUT_DELIM_tFileOutputDelimited_4);
-					outtFileOutputDelimited_4.write("hashtag");
-					outtFileOutputDelimited_4.write(OUT_DELIM_tFileOutputDelimited_4);
-					outtFileOutputDelimited_4.write("country");
-					outtFileOutputDelimited_4.write(OUT_DELIM_tFileOutputDelimited_4);
-					outtFileOutputDelimited_4.write("c_positives");
-					outtFileOutputDelimited_4.write(OUT_DELIM_ROWSEP_tFileOutputDelimited_4);
-					outtFileOutputDelimited_4.flush();
-				}
-
-				resourceMap.put("out_tFileOutputDelimited_4", outtFileOutputDelimited_4);
-				resourceMap.put("nb_line_tFileOutputDelimited_4", nb_line_tFileOutputDelimited_4);
-
-				/**
-				 * [tFileOutputDelimited_4 begin ] stop
-				 */
-
-				/**
-				 * [tAggregateRow_5_AGGIN begin ] start
-				 */
-
-				ok_Hash.put("tAggregateRow_5_AGGIN", false);
-				start_Hash.put("tAggregateRow_5_AGGIN", System.currentTimeMillis());
-
-				currentVirtualComponent = "tAggregateRow_5";
-
-				currentComponent = "tAggregateRow_5_AGGIN";
-
-				int tos_count_tAggregateRow_5_AGGIN = 0;
-
-				java.util.Collection<AggOperationStruct_tAggregateRow_5> values_tAggregateRow_5 = hash_tAggregateRow_5
-						.values();
-
-				globalMap.put("tAggregateRow_5_NB_LINE", values_tAggregateRow_5.size());
-
-				for (AggOperationStruct_tAggregateRow_5 aggregated_row_tAggregateRow_5 : values_tAggregateRow_5) { // G_AggR_600
-
-					/**
-					 * [tAggregateRow_5_AGGIN begin ] stop
-					 */
-
-					/**
-					 * [tAggregateRow_5_AGGIN main ] start
-					 */
-
-					currentVirtualComponent = "tAggregateRow_5";
-
-					currentComponent = "tAggregateRow_5_AGGIN";
-
-					row12.date = aggregated_row_tAggregateRow_5.date;
-
-					row12.hashtag = aggregated_row_tAggregateRow_5.hashtag;
 
-					row12.country = aggregated_row_tAggregateRow_5.country;
-					row12.c_positives = aggregated_row_tAggregateRow_5.c_positives_sum;
+                    StringBuilder sb_tFileOutputDelimited_4 = new StringBuilder();
+                            if(row12.date != null) {
+                        sb_tFileOutputDelimited_4.append(
+                            FormatterUtils.format_Date(row12.date, "dd-MM-yyyy")
+                        );
+                            }
+                            sb_tFileOutputDelimited_4.append(OUT_DELIM_tFileOutputDelimited_4);
+                            if(row12.hashtag != null) {
+                        sb_tFileOutputDelimited_4.append(
+                            row12.hashtag
+                        );
+                            }
+                            sb_tFileOutputDelimited_4.append(OUT_DELIM_tFileOutputDelimited_4);
+                            if(row12.country != null) {
+                        sb_tFileOutputDelimited_4.append(
+                            row12.country
+                        );
+                            }
+                            sb_tFileOutputDelimited_4.append(OUT_DELIM_tFileOutputDelimited_4);
+                            if(row12.c_positives != null) {
+                        sb_tFileOutputDelimited_4.append(
+                            row12.c_positives
+                        );
+                            }
+                    sb_tFileOutputDelimited_4.append(OUT_DELIM_ROWSEP_tFileOutputDelimited_4);
 
-					tos_count_tAggregateRow_5_AGGIN++;
 
-					/**
-					 * [tAggregateRow_5_AGGIN main ] stop
-					 */
+                    nb_line_tFileOutputDelimited_4++;
+                    resourceMap.put("nb_line_tFileOutputDelimited_4", nb_line_tFileOutputDelimited_4);
 
-					/**
-					 * [tAggregateRow_5_AGGIN process_data_begin ] start
-					 */
+                        outtFileOutputDelimited_4.write(sb_tFileOutputDelimited_4.toString());
 
-					currentVirtualComponent = "tAggregateRow_5";
 
-					currentComponent = "tAggregateRow_5_AGGIN";
 
-					/**
-					 * [tAggregateRow_5_AGGIN process_data_begin ] stop
-					 */
 
-					/**
-					 * [tFileOutputDelimited_4 main ] start
-					 */
+ 
 
-					currentComponent = "tFileOutputDelimited_4";
 
-					if (execStat) {
-						runStat.updateStatOnConnection(iterateId, 1, 1, "row12");
-					}
+	tos_count_tFileOutputDelimited_4++;
 
-					StringBuilder sb_tFileOutputDelimited_4 = new StringBuilder();
-					if (row12.date != null) {
-						sb_tFileOutputDelimited_4.append(FormatterUtils.format_Date(row12.date, "dd-MM-yyyy"));
-					}
-					sb_tFileOutputDelimited_4.append(OUT_DELIM_tFileOutputDelimited_4);
-					if (row12.hashtag != null) {
-						sb_tFileOutputDelimited_4.append(row12.hashtag);
-					}
-					sb_tFileOutputDelimited_4.append(OUT_DELIM_tFileOutputDelimited_4);
-					if (row12.country != null) {
-						sb_tFileOutputDelimited_4.append(row12.country);
-					}
-					sb_tFileOutputDelimited_4.append(OUT_DELIM_tFileOutputDelimited_4);
-					if (row12.c_positives != null) {
-						sb_tFileOutputDelimited_4.append(row12.c_positives);
-					}
-					sb_tFileOutputDelimited_4.append(OUT_DELIM_ROWSEP_tFileOutputDelimited_4);
+/**
+ * [tFileOutputDelimited_4 main ] stop
+ */
+	
+	/**
+	 * [tFileOutputDelimited_4 process_data_begin ] start
+	 */
 
-					nb_line_tFileOutputDelimited_4++;
-					resourceMap.put("nb_line_tFileOutputDelimited_4", nb_line_tFileOutputDelimited_4);
+	
 
-					outtFileOutputDelimited_4.write(sb_tFileOutputDelimited_4.toString());
+	
+	
+	currentComponent="tFileOutputDelimited_4";
 
-					tos_count_tFileOutputDelimited_4++;
+	
 
-					/**
-					 * [tFileOutputDelimited_4 main ] stop
-					 */
+ 
 
-					/**
-					 * [tFileOutputDelimited_4 process_data_begin ] start
-					 */
 
-					currentComponent = "tFileOutputDelimited_4";
 
-					/**
-					 * [tFileOutputDelimited_4 process_data_begin ] stop
-					 */
+/**
+ * [tFileOutputDelimited_4 process_data_begin ] stop
+ */
+	
+	/**
+	 * [tFileOutputDelimited_4 process_data_end ] start
+	 */
 
-					/**
-					 * [tFileOutputDelimited_4 process_data_end ] start
-					 */
+	
 
-					currentComponent = "tFileOutputDelimited_4";
+	
+	
+	currentComponent="tFileOutputDelimited_4";
 
-					/**
-					 * [tFileOutputDelimited_4 process_data_end ] stop
-					 */
+	
 
-					/**
-					 * [tAggregateRow_5_AGGIN process_data_end ] start
-					 */
+ 
 
-					currentVirtualComponent = "tAggregateRow_5";
 
-					currentComponent = "tAggregateRow_5_AGGIN";
 
-					/**
-					 * [tAggregateRow_5_AGGIN process_data_end ] stop
-					 */
+/**
+ * [tFileOutputDelimited_4 process_data_end ] stop
+ */
 
-					/**
-					 * [tAggregateRow_5_AGGIN end ] start
-					 */
 
-					currentVirtualComponent = "tAggregateRow_5";
 
-					currentComponent = "tAggregateRow_5_AGGIN";
+	
+	/**
+	 * [tAggregateRow_5_AGGIN process_data_end ] start
+	 */
 
-				} // G_AggR_600
-
-				ok_Hash.put("tAggregateRow_5_AGGIN", true);
-				end_Hash.put("tAggregateRow_5_AGGIN", System.currentTimeMillis());
-
-				/**
-				 * [tAggregateRow_5_AGGIN end ] stop
-				 */
-
-				/**
-				 * [tFileOutputDelimited_4 end ] start
-				 */
-
-				currentComponent = "tFileOutputDelimited_4";
-
-				if (outtFileOutputDelimited_4 != null) {
-					outtFileOutputDelimited_4.flush();
-					outtFileOutputDelimited_4.close();
-				}
-
-				globalMap.put("tFileOutputDelimited_4_NB_LINE", nb_line_tFileOutputDelimited_4);
-				globalMap.put("tFileOutputDelimited_4_FILE_NAME", fileName_tFileOutputDelimited_4);
-
-				resourceMap.put("finish_tFileOutputDelimited_4", true);
-
-				if (execStat) {
-					runStat.updateStat(resourceMap, iterateId, 2, 0, "row12");
-				}
-
-				ok_Hash.put("tFileOutputDelimited_4", true);
-				end_Hash.put("tFileOutputDelimited_4", System.currentTimeMillis());
-
-				/**
-				 * [tFileOutputDelimited_4 end ] stop
-				 */
-
-				/**
-				 * [tAggregateRow_6_AGGOUT end ] start
-				 */
-
-				currentVirtualComponent = "tAggregateRow_6";
-
-				currentComponent = "tAggregateRow_6_AGGOUT";
-
-				if (execStat) {
-					runStat.updateStat(resourceMap, iterateId, 2, 0, "c_negt");
-				}
-
-				ok_Hash.put("tAggregateRow_6_AGGOUT", true);
-				end_Hash.put("tAggregateRow_6_AGGOUT", System.currentTimeMillis());
-
-				/**
-				 * [tAggregateRow_6_AGGOUT end ] stop
-				 */
-
-				/**
-				 * [tFileOutputDelimited_5 begin ] start
-				 */
-
-				ok_Hash.put("tFileOutputDelimited_5", false);
-				start_Hash.put("tFileOutputDelimited_5", System.currentTimeMillis());
-
-				currentComponent = "tFileOutputDelimited_5";
-
-				if (execStat) {
-					runStat.updateStatOnConnection(resourceMap, iterateId, 0, 0, "row11");
-				}
-
-				int tos_count_tFileOutputDelimited_5 = 0;
-
-				String fileName_tFileOutputDelimited_5 = "";
-				fileName_tFileOutputDelimited_5 = (new java.io.File(
-						context.path_files_global + "documentations/mesures/c_neg_in.csv")).getAbsolutePath()
-								.replace("\\", "/");
-				String fullName_tFileOutputDelimited_5 = null;
-				String extension_tFileOutputDelimited_5 = null;
-				String directory_tFileOutputDelimited_5 = null;
-				if ((fileName_tFileOutputDelimited_5.indexOf("/") != -1)) {
-					if (fileName_tFileOutputDelimited_5.lastIndexOf(".") < fileName_tFileOutputDelimited_5
-							.lastIndexOf("/")) {
-						fullName_tFileOutputDelimited_5 = fileName_tFileOutputDelimited_5;
-						extension_tFileOutputDelimited_5 = "";
-					} else {
-						fullName_tFileOutputDelimited_5 = fileName_tFileOutputDelimited_5.substring(0,
-								fileName_tFileOutputDelimited_5.lastIndexOf("."));
-						extension_tFileOutputDelimited_5 = fileName_tFileOutputDelimited_5
-								.substring(fileName_tFileOutputDelimited_5.lastIndexOf("."));
-					}
-					directory_tFileOutputDelimited_5 = fileName_tFileOutputDelimited_5.substring(0,
-							fileName_tFileOutputDelimited_5.lastIndexOf("/"));
-				} else {
-					if (fileName_tFileOutputDelimited_5.lastIndexOf(".") != -1) {
-						fullName_tFileOutputDelimited_5 = fileName_tFileOutputDelimited_5.substring(0,
-								fileName_tFileOutputDelimited_5.lastIndexOf("."));
-						extension_tFileOutputDelimited_5 = fileName_tFileOutputDelimited_5
-								.substring(fileName_tFileOutputDelimited_5.lastIndexOf("."));
-					} else {
-						fullName_tFileOutputDelimited_5 = fileName_tFileOutputDelimited_5;
-						extension_tFileOutputDelimited_5 = "";
-					}
-					directory_tFileOutputDelimited_5 = "";
-				}
-				boolean isFileGenerated_tFileOutputDelimited_5 = true;
-				java.io.File filetFileOutputDelimited_5 = new java.io.File(fileName_tFileOutputDelimited_5);
-				globalMap.put("tFileOutputDelimited_5_FILE_NAME", fileName_tFileOutputDelimited_5);
-				if (filetFileOutputDelimited_5.exists()) {
-					throw new RuntimeException("The particular file \"" + filetFileOutputDelimited_5.getAbsoluteFile()
-							+ "\" already exist. If you want to overwrite the file, please uncheck the"
-							+ " \"Throw an error if the file already exist\" option in Advanced settings.");
-				}
-				int nb_line_tFileOutputDelimited_5 = 0;
-				int splitedFileNo_tFileOutputDelimited_5 = 0;
-				int currentRow_tFileOutputDelimited_5 = 0;
-
-				final String OUT_DELIM_tFileOutputDelimited_5 = /** Start field tFileOutputDelimited_5:FIELDSEPARATOR */
-						";"/** End field tFileOutputDelimited_5:FIELDSEPARATOR */
-				;
-
-				final String OUT_DELIM_ROWSEP_tFileOutputDelimited_5 = /**
-																		 * Start field
-																		 * tFileOutputDelimited_5:ROWSEPARATOR
-																		 */
-						"\n"/** End field tFileOutputDelimited_5:ROWSEPARATOR */
-				;
-
-				// create directory only if not exists
-				if (directory_tFileOutputDelimited_5 != null && directory_tFileOutputDelimited_5.trim().length() != 0) {
-					java.io.File dir_tFileOutputDelimited_5 = new java.io.File(directory_tFileOutputDelimited_5);
-					if (!dir_tFileOutputDelimited_5.exists()) {
-						dir_tFileOutputDelimited_5.mkdirs();
-					}
-				}
-
-				// routines.system.Row
-				java.io.Writer outtFileOutputDelimited_5 = null;
-
-				java.io.File fileToDelete_tFileOutputDelimited_5 = new java.io.File(fileName_tFileOutputDelimited_5);
-				if (fileToDelete_tFileOutputDelimited_5.exists()) {
-					fileToDelete_tFileOutputDelimited_5.delete();
-				}
-				outtFileOutputDelimited_5 = new java.io.BufferedWriter(new java.io.OutputStreamWriter(
-						new java.io.FileOutputStream(fileName_tFileOutputDelimited_5, false), "ISO-8859-15"));
-				if (filetFileOutputDelimited_5.length() == 0) {
-					outtFileOutputDelimited_5.write("date");
-					outtFileOutputDelimited_5.write(OUT_DELIM_tFileOutputDelimited_5);
-					outtFileOutputDelimited_5.write("hashtag");
-					outtFileOutputDelimited_5.write(OUT_DELIM_tFileOutputDelimited_5);
-					outtFileOutputDelimited_5.write("country");
-					outtFileOutputDelimited_5.write(OUT_DELIM_tFileOutputDelimited_5);
-					outtFileOutputDelimited_5.write("c_negatives");
-					outtFileOutputDelimited_5.write(OUT_DELIM_ROWSEP_tFileOutputDelimited_5);
-					outtFileOutputDelimited_5.flush();
-				}
-
-				resourceMap.put("out_tFileOutputDelimited_5", outtFileOutputDelimited_5);
-				resourceMap.put("nb_line_tFileOutputDelimited_5", nb_line_tFileOutputDelimited_5);
-
-				/**
-				 * [tFileOutputDelimited_5 begin ] stop
-				 */
-
-				/**
-				 * [tAggregateRow_6_AGGIN begin ] start
-				 */
-
-				ok_Hash.put("tAggregateRow_6_AGGIN", false);
-				start_Hash.put("tAggregateRow_6_AGGIN", System.currentTimeMillis());
-
-				currentVirtualComponent = "tAggregateRow_6";
-
-				currentComponent = "tAggregateRow_6_AGGIN";
-
-				int tos_count_tAggregateRow_6_AGGIN = 0;
-
-				java.util.Collection<AggOperationStruct_tAggregateRow_6> values_tAggregateRow_6 = hash_tAggregateRow_6
-						.values();
-
-				globalMap.put("tAggregateRow_6_NB_LINE", values_tAggregateRow_6.size());
-
-				for (AggOperationStruct_tAggregateRow_6 aggregated_row_tAggregateRow_6 : values_tAggregateRow_6) { // G_AggR_600
-
-					/**
-					 * [tAggregateRow_6_AGGIN begin ] stop
-					 */
-
-					/**
-					 * [tAggregateRow_6_AGGIN main ] start
-					 */
-
-					currentVirtualComponent = "tAggregateRow_6";
-
-					currentComponent = "tAggregateRow_6_AGGIN";
-
-					row11.date = aggregated_row_tAggregateRow_6.date;
-
-					row11.hashtag = aggregated_row_tAggregateRow_6.hashtag;
-
-					row11.country = aggregated_row_tAggregateRow_6.country;
-					row11.c_negatives = aggregated_row_tAggregateRow_6.c_negatives_sum;
+	
 
-					tos_count_tAggregateRow_6_AGGIN++;
+	
+	
+		currentVirtualComponent = "tAggregateRow_5";
+	
+	currentComponent="tAggregateRow_5_AGGIN";
 
-					/**
-					 * [tAggregateRow_6_AGGIN main ] stop
-					 */
+	
 
-					/**
-					 * [tAggregateRow_6_AGGIN process_data_begin ] start
-					 */
+ 
 
-					currentVirtualComponent = "tAggregateRow_6";
 
-					currentComponent = "tAggregateRow_6_AGGIN";
 
-					/**
-					 * [tAggregateRow_6_AGGIN process_data_begin ] stop
-					 */
+/**
+ * [tAggregateRow_5_AGGIN process_data_end ] stop
+ */
+	
+	/**
+	 * [tAggregateRow_5_AGGIN end ] start
+	 */
 
-					/**
-					 * [tFileOutputDelimited_5 main ] start
-					 */
+	
 
-					currentComponent = "tFileOutputDelimited_5";
+	
+	
+		currentVirtualComponent = "tAggregateRow_5";
+	
+	currentComponent="tAggregateRow_5_AGGIN";
 
-					if (execStat) {
-						runStat.updateStatOnConnection(iterateId, 1, 1, "row11");
-					}
+	
 
-					StringBuilder sb_tFileOutputDelimited_5 = new StringBuilder();
-					if (row11.date != null) {
-						sb_tFileOutputDelimited_5.append(FormatterUtils.format_Date(row11.date, "dd-MM-yyyy"));
-					}
-					sb_tFileOutputDelimited_5.append(OUT_DELIM_tFileOutputDelimited_5);
-					if (row11.hashtag != null) {
-						sb_tFileOutputDelimited_5.append(row11.hashtag);
-					}
-					sb_tFileOutputDelimited_5.append(OUT_DELIM_tFileOutputDelimited_5);
-					if (row11.country != null) {
-						sb_tFileOutputDelimited_5.append(row11.country);
-					}
-					sb_tFileOutputDelimited_5.append(OUT_DELIM_tFileOutputDelimited_5);
-					if (row11.c_negatives != null) {
-						sb_tFileOutputDelimited_5.append(row11.c_negatives);
-					}
-					sb_tFileOutputDelimited_5.append(OUT_DELIM_ROWSEP_tFileOutputDelimited_5);
+} // G_AggR_600
 
-					nb_line_tFileOutputDelimited_5++;
-					resourceMap.put("nb_line_tFileOutputDelimited_5", nb_line_tFileOutputDelimited_5);
+ 
 
-					outtFileOutputDelimited_5.write(sb_tFileOutputDelimited_5.toString());
+ok_Hash.put("tAggregateRow_5_AGGIN", true);
+end_Hash.put("tAggregateRow_5_AGGIN", System.currentTimeMillis());
 
-					tos_count_tFileOutputDelimited_5++;
 
-					/**
-					 * [tFileOutputDelimited_5 main ] stop
-					 */
 
-					/**
-					 * [tFileOutputDelimited_5 process_data_begin ] start
-					 */
 
-					currentComponent = "tFileOutputDelimited_5";
+/**
+ * [tAggregateRow_5_AGGIN end ] stop
+ */
 
-					/**
-					 * [tFileOutputDelimited_5 process_data_begin ] stop
-					 */
+	
+	/**
+	 * [tFileOutputDelimited_4 end ] start
+	 */
 
-					/**
-					 * [tFileOutputDelimited_5 process_data_end ] start
-					 */
+	
 
-					currentComponent = "tFileOutputDelimited_5";
+	
+	
+	currentComponent="tFileOutputDelimited_4";
 
-					/**
-					 * [tFileOutputDelimited_5 process_data_end ] stop
-					 */
+	
 
-					/**
-					 * [tAggregateRow_6_AGGIN process_data_end ] start
-					 */
 
-					currentVirtualComponent = "tAggregateRow_6";
 
-					currentComponent = "tAggregateRow_6_AGGIN";
-
-					/**
-					 * [tAggregateRow_6_AGGIN process_data_end ] stop
-					 */
-
-					/**
-					 * [tAggregateRow_6_AGGIN end ] start
-					 */
-
-					currentVirtualComponent = "tAggregateRow_6";
-
-					currentComponent = "tAggregateRow_6_AGGIN";
-
-				} // G_AggR_600
-
-				ok_Hash.put("tAggregateRow_6_AGGIN", true);
-				end_Hash.put("tAggregateRow_6_AGGIN", System.currentTimeMillis());
-
-				/**
-				 * [tAggregateRow_6_AGGIN end ] stop
-				 */
-
-				/**
-				 * [tFileOutputDelimited_5 end ] start
-				 */
-
-				currentComponent = "tFileOutputDelimited_5";
-
-				if (outtFileOutputDelimited_5 != null) {
-					outtFileOutputDelimited_5.flush();
-					outtFileOutputDelimited_5.close();
-				}
-
-				globalMap.put("tFileOutputDelimited_5_NB_LINE", nb_line_tFileOutputDelimited_5);
-				globalMap.put("tFileOutputDelimited_5_FILE_NAME", fileName_tFileOutputDelimited_5);
-
-				resourceMap.put("finish_tFileOutputDelimited_5", true);
-
-				if (execStat) {
-					runStat.updateStat(resourceMap, iterateId, 2, 0, "row11");
-				}
-
-				ok_Hash.put("tFileOutputDelimited_5", true);
-				end_Hash.put("tFileOutputDelimited_5", System.currentTimeMillis());
-
-				/**
-				 * [tFileOutputDelimited_5 end ] stop
-				 */
-
-				/**
-				 * [tAggregateRow_7_AGGOUT end ] start
-				 */
-
-				currentVirtualComponent = "tAggregateRow_7";
-
-				currentComponent = "tAggregateRow_7_AGGOUT";
-
-				if (execStat) {
-					runStat.updateStat(resourceMap, iterateId, 2, 0, "count_in");
-				}
-
-				ok_Hash.put("tAggregateRow_7_AGGOUT", true);
-				end_Hash.put("tAggregateRow_7_AGGOUT", System.currentTimeMillis());
-
-				/**
-				 * [tAggregateRow_7_AGGOUT end ] stop
-				 */
-
-				/**
-				 * [tFileOutputDelimited_6 begin ] start
-				 */
-
-				ok_Hash.put("tFileOutputDelimited_6", false);
-				start_Hash.put("tFileOutputDelimited_6", System.currentTimeMillis());
-
-				currentComponent = "tFileOutputDelimited_6";
-
-				if (execStat) {
-					runStat.updateStatOnConnection(resourceMap, iterateId, 0, 0, "row13");
-				}
-
-				int tos_count_tFileOutputDelimited_6 = 0;
-
-				String fileName_tFileOutputDelimited_6 = "";
-				fileName_tFileOutputDelimited_6 = (new java.io.File(
-						context.path_files_global + "documentations/mesures/c_in.csv")).getAbsolutePath().replace("\\",
-								"/");
-				String fullName_tFileOutputDelimited_6 = null;
-				String extension_tFileOutputDelimited_6 = null;
-				String directory_tFileOutputDelimited_6 = null;
-				if ((fileName_tFileOutputDelimited_6.indexOf("/") != -1)) {
-					if (fileName_tFileOutputDelimited_6.lastIndexOf(".") < fileName_tFileOutputDelimited_6
-							.lastIndexOf("/")) {
-						fullName_tFileOutputDelimited_6 = fileName_tFileOutputDelimited_6;
-						extension_tFileOutputDelimited_6 = "";
-					} else {
-						fullName_tFileOutputDelimited_6 = fileName_tFileOutputDelimited_6.substring(0,
-								fileName_tFileOutputDelimited_6.lastIndexOf("."));
-						extension_tFileOutputDelimited_6 = fileName_tFileOutputDelimited_6
-								.substring(fileName_tFileOutputDelimited_6.lastIndexOf("."));
-					}
-					directory_tFileOutputDelimited_6 = fileName_tFileOutputDelimited_6.substring(0,
-							fileName_tFileOutputDelimited_6.lastIndexOf("/"));
-				} else {
-					if (fileName_tFileOutputDelimited_6.lastIndexOf(".") != -1) {
-						fullName_tFileOutputDelimited_6 = fileName_tFileOutputDelimited_6.substring(0,
-								fileName_tFileOutputDelimited_6.lastIndexOf("."));
-						extension_tFileOutputDelimited_6 = fileName_tFileOutputDelimited_6
-								.substring(fileName_tFileOutputDelimited_6.lastIndexOf("."));
-					} else {
-						fullName_tFileOutputDelimited_6 = fileName_tFileOutputDelimited_6;
-						extension_tFileOutputDelimited_6 = "";
-					}
-					directory_tFileOutputDelimited_6 = "";
-				}
-				boolean isFileGenerated_tFileOutputDelimited_6 = true;
-				java.io.File filetFileOutputDelimited_6 = new java.io.File(fileName_tFileOutputDelimited_6);
-				globalMap.put("tFileOutputDelimited_6_FILE_NAME", fileName_tFileOutputDelimited_6);
-				if (filetFileOutputDelimited_6.exists()) {
-					throw new RuntimeException("The particular file \"" + filetFileOutputDelimited_6.getAbsoluteFile()
-							+ "\" already exist. If you want to overwrite the file, please uncheck the"
-							+ " \"Throw an error if the file already exist\" option in Advanced settings.");
-				}
-				int nb_line_tFileOutputDelimited_6 = 0;
-				int splitedFileNo_tFileOutputDelimited_6 = 0;
-				int currentRow_tFileOutputDelimited_6 = 0;
-
-				final String OUT_DELIM_tFileOutputDelimited_6 = /** Start field tFileOutputDelimited_6:FIELDSEPARATOR */
-						";"/** End field tFileOutputDelimited_6:FIELDSEPARATOR */
-				;
-
-				final String OUT_DELIM_ROWSEP_tFileOutputDelimited_6 = /**
-																		 * Start field
-																		 * tFileOutputDelimited_6:ROWSEPARATOR
-																		 */
-						"\n"/** End field tFileOutputDelimited_6:ROWSEPARATOR */
-				;
-
-				// create directory only if not exists
-				if (directory_tFileOutputDelimited_6 != null && directory_tFileOutputDelimited_6.trim().length() != 0) {
-					java.io.File dir_tFileOutputDelimited_6 = new java.io.File(directory_tFileOutputDelimited_6);
-					if (!dir_tFileOutputDelimited_6.exists()) {
-						dir_tFileOutputDelimited_6.mkdirs();
-					}
-				}
-
-				// routines.system.Row
-				java.io.Writer outtFileOutputDelimited_6 = null;
-
-				java.io.File fileToDelete_tFileOutputDelimited_6 = new java.io.File(fileName_tFileOutputDelimited_6);
-				if (fileToDelete_tFileOutputDelimited_6.exists()) {
-					fileToDelete_tFileOutputDelimited_6.delete();
-				}
-				outtFileOutputDelimited_6 = new java.io.BufferedWriter(new java.io.OutputStreamWriter(
-						new java.io.FileOutputStream(fileName_tFileOutputDelimited_6, false), "ISO-8859-15"));
-				if (filetFileOutputDelimited_6.length() == 0) {
-					outtFileOutputDelimited_6.write("date");
-					outtFileOutputDelimited_6.write(OUT_DELIM_tFileOutputDelimited_6);
-					outtFileOutputDelimited_6.write("hashtag");
-					outtFileOutputDelimited_6.write(OUT_DELIM_tFileOutputDelimited_6);
-					outtFileOutputDelimited_6.write("country");
-					outtFileOutputDelimited_6.write(OUT_DELIM_tFileOutputDelimited_6);
-					outtFileOutputDelimited_6.write("c_tweet");
-					outtFileOutputDelimited_6.write(OUT_DELIM_ROWSEP_tFileOutputDelimited_6);
-					outtFileOutputDelimited_6.flush();
-				}
-
-				resourceMap.put("out_tFileOutputDelimited_6", outtFileOutputDelimited_6);
-				resourceMap.put("nb_line_tFileOutputDelimited_6", nb_line_tFileOutputDelimited_6);
-
-				/**
-				 * [tFileOutputDelimited_6 begin ] stop
-				 */
-
-				/**
-				 * [tAggregateRow_7_AGGIN begin ] start
-				 */
-
-				ok_Hash.put("tAggregateRow_7_AGGIN", false);
-				start_Hash.put("tAggregateRow_7_AGGIN", System.currentTimeMillis());
-
-				currentVirtualComponent = "tAggregateRow_7";
-
-				currentComponent = "tAggregateRow_7_AGGIN";
-
-				int tos_count_tAggregateRow_7_AGGIN = 0;
-
-				java.util.Collection<AggOperationStruct_tAggregateRow_7> values_tAggregateRow_7 = hash_tAggregateRow_7
-						.values();
-
-				globalMap.put("tAggregateRow_7_NB_LINE", values_tAggregateRow_7.size());
-
-				for (AggOperationStruct_tAggregateRow_7 aggregated_row_tAggregateRow_7 : values_tAggregateRow_7) { // G_AggR_600
-
-					/**
-					 * [tAggregateRow_7_AGGIN begin ] stop
-					 */
-
-					/**
-					 * [tAggregateRow_7_AGGIN main ] start
-					 */
-
-					currentVirtualComponent = "tAggregateRow_7";
-
-					currentComponent = "tAggregateRow_7_AGGIN";
-
-					row13.date = aggregated_row_tAggregateRow_7.date;
-
-					row13.hashtag = aggregated_row_tAggregateRow_7.hashtag;
-
-					row13.country = aggregated_row_tAggregateRow_7.country;
-					row13.c_tweet = aggregated_row_tAggregateRow_7.c_tweet_sum;
-
-					tos_count_tAggregateRow_7_AGGIN++;
-
-					/**
-					 * [tAggregateRow_7_AGGIN main ] stop
-					 */
-
-					/**
-					 * [tAggregateRow_7_AGGIN process_data_begin ] start
-					 */
-
-					currentVirtualComponent = "tAggregateRow_7";
-
-					currentComponent = "tAggregateRow_7_AGGIN";
-
-					/**
-					 * [tAggregateRow_7_AGGIN process_data_begin ] stop
-					 */
-
-					/**
-					 * [tFileOutputDelimited_6 main ] start
-					 */
-
-					currentComponent = "tFileOutputDelimited_6";
-
-					if (execStat) {
-						runStat.updateStatOnConnection(iterateId, 1, 1, "row13");
-					}
-
-					StringBuilder sb_tFileOutputDelimited_6 = new StringBuilder();
-					if (row13.date != null) {
-						sb_tFileOutputDelimited_6.append(FormatterUtils.format_Date(row13.date, "dd-MM-yyyy"));
-					}
-					sb_tFileOutputDelimited_6.append(OUT_DELIM_tFileOutputDelimited_6);
-					if (row13.hashtag != null) {
-						sb_tFileOutputDelimited_6.append(row13.hashtag);
-					}
-					sb_tFileOutputDelimited_6.append(OUT_DELIM_tFileOutputDelimited_6);
-					if (row13.country != null) {
-						sb_tFileOutputDelimited_6.append(row13.country);
-					}
-					sb_tFileOutputDelimited_6.append(OUT_DELIM_tFileOutputDelimited_6);
-					if (row13.c_tweet != null) {
-						sb_tFileOutputDelimited_6.append(row13.c_tweet);
-					}
-					sb_tFileOutputDelimited_6.append(OUT_DELIM_ROWSEP_tFileOutputDelimited_6);
-
-					nb_line_tFileOutputDelimited_6++;
-					resourceMap.put("nb_line_tFileOutputDelimited_6", nb_line_tFileOutputDelimited_6);
-
-					outtFileOutputDelimited_6.write(sb_tFileOutputDelimited_6.toString());
-
-					tos_count_tFileOutputDelimited_6++;
-
-					/**
-					 * [tFileOutputDelimited_6 main ] stop
-					 */
-
-					/**
-					 * [tFileOutputDelimited_6 process_data_begin ] start
-					 */
-
-					currentComponent = "tFileOutputDelimited_6";
-
-					/**
-					 * [tFileOutputDelimited_6 process_data_begin ] stop
-					 */
-
-					/**
-					 * [tFileOutputDelimited_6 process_data_end ] start
-					 */
-
-					currentComponent = "tFileOutputDelimited_6";
-
-					/**
-					 * [tFileOutputDelimited_6 process_data_end ] stop
-					 */
-
-					/**
-					 * [tAggregateRow_7_AGGIN process_data_end ] start
-					 */
-
-					currentVirtualComponent = "tAggregateRow_7";
-
-					currentComponent = "tAggregateRow_7_AGGIN";
-
-					/**
-					 * [tAggregateRow_7_AGGIN process_data_end ] stop
-					 */
-
-					/**
-					 * [tAggregateRow_7_AGGIN end ] start
-					 */
-
-					currentVirtualComponent = "tAggregateRow_7";
-
-					currentComponent = "tAggregateRow_7_AGGIN";
-
-				} // G_AggR_600
-
-				ok_Hash.put("tAggregateRow_7_AGGIN", true);
-				end_Hash.put("tAggregateRow_7_AGGIN", System.currentTimeMillis());
-
-				/**
-				 * [tAggregateRow_7_AGGIN end ] stop
-				 */
-
-				/**
-				 * [tFileOutputDelimited_6 end ] start
-				 */
-
-				currentComponent = "tFileOutputDelimited_6";
-
-				if (outtFileOutputDelimited_6 != null) {
-					outtFileOutputDelimited_6.flush();
-					outtFileOutputDelimited_6.close();
-				}
-
-				globalMap.put("tFileOutputDelimited_6_NB_LINE", nb_line_tFileOutputDelimited_6);
-				globalMap.put("tFileOutputDelimited_6_FILE_NAME", fileName_tFileOutputDelimited_6);
-
-				resourceMap.put("finish_tFileOutputDelimited_6", true);
-
-				if (execStat) {
-					runStat.updateStat(resourceMap, iterateId, 2, 0, "row13");
-				}
-
-				ok_Hash.put("tFileOutputDelimited_6", true);
-				end_Hash.put("tFileOutputDelimited_6", System.currentTimeMillis());
-
-				/**
-				 * [tFileOutputDelimited_6 end ] stop
-				 */
-
-			} // end the resume
-
-		} catch (java.lang.Exception e) {
-
-			TalendException te = new TalendException(e, currentComponent, globalMap);
-
-			te.setVirtualComponentName(currentVirtualComponent);
-
-			throw te;
-		} catch (java.lang.Error error) {
-
-			runStat.stopThreadStat();
-
-			throw error;
-		} finally {
-
-			// free memory for "tAggregateRow_7_AGGIN"
-			globalMap.remove("tAggregateRow_7");
-
-			// free memory for "tAggregateRow_6_AGGIN"
-			globalMap.remove("tAggregateRow_6");
-
-			// free memory for "tAggregateRow_5_AGGIN"
-			globalMap.remove("tAggregateRow_5");
-
-			// free memory for "tAggregateRow_4_AGGIN"
-			globalMap.remove("tAggregateRow_4");
-
-			// free memory for "tAggregateRow_2_AGGIN"
-			globalMap.remove("tAggregateRow_2");
-
-			// free memory for "tAggregateRow_1_AGGIN"
-			globalMap.remove("tAggregateRow_1");
-
-			// free memory for "tAggregateRow_3_AGGIN"
-			globalMap.remove("tAggregateRow_3");
-
-			// free memory for "tMap_2"
-			globalMap.remove("tHash_Lookup_row6");
-
-			try {
-
-				/**
-				 * [tDBInput_1 finally ] start
-				 */
-
-				currentComponent = "tDBInput_1";
-
-				/**
-				 * [tDBInput_1 finally ] stop
-				 */
-
-				/**
-				 * [tReplace_1 finally ] start
-				 */
-
-				currentComponent = "tReplace_1";
-
-				/**
-				 * [tReplace_1 finally ] stop
-				 */
-
-				/**
-				 * [tMap_1 finally ] start
-				 */
-
-				currentComponent = "tMap_1";
-
-				/**
-				 * [tMap_1 finally ] stop
-				 */
-
-				/**
-				 * [tNormalize_1 finally ] start
-				 */
-
-				currentComponent = "tNormalize_1";
-
-				/**
-				 * [tNormalize_1 finally ] stop
-				 */
-
-				/**
-				 * [tNormalize_2 finally ] start
-				 */
-
-				currentComponent = "tNormalize_2";
-
-				/**
-				 * [tNormalize_2 finally ] stop
-				 */
-
-				/**
-				 * [tFilterRow_1 finally ] start
-				 */
-
-				currentComponent = "tFilterRow_1";
-
-				/**
-				 * [tFilterRow_1 finally ] stop
-				 */
-
-				/**
-				 * [tMap_2 finally ] start
-				 */
-
-				currentComponent = "tMap_2";
-
-				/**
-				 * [tMap_2 finally ] stop
-				 */
-
-				/**
-				 * [tAggregateRow_3_AGGOUT finally ] start
-				 */
-
-				currentVirtualComponent = "tAggregateRow_3";
-
-				currentComponent = "tAggregateRow_3_AGGOUT";
-
-				/**
-				 * [tAggregateRow_3_AGGOUT finally ] stop
-				 */
-
-				/**
-				 * [tAggregateRow_3_AGGIN finally ] start
-				 */
-
-				currentVirtualComponent = "tAggregateRow_3";
-
-				currentComponent = "tAggregateRow_3_AGGIN";
-
-				/**
-				 * [tAggregateRow_3_AGGIN finally ] stop
-				 */
-
-				/**
-				 * [tFileOutputDelimited_3 finally ] start
-				 */
-
-				currentComponent = "tFileOutputDelimited_3";
-
-				if (resourceMap.get("finish_tFileOutputDelimited_3") == null) {
-
-					java.io.Writer outtFileOutputDelimited_3 = (java.io.Writer) resourceMap
-							.get("out_tFileOutputDelimited_3");
-					if (outtFileOutputDelimited_3 != null) {
-						outtFileOutputDelimited_3.flush();
-						outtFileOutputDelimited_3.close();
-					}
-
-				}
-
-				/**
-				 * [tFileOutputDelimited_3 finally ] stop
-				 */
-
-				/**
-				 * [tAggregateRow_1_AGGOUT finally ] start
-				 */
-
-				currentVirtualComponent = "tAggregateRow_1";
-
-				currentComponent = "tAggregateRow_1_AGGOUT";
-
-				/**
-				 * [tAggregateRow_1_AGGOUT finally ] stop
-				 */
-
-				/**
-				 * [tAggregateRow_1_AGGIN finally ] start
-				 */
-
-				currentVirtualComponent = "tAggregateRow_1";
-
-				currentComponent = "tAggregateRow_1_AGGIN";
-
-				/**
-				 * [tAggregateRow_1_AGGIN finally ] stop
-				 */
-
-				/**
-				 * [tFileOutputDelimited_1 finally ] start
-				 */
-
-				currentComponent = "tFileOutputDelimited_1";
-
-				if (resourceMap.get("finish_tFileOutputDelimited_1") == null) {
-
-					java.io.Writer outtFileOutputDelimited_1 = (java.io.Writer) resourceMap
-							.get("out_tFileOutputDelimited_1");
-					if (outtFileOutputDelimited_1 != null) {
-						outtFileOutputDelimited_1.flush();
-						outtFileOutputDelimited_1.close();
-					}
-
-				}
-
-				/**
-				 * [tFileOutputDelimited_1 finally ] stop
-				 */
-
-				/**
-				 * [tAggregateRow_2_AGGOUT finally ] start
-				 */
-
-				currentVirtualComponent = "tAggregateRow_2";
-
-				currentComponent = "tAggregateRow_2_AGGOUT";
-
-				/**
-				 * [tAggregateRow_2_AGGOUT finally ] stop
-				 */
-
-				/**
-				 * [tAggregateRow_2_AGGIN finally ] start
-				 */
-
-				currentVirtualComponent = "tAggregateRow_2";
-
-				currentComponent = "tAggregateRow_2_AGGIN";
-
-				/**
-				 * [tAggregateRow_2_AGGIN finally ] stop
-				 */
-
-				/**
-				 * [tFileOutputDelimited_2 finally ] start
-				 */
-
-				currentComponent = "tFileOutputDelimited_2";
-
-				if (resourceMap.get("finish_tFileOutputDelimited_2") == null) {
-
-					java.io.Writer outtFileOutputDelimited_2 = (java.io.Writer) resourceMap
-							.get("out_tFileOutputDelimited_2");
-					if (outtFileOutputDelimited_2 != null) {
-						outtFileOutputDelimited_2.flush();
-						outtFileOutputDelimited_2.close();
-					}
-
-				}
-
-				/**
-				 * [tFileOutputDelimited_2 finally ] stop
-				 */
-
-				/**
-				 * [tAggregateRow_4_AGGOUT finally ] start
-				 */
-
-				currentVirtualComponent = "tAggregateRow_4";
-
-				currentComponent = "tAggregateRow_4_AGGOUT";
-
-				/**
-				 * [tAggregateRow_4_AGGOUT finally ] stop
-				 */
-
-				/**
-				 * [tAggregateRow_4_AGGIN finally ] start
-				 */
-
-				currentVirtualComponent = "tAggregateRow_4";
-
-				currentComponent = "tAggregateRow_4_AGGIN";
-
-				/**
-				 * [tAggregateRow_4_AGGIN finally ] stop
-				 */
-
-				/**
-				 * [tMap_3 finally ] start
-				 */
-
-				currentComponent = "tMap_3";
-
-				/**
-				 * [tMap_3 finally ] stop
-				 */
-
-				/**
-				 * [tAggregateRow_5_AGGOUT finally ] start
-				 */
-
-				currentVirtualComponent = "tAggregateRow_5";
-
-				currentComponent = "tAggregateRow_5_AGGOUT";
-
-				/**
-				 * [tAggregateRow_5_AGGOUT finally ] stop
-				 */
-
-				/**
-				 * [tAggregateRow_5_AGGIN finally ] start
-				 */
-
-				currentVirtualComponent = "tAggregateRow_5";
-
-				currentComponent = "tAggregateRow_5_AGGIN";
-
-				/**
-				 * [tAggregateRow_5_AGGIN finally ] stop
-				 */
-
-				/**
-				 * [tFileOutputDelimited_4 finally ] start
-				 */
-
-				currentComponent = "tFileOutputDelimited_4";
-
-				if (resourceMap.get("finish_tFileOutputDelimited_4") == null) {
-
-					java.io.Writer outtFileOutputDelimited_4 = (java.io.Writer) resourceMap
-							.get("out_tFileOutputDelimited_4");
-					if (outtFileOutputDelimited_4 != null) {
+		
+			
+					if(outtFileOutputDelimited_4!=null) {
 						outtFileOutputDelimited_4.flush();
 						outtFileOutputDelimited_4.close();
 					}
+				
+				globalMap.put("tFileOutputDelimited_4_NB_LINE",nb_line_tFileOutputDelimited_4);
+				globalMap.put("tFileOutputDelimited_4_FILE_NAME",fileName_tFileOutputDelimited_4);
+			
+		
+		
+		resourceMap.put("finish_tFileOutputDelimited_4", true);
+	
 
-				}
+				if(execStat){
+			  		runStat.updateStat(resourceMap,iterateId,2,0,"row12");
+			  	}
+			  	
+ 
 
-				/**
-				 * [tFileOutputDelimited_4 finally ] stop
-				 */
+ok_Hash.put("tFileOutputDelimited_4", true);
+end_Hash.put("tFileOutputDelimited_4", System.currentTimeMillis());
 
-				/**
-				 * [tAggregateRow_6_AGGOUT finally ] start
-				 */
 
-				currentVirtualComponent = "tAggregateRow_6";
 
-				currentComponent = "tAggregateRow_6_AGGOUT";
 
-				/**
-				 * [tAggregateRow_6_AGGOUT finally ] stop
-				 */
+/**
+ * [tFileOutputDelimited_4 end ] stop
+ */
 
-				/**
-				 * [tAggregateRow_6_AGGIN finally ] start
-				 */
 
-				currentVirtualComponent = "tAggregateRow_6";
 
-				currentComponent = "tAggregateRow_6_AGGIN";
 
-				/**
-				 * [tAggregateRow_6_AGGIN finally ] stop
-				 */
 
-				/**
-				 * [tFileOutputDelimited_5 finally ] start
-				 */
 
-				currentComponent = "tFileOutputDelimited_5";
 
-				if (resourceMap.get("finish_tFileOutputDelimited_5") == null) {
 
-					java.io.Writer outtFileOutputDelimited_5 = (java.io.Writer) resourceMap
-							.get("out_tFileOutputDelimited_5");
-					if (outtFileOutputDelimited_5 != null) {
+
+
+	
+	/**
+	 * [tAggregateRow_6_AGGOUT end ] start
+	 */
+
+	
+
+	
+	
+		currentVirtualComponent = "tAggregateRow_6";
+	
+	currentComponent="tAggregateRow_6_AGGOUT";
+
+	
+
+				if(execStat){
+			  		runStat.updateStat(resourceMap,iterateId,2,0,"c_negt");
+			  	}
+			  	
+ 
+
+ok_Hash.put("tAggregateRow_6_AGGOUT", true);
+end_Hash.put("tAggregateRow_6_AGGOUT", System.currentTimeMillis());
+
+
+
+
+/**
+ * [tAggregateRow_6_AGGOUT end ] stop
+ */
+
+
+	
+	/**
+	 * [tFileOutputDelimited_5 begin ] start
+	 */
+
+	
+
+	
+		
+		ok_Hash.put("tFileOutputDelimited_5", false);
+		start_Hash.put("tFileOutputDelimited_5", System.currentTimeMillis());
+		
+	
+	currentComponent="tFileOutputDelimited_5";
+
+	
+					if(execStat) {
+						runStat.updateStatOnConnection(resourceMap,iterateId,0,0,"row11");
+					}
+				
+		int tos_count_tFileOutputDelimited_5 = 0;
+		
+
+String fileName_tFileOutputDelimited_5 = "";
+    fileName_tFileOutputDelimited_5 = (new java.io.File(context.path_files_global+"documentations/mesures/c_neg_in.csv")).getAbsolutePath().replace("\\","/");
+    String fullName_tFileOutputDelimited_5 = null;
+    String extension_tFileOutputDelimited_5 = null;
+    String directory_tFileOutputDelimited_5 = null;
+    if((fileName_tFileOutputDelimited_5.indexOf("/") != -1)) {
+        if(fileName_tFileOutputDelimited_5.lastIndexOf(".") < fileName_tFileOutputDelimited_5.lastIndexOf("/")) {
+            fullName_tFileOutputDelimited_5 = fileName_tFileOutputDelimited_5;
+            extension_tFileOutputDelimited_5 = "";
+        } else {
+            fullName_tFileOutputDelimited_5 = fileName_tFileOutputDelimited_5.substring(0, fileName_tFileOutputDelimited_5.lastIndexOf("."));
+            extension_tFileOutputDelimited_5 = fileName_tFileOutputDelimited_5.substring(fileName_tFileOutputDelimited_5.lastIndexOf("."));
+        }
+        directory_tFileOutputDelimited_5 = fileName_tFileOutputDelimited_5.substring(0, fileName_tFileOutputDelimited_5.lastIndexOf("/"));
+    } else {
+        if(fileName_tFileOutputDelimited_5.lastIndexOf(".") != -1) {
+            fullName_tFileOutputDelimited_5 = fileName_tFileOutputDelimited_5.substring(0, fileName_tFileOutputDelimited_5.lastIndexOf("."));
+            extension_tFileOutputDelimited_5 = fileName_tFileOutputDelimited_5.substring(fileName_tFileOutputDelimited_5.lastIndexOf("."));
+        } else {
+            fullName_tFileOutputDelimited_5 = fileName_tFileOutputDelimited_5;
+            extension_tFileOutputDelimited_5 = "";
+        }
+        directory_tFileOutputDelimited_5 = "";
+    }
+    boolean isFileGenerated_tFileOutputDelimited_5 = true;
+    java.io.File filetFileOutputDelimited_5 = new java.io.File(fileName_tFileOutputDelimited_5);
+    globalMap.put("tFileOutputDelimited_5_FILE_NAME",fileName_tFileOutputDelimited_5);
+    if(filetFileOutputDelimited_5.exists()){
+            throw new RuntimeException("The particular file \""+filetFileOutputDelimited_5.getAbsoluteFile() +
+            "\" already exist. If you want to overwrite the file, please uncheck the" + 
+            " \"Throw an error if the file already exist\" option in Advanced settings.");
+        }
+            int nb_line_tFileOutputDelimited_5 = 0;
+            int splitedFileNo_tFileOutputDelimited_5 = 0;
+            int currentRow_tFileOutputDelimited_5 = 0;
+
+            final String OUT_DELIM_tFileOutputDelimited_5 = /** Start field tFileOutputDelimited_5:FIELDSEPARATOR */";"/** End field tFileOutputDelimited_5:FIELDSEPARATOR */;
+
+            final String OUT_DELIM_ROWSEP_tFileOutputDelimited_5 = /** Start field tFileOutputDelimited_5:ROWSEPARATOR */"\n"/** End field tFileOutputDelimited_5:ROWSEPARATOR */;
+
+                    //create directory only if not exists
+                    if(directory_tFileOutputDelimited_5 != null && directory_tFileOutputDelimited_5.trim().length() != 0) {
+                        java.io.File dir_tFileOutputDelimited_5 = new java.io.File(directory_tFileOutputDelimited_5);
+                        if(!dir_tFileOutputDelimited_5.exists()) {
+                            dir_tFileOutputDelimited_5.mkdirs();
+                        }
+                    }
+
+                        //routines.system.Row
+                        java.io.Writer outtFileOutputDelimited_5 = null;
+
+                        java.io.File fileToDelete_tFileOutputDelimited_5 = new java.io.File(fileName_tFileOutputDelimited_5);
+                        if(fileToDelete_tFileOutputDelimited_5.exists()) {
+                            fileToDelete_tFileOutputDelimited_5.delete();
+                        }
+                        outtFileOutputDelimited_5 = new java.io.BufferedWriter(new java.io.OutputStreamWriter(
+                        new java.io.FileOutputStream(fileName_tFileOutputDelimited_5, false),"ISO-8859-15"));
+                                    if(filetFileOutputDelimited_5.length()==0){
+                                        outtFileOutputDelimited_5.write("date");
+                                            outtFileOutputDelimited_5.write(OUT_DELIM_tFileOutputDelimited_5);
+                                        outtFileOutputDelimited_5.write("hashtag");
+                                            outtFileOutputDelimited_5.write(OUT_DELIM_tFileOutputDelimited_5);
+                                        outtFileOutputDelimited_5.write("country");
+                                            outtFileOutputDelimited_5.write(OUT_DELIM_tFileOutputDelimited_5);
+                                        outtFileOutputDelimited_5.write("c_negatives");
+                                        outtFileOutputDelimited_5.write(OUT_DELIM_ROWSEP_tFileOutputDelimited_5);
+                                        outtFileOutputDelimited_5.flush();
+                                    }
+
+
+        resourceMap.put("out_tFileOutputDelimited_5", outtFileOutputDelimited_5);
+resourceMap.put("nb_line_tFileOutputDelimited_5", nb_line_tFileOutputDelimited_5);
+
+ 
+
+
+
+/**
+ * [tFileOutputDelimited_5 begin ] stop
+ */
+
+
+
+	
+	/**
+	 * [tAggregateRow_6_AGGIN begin ] start
+	 */
+
+	
+
+	
+		
+		ok_Hash.put("tAggregateRow_6_AGGIN", false);
+		start_Hash.put("tAggregateRow_6_AGGIN", System.currentTimeMillis());
+		
+	
+		currentVirtualComponent = "tAggregateRow_6";
+	
+	currentComponent="tAggregateRow_6_AGGIN";
+
+	
+		int tos_count_tAggregateRow_6_AGGIN = 0;
+		
+
+java.util.Collection<AggOperationStruct_tAggregateRow_6> values_tAggregateRow_6 = hash_tAggregateRow_6.values();
+
+globalMap.put("tAggregateRow_6_NB_LINE", values_tAggregateRow_6.size());
+
+for(AggOperationStruct_tAggregateRow_6 aggregated_row_tAggregateRow_6 : values_tAggregateRow_6) { // G_AggR_600
+
+
+
+ 
+
+
+
+/**
+ * [tAggregateRow_6_AGGIN begin ] stop
+ */
+	
+	/**
+	 * [tAggregateRow_6_AGGIN main ] start
+	 */
+
+	
+
+	
+	
+		currentVirtualComponent = "tAggregateRow_6";
+	
+	currentComponent="tAggregateRow_6_AGGIN";
+
+	
+
+            				    row11.date = aggregated_row_tAggregateRow_6.date;
+            				    
+            				    row11.hashtag = aggregated_row_tAggregateRow_6.hashtag;
+            				    
+            				    row11.country = aggregated_row_tAggregateRow_6.country;
+            				    row11.c_negatives = aggregated_row_tAggregateRow_6.c_negatives_sum;
+                                	
+
+ 
+
+
+	tos_count_tAggregateRow_6_AGGIN++;
+
+/**
+ * [tAggregateRow_6_AGGIN main ] stop
+ */
+	
+	/**
+	 * [tAggregateRow_6_AGGIN process_data_begin ] start
+	 */
+
+	
+
+	
+	
+		currentVirtualComponent = "tAggregateRow_6";
+	
+	currentComponent="tAggregateRow_6_AGGIN";
+
+	
+
+ 
+
+
+
+/**
+ * [tAggregateRow_6_AGGIN process_data_begin ] stop
+ */
+
+	
+	/**
+	 * [tFileOutputDelimited_5 main ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tFileOutputDelimited_5";
+
+	
+					if(execStat){
+						runStat.updateStatOnConnection(iterateId,1,1,"row11");
+					}
+					
+
+
+                    StringBuilder sb_tFileOutputDelimited_5 = new StringBuilder();
+                            if(row11.date != null) {
+                        sb_tFileOutputDelimited_5.append(
+                            FormatterUtils.format_Date(row11.date, "dd-MM-yyyy")
+                        );
+                            }
+                            sb_tFileOutputDelimited_5.append(OUT_DELIM_tFileOutputDelimited_5);
+                            if(row11.hashtag != null) {
+                        sb_tFileOutputDelimited_5.append(
+                            row11.hashtag
+                        );
+                            }
+                            sb_tFileOutputDelimited_5.append(OUT_DELIM_tFileOutputDelimited_5);
+                            if(row11.country != null) {
+                        sb_tFileOutputDelimited_5.append(
+                            row11.country
+                        );
+                            }
+                            sb_tFileOutputDelimited_5.append(OUT_DELIM_tFileOutputDelimited_5);
+                            if(row11.c_negatives != null) {
+                        sb_tFileOutputDelimited_5.append(
+                            row11.c_negatives
+                        );
+                            }
+                    sb_tFileOutputDelimited_5.append(OUT_DELIM_ROWSEP_tFileOutputDelimited_5);
+
+
+                    nb_line_tFileOutputDelimited_5++;
+                    resourceMap.put("nb_line_tFileOutputDelimited_5", nb_line_tFileOutputDelimited_5);
+
+                        outtFileOutputDelimited_5.write(sb_tFileOutputDelimited_5.toString());
+
+
+
+
+ 
+
+
+	tos_count_tFileOutputDelimited_5++;
+
+/**
+ * [tFileOutputDelimited_5 main ] stop
+ */
+	
+	/**
+	 * [tFileOutputDelimited_5 process_data_begin ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tFileOutputDelimited_5";
+
+	
+
+ 
+
+
+
+/**
+ * [tFileOutputDelimited_5 process_data_begin ] stop
+ */
+	
+	/**
+	 * [tFileOutputDelimited_5 process_data_end ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tFileOutputDelimited_5";
+
+	
+
+ 
+
+
+
+/**
+ * [tFileOutputDelimited_5 process_data_end ] stop
+ */
+
+
+
+	
+	/**
+	 * [tAggregateRow_6_AGGIN process_data_end ] start
+	 */
+
+	
+
+	
+	
+		currentVirtualComponent = "tAggregateRow_6";
+	
+	currentComponent="tAggregateRow_6_AGGIN";
+
+	
+
+ 
+
+
+
+/**
+ * [tAggregateRow_6_AGGIN process_data_end ] stop
+ */
+	
+	/**
+	 * [tAggregateRow_6_AGGIN end ] start
+	 */
+
+	
+
+	
+	
+		currentVirtualComponent = "tAggregateRow_6";
+	
+	currentComponent="tAggregateRow_6_AGGIN";
+
+	
+
+} // G_AggR_600
+
+ 
+
+ok_Hash.put("tAggregateRow_6_AGGIN", true);
+end_Hash.put("tAggregateRow_6_AGGIN", System.currentTimeMillis());
+
+
+
+
+/**
+ * [tAggregateRow_6_AGGIN end ] stop
+ */
+
+	
+	/**
+	 * [tFileOutputDelimited_5 end ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tFileOutputDelimited_5";
+
+	
+
+
+
+		
+			
+					if(outtFileOutputDelimited_5!=null) {
 						outtFileOutputDelimited_5.flush();
 						outtFileOutputDelimited_5.close();
 					}
+				
+				globalMap.put("tFileOutputDelimited_5_NB_LINE",nb_line_tFileOutputDelimited_5);
+				globalMap.put("tFileOutputDelimited_5_FILE_NAME",fileName_tFileOutputDelimited_5);
+			
+		
+		
+		resourceMap.put("finish_tFileOutputDelimited_5", true);
+	
 
-				}
+				if(execStat){
+			  		runStat.updateStat(resourceMap,iterateId,2,0,"row11");
+			  	}
+			  	
+ 
 
-				/**
-				 * [tFileOutputDelimited_5 finally ] stop
-				 */
+ok_Hash.put("tFileOutputDelimited_5", true);
+end_Hash.put("tFileOutputDelimited_5", System.currentTimeMillis());
 
-				/**
-				 * [tAggregateRow_7_AGGOUT finally ] start
-				 */
 
-				currentVirtualComponent = "tAggregateRow_7";
 
-				currentComponent = "tAggregateRow_7_AGGOUT";
 
-				/**
-				 * [tAggregateRow_7_AGGOUT finally ] stop
-				 */
+/**
+ * [tFileOutputDelimited_5 end ] stop
+ */
 
-				/**
-				 * [tAggregateRow_7_AGGIN finally ] start
-				 */
 
-				currentVirtualComponent = "tAggregateRow_7";
 
-				currentComponent = "tAggregateRow_7_AGGIN";
 
-				/**
-				 * [tAggregateRow_7_AGGIN finally ] stop
-				 */
 
-				/**
-				 * [tFileOutputDelimited_6 finally ] start
-				 */
 
-				currentComponent = "tFileOutputDelimited_6";
 
-				if (resourceMap.get("finish_tFileOutputDelimited_6") == null) {
 
-					java.io.Writer outtFileOutputDelimited_6 = (java.io.Writer) resourceMap
-							.get("out_tFileOutputDelimited_6");
-					if (outtFileOutputDelimited_6 != null) {
+
+
+	
+	/**
+	 * [tAggregateRow_7_AGGOUT end ] start
+	 */
+
+	
+
+	
+	
+		currentVirtualComponent = "tAggregateRow_7";
+	
+	currentComponent="tAggregateRow_7_AGGOUT";
+
+	
+
+				if(execStat){
+			  		runStat.updateStat(resourceMap,iterateId,2,0,"count_in");
+			  	}
+			  	
+ 
+
+ok_Hash.put("tAggregateRow_7_AGGOUT", true);
+end_Hash.put("tAggregateRow_7_AGGOUT", System.currentTimeMillis());
+
+
+
+
+/**
+ * [tAggregateRow_7_AGGOUT end ] stop
+ */
+
+
+	
+	/**
+	 * [tFileOutputDelimited_6 begin ] start
+	 */
+
+	
+
+	
+		
+		ok_Hash.put("tFileOutputDelimited_6", false);
+		start_Hash.put("tFileOutputDelimited_6", System.currentTimeMillis());
+		
+	
+	currentComponent="tFileOutputDelimited_6";
+
+	
+					if(execStat) {
+						runStat.updateStatOnConnection(resourceMap,iterateId,0,0,"row13");
+					}
+				
+		int tos_count_tFileOutputDelimited_6 = 0;
+		
+
+String fileName_tFileOutputDelimited_6 = "";
+    fileName_tFileOutputDelimited_6 = (new java.io.File(context.path_files_global+"documentations/mesures/c_in.csv")).getAbsolutePath().replace("\\","/");
+    String fullName_tFileOutputDelimited_6 = null;
+    String extension_tFileOutputDelimited_6 = null;
+    String directory_tFileOutputDelimited_6 = null;
+    if((fileName_tFileOutputDelimited_6.indexOf("/") != -1)) {
+        if(fileName_tFileOutputDelimited_6.lastIndexOf(".") < fileName_tFileOutputDelimited_6.lastIndexOf("/")) {
+            fullName_tFileOutputDelimited_6 = fileName_tFileOutputDelimited_6;
+            extension_tFileOutputDelimited_6 = "";
+        } else {
+            fullName_tFileOutputDelimited_6 = fileName_tFileOutputDelimited_6.substring(0, fileName_tFileOutputDelimited_6.lastIndexOf("."));
+            extension_tFileOutputDelimited_6 = fileName_tFileOutputDelimited_6.substring(fileName_tFileOutputDelimited_6.lastIndexOf("."));
+        }
+        directory_tFileOutputDelimited_6 = fileName_tFileOutputDelimited_6.substring(0, fileName_tFileOutputDelimited_6.lastIndexOf("/"));
+    } else {
+        if(fileName_tFileOutputDelimited_6.lastIndexOf(".") != -1) {
+            fullName_tFileOutputDelimited_6 = fileName_tFileOutputDelimited_6.substring(0, fileName_tFileOutputDelimited_6.lastIndexOf("."));
+            extension_tFileOutputDelimited_6 = fileName_tFileOutputDelimited_6.substring(fileName_tFileOutputDelimited_6.lastIndexOf("."));
+        } else {
+            fullName_tFileOutputDelimited_6 = fileName_tFileOutputDelimited_6;
+            extension_tFileOutputDelimited_6 = "";
+        }
+        directory_tFileOutputDelimited_6 = "";
+    }
+    boolean isFileGenerated_tFileOutputDelimited_6 = true;
+    java.io.File filetFileOutputDelimited_6 = new java.io.File(fileName_tFileOutputDelimited_6);
+    globalMap.put("tFileOutputDelimited_6_FILE_NAME",fileName_tFileOutputDelimited_6);
+    if(filetFileOutputDelimited_6.exists()){
+            throw new RuntimeException("The particular file \""+filetFileOutputDelimited_6.getAbsoluteFile() +
+            "\" already exist. If you want to overwrite the file, please uncheck the" + 
+            " \"Throw an error if the file already exist\" option in Advanced settings.");
+        }
+            int nb_line_tFileOutputDelimited_6 = 0;
+            int splitedFileNo_tFileOutputDelimited_6 = 0;
+            int currentRow_tFileOutputDelimited_6 = 0;
+
+            final String OUT_DELIM_tFileOutputDelimited_6 = /** Start field tFileOutputDelimited_6:FIELDSEPARATOR */";"/** End field tFileOutputDelimited_6:FIELDSEPARATOR */;
+
+            final String OUT_DELIM_ROWSEP_tFileOutputDelimited_6 = /** Start field tFileOutputDelimited_6:ROWSEPARATOR */"\n"/** End field tFileOutputDelimited_6:ROWSEPARATOR */;
+
+                    //create directory only if not exists
+                    if(directory_tFileOutputDelimited_6 != null && directory_tFileOutputDelimited_6.trim().length() != 0) {
+                        java.io.File dir_tFileOutputDelimited_6 = new java.io.File(directory_tFileOutputDelimited_6);
+                        if(!dir_tFileOutputDelimited_6.exists()) {
+                            dir_tFileOutputDelimited_6.mkdirs();
+                        }
+                    }
+
+                        //routines.system.Row
+                        java.io.Writer outtFileOutputDelimited_6 = null;
+
+                        java.io.File fileToDelete_tFileOutputDelimited_6 = new java.io.File(fileName_tFileOutputDelimited_6);
+                        if(fileToDelete_tFileOutputDelimited_6.exists()) {
+                            fileToDelete_tFileOutputDelimited_6.delete();
+                        }
+                        outtFileOutputDelimited_6 = new java.io.BufferedWriter(new java.io.OutputStreamWriter(
+                        new java.io.FileOutputStream(fileName_tFileOutputDelimited_6, false),"ISO-8859-15"));
+                                    if(filetFileOutputDelimited_6.length()==0){
+                                        outtFileOutputDelimited_6.write("date");
+                                            outtFileOutputDelimited_6.write(OUT_DELIM_tFileOutputDelimited_6);
+                                        outtFileOutputDelimited_6.write("hashtag");
+                                            outtFileOutputDelimited_6.write(OUT_DELIM_tFileOutputDelimited_6);
+                                        outtFileOutputDelimited_6.write("country");
+                                            outtFileOutputDelimited_6.write(OUT_DELIM_tFileOutputDelimited_6);
+                                        outtFileOutputDelimited_6.write("c_tweet");
+                                        outtFileOutputDelimited_6.write(OUT_DELIM_ROWSEP_tFileOutputDelimited_6);
+                                        outtFileOutputDelimited_6.flush();
+                                    }
+
+
+        resourceMap.put("out_tFileOutputDelimited_6", outtFileOutputDelimited_6);
+resourceMap.put("nb_line_tFileOutputDelimited_6", nb_line_tFileOutputDelimited_6);
+
+ 
+
+
+
+/**
+ * [tFileOutputDelimited_6 begin ] stop
+ */
+
+
+
+	
+	/**
+	 * [tAggregateRow_7_AGGIN begin ] start
+	 */
+
+	
+
+	
+		
+		ok_Hash.put("tAggregateRow_7_AGGIN", false);
+		start_Hash.put("tAggregateRow_7_AGGIN", System.currentTimeMillis());
+		
+	
+		currentVirtualComponent = "tAggregateRow_7";
+	
+	currentComponent="tAggregateRow_7_AGGIN";
+
+	
+		int tos_count_tAggregateRow_7_AGGIN = 0;
+		
+
+java.util.Collection<AggOperationStruct_tAggregateRow_7> values_tAggregateRow_7 = hash_tAggregateRow_7.values();
+
+globalMap.put("tAggregateRow_7_NB_LINE", values_tAggregateRow_7.size());
+
+for(AggOperationStruct_tAggregateRow_7 aggregated_row_tAggregateRow_7 : values_tAggregateRow_7) { // G_AggR_600
+
+
+
+ 
+
+
+
+/**
+ * [tAggregateRow_7_AGGIN begin ] stop
+ */
+	
+	/**
+	 * [tAggregateRow_7_AGGIN main ] start
+	 */
+
+	
+
+	
+	
+		currentVirtualComponent = "tAggregateRow_7";
+	
+	currentComponent="tAggregateRow_7_AGGIN";
+
+	
+
+            				    row13.date = aggregated_row_tAggregateRow_7.date;
+            				    
+            				    row13.hashtag = aggregated_row_tAggregateRow_7.hashtag;
+            				    
+            				    row13.country = aggregated_row_tAggregateRow_7.country;
+            				    row13.c_tweet = aggregated_row_tAggregateRow_7.c_tweet_sum;
+                                	
+
+ 
+
+
+	tos_count_tAggregateRow_7_AGGIN++;
+
+/**
+ * [tAggregateRow_7_AGGIN main ] stop
+ */
+	
+	/**
+	 * [tAggregateRow_7_AGGIN process_data_begin ] start
+	 */
+
+	
+
+	
+	
+		currentVirtualComponent = "tAggregateRow_7";
+	
+	currentComponent="tAggregateRow_7_AGGIN";
+
+	
+
+ 
+
+
+
+/**
+ * [tAggregateRow_7_AGGIN process_data_begin ] stop
+ */
+
+	
+	/**
+	 * [tFileOutputDelimited_6 main ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tFileOutputDelimited_6";
+
+	
+					if(execStat){
+						runStat.updateStatOnConnection(iterateId,1,1,"row13");
+					}
+					
+
+
+                    StringBuilder sb_tFileOutputDelimited_6 = new StringBuilder();
+                            if(row13.date != null) {
+                        sb_tFileOutputDelimited_6.append(
+                            FormatterUtils.format_Date(row13.date, "dd-MM-yyyy")
+                        );
+                            }
+                            sb_tFileOutputDelimited_6.append(OUT_DELIM_tFileOutputDelimited_6);
+                            if(row13.hashtag != null) {
+                        sb_tFileOutputDelimited_6.append(
+                            row13.hashtag
+                        );
+                            }
+                            sb_tFileOutputDelimited_6.append(OUT_DELIM_tFileOutputDelimited_6);
+                            if(row13.country != null) {
+                        sb_tFileOutputDelimited_6.append(
+                            row13.country
+                        );
+                            }
+                            sb_tFileOutputDelimited_6.append(OUT_DELIM_tFileOutputDelimited_6);
+                            if(row13.c_tweet != null) {
+                        sb_tFileOutputDelimited_6.append(
+                            row13.c_tweet
+                        );
+                            }
+                    sb_tFileOutputDelimited_6.append(OUT_DELIM_ROWSEP_tFileOutputDelimited_6);
+
+
+                    nb_line_tFileOutputDelimited_6++;
+                    resourceMap.put("nb_line_tFileOutputDelimited_6", nb_line_tFileOutputDelimited_6);
+
+                        outtFileOutputDelimited_6.write(sb_tFileOutputDelimited_6.toString());
+
+
+
+
+ 
+
+
+	tos_count_tFileOutputDelimited_6++;
+
+/**
+ * [tFileOutputDelimited_6 main ] stop
+ */
+	
+	/**
+	 * [tFileOutputDelimited_6 process_data_begin ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tFileOutputDelimited_6";
+
+	
+
+ 
+
+
+
+/**
+ * [tFileOutputDelimited_6 process_data_begin ] stop
+ */
+	
+	/**
+	 * [tFileOutputDelimited_6 process_data_end ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tFileOutputDelimited_6";
+
+	
+
+ 
+
+
+
+/**
+ * [tFileOutputDelimited_6 process_data_end ] stop
+ */
+
+
+
+	
+	/**
+	 * [tAggregateRow_7_AGGIN process_data_end ] start
+	 */
+
+	
+
+	
+	
+		currentVirtualComponent = "tAggregateRow_7";
+	
+	currentComponent="tAggregateRow_7_AGGIN";
+
+	
+
+ 
+
+
+
+/**
+ * [tAggregateRow_7_AGGIN process_data_end ] stop
+ */
+	
+	/**
+	 * [tAggregateRow_7_AGGIN end ] start
+	 */
+
+	
+
+	
+	
+		currentVirtualComponent = "tAggregateRow_7";
+	
+	currentComponent="tAggregateRow_7_AGGIN";
+
+	
+
+} // G_AggR_600
+
+ 
+
+ok_Hash.put("tAggregateRow_7_AGGIN", true);
+end_Hash.put("tAggregateRow_7_AGGIN", System.currentTimeMillis());
+
+
+
+
+/**
+ * [tAggregateRow_7_AGGIN end ] stop
+ */
+
+	
+	/**
+	 * [tFileOutputDelimited_6 end ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tFileOutputDelimited_6";
+
+	
+
+
+
+		
+			
+					if(outtFileOutputDelimited_6!=null) {
 						outtFileOutputDelimited_6.flush();
 						outtFileOutputDelimited_6.close();
 					}
+				
+				globalMap.put("tFileOutputDelimited_6_NB_LINE",nb_line_tFileOutputDelimited_6);
+				globalMap.put("tFileOutputDelimited_6_FILE_NAME",fileName_tFileOutputDelimited_6);
+			
+		
+		
+		resourceMap.put("finish_tFileOutputDelimited_6", true);
+	
 
-				}
+				if(execStat){
+			  		runStat.updateStat(resourceMap,iterateId,2,0,"row13");
+			  	}
+			  	
+ 
 
-				/**
-				 * [tFileOutputDelimited_6 finally ] stop
-				 */
+ok_Hash.put("tFileOutputDelimited_6", true);
+end_Hash.put("tFileOutputDelimited_6", System.currentTimeMillis());
 
-			} catch (java.lang.Exception e) {
-				// ignore
-			} catch (java.lang.Error error) {
-				// ignore
-			}
-			resourceMap = null;
+
+
+
+/**
+ * [tFileOutputDelimited_6 end ] stop
+ */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+				}//end the resume
+
+				
+
+
+
+	
+			}catch(java.lang.Exception e){	
+				
+				TalendException te = new TalendException(e, currentComponent, globalMap);
+				
+					te.setVirtualComponentName(currentVirtualComponent);
+				
+				throw te;
+			}catch(java.lang.Error error){	
+				
+					runStat.stopThreadStat();
+				
+				throw error;
+			}finally{
+				
+							//free memory for "tAggregateRow_7_AGGIN"
+							globalMap.remove("tAggregateRow_7");
+						
+							//free memory for "tAggregateRow_6_AGGIN"
+							globalMap.remove("tAggregateRow_6");
+						
+							//free memory for "tAggregateRow_5_AGGIN"
+							globalMap.remove("tAggregateRow_5");
+						
+							//free memory for "tAggregateRow_4_AGGIN"
+							globalMap.remove("tAggregateRow_4");
+						
+							//free memory for "tAggregateRow_2_AGGIN"
+							globalMap.remove("tAggregateRow_2");
+						
+							//free memory for "tAggregateRow_1_AGGIN"
+							globalMap.remove("tAggregateRow_1");
+						
+							//free memory for "tAggregateRow_3_AGGIN"
+							globalMap.remove("tAggregateRow_3");
+						
+					     			//free memory for "tMap_2"
+					     			globalMap.remove("tHash_Lookup_row6"); 
+				     			
+				try{
+					
+	
+	/**
+	 * [tDBInput_1 finally ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tDBInput_1";
+
+	
+
+ 
+
+
+
+/**
+ * [tDBInput_1 finally ] stop
+ */
+
+	
+	/**
+	 * [tReplace_1 finally ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tReplace_1";
+
+	
+
+ 
+
+
+
+/**
+ * [tReplace_1 finally ] stop
+ */
+
+	
+	/**
+	 * [tMap_1 finally ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tMap_1";
+
+	
+
+ 
+
+
+
+/**
+ * [tMap_1 finally ] stop
+ */
+
+	
+	/**
+	 * [tNormalize_1 finally ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tNormalize_1";
+
+	
+
+ 
+
+
+
+/**
+ * [tNormalize_1 finally ] stop
+ */
+
+	
+	/**
+	 * [tNormalize_2 finally ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tNormalize_2";
+
+	
+
+ 
+
+
+
+/**
+ * [tNormalize_2 finally ] stop
+ */
+
+	
+	/**
+	 * [tFilterRow_1 finally ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tFilterRow_1";
+
+	
+
+ 
+
+
+
+/**
+ * [tFilterRow_1 finally ] stop
+ */
+
+	
+	/**
+	 * [tMap_2 finally ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tMap_2";
+
+	
+
+ 
+
+
+
+/**
+ * [tMap_2 finally ] stop
+ */
+
+	
+	/**
+	 * [tAggregateRow_3_AGGOUT finally ] start
+	 */
+
+	
+
+	
+	
+		currentVirtualComponent = "tAggregateRow_3";
+	
+	currentComponent="tAggregateRow_3_AGGOUT";
+
+	
+
+ 
+
+
+
+/**
+ * [tAggregateRow_3_AGGOUT finally ] stop
+ */
+
+	
+	/**
+	 * [tAggregateRow_3_AGGIN finally ] start
+	 */
+
+	
+
+	
+	
+		currentVirtualComponent = "tAggregateRow_3";
+	
+	currentComponent="tAggregateRow_3_AGGIN";
+
+	
+
+ 
+
+
+
+/**
+ * [tAggregateRow_3_AGGIN finally ] stop
+ */
+
+	
+	/**
+	 * [tFileOutputDelimited_3 finally ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tFileOutputDelimited_3";
+
+	
+
+
+		if(resourceMap.get("finish_tFileOutputDelimited_3") == null){ 
+			
+				
+						java.io.Writer outtFileOutputDelimited_3 = (java.io.Writer)resourceMap.get("out_tFileOutputDelimited_3");
+						if(outtFileOutputDelimited_3!=null) {
+							outtFileOutputDelimited_3.flush();
+							outtFileOutputDelimited_3.close();
+						}
+					
+				
+			
 		}
+	
+
+ 
+
+
+
+/**
+ * [tFileOutputDelimited_3 finally ] stop
+ */
+
+
+
+
+
+
+
+
+
+
+	
+	/**
+	 * [tAggregateRow_1_AGGOUT finally ] start
+	 */
+
+	
+
+	
+	
+		currentVirtualComponent = "tAggregateRow_1";
+	
+	currentComponent="tAggregateRow_1_AGGOUT";
+
+	
+
+ 
+
+
+
+/**
+ * [tAggregateRow_1_AGGOUT finally ] stop
+ */
+
+	
+	/**
+	 * [tAggregateRow_1_AGGIN finally ] start
+	 */
+
+	
+
+	
+	
+		currentVirtualComponent = "tAggregateRow_1";
+	
+	currentComponent="tAggregateRow_1_AGGIN";
+
+	
+
+ 
+
+
+
+/**
+ * [tAggregateRow_1_AGGIN finally ] stop
+ */
+
+	
+	/**
+	 * [tFileOutputDelimited_1 finally ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tFileOutputDelimited_1";
+
+	
+
+
+		if(resourceMap.get("finish_tFileOutputDelimited_1") == null){ 
+			
+				
+						java.io.Writer outtFileOutputDelimited_1 = (java.io.Writer)resourceMap.get("out_tFileOutputDelimited_1");
+						if(outtFileOutputDelimited_1!=null) {
+							outtFileOutputDelimited_1.flush();
+							outtFileOutputDelimited_1.close();
+						}
+					
+				
+			
+		}
+	
+
+ 
+
+
+
+/**
+ * [tFileOutputDelimited_1 finally ] stop
+ */
+
+
+
+
+
+
+
+
+
+
+	
+	/**
+	 * [tAggregateRow_2_AGGOUT finally ] start
+	 */
+
+	
+
+	
+	
+		currentVirtualComponent = "tAggregateRow_2";
+	
+	currentComponent="tAggregateRow_2_AGGOUT";
+
+	
+
+ 
+
+
+
+/**
+ * [tAggregateRow_2_AGGOUT finally ] stop
+ */
+
+	
+	/**
+	 * [tAggregateRow_2_AGGIN finally ] start
+	 */
+
+	
+
+	
+	
+		currentVirtualComponent = "tAggregateRow_2";
+	
+	currentComponent="tAggregateRow_2_AGGIN";
+
+	
+
+ 
+
+
+
+/**
+ * [tAggregateRow_2_AGGIN finally ] stop
+ */
+
+	
+	/**
+	 * [tFileOutputDelimited_2 finally ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tFileOutputDelimited_2";
+
+	
+
+
+		if(resourceMap.get("finish_tFileOutputDelimited_2") == null){ 
+			
+				
+						java.io.Writer outtFileOutputDelimited_2 = (java.io.Writer)resourceMap.get("out_tFileOutputDelimited_2");
+						if(outtFileOutputDelimited_2!=null) {
+							outtFileOutputDelimited_2.flush();
+							outtFileOutputDelimited_2.close();
+						}
+					
+				
+			
+		}
+	
+
+ 
+
+
+
+/**
+ * [tFileOutputDelimited_2 finally ] stop
+ */
+
+
+
+
+
+
+
+
+
+
+	
+	/**
+	 * [tAggregateRow_4_AGGOUT finally ] start
+	 */
+
+	
+
+	
+	
+		currentVirtualComponent = "tAggregateRow_4";
+	
+	currentComponent="tAggregateRow_4_AGGOUT";
+
+	
+
+ 
+
+
+
+/**
+ * [tAggregateRow_4_AGGOUT finally ] stop
+ */
+
+	
+	/**
+	 * [tAggregateRow_4_AGGIN finally ] start
+	 */
+
+	
+
+	
+	
+		currentVirtualComponent = "tAggregateRow_4";
+	
+	currentComponent="tAggregateRow_4_AGGIN";
+
+	
+
+ 
+
+
+
+/**
+ * [tAggregateRow_4_AGGIN finally ] stop
+ */
+
+	
+	/**
+	 * [tMap_3 finally ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tMap_3";
+
+	
+
+ 
+
+
+
+/**
+ * [tMap_3 finally ] stop
+ */
+
+	
+	/**
+	 * [tAggregateRow_5_AGGOUT finally ] start
+	 */
+
+	
+
+	
+	
+		currentVirtualComponent = "tAggregateRow_5";
+	
+	currentComponent="tAggregateRow_5_AGGOUT";
+
+	
+
+ 
+
+
+
+/**
+ * [tAggregateRow_5_AGGOUT finally ] stop
+ */
+
+	
+	/**
+	 * [tAggregateRow_5_AGGIN finally ] start
+	 */
+
+	
+
+	
+	
+		currentVirtualComponent = "tAggregateRow_5";
+	
+	currentComponent="tAggregateRow_5_AGGIN";
+
+	
+
+ 
+
+
+
+/**
+ * [tAggregateRow_5_AGGIN finally ] stop
+ */
+
+	
+	/**
+	 * [tFileOutputDelimited_4 finally ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tFileOutputDelimited_4";
+
+	
+
+
+		if(resourceMap.get("finish_tFileOutputDelimited_4") == null){ 
+			
+				
+						java.io.Writer outtFileOutputDelimited_4 = (java.io.Writer)resourceMap.get("out_tFileOutputDelimited_4");
+						if(outtFileOutputDelimited_4!=null) {
+							outtFileOutputDelimited_4.flush();
+							outtFileOutputDelimited_4.close();
+						}
+					
+				
+			
+		}
+	
+
+ 
+
+
+
+/**
+ * [tFileOutputDelimited_4 finally ] stop
+ */
+
+
+
+
+
+
+
+
+
+
+	
+	/**
+	 * [tAggregateRow_6_AGGOUT finally ] start
+	 */
+
+	
+
+	
+	
+		currentVirtualComponent = "tAggregateRow_6";
+	
+	currentComponent="tAggregateRow_6_AGGOUT";
+
+	
+
+ 
+
+
+
+/**
+ * [tAggregateRow_6_AGGOUT finally ] stop
+ */
+
+	
+	/**
+	 * [tAggregateRow_6_AGGIN finally ] start
+	 */
+
+	
+
+	
+	
+		currentVirtualComponent = "tAggregateRow_6";
+	
+	currentComponent="tAggregateRow_6_AGGIN";
+
+	
+
+ 
+
+
+
+/**
+ * [tAggregateRow_6_AGGIN finally ] stop
+ */
+
+	
+	/**
+	 * [tFileOutputDelimited_5 finally ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tFileOutputDelimited_5";
+
+	
+
+
+		if(resourceMap.get("finish_tFileOutputDelimited_5") == null){ 
+			
+				
+						java.io.Writer outtFileOutputDelimited_5 = (java.io.Writer)resourceMap.get("out_tFileOutputDelimited_5");
+						if(outtFileOutputDelimited_5!=null) {
+							outtFileOutputDelimited_5.flush();
+							outtFileOutputDelimited_5.close();
+						}
+					
+				
+			
+		}
+	
+
+ 
+
+
+
+/**
+ * [tFileOutputDelimited_5 finally ] stop
+ */
+
+
+
+
+
+
+
+
+
+
+	
+	/**
+	 * [tAggregateRow_7_AGGOUT finally ] start
+	 */
+
+	
+
+	
+	
+		currentVirtualComponent = "tAggregateRow_7";
+	
+	currentComponent="tAggregateRow_7_AGGOUT";
+
+	
+
+ 
+
+
+
+/**
+ * [tAggregateRow_7_AGGOUT finally ] stop
+ */
+
+	
+	/**
+	 * [tAggregateRow_7_AGGIN finally ] start
+	 */
+
+	
+
+	
+	
+		currentVirtualComponent = "tAggregateRow_7";
+	
+	currentComponent="tAggregateRow_7_AGGIN";
+
+	
+
+ 
+
+
+
+/**
+ * [tAggregateRow_7_AGGIN finally ] stop
+ */
+
+	
+	/**
+	 * [tFileOutputDelimited_6 finally ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tFileOutputDelimited_6";
+
+	
+
+
+		if(resourceMap.get("finish_tFileOutputDelimited_6") == null){ 
+			
+				
+						java.io.Writer outtFileOutputDelimited_6 = (java.io.Writer)resourceMap.get("out_tFileOutputDelimited_6");
+						if(outtFileOutputDelimited_6!=null) {
+							outtFileOutputDelimited_6.flush();
+							outtFileOutputDelimited_6.close();
+						}
+					
+				
+			
+		}
+	
+
+ 
+
+
+
+/**
+ * [tFileOutputDelimited_6 finally ] stop
+ */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+				}catch(java.lang.Exception e){	
+					//ignore
+				}catch(java.lang.Error error){
+					//ignore
+				}
+				resourceMap = null;
+			}
+		
 
 		globalMap.put("tDBInput_1_SUBPROCESS_STATE", 1);
 	}
+	
 
-	public static class row6Struct implements routines.system.IPersistableComparableLookupRow<row6Struct> {
-		final static byte[] commonByteArrayLock_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[0];
-		static byte[] commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[0];
-		protected static final int DEFAULT_HASHCODE = 1;
-		protected static final int PRIME = 31;
-		protected int hashCode = DEFAULT_HASHCODE;
-		public boolean hashCodeDirty = true;
 
-		public String loopKey;
+public static class row6Struct implements routines.system.IPersistableComparableLookupRow<row6Struct> {
+    final static byte[] commonByteArrayLock_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[0];
+    static byte[] commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[0];
+	protected static final int DEFAULT_HASHCODE = 1;
+    protected static final int PRIME = 31;
+    protected int hashCode = DEFAULT_HASHCODE;
+    public boolean hashCodeDirty = true;
 
-		public String word_english;
+    public String loopKey;
 
-		public String getWord_english() {
-			return this.word_english;
-		}
 
-		public String word_french;
 
-		public String getWord_french() {
-			return this.word_french;
-		}
+	
+			    public String word_english;
 
-		public Integer sentiment;
-
-		public Integer getSentiment() {
-			return this.sentiment;
-		}
-
-		@Override
-		public int hashCode() {
-			if (this.hashCodeDirty) {
-				final int prime = PRIME;
-				int result = DEFAULT_HASHCODE;
-
-				result = prime * result + ((this.word_english == null) ? 0 : this.word_english.hashCode());
-
-				this.hashCode = result;
-				this.hashCodeDirty = false;
-			}
-			return this.hashCode;
-		}
-
-		@Override
-		public boolean equals(Object obj) {
-			if (this == obj)
-				return true;
-			if (obj == null)
-				return false;
-			if (getClass() != obj.getClass())
-				return false;
-			final row6Struct other = (row6Struct) obj;
-
-			if (this.word_english == null) {
-				if (other.word_english != null)
-					return false;
-
-			} else if (!this.word_english.equals(other.word_english))
-
-				return false;
-
-			return true;
-		}
-
-		public void copyDataTo(row6Struct other) {
-
-			other.word_english = this.word_english;
-			other.word_french = this.word_french;
-			other.sentiment = this.sentiment;
-
-		}
-
-		public void copyKeysDataTo(row6Struct other) {
-
-			other.word_english = this.word_english;
-
-		}
-
-		private String readString(ObjectInputStream dis) throws IOException {
-			String strReturn = null;
-			int length = 0;
-			length = dis.readInt();
-			if (length == -1) {
-				strReturn = null;
-			} else {
-				if (length > commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets.length) {
-					if (length < 1024
-							&& commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets.length == 0) {
-						commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[1024];
-					} else {
-						commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[2
-								* length];
-					}
+				public String getWord_english () {
+					return this.word_english;
 				}
-				dis.readFully(commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets, 0,
-						length);
-				strReturn = new String(commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets,
-						0, length, utf8Charset);
-			}
-			return strReturn;
-		}
+				
+			    public String word_french;
 
-		private void writeString(String str, ObjectOutputStream dos) throws IOException {
-			if (str == null) {
-				dos.writeInt(-1);
-			} else {
-				byte[] byteArray = str.getBytes(utf8Charset);
-				dos.writeInt(byteArray.length);
-				dos.write(byteArray);
-			}
-		}
-
-		private String readString(DataInputStream dis, ObjectInputStream ois) throws IOException {
-			String strReturn = null;
-			int length = 0;
-			length = dis.readInt();
-			if (length == -1) {
-				strReturn = null;
-			} else {
-				byte[] byteArray = new byte[length];
-				dis.read(byteArray);
-				strReturn = new String(byteArray, utf8Charset);
-			}
-			return strReturn;
-		}
-
-		private void writeString(String str, DataOutputStream dos, ObjectOutputStream oos) throws IOException {
-			if (str == null) {
-				dos.writeInt(-1);
-			} else {
-				byte[] byteArray = str.getBytes(utf8Charset);
-				dos.writeInt(byteArray.length);
-				dos.write(byteArray);
-			}
-		}
-
-		private Integer readInteger(DataInputStream dis, ObjectInputStream ois) throws IOException {
-			Integer intReturn;
-			int length = 0;
-			length = dis.readByte();
-			if (length == -1) {
-				intReturn = null;
-			} else {
-				intReturn = dis.readInt();
-			}
-			return intReturn;
-		}
-
-		private void writeInteger(Integer intNum, DataOutputStream dos, ObjectOutputStream oos) throws IOException {
-			if (intNum == null) {
-				dos.writeByte(-1);
-			} else {
-				dos.writeByte(0);
-				dos.writeInt(intNum);
-			}
-		}
-
-		public void readKeysData(ObjectInputStream dis) {
-
-			synchronized (commonByteArrayLock_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets) {
-
-				try {
-
-					int length = 0;
-
-					this.word_english = readString(dis);
-
-				} catch (IOException e) {
-					throw new RuntimeException(e);
-
+				public String getWord_french () {
+					return this.word_french;
 				}
+				
+			    public Integer sentiment;
 
-			}
+				public Integer getSentiment () {
+					return this.sentiment;
+				}
+				
 
+
+	@Override
+	public int hashCode() {
+		if (this.hashCodeDirty) {
+			final int prime = PRIME;
+			int result = DEFAULT_HASHCODE;
+	
+						result = prime * result + ((this.word_english == null) ? 0 : this.word_english.hashCode());
+					
+    		this.hashCode = result;
+    		this.hashCodeDirty = false;
 		}
-
-		public void writeKeysData(ObjectOutputStream dos) {
-			try {
-
-				// String
-
-				writeString(this.word_english, dos);
-
-			} catch (IOException e) {
-				throw new RuntimeException(e);
-			}
-
-		}
-
-		/**
-		 * Fill Values data by reading ObjectInputStream.
-		 */
-		public void readValuesData(DataInputStream dis, ObjectInputStream ois) {
-			try {
-
-				int length = 0;
-
-				this.word_french = readString(dis, ois);
-
-				this.sentiment = readInteger(dis, ois);
-
-			} catch (IOException e) {
-				throw new RuntimeException(e);
-
-			}
-
-		}
-
-		/**
-		 * Return a byte array which represents Values data.
-		 */
-		public void writeValuesData(DataOutputStream dos, ObjectOutputStream oos) {
-			try {
-
-				writeString(this.word_french, dos, oos);
-
-				writeInteger(this.sentiment, dos, oos);
-
-			} catch (IOException e) {
-				throw new RuntimeException(e);
-			}
-
-		}
-
-		public String toString() {
-
-			StringBuilder sb = new StringBuilder();
-			sb.append(super.toString());
-			sb.append("[");
-			sb.append("word_english=" + word_english);
-			sb.append(",word_french=" + word_french);
-			sb.append(",sentiment=" + String.valueOf(sentiment));
-			sb.append("]");
-
-			return sb.toString();
-		}
-
-		/**
-		 * Compare keys
-		 */
-		public int compareTo(row6Struct other) {
-
-			int returnValue = -1;
-
-			returnValue = checkNullsAndCompare(this.word_english, other.word_english);
-			if (returnValue != 0) {
-				return returnValue;
-			}
-
-			return returnValue;
-		}
-
-		private int checkNullsAndCompare(Object object1, Object object2) {
-			int returnValue = 0;
-			if (object1 instanceof Comparable && object2 instanceof Comparable) {
-				returnValue = ((Comparable) object1).compareTo(object2);
-			} else if (object1 != null && object2 != null) {
-				returnValue = compareStrings(object1.toString(), object2.toString());
-			} else if (object1 == null && object2 != null) {
-				returnValue = 1;
-			} else if (object1 != null && object2 == null) {
-				returnValue = -1;
-			} else {
-				returnValue = 0;
-			}
-
-			return returnValue;
-		}
-
-		private int compareStrings(String string1, String string2) {
-			return string1.compareTo(string2);
-		}
-
+		return this.hashCode;
 	}
 
-	public void tFileInputDelimited_1Process(final java.util.Map<String, Object> globalMap) throws TalendException {
-		globalMap.put("tFileInputDelimited_1_SUBPROCESS_STATE", 0);
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj) return true;
+		if (obj == null) return false;
+		if (getClass() != obj.getClass()) return false;
+		final row6Struct other = (row6Struct) obj;
+		
+						if (this.word_english == null) {
+							if (other.word_english != null)
+								return false;
+						
+						} else if (!this.word_english.equals(other.word_english))
+						
+							return false;
+					
 
-		final boolean execStat = this.execStat;
+		return true;
+    }
 
+	public void copyDataTo(row6Struct other) {
+
+		other.word_english = this.word_english;
+	            other.word_french = this.word_french;
+	            other.sentiment = this.sentiment;
+	            
+	}
+
+	public void copyKeysDataTo(row6Struct other) {
+
+		other.word_english = this.word_english;
+	            	
+	}
+
+
+
+
+	private String readString(ObjectInputStream dis) throws IOException{
+		String strReturn = null;
+		int length = 0;
+        length = dis.readInt();
+		if (length == -1) {
+			strReturn = null;
+		} else {
+			if(length > commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets.length) {
+				if(length < 1024 && commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets.length == 0) {
+   					commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[1024];
+				} else {
+   					commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets = new byte[2 * length];
+   				}
+			}
+			dis.readFully(commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets, 0, length);
+			strReturn = new String(commonByteArray_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets, 0, length, utf8Charset);
+		}
+		return strReturn;
+	}
+
+    private void writeString(String str, ObjectOutputStream dos) throws IOException{
+		if(str == null) {
+            dos.writeInt(-1);
+		} else {
+            byte[] byteArray = str.getBytes(utf8Charset);
+	    	dos.writeInt(byteArray.length);
+			dos.write(byteArray);
+    	}
+    }
+
+	private String readString(DataInputStream dis, ObjectInputStream ois) throws IOException{
+		String strReturn = null;
+		int length = 0;
+        length = dis.readInt();
+		if (length == -1) {
+			strReturn = null;
+		} else {
+			byte[] byteArray = new byte[length];
+			dis.read(byteArray);
+			strReturn = new String(byteArray, utf8Charset);
+		}
+		return strReturn;
+	}
+
+	private void writeString(String str, DataOutputStream dos, ObjectOutputStream oos) throws IOException{
+		if(str == null) {
+            dos.writeInt(-1);
+		} else {
+            byte[] byteArray = str.getBytes(utf8Charset);
+	    	dos.writeInt(byteArray.length);
+			dos.write(byteArray);
+    	}
+	}
+	private Integer readInteger(DataInputStream dis, ObjectInputStream ois) throws IOException{
+		Integer intReturn;
+        int length = 0;
+        length = dis.readByte();
+		if (length == -1) {
+			intReturn = null;
+		} else {
+			intReturn = dis.readInt();
+		}
+		return intReturn;
+	}
+
+	private void writeInteger(Integer intNum, DataOutputStream dos, ObjectOutputStream oos) throws IOException{
+		if(intNum == null) {
+            dos.writeByte(-1);
+		} else {
+			dos.writeByte(0);
+	    	dos.writeInt(intNum);
+    	}
+	}
+
+    public void readKeysData(ObjectInputStream dis) {
+
+		synchronized(commonByteArrayLock_ANALYSIS_TWITTER_s5_in_calcul_sentiments_depuis_donnees_tweets) {
+
+        	try {
+
+        		int length = 0;
+		
+					this.word_english = readString(dis);
+					
+        	} catch (IOException e) {
+	            throw new RuntimeException(e);
+
+		
+
+        }
+
+		
+
+      }
+
+
+    }
+
+    public void writeKeysData(ObjectOutputStream dos) {
+        try {
+
+		
+					// String
+				
+						writeString(this.word_english,dos);
+					
+        	} catch (IOException e) {
+	            throw new RuntimeException(e);
+        }
+
+
+    }
+
+
+
+    /**
+     * Fill Values data by reading ObjectInputStream.
+     */
+    public void readValuesData(DataInputStream dis, ObjectInputStream ois) {
+        try {
+
+			int length = 0;
+		
+						this.word_french = readString(dis,ois);
+					
+						this.sentiment = readInteger(dis,ois);
+					
+        	} catch (IOException e) {
+	            throw new RuntimeException(e);
+
+		
+
+        }
+
+		
+
+    }
+
+    /**
+     * Return a byte array which represents Values data.
+     */
+    public void writeValuesData(DataOutputStream dos, ObjectOutputStream oos) {
+        try {
+
+		
+						writeString(this.word_french, dos, oos);
+					
+					writeInteger(this.sentiment, dos, oos);
+					
+        	} catch (IOException e) {
+	            throw new RuntimeException(e);
+        	}
+
+    }
+
+
+    public String toString() {
+
+		StringBuilder sb = new StringBuilder();
+		sb.append(super.toString());
+		sb.append("[");
+		sb.append("word_english="+word_english);
+		sb.append(",word_french="+word_french);
+		sb.append(",sentiment="+String.valueOf(sentiment));
+	    sb.append("]");
+
+	    return sb.toString();
+    }
+
+    /**
+     * Compare keys
+     */
+    public int compareTo(row6Struct other) {
+
+		int returnValue = -1;
+		
+						returnValue = checkNullsAndCompare(this.word_english, other.word_english);
+						if(returnValue != 0) {
+							return returnValue;
+						}
+
+					
+	    return returnValue;
+    }
+
+
+    private int checkNullsAndCompare(Object object1, Object object2) {
+        int returnValue = 0;
+		if (object1 instanceof Comparable && object2 instanceof Comparable) {
+            returnValue = ((Comparable) object1).compareTo(object2);
+        } else if (object1 != null && object2 != null) {
+            returnValue = compareStrings(object1.toString(), object2.toString());
+        } else if (object1 == null && object2 != null) {
+            returnValue = 1;
+        } else if (object1 != null && object2 == null) {
+            returnValue = -1;
+        } else {
+            returnValue = 0;
+        }
+
+        return returnValue;
+    }
+
+    private int compareStrings(String string1, String string2) {
+        return string1.compareTo(string2);
+    }
+
+
+}
+public void tFileInputDelimited_1Process(final java.util.Map<String, Object> globalMap) throws TalendException {
+	globalMap.put("tFileInputDelimited_1_SUBPROCESS_STATE", 0);
+
+ final boolean execStat = this.execStat;
+	
 		String iterateId = "";
+	
+	
+	String currentComponent = "";
+	java.util.Map<String, Object> resourceMap = new java.util.HashMap<String, Object>();
 
-		String currentComponent = "";
-		java.util.Map<String, Object> resourceMap = new java.util.HashMap<String, Object>();
-
-		try {
+	try {
 			// TDI-39566 avoid throwing an useless Exception
 			boolean resumeIt = true;
 			if (globalResumeTicket == false && resumeEntryMethodName != null) {
 				String currentMethodName = new java.lang.Exception().getStackTrace()[0].getMethodName();
 				resumeIt = resumeEntryMethodName.equals(currentMethodName);
 			}
-			if (resumeIt || globalResumeTicket) { // start the resume
+			if (resumeIt || globalResumeTicket) { //start the resume
 				globalResumeTicket = true;
 
-				row6Struct row6 = new row6Struct();
 
-				/**
-				 * [tAdvancedHash_row6 begin ] start
-				 */
 
-				ok_Hash.put("tAdvancedHash_row6", false);
-				start_Hash.put("tAdvancedHash_row6", System.currentTimeMillis());
+		row6Struct row6 = new row6Struct();
 
-				currentComponent = "tAdvancedHash_row6";
 
-				if (execStat) {
-					runStat.updateStatOnConnection(resourceMap, iterateId, 0, 0, "row6");
-				}
 
-				int tos_count_tAdvancedHash_row6 = 0;
 
-				// connection name:row6
-				// source node:tFileInputDelimited_1 - inputs:(after_tDBInput_1)
-				// outputs:(row6,row6) | target node:tAdvancedHash_row6 - inputs:(row6)
-				// outputs:()
-				// linked node: tMap_2 - inputs:(row5,row6) outputs:(out2,pos,neg,cnt)
+	
+	/**
+	 * [tAdvancedHash_row6 begin ] start
+	 */
 
-				org.talend.designer.components.lookup.common.ICommonLookup.MATCHING_MODE matchingModeEnum_row6 = org.talend.designer.components.lookup.common.ICommonLookup.MATCHING_MODE.UNIQUE_MATCH;
+	
 
-				org.talend.designer.components.lookup.memory.AdvancedMemoryLookup<row6Struct> tHash_Lookup_row6 = org.talend.designer.components.lookup.memory.AdvancedMemoryLookup
-						.<row6Struct>getLookup(matchingModeEnum_row6);
+	
+		
+		ok_Hash.put("tAdvancedHash_row6", false);
+		start_Hash.put("tAdvancedHash_row6", System.currentTimeMillis());
+		
+	
+	currentComponent="tAdvancedHash_row6";
 
-				globalMap.put("tHash_Lookup_row6", tHash_Lookup_row6);
+	
+					if(execStat) {
+						runStat.updateStatOnConnection(resourceMap,iterateId,0,0,"row6");
+					}
+				
+		int tos_count_tAdvancedHash_row6 = 0;
+		
 
-				/**
-				 * [tAdvancedHash_row6 begin ] stop
-				 */
+			   		// connection name:row6
+			   		// source node:tFileInputDelimited_1 - inputs:(after_tDBInput_1) outputs:(row6,row6) | target node:tAdvancedHash_row6 - inputs:(row6) outputs:()
+			   		// linked node: tMap_2 - inputs:(row5,row6) outputs:(out2,pos,neg,cnt)
+			   
+			   		org.talend.designer.components.lookup.common.ICommonLookup.MATCHING_MODE matchingModeEnum_row6 = 
+			   			org.talend.designer.components.lookup.common.ICommonLookup.MATCHING_MODE.UNIQUE_MATCH;
+			   			
+			   
+	   			org.talend.designer.components.lookup.memory.AdvancedMemoryLookup<row6Struct> tHash_Lookup_row6 =org.talend.designer.components.lookup.memory.AdvancedMemoryLookup.
+	   						<row6Struct>getLookup(matchingModeEnum_row6);
+	   						   
+		   	   	   globalMap.put("tHash_Lookup_row6", tHash_Lookup_row6);
+		   	   	   
+				
+           
 
-				/**
-				 * [tFileInputDelimited_1 begin ] start
-				 */
+ 
 
-				ok_Hash.put("tFileInputDelimited_1", false);
-				start_Hash.put("tFileInputDelimited_1", System.currentTimeMillis());
 
-				currentComponent = "tFileInputDelimited_1";
 
-				int tos_count_tFileInputDelimited_1 = 0;
+/**
+ * [tAdvancedHash_row6 begin ] stop
+ */
 
-				final routines.system.RowState rowstate_tFileInputDelimited_1 = new routines.system.RowState();
 
+
+	
+	/**
+	 * [tFileInputDelimited_1 begin ] start
+	 */
+
+	
+
+	
+		
+		ok_Hash.put("tFileInputDelimited_1", false);
+		start_Hash.put("tFileInputDelimited_1", System.currentTimeMillis());
+		
+	
+	currentComponent="tFileInputDelimited_1";
+
+	
+		int tos_count_tFileInputDelimited_1 = 0;
+		
+	
+	
+	
+ 
+	
+	
+	final routines.system.RowState rowstate_tFileInputDelimited_1 = new routines.system.RowState();
+	
+	
 				int nb_line_tFileInputDelimited_1 = 0;
 				org.talend.fileprocess.FileInputDelimited fid_tFileInputDelimited_1 = null;
 				int limit_tFileInputDelimited_1 = -1;
-				try {
-
-					Object filename_tFileInputDelimited_1 = context.path_files_global
-							+ "documentations/ressources/AFINN-111.txt";
-					if (filename_tFileInputDelimited_1 instanceof java.io.InputStream) {
-
-						int footer_value_tFileInputDelimited_1 = 0, random_value_tFileInputDelimited_1 = -1;
-						if (footer_value_tFileInputDelimited_1 > 0 || random_value_tFileInputDelimited_1 > 0) {
-							throw new java.lang.Exception(
-									"When the input source is a stream,footer and random shouldn't be bigger than 0.");
-						}
-
-					}
-					try {
-						fid_tFileInputDelimited_1 = new org.talend.fileprocess.FileInputDelimited(
-								context.path_files_global + "documentations/ressources/AFINN-111.txt", "UTF-8", ",",
-								"\n", false, 0, 0, limit_tFileInputDelimited_1, -1, false);
-					} catch (java.lang.Exception e) {
-
-						System.err.println(e.getMessage());
-
-					}
-
-					while (fid_tFileInputDelimited_1 != null && fid_tFileInputDelimited_1.nextRecord()) {
-						rowstate_tFileInputDelimited_1.reset();
-
-						row6 = null;
-
-						row6 = null;
-
-						boolean whetherReject_tFileInputDelimited_1 = false;
-						row6 = new row6Struct();
-						try {
-
-							int columnIndexWithD_tFileInputDelimited_1 = 0;
-
-							String temp = "";
-
-							columnIndexWithD_tFileInputDelimited_1 = 0;
-
-							row6.word_english = fid_tFileInputDelimited_1.get(columnIndexWithD_tFileInputDelimited_1);
-
-							columnIndexWithD_tFileInputDelimited_1 = 1;
-
-							row6.word_french = fid_tFileInputDelimited_1.get(columnIndexWithD_tFileInputDelimited_1);
-
-							columnIndexWithD_tFileInputDelimited_1 = 2;
-
-							temp = fid_tFileInputDelimited_1.get(columnIndexWithD_tFileInputDelimited_1);
-							if (temp.length() > 0) {
-
-								try {
-
-									row6.sentiment = ParserUtils.parseTo_Integer(temp);
-
-								} catch (java.lang.Exception ex_tFileInputDelimited_1) {
-									rowstate_tFileInputDelimited_1.setException(new RuntimeException(String.format(
-											"Couldn't parse value for column '%s' in '%s', value is '%s'. Details: %s",
-											"sentiment", "row6", temp, ex_tFileInputDelimited_1),
-											ex_tFileInputDelimited_1));
-								}
-
-							} else {
-
-								row6.sentiment = null;
-
-							}
-
-							if (rowstate_tFileInputDelimited_1.getException() != null) {
-								throw rowstate_tFileInputDelimited_1.getException();
-							}
-
-						} catch (java.lang.Exception e) {
-							whetherReject_tFileInputDelimited_1 = true;
-
-							System.err.println(e.getMessage());
-							row6 = null;
-
-						}
-
-						/**
-						 * [tFileInputDelimited_1 begin ] stop
-						 */
-
-						/**
-						 * [tFileInputDelimited_1 main ] start
-						 */
-
-						currentComponent = "tFileInputDelimited_1";
-
-						tos_count_tFileInputDelimited_1++;
-
-						/**
-						 * [tFileInputDelimited_1 main ] stop
-						 */
-
-						/**
-						 * [tFileInputDelimited_1 process_data_begin ] start
-						 */
-
-						currentComponent = "tFileInputDelimited_1";
-
-						/**
-						 * [tFileInputDelimited_1 process_data_begin ] stop
-						 */
-// Start of branch "row6"
-						if (row6 != null) {
-
-							/**
-							 * [tAdvancedHash_row6 main ] start
-							 */
-
-							currentComponent = "tAdvancedHash_row6";
-
-							if (execStat) {
-								runStat.updateStatOnConnection(iterateId, 1, 1, "row6");
-							}
-
-							row6Struct row6_HashRow = new row6Struct();
-
-							row6_HashRow.word_english = row6.word_english;
-
-							row6_HashRow.word_french = row6.word_french;
-
-							row6_HashRow.sentiment = row6.sentiment;
-
-							tHash_Lookup_row6.put(row6_HashRow);
-
-							tos_count_tAdvancedHash_row6++;
-
-							/**
-							 * [tAdvancedHash_row6 main ] stop
-							 */
-
-							/**
-							 * [tAdvancedHash_row6 process_data_begin ] start
-							 */
-
-							currentComponent = "tAdvancedHash_row6";
-
-							/**
-							 * [tAdvancedHash_row6 process_data_begin ] stop
-							 */
-
-							/**
-							 * [tAdvancedHash_row6 process_data_end ] start
-							 */
-
-							currentComponent = "tAdvancedHash_row6";
-
-							/**
-							 * [tAdvancedHash_row6 process_data_end ] stop
-							 */
-
-						} // End of branch "row6"
-
-						/**
-						 * [tFileInputDelimited_1 process_data_end ] start
-						 */
-
-						currentComponent = "tFileInputDelimited_1";
-
-						/**
-						 * [tFileInputDelimited_1 process_data_end ] stop
-						 */
-
-						/**
-						 * [tFileInputDelimited_1 end ] start
-						 */
-
-						currentComponent = "tFileInputDelimited_1";
-
-					}
-				} finally {
-					if (!((Object) (context.path_files_global
-							+ "documentations/ressources/AFINN-111.txt") instanceof java.io.InputStream)) {
-						if (fid_tFileInputDelimited_1 != null) {
-							fid_tFileInputDelimited_1.close();
-						}
-					}
-					if (fid_tFileInputDelimited_1 != null) {
-						globalMap.put("tFileInputDelimited_1_NB_LINE", fid_tFileInputDelimited_1.getRowNumber());
-
-					}
-				}
-
-				ok_Hash.put("tFileInputDelimited_1", true);
-				end_Hash.put("tFileInputDelimited_1", System.currentTimeMillis());
-
-				/**
-				 * [tFileInputDelimited_1 end ] stop
-				 */
-
-				/**
-				 * [tAdvancedHash_row6 end ] start
-				 */
-
-				currentComponent = "tAdvancedHash_row6";
-
-				tHash_Lookup_row6.endPut();
-
-				if (execStat) {
-					runStat.updateStat(resourceMap, iterateId, 2, 0, "row6");
-				}
-
-				ok_Hash.put("tAdvancedHash_row6", true);
-				end_Hash.put("tAdvancedHash_row6", System.currentTimeMillis());
-
-				/**
-				 * [tAdvancedHash_row6 end ] stop
-				 */
-
-			} // end the resume
-
-		} catch (java.lang.Exception e) {
-
-			TalendException te = new TalendException(e, currentComponent, globalMap);
-
-			throw te;
-		} catch (java.lang.Error error) {
-
-			runStat.stopThreadStat();
-
-			throw error;
-		} finally {
-
-			try {
-
-				/**
-				 * [tFileInputDelimited_1 finally ] start
-				 */
-
-				currentComponent = "tFileInputDelimited_1";
-
-				/**
-				 * [tFileInputDelimited_1 finally ] stop
-				 */
-
-				/**
-				 * [tAdvancedHash_row6 finally ] start
-				 */
-
-				currentComponent = "tAdvancedHash_row6";
-
-				/**
-				 * [tAdvancedHash_row6 finally ] stop
-				 */
-
-			} catch (java.lang.Exception e) {
-				// ignore
-			} catch (java.lang.Error error) {
-				// ignore
+				try{
+					
+						Object filename_tFileInputDelimited_1 = context.path_files_global+"documentations/ressources/AFINN-111.txt";
+						if(filename_tFileInputDelimited_1 instanceof java.io.InputStream){
+							
+			int footer_value_tFileInputDelimited_1 = 0, random_value_tFileInputDelimited_1 = -1;
+			if(footer_value_tFileInputDelimited_1 >0 || random_value_tFileInputDelimited_1 > 0){
+				throw new java.lang.Exception("When the input source is a stream,footer and random shouldn't be bigger than 0.");				
 			}
-			resourceMap = null;
-		}
+		
+						}
+						try {
+							fid_tFileInputDelimited_1 = new org.talend.fileprocess.FileInputDelimited(context.path_files_global+"documentations/ressources/AFINN-111.txt", "UTF-8",",","\n",false,0,0,
+									limit_tFileInputDelimited_1
+								,-1, false);
+						} catch(java.lang.Exception e) {
+							
+								
+								System.err.println(e.getMessage());
+							
+						}
+					
+				    
+					while (fid_tFileInputDelimited_1!=null && fid_tFileInputDelimited_1.nextRecord()) {
+						rowstate_tFileInputDelimited_1.reset();
+						
+			    						row6 = null;			
+									
+			    						row6 = null;			
+												
+									boolean whetherReject_tFileInputDelimited_1 = false;
+									row6 = new row6Struct();
+									try {
+										
+				int columnIndexWithD_tFileInputDelimited_1 = 0;
+				
+					String temp = ""; 
+				
+					columnIndexWithD_tFileInputDelimited_1 = 0;
+					
+							row6.word_english = fid_tFileInputDelimited_1.get(columnIndexWithD_tFileInputDelimited_1);
+						
+				
+					columnIndexWithD_tFileInputDelimited_1 = 1;
+					
+							row6.word_french = fid_tFileInputDelimited_1.get(columnIndexWithD_tFileInputDelimited_1);
+						
+				
+					columnIndexWithD_tFileInputDelimited_1 = 2;
+					
+						temp = fid_tFileInputDelimited_1.get(columnIndexWithD_tFileInputDelimited_1);
+						if(temp.length() > 0) {
+							
+								try {
+								
+    								row6.sentiment = ParserUtils.parseTo_Integer(temp);
+    							
+    							} catch(java.lang.Exception ex_tFileInputDelimited_1) {
+									rowstate_tFileInputDelimited_1.setException(new RuntimeException(String.format("Couldn't parse value for column '%s' in '%s', value is '%s'. Details: %s",
+										"sentiment", "row6", temp, ex_tFileInputDelimited_1), ex_tFileInputDelimited_1));
+								}
+    							
+						} else {						
+							
+								
+									row6.sentiment = null;
+								
+							
+						}
+					
+				
+				
+										
+										if(rowstate_tFileInputDelimited_1.getException()!=null) {
+											throw rowstate_tFileInputDelimited_1.getException();
+										}
+										
+										
+							
+			    					} catch (java.lang.Exception e) {
+			        					whetherReject_tFileInputDelimited_1 = true;
+			        					
+			                					System.err.println(e.getMessage());
+			                					row6 = null;
+			                				
+			    					}
+								
+
+ 
+
+
+
+/**
+ * [tFileInputDelimited_1 begin ] stop
+ */
+	
+	/**
+	 * [tFileInputDelimited_1 main ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tFileInputDelimited_1";
+
+	
+
+ 
+
+
+	tos_count_tFileInputDelimited_1++;
+
+/**
+ * [tFileInputDelimited_1 main ] stop
+ */
+	
+	/**
+	 * [tFileInputDelimited_1 process_data_begin ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tFileInputDelimited_1";
+
+	
+
+ 
+
+
+
+/**
+ * [tFileInputDelimited_1 process_data_begin ] stop
+ */
+// Start of branch "row6"
+if(row6 != null) { 
+
+
+
+	
+	/**
+	 * [tAdvancedHash_row6 main ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tAdvancedHash_row6";
+
+	
+					if(execStat){
+						runStat.updateStatOnConnection(iterateId,1,1,"row6");
+					}
+					
+
+
+			   
+			   
+
+					row6Struct row6_HashRow = new row6Struct();
+		   	   	   
+				
+				row6_HashRow.word_english = row6.word_english;
+				
+				row6_HashRow.word_french = row6.word_french;
+				
+				row6_HashRow.sentiment = row6.sentiment;
+				
+			tHash_Lookup_row6.put(row6_HashRow);
+			
+            
+
+
+
+
+ 
+
+
+	tos_count_tAdvancedHash_row6++;
+
+/**
+ * [tAdvancedHash_row6 main ] stop
+ */
+	
+	/**
+	 * [tAdvancedHash_row6 process_data_begin ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tAdvancedHash_row6";
+
+	
+
+ 
+
+
+
+/**
+ * [tAdvancedHash_row6 process_data_begin ] stop
+ */
+	
+	/**
+	 * [tAdvancedHash_row6 process_data_end ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tAdvancedHash_row6";
+
+	
+
+ 
+
+
+
+/**
+ * [tAdvancedHash_row6 process_data_end ] stop
+ */
+
+} // End of branch "row6"
+
+
+
+
+	
+	/**
+	 * [tFileInputDelimited_1 process_data_end ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tFileInputDelimited_1";
+
+	
+
+ 
+
+
+
+/**
+ * [tFileInputDelimited_1 process_data_end ] stop
+ */
+	
+	/**
+	 * [tFileInputDelimited_1 end ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tFileInputDelimited_1";
+
+	
+
+
+
+            }
+            }finally{
+                if(!((Object)(context.path_files_global+"documentations/ressources/AFINN-111.txt") instanceof java.io.InputStream)){
+                	if(fid_tFileInputDelimited_1!=null){
+                		fid_tFileInputDelimited_1.close();
+                	}
+                }
+                if(fid_tFileInputDelimited_1!=null){
+                	globalMap.put("tFileInputDelimited_1_NB_LINE", fid_tFileInputDelimited_1.getRowNumber());
+					
+                }
+			}
+			  
+
+ 
+
+ok_Hash.put("tFileInputDelimited_1", true);
+end_Hash.put("tFileInputDelimited_1", System.currentTimeMillis());
+
+
+
+
+/**
+ * [tFileInputDelimited_1 end ] stop
+ */
+
+	
+	/**
+	 * [tAdvancedHash_row6 end ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tAdvancedHash_row6";
+
+	
+
+tHash_Lookup_row6.endPut();
+
+				if(execStat){
+			  		runStat.updateStat(resourceMap,iterateId,2,0,"row6");
+			  	}
+			  	
+ 
+
+ok_Hash.put("tAdvancedHash_row6", true);
+end_Hash.put("tAdvancedHash_row6", System.currentTimeMillis());
+
+
+
+
+/**
+ * [tAdvancedHash_row6 end ] stop
+ */
+
+
+
+				}//end the resume
+
+				
+
+
+
+	
+			}catch(java.lang.Exception e){	
+				
+				TalendException te = new TalendException(e, currentComponent, globalMap);
+				
+				throw te;
+			}catch(java.lang.Error error){	
+				
+					runStat.stopThreadStat();
+				
+				throw error;
+			}finally{
+				
+				try{
+					
+	
+	/**
+	 * [tFileInputDelimited_1 finally ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tFileInputDelimited_1";
+
+	
+
+ 
+
+
+
+/**
+ * [tFileInputDelimited_1 finally ] stop
+ */
+
+	
+	/**
+	 * [tAdvancedHash_row6 finally ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tAdvancedHash_row6";
+
+	
+
+ 
+
+
+
+/**
+ * [tAdvancedHash_row6 finally ] stop
+ */
+
+
+
+				}catch(java.lang.Exception e){	
+					//ignore
+				}catch(java.lang.Error error){
+					//ignore
+				}
+				resourceMap = null;
+			}
+		
 
 		globalMap.put("tFileInputDelimited_1_SUBPROCESS_STATE", 1);
 	}
+	
+    public String resuming_logs_dir_path = null;
+    public String resuming_checkpoint_path = null;
+    public String parent_part_launcher = null;
+    private String resumeEntryMethodName = null;
+    private boolean globalResumeTicket = false;
 
-	public String resuming_logs_dir_path = null;
-	public String resuming_checkpoint_path = null;
-	public String parent_part_launcher = null;
-	private String resumeEntryMethodName = null;
-	private boolean globalResumeTicket = false;
+    public boolean watch = false;
+    // portStats is null, it means don't execute the statistics
+    public Integer portStats = null;
+    public int portTraces = 4334;
+    public String clientHost;
+    public String defaultClientHost = "localhost";
+    public String contextStr = "dev";
+    public boolean isDefaultContext = true;
+    public String pid = "0";
+    public String rootPid = null;
+    public String fatherPid = null;
+    public String fatherNode = null;
+    public long startTime = 0;
+    public boolean isChildJob = false;
+    public String log4jLevel = "";
+    
+    private boolean enableLogStash;
 
-	public boolean watch = false;
-	// portStats is null, it means don't execute the statistics
-	public Integer portStats = null;
-	public int portTraces = 4334;
-	public String clientHost;
-	public String defaultClientHost = "localhost";
-	public String contextStr = "dev";
-	public boolean isDefaultContext = true;
-	public String pid = "0";
-	public String rootPid = null;
-	public String fatherPid = null;
-	public String fatherNode = null;
-	public long startTime = 0;
-	public boolean isChildJob = false;
-	public String log4jLevel = "";
+    private boolean execStat = true;
 
-	private boolean enableLogStash;
+    private ThreadLocal<java.util.Map<String, String>> threadLocal = new ThreadLocal<java.util.Map<String, String>>() {
+        protected java.util.Map<String, String> initialValue() {
+            java.util.Map<String,String> threadRunResultMap = new java.util.HashMap<String, String>();
+            threadRunResultMap.put("errorCode", null);
+            threadRunResultMap.put("status", "");
+            return threadRunResultMap;
+        };
+    };
 
-	private boolean execStat = true;
 
-	private ThreadLocal<java.util.Map<String, String>> threadLocal = new ThreadLocal<java.util.Map<String, String>>() {
-		protected java.util.Map<String, String> initialValue() {
-			java.util.Map<String, String> threadRunResultMap = new java.util.HashMap<String, String>();
-			threadRunResultMap.put("errorCode", null);
-			threadRunResultMap.put("status", "");
-			return threadRunResultMap;
-		};
-	};
+    private PropertiesWithType context_param = new PropertiesWithType();
+    public java.util.Map<String, Object> parentContextMap = new java.util.HashMap<String, Object>();
 
-	private PropertiesWithType context_param = new PropertiesWithType();
-	public java.util.Map<String, Object> parentContextMap = new java.util.HashMap<String, Object>();
+    public String status= "";
+    
 
-	public String status = "";
+    public static void main(String[] args){
+        final s5_in_calcul_sentiments_depuis_donnees_tweets s5_in_calcul_sentiments_depuis_donnees_tweetsClass = new s5_in_calcul_sentiments_depuis_donnees_tweets();
 
-	public static void main(String[] args) {
-		final s5_in_calcul_sentiments_depuis_donnees_tweets s5_in_calcul_sentiments_depuis_donnees_tweetsClass = new s5_in_calcul_sentiments_depuis_donnees_tweets();
+        int exitCode = s5_in_calcul_sentiments_depuis_donnees_tweetsClass.runJobInTOS(args);
 
-		int exitCode = s5_in_calcul_sentiments_depuis_donnees_tweetsClass.runJobInTOS(args);
+        System.exit(exitCode);
+    }
 
-		System.exit(exitCode);
-	}
 
-	public String[][] runJob(String[] args) {
+    public String[][] runJob(String[] args) {
 
-		int exitCode = runJobInTOS(args);
-		String[][] bufferValue = new String[][] { { Integer.toString(exitCode) } };
+        int exitCode = runJobInTOS(args);
+        String[][] bufferValue = new String[][] { { Integer.toString(exitCode) } };
 
-		return bufferValue;
-	}
+        return bufferValue;
+    }
 
-	public boolean hastBufferOutputComponent() {
+    public boolean hastBufferOutputComponent() {
 		boolean hastBufferOutput = false;
+    	
+        return hastBufferOutput;
+    }
 
-		return hastBufferOutput;
-	}
+    public int runJobInTOS(String[] args) {
+	   	// reset status
+	   	status = "";
+	   	
+        String lastStr = "";
+        for (String arg : args) {
+            if (arg.equalsIgnoreCase("--context_param")) {
+                lastStr = arg;
+            } else if (lastStr.equals("")) {
+                evalParam(arg);
+            } else {
+                evalParam(lastStr + " " + arg);
+                lastStr = "";
+            }
+        }
+        enableLogStash = "true".equalsIgnoreCase(System.getProperty("monitoring"));
 
-	public int runJobInTOS(String[] args) {
-		// reset status
-		status = "";
+    	
+    	
 
-		String lastStr = "";
-		for (String arg : args) {
-			if (arg.equalsIgnoreCase("--context_param")) {
-				lastStr = arg;
-			} else if (lastStr.equals("")) {
-				evalParam(arg);
-			} else {
-				evalParam(lastStr + " " + arg);
-				lastStr = "";
-			}
-		}
-		enableLogStash = "true".equalsIgnoreCase(System.getProperty("monitoring"));
+        if(clientHost == null) {
+            clientHost = defaultClientHost;
+        }
 
-		if (clientHost == null) {
-			clientHost = defaultClientHost;
-		}
+        if(pid == null || "0".equals(pid)) {
+            pid = TalendString.getAsciiRandomString(6);
+        }
 
-		if (pid == null || "0".equals(pid)) {
-			pid = TalendString.getAsciiRandomString(6);
-		}
+        if (rootPid==null) {
+            rootPid = pid;
+        }
+        if (fatherPid==null) {
+            fatherPid = pid;
+        }else{
+            isChildJob = true;
+        }
 
-		if (rootPid == null) {
-			rootPid = pid;
-		}
-		if (fatherPid == null) {
-			fatherPid = pid;
-		} else {
-			isChildJob = true;
-		}
+        if (portStats != null) {
+            // portStats = -1; //for testing
+            if (portStats < 0 || portStats > 65535) {
+                // issue:10869, the portStats is invalid, so this client socket can't open
+                System.err.println("The statistics socket port " + portStats + " is invalid.");
+                execStat = false;
+            }
+        } else {
+            execStat = false;
+        }
 
-		if (portStats != null) {
-			// portStats = -1; //for testing
-			if (portStats < 0 || portStats > 65535) {
-				// issue:10869, the portStats is invalid, so this client socket can't open
-				System.err.println("The statistics socket port " + portStats + " is invalid.");
-				execStat = false;
-			}
-		} else {
-			execStat = false;
-		}
+        try {
+            //call job/subjob with an existing context, like: --context=production. if without this parameter, there will use the default context instead.
+            java.io.InputStream inContext = s5_in_calcul_sentiments_depuis_donnees_tweets.class.getClassLoader().getResourceAsStream("analysis_twitter/s5_in_calcul_sentiments_depuis_donnees_tweets_0_1/contexts/" + contextStr + ".properties");
+            if (inContext == null) {
+                inContext = s5_in_calcul_sentiments_depuis_donnees_tweets.class.getClassLoader().getResourceAsStream("config/contexts/" + contextStr + ".properties");
+            }
+            if (inContext != null) {
+                //defaultProps is in order to keep the original context value
+                if(context != null && context.isEmpty()) {
+	                defaultProps.load(inContext);
+	                context = new ContextProperties(defaultProps);
+                }
+                
+                inContext.close();
+            } else if (!isDefaultContext) {
+                //print info and job continue to run, for case: context_param is not empty.
+                System.err.println("Could not find the context " + contextStr);
+            }
 
-		try {
-			// call job/subjob with an existing context, like: --context=production. if
-			// without this parameter, there will use the default context instead.
-			java.io.InputStream inContext = s5_in_calcul_sentiments_depuis_donnees_tweets.class.getClassLoader()
-					.getResourceAsStream("analysis_twitter/s5_in_calcul_sentiments_depuis_donnees_tweets_0_1/contexts/"
-							+ contextStr + ".properties");
-			if (inContext == null) {
-				inContext = s5_in_calcul_sentiments_depuis_donnees_tweets.class.getClassLoader()
-						.getResourceAsStream("config/contexts/" + contextStr + ".properties");
-			}
-			if (inContext != null) {
-				// defaultProps is in order to keep the original context value
-				if (context != null && context.isEmpty()) {
-					defaultProps.load(inContext);
-					context = new ContextProperties(defaultProps);
-				}
-
-				inContext.close();
-			} else if (!isDefaultContext) {
-				// print info and job continue to run, for case: context_param is not empty.
-				System.err.println("Could not find the context " + contextStr);
-			}
-
-			if (!context_param.isEmpty()) {
-				context.putAll(context_param);
-				// set types for params from parentJobs
-				for (Object key : context_param.keySet()) {
+            if(!context_param.isEmpty()) {
+                context.putAll(context_param);
+				//set types for params from parentJobs
+				for (Object key: context_param.keySet()){
 					String context_key = key.toString();
 					String context_type = context_param.getContextType(context_key);
 					context.setContextType(context_key, context_type);
 
 				}
-			}
-			class ContextProcessing {
-				private void processContext_0() {
-					context.setContextType("connection_postgres_Server", "id_String");
-					context.connection_postgres_Server = (String) context.getProperty("connection_postgres_Server");
-					context.setContextType("connection_postgres_Login", "id_String");
-					context.connection_postgres_Login = (String) context.getProperty("connection_postgres_Login");
-					context.setContextType("connection_postgres_Port", "id_String");
-					context.connection_postgres_Port = (String) context.getProperty("connection_postgres_Port");
-					context.setContextType("connection_postgres_Password", "id_String");
-					context.connection_postgres_Password = (String) context.getProperty("connection_postgres_Password");
-					context.setContextType("connection_postgres_Database", "id_String");
-					context.connection_postgres_Database = (String) context.getProperty("connection_postgres_Database");
-					context.setContextType("connection_postgres_Schema", "id_String");
-					context.connection_postgres_Schema = (String) context.getProperty("connection_postgres_Schema");
-					context.setContextType("connection_postgres_AdditionalParams", "id_String");
-					context.connection_postgres_AdditionalParams = (String) context
-							.getProperty("connection_postgres_AdditionalParams");
-					context.setContextType("path_files_global", "id_String");
-					context.path_files_global = (String) context.getProperty("path_files_global");
-				}
+            }
+            class ContextProcessing {
+                private void processContext_0() {
+                        context.setContextType("connection_postgres_Server", "id_String");
+                            context.connection_postgres_Server=(String) context.getProperty("connection_postgres_Server");
+                        context.setContextType("connection_postgres_Login", "id_String");
+                            context.connection_postgres_Login=(String) context.getProperty("connection_postgres_Login");
+                        context.setContextType("connection_postgres_Port", "id_String");
+                            context.connection_postgres_Port=(String) context.getProperty("connection_postgres_Port");
+                        context.setContextType("connection_postgres_Password", "id_String");
+                            context.connection_postgres_Password=(String) context.getProperty("connection_postgres_Password");
+                        context.setContextType("connection_postgres_Database", "id_String");
+                            context.connection_postgres_Database=(String) context.getProperty("connection_postgres_Database");
+                        context.setContextType("connection_postgres_Schema", "id_String");
+                            context.connection_postgres_Schema=(String) context.getProperty("connection_postgres_Schema");
+                        context.setContextType("connection_postgres_AdditionalParams", "id_String");
+                            context.connection_postgres_AdditionalParams=(String) context.getProperty("connection_postgres_AdditionalParams");
+                        context.setContextType("path_files_global", "id_String");
+                            context.path_files_global=(String) context.getProperty("path_files_global");
+                } 
+                public void processAllContext() {
+                        processContext_0();
+                }
+            }
 
-				public void processAllContext() {
-					processContext_0();
-				}
-			}
+            new ContextProcessing().processAllContext();
+        } catch (java.io.IOException ie) {
+            System.err.println("Could not load context "+contextStr);
+            ie.printStackTrace();
+        }
 
-			new ContextProcessing().processAllContext();
-		} catch (java.io.IOException ie) {
-			System.err.println("Could not load context " + contextStr);
-			ie.printStackTrace();
-		}
+        // get context value from parent directly
+        if (parentContextMap != null && !parentContextMap.isEmpty()) {if (parentContextMap.containsKey("connection_postgres_Server")) {
+                context.connection_postgres_Server = (String) parentContextMap.get("connection_postgres_Server");
+            }if (parentContextMap.containsKey("connection_postgres_Login")) {
+                context.connection_postgres_Login = (String) parentContextMap.get("connection_postgres_Login");
+            }if (parentContextMap.containsKey("connection_postgres_Port")) {
+                context.connection_postgres_Port = (String) parentContextMap.get("connection_postgres_Port");
+            }if (parentContextMap.containsKey("connection_postgres_Password")) {
+                context.connection_postgres_Password = (String) parentContextMap.get("connection_postgres_Password");
+            }if (parentContextMap.containsKey("connection_postgres_Database")) {
+                context.connection_postgres_Database = (String) parentContextMap.get("connection_postgres_Database");
+            }if (parentContextMap.containsKey("connection_postgres_Schema")) {
+                context.connection_postgres_Schema = (String) parentContextMap.get("connection_postgres_Schema");
+            }if (parentContextMap.containsKey("connection_postgres_AdditionalParams")) {
+                context.connection_postgres_AdditionalParams = (String) parentContextMap.get("connection_postgres_AdditionalParams");
+            }if (parentContextMap.containsKey("path_files_global")) {
+                context.path_files_global = (String) parentContextMap.get("path_files_global");
+            }
+        }
 
-		// get context value from parent directly
-		if (parentContextMap != null && !parentContextMap.isEmpty()) {
-			if (parentContextMap.containsKey("connection_postgres_Server")) {
-				context.connection_postgres_Server = (String) parentContextMap.get("connection_postgres_Server");
-			}
-			if (parentContextMap.containsKey("connection_postgres_Login")) {
-				context.connection_postgres_Login = (String) parentContextMap.get("connection_postgres_Login");
-			}
-			if (parentContextMap.containsKey("connection_postgres_Port")) {
-				context.connection_postgres_Port = (String) parentContextMap.get("connection_postgres_Port");
-			}
-			if (parentContextMap.containsKey("connection_postgres_Password")) {
-				context.connection_postgres_Password = (String) parentContextMap.get("connection_postgres_Password");
-			}
-			if (parentContextMap.containsKey("connection_postgres_Database")) {
-				context.connection_postgres_Database = (String) parentContextMap.get("connection_postgres_Database");
-			}
-			if (parentContextMap.containsKey("connection_postgres_Schema")) {
-				context.connection_postgres_Schema = (String) parentContextMap.get("connection_postgres_Schema");
-			}
-			if (parentContextMap.containsKey("connection_postgres_AdditionalParams")) {
-				context.connection_postgres_AdditionalParams = (String) parentContextMap
-						.get("connection_postgres_AdditionalParams");
-			}
-			if (parentContextMap.containsKey("path_files_global")) {
-				context.path_files_global = (String) parentContextMap.get("path_files_global");
-			}
-		}
-
-		// Resume: init the resumeUtil
-		resumeEntryMethodName = ResumeUtil.getResumeEntryMethodName(resuming_checkpoint_path);
-		resumeUtil = new ResumeUtil(resuming_logs_dir_path, isChildJob, rootPid);
-		resumeUtil.initCommonInfo(pid, rootPid, fatherPid, projectName, jobName, contextStr, jobVersion);
+        //Resume: init the resumeUtil
+        resumeEntryMethodName = ResumeUtil.getResumeEntryMethodName(resuming_checkpoint_path);
+        resumeUtil = new ResumeUtil(resuming_logs_dir_path, isChildJob, rootPid);
+        resumeUtil.initCommonInfo(pid, rootPid, fatherPid, projectName, jobName, contextStr, jobVersion);
 
 		List<String> parametersToEncrypt = new java.util.ArrayList<String>();
-		// Resume: jobStart
-		resumeUtil.addLog("JOB_STARTED", "JOB:" + jobName, parent_part_launcher, Thread.currentThread().getId() + "",
-				"", "", "", "", resumeUtil.convertToJsonText(context, parametersToEncrypt));
+        //Resume: jobStart
+        resumeUtil.addLog("JOB_STARTED", "JOB:" + jobName, parent_part_launcher, Thread.currentThread().getId() + "", "","","","",resumeUtil.convertToJsonText(context,parametersToEncrypt));
 
-		if (execStat) {
-			try {
-				runStat.openSocket(!isChildJob);
-				runStat.setAllPID(rootPid, fatherPid, pid, jobName);
-				runStat.startThreadStat(clientHost, portStats);
-				runStat.updateStatOnJob(RunStat.JOBSTART, fatherNode);
-			} catch (java.io.IOException ioException) {
-				ioException.printStackTrace();
-			}
-		}
+if(execStat) {
+    try {
+        runStat.openSocket(!isChildJob);
+        runStat.setAllPID(rootPid, fatherPid, pid, jobName);
+        runStat.startThreadStat(clientHost, portStats);
+        runStat.updateStatOnJob(RunStat.JOBSTART, fatherNode);
+    } catch (java.io.IOException ioException) {
+        ioException.printStackTrace();
+    }
+}
 
-		java.util.concurrent.ConcurrentHashMap<Object, Object> concurrentHashMap = new java.util.concurrent.ConcurrentHashMap<Object, Object>();
-		globalMap.put("concurrentHashMap", concurrentHashMap);
 
-		long startUsedMemory = Runtime.getRuntime().totalMemory() - Runtime.getRuntime().freeMemory();
-		long endUsedMemory = 0;
-		long end = 0;
 
-		startTime = System.currentTimeMillis();
+	
+	    java.util.concurrent.ConcurrentHashMap<Object, Object> concurrentHashMap = new java.util.concurrent.ConcurrentHashMap<Object, Object>();
+	    globalMap.put("concurrentHashMap", concurrentHashMap);
+	
 
-		this.globalResumeTicket = true;// to run tPreJob
+    long startUsedMemory = Runtime.getRuntime().totalMemory() - Runtime.getRuntime().freeMemory();
+    long endUsedMemory = 0;
+    long end = 0;
 
-		this.globalResumeTicket = false;// to run others jobs
+    startTime = System.currentTimeMillis();
 
-		try {
-			errorCode = null;
-			tDBInput_1Process(globalMap);
-			if (!"failure".equals(status)) {
-				status = "end";
-			}
-		} catch (TalendException e_tDBInput_1) {
-			globalMap.put("tDBInput_1_SUBPROCESS_STATE", -1);
 
-			e_tDBInput_1.printStackTrace();
 
-		}
 
-		this.globalResumeTicket = true;// to run tPostJob
+this.globalResumeTicket = true;//to run tPreJob
 
-		end = System.currentTimeMillis();
 
-		if (watch) {
-			System.out.println((end - startTime) + " milliseconds");
-		}
 
-		endUsedMemory = Runtime.getRuntime().totalMemory() - Runtime.getRuntime().freeMemory();
-		if (false) {
-			System.out.println((endUsedMemory - startUsedMemory)
-					+ " bytes memory increase when running : s5_in_calcul_sentiments_depuis_donnees_tweets");
-		}
 
-		if (execStat) {
-			runStat.updateStatOnJob(RunStat.JOBEND, fatherNode);
-			runStat.stopThreadStat();
-		}
-		int returnCode = 0;
-		if (errorCode == null) {
-			returnCode = status != null && status.equals("failure") ? 1 : 0;
-		} else {
-			returnCode = errorCode.intValue();
-		}
-		resumeUtil.addLog("JOB_ENDED", "JOB:" + jobName, parent_part_launcher, Thread.currentThread().getId() + "", "",
-				"" + returnCode, "", "", "");
+this.globalResumeTicket = false;//to run others jobs
 
-		return returnCode;
+try {
+errorCode = null;tDBInput_1Process(globalMap);
+if(!"failure".equals(status)) { status = "end"; }
+}catch (TalendException e_tDBInput_1) {
+globalMap.put("tDBInput_1_SUBPROCESS_STATE", -1);
 
-	}
+e_tDBInput_1.printStackTrace();
 
-	// only for OSGi env
-	public void destroy() {
+}
 
-	}
+this.globalResumeTicket = true;//to run tPostJob
 
-	private java.util.Map<String, Object> getSharedConnections4REST() {
-		java.util.Map<String, Object> connections = new java.util.HashMap<String, Object>();
 
-		return connections;
-	}
 
-	private void evalParam(String arg) {
-		if (arg.startsWith("--resuming_logs_dir_path")) {
-			resuming_logs_dir_path = arg.substring(25);
-		} else if (arg.startsWith("--resuming_checkpoint_path")) {
-			resuming_checkpoint_path = arg.substring(27);
-		} else if (arg.startsWith("--parent_part_launcher")) {
-			parent_part_launcher = arg.substring(23);
-		} else if (arg.startsWith("--watch")) {
-			watch = true;
-		} else if (arg.startsWith("--stat_port=")) {
-			String portStatsStr = arg.substring(12);
-			if (portStatsStr != null && !portStatsStr.equals("null")) {
-				portStats = Integer.parseInt(portStatsStr);
-			}
-		} else if (arg.startsWith("--trace_port=")) {
-			portTraces = Integer.parseInt(arg.substring(13));
-		} else if (arg.startsWith("--client_host=")) {
-			clientHost = arg.substring(14);
-		} else if (arg.startsWith("--context=")) {
-			contextStr = arg.substring(10);
-			isDefaultContext = false;
-		} else if (arg.startsWith("--father_pid=")) {
-			fatherPid = arg.substring(13);
-		} else if (arg.startsWith("--root_pid=")) {
-			rootPid = arg.substring(11);
-		} else if (arg.startsWith("--father_node=")) {
-			fatherNode = arg.substring(14);
-		} else if (arg.startsWith("--pid=")) {
-			pid = arg.substring(6);
-		} else if (arg.startsWith("--context_type")) {
-			String keyValue = arg.substring(15);
+
+        end = System.currentTimeMillis();
+
+        if (watch) {
+            System.out.println((end-startTime)+" milliseconds");
+        }
+
+        endUsedMemory = Runtime.getRuntime().totalMemory() - Runtime.getRuntime().freeMemory();
+        if (false) {
+            System.out.println((endUsedMemory - startUsedMemory) + " bytes memory increase when running : s5_in_calcul_sentiments_depuis_donnees_tweets");
+        }
+
+
+
+if (execStat) {
+    runStat.updateStatOnJob(RunStat.JOBEND, fatherNode);
+    runStat.stopThreadStat();
+}
+    int returnCode = 0;
+    if(errorCode == null) {
+         returnCode = status != null && status.equals("failure") ? 1 : 0;
+    } else {
+         returnCode = errorCode.intValue();
+    }
+    resumeUtil.addLog("JOB_ENDED", "JOB:" + jobName, parent_part_launcher, Thread.currentThread().getId() + "", "","" + returnCode,"","","");
+
+    return returnCode;
+
+  }
+
+    // only for OSGi env
+    public void destroy() {
+
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    private java.util.Map<String, Object> getSharedConnections4REST() {
+        java.util.Map<String, Object> connections = new java.util.HashMap<String, Object>();
+
+
+
+
+
+
+
+        return connections;
+    }
+
+    private void evalParam(String arg) {
+        if (arg.startsWith("--resuming_logs_dir_path")) {
+            resuming_logs_dir_path = arg.substring(25);
+        } else if (arg.startsWith("--resuming_checkpoint_path")) {
+            resuming_checkpoint_path = arg.substring(27);
+        } else if (arg.startsWith("--parent_part_launcher")) {
+            parent_part_launcher = arg.substring(23);
+        } else if (arg.startsWith("--watch")) {
+            watch = true;
+        } else if (arg.startsWith("--stat_port=")) {
+            String portStatsStr = arg.substring(12);
+            if (portStatsStr != null && !portStatsStr.equals("null")) {
+                portStats = Integer.parseInt(portStatsStr);
+            }
+        } else if (arg.startsWith("--trace_port=")) {
+            portTraces = Integer.parseInt(arg.substring(13));
+        } else if (arg.startsWith("--client_host=")) {
+            clientHost = arg.substring(14);
+        } else if (arg.startsWith("--context=")) {
+            contextStr = arg.substring(10);
+            isDefaultContext = false;
+        } else if (arg.startsWith("--father_pid=")) {
+            fatherPid = arg.substring(13);
+        } else if (arg.startsWith("--root_pid=")) {
+            rootPid = arg.substring(11);
+        } else if (arg.startsWith("--father_node=")) {
+            fatherNode = arg.substring(14);
+        } else if (arg.startsWith("--pid=")) {
+            pid = arg.substring(6);
+        } else if (arg.startsWith("--context_type")) {
+            String keyValue = arg.substring(15);
 			int index = -1;
-			if (keyValue != null && (index = keyValue.indexOf('=')) > -1) {
-				if (fatherPid == null) {
-					context_param.setContextType(keyValue.substring(0, index),
-							replaceEscapeChars(keyValue.substring(index + 1)));
-				} else { // the subjob won't escape the especial chars
-					context_param.setContextType(keyValue.substring(0, index), keyValue.substring(index + 1));
-				}
+            if (keyValue != null && (index = keyValue.indexOf('=')) > -1) {
+                if (fatherPid==null) {
+                    context_param.setContextType(keyValue.substring(0, index), replaceEscapeChars(keyValue.substring(index + 1)));
+                } else { // the subjob won't escape the especial chars
+                    context_param.setContextType(keyValue.substring(0, index), keyValue.substring(index + 1) );
+                }
 
-			}
+            }
 
 		} else if (arg.startsWith("--context_param")) {
-			String keyValue = arg.substring(16);
-			int index = -1;
-			if (keyValue != null && (index = keyValue.indexOf('=')) > -1) {
-				if (fatherPid == null) {
-					context_param.put(keyValue.substring(0, index), replaceEscapeChars(keyValue.substring(index + 1)));
-				} else { // the subjob won't escape the especial chars
-					context_param.put(keyValue.substring(0, index), keyValue.substring(index + 1));
-				}
-			}
-		} else if (arg.startsWith("--log4jLevel=")) {
-			log4jLevel = arg.substring(13);
-		} else if (arg.startsWith("--monitoring") && arg.contains("=")) {// for trunjob call
-			final int equal = arg.indexOf('=');
+            String keyValue = arg.substring(16);
+            int index = -1;
+            if (keyValue != null && (index = keyValue.indexOf('=')) > -1) {
+                if (fatherPid==null) {
+                    context_param.put(keyValue.substring(0, index), replaceEscapeChars(keyValue.substring(index + 1)));
+                } else { // the subjob won't escape the especial chars
+                    context_param.put(keyValue.substring(0, index), keyValue.substring(index + 1) );
+                }
+            }
+        } else if (arg.startsWith("--log4jLevel=")) {
+            log4jLevel = arg.substring(13);
+		} else if (arg.startsWith("--monitoring") && arg.contains("=")) {//for trunjob call
+		    final int equal = arg.indexOf('=');
 			final String key = arg.substring("--".length(), equal);
 			System.setProperty(key, arg.substring(equal + 1));
 		}
-	}
+    }
+    
+    private static final String NULL_VALUE_EXPRESSION_IN_COMMAND_STRING_FOR_CHILD_JOB_ONLY = "<TALEND_NULL>";
 
-	private static final String NULL_VALUE_EXPRESSION_IN_COMMAND_STRING_FOR_CHILD_JOB_ONLY = "<TALEND_NULL>";
-
-	private final String[][] escapeChars = { { "\\\\", "\\" }, { "\\n", "\n" }, { "\\'", "\'" }, { "\\r", "\r" },
-			{ "\\f", "\f" }, { "\\b", "\b" }, { "\\t", "\t" } };
-
-	private String replaceEscapeChars(String keyValue) {
+    private final String[][] escapeChars = {
+        {"\\\\","\\"},{"\\n","\n"},{"\\'","\'"},{"\\r","\r"},
+        {"\\f","\f"},{"\\b","\b"},{"\\t","\t"}
+        };
+    private String replaceEscapeChars (String keyValue) {
 
 		if (keyValue == null || ("").equals(keyValue.trim())) {
 			return keyValue;
@@ -13535,17 +16332,15 @@ public class s5_in_calcul_sentiments_depuis_donnees_tweets implements TalendJob 
 			int index = -1;
 			// judege if the left string includes escape chars
 			for (String[] strArray : escapeChars) {
-				index = keyValue.indexOf(strArray[0], currIndex);
-				if (index >= 0) {
+				index = keyValue.indexOf(strArray[0],currIndex);
+				if (index>=0) {
 
-					result.append(keyValue.substring(currIndex, index + strArray[0].length()).replace(strArray[0],
-							strArray[1]));
+					result.append(keyValue.substring(currIndex, index + strArray[0].length()).replace(strArray[0], strArray[1]));
 					currIndex = index + strArray[0].length();
 					break;
 				}
 			}
-			// if the left string doesn't include escape chars, append the left into the
-			// result
+			// if the left string doesn't include escape chars, append the left into the result
 			if (index < 0) {
 				result.append(keyValue.substring(currIndex));
 				currIndex = currIndex + keyValue.length();
@@ -13553,19 +16348,20 @@ public class s5_in_calcul_sentiments_depuis_donnees_tweets implements TalendJob 
 		}
 
 		return result.toString();
-	}
+    }
 
-	public Integer getErrorCode() {
-		return errorCode;
-	}
+    public Integer getErrorCode() {
+        return errorCode;
+    }
 
-	public String getStatus() {
-		return status;
-	}
 
-	ResumeUtil resumeUtil = null;
+    public String getStatus() {
+        return status;
+    }
+
+    ResumeUtil resumeUtil = null;
 }
 /************************************************************************************************
- * 389901 characters generated by Talend Open Studio for Big Data on the
- * December 9, 2020 10:55:56 PM CET
+ *     389901 characters generated by Talend Open Studio for Big Data 
+ *     on the December 9, 2020 11:15:59 PM CET
  ************************************************************************************************/

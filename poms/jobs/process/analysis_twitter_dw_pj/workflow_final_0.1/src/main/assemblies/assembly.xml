@@ -239,8 +239,8 @@
             <includes>
                 <include>org.talend.libraries:jakarta.xml.bind-api-2.3:2:6.0.0</include>
                 <include>org.talend.libraries:opensaml-xacml-saml-api-3.3.0:jar:6.0.0</include>
-                <include>org.talend.libraries:wss4j-bindings-2.2.4:jar:6.0.0</include>
                 <include>org.talend.libraries:javax.annotation_1.2.0.v201602091430:jar:6.0.0</include>
+                <include>org.talend.libraries:wss4j-bindings-2.2.4:jar:6.0.0</include>
                 <include>org.talend.libraries:opensaml-xacml-api-3.3.0:jar:6.0.0</include>
                 <include>org.talend.libraries:wss4j-ws-security-policy-stax-2.2.4:jar:6.0.0</include>
                 <include>org.talend.libraries:jboss-serialization:jar:6.0.0</include>
@@ -263,23 +263,23 @@
                 <include>org.talend.libraries:cxf-rt-rs-extension-providers-3.3.4:jar:6.0.0</include>
                 <include>org.talend.libraries:opensaml-xacml-impl-3.3.0:jar:6.0.0</include>
                 <include>org.talend.libraries:opensaml-xmlsec-impl-3.3.0:jar:6.0.0</include>
-                <include>org.talend.libraries:opensaml-saml-api-3.3.0:jar:6.0.0</include>
                 <include>org.talend.libraries:joda-time-2.9:jar:6.0.0</include>
+                <include>org.talend.libraries:opensaml-saml-api-3.3.0:jar:6.0.0</include>
                 <include>org.talend.libraries:opensaml-core-3.3.0:jar:6.0.0</include>
                 <include>org.talend.libraries:cxf-rt-features-logging-3.3.4:jar:6.0.0</include>
                 <include>org.talend.libraries:opensaml-profile-api-3.3.0:jar:6.0.0</include>
                 <include>org.talend.libraries:stax-api-1.0-2:jar:6.0.0</include>
                 <include>org.talend.libraries:opensaml-saml-impl-3.3.0:jar:6.0.0</include>
-                <include>org.talend.libraries:spring-core-5.1.4.RELEASE:jar:6.0.0</include>
                 <include>org.talend.libraries:spring-aop-5.1.4.RELEASE:jar:6.0.0</include>
-                <include>org.talend.libraries:javax.wsdl_1.6.2.v201012040545:jar:6.0.0</include>
+                <include>org.talend.libraries:spring-core-5.1.4.RELEASE:jar:6.0.0</include>
                 <include>org.talend.libraries:wss4j-ws-security-common-2.2.4:jar:6.0.0</include>
+                <include>org.talend.libraries:javax.wsdl_1.6.2.v201012040545:jar:6.0.0</include>
                 <include>org.talend.libraries:jettison-1.4.0:jar:6.0.0</include>
                 <include>org.talend.libraries:spring-webmvc-5.1.4.RELEASE:jar:6.0.0</include>
                 <include>org.talend.libraries:wss4j-ws-security-dom-2.2.4:jar:6.0.0</include>
                 <include>org.talend.libraries:trove:jar:6.0.0</include>
-                <include>org.talend.libraries:security-common-7.3.1:jar:6.0.0</include>
                 <include>org.talend.libraries:opensaml-security-impl-3.3.0:jar:6.0.0</include>
+                <include>org.talend.libraries:security-common-7.3.1:jar:6.0.0</include>
                 <include>org.talend.libraries:spring-expression-5.1.4.RELEASE:jar:6.0.0</include>
                 <include>org.talend.libraries:opensaml-xmlsec-api-3.3.0:jar:6.0.0</include>
                 <include>org.talend.libraries:woodstox-core-asl-4.4.1:jar:6.0.0</include>
@@ -312,8 +312,8 @@
                 <include>org.apache.logging.log4j:log4j-api:jar:2.12.1</include>
                 <include>org.apache.cxf:cxf-rt-bindings-soap:jar:3.3.4</include>
                 <include>org.apache.logging.log4j:log4j-1.2-api:jar:2.12.1</include>
-                <include>org.apache.cxf:cxf-rt-security:jar:3.3.4</include>
                 <include>aopalliance:aopalliance:jar:1.0</include>
+                <include>org.apache.cxf:cxf-rt-security:jar:3.3.4</include>
                 <include>org.apache.logging.log4j:log4j-core:jar:2.12.1</include>
                 <include>org.apache.logging.log4j:log4j-slf4j-impl:jar:2.12.1</include>
                 <include>org.apache.cxf:cxf-rt-security-saml:jar:3.3.4</include>
