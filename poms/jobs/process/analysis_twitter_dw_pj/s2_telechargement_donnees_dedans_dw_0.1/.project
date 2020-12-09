@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectDescription>
+	<name>ANALYSIS_TWITTER_S2_TELECHARGEMENT_DONNEES_DEDANS_DW_0.1</name>
+	<comment></comment>
+	<projects>
+	</projects>
+	<buildSpec>
+	</buildSpec>
+	<natures>
+		<nature>org.talend.core.sourcesNature</nature>
+	</natures>
+</projectDescription>

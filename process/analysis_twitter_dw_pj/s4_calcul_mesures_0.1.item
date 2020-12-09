@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <talendfile:ProcessType xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:talendfile="platform:/resource/org.talend.model/model/TalendFile.xsd" defaultContext="dev" jobType="Standard">
   <context confirmationNeeded="false" name="Default">
-    <contextParameter comment="" name="connection_postgres_Port" prompt="connection_postgres_Port?" promptNeeded="false" repositoryContextId="_Lv3k4DdOEeuqD5xxYcsMWA" type="id_String" value=""/>
+    <contextParameter comment="" name="connection_postgres_Port" prompt="connection_postgres_Port?" promptNeeded="false" repositoryContextId="_Lv3k4DdOEeuqD5xxYcsMWA" type="id_String" value="5432"/>
     <contextParameter comment="" name="connection_postgres_Schema" prompt="connection_postgres_Schema?" promptNeeded="false" repositoryContextId="_Lv3k4DdOEeuqD5xxYcsMWA" type="id_String" value=""/>
-    <contextParameter comment="talend" name="connection_postgres_Database" prompt="connection_postgres_Database?" promptNeeded="false" repositoryContextId="_Lv3k4DdOEeuqD5xxYcsMWA" type="id_String" value=""/>
-    <contextParameter comment="" name="connection_postgres_Server" prompt="connection_postgres_Server?" promptNeeded="false" repositoryContextId="_Lv3k4DdOEeuqD5xxYcsMWA" type="id_String" value=""/>
-    <contextParameter comment="admin" name="connection_postgres_Password" prompt="connection_postgres_Password?" promptNeeded="false" repositoryContextId="_Lv3k4DdOEeuqD5xxYcsMWA" type="id_String" value=""/>
+    <contextParameter comment="talend" name="connection_postgres_Database" prompt="connection_postgres_Database?" promptNeeded="false" repositoryContextId="_Lv3k4DdOEeuqD5xxYcsMWA" type="id_String" value="talend"/>
+    <contextParameter comment="" name="connection_postgres_Server" prompt="connection_postgres_Server?" promptNeeded="false" repositoryContextId="_Lv3k4DdOEeuqD5xxYcsMWA" type="id_String" value="localhost"/>
+    <contextParameter comment="admin" name="connection_postgres_Password" prompt="connection_postgres_Password?" promptNeeded="false" repositoryContextId="_Lv3k4DdOEeuqD5xxYcsMWA" type="id_String" value="admin"/>
     <contextParameter comment="" name="connection_postgres_AdditionalParams" prompt="connection_postgres_AdditionalParams?" promptNeeded="false" repositoryContextId="_Lv3k4DdOEeuqD5xxYcsMWA" type="id_String" value=""/>
-    <contextParameter comment="" name="connection_postgres_Login" prompt="connection_postgres_Login?" promptNeeded="false" repositoryContextId="_Lv3k4DdOEeuqD5xxYcsMWA" type="id_String" value=""/>
-    <contextParameter comment="" name="path_files_global" prompt="path_files_global?" promptNeeded="false" repositoryContextId="_0LQZEDgTEeuXgv4LT_hz2A" type="id_String" value=""/>
+    <contextParameter comment="" name="connection_postgres_Login" prompt="connection_postgres_Login?" promptNeeded="false" repositoryContextId="_Lv3k4DdOEeuqD5xxYcsMWA" type="id_String" value="postgres"/>
+    <contextParameter comment="" name="path_files_global" prompt="path_files_global?" promptNeeded="false" repositoryContextId="_0LQZEDgTEeuXgv4LT_hz2A" type="id_String" value="&quot;/home/scasanova/Downloads/TOS_BD-20200219_1130-V7.3.1/workspace/ANALYSIS_TWITTER/&quot;"/>
   </context>
   <context confirmationNeeded="false" name="dev">
-    <contextParameter comment="" name="connection_postgres_Server" prompt="connection_postgres_Server?" promptNeeded="false" repositoryContextId="_Lv3k4DdOEeuqD5xxYcsMWA" type="id_String" value=""/>
-    <contextParameter comment="" name="connection_postgres_Login" prompt="connection_postgres_Login?" promptNeeded="false" repositoryContextId="_Lv3k4DdOEeuqD5xxYcsMWA" type="id_String" value=""/>
-    <contextParameter comment="" name="connection_postgres_Port" prompt="connection_postgres_Port?" promptNeeded="false" repositoryContextId="_Lv3k4DdOEeuqD5xxYcsMWA" type="id_String" value=""/>
-    <contextParameter comment="admin" name="connection_postgres_Password" prompt="connection_postgres_Password?" promptNeeded="false" repositoryContextId="_Lv3k4DdOEeuqD5xxYcsMWA" type="id_String" value=""/>
-    <contextParameter comment="talend" name="connection_postgres_Database" prompt="connection_postgres_Database?" promptNeeded="false" repositoryContextId="_Lv3k4DdOEeuqD5xxYcsMWA" type="id_String" value=""/>
+    <contextParameter comment="" name="connection_postgres_Server" prompt="connection_postgres_Server?" promptNeeded="false" repositoryContextId="_Lv3k4DdOEeuqD5xxYcsMWA" type="id_String" value="localhost"/>
+    <contextParameter comment="" name="connection_postgres_Login" prompt="connection_postgres_Login?" promptNeeded="false" repositoryContextId="_Lv3k4DdOEeuqD5xxYcsMWA" type="id_String" value="postgres"/>
+    <contextParameter comment="" name="connection_postgres_Port" prompt="connection_postgres_Port?" promptNeeded="false" repositoryContextId="_Lv3k4DdOEeuqD5xxYcsMWA" type="id_String" value="5432"/>
+    <contextParameter comment="admin" name="connection_postgres_Password" prompt="connection_postgres_Password?" promptNeeded="false" repositoryContextId="_Lv3k4DdOEeuqD5xxYcsMWA" type="id_String" value="admin"/>
+    <contextParameter comment="talend" name="connection_postgres_Database" prompt="connection_postgres_Database?" promptNeeded="false" repositoryContextId="_Lv3k4DdOEeuqD5xxYcsMWA" type="id_String" value="talend"/>
     <contextParameter comment="" name="connection_postgres_Schema" prompt="connection_postgres_Schema?" promptNeeded="false" repositoryContextId="_Lv3k4DdOEeuqD5xxYcsMWA" type="id_String" value=""/>
     <contextParameter comment="" name="connection_postgres_AdditionalParams" prompt="connection_postgres_AdditionalParams?" promptNeeded="false" repositoryContextId="_Lv3k4DdOEeuqD5xxYcsMWA" type="id_String" value=""/>
-    <contextParameter comment="" name="path_files_global" prompt="path_files_global?" promptNeeded="false" repositoryContextId="_0LQZEDgTEeuXgv4LT_hz2A" type="id_String" value=""/>
+    <contextParameter comment="" name="path_files_global" prompt="path_files_global?" promptNeeded="false" repositoryContextId="_0LQZEDgTEeuXgv4LT_hz2A" type="id_String" value="&quot;/home/scasanova/Downloads/TOS_BD-20200219_1130-V7.3.1/workspace/ANALYSIS_TWITTER/&quot;"/>
   </context>
   <parameters>
     <elementParameter field="TEXT" name="SCREEN_OFFSET_X" value="0" show="false"/>
@@ -61,7 +61,7 @@
     <elementParameter field="TEXT" name="PROPERTIES_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
     <elementParameter field="TEXT" name="SCHEMA_DB_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
     <elementParameter field="TEXT" name="USER_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
-    <elementParameter field="PASSWORD" name="PASS_IMPLICIT_CONTEXT" value="enc:system.encryption.key.v1:4CEhaSjv4JnjdwaYkYIPPLZhEIcWqd0GSg+jUBdN" show="false"/>
+    <elementParameter field="PASSWORD" name="PASS_IMPLICIT_CONTEXT" value="enc:system.encryption.key.v1:wa1Jy3XQ+yjKXKO8i0EIdI29t/FVGSeDDidyY9z1" show="false"/>
     <elementParameter field="FILE" name="DBFILE_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
     <elementParameter field="DBTABLE" name="DBTABLE_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
     <elementParameter field="TEXT" name="QUERY_CONDITION_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
@@ -96,7 +96,7 @@
     <elementParameter field="TEXT" name="PROPERTIES" value="&quot;&quot;" show="false"/>
     <elementParameter field="TEXT" name="SCHEMA_DB" value="&quot;&quot;" show="false"/>
     <elementParameter field="TEXT" name="USER" value="&quot;&quot;" show="false"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:DAmucS8Fb8eHH6kp8aPSOUbSMOrdQI6wnrwGOKU5" show="false"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:BD9J5mvbvVCqYDQcBmD2XlFWfIXwd9m+QNG1CxE+" show="false"/>
     <elementParameter field="FILE" name="DBFILE" value="&quot;&quot;" show="false"/>
     <elementParameter field="DBTABLE" name="TABLE_STATS" value="&quot;&quot;" show="false"/>
     <elementParameter field="DBTABLE" name="TABLE_LOGS" value="&quot;&quot;" show="false"/>
@@ -138,7 +138,7 @@
     <elementParameter field="TEXT" name="DBNAME" value="context.connection_postgres_Database"/>
     <elementParameter field="TEXT" name="SCHEMA_DB" value="context.connection_postgres_Schema"/>
     <elementParameter field="TEXT" name="USER" value="context.connection_postgres_Login"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:i8TcZGqPbYtUQsMA2QzIekkK7qQCBR96vw0hIeOG8jKw0Bs17iNReJaYJjTwYQvZ6yOIamDcNjpp7q62GIh84g=="/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:5rjjpuKtzQrw9IjO5L1P9J3WqXt8zUfEnB20y1yBM52RCV0qxqBA3376InIHFyY8Wj96kLsZOeyvv274HIukXg=="/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;all_tweets&quot;"/>
     <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" value="" show="false"/>
@@ -227,7 +227,7 @@
     <elementParameter field="TEXT" name="DBNAME" value="context.connection_postgres_Database"/>
     <elementParameter field="TEXT" name="SCHEMA_DB" value="context.connection_postgres_Schema"/>
     <elementParameter field="TEXT" name="USER" value="context.connection_postgres_Login"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:aJhrZcXk/rvl0g6ypQfBvPymm4N1yZutuTpur/rNf4n/RacC/0G+ZTlqfmx1cRHto+GWhNyREbZ2SAgSMgg25w=="/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:NOgwSF1dyLd5zox+W75eLQoTFPa89W0pvKELG3yj7/0WPOIIPBKChIbqWD5Njcq79n/lw0mqJKtuQqYTV1P46A=="/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;all_tweets&quot;"/>
     <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" value="" show="false"/>
@@ -316,7 +316,7 @@
     <elementParameter field="TEXT" name="DBNAME" value="context.connection_postgres_Database"/>
     <elementParameter field="TEXT" name="SCHEMA_DB" value="context.connection_postgres_Schema"/>
     <elementParameter field="TEXT" name="USER" value="context.connection_postgres_Login"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:jFHdmVxSc4IHilPZdVjS2X+pxUU3CQ+gvw9L8vhApqw8lUThkjE8d5l+4VOhm+j98GBEjIjfA8cJEkzgsqoghw=="/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:cGf0jfN33bUbKRS/YkhzemocibdQj1E6+J16l3O2uAR5X8aVtQZr5CtgPTjBi22rgpMfiQ29+3COk4ZadGrGQA=="/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;all_tweets&quot;"/>
     <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" value="" show="false"/>

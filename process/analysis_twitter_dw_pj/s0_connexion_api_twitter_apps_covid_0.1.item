@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <talendfile:ProcessType xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:TalendXMLMap="http://www.talend.org/xmlmap" xmlns:talendfile="platform:/resource/org.talend.model/model/TalendFile.xsd" defaultContext="dev" jobType="Standard">
   <context confirmationNeeded="false" name="dev">
-    <contextParameter comment="" name="path_files_global" prompt="path_files_global?" promptNeeded="false" repositoryContextId="_0LQZEDgTEeuXgv4LT_hz2A" type="id_String" value=""/>
-    <contextParameter comment="" name="connection_postgres_Port" prompt="connection_postgres_Port?" promptNeeded="false" repositoryContextId="_Lv3k4DdOEeuqD5xxYcsMWA" type="id_String" value=""/>
+    <contextParameter comment="" name="path_files_global" prompt="path_files_global?" promptNeeded="false" repositoryContextId="_0LQZEDgTEeuXgv4LT_hz2A" type="id_String" value="&quot;/home/scasanova/Downloads/TOS_BD-20200219_1130-V7.3.1/workspace/ANALYSIS_TWITTER/&quot;"/>
+    <contextParameter comment="" name="connection_postgres_Port" prompt="connection_postgres_Port?" promptNeeded="false" repositoryContextId="_Lv3k4DdOEeuqD5xxYcsMWA" type="id_String" value="5432"/>
     <contextParameter comment="" name="connection_postgres_Schema" prompt="connection_postgres_Schema?" promptNeeded="false" repositoryContextId="_Lv3k4DdOEeuqD5xxYcsMWA" type="id_String" value=""/>
-    <contextParameter comment="talend" name="connection_postgres_Database" prompt="connection_postgres_Database?" promptNeeded="false" repositoryContextId="_Lv3k4DdOEeuqD5xxYcsMWA" type="id_String" value=""/>
-    <contextParameter comment="" name="connection_postgres_Server" prompt="connection_postgres_Server?" promptNeeded="false" repositoryContextId="_Lv3k4DdOEeuqD5xxYcsMWA" type="id_String" value=""/>
-    <contextParameter comment="admin" name="connection_postgres_Password" prompt="connection_postgres_Password?" promptNeeded="false" repositoryContextId="_Lv3k4DdOEeuqD5xxYcsMWA" type="id_String" value=""/>
+    <contextParameter comment="talend" name="connection_postgres_Database" prompt="connection_postgres_Database?" promptNeeded="false" repositoryContextId="_Lv3k4DdOEeuqD5xxYcsMWA" type="id_String" value="talend"/>
+    <contextParameter comment="" name="connection_postgres_Server" prompt="connection_postgres_Server?" promptNeeded="false" repositoryContextId="_Lv3k4DdOEeuqD5xxYcsMWA" type="id_String" value="localhost"/>
+    <contextParameter comment="admin" name="connection_postgres_Password" prompt="connection_postgres_Password?" promptNeeded="false" repositoryContextId="_Lv3k4DdOEeuqD5xxYcsMWA" type="id_String" value="admin"/>
     <contextParameter comment="" name="connection_postgres_AdditionalParams" prompt="connection_postgres_AdditionalParams?" promptNeeded="false" repositoryContextId="_Lv3k4DdOEeuqD5xxYcsMWA" type="id_String" value=""/>
-    <contextParameter comment="" name="connection_postgres_Login" prompt="connection_postgres_Login?" promptNeeded="false" repositoryContextId="_Lv3k4DdOEeuqD5xxYcsMWA" type="id_String" value=""/>
+    <contextParameter comment="" name="connection_postgres_Login" prompt="connection_postgres_Login?" promptNeeded="false" repositoryContextId="_Lv3k4DdOEeuqD5xxYcsMWA" type="id_String" value="postgres"/>
   </context>
   <parameters>
     <elementParameter field="TEXT" name="SCREEN_OFFSET_X" value="0" show="false"/>
@@ -51,7 +51,7 @@
     <elementParameter field="TEXT" name="PROPERTIES_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
     <elementParameter field="TEXT" name="SCHEMA_DB_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
     <elementParameter field="TEXT" name="USER_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
-    <elementParameter field="PASSWORD" name="PASS_IMPLICIT_CONTEXT" value="enc:system.encryption.key.v1:yVXBVBw3DrHWVSrcGX65SBoSahn5EH3gigwbjRm7" show="false"/>
+    <elementParameter field="PASSWORD" name="PASS_IMPLICIT_CONTEXT" value="enc:system.encryption.key.v1:G2OYgDryHXceKk8w1+DcQscW6Y/Mjp8GAzpS8hxg" show="false"/>
     <elementParameter field="FILE" name="DBFILE_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
     <elementParameter field="DBTABLE" name="DBTABLE_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
     <elementParameter field="TEXT" name="QUERY_CONDITION_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
@@ -86,7 +86,7 @@
     <elementParameter field="TEXT" name="PROPERTIES" value="&quot;&quot;" show="false"/>
     <elementParameter field="TEXT" name="SCHEMA_DB" value="&quot;&quot;" show="false"/>
     <elementParameter field="TEXT" name="USER" value="&quot;&quot;" show="false"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:HX8K5oPVLYqmLMalo016H04rju9Wf0M2PDnFZZZj" show="false"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:2l1jMwYRwfU+UPVVOCmCLL2coOwb/MtJgsP/zl+8" show="false"/>
     <elementParameter field="FILE" name="DBFILE" value="&quot;&quot;" show="false"/>
     <elementParameter field="DBTABLE" name="TABLE_STATS" value="&quot;&quot;" show="false"/>
     <elementParameter field="DBTABLE" name="TABLE_LOGS" value="&quot;&quot;" show="false"/>
@@ -148,7 +148,7 @@
     <elementParameter field="CHECK" name="NEED_AUTH" value="true"/>
     <elementParameter field="CLOSED_LIST" name="AUTH_TYPE" value="OAUTH2_BEARER"/>
     <elementParameter field="TEXT" name="AUTH_USERNAME" value="&quot;username&quot;" show="false"/>
-    <elementParameter field="PASSWORD" name="AUTH_PASSWORD" value="enc:system.encryption.key.v1:f1+3wdjaAX5Gyi/x610GWhu5qT7pGregiGgxMvEtcPXLqJnxn0E=" show="false"/>
+    <elementParameter field="PASSWORD" name="AUTH_PASSWORD" value="enc:system.encryption.key.v1:+kJNJoDulSeX2e5vYxEebSiKmrzfux4pMJHEJInQoCF2RlxbTxE=" show="false"/>
     <elementParameter field="TEXT" name="AUTH_BEARER_TOKEN" value="&quot;AAAAAAAAAAAAAAAAAAAAAFEVJgEAAAAAejtPVAQB544BVATEzZjxhVI22ok%3Dcn9mxnTSBKDqaTkwOLzsYemZ9f58ZW0KVOKXDK4i59WtWqCe2d&quot;"/>
     <elementParameter field="CHECK" name="NEED_AUTHORIZATION" value="false" show="false"/>
     <elementParameter field="TEXT" name="ROLE" value="&quot;&quot;" show="false"/>
@@ -176,7 +176,7 @@
     <elementParameter field="TEXT" name="PROXY_HOST" value="&quot;61.163.92.4&quot;" show="false"/>
     <elementParameter field="TEXT" name="PROXY_PORT" value="8080" show="false"/>
     <elementParameter field="TEXT" name="PROXY_USERNAME" value="&quot;&quot;" show="false"/>
-    <elementParameter field="PASSWORD" name="PROXY_PASSWORD" value="enc:system.encryption.key.v1:cTK6yuewAKByZCVeTfSLd+smM8s0PzE1cQB/L1D4" show="false"/>
+    <elementParameter field="PASSWORD" name="PROXY_PASSWORD" value="enc:system.encryption.key.v1:B3uvbMBgO58uF5Yg0lISEWFdvFC8BFUeJeFtuSMm" show="false"/>
     <elementParameter field="TEXT" name="LABEL" value="__UNIQUE_NAME__"/>
     <elementParameter field="TEXT" name="HINT" value="&lt;b>__UNIQUE_NAME__&lt;/b>&lt;br>__COMMENT__"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
@@ -315,7 +315,7 @@
     <elementParameter field="CHECK" name="NEED_AUTH" value="true"/>
     <elementParameter field="CLOSED_LIST" name="AUTH_TYPE" value="OAUTH2_BEARER"/>
     <elementParameter field="TEXT" name="AUTH_USERNAME" value="&quot;username&quot;" show="false"/>
-    <elementParameter field="PASSWORD" name="AUTH_PASSWORD" value="enc:system.encryption.key.v1:ij2VWU1Y8DPu8qPr0l0/c7e3RSWDsmNJdbT366eXSFGyLRVRXuw=" show="false"/>
+    <elementParameter field="PASSWORD" name="AUTH_PASSWORD" value="enc:system.encryption.key.v1:QMZCItaO3cufPc/HQ4LouCleSbbDtJlrl7/uXa376GLwy5h3BNQ=" show="false"/>
     <elementParameter field="TEXT" name="AUTH_BEARER_TOKEN" value="&quot;AAAAAAAAAAAAAAAAAAAAAFEVJgEAAAAAejtPVAQB544BVATEzZjxhVI22ok%3Dcn9mxnTSBKDqaTkwOLzsYemZ9f58ZW0KVOKXDK4i59WtWqCe2d&quot;"/>
     <elementParameter field="CHECK" name="NEED_AUTHORIZATION" value="false" show="false"/>
     <elementParameter field="TEXT" name="ROLE" value="&quot;&quot;" show="false"/>
@@ -343,7 +343,7 @@
     <elementParameter field="TEXT" name="PROXY_HOST" value="&quot;61.163.92.4&quot;" show="false"/>
     <elementParameter field="TEXT" name="PROXY_PORT" value="8080" show="false"/>
     <elementParameter field="TEXT" name="PROXY_USERNAME" value="&quot;&quot;" show="false"/>
-    <elementParameter field="PASSWORD" name="PROXY_PASSWORD" value="enc:system.encryption.key.v1:2QRkOE1sqJ/oS9ntHylIU049ZFRgDEfg0J58nFuc" show="false"/>
+    <elementParameter field="PASSWORD" name="PROXY_PASSWORD" value="enc:system.encryption.key.v1:u3Z0QQqXPsNcQoYQm4sKZ6PYkLhBGnA886j0c3Wp" show="false"/>
     <elementParameter field="TEXT" name="LABEL" value="__UNIQUE_NAME__"/>
     <elementParameter field="TEXT" name="HINT" value="&lt;b>__UNIQUE_NAME__&lt;/b>&lt;br>__COMMENT__"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
@@ -482,7 +482,7 @@
     <elementParameter field="CHECK" name="NEED_AUTH" value="true"/>
     <elementParameter field="CLOSED_LIST" name="AUTH_TYPE" value="OAUTH2_BEARER"/>
     <elementParameter field="TEXT" name="AUTH_USERNAME" value="&quot;username&quot;" show="false"/>
-    <elementParameter field="PASSWORD" name="AUTH_PASSWORD" value="enc:system.encryption.key.v1:NRDmIBv1I8bd2pqz0OQKWPzqNK7iREnF8mZ6ZvTcREJz8eVh1T0=" show="false"/>
+    <elementParameter field="PASSWORD" name="AUTH_PASSWORD" value="enc:system.encryption.key.v1:lpVbmSm4IPG9HKubznx1cg9q8q775WIXs1HbGxq31i1t/zCr0Z0=" show="false"/>
     <elementParameter field="TEXT" name="AUTH_BEARER_TOKEN" value="&quot;AAAAAAAAAAAAAAAAAAAAAFEVJgEAAAAAejtPVAQB544BVATEzZjxhVI22ok%3Dcn9mxnTSBKDqaTkwOLzsYemZ9f58ZW0KVOKXDK4i59WtWqCe2d&quot;"/>
     <elementParameter field="CHECK" name="NEED_AUTHORIZATION" value="false" show="false"/>
     <elementParameter field="TEXT" name="ROLE" value="&quot;&quot;" show="false"/>
@@ -510,7 +510,7 @@
     <elementParameter field="TEXT" name="PROXY_HOST" value="&quot;61.163.92.4&quot;" show="false"/>
     <elementParameter field="TEXT" name="PROXY_PORT" value="8080" show="false"/>
     <elementParameter field="TEXT" name="PROXY_USERNAME" value="&quot;&quot;" show="false"/>
-    <elementParameter field="PASSWORD" name="PROXY_PASSWORD" value="enc:system.encryption.key.v1:99blVGWWHPjTr4xkv2NmrnGDTh6KplHvLe3n8Iqm" show="false"/>
+    <elementParameter field="PASSWORD" name="PROXY_PASSWORD" value="enc:system.encryption.key.v1:wLhQbMqrZnJIxY4o8dqiRfsMQWu1znrxwnUb58BD" show="false"/>
     <elementParameter field="TEXT" name="LABEL" value="__UNIQUE_NAME__"/>
     <elementParameter field="TEXT" name="HINT" value="&lt;b>__UNIQUE_NAME__&lt;/b>&lt;br>__COMMENT__"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
