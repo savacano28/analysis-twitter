@@ -12,15 +12,15 @@
     <module>code/routines</module>
     <module>jobs/documentations/jobs/s0_connection_api_twitter/items/analysis_twitter/process/s0_connection_api_twitter_0.1</module>
     <module>jobs/process/s0_connexion_api_twitter_0.1</module>
-    <module>jobs/process/analysis_twitter_dw_pj/s1_telechargement_tweets_dedans_db_0.1</module>
-    <module>jobs/process/analysis_twitter_dw_pj/s2_telechargement_donnees_dedans_dw_0.1</module>
     <module>jobs/process/analysis_twitter_dw_pj/s3_telechargement_donnees_region_info_hashtag_0.1</module>
     <module>jobs/process/analysis_twitter_dw_pj/s4_calcul_mesures_0.1</module>
     <module>jobs/process/analysis_twitter_dw_pj/s5_fr_calcul_sentiments_depuis_donnees_tweets_0.1</module>
     <module>jobs/process/analysis_twitter_dw_pj/s5_in_calcul_sentiments_depuis_donnees_tweets_0.1</module>
-    <module>jobs/process/analysis_twitter_dw_pj/s6_telechargement_mesures_dedans_dw_0.1</module>
     <module>jobs/process/analysis_twitter_dw_pj/workflow_final_0.1</module>
     <module>jobs/process/analysis_twitter_dw_pj/s0_connexion_api_twitter_apps_covid_0.1</module>
+    <module>jobs/process/analysis_twitter_dw_pj/s1_telechargement_tweets_dans_db_0.1</module>
+    <module>jobs/process/analysis_twitter_dw_pj/s2_telechargement_donnees_dans_dw_0.1</module>
+    <module>jobs/process/analysis_twitter_dw_pj/s6_telechargement_mesures_dans_dw_0.1</module>
   </modules>
   <properties>
     <talend.project.name>ANALYSIS_TWITTER</talend.project.name>

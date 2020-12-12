@@ -239,8 +239,8 @@
             <includes>
                 <include>org.talend.libraries:jakarta.xml.bind-api-2.3:2:6.0.0</include>
                 <include>org.talend.libraries:opensaml-xacml-saml-api-3.3.0:jar:6.0.0</include>
-                <include>org.talend.libraries:javax.annotation_1.2.0.v201602091430:jar:6.0.0</include>
                 <include>org.talend.libraries:wss4j-bindings-2.2.4:jar:6.0.0</include>
+                <include>org.talend.libraries:javax.annotation_1.2.0.v201602091430:jar:6.0.0</include>
                 <include>org.talend.libraries:opensaml-xacml-api-3.3.0:jar:6.0.0</include>
                 <include>org.talend.libraries:wss4j-ws-security-policy-stax-2.2.4:jar:6.0.0</include>
                 <include>org.talend.libraries:jboss-serialization:jar:6.0.0</include>
@@ -272,8 +272,8 @@
                 <include>org.talend.libraries:opensaml-saml-impl-3.3.0:jar:6.0.0</include>
                 <include>org.talend.libraries:spring-aop-5.1.4.RELEASE:jar:6.0.0</include>
                 <include>org.talend.libraries:spring-core-5.1.4.RELEASE:jar:6.0.0</include>
-                <include>org.talend.libraries:wss4j-ws-security-common-2.2.4:jar:6.0.0</include>
                 <include>org.talend.libraries:javax.wsdl_1.6.2.v201012040545:jar:6.0.0</include>
+                <include>org.talend.libraries:wss4j-ws-security-common-2.2.4:jar:6.0.0</include>
                 <include>org.talend.libraries:jettison-1.4.0:jar:6.0.0</include>
                 <include>org.talend.libraries:spring-webmvc-5.1.4.RELEASE:jar:6.0.0</include>
                 <include>org.talend.libraries:wss4j-ws-security-dom-2.2.4:jar:6.0.0</include>
@@ -322,8 +322,8 @@
                 <include>commons-logging:commons-logging:jar:1.2.0</include>
                 <include>javax.xml.bind:jaxb-api:jar:2.3.1</include>
                 <include>org.apache.cxf:cxf-core:jar:3.3.4</include>
-                <include>org.apache.cxf:cxf-rt-ws-security:jar:3.3.4</include>
                 <include>javax.ws.rs:javax.ws.rs-api:jar:2.1</include>
+                <include>org.apache.cxf:cxf-rt-ws-security:jar:3.3.4</include>
                 <include>org.apache.cxf:cxf-rt-rs-client:jar:3.3.4</include>
                 <include>org.apache.cxf:cxf-rt-frontend-jaxrs:jar:3.3.4</include>
             </includes>
@@ -332,13 +332,13 @@
         <dependencySet>
             <outputDirectory>${talend.job.name}</outputDirectory>
             <includes>
-                <include>org.example.analysis_twitter.job:s6_telechargement_mesures_dedans_dw:jar:0.1.0</include>
                 <include>org.example.analysis_twitter.job:s0_connexion_api_twitter_apps_covid:jar:0.1.0</include>
-                <include>org.example.analysis_twitter.job:s2_telechargement_donnees_dedans_dw:jar:0.1.0</include>
-                <include>org.example.analysis_twitter.job:s1_telechargement_tweets_dedans_db:jar:0.1.0</include>
+                <include>org.example.analysis_twitter.job:s1_telechargement_tweets_dans_db:jar:0.1.0</include>
+                <include>org.example.analysis_twitter.job:s6_telechargement_mesures_dans_dw:jar:0.1.0</include>
                 <include>org.example.analysis_twitter.job:s4_calcul_mesures:jar:0.1.0</include>
                 <include>org.example.analysis_twitter.job:s5_fr_calcul_sentiments_depuis_donnees_tweets:jar:0.1.0</include>
                 <include>org.example.analysis_twitter.job:s3_telechargement_donnees_region_info_hashtag:jar:0.1.0</include>
+                <include>org.example.analysis_twitter.job:s2_telechargement_donnees_dans_dw:jar:0.1.0</include>
                 <include>org.example.analysis_twitter.job:workflow_final:jar:0.1.0</include>
                 <include>org.example.analysis_twitter.job:s5_in_calcul_sentiments_depuis_donnees_tweets:jar:0.1.0</include>
             </includes>

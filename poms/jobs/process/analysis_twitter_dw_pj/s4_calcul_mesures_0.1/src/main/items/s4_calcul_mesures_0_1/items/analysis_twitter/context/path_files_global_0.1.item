@@ -1,4 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <talendfile:ContextType xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:talendfile="platform:/resource/org.talend.model/model/TalendFile.xsd" xmi:id="_0LxWcDgTEeuXgv4LT_hz2A" confirmationNeeded="false" name="dev">
-  <contextParameter xmi:id="_0LxWcTgTEeuXgv4LT_hz2A" comment="" name="path_files_global" prompt="path_files_global?" promptNeeded="false" type="id_String" value=""/>
+  <contextParameter xmi:id="_0LxWcTgTEeuXgv4LT_hz2A" comment="" name="path_files_global" prompt="path_files_global?" promptNeeded="false" type="id_String" value="/home/scasanova/Downloads/TOS_BD-20200219_1130-V7.3.1/workspace/ANALYSIS_TWITTER/"/>
 </talendfile:ContextType>
