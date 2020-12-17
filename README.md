@@ -1,6 +1,6 @@
 # analysis-twitter
 Twitter Sentiment Analysis of Covid apps using Talend
 
-More Information -> [Wiki] (under construction)
+In /docs you can find a report about our work but if you want more Information -> [Wiki] (under construction)
 
 October 2020, Lyon - FRANCE
